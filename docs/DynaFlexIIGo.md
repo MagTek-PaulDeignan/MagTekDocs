@@ -19,7 +19,7 @@ layout: home
 
 ## **Copyright and Trademark Notice**  
 
-Copyright © 2006 - 2024 MagTek, Inc.  
+Copyright © 2006 - 2025 MagTek, Inc.  
 Printed in the United States of America  
 
 > **Information in this publication is subject to change without notice. MagTek cannot be held liable for any use of the contents of this document.**  
