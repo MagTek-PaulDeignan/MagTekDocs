@@ -54,16 +54,16 @@ This document also describes how to communicate with PIN Entry Devices (PED) whi
 MagTek Messaging Schema (MMS) and the DynaFlex/DynaProx family system architecture. (PED
 ONLY)
 
-The document uses bold face to:
-• Highlight terms / concepts being formally defined in the current sentence / paragraph
-• Highlight important distinguishing keywords in sentences
-• Indicate hyperlinks to other sections / tables
+The document uses **bold** face to:
+* Highlight terms / concepts being formally defined in the current sentence / paragraph
+* Highlight important distinguishing keywords in sentences
+* Indicate hyperlinks to other sections / tables
 
 The document uses a small number of annotation standards that are important to understand:
-• Hexadecimal values are prefixed with 0x unless the context clearly indicates an un-prefixed number
+* Hexadecimal values are prefixed with 0x unless the context clearly indicates an un-prefixed number
 is hexadecimal (for example, TLV tags, lengths, and values are always assumed to be hex).
-• Binary values are prefixed with 0b unless the context clearly indicates the value is binary.
-• Decimal values are not prefixed unless required for clarity, in which case the prefix is 0d.
+* Binary values are prefixed with 0b unless the context clearly indicates the value is binary.
+* Decimal values are not prefixed unless required for clarity, in which case the prefix is 0d.
 
 The standard documented by this document makes extensive use of Tag-Length-Value encoding. Section
 3.2.1 Tag-Length-Value (TLV) Encoding describes how to encode and decode TLV, and how to read the
