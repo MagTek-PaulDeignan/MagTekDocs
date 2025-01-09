@@ -91,7 +91,8 @@ DynaFlex II Go and DynaFlex II Go BCR provide secure payment solutions supportin
 - Supports Apple Pay®, Google Wallet™, and Samsung Pay™  
 - AES-128/256 encryption with DUKPT key management  
 
-#### **1.2 Available Models and Accessories**  
+#### **1.2 Available Models and Accessories**  0
+
 | Part No.   | Description                                   | Connections              | Supported OS        |
 |------------|-----------------------------------------------|--------------------------|---------------------|
 | 21078400   | DynaFlex II Go, PCI, BCR, BLACK, BLUETOOTH LE | USB-C, Bluetooth® (LE)   | Windows, macOS, Linux, Android |
