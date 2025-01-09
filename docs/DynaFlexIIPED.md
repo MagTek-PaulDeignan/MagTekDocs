@@ -1,6 +1,6 @@
 ---
-title: DynaFlexII
-nav_order: 5
+title: DynaFlexIIPED
+nav_order: 4
 layout: home
 ---
 
