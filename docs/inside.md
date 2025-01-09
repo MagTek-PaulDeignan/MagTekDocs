@@ -5,8 +5,7 @@ layout: home
 ---
 
 # DynaFlex Products
-## Three-way Secure Card Reader Authenticators
-## Programmer’s Manual (COMMANDS)
+## Three-way Secure Card Reader Authenticators  Programmer’s Manual (COMMANDS)
 
 INFORMATION IN THIS PUBLICATION IS SUBJECT TO CHANGE WITHOUT NOTICE.
 MAGTEK CANNOT BE HELD LIABLE FOR ANY USE OF THE CONTENTS OF THIS
@@ -46,23 +45,26 @@ MIFARE FleX, DESFire, and MIFARE4Mobile are registered trademarks of NXP B.V.
 All other system names and product names are the property of their respective owners.
 
 
-1 Introduction
-1.1 About This Document
+# 1 Introduction
+## 1.1 About This Document
 This document describes how to communicate with Secure Card Reader Authenticator (SCRA) devices
 which implement MagTek Messaging Schema (MMS) and the DynaFlex family, DynaFlex II Go and
 DynaProx system architecture.
 This document also describes how to communicate with PIN Entry Devices (PED) which implement
 MagTek Messaging Schema (MMS) and the DynaFlex/DynaProx family system architecture. (PED
 ONLY)
+
 The document uses bold face to:
 • Highlight terms / concepts being formally defined in the current sentence / paragraph
 • Highlight important distinguishing keywords in sentences
 • Indicate hyperlinks to other sections / tables
+
 The document uses a small number of annotation standards that are important to understand:
 • Hexadecimal values are prefixed with 0x unless the context clearly indicates an un-prefixed number
 is hexadecimal (for example, TLV tags, lengths, and values are always assumed to be hex).
 • Binary values are prefixed with 0b unless the context clearly indicates the value is binary.
 • Decimal values are not prefixed unless required for clarity, in which case the prefix is 0d.
+
 The standard documented by this document makes extensive use of Tag-Length-Value encoding. Section
 3.2.1 Tag-Length-Value (TLV) Encoding describes how to encode and decode TLV, and how to read the
 tables in this document that describe TLV data objects.
