@@ -1,6 +1,5 @@
 ---
 title: DynaFlexIIPED
-nav_order: 4
 layout: home
 ---
 

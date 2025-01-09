@@ -1,6 +1,5 @@
 ---
-title: DynaFlex
-nav_order: 2
+title: DynaProx
 layout: home
 ---
 

@@ -1,6 +1,5 @@
 ---
 title: DynaFlexIIGO
-nav_order: 5
 layout: home
 ---
 
