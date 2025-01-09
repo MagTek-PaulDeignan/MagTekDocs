@@ -40,15 +40,6 @@ Other trademarks include AAMVA™, ANSI®, ISO®, UL™, PCI Security Standards 
 | 120        | April 12, 2024     | Updated accessories table, added Bluetooth® Low Energy sleep mode, and clarified operational details    |
 
 
-
-| head1        | head two          | three |
-|:-------------|:------------------|:------|
-| ok           | good swedish fish | nice  |
-| out of stock | good and plenty   | nice  |
-| ok           | good `oreos`      | hmm   |
-| ok           | good `zoute` drop | yumm  |
-
-
 ---
 
 ## **Table of Contents**
