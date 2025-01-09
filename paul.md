@@ -1,5 +1,6 @@
 ---
-title: Paul
+title: DynaFlex
+nav_order: 2
 layout: home
 ---
 

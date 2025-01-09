@@ -1,6 +1,6 @@
 ---
 title: Markdown kitchen sink
-nav_order: 99
+nav_order: 3
 layout: home
 ---
 
@@ -303,19 +303,7 @@ class conditions(object):
 Long, single-line code blocks should not wrap. They should horizontally scroll if they are too long. This line should be long enough to demonstrate this.
 ```
 
-### Mermaid Diagrams
 
-The following code is displayed as a diagram only when a `mermaid` key supplied in `_config.yml`.
-
-```mermaid
-graph TD;
-    accTitle: the diamond pattern
-    accDescr: a graph with four nodes: A points to B and C, while B and C both point to D
-    A-->B;
-    A-->C;
-    B-->D;
-    C-->D;
-```
 
 ### Collapsed Section
 
