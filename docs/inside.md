@@ -88,6 +88,7 @@ Some messages defined in section 2.4 may exceed the maximum packet length allowe
 For this reason, MMS implements a packetizing scheme the host must use when it composes Output
 Reports to send commands, and when it decomposes Input Reports to receive responses. The host should
 follow this general sequence to send a request and receive a response:
+
 1)  Choose the command to invoke from section 6 Commands.
 2) Construct the command request message using the Request table in the command documentation.
 For a deeper explanation of the contents of request tables, see section 2.4.
@@ -96,7 +97,7 @@ For a deeper explanation of the contents of request tables, see section 2.4.
 5) Examine the device’s Report Descriptor to determine what payload length the device expects for an
 Output Report (operating system libraries may refer to this length as the “Report Length” or “Report
 Count”). MMS devices using USB HID generally use a payload length of 64 bytes.
-a) If the message length fits the Single Packet payload length of 62 bytes, wrap the message in the
+a)  If the message length fits the Single Packet payload length of 62 bytes, wrap the message in the
 Single Packet format shown in Table 2.1-1.
 b) If the message length does not fit the Single Packet payload length, wrap the message in the
 format of a single Multi-Packet Head, followed by zero or more Multi-Packet Middles as
