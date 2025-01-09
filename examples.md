@@ -1,6 +1,6 @@
 ---
-title: Markdown kitchen sink
-nav_order: 3
+title: Markdown Examples
+nav_order: 99
 layout: home
 ---
 

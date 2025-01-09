@@ -32,11 +32,11 @@ Other trademarks include AAMVA™, ANSI®, ISO®, UL™, PCI Security Standards 
 ---
 
 ## **Revisions**  
-| Rev Number | Date           | Notes                                                                                                   |
-|------------|----------------|---------------------------------------------------------------------------------------------------------|
-| 100        | November 16, 2023 | Initial release                                                                                      |
-| 110        | February 1, 2024  | Updated device images, specifications, and features; added support for new NFC tag commands           |
-| 120        | April 12, 2024    | Updated accessories table, added Bluetooth® Low Energy sleep mode, and clarified operational details |
+| Rev Number | Date               | Notes                                                                                                   |
+|:-----------|:-------------------|:--------------------------------------------------------------------------------------------------------|
+| 100        | November 16, 2023  | Initial release                                                                                         |
+| 110        | February 1, 2024   | Updated device images, specifications, and features; added support for new NFC tag commands             |
+| 120        | April 12, 2024     | Updated accessories table, added Bluetooth® Low Energy sleep mode, and clarified operational details    |
 
 ---
 
