@@ -4,7 +4,7 @@ layout: home
 ---
 
 
-Magtek was founded in 1972
+Magtek was founded in 1972.
 
 
 Contact Us
