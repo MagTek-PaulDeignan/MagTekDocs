@@ -85,6 +85,11 @@ even when it comes at the beginning](.) of the line.
 
 * * *
 
+| First Header  | Second Header |
+| ------------- | ------------- |
+| Content Cell  | Content Cell  |
+| Content Cell  | Content Cell  |
+
 ### Here is an unordered list:
 
 *   Item foo
