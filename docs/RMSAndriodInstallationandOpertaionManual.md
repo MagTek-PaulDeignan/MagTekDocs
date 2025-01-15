@@ -20,14 +20,17 @@ The MagTek Reader Management System (RMS) provides several key benefits for merc
 5.	Scalability and Flexibility: RMS is scalable to meet the needs of businesses, whether for a single store or multiple locations. It supports both Android, iOS and Windows, allowing flexibility in device management. (See each OS specific installation manual for further details)
 6.	Cost Savings: Automating reader management with RMS reduces the need for on-site visits, lowering maintenance costs and minimizing downtime. Centralized control streamlines administrative tasks, boosting operational efficiency.
 7.	Improved Customer Experience: Efficiently managed payment readers reduce transaction errors and delays, improving customer satisfaction and loyalty, which positively impacts business reputation and revenue.
-### Android System Requirements
+# Android System Requirements
 The RMS app is compatible with Android OS 
 Note: Not all configuration options are available for all Secure Card Reader Authenticators (SCRAs). The available configuration options depend on:
 * The specific SCRA model in use.
 * The configuration options provided by MagTek.
 Important: Some commands may require a device reset.
 * Refer to the Programmer's Manual for your particular device to see which commands are affected. (See Appendix B Related Documentation.)
-### RMS Android Application
+# RMS Android Application
+
 * Android Application (PN 1000009733)
 * Compatible with both USB and Bluetooth Low Energy (BLE) connected readers, as well as WLAN enabled readers.
 * Supports MagTek MagneSafe and DynaFlex/DynaProx readers.
+
+
