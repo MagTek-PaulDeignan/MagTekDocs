@@ -7,10 +7,10 @@ layout: home
 The MagTek Reader Management System (RMS) is a comprehensive application with specialized source code designed to streamline the configuration and update process for MagTek readers in enterprise environments. Its primary functions include firmware management, key injection, device configuration, and the loading and management of terminal, application settings, and Certificate Authority Public Keys (CAPKs) required for EMV contactless transactions.
 ## 1.1 Purpose
 The Reader Management System (RMS) application is designed to be compatible with all DynaFlex, DynaProx, and MagneSafe products available from MagTek. 
-•	The main purpose of this app is to streamline the ability to load firmware, device configs, keys, Tags and CAPKs into a target reader or more importantly, a large quantity of geographically separated readers.
-•	The target files are 100% MagTek managed (files managed at MagTek’s host) so the user is not able to load the wrong files by accident.
-•	The app can auto execute or manually execute the update process which can include all of the above file options in a single action.  This prevents the need to load individual files which is cumbersome and not practical for scale.
-•	The source code can be used to integrate this functionality into 3rd party apps which makes it easier for developers to use Magensa Remote Services.
+* The main purpose of this app is to streamline the ability to load firmware, device configs, keys, Tags and CAPKs into a target reader or more importantly, a large quantity of geographically separated readers.
+* The target files are 100% MagTek managed (files managed at MagTek’s host) so the user is not able to load the wrong files by accident.
+* The app can auto execute or manually execute the update process which can include all of the above file options in a single action.  This prevents the need to load individual files which is cumbersome and not practical for scale.
+* The source code can be used to integrate this functionality into 3rd party apps which makes it easier for developers to use Magensa Remote Services.
 ## 1.2 Benefits
 The MagTek Reader Management System (RMS) provides several key benefits for merchants and businesses, these include:
 1.	Centralized Management: RMS allows for the remote management and configuration of MagTek readers across multiple locations from a single platform. Merchants can update firmware, keys, terminal settings, and CAPKs without manual intervention, reducing time, cost, and effort.
@@ -23,11 +23,11 @@ The MagTek Reader Management System (RMS) provides several key benefits for merc
 ### Android System Requirements
 The RMS app is compatible with Android OS 
 Note: Not all configuration options are available for all Secure Card Reader Authenticators (SCRAs). The available configuration options depend on:
-•	The specific SCRA model in use.
-•	The configuration options provided by MagTek.
+* The specific SCRA model in use.
+* The configuration options provided by MagTek.
 Important: Some commands may require a device reset.
-•	Refer to the Programmer's Manual for your particular device to see which commands are affected. (See Appendix B Related Documentation.)
+* Refer to the Programmer's Manual for your particular device to see which commands are affected. (See Appendix B Related Documentation.)
 ### RMS Android Application
-•	Android Application (PN 1000009733)
-•	Compatible with both USB and Bluetooth Low Energy (BLE) connected readers, as well as WLAN enabled readers.
-•	Supports MagTek MagneSafe and DynaFlex/DynaProx readers.
+* Android Application (PN 1000009733)
+* Compatible with both USB and Bluetooth Low Energy (BLE) connected readers, as well as WLAN enabled readers.
+* Supports MagTek MagneSafe and DynaFlex/DynaProx readers.
