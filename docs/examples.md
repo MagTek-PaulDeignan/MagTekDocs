@@ -188,7 +188,7 @@ Some text
 
 ### MagTek
 
-![](./images/magtek_logo.png)
+![](../images/magtek_logo.png)
 
 ### DynaFlexIIGo
 
