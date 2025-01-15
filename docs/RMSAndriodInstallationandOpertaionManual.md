@@ -21,6 +21,7 @@ The MagTek Reader Management System (RMS) provides several key benefits for merc
 6.	Cost Savings: Automating reader management with RMS reduces the need for on-site visits, lowering maintenance costs and minimizing downtime. Centralized control streamlines administrative tasks, boosting operational efficiency.
 7.	Improved Customer Experience: Efficiently managed payment readers reduce transaction errors and delays, improving customer satisfaction and loyalty, which positively impacts business reputation and revenue.
 ## Android System Requirements
+
 The RMS app is compatible with Android OS 
 Note: Not all configuration options are available for all Secure Card Reader Authenticators (SCRAs). The available configuration options depend on:
 * The specific SCRA model in use.
