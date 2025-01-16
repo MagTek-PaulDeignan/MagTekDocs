@@ -1,6 +1,6 @@
 ---
 title: About
-parent: tabs
+parent: Tabs
 layout: default
 nav_order: 5
 ---
