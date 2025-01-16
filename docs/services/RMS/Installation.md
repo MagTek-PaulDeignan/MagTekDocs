@@ -8,5 +8,5 @@ nav_order: 2
 # Installation
 
 Begin by downloading the MagTek Reader Management System.  
-[RMS](https://www.magtek.com/support/reader-management-system?tab=software)
-![](./images/RMSAPPLOGO.png)
+[![](./images/RMSAPPLOGO.png)](https://www.magtek.com/support/reader-management-system?tab=software)
+
