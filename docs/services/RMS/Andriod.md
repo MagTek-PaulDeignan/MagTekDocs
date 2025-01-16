@@ -1,7 +1,7 @@
 ---
 title: Android
 layout: home
-Parent: RMS
+Parent: Services
 ---
 
 ## Android
