@@ -60,32 +60,32 @@ The lower portion of the Connect Tab contains:
 
 ### Device
 The Device Tab will update device Firmware and EMV Tags/CAPKS. 
-1.	Log: The Device Tab contains a log of all events.
-2.	Clear Log: The Clear Log button will remove all log data until a new instance is provided by the reader.
-3.	Force Update: Enabling this option directs RMS to update Firmware, EMV Tags, and CAPKs regardless of their current version status. DynaFlex devices do not support forcing Firmware update.  Firmware option becomes unchecked and disabled; this feature is available only on MagneSafe devices.
-4.	Update Options: The Device Tab contains pre-selected options to update Firmware and EMV Tags/CAPKS. The user can deselect either option if needed. 
-5.	Update Button: The Update button loads the updates selected. 
-6.	A prompt will appear and ask the user if they would like to update Main firmware. The user can press No or Yes. 
+>1. Log: The Device Tab contains a log of all events.
+>2.	Clear Log: The Clear Log button will remove all log data until a new instance is provided by the reader.
+>3.	Force Update: Enabling this option directs RMS to update Firmware, EMV Tags, and CAPKs regardless of their current version status. DynaFlex devices do not support forcing Firmware update.  Firmware option becomes unchecked and disabled; this feature is available only on MagneSafe devices.
+>4.	Update Options: The Device Tab contains pre-selected options to update Firmware and EMV Tags/CAPKS. The user can deselect either option if needed. 
+>5.	Update Button: The Update button loads the updates selected. 
+>6.	A prompt will appear and ask the user if they would like to update Main firmware. The user can press No or Yes. 
 
 ![](./images/Android3.png)
-> > >>>>>![](./images/Android4.png)
+![](./images/Android4.png)
 
 ### Configs
 
 The Configs Tab will update the device’s configurations. 
-1.	Log: The Configs Tab contains a log of all events.
-2.	Clear Log: The Clear Log button will remove all log data until a new instance is provided by the reader. The Refresh   button will refresh the list of available configurations for the device connected. 
-3.	Force Update: Enabling this option directs RMS to update Configs regardless of their current version status. DynaFlex devices do not support forcing Firmware update.  Firmware option becomes unchecked and disabled; this feature is available only on MagneSafe devices.
-4.	Config List: Tap on the desired configuration to select.
-5.	Update: Press the Update button to load the selected config.
+>1. Log: The Configs Tab contains a log of all events.
+>2. Clear Log: The Clear Log button will remove all log data until a new instance is provided by the reader. The Refresh   button will refresh the list of available configurations for the device connected. 
+>3. Force Update: Enabling this option directs RMS to update Configs regardless of their current version status. DynaFlex devices do not support forcing Firmware update.  Firmware option becomes unchecked and disabled; this feature is available only on MagneSafe devices.
+>4. Config List: Tap on the desired configuration to select.
+>5. Update: Press the Update button to load the selected config.
 ![](./images/Android5.png)
 ### Commands
 
 The Commands Tab allows users to send commands to a device. Responses are recorded in the Log.
-1.	Log: The Commands Tab contains a log that will display the details of all commands entered and responses returned. 
-2.	Clear Log: The Clear Log button will remove all log data until a new instance is provided by the reader.
-3.	Commands Field: This field allows the user to enter commands.
-4.	Send: This button sends commands to the reader.
+>1. Log: The Commands Tab contains a log that will display the details of all commands entered and responses returned. 
+>2. Clear Log: The Clear Log button will remove all log data until a new instance is provided by the reader.
+>3.	Commands Field: This field allows the user to enter commands.
+>4. Send: This button sends commands to the reader.
 
 ![](./images/Android6.jpg)
 
