@@ -1,10 +1,9 @@
 ---
 title: Android
+Parent: SystemOverview
 layout: home
-Parent: RMS
 nav_order: 3
 ---
-
 ## Android
 
 * Android Application (PN 1000009733)
