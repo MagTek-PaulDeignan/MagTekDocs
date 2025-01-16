@@ -1,7 +1,7 @@
 ---
 title: Android
-Parent: SystemOverview
-layout: home
+parent: SystemOverview
+layout: default
 nav_order: 3
 ---
 ## Android
@@ -31,5 +31,6 @@ Details on how to use the RMS Android Application.
 ## Contact
 
 For further assistance, contact support at support@example.com.
+
 
 
