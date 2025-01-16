@@ -1,7 +1,7 @@
 ---
 title: Android
-parent: SystemOverview
-layout: home
+parent: RMS
+layout: default
 nav_order: 
 ---
 ## Android
