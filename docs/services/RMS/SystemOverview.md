@@ -1,6 +1,6 @@
 ---
 title: MagTek Reader Management System (RMS) Android Application Installation and Operation Manual
-
+parent: RMS
 layout: home
 ---
 # Overview
