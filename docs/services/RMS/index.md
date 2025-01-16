@@ -1,5 +1,5 @@
 ---
-title: About RMS
+title: RMS
 layout: home
 parent: Services
 nav_order: 1
