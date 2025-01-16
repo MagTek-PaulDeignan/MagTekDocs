@@ -1,8 +1,8 @@
 ---
 title: Android
 layout: home
-Parent: RMS
-nav_order: 3
+Parent: services
+nav_order: 
 ---
 
 ## Android
