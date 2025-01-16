@@ -1,10 +1,10 @@
 ---
 title: About MagTek
 layout: home
+parent: Overview
+nav_order: 1
 ---
 
-
-Magtek was founded in 1972.
 
 
 Contact Us
