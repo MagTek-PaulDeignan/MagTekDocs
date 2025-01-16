@@ -1,10 +1,10 @@
 ---
-title: MagTek Reader Management System (RMS) Android Application Installation and Operation Manual
+title: SYSTEM OVERVIEW
 parent: RMS
 layout: home
 ---
-# Overview
-The MagTek Reader Management System (RMS) is a comprehensive application with specialized source code designed to streamline the configuration and update process for MagTek readers in enterprise environments. Its primary functions include firmware management, key injection, device configuration, and the loading and management of terminal, application settings, and Certificate Authority Public Keys (CAPKs) required for EMV contactless transactions.
+# Introduction
+
 ## Purpose
 The Reader Management System (RMS) application is designed to be compatible with all DynaFlex, DynaProx, and MagneSafe products available from MagTek. 
 * The main purpose of this app is to streamline the ability to load firmware, device configs, keys, Tags and CAPKs into a target reader or more importantly, a large quantity of geographically separated readers.
