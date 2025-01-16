@@ -4,7 +4,7 @@ parent: RMS
 layout: default
 nav_order: 
 ---
-## Android
+# Android
 
 * Android Application (PN 1000009733)
 * Compatible with both USB and Bluetooth Low Energy (BLE) connected readers, as well as WLAN enabled readers.
@@ -94,3 +94,4 @@ The Commands Tab allows users to send commands to a device. Responses are record
 The About Tab will display the App PN number, current version, and a link to FAQs available at MagTek.com.
 
 ![](./images/Android7.jpg)
+***
