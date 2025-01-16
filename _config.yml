@@ -1,9 +1,9 @@
 title: MagTek Docs
-description: A starter template for a Jeykll site using the Just the Docs theme!
+description: MagTek Docs
 theme: just-the-docs
 
 url: https://MagTek-PaulDeignan.github.io/MagTekDocs
 
-logo: "/assets/images/magtek-logo-200x100.jpg"
+logo: "/assets/images/magtek_logo.png"
 # aux_links:
 #   Template Repository: https://github.com/just-the-docs/just-the-docs-template
