@@ -1,6 +1,8 @@
 ---
 id: rms-android
 title: RMS Android Application
+layout: home
+Parent: SystemOverview
 sidebar_label: RMS Android
 ---
 
