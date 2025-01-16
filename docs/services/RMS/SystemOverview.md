@@ -2,7 +2,7 @@
 title: System Overview
 parent: RMS
 layout: home
-nav_order: 0
+nav_order: 2
 ---
 # Purpose
 The Reader Management System (RMS) application is designed to be compatible with all DynaFlex, DynaProx, and MagneSafe products available from MagTek. 
