@@ -23,6 +23,7 @@ Important: Some commands may require a device reset.
 ## Installation
 
 Begin by downloading the MagTek Reader Management System. 
+- [https://www.magtek.com/support/reader-management-system?tab=software](.)
 ![](./images/RMSAPPLOGO.png)
 
 ## Usage
