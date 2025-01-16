@@ -1,8 +1,8 @@
 ---
 title: Android
 parent: SystemOverview
-layout: default
-nav_order: 3
+layout: home
+nav_order: 
 ---
 ## Android
 
