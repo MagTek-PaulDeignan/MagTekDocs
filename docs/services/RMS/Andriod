@@ -1,0 +1,23 @@
+---
+title: Andriod
+layout: home
+parent: Services
+nav_order: 2
+---
+## Introduction
+This document provides information about the RMS Android service.
+
+## Installation
+Instructions on how to install the RMS Android service.
+
+## Usage
+Details on how to use the RMS Android service.
+
+## API Reference
+A comprehensive list of API endpoints provided by the RMS Android service.
+
+## Troubleshooting
+Common issues and their solutions.
+
+## Contact
+For further assistance, contact support at support@example.com.
