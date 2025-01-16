@@ -22,7 +22,8 @@ Important: Some commands may require a device reset.
 
 ## Installation
 
-Instructions on how to install the RMS Android Application.
+Begin by downloading the MagTek Reader Management System. 
+![](./images/RMSAPPLOGO.png)
 
 ## Usage
 
