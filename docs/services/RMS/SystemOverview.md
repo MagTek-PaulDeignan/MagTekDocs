@@ -1,5 +1,5 @@
 ---
-title: SYSTEM OVERVIEW
+title: System Overview
 parent: RMS
 layout: home
 ---
