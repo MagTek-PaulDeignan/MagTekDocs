@@ -10,7 +10,8 @@ nav_order:
 * Compatible with both USB and Bluetooth Low Energy (BLE) connected readers, as well as WLAN enabled readers.
 * Supports MagTek MagneSafe and DynaFlex/DynaProx readers.
 
-## Android System Requirements
+
+## System Requirements
 
 The RMS app is compatible with Android OS. 
 Note: Not all configuration options are available for all Secure Card Reader Authenticators (SCRAs). The available configuration options depend on:
@@ -94,4 +95,4 @@ The Commands Tab allows users to send commands to a device. Responses are record
 The About Tab will display the App PN number, current version, and a link to FAQs available at MagTek.com.
 
 ![](./images/Android7.jpg)
-***
+
