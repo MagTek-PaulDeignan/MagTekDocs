@@ -1,6 +1,9 @@
 ---
-title: DynaFlexIIPED
+title: DynaFlexII
 layout: home
+parent: Devices
+nav_order: 1
+
 ---
 
 # DynaFlex Products

@@ -1,6 +1,8 @@
 ---
 title: DynaFlexIIGO
 layout: home
+parent: Devices
+nav_order: 2
 ---
 
 ## **DynaFlex II Go**  
