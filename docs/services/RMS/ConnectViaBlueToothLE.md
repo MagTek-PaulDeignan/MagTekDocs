@@ -1,6 +1,6 @@
 ---
 title: Connect Via Bluetooth LE
-parent: UserInstructions
+parent: User Instructions
 layout: default
 nav_order: 2
 ---
