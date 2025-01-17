@@ -2,7 +2,7 @@
 title: WebSocket
 parent: User Instructions
 layout: default
-nav_order: 
+nav_order: 3
 ---
 ## Connect Via WebSocket
 To connect to a device via WebSocket (WLAN), follow the instructions in the device’s installation and operation manual, see Appendix B Related Documentation. 
