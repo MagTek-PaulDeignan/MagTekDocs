@@ -2,7 +2,7 @@
 title: Bluetooth LE
 parent: User Instructions
 layout: default
-nav_order: 2
+nav_order: 
 ---
 ## Connect Via Bluetooth LE
 To connect to a device via Bluetooth LE, open the Android app and follow the steps below. It is important to note that Bluetooth pairing will be done through the RMS app, not through Android device settings.

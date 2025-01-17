@@ -2,7 +2,7 @@
 title: USB Cable
 parent: User Instructions
 layout: default
-nav_order: 1
+nav_order: 
 ---
 ## Connect Via USB Cable
 To connect to a device via USB, plug the device into a compatible Android device. 
