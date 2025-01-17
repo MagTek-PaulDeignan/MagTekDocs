@@ -1,5 +1,5 @@
 ---
-title: Connect Via USB Cable
+title: USB Cable
 parent: User Instructions
 layout: default
 nav_order: 1
