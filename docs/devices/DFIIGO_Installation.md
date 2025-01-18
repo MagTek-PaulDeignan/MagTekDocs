@@ -103,3 +103,27 @@ The major components of the DynaFlex II product family are detailed in this sect
 
 DynaFlex II PED models without a barcode reader are also identical however, the edge incorporating the barcode reader is a single straight line and there is no QR code marking on the face of the device (see Figure 1-2).
 ![alt text](image-1.png)
+
+Figure 1-3 illustrates the major components of the optional charging station. Note, the charging station is only compatible with non-kiosk models of the device.
+![alt text](image-2.png)
+Figure 1-3 - Charging Station Major Components
+
+# Inspection, Handling and Storage
+![alt text](image-3.png)
+|Proper handling of the device throughout delivery, assembly, shipping, installation, usage, and maintenance is very important. Not  following the guidelines in this document could damage the device, render it inoperable, and/or violate the conditions of the warranty.|
+
+## 2.1 Inspection
+Before unpacking the device, it is important to inspect its secure packaging to make sure it has not been tampered with in storage or in transit. MagTek provides details for inspecting the integrity of the device’s secure packaging in D998200524 DynaFlex II Family, 
+
+Package Inspection
+
+It is important to inspect a new device regularly and thoroughly before deployment and a device in live usage (including its immediate surroundings), to make sure malicious individuals have not tampered with it or its surroundings. MagTek recommends conducting inspection training for all device operators and an inspection schedule with checkpoints in place to make sure operators are performing inspections as specified and as scheduled. MagTek provides easy-to-follow device inspection references in D998200524 DynaFlex II PED Products, Device Inspection, D998200539- DynaFlex II PED Kiosk Products, Device Inspection, D998200563 DynaFlex II Products, Device Inspection, and D998200566 DynaFlex II Kiosk Products, Device Inspection.
+
+## 2.2 Handling to Avoid Damage
+Upon receiving the device, inspect it to make sure it originated from an authentic source and has not been tampered with. For details, see D998200524 DynaFlex II PED Products, Device Inspection, D998200539 DynaFlex II PED Kiosk Products, Device Inspection, D998200563 DynaFlex II Products, Device Inspection, and D998200566 DynaFlex II Kiosk Products, Device Inspection, available from MagTek.
+From device delivery through assembly, shipping, installation, usage, and maintenance, the device must not be exposed to conditions outside the ratings in Appendix A Technical Specifications.
+
+If the device is exposed to cold temperatures, adjust it to warmer temperatures gradually to avoid condensation, which can interfere with the operation of the device or cause permanent damage.
+
+Do not drop or shake the device.
+For information about ongoing maintenance of the device, such as cleaning, see section 5 Maintenance.
