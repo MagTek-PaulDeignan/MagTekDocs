@@ -2,10 +2,10 @@
 title: Device Inspection
 layout: home
 parent: DynaProx
-nav_order: 2
+nav_order: 1
 ---
 
-## **DynaFlex II PED Device Inspection Document**  
+## **DynaProx Device Inspection Document**  
 **Secure Card Reader Authenticator**  
 ### **Device Inspection Document**  
 **June 2024**  
