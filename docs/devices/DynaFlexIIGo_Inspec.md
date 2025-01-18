@@ -1,7 +1,7 @@
 ---
-title: DynaFlexIIGO_Inspec
+title: Device Inspection
 layout: home
-parent: Devices
+parent: DynaFlexIIGO
 nav_order: 2
 ---
 
@@ -103,19 +103,120 @@ To check for PCI Validation, verify the Hardware and Firmware ID:
 
 Search for the product name, DynaFlex II Go, on the [PCI compliance webpage](https://www.pcisecuritystandards.org/assessors_and_solutions/pin_transaction_devices) and compare the IDs.
 
-#### Inspection Checklist
-| Site Inspection       | YES | NO |
-|------------------------|-----|-----|
-| Form Factor           |     |     |
-| Front LEDs            |     |     |
-| Contactless Landing Zone |  |     |
-| Barcode Reader (BCR)  |     |     |
-| Magnetic Stripe Swipe Path |  |  |
-| EMV Contact Card Slot |     |     |
-| Push Button           |     |     |
-| USB-C Port            |     |     |
-| Labels and Certifications | | |
+# DynaFlex II Go Device Inspection Document
 
+## Table of Contents
+
+- [Introduction](#introduction)
+- [Overall Form Factor](#overall-form-factor)
+- [Top of Device](#top-of-device)
+  - [Payment Methods](#payment-methods)
+  - [Chip Card Insertion Slot](#chip-card-insertion-slot)
+  - [Swipe Path](#swipe-path)
+- [Front Face](#front-face)
+  - [Contactless Landing Zone](#contactless-landing-zone)
+  - [Barcode Reader (BCR)](#barcode-reader-bcr)
+  - [LED Feedback](#led-feedback)
+- [Bottom of Device](#bottom-of-device)
+- [Right-Facing Side of Device](#right-facing-side-of-device)
+- [Back Side of Device](#back-side-of-device)
+- [Additional Details and Checklist](#additional-details-and-checklist)
+- [Compliance](#compliance)
+  - [FCC Information](#fcc-information)
+  - [Canadian Declaration of Conformity](#canadian-declaration-of-conformity)
+  - [EU Statement](#eu-statement)
+  - [RoHS Statement](#rohs-statement)
+  - [PCI Statement](#pci-statement)
+  - [UKCA Statement](#ukca-statement)
+
+## Introduction
+
+DynaFlex II Go is a secure card reader authenticator in a small form factor that is ready to accept tap, swipe, and dip payments in a wide variety of retail environments. The small form factor is ready for countertop and mobile devices with USB or Bluetooth® LE connection. Start accepting mobile wallets including Samsung® Pay, Google® Pay, and Apple® Pay via NFC Contactless or accept card payments via EMV® Contactless, EMV Contact Chip, and magnetic stripe.
+
+## Overall Form Factor
+
+Check the overall form factor for signs of attempted entry or tampering. The form factor is a smooth shell. The seam between the top and bottom shells is molded together. There are no additional electronics or wires. Any breaks in the plastic, scuffs, or damage could be signs of physical tampering and should be reported.
+
+**Dimensions:**
+- 2.76 in. x 2.57 in. x 0.79 in. (70.10mm x 65.3mm x 20.1mm)
+- **DynaFlex II Go (w/BCR and Bluetooth LE):** 92 grams
+- **DynaFlex II Go (with Bluetooth LE):** 90 grams
+
+## Top of Device
+
+### Payment Methods
+Directional icons for magstripe, EMV chip insert, and contactless tap landing pad are printed on the device front.
+
+### Chip Card Insertion Slot
+The card slot for the EMV Contact Chip reader is a smooth, unobstructed path. Other than the contact points that read the chip, there are no electronics, mechanics, or wires in the path.
+
+### Swipe Path
+The swipe path is smooth. The only moving part is the spring-mounted read head that depresses into the device as the card’s magnetic stripe makes contact with the read head. There are no mechanics, electronics, or wires in the swipe path.
+
+## Front Face
+
+### Contactless Landing Zone
+Contactless landing zone is a smooth front cover with no moving parts and only the contactless symbol in the landing zone. Contactless indicator mark orientation may vary depending on installation.
+
+### Barcode Reader (BCR)
+In barcode reader models (BCR), a barcode reader is along the right-facing side of the reader with a QR Code icon and directional arrow.
+
+### LED Feedback
+There are four LED lights. These provide signals to the user. See the installation and operation manual for complete LED signaling.
+
+## Bottom of Device
+
+### USB-C Cable
+There is a USB-C receptacle on the bottom of the device. The USB-C cable is provided to power and charge. Ensure there are no extraneous cables.
+
+## Right-Facing Side of Device
+
+### Pushbutton
+There is a tactile button with no other extraneous parts.
+
+## Back Side of Device
+
+### Product Label
+The product label is located on the underside of the device. The Serial Number, Rev, Date, Part number (PN), and Hardware PN (HW) are listed as appropriate.
+
+### Certificate Logos
+Imprints in the plastic form factor of certification logos and patent information are listed.
+
+## Additional Details and Checklist
+
+### PCI Device Validation
+To check for PCI Validation, verify the Hardware and Firmware ID:
+
+- **Hardware ID:** Printed on the label.
+- **Firmware ID:** Accessible via the device.
+
+Search for the product name, DynaFlex II Go, on the [PCI compliance webpage](https://www.pcisecuritystandards.org/assessors_and_solutions/pin_transaction_devices) and compare the IDs.
+
+#### Inspection Checklist
+
+| Site Inspection                    | YES | NO  |
+|------------------------------------|------|------|
+| Form Factor - check overall form factor |      |      |
+| Front                              |      |      |
+| 4 LEDs                             |      |      |
+| EMV/NFC Contactless landing zone   |      |      |
+| Barcode reader (BCR models only)   |      |      |
+| Printing and icons                 |      |      |
+| Overall form factor                |      |      |
+| Sides and Top                      |      |      |
+| Magnetic stripe swipe path         |      |      |
+| EMV contact card slot              |      |      |
+| Form factor                        |      |      |
+| Right Facing Side: Push Button     |      |      |
+| Bottom Side: USB-C port            |      |      |
+| Cables and charging cradle         |      |      |
+| USB-C cable and port               |      |      |
+| Back                               |      |      |
+| Certificate logos imprinted        |      |      |
+| Form factor                        |      |      |
+| Cable connection                   |      |      |
+| Pushbutton                         |      |      |
+| Labels                             |      |      |
 ### Notice
 If there is forced entry, the security switches built into the electronics will be tripped. Sensitive data such as encryption keys and certificates will be cleared. Report all signs of tampering as per standard protocol.
 
