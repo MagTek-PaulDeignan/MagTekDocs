@@ -1,7 +1,7 @@
 ---
 title: About MagTek
 layout: home
-parent: Overview
+parent: 
 nav_order: 1
 ---
 
