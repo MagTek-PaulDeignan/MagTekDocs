@@ -194,29 +194,29 @@ Search for the product name, DynaFlex II Go, on the [PCI compliance webpage](htt
 
 #### Inspection Checklist
 
-| Site Inspection                    | YES | NO  |
-|------------------------------------|------|------|
+| Site Inspection                         | YES | NO    |
+|-----------------------------------------|------|------|
 | Form Factor - check overall form factor |      |      |
-| Front                              |      |      |
-| 4 LEDs                             |      |      |
-| EMV/NFC Contactless landing zone   |      |      |
-| Barcode reader (BCR models only)   |      |      |
-| Printing and icons                 |      |      |
-| Overall form factor                |      |      |
-| Sides and Top                      |      |      |
-| Magnetic stripe swipe path         |      |      |
-| EMV contact card slot              |      |      |
-| Form factor                        |      |      |
-| Right Facing Side: Push Button     |      |      |
-| Bottom Side: USB-C port            |      |      |
-| Cables and charging cradle         |      |      |
-| USB-C cable and port               |      |      |
-| Back                               |      |      |
-| Certificate logos imprinted        |      |      |
-| Form factor                        |      |      |
-| Cable connection                   |      |      |
-| Pushbutton                         |      |      |
-| Labels                             |      |      |
+| Front                                   |      |      |
+| 4 LEDs                                  |      |      |
+| EMV/NFC Contactless landing zone        |      |      |
+| Barcode reader (BCR models only)        |      |      |
+| Printing and icons                      |      |      |
+| Overall form factor                     |      |      |
+| Sides and Top                           |      |      |
+| Magnetic stripe swipe path              |      |      |
+| EMV contact card slot                   |      |      |
+| Form factor                             |      |      |
+| Right Facing Side: Push Button          |      |      |
+| Bottom Side: USB-C port                 |      |      |
+| Cables and charging cradle              |      |      |
+| USB-C cable and port                    |      |      |
+| Back                                    |      |      |
+| Certificate logos imprinted             |      |      |
+| Form factor                             |      |      |
+| Cable connection                        |      |      |
+| Pushbutton                              |      |      |
+| Labels                                  |      |      |
 ### Notice
 If there is forced entry, the security switches built into the electronics will be tripped. Sensitive data such as encryption keys and certificates will be cleared. Report all signs of tampering as per standard protocol.
 
