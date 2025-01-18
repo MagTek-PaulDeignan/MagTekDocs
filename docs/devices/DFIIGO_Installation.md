@@ -96,3 +96,10 @@ All models are black by default and have countertop, handheld, and custom mounti
 | 1000008559   | FOOT, BACK, SIDE A, ADHESIVE MOUNTING STRIP, DYNAFLEX | Optional, specify 1 ea. for complete replacement |
 | 1000008560   | FOOT, BACK, SIDE B, ADHESIVE MOUNTING STRIP, DYNAFLEX | Optional, specify 1 ea. for complete replacement |
 | 1000008561   | FOOT, FRONT, ADHESIVE MOUNTING STRIP, DYNAFLEX        | Optional, specify 1 ea. For complete replacement |
+
+### About DynaFlex II Components
+The major components of the DynaFlex II product family are detailed in this section. For models without a touchscreen display (DynaFlex II and DynaFlex II Kiosk), the components are identical however, the touchscreen and its bezel are replaced with a faceplate displaying the contactless indicator logo at the optimal contactless landing zone (see Figure 1-1).
+![alt text](image.png)
+
+DynaFlex II PED models without a barcode reader are also identical however, the edge incorporating the barcode reader is a single straight line and there is no QR code marking on the face of the device (see Figure 1-2).
+![alt text](image-1.png)
