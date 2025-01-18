@@ -5,7 +5,7 @@ layout: default
 nav_order: 
 ---
 
-# Warranty
+# Limited Warranty and Software License
 
 ## Limited Warranty
 
