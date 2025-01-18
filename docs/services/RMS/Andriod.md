@@ -16,3 +16,6 @@ nav_order:
 - [Installation](installation.md)
 - [Tabs](tabs.md)
 
+## Download
+
+You can download the Android application from the [Google Play Store](https://play.google.com/store/apps/details?id=com.magtek.mobile.android.magtekrms&pcampaignid=web_share).
