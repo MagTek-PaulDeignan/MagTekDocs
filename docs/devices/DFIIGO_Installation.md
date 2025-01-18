@@ -166,6 +166,8 @@ To connect DynaFlex II products to a USB host or charger using the USB-C port, f
 7. As soon as the device starts receiving power through USB, it automatically powers on.
 8. If the specific device serial number you are connecting has not been connected to the host before, the device shows Welcome on the display, and the Windows system tray on the host reports it is Setting up a device (see Figure 3-2 - Setting Up a Device), When installation is complete (approximately 30 seconds later depending on the host), Windows reports Device is ready,(see Figure 3-3 - Device is Ready) and the device shows in Windows Device Manager under Human Interface Devices as two devices: HID-compliant vendor-defined device with VID 0801 and PID 2020, and USB Input Device.
 ![alt text](image-6.png)
+
 Figure 3-2 - Setting Up a Device
 ![alt text](image-7.png)
+
 Figure 3-3 - Device is Ready
