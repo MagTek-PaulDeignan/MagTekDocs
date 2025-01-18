@@ -115,6 +115,7 @@ As part of your inspection, include the following for your device inspection aud
 - Check the point of installation.
 
 ### Inspection Checklist
+
 | Site Inspection                           | YES  | NO   |
 |-------------------------------------------|------|------|
 | Touchscreen                               |      |      |

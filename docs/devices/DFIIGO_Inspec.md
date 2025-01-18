@@ -217,6 +217,7 @@ Search for the product name, DynaFlex II Go, on the [PCI compliance webpage](htt
 | Cable connection                          |      |      |
 | Pushbutton                                |      |      |
 | Labels                                    |      |      |
+
 ### Notice
 If there is forced entry, the security switches built into the electronics will be tripped. Sensitive data such as encryption keys and certificates will be cleared. Report all signs of tampering as per standard protocol.
 
