@@ -110,7 +110,7 @@ Figure 1-3 - Charging Station Major Components
 
 # Inspection, Handling and Storage
 ![alt text](image-3.png)
-|Proper handling of the device throughout delivery, assembly, shipping, installation, usage, and maintenance is very important. Not  following the guidelines in this document could damage the device, render it inoperable, and/or violate the conditions of the warranty.|
+Proper handling of the device throughout delivery, assembly, shipping, installation, usage, and maintenance is very important. Not  following the guidelines in this document could damage the device, render it inoperable, and/or violate the conditions of the warranty.
 
 ## 2.1 Inspection
 Before unpacking the device, it is important to inspect its secure packaging to make sure it has not been tampered with in storage or in transit. MagTek provides details for inspecting the integrity of the device’s secure packaging in D998200524 DynaFlex II Family, 
@@ -127,3 +127,14 @@ If the device is exposed to cold temperatures, adjust it to warmer temperatures 
 
 Do not drop or shake the device.
 For information about ongoing maintenance of the device, such as cleaning, see section 5 Maintenance.
+
+## Handling to Avoid Accidental Tamper
+DynaFlex II products implement active tamper detection, which uses a small amount of electricity even when the device is completely powered off. The device primarily powers its active tamper detection circuitry using its rechargeable battery to back up the coin cell. Devices with a rechargeable battery ship with the battery charged to between 45% and 65%, which provides a shelf life of up to 10 years. However, if the rechargeable battery completely discharges or the device does not contain a rechargeable battery, the device continues to power its active tamper detection circuitry using its non-rechargeable backup battery, which provides an additional 5 years of backup shelf life across the entire life of the device but does not recharge. If the rechargeable battery and the backup battery are both allowed to completely discharge, the device’s tamper detection engages and locks down the device, and it must be returned to the manufacturer to reset.
+
+To avoid accidental tamper events and to optimally condition the battery, follow these precautions:
+- Temperature is the most critical factor in extending battery life and preserving battery charge. Store the device at the lowest reasonable temperatures within its specified storage temperature range (see Appendix A Technical Specifications). Storing below 77°F / 25°C is optimal.
+- Fully charge the device immediately upon receipt to extend its shelf life (see section 4.6.3 How to Charge the Battery).
+- Before storing the device, charge the battery to less than 100% (60% is optimal).
+- Before storing the device, power it off completely. See section 4.6.4 How to Power On / Wake Up from Standby Mode / Power Off.
+- When stored, charge the device for one hour every 6 months to keep the battery chemistry in optimal condition and to ensure it does not completely discharge.
+- Do not drop or shake the device.
