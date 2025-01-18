@@ -138,3 +138,34 @@ To avoid accidental tamper events and to optimally condition the battery, follow
 - Before storing the device, power it off completely. See section 4.6.4 How to Power On / Wake Up from Standby Mode / Power Off.
 - When stored, charge the device for one hour every 6 months to keep the battery chemistry in optimal condition and to ensure it does not completely discharge.
 - Do not drop or shake the device.
+
+# Installation
+Installing DynaFlex II products is straightforward: The manufacturer or acquirer configures the preferred settings, keys, terminal, and payment brand settings before deployment; end users need only set up a host with appropriate software, configure the software, and connect the device to the host. This section provides general information about inspecting, connecting, and installing DynaFlex II products.
+
+## About Host Software
+In any solution, DynaFlex II products are connected to a host, which must have software installed that can communicate with the device, and which is capable of processing transactions. To set up the host to work with DynaFlex II products, follow the installation and configuration instructions provided by the vendor of the host or the host software. For information about developing custom host software, see section 6 Developing Custom Software.
+
+## Connecting to a Host
+
+### About Connecting to a Host
+The following sections provide information on how to connect DynaFlex II products to a host via USB.
+
+### How to Connect DynaFlex II Products to a Host or Charger via USB
+![alt text](image-4.png) ![](image-5.png)
+Figure 3-1 - Connecting to a USB Host or USB Charger. Left: Countertop Models. Right: Kiosk Models
+
+To connect DynaFlex II products to a USB host or charger using the USB-C port, follow these steps (for reference see Figure 3-1 and section 1.5 About DynaFlex II Components):
+
+### 
+1. For best results, use the cable that is included with the device or another cable from Table 1-2 – DynaFlex II Accessories on page 
+2. These cables are designed specifically for DynaFlex II products and include ferrite shielding at both ends of the cable to reduce emissions and interference. If the solution design requires an alternate cable, contact MagTek for assistance with ferrite selection and placement, and with connector overmold design.
+3. Connect the USB-C end of the cable to DynaFlex II or DynaFlex II PED.
+4. If you plan to route the cable out the back of the device, route the cable through the cable management clip to change its direction. Even if you are not routing out the back, you may use the cable clip for strain relief, to help stabilize the mechanical connection when cardholders or operators move the device or the cable.
+5. Route the cable in the desired direction (e.g., out the back, left, right, down into the countertop, or into the mounting compartment of a kiosk).
+6. Connect the other end of the USB cable to the charger or to the host’s USB port.
+7. As soon as the device starts receiving power through USB, it automatically powers on.
+8. If the specific device serial number you are connecting has not been connected to the host before, the device shows Welcome on the display, and the Windows system tray on the host reports it is Setting up a device (see Figure 3-2 - Setting Up a Device), When installation is complete (approximately 30 seconds later depending on the host), Windows reports Device is ready,(see Figure 3-3 - Device is Ready) and the device shows in Windows Device Manager under Human Interface Devices as two devices: HID-compliant vendor-defined device with VID 0801 and PID 2020, and USB Input Device.
+![alt text](image-6.png)
+Figure 3-2 - Setting Up a Device
+![alt text](image-7.png)
+Figure 3-3 - Device is Ready
