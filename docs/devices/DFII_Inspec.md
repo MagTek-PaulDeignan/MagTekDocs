@@ -1,11 +1,11 @@
 ---
 title: Device Inspection
 layout: home
-parent: DynaFlexIIGO
-nav_order: 2
+parent: DynaFlexII
+nav_order: 1
 ---
 
-## **DynaFlex II Go Device Inspection Document**  
+## **DynaFlex II Device Inspection Document**  
 **Secure Card Reader Authenticator**  
 ### **Device Inspection Document**  
 **June 2024**  

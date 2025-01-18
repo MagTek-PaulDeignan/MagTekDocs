@@ -2,7 +2,7 @@
 title: Device Inspection
 layout: home
 parent: DynaFlexIIGO
-nav_order: 2
+nav_order: 1
 ---
 
 ## **DynaFlex II Go Device Inspection Document**  
