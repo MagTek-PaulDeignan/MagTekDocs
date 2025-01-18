@@ -87,12 +87,12 @@ All models are black by default and have countertop, handheld, and custom mounti
 
 ### Table 1-2 – DynaFlex II Accessories
 
-| Part #       | Description                                      | Accessory Notes                                   |
-|--------------|--------------------------------------------------|--------------------------------------------------|
-| 1000006016   | CABLE, USB A - C, 6FT, DYNAFLEX                 | Included with DynaFlex products                  |
-| 1000006017   | CABLE, USB C - C, 6FT, DYNAFLEX                 | Optional, specify in order                       |
-| 21078006     | CHARGING STATION, DYNAFLEX                      | Optional, specify in order                       |
-| 96700004     | CLEANING CARD, DOUBLE SIDED                     | Optional, specify in order                       |
+| Part #       | Description                                           | Accessory Notes                                  |
+|--------------|-------------------------------------------------------|--------------------------------------------------|
+| 1000006016   | CABLE, USB A - C, 6FT, DYNAFLEX                       | Included with DynaFlex products                  |
+| 1000006017   | CABLE, USB C - C, 6FT, DYNAFLEX                       | Optional, specify in order                       |
+| 21078006     | CHARGING STATION, DYNAFLEX                            | Optional, specify in order                       |
+| 96700004     | CLEANING CARD, DOUBLE SIDED                           | Optional, specify in order                       |
 | 1000008559   | FOOT, BACK, SIDE A, ADHESIVE MOUNTING STRIP, DYNAFLEX | Optional, specify 1 ea. for complete replacement |
 | 1000008560   | FOOT, BACK, SIDE B, ADHESIVE MOUNTING STRIP, DYNAFLEX | Optional, specify 1 ea. for complete replacement |
-| 1000008561   | FOOT, FRONT, ADHESIVE MOUNTING STRIP, DYNAFLEX  | Optional, specify 1 ea. For complete replacement |
+| 1000008561   | FOOT, FRONT, ADHESIVE MOUNTING STRIP, DYNAFLEX        | Optional, specify 1 ea. For complete replacement |
