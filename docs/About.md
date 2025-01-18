@@ -2,12 +2,12 @@
 title: About MagTek
 layout: home
 parent: 
-nav_order: 1
+nav_order: 6
 ---
 
 
 
-Contact Us
+Contact Us:
 # MagTek  1710 Apollo Court I Seal Beach, CA 90740  
 **Phone:** (562) 546-6400  
 **Technical Support:** (562) 546-6800  
