@@ -49,23 +49,23 @@ MagTek, Incorporated (the "Licensor") owns and has the right to distribute the d
 #### **License**
 Licensor grants you (the "Licensee") the right to use the Software in conjunction with MagTek products. LICENSEE MAY NOT COPY, MODIFY, OR TRANSFER THE SOFTWARE IN WHOLE OR IN PART EXCEPT AS EXPRESSLY PROVIDED IN THIS AGREEMENT. Licensee may not decompile, disassemble, or reverse engineer the Software. Licensee shall not tamper with, bypass, or alter any security features of the software.
 
-#### Transfer
+#### **Transfer**
 Licensee may not transfer the Software or license to another party without prior written authorization. Unauthorized transfer automatically terminates this Agreement.
 
-#### Copyright
+#### **Copyright**
 The Software is copyrighted. Licensee may copy the Software only for archival purposes or to load for execution.
 
-#### Term
+#### **Term**
 This Agreement remains in effect as long as Licensee uses the Software. Licensor reserves the right to terminate the Agreement if terms are violated.
 
-#### Limited Warranty
+#### **Limited Warranty**
 Licensor warrants that the media on which the Software is recorded is free from defects.  
 **THE SOFTWARE IS PROVIDED AS-IS. LICENSOR MAKES NO OTHER WARRANTY, INCLUDING IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.**
 
-#### Governing Law
+#### **Governing Law**
 This Agreement is governed by the laws of the State of California.
 
-#### Acknowledgment
+#### **Acknowledgment**
 Licensee acknowledges understanding and agreement to these terms.
 
 For questions, contact [support@magtek.com](mailto:support@magtek.com).
