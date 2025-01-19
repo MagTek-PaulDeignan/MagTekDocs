@@ -5,8 +5,7 @@ layout: default
 nav_order: 2
 ---
 
-# Device
-
+# Device Tab
 The Device Tab will update device Firmware and EMV Tags/CAPKs.  
 >1. Log: The Device Tab contains a log of all events.  
 >2. Clear Log: The Clear Log button will remove all log data until a new instance is provided by the reader.  

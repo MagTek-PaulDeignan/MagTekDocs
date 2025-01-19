@@ -4,8 +4,7 @@ parent: User Instructions
 layout: default
 nav_order: 6
 ---
-## Entering Commands
-
+## Entering Commands Tab
 To send a command to the device and receive a response:
 * Enter a command in the Command Field and press Send.
 

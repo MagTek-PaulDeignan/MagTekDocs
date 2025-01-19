@@ -6,7 +6,6 @@ nav_order:
 ---
 
 # Glossary
-
 - **API** – Application Programming Interface  
 - **EMV** – Europay, MasterCard® and Visa®  
 - **FAQs** – Frequently Asked Questions  

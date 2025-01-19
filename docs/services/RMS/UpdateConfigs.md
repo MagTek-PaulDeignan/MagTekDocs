@@ -4,6 +4,7 @@ parent: User Instructions
 layout: default
 nav_order: 5
 ---
+
 ## Update Configs
 To update or change your device’s configurations:
 * Tap on desired configuration to select.

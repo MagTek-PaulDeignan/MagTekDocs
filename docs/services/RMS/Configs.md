@@ -5,8 +5,7 @@ layout: default
 nav_order: 3
 ---
 
-# Configs
-
+# Configs Tab
 The Configs Tab will update the device’s configurations.  
 >1. Log: The Configs Tab contains a log of all events.  
 >2. Clear Log: The Clear Log button will remove all log data until a new instance is provided by the reader. The Refresh button will refresh the list of available configurations for the device connected.  
