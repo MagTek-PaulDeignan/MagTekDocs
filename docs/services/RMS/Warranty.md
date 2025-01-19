@@ -2,7 +2,7 @@
 title: Warranty and Software License
 parent: Reader Management System
 layout: default
-nav_order: 
+nav_order: 6
 ---
 
 # Limited Warranty and Software License

@@ -2,7 +2,7 @@
 title: Glossary
 parent: Reader Management System
 layout: default
-nav_order: 
+nav_order: 7
 ---
 
 # Glossary
