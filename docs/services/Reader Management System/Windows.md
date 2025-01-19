@@ -7,14 +7,14 @@ nav_order:
 
 # Windows
 
-* Windows Application (PN 1000009xxx)
+* Windows Application (PN 1000009734)
 * Compatible with both USB and Bluetooth Low Energy (BLE) connected readers, as well as WLAN-enabled readers.
 * Supports MagTek MagneSafe and DynaFlex/DynaProx readers.
 
 ## Sections
-- [System Requirements](system-requirements.md)
-- [Installation](installation.md)
-- [Tabs](tabs.md)
+- [System Requirements]()
+- [Installation]()
+- [Tabs]()
 
 ## Download
 
