@@ -8,9 +8,10 @@ layout: home
 
 ----
 
-**Welcome to the MagTek Software & Documentation Portal!**
+**Welcome to the MagTek Developer Documenation Portal!**
 
-At MagTek, we’re dedicated to providing seamless, secure, and innovative payment solutions. This portal is designed to give developers, partners, and customers the resources they need to get the most out of MagTek's software and products. Whether you're building an integration or exploring new features, we’ve gathered everything you need in one easy-to-navigate hub.
+At MagTek, we’re dedicated to providing seamless, secure, and innovative payment and identification solutions. This portal is designed to give developers, partners, and customers the resources they need to get the most out of MagTek's hardware devices, software and services. Whether you're building an integration or exploring new features, we’ve gathered everything you need in one easy-to-navigate hub.
+
 Here’s what you’ll find:
 
 1. **Documentation**
