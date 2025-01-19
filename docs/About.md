@@ -5,7 +5,7 @@ parent:
 nav_order: 6
 ---
 
-
+![alt text](image.png)
 
 Contact Us:
 # MagTek  1710 Apollo Court I Seal Beach, CA 90740  
