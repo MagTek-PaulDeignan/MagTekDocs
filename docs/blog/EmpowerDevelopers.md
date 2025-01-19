@@ -1,5 +1,5 @@
 ---
-title: EmpowerDevelopers
+title: Empower Developers
 layout: home
 parent: blog
 nav_order: 1
