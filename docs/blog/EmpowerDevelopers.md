@@ -1,8 +1,8 @@
 ---
 title: Empower Developers
 layout: home
-parent: blog
-nav_order: 1
+parent: Blog
+nav_order: 0
 ---
 
 # Empowering Developers: Building Secure and Flexible Payment Solutions with MagTek
