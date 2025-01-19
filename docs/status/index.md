@@ -1,5 +1,5 @@
 ---
-title: Status
+title: Service Status
 layout: home
 nav_order: 6
 ---
