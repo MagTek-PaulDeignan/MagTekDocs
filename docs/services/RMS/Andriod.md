@@ -12,9 +12,9 @@ nav_order:
 * Supports MagTek MagneSafe and DynaFlex/DynaProx readers.
 
 ## Sections
-- [System Requirements](system-requirements.md)
-- [Installation](installation.md)
-- [Tabs](tabs.md)
+- [System Requirements](SystemRequirements.md)
+- [Installation](Installation.md)
+- [Tabs](Tabs.md)
 
 ## Download
 
