@@ -18,9 +18,7 @@ nav_order: 2
 
 DynaFlex II is a secure card reader authenticator engineered for attended, unattended, and mobile payment environments. The reader features a magnetic stripe reader, EMV chip reader for both contact and contactless cards, an optional barcode reader, and support for NFC-enabled mobile wallets such as Samsung Pay®, Google Pay®, Apple Pay®, and Apple VAS. DynaFlex II communicates with host devices via USB or wireless local area network (WLAN) on pin entry devices (PED). DynaFlex II products are compatible with iOS, Android, and Windows operating systems.
 
-For details on how to set up Google Wallet Smart Tap for DynaFlex II, see D100006469 DYNAFLEX, DYNAPROX, DYNAFLEX II GO FAMILY - GOOGLE WALLET SMART TAP SETUP GUIDE. For
-
-details on how to set up Apple VAS for DynaFlex II, see D998200597 DYNAFLEX II GO PROGRAMMER'S MANUAL (COMMANDS).
+For details on how to set up Google Wallet Smart Tap for DynaFlex II, see D100006469 DYNAFLEX, DYNAPROX, DYNAFLEX II GO FAMILY - GOOGLE WALLET SMART TAP SETUP GUIDE. For details on how to set up Apple VAS for DynaFlex II, see D998200597 DYNAFLEX II GO PROGRAMMER'S MANUAL (COMMANDS).
 
 ### About Terminology
 
