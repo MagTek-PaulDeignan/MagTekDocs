@@ -1,7 +1,7 @@
 ---
 title: DynaFlex II GO
 layout: home
-parent: Hardware
+parent: Card Readers & OEM Components
 nav_order: 2
 ---
 
