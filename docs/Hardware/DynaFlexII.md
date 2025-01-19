@@ -1,7 +1,7 @@
 ---
 title: DynaFlexII
 layout: home
-parent: Devices
+parent: Hardware
 nav_order: 1
 
 ---

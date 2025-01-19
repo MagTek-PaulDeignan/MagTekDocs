@@ -1,7 +1,7 @@
 ---
 title: DynaFlexIIPED
 layout: home
-parent: Devices
+parent: Hardware
 nav_order: 3
 ---
 

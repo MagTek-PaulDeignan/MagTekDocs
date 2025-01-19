@@ -1,7 +1,7 @@
 ---
 title: DynaFlexIIGO
 layout: home
-parent: Devices
+parent: Hardware
 nav_order: 2
 ---
 
