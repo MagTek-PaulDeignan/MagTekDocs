@@ -8,11 +8,5 @@ logo: "/assets/images/magtek_logo.png"
 # aux_links:
 #   Template Repository: https://github.com/just-the-docs/just-the-docs-template
 
-# _config.yml
-theme:
-  name: "just-the-docs"
-
-# Enable the color scheme toggle
-just_the_docs:
-  color_scheme: "auto"  # Set to "auto" to allow users to toggle between dark and light mode
-  default_dark_mode: false  # Optional: Set to true if you want dark mode as the default
+# Color scheme supports "light" (default) and "dark"
+color_scheme: dark
