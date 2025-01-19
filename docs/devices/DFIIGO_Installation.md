@@ -173,3 +173,77 @@ Figure 3-2 - Setting Up a Device
 ![alt text](image-7.png)
 
 Figure 3-3 - Device is Ready
+
+### 8. Connecting to the Host Operating System via USB
+
+After successfully connecting to the host operating system via USB, devices with a touchscreen display a screen or a customizable graphic.
+
+The operating system may put the device into USB Suspend mode. See [Section 4.6.6: About USB Suspend](#4.6.6-about-usb-suspend).
+
+---
+
+### 3.3 Mounting
+
+#### 3.3.1 About Mounting
+
+The DynaFlex II product line offers versatile mounting solutions, including:
+
+- **Integrated Slip-Resistant Adhesive Strips**:  
+  The underside of the device features three adhesive mounting strips (see **Figure 3-4**) that provide secure attachment to any clean, non-porous surface. These strips come with a protective film that must be removed before installation.
+
+  **Figure 3-4**: Adhesive Mounting Strip and Protective Film
+
+- **Lanyard Mount Point**:  
+  The integrated mount point allows the device to be hung or carried, making it easy to store and handle, particularly in grab-and-go payment environments (see **Figure 3-5**).
+
+  **Figure 3-5**: Lanyard Mount Point
+
+- **Charging Station Compatibility (Non-Kiosk Models)**:  
+  Non-kiosk versions of the device can be placed in an optional charging station. This station can be used in conjunction with the lanyard mount point for quick access and easy drop-in charging between handheld uses.
+
+  **Figure 3-6**: Charging Station Compatibility
+
+- **Custom Mounting Options**:  
+  DynaFlex II devices can be attached to custom mounting brackets or housed within an enclosure, enabling integration into larger system designs.
+
+---
+
+#### 3.3.2 How to Mount DynaFlex II
+
+1. Verify that the protective film has been removed from the adhesive mounting strips located on the underside of the device (see **Figure 3-4**).
+2. Mount DynaFlex II devices onto a smooth, flat, and non-porous surface by pressing the device firmly using the adhesive mounting strips (see **Figure 3-7**).
+
+   **Figure 3-7**: Mounting DynaFlex onto a Nonporous Surface
+
+3. Do not mount the device on rough, dirty, or uneven surfaces.
+4. To uninstall the device, twist it to disengage the mounting feet from the mounting surface.
+
+For instructions on using the optional charging station, refer to [Section 3.3.4: How to Mount the Charging Station](#3.3.4-how-to-mount-the-charging-station).
+
+If your installation requires custom mounting brackets, contact your MagTek representative for design advice and assistance from MagTek’s Engineering team.
+
+---
+
+#### 3.3.3 How to Mount DynaFlex II Kiosk Models
+
+This document describes how to use DynaFlex II Kiosk models securely. Using the device in any way other than the approved methods described in this document invalidates the PCI PTS POI approval of the device.
+
+> **Note:** Not following the guidelines in this section could damage the device, render it inoperable, and/or violate the conditions of the warranty.
+
+This section provides information and guidelines for designing the mechanical aspects of a solution that incorporates DynaFlex II Kiosk models. MagTek strongly recommends vetting and testing solution designs before finalizing and deploying them to ensure the design meets all requirements (e.g., functional, legal, security, certification, safety, and so on).
+
+When designing the mechanical portions of a solution that incorporates DynaFlex II Kiosk models, consider the following:
+
+- Review [Section 1.5: About DynaFlex II Components](#1.5-about-dynaflex-ii-components) for an introduction to the device’s physical features.
+- Review **Appendix A: Technical Specifications**.
+- Review the overall device dimensions and mounting hole locations detailed below.
+- Determine device orientation. The device supports all four orientations.
+- Review additional requirements from other agencies, such as PCI and EMV solution certification requirements.
+
+---
+
+**Figures and Tables for Reference:**
+
+- **Figure 3-8**: DynaFlex II Kiosk Models Overall Dimensions
+- **Figure 3-9**: Mounting Hole Locations
+- **Figure 3-10**: Unobstructed View of Card Insertion Slot, Swipe Path, and Contactless Landing Zone
