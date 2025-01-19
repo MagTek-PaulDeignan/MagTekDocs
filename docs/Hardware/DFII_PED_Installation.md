@@ -1,11 +1,11 @@
 ---
 title: Installation and Operation
 layout: home
-parent: DynaFlex_II
+parent: DynaFlex_II_PED
 nav_order: 2
 ---
 
-## **DynaFlex II Installation and Operation Manual**  
+## **DynaFlex II PED Installation and Operation Manual**  
 **Secure Card Reader Authenticator**  
 ### **Installation and Operation Manual**  
 **July 2024**  
