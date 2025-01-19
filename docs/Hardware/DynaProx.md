@@ -1,7 +1,7 @@
 ---
 title: DynaProx
 layout: home
-parent: Hardware
+parent: Card Readers & OEM Components
 nav_order: 4
 ---
 
