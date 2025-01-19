@@ -7,4 +7,4 @@ nav_order: 2
 
 # IntelliStripe 380:
 
-DynaProx and DynaProx BCR deliver the next generation in contactless payment acceptance, access control, authentication, and loyalty by combining the controller and Near Field Communication (NFC) antenna in a small form-factor. DynaProx devices are ready to accept barcodes (BCR devices) only, EMV Contactless, NFC Contactless, MIFARE, MIFARE DESFIRE, and NTAG transactions.
+A highly reliable motorized device made for reading and encoding magnetic stripe and EMV chip cards. Perfect for ID and Access cards that are centrally printed and need instant encoding, fully encoding consumer payment cards, or simply encoding the PIN offset for card-based PIN and rePIN programs.
