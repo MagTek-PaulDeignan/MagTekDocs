@@ -1,5 +1,5 @@
 ---
-title: DynaFlex_II_GO
+title: DynaFlex II GO
 layout: home
 parent: Hardware
 nav_order: 2

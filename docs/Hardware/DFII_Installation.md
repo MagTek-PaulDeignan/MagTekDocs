@@ -1,7 +1,7 @@
 ---
 title: Installation and Operation
 layout: home
-parent: DynaFlex_II
+parent: DynaFlex II
 nav_order: 2
 ---
 
