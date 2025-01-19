@@ -3,7 +3,7 @@ title: "Empowering Developers: Building Secure and Flexible Payment Solutions wi
 date: 2025-01-19
 categories: [developers, payments, integration]
 layout: default
-permalink: /blog/developer-centric-payment-solutions/
+parent: blog
 ---
 
 # Empowering Developers: Building Secure and Flexible Payment Solutions with MagTek
