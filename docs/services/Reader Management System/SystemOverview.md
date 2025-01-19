@@ -1,6 +1,6 @@
 ---
 title: System Overview
-parent: RMS
+parent: Reader Management System
 layout: home
 nav_order: 2
 ---

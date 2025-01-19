@@ -1,6 +1,6 @@
 ---
 title: Android
-parent: RMS
+parent: Reader Management System
 layout: default
 nav_order: 
 ---
