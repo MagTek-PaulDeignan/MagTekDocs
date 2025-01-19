@@ -1,5 +1,5 @@
 ---
-title: DynaFlexII
+title: DynaFlex_II
 layout: home
 parent: Hardware
 nav_order: 1

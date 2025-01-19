@@ -190,9 +190,9 @@ Some text
 
 ![](./images/magtek_logo.png)
 
-### DynaFlexIIGo
+### DynaFlex_II_GO
 
-![](./images/DynaFlexIIGo.png)
+![](./images/DynaFlex_II_GO.png)
 
 
 

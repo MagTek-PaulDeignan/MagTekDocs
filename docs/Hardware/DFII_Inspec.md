@@ -1,7 +1,7 @@
 ---
 title: Device Inspection
 layout: home
-parent: DynaFlexII
+parent: DynaFlex_II
 nav_order: 1
 ---
 

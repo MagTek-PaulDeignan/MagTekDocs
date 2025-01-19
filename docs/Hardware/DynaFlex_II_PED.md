@@ -1,5 +1,5 @@
 ---
-title: DynaFlexIIPED
+title: DynaFlex_II_PED
 layout: home
 parent: Hardware
 nav_order: 3
