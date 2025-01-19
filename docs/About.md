@@ -2,7 +2,7 @@
 title: About MagTek
 layout: home
 parent: 
-nav_order: 6
+nav_order: 2
 ---
 
 ![alt text](image.png)
