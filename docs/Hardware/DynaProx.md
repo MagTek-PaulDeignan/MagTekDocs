@@ -5,11 +5,6 @@ parent: Hardware
 nav_order: 4
 ---
 
-This is a *bare-minimum* template to create a Jekyll site that uses the [Just the Docs] theme. You can easily set the created site to be published on [GitHub Pages] – the [README] file explains how to do that, along with other details.
+# DynaProx and DynaProx BCR:
 
-[Just the Docs]: https://just-the-docs.github.io/just-the-docs/
-[GitHub Pages]: https://docs.github.com/en/pages
-[README]: https://github.com/just-the-docs/just-the-docs-template/blob/main/README.md
-[Jekyll]: https://jekyllrb.com
-[GitHub Pages / Actions workflow]: https://github.blog/changelog/2022-07-27-github-pages-custom-github-actions-workflows-beta/
-[use this template]: https://github.com/just-the-docs/just-the-docs-template/generate
+DynaProx and DynaProx BCR deliver the next generation in contactless payment acceptance, access control, authentication, and loyalty by combining the controller and Near Field Communication (NFC) antenna in a small form-factor. DynaProx devices are ready to accept barcodes (BCR devices) only, EMV Contactless, NFC Contactless, MIFARE, MIFARE DESFIRE, and NTAG transactions.
