@@ -10,3 +10,23 @@ logo: "/assets/images/magtek_logo.png"
 
 # Color scheme supports "light" (default) and "dark"
 color_scheme: dark
+
+# _config.yml
+collections:
+  blog:
+    output: true  # Ensures blog posts are output as standalone pages
+
+# Just the Docs configuration
+just_the_docs:
+  collections:
+    blog:  # Add the blog collection to the navigation bar
+      name: "Blog"
+      permalink: /blog/
+
+just_the_docs:
+  navigation:
+    - name: "Home"
+      path: "/"
+    - name: "Blog"
+      path: "/blog/"
+
