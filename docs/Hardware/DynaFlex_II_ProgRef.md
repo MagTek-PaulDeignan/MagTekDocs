@@ -2,7 +2,7 @@
 title: Programmer's Reference Manual
 layout: home
 parent: DynaFlex_II_PED
-nav_order: 2
+nav_order: 3
 ---
 
 # DynaFlex Products
