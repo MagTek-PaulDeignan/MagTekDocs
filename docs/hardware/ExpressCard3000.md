@@ -1,7 +1,7 @@
 ---
 title: ExpressCard 3000
 layout: home
-parent: title: Card Personalization Devices
+parent: Card Personalization Devices
 nav_order: 1
 ---
 
