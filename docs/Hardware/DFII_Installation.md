@@ -76,8 +76,6 @@ Table 1-2 – DynaFlex II Accessories
 | 1000008561  | FOOT, FRONT, ADHESIVE MOUNTING STRIP, DYNAFLEX           | Optional, specify 1 ea. For complete replacement |
 
 
-
-
 ### About DynaFlex II Components
 
 The major components of the DynaFlex II product family are detailed in this section. For models without a touchscreen display (DynaFlex II and DynaFlex II Kiosk), the components are identical however, the touchscreen and its bezel are replaced with a faceplate displaying the contactless indicator logo at the optimal contactless landing zone (see ).
@@ -103,13 +101,13 @@ Figure 1-3 - Charging Station Major Components
 
 ![alt text](image-4.png)
 
-Inspection
+## Inspection
 
 Before unpacking the device, it is important to inspect its secure packaging to make sure it has not been tampered with in storage or in transit. MagTek provides details for inspecting the integrity of the device’s secure packaging in D998200524 DynaFlex II Family, Package Inspection
 
 It is important to inspect a new device regularly and thoroughly before deployment and a device in live usage (including its immediate surroundings), to make sure malicious individuals have not tampered with it or its surroundings. MagTek recommends conducting inspection training for all device operators and an inspection schedule with checkpoints in place to make sure operators are performing inspections as specified and as scheduled. MagTek provides easy-to-follow device inspection references in D998200524 DynaFlex II PED Products, Device Inspection, D998200539- DynaFlex II PED Kiosk Products, Device Inspection, D998200563 DynaFlex II Products, Device Inspection, and D998200566 DynaFlex II Kiosk Products, Device Inspection.
 
-Handling to Avoid Damage
+## Handling to Avoid Damage
 
 Upon receiving the device, inspect it to make sure it originated from an authentic source and has not been tampered with. For details, see D998200524 DynaFlex II PED Products, Device Inspection, D998200539 DynaFlex II PED Kiosk Products, Device Inspection, D998200563 DynaFlex II Products, Device Inspection, and D998200566 DynaFlex II Kiosk Products, Device Inspection, available from MagTek.
 
@@ -119,7 +117,7 @@ If the device is exposed to cold temperatures, adjust it to warmer temperatures 
 
 For information about ongoing maintenance of the device, such as cleaning, see section  .
 
-Handling to Avoid Accidental Tamper
+## Handling to Avoid Accidental Tamper
 
 DynaFlex II products implement active tamper detection, which uses a small amount of electricity even when the device is completely powered off. The device primarily powers its active tamper detection circuitry using its rechargeable battery to back up the coin cell. Devices with a rechargeable battery ship with the battery charged to between 45% and 65%, which provides a shelf life of up to 10 years.
 
@@ -127,35 +125,23 @@ However, if the rechargeable battery completely discharges or the device does no
 
 To avoid accidental tamper events and to optimally condition the battery, follow these precautions:
 
-Temperature is the most critical factor in extending battery life and preserving battery charge. Store the device at the lowest reasonable temperatures within its specified storage temperature range (see  ). Storing below 77°F / 25°C is optimal.
-
-
-
-
-
-Fully charge the device immediately upon receipt to extend its shelf life (see section   ).
-
-Before storing the device, charge the battery to less than 100% (60% is optimal).
-
-Before storing the device, power it off completely. See section   .
-
-When stored, charge the device for one hour every 6 months to keep the battery chemistry in optimal condition and to ensure it does not completely discharge.
-
-Do not drop or shake the device.
-
-
-
+- Temperature is the most critical factor in extending battery life and preserving battery charge. Store the device at the lowest reasonable temperatures within its specified storage temperature range (see  ). Storing below 77°F / 25°C is optimal.
+- Fully charge the device immediately upon receipt to extend its shelf life (see section   ).
+- Before storing the device, charge the battery to less than 100% (60% is optimal).
+- Before storing the device, power it off completely. See section   .
+- When stored, charge the device for one hour every 6 months to keep the battery chemistry in optimal condition and to ensure it does not completely discharge.
+- Do not drop or shake the device.
 
 
 # Installation
 
 Installing DynaFlex II products is straightforward: The manufacturer or acquirer configures the preferred settings, keys, terminal, and payment brand settings before deployment; end users need only set up a host with appropriate software, configure the software, and connect the device to the host. This section provides general information about inspecting, connecting, and installing DynaFlex II products.
 
-### About Host Software
+## About Host Software
 
 In any solution, DynaFlex II products are connected to a host, which must have software installed that can communicate with the device, and which is capable of processing transactions. To set up the host to work with DynaFlex II products, follow the installation and configuration instructions provided by the vendor of the host or the host software. For information about developing custom host software, see section  .
 
-### Connecting to a Host
+## Connecting to a Host
 
 #### About Connecting to a Host
 
@@ -163,13 +149,10 @@ The following sections provide information on how to connect DynaFlex II product
 
 #### How to Connect DynaFlex II Products to a Host or Charger via USB
 
+![alt text](image-8.png) ![alt text](image-9.png)
 
 
 Figure 3-1 - Connecting to a USB Host or USB Charger. Left: Countertop Models. Right: Kiosk Models
-
-
-
-
 
 To connect DynaFlex II products to a USB host or charger using the USB-C port, follow these steps (for reference see  and section  ):
 
@@ -187,57 +170,17 @@ As soon as the device starts receiving power through USB, it automatically power
 
 If the specific device serial number you are connecting has not been connected to the host before, the device shows on the display, and the Windows system tray on the host reports it is Setting up a device (see ), When installation is complete (approximately 30 seconds later depending on the host), Windows reports	,(see) and the device shows in Windows Device Manager under Human.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+![alt text](image-10.png)
 
 Figure 3-2 - Setting Up a Device
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+![alt text](image-11.png)
 
 Figure 3-3 - Device is Ready
 
-with VID
 
-and
-
-
-
-
-
-
-
-
+![alt text](image-12.png)
 
 After successfully connecting to the host operating system via USB, devices with a touchscreen
 
@@ -253,33 +196,24 @@ The DynaFlex II product line offers versatile mounting solutions, including:
 
 Integrated Slip-Resistant Adhesive Strips: The underside of the device features three adhesive mounting strips (see ) that provide secure attachment to any clean, non-porous surface. These strips come with a protective film that must be removed before installing onto a surface.
 
-
+![alt text](image-13.png)
 
 Figure 3-4 - Adhesive Mounting Strip and Protective Film
 
-
-
-
-
 Lanyard Mount Point: The integrated mount point allows the device to be hung or carried, making it easy to store and handle, particularly in grab-and-go payment environments (see  ).
 
-
+![alt text](image-14.png)
 
 Figure 3-5 - Lanyard Mount Point
 
 Charging Station Compatibility (Non-Kiosk Models): Non-kiosk versions of the device can be placed in an optional charging station. This station can be used in conjunction with the lanyard mount point for quick access and easy drop-in charging between handheld uses.
 
-
+![alt text](image-15.png)
 
 Figure 3-6 - Charging Station Compatibility
 
 
-
-
-
 Custom Mounting Options: DynaFlex II devices can be attached to custom mounting brackets or housed within an enclosure, enabling integration into larger system designs.
-
-
 
 
 
@@ -289,7 +223,7 @@ Verify that the protective film has been removed from the adhesive mounting stri
 
 Mount DynaFlex II devices onto a smooth, flat, and non-porous surface by pressing the device firmly using the adhesive mounting strips (see ).
 
-
+![alt text](image-16.png)
 
 Figure 3-7 - Mounting DynaFlex onto a Nonporous Surface
 
@@ -305,13 +239,9 @@ advice and assistance from MagTek’s Engineering team.
 
 #### How to Mount DynaFlex II Kiosk Models
 
-This section provides information and guidelines for designing the mechanical aspects of a solution that incorporates DynaFlex II Kiosk models. MagTek strongly recommends vetting and testing solution
+![alt text](image-17.png)
 
-
-
-
-
-designs before finalizing and deploying them to make sure the design meets all requirements (e.g., functional, legal, security, certification, safety, and so on).
+This section provides information and guidelines for designing the mechanical aspects of a solution that incorporates DynaFlex II Kiosk models. MagTek strongly recommends vetting and testing solution designs before finalizing and deploying them to make sure the design meets all requirements (e.g., functional, legal, security, certification, safety, and so on).
 
 When designing the mechanical portions of a solution that incorporates DynaFlex II Kiosk models, consider the following:
 
@@ -329,19 +259,14 @@ Review any additional requirements from other agencies, such as PCI and EMV solu
 
 Overall dimensions of the device are shown in  and  On request, MagTek can provide a 3D model of the device’s envelope to assist with the mechanical portion of solution design. MagTek strongly recommends building and testing prototypes with actual devices before finalizing the solution design.
 
-
+![alt text](image-18.png)
 
 Figure 3-8 – DynaFlex II Kiosk Models Overall Dimensions
 
 The screw hole placement on the bottom of DynaFlex II Kiosk models is detailed in . The holes are designed to accommodate screw size M4 x 0.7mm and a maximum screw depth of 0.315 inches (8mm). The recommended torque range for installing the screws is 20 to 22 in-lbs. (2.3 to 2.5 N-m).
 
 
-
-
-
-
-
-
+![alt text](image-19.png)
 
 Figure 3-9 – DynaFlex II Kiosk Models Mounting Hole Locations
 
@@ -350,8 +275,7 @@ Figure 3-9 – DynaFlex II Kiosk Models Mounting Hole Locations
 When designing an enclosure or mounting bracket, make sure there is adequate clearance for cardholders to swipe, insert, and tap. If the solution design includes metal objects anywhere near the device, including metal enclosures, ensure that at all points the metal is no further forward than 15mm below the top face of the device. Proximity to metal can adversely affect the device’s performance.
 
 
-
-
+![alt text](image-20.png)
 
 Figure 3-10 - Unobstructed View of Card Insertion Slot, Swipe Path and Contactless Landing Zone
 
@@ -383,17 +307,12 @@ To uninstall, twist the charging station to disengage the adhesive mounting stri
 
 Note: The adhesive mounting strips used to mount the charging station to a surface may become less effective if dust and or debris accumulate on them. If this occurs, wipe them down with a damp cloth to restore their adhesive properties.
 
-
+![alt text](image-21.png)
 
 Figure 3-11 - Charging Station Dimensions
 
 
-
-
-
-
-
-
+![alt text](image-22.png)
 
 Figure 3-12 - Charging Station Mounting Surfaces and Screw Holes
 
@@ -412,26 +331,15 @@ Connect the charging station to a USB port or to a USB charger with a minimum of
 To uninstall, remove the screws from the underside of the charging station.
 
 
-
-
-
-
-
-
+![alt text](image-23.png)
 
 Figure 3-13 – Preparing a Flat Surface for Mounting the Charging Station
 
-
+![alt text](image-24.png)
 
 Figure 3-14 - Screw Installation
 
-
-
-
-
-
-
-
+![alt text](image-25.png)
 
 Figure 3-15 – Connecting DynaFlex II to the Optional Charging Station
 
@@ -462,28 +370,9 @@ Transaction types may include sales, refunds, voids, authorization, new accounts
 If the device cannot read payment data, the host software may direct it to prompt the cardholder to repeat the action or request the cardholder revert to a different form of payment (such as using the magnetic stripe reader as a fallback instead of the chip card insertion slot).
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+![alt text](image-26.png)
 
 Figure 4-1 - Typical Transaction Sequence
-
-
 
 
 
