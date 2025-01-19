@@ -6,7 +6,7 @@ nav_order: 1
 ---
 
 
-## Connect Tab
+# Connect Tab
 The Connect Tab will connect a device to the RMS app. The upper portion of the tab contains:
 
 >1. API Key: This field is automatically populated when a device is connected, the characters are masked for security reasons. Although the field is editable, it is not recommended to alter the API Key field.  

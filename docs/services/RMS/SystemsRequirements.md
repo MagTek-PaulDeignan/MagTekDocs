@@ -6,7 +6,6 @@ nav_order: 1
 ---
 
 # System Requirements
-
 The RMS app is compatible with Android OS.  
 Note: Not all configuration options are available for all Secure Card Reader Authenticators (SCRAs). The available configuration options depend on:  
 * The specific SCRA model in use.  
