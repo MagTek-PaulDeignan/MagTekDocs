@@ -53,7 +53,7 @@ No matter the form factor or industry, MagTek has hardware to suit your project�
 ## Join the Developer Community
 MagTek is more than just a provider—we’re your partner in building secure, flexible, and scalable payment solutions. By prioritizing developers, we empower you to create innovative experiences that delight end users and drive business success.
 
-Ready to get started? Explore our [developer resources](https://www.magtek.com/developers), or contact us to learn how MagTek can support your next project.
+Ready to get started? Explore our [MagTek Support](https://www.magtek.com/support), or contact us to learn how MagTek can support your next project.
 
 ---
 
