@@ -444,8 +444,8 @@ Table 4-4 – Status Icon Meaning
 | ![alt text](image-33.png) | WebSocket is active or connected.                                                               |
 | ![alt text](image-34.png) | WebSocket is inactive or disconnected.                                                        |
 | ![alt text](image-35.png) | Device’s active connection is set to 802.11 wireless, and the device is connected to a wireless access point. The number of bars indicates the strength of the signal the device is receiving from the wireless access point (commonly known as RSSI). |
-| ![alt text](image-36.png) | TLS security on the 802.11 wireless connection is disabled (red open padlock).                           |
-| ![alt text](image-37.png) | TLS security on the 802.11 wireless connection is enabled (black closed padlock).                          |
+| ![alt text](image-44.png) | TLS security on the 802.11 wireless connection is disabled (red open padlock).                           |
+| ![alt text](image-45.png) | TLS security on the 802.11 wireless connection is enabled (black closed padlock).                          |
 | ![alt text](image-38.png) | Battery is fully charged.                                                                               |
 | ![alt text](image-39.png) | Battery is OK, between 20% and 95% charged.                                                                |
 | ![alt text](image-40.png) | Battery is low, between 10% and 20% charged.                                                             |
