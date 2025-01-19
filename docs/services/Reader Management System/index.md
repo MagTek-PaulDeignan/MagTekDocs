@@ -1,8 +1,8 @@
 ---
 title: Reader Management System
 layout: home
-parent: services
-nav_order: 2
+parent: Services
+nav_order: 1
 ---
 
 # MagTek Reader Management System (RMS):
