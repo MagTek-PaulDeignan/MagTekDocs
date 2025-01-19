@@ -6,6 +6,4 @@ layout: home
 
 # MagTek's Developer Blog
 
-{% for post in site.blog %}
-- [{{ post.title }}]({{ post.url }}) - {{ post.date | date: "%B %d, %Y" }}
-{% endfor %}
+Empowering Developers - Building Secure and Flexible Payment Solutions with MagTek [](docs\blog\EmpowerDevelopers.md).
