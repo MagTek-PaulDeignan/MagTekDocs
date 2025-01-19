@@ -1,6 +1,8 @@
 ---
 title: "Blog"
+nav_order: 7
 layout: default
+parent: blog
 permalink: /blog/
 ---
 
