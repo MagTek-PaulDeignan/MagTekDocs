@@ -139,7 +139,7 @@ Installing DynaFlex II products is straightforward: The manufacturer or acquirer
 
 ## About Host Software
 
-In any solution, DynaFlex II products are connected to a host, which must have software installed that can communicate with the device, and which is capable of processing transactions. To set up the host to work with DynaFlex II products, follow the installation and configuration instructions provided by the vendor of the host or the host software. For information about developing custom host software, see section  .
+In any solution, DynaFlex II products are connected to a host, which must have software installed that can communicate with the device, and which is capable of processing transactions. To set up the host to work with DynaFlex II products, follow the installation and configuration instructions provided by the vendor of the host or the host software. For information about developing custom host software, see section.
 
 ## Connecting to a Host
 
@@ -344,9 +344,6 @@ Figure 3-14 - Screw Installation
 Figure 3-15 – Connecting DynaFlex II to the Optional Charging Station
 
 
-
-
-
 # Operation
 
 ### About Operating Modes
@@ -374,8 +371,6 @@ If the device cannot read payment data, the host software may direct it to promp
 
 Figure 4-1 - Typical Transaction Sequence
 
-
-
 ### About the Status LEDs
 
 DynaFlex II provides four RGB LEDs directly below the chip card insertion slot (see section   ), numbered LED1 through LED4, which report the device’s current operating status.
@@ -388,19 +383,36 @@ LED blinking patterns have specific meanings as well, as described in . A blinki
 
 In this manual, specific combinations of LED colors and blinking patterns are described in more detail in the sections where they are relevant and use the same icons in the tables below to indicate color and blinking patterns. For example, information about how the LEDs show the device’s connection status is in section  .
 
-Table 4-1 – DynaFlex II LED Allocation
+### Table 4-1 – DynaFlex II LED Allocation
+
+| **In This Context**                        | **LED1**          | **LED2**         | **LED3**         | **LED4**           |
+|--------------------------------------------|--------------------|-------------------|-------------------|---------------------|
+| Active Mode: Not Armed for a Tap Transaction | Power             | Connection        | Reserved          | Card Read Result    |
+| Active Mode: Armed for a Tap Transaction    | Armed for Tap      | Tap Read Progress | Tap Read Progress | Card Read Result    |
+| Device-Wide Failure                         | During major failures (such as tamper), LED1-LED4 report the nature of the failure based on the steps required to resolve it. |
 
 
+### Table 4-2 – DynaFlex II LED Colors
 
+| **Color**       | **Means**                                                                                  |
+|------------------|-------------------------------------------------------------------------------------------|
+| **Red**         | Stop or stopped. Example: LED1 is red. Stop using the device: Battery is about to run out of charge. |
+| **Yellow**      | Wait or waiting. Example: LED2 will show status for Access Point connection: Green connected, yellow waiting for connection. |
+| **Green**       | Go, going, or went. Example: LED3 will show status for WebSocket connection: Green connected, yellow waiting for connection. |
+| **Other Colors** | Reserved.                                                                                |
 
+### Table 4-3 – DynaFlex II LED Patterns
 
-Table 4-2 – DynaFlex II LED Colors
+| **Pattern**   | **Means**                                                                                                                        |
+|---------------|----------------------------------------------------------------------------------------------------------------------------------|
+| **Solid** ![alt text](image-27.png)     | Solid LEDs require an operator or cardholder to take action to change the state the LED is reporting.                            |
+|               | *Example*: Host is connected. Cardholder or host would have to disconnect.                                                      |
+|               | *Example*: Host is disconnected. Host would have to initiate connection.                                                        |
+| **Blinking** ![alt text](image-28.png)  | Blinking LEDs indicate the device is in the process of doing/attempting something. Blink duty cycle and period show urgency or progress. |
+|               | *Example*: Device is attempting to connect to the WLAN access point.                                                           |
+| **Short Time** ![alt text](image-29.png)| LEDs sometimes illuminate briefly to indicate a process has ended (success or failure) and the device is transitioning to another state. |
+|               | *Example*: Successful card read.                                                                                               |
 
-
-
-
-
-Table 4-3 – DynaFlex II LED Patterns
 
 ### About the Touchscreen Display
 
