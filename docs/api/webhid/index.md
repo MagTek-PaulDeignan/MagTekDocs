@@ -6,7 +6,7 @@ parent: APIs
 
 # **MagTek APIs:**
 
-[**WebHID** GitHub Source](https://github.com/MagTek-PaulDeignan/WebHID_Public)
+#### [**WebHID** GitHub Source](https://github.com/MagTek-PaulDeignan/WebHID_Public)
 
 # Redefining Device Integration with Web HID and MQTT Technologies
 
