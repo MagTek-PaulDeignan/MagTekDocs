@@ -9,4 +9,5 @@ nav_order: 8
 
 ## Download
 
+Here is the update to RMS V2  
 You can download the Postman collection from [here](https://documenter.getpostman.com/view/39554236/2sAYJ7fK37).
