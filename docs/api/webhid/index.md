@@ -6,6 +6,8 @@ parent: APIs
 
 # **MagTek APIs:**
 
+[**WebHID** GitHub Source](https://github.com/MagTek-PaulDeignan/WebHID_Public)
+
 # Redefining Device Integration with Web HID and MQTT Technologies
 
 MagTek’s adoption of Web HID (Human Interface Device) and MQTT (Message Queuing Telemetry Transport) technologies sets a new benchmark for device integration, offering unmatched simplicity, security, and scalability. This forward-thinking approach outperforms traditional methods, such as keyboard emulation and software-dependent solutions, by enabling seamless connectivity across interactive and headless environments alike—such as a Mac Mini running in attended and unattended operation.
