@@ -11,5 +11,6 @@ Note: Not all configuration options are available for all Secure Card Reader Aut
 * The specific SCRA model in use.  
 * The configuration options provided by MagTek.
 
-Important: Some commands may require a device reset.  
-* Refer to the Programmer's Manual for your particular device to see which commands are affected. (See Appendix B Related Documentation.)
+> [!IMPORTANT]
+> Important: Some commands may require a device reset. 
+> Refer to the Programmer's Manual for your particular device to see which commands are affected. (See Appendix B Related Documentation.)
