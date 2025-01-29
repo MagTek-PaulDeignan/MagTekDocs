@@ -15,3 +15,6 @@ In addition to traditional card based transactions, Unigate also supports Apple 
 
 You can browse our Postamn Docs and use the Postman examples to integrate with Unigate [Unigate Postman](https://documenter.getpostman.com/view/33729815/2sAXxWYTix).
 
+
+You can also try our samples in our Playground  [Playground](https://rms.magensa.net/Test/demo/UnigateDemo.html).
+
