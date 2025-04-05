@@ -1,7 +1,7 @@
 ---
 title: Developer Documentation
 layout: home
-parent: home
+parent: docs
 ---
 
 ## 6.1.1 Command 0x1001 - Start Transaction
