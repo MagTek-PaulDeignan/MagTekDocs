@@ -1,7 +1,7 @@
 ---
 title: Web HID
 layout: home
-parent: APIs
+parent: API
 ---
 
 # **MagTek APIs:**
