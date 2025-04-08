@@ -1,7 +1,6 @@
 ---
 title: DynaFlex Family Programmer's Manual
 layout: home
-parent: docs
 ---
 ## [1.0 Introduction](#10-introduction)
 
