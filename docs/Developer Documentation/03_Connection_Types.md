@@ -1,3 +1,8 @@
+---
+title: Connection Types
+layout: home
+parent: DynaFlex Family Programmer's Manual
+---
 # Connection Types
 
 [Table 1.41](#table-1-41) on page **36** includes a list of connection types available for each device. The following subsections provide details developers will need to communicate with the device using each connection type.

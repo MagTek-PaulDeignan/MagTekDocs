@@ -1,3 +1,11 @@
+---
+title: Data Types and Shared TLV Data Objects
+layout: home
+parent: DynaFlex Family Programmer's Manual
+---
+
+
+
 # Data Types and Shared TLV Data Objects
 
 This section describes the primitive and composed data types referred to throughout this document.

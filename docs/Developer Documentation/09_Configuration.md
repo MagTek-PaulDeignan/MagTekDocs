@@ -1,3 +1,8 @@
+---
+title: Configurations
+layout: home
+parent: DynaFlex Family Programmer's Manual
+---
 # Configuration
 
 ## About Configuration

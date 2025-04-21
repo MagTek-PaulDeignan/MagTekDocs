@@ -1,3 +1,9 @@
+---
+title: Notifications
+layout: home
+parent: DynaFlex Family Programmer's Manual
+---
+
 # Notifications
 
 This section provides definitions and practical information about **Notification Message**s, which follow the format described in section **3.2.2.3**. To find documentation about a specific notification:

@@ -1,3 +1,9 @@
+---
+title: Security
+layout: home
+parent: DynaFlex Family Programmer's Manual
+---
+
 # Security
 
 ## About Message Authentication Codes (MAC)

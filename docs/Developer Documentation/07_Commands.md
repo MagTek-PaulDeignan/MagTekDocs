@@ -1,3 +1,9 @@
+---
+title: Commands
+layout: home
+parent: DynaFlex Family Programmer's Manual
+---
+
 # Commands
 
 ## Command Group 0x10nn - Transactions

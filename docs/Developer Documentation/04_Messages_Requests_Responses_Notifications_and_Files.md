@@ -1,3 +1,9 @@
+---
+title: Messages (Requests, Responses, Notifications, and Files)
+layout: home
+parent: DynaFlex Family Programmer's Manual
+---
+
 # Messages (Requests, Responses, Notifications, and Files)
 
 This section describes the general format of messages exchanged between hosts and devices that are using the common MMS message framework.
