@@ -1,7 +1,7 @@
 ---
 title: Introduction
 layout: home
-parent: TitlePage
+parent: DynaFlex Family Programmer's Manual
 
 ---
 
