@@ -11,12 +11,11 @@ layout: home
 
 ## Programmer’s Manual (MASTER)
 
-
 Copyright © 2006 - 2025 MagTek, Inc.
 
 Printed in the United States of America
 
-information in this publication is subject to change without notice. MagTek cannot be held liable for any use of the contents of this document. Any changes or improvements made to this product will be included in the next publication release. If you have questions about specific features and functions or when they will become available, please contact your MagTek representative.
+Any changes or improvements made to this product will be included in the next publication release. If you have questions about specific features and functions or when they will become available, please contact your MagTek representative.
 
 MagTek®, MagnePrint®, and MagneSafe® are registered trademarks of MagTek, Inc.
 
@@ -53,6 +52,8 @@ Microsoft®, Windows®, and .NET® are registered trademarks of Microsoft Corpor
 MIFARE, the MIFARE logo, MIFARE Ultralight, MIFARE Plus, MIFARE Classic, MIFARE FleX, DESFire, and MIFARE4Mobile are registered trademarks of NXP B.V.
 
 All other system names and product names are the property of their respective owners.
+
+# Introduction
 
 ## Table of Contents
 
@@ -1869,7 +1870,6 @@ All other system names and product names are the property of their respective ow
           - [Physical Button (DynaFlex Only)](#physical-button-dynaflex-only)
     - [[Table 8.74](#table-8-74)8 - Battery Charged Example](#table-874table-8-748---battery-charged-example)
 
-# Introduction
 
 ## About Connections and Data Formats
 
@@ -3677,8 +3677,8 @@ The following OID Values indicate that:
 
 ![Graphical user interface, text, application, email Description automatically generated](media/a935babae1e73e3c237fdb4aba7c501e.png)
 
-<a name="figure-4-191"></a>
-### [Figure 4.191](#figure-4-191) - Configuration Usage Values
+<a id="figure-4-191"></a>
+### Figure 4.191 - Configuration Usage Values
 
 ## Miniature Certificate Type (MAGTEK INTERNAL ONLY)
 
