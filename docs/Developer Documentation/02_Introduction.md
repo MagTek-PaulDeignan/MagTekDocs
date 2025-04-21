@@ -1,7 +1,8 @@
 ---
 title: Introduction
 layout: home
-Parent: Developer Documentation
+parent: TitlePage
+nav_order: 1
 ---
 
 
