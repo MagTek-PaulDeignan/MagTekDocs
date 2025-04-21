@@ -3,16 +3,7 @@ title: DynaFlex Family Programmer's Manual
 layout: home
 ---
 
-<script>
-  window.$docsify = {
-    loadSidebar: true,
-    homepage: 'DynaFlex Family Programmer's Manual', // index1.md
-    name: 'My Docs',
-    repo: '', // Optional: link to your GitHub repo
-  };
-</script>
 
-<script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
 
 
 
