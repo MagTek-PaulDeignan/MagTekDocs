@@ -53,6 +53,7 @@ MIFARE, the MIFARE logo, MIFARE Ultralight, MIFARE Plus, MIFARE Classic, MIFARE 
 
 All other system names and product names are the property of their respective owners.
 
+
 # Introduction
 
 ## Table of Contents
