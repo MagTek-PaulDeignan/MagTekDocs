@@ -1,7 +1,7 @@
 ---
 title: DynaFlex Family Programmer's Manual
 layout: home
-Parent: Docs
+Parent: Developer Documentation
 ---
 
 
