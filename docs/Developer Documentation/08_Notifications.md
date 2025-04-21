@@ -2,6 +2,7 @@
 title: Notifications
 layout: home
 parent: DynaFlex Family Programmer's Manual
+nav_order: 7
 ---
 
 # Notifications
