@@ -1,4 +1,9 @@
-- [Home](TitlePage.md)
+# Developer Documentation
+
+Welcome to the documentation for the Secure Card Reader system. Use the links below to explore each section.
+
+## 📚 Documentation Sections
+
 - [02 - Introduction](final_02_Introduction.md)
 - [03 - Connection Types](final_03_Connection_Types.md)
 - [04 - Messages, Requests, Responses, Notifications, and Files](final_04_Messages_Requests_Responses_Notifications_and_Files.md)
