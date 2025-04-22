@@ -6,4 +6,8 @@ parent: docs
 ---
 # Developer Documentation
 
-
+<script>
+  window.$docsify = {
+    loadSidebar: true
+  }
+</script>
