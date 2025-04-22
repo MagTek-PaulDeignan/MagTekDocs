@@ -62,45 +62,45 @@ Some messages defined in section **2.7** may exceed the maximum packet length al
 
 ### [Table 2.11](#table-2-11) - Single Packet Format
 
-| Byte Offset | Field Name         | Field Value                          |
+| Byte Offset | Field Name | Field Value |
 |-------------|--------------------|--------------------------------------|
-| 0           | Packet Type        | 0x00 = Single Packet                 |
-| 1           | Message Length     | Message length, denoted as **N**     |
-| 2..N+1      | Message            | Message exactly from section **2.7** |
-| N+2..63     | Padding, if needed | 0x00                                 |
+| 0 | Packet Type | 0x00 = Single Packet |
+| 1 | Message Length | Message length, denoted as **N** |
+| 2..N+1 | Message | Message exactly from section **2.7** |
+| N+2..63 | Padding, if needed | 0x00 |
 
 ### [Table 2.12](#table-2-12) - Multi-Packet Head Format
 
-| Byte Offset | Field Name     | Field Value                                                                                                      |
+| Byte Offset | Field Name | Field Value |
 |-------------|----------------|------------------------------------------------------------------------------------------------------------------|
-| 0           | Packet Type    | 0x01 = Multi-packet Head                                                                                         |
-| 1..4        | Message Length | Total message length before decomposing into packets, denoted as **N**. If 62 or less, use Single Packet Format. |
-| 5..63       | Message Part   | First 59 bytes of message from section **2.7**                                                                   |
+| 0 | Packet Type | 0x01 = Multi-packet Head |
+| 1..4 | Message Length | Total message length before decomposing into packets, denoted as **N**. If 62 or less, use Single Packet Format. |
+| 5..63 | Message Part | First 59 bytes of message from section **2.7** |
 
 ### [Table 2.13](#table-2-13) - Multi-Packet Middle Format
 
-| Byte Offset | Field Name    | Field Value                                                                              |
+| Byte Offset | Field Name | Field Value |
 |-------------|---------------|------------------------------------------------------------------------------------------|
-| 0           | Packet Type   | 0x02 = Multi-Packet Middle                                                               |
-| 1..2        | Packet Number | 0x0001 = First Multi-Packet Middle 0x0002 = Second Multi-Packet Middle Etc. up to 0xFFFF |
-| 3..63       | Message Part  | Next 61 bytes of message from section **2.7**                                            |
+| 0 | Packet Type | 0x02 = Multi-Packet Middle |
+| 1..2 | Packet Number | 0x0001 = First Multi-Packet Middle 0x0002 = Second Multi-Packet Middle Etc. up to 0xFFFF |
+| 3..63 | Message Part | Next 61 bytes of message from section **2.7** |
 
 ### [Table 2.14](#table-2-14) - Multi-Packet Tail Format
 
-| Byte Offset | Field Name               | Field Value                                                                                       |
+| Byte Offset | Field Name | Field Value |
 |-------------|--------------------------|---------------------------------------------------------------------------------------------------|
-| 0           | Packet Type              | 0x03 = Multi-Packet Tail                                                                          |
-| 1           | Remaining Message Length | Number of bytes of the message that are being transmitted in this final packet, denoted as **n**. |
-| 2..n+1      | Message Part             | Final n bytes of message exactly as described in section **2.7**                                  |
-| n+2..63     | Padding, if needed       | 0x00                                                                                              |
+| 0 | Packet Type | 0x03 = Multi-Packet Tail |
+| 1 | Remaining Message Length | Number of bytes of the message that are being transmitted in this final packet, denoted as **n**. |
+| 2..n+1 | Message Part | Final n bytes of message exactly as described in section **2.7** |
+| n+2..63 | Padding, if needed | 0x00 |
 
 ### [Table 2.15](#table-2-15) - Multi-Packet Cancel Format
 
-| Byte Offset | Field Name        | Field Value                |
+| Byte Offset | Field Name | Field Value |
 |-------------|-------------------|----------------------------|
-| 0           | Packet Type       | 0x04 = Multi-Packet Cancel |
-| 1..2        | Reason for Cancel | 0x0000 = General           |
-| 3..63       | Padding           | 0x00                       |
+| 0 | Packet Type | 0x04 = Multi-Packet Cancel |
+| 1..2 | Reason for Cancel | 0x0000 = General |
+| 3..63 | Padding | 0x00 |
 
 ### How to Receive Data Using the USB Connection (HID Only)
 
@@ -234,19 +234,19 @@ The following is an example of sending two application messages in a row where t
 
 | Message Counter | PDU Counter | PCB | Message Length | Message Portion |
 |-----------------|-------------|-----|----------------|-----------------|
-| 00              | 00          | 00  | 00 00 00 09    | 9 bytes         |
+| 00 | 00 | 00 | 00 00 00 09 | 9 bytes |
 
-| Message Counter | PDU Counter | PCB | Message Length          | Message Portion |
+| Message Counter | PDU Counter | PCB | Message Length | Message Portion |
 |-----------------|-------------|-----|-------------------------|-----------------|
-| 01              | 00          | 00  | 00 00 02 00 (512 bytes) | 237 bytes       |
+| 01 | 00 | 00 | 00 00 02 00 (512 bytes) | 237 bytes |
 
 | Message Counter | PDU Counter | Message Portion |
 |-----------------|-------------|-----------------|
-| 01              | 01          | 242 bytes       |
+| 01 | 01 | 242 bytes |
 
 | Message Counter | PDU Counter | Message Portion |
 |-----------------|-------------|-----------------|
-| 01              | 02          | 33 bytes        |
+| 01 | 02 | 33 bytes |
 
 Protocol implementation recommendations:
 
@@ -285,13 +285,13 @@ For specific messages, see sections **6 Commands** and **7 Notifications**.
 
 ### [Table 2.61](#table-2-61) - MMS SLIP Wrapper
 
-| Offset     | Value                                                                                                            |
+| Offset | Value |
 |------------|------------------------------------------------------------------------------------------------------------------|
-| Byte 0     | SLIP Frame Delimiter = 0xC0                                                                                      |
-| Byte 1     | Message Info 0x00 = Direction Host to Device 0x02 = Direction Device to Host 0x03 = Hardware Capability Exceeded |
-| Bytes 2..5 | Length of MMS Message Use big endian order                                                                       |
-| Bytes 6..n | MMS Message                                                                                                      |
-| Byte n+1   | SLIP Frame Delimiter = 0xC0                                                                                      |
+| Byte 0 | SLIP Frame Delimiter = 0xC0 |
+| Byte 1 | Message Info 0x00 = Direction Host to Device 0x02 = Direction Device to Host 0x03 = Hardware Capability Exceeded |
+| Bytes 2..5 | Length of MMS Message Use big endian order |
+| Bytes 6..n | MMS Message |
+| Byte n+1 | SLIP Frame Delimiter = 0xC0 |
 
 For further reference, see the definition of the SLIP format in Part D, Section 3 of **Specification of the Bluetooth® System, Host Controller Interface, Volume 4**, which is available at <https://www.bluetooth.org/Technical/Specifications/adopted.htm>. Note the reference to bluetooth.org is intentional, and the specification does indeed apply to other device connection types.
 
