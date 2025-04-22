@@ -1,5 +1,5 @@
 ---
-title: (RMS) Android Application Installation and Operation Manual
+title: (RMS) Android Application
 
 layout: home
 ---
