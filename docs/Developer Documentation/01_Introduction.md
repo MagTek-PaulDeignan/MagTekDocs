@@ -6,369 +6,131 @@ nav_order: 1
 ---
 ## Introduction
 
+---
+
+### Table of Contents
+
+- [Introduction](#introduction)
+  - [About This Document](#about-this-document)
+  - [About Terminology](#about-terminology)
+  - [About SDKs and Sample Code](#about-sdks-and-sample-code)
+  - [About Connections and Data Formats](#about-connections-and-data-formats)
+  - [About Device Features](#about-device-features)
+
+---
+
 ### About This Document
 
-This document describes how to communicate with Secure Card Reader
-Authenticator (SCRA) devices which implement MagTek Messaging Schema
-(MMS) and the DynaFlex family, DynaFlex II Go and DynaProx system
-architecture.
+This document describes how to communicate with Secure Card Reader Authenticator (SCRA) devices which implement MagTek Messaging Schema (MMS) and the DynaFlex family, DynaFlex II Go and DynaProx system architecture.
 
-This document also describes how to communicate with PIN Entry Devices
-(PED) which implement MagTek Messaging Schema (MMS) and the
-DynaFlex/DynaProx family system architecture. (PED ONLY)
+This document also describes how to communicate with PIN Entry Devices (PED) which implement MagTek Messaging Schema (MMS) and the DynaFlex/DynaProx family system architecture. (PED ONLY)
 
 The document uses **bold face** to:
 
-- Highlight terms / concepts being formally defined in the current
-  sentence / paragraph
-
+- Highlight terms / concepts being formally defined in the current sentence / paragraph
 - Highlight important distinguishing keywords in sentences
-
 - Indicate hyperlinks to other sections / tables
 
-The document uses a small number of annotation standards that are
-important to understand:
+The document uses a small number of annotation standards that are important to understand:
 
-- Hexadecimal values are prefixed with **0x** unless the context clearly
-  indicates an un-prefixed number is hexadecimal (for example, TLV tags,
-  lengths, and values are always assumed to be hex).
+- Hexadecimal values are prefixed with **0x** unless the context clearly indicates an un-prefixed number is hexadecimal.
+- Binary values are prefixed with **0b** unless the context clearly indicates the value is binary.
+- Decimal values are not prefixed unless required for clarity, in which case the prefix is **0d**.
 
-- Binary values are prefixed with **0b** unless the context clearly
-  indicates the value is binary.
-
-- Decimal values are not prefixed unless required for clarity, in which
-  case the prefix is **0d**.
-
-The standard documented by this document makes extensive use of
-Tag-Length-Value encoding. Section **3.2.1 Tag-Length-Value (TLV)
-Encoding** describes how to encode and decode TLV, and how to read the
-tables in this document that describe TLV data objects.
+The standard documented by this document makes extensive use of Tag-Length-Value encoding. Section [3.2.1 - Tag-Length-Value (TLV) Encoding](#321-tag-length-value-tlv-encoding) describes how to encode and decode TLV, and how to read the tables in this document that describe TLV data objects.
 
 ### About Terminology
 
-The general terms “device” and “host” are used in different, often
-incompatible ways in a multitude of specifications and contexts. For
-instance, the term "host" can signify different things depending on the
-context—such as USB communication versus networked financial transaction
-processing. In this document, "device" and "host" are defined
-specifically as follows:
-
-- **Device** refers to the Secure Card Reader Authenticator (SCRA) or
-  PIN Entry Device (PED) that receives and responds to the command set
-  specified in this document. Refer to **Table 2 - Device Features**, to
-  determine a device’s specific capabilities, not all devices support
-  PIN entry. Devices include DynaFlex, DynaProx, DynaFlex II, and so on.
-
-- **Host** refers to the piece of general-purpose electronic equipment
-  the device is connected or paired to, which can send data to and
-  receive data from the device. Host types include PC and Mac
-  computers/laptops, tablets, smartphones, teletype terminals, and even
-  test harnesses. In many cases the host may have custom software
-  installed on it that communicates with the device. When “host” must be
-  used differently, it is qualified as something specific, such as
-  “acquirer host” or “USB host.”
-
-Similarly, the word “user” is used in different ways in different
-contexts. This document separates users into more descriptive
-categories:
-
-- The **cardholder**
-
-- The **operator** (such as a cashier, bank teller, customer service
-  representative, or server), and
-
-- The **developer** or the **administrator** (such as an integrator
-  configuring the device for the first time).
-
-Because some connection types, payment brands, and other vocabulary name
-spaces (notably Bluetooth® LE, EMV, smart phones, and more recent
-versions of Windows) use very specific meanings for the term
-“Application,” this document favors the term **host software** to refer
-to software on the host that provides a user interface for the operator.
-
-The combination of device(s), host(s), host software, device firmware,
-device configuration settings, physical mounting and environment, user
-experience, and documentation is referred to as the **solution**.
+- **Device**: Refers to the Secure Card Reader Authenticator (SCRA) or PIN Entry Device (PED) that receives and responds to the command set specified in this document. Refer to [Table 2 - Device Features](#table-2---device-features) to determine a device’s specific capabilities. Not all devices support PIN entry.
+- **Host**: The general-purpose hardware the device is connected or paired to (e.g., PC, Mac, smartphone). May include host software.
+- **User**: Categorized as cardholder, operator (e.g., cashier), or developer/administrator (e.g., integrator).
+- **Host Software**: Software running on the host that interacts with the device.
+- **Solution**: The complete system, including devices, hosts, host software, firmware, configuration, physical setup, user experience, and documentation.
 
 ### About SDKs and Sample Code
 
-MagTek provides convenient SDKs and corresponding documentation for many
-programming languages and operating systems. The API libraries included
-in the SDKs wrap the details of the connection in an interface that
-conceptually parallels the device’s internal operation, freeing software
-developers to focus on the business logic, without having to deal with
-the complexities of platform APIs for connecting to the various
-available connection types, communicating using the various available
-protocols, and parsing the various available data formats. Information
-about using MagTek wrapper APIs is available in separate documentation,
-including:
+MagTek provides SDKs for many programming languages and platforms. These include APIs that wrap device communication and abstract platform-specific implementation details.
 
-- ***D998200380 MagTek Universal SDK Programmer’s Manual (Microsoft
-  .NET)***
+**SDK Manuals:**
 
-- ***D998200381 MagTek Universal SDK Programmer’s Manual (Microsoft C++
-  )***
+- D998200380: MagTek Universal SDK Programmer’s Manual (.NET)
+- D998200381: MagTek Universal SDK Programmer’s Manual (C++)
+- D998200385: MagTek Universal SDK Programmer’s Manual (Java)
+- D998200386: MagTek Universal SDK Programmer’s Manual (iOS)
+- D998200387: MagTek Universal SDK Programmer’s Manual (Android)
+- D998200388: MagTek Universal SDK Programmer’s Manual (macOS)
 
-- ***D998200385 MagTek Universal SDK Programmer’s Manual (Java)***
+**SDK Packages:**
 
-- ***D998200386 MagTek Universal SDK Programmer’s Manual (iOS)***
+- 1000007351: SDK for MMS Devices (Windows)
+- 1000007352: SDK for MMS Devices (Android)
+- 1000007353: SDK for MMS Devices (iOS)
+- 1000007354: SDK for MMS Devices (macOS)
 
-- ***D998200387 MagTek Universal SDK Programmer’s Manual (Android)***
+These SDKs include:
 
-- ***D998200388 MagTek Universal SDK Programmer’s Manual (macOS)***
+- Functions for sending direct device commands
+- Wrappers for simplifying development
+- Sample code to demonstrate communication
 
-The documentation is bundled with the SDKs themselves, which include:
-
-- ***1000007351 MagTek Universal SDK for MMS Devices (Windows)***
-
-- ***1000007352 MagTek Universal SDK for MMS Devices (Android)***
-
-- ***1000007353 MagTek Universal SDK for MMS Devices (iOS)***
-
-- ***1000007354 MagTek Universal SDK for MMS Devices (macOS)***
-
-The SDKs and corresponding documentation include:
-
-- Functions for sending the direct commands described in this manual
-
-- Wrappers for commonly used commands that further simplify development
-
-- Sample source code to demonstrate how to communicate with the device
-  using the direct commands described in this manual
-
-To download the SDKs and documentation, search
-[www.MagTek.com](http://www.magtek.com) for “SDK” and select the SDK and
-documentation for the programming languages and platforms you need or
-contact MagTek Support Services for assistance.
-
-Software developers also have the option to revert to direct
-communication with the device using libraries available in the chosen
-development framework. For example, custom software written in Visual
-Basic or visual C++ may make API calls to the standard Windows USB HID
-driver. This document provides information and support for developing
-host software using that method.
-
-MagTek has also developed sample software that demonstrates direct
-communication with the device, which software developers can use to test
-the device and which provides a starting point for developing other
-software. For more information, see the MagTek web site, or contact your
-reseller or MagTek Support Services.
+Developers may also communicate directly with devices using native libraries. Example: using Visual C++ with Windows USB HID APIs. MagTek provides additional sample applications for testing and development.
 
 ### About Connections and Data Formats
 
-MMS products transmit data using a set of common data formats across a
-variety of physical connection layers, which can include universal
-serial bus (USB) acting as a vendor-defined HID device (“USB HID”),
-wireless LAN (WLAN), Bluetooth®, Bluetooth® Low Energy (“Bluetooth®
-LE”), RS-232, Apple Lightning, and so on. The set of available physical
-connection types and the data formats available on each connection type
-is device dependent. **Table 1** shows the physical connection types
-available on each product, and the data formats supported on each
-connection type for that device. Details about connection types and
-formats can be found in section **2 Connection Types**. Section headings
-in this document include tags that indicate which connection types
-and/or data formats they apply to.
+MMS devices support multiple connection types:
 
-<span id="_Ref369105675" class="anchor"></span>Table 1 - Device
-Connection Types / Data Formats
+- USB HID
+- WLAN
+- Bluetooth / Bluetooth LE
+- RS-232 / UART
+- Apple Lightning
 
-<table>
-<colgroup>
-<col style="width: 37%" />
-<col style="width: 19%" />
-<col style="width: 13%" />
-<col style="width: 8%" />
-<col style="width: 6%" />
-<col style="width: 6%" />
-<col style="width: 7%" />
-</colgroup>
-<thead>
-<tr>
-<th style="text-align: center;">Product / Connection</th>
-<th style="text-align: center;">Bluetooth® LE GATT</th>
-<th style="text-align: center;">RS‑232 / UART</th>
-<th style="text-align: center;">USB HID</th>
-<th style="text-align: center;">WLAN</th>
-<th style="text-align: center;">iAP2</th>
-<th style="text-align: center;">Ethernet</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>DynaFlex with USB Only</td>
-<td></td>
-<td></td>
-<td>HID</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td><p>DynaFlex w/Bluetooth® LE</p>
-<p>(MAGTEK INTERNAL ONLY FOR NOW)</p></td>
-<td>GATT</td>
-<td></td>
-<td>HID</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>DynaFlex Pro with USB Only</td>
-<td></td>
-<td></td>
-<td>HID</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td><p>DynaFlex Pro w/Bluetooth® LE</p>
-<p>(MAGTEK INTERNAL ONLY FOR NOW)</p></td>
-<td>GATT</td>
-<td></td>
-<td>HID</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>DynaFlex Pro w/WLAN</td>
-<td></td>
-<td></td>
-<td>HID</td>
-<td>WLAN</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td><p>DynaFlex Pro w/Ethernet</p>
-<p>(MAGTEK INTERNAL ONLY FOR NOW)</p></td>
-<td></td>
-<td></td>
-<td>HID</td>
-<td></td>
-<td></td>
-<td>Ethernet</td>
-</tr>
-<tr>
-<td>DynaProx</td>
-<td></td>
-<td>SLIP</td>
-<td>HID</td>
-<td></td>
-<td>iAP2-USB</td>
-<td></td>
-</tr>
-<tr>
-<td>DynaFlex II with USB Only</td>
-<td></td>
-<td></td>
-<td>HID</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td><p>DynaFlex II w/Bluetooth® LE</p>
-<p>(MAGTEK INTERNAL ONLY FOR NOW)</p></td>
-<td>GATT</td>
-<td></td>
-<td>HID</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>DynaFlex II PED with USB Only</td>
-<td></td>
-<td></td>
-<td>HID</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td><p>DynaFlex II PED w/Bluetooth® LE</p>
-<p>(MAGTEK INTERNAL ONLY FOR NOW)</p></td>
-<td>GATT</td>
-<td></td>
-<td>HID</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>DynaFlex II PED w/WLAN</td>
-<td></td>
-<td></td>
-<td>HID</td>
-<td>WLAN</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td><p>DynaFlex II PED w/Ethernet</p>
-<p>(MAGTEK INTERNAL ONLY FOR NOW)</p></td>
-<td></td>
-<td></td>
-<td>HID</td>
-<td></td>
-<td></td>
-<td>Ethernet</td>
-</tr>
-<tr>
-<td>DynaFlex II Go with USB Only</td>
-<td></td>
-<td></td>
-<td>HID</td>
-<td></td>
-<td>iAP2-USB</td>
-<td></td>
-</tr>
-<tr>
-<td>DynaFlex II Go w/Bluetooth® LE</td>
-<td>GATT</td>
-<td></td>
-<td>HID</td>
-<td></td>
-<td>iAP2-USB</td>
-<td></td>
-</tr>
-</tbody>
-</table>
+Connection availability and supported data formats are device-dependent.
+
+**[Table 1 - Device Connection Types / Data Formats](#table-1---device-connection-types--data-formats)**
+
+| Product / Connection              | Bluetooth® LE GATT | RS 232 / UART | USB HID | WLAN | iAP2     | Ethernet |
+|----------------------------------|----------------------|---------------|---------|------|----------|----------|
+| DynaFlex with USB Only           |                      |               | HID     |      |          |          |
+| DynaFlex w/Bluetooth® LE        | GATT                 |               | HID     |      |          |          |
+| DynaFlex Pro with USB Only       |                      |               | HID     |      |          |          |
+| DynaFlex Pro w/Bluetooth® LE    | GATT                 |               | HID     |      |          |          |
+| DynaFlex Pro w/WLAN              |                      |               | HID     | WLAN |          |          |
+| DynaFlex Pro w/Ethernet          |                      |               | HID     |      |          | Ethernet |
+| DynaProx                         |                      | SLIP          | HID     |      | iAP2-USB |          |
+| DynaFlex II with USB Only        |                      |               | HID     |      |          |          |
+| DynaFlex II w/Bluetooth® LE     | GATT                 |               | HID     |      |          |          |
+| DynaFlex II PED with USB Only    |                      |               | HID     |      |          |          |
+| DynaFlex II PED w/Bluetooth® LE | GATT                 |               | HID     |      |          |          |
+| DynaFlex II PED w/WLAN           |                      |               | HID     | WLAN |          |          |
+| DynaFlex II PED w/Ethernet       |                      |               | HID     |      |          | Ethernet |
+| DynaFlex II Go with USB Only     |                      |               | HID     |      | iAP2-USB |          |
+| DynaFlex II Go w/Bluetooth® LE  | GATT                 |               | HID     |      | iAP2-USB |          |
 
 ### About Device Features
 
-Much of the information in this document is applicable to multiple
-devices. When developing solutions that use a specific device or set of
-devices, integrators must be aware of each device’s connection types,
-data formats, features, and configuration options, which affect the
-availability and behavior of some commands. **Table 2** provides a list
-of device features that may impact command availability and behavior.
-All section headings in this document include tags that indicate which
-features they apply to.
+Not all features are available on every device. Use the table below to understand which features apply to each model.
 
-Table 2 - Device Features
+**[Table 2 - Device Features](#table-2---device-features)**
 
-| Feature / Product | DynaFlex II GO | DynaFlex with USB Only | DynaFlex w/Bluetooth® LE | DynaFlex Pro with USB Only | DynaFlex Pro with Bluetooth® LE | DynaFlex Pro with WLAN | DynaFlex Pro with Ethernet | DynaProx | DynaFlex II with USB Only | DynaFlex II w/Bluetooth® LE | DynaFlex II PED with USB Only | DynaFlex II PED with Bluetooth® LE | DynaFlex II PED with WLAN | DynaFlex II PED with Ethernet |
-|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|
-| MSR | Y | Y | Y | Y | Y | Y | Y | N | Y | Y | Y | Y | Y | Y |
-| EMV Contact | Y | Y | Y | Y | Y | Y | Y | N | Y | Y | Y | Y | Y | Y |
-| EMV Contactless | Y | Y | Y | Y | Y | Y | Y | Y | Y | Y | Y | Y | Y | Y |
-| MCE (Manual Card Entry) | N | N | N | Y | Y | Y | Y | N | N | N | Y | Y | Y | Y |
-| BCR (Barcode Reader) | Y | Y | Y | Y | Y | Y | Y | Y | Y | Y | Y | Y | Y | Y |
-| LED RGBx4 | 1 | Y | Y | Y | Y | Y | Y | N | Y | Y | Y | Y | Y | Y |
-| LED Monox4 | Y | N | N | N | N | N | N | Y | N | N | N | N | N | N |
-| Touch | N | N | N | Y | Y | Y | Y | N | N | N | Y | Y | Y | Y |
-| No Touch | Y | Y | Y | N | N | N | N | Y | Y | Y | N | N | N | N |
-| Display | N | N | N | Y | Y | Y | Y | N | N | N | Y | Y | Y | Y |
-| No Display | Y | Y | Y | N | N | N | N | Y | Y | Y | N | N | N | N |
-| Battery Power | Y | N | Y | N | Y | Y | Y | N | N | Y | N | Y | Y | Y |
-| Banking Functions | N | N | N | Y | Y | Y | Y | N | N | N | Y | Y | Y | Y |
-| Session Management | N | N | N | N | N | Y | N | N | N | N | N | N | Y | N |
-| Apple VAS | Y | N | N | N | N | N | N | Y | Y | Y | Y | Y | Y | Y |
-| Google Wallet Smart Tap | Y | N | N | N | N | N | N | Y | Y | Y | Y | Y | Y | Y |
-| Flexible UI | N | N | N | N | N | N | N | N | N | N | Y | Y | Y | Y |
-| Common Kernel | N | N | N | N | N | N | N | Y | Y | Y | Y | Y | Y | Y |
-| Card Emulation | Y | N | N | N | N | N | N | Y | Y | Y | Y | Y | Y | Y |
+| Feature / Product       | DynaFlex II GO | DynaFlex USB | DynaFlex BLE | DynaFlex Pro USB | DynaFlex Pro BLE | DynaFlex Pro WLAN | DynaFlex Pro Ethernet | DynaProx | DynaFlex II USB | DynaFlex II BLE | DynaFlex II PED USB | DynaFlex II PED BLE | DynaFlex II PED WLAN | DynaFlex II PED Ethernet |
+|------------------------|----------------|---------------|---------------|------------------|-------------------|--------------------|------------------------|----------|------------------|------------------|----------------------|----------------------|------------------------|---------------------------|
+| MSR                   | Y              | Y             | Y             | Y                | Y                 | Y                  | Y                      | N        | Y                | Y                | Y                    | Y                    | Y                        | Y                         |
+| EMV Contact           | Y              | Y             | Y             | Y                | Y                 | Y                  | Y                      | N        | Y                | Y                | Y                    | Y                    | Y                        | Y                         |
+| EMV Contactless       | Y              | Y             | Y             | Y                | Y                 | Y                  | Y                      | Y        | Y                | Y                | Y                    | Y                    | Y                        | Y                         |
+| MCE (Manual Entry)    | N              | N             | N             | Y                | Y                 | Y                  | Y                      | N        | N                | N                | Y                    | Y                    | Y                        | Y                         |
+| BCR                   | Y              | Y             | Y             | Y                | Y                 | Y                  | Y                      | Y        | Y                | Y                | Y                    | Y                    | Y                        | Y                         |
+| LED RGBx4             | 1              | Y             | Y             | Y                | Y                 | Y                  | Y                      | N        | Y                | Y                | Y                    | Y                    | Y                        | Y                         |
+| LED Monox4            | Y              | N             | N             | N                | N                 | N                  | N                      | Y        | N                | N                | N                    | N                    | N                        | N                         |
+| Touch                 | N              | N             | N             | Y                | Y                 | Y                  | Y                      | N        | N                | N                | Y                    | Y                    | Y                        | Y                         |
+| No Touch              | Y              | Y             | Y             | N                | N                 | N                  | N                      | Y        | Y                | Y                | N                    | N                    | N                        | N                         |
+| Display               | N              | N             | N             | Y                | Y                 | Y                  | Y                      | N        | N                | N                | Y                    | Y                    | Y                        | Y                         |
+| No Display            | Y              | Y             | Y             | N                | N                 | N                  | N                      | Y        | Y                | Y                | N                    | N                    | N                        | N                         |
+| Battery Power         | Y              | N             | Y             | N                | Y                 | Y                  | Y                      | N        | N                | Y                | N                    | Y                    | Y                        | Y                         |
+| Banking Functions     | N              | N             | N             | Y                | Y                 | Y                  | Y                      | N        | N                | N                | Y                    | Y                    | Y                        | Y                         |
+| Session Management    | N              | N             | N             | N                | N                 | Y                  | N                      | N        | N                | N                | N                    | N                    | Y                        | N                         |
+| Apple VAS             | Y              | N             | N             | N                | N                 | N                  | N                      | Y        | Y                | Y                | Y                    | Y                    | Y                        | Y                         |
+| Google Wallet SmartTap| Y              | N             | N             | N                | N                 | N                  | N                      | Y        | Y                | Y                | Y                    | Y                    | Y                        | Y                         |
+| Flexible UI           | N              | N             | N             | N                | N                 | N                  | N                      | N        | N                | N                | Y                    | Y                    | Y                        | Y                         |
+| Common Kernel         | N              | N             | N             | N                | N                 | N                  | N                      | Y        | Y                | Y                | Y                    | Y                    | Y                        | Y                         |
+| Card Emulation        | Y              | N             | N             | N                | N                 | N                  | N                      | Y        | Y                | Y                | Y                    | Y                    | Y                        | Y                         |
