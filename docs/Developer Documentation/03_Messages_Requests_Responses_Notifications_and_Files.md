@@ -4,26 +4,26 @@ layout: home
 parent: DynaFlex Family Programmer's Manual
 nav_order: 3
 ---
-## [Messages (Requests, Responses, Notifications, and Files)](# messages-requests-responses-notifications-and-files)
+## Messages (Requests, Responses, Notifications, and Files)
 
 ---
 
 ### Contents
 
-- [About Messages](#31-about-messages)
-- [Message Format](#32-message-format)
-  - [TLV Encoding](#321-tlv-encoding)
-    - [TLV Example](#3211-tlv-example)
-    - [How to Read TLV Tables](#3212-how-to-read-tlv-tables)
-- [Message Structure](#33-message-structure)
-  - [Request Message](#331-request-message)
-  - [Response Message](#332-response-message)
-  - [Notification Message](#333-notification-message)
-  - [Data File Message](#334-data-file-message)
+- [About Messages](#about-messages)
+- [Message Format](#message-format)
+  - [TLV Encoding](#tlv-encoding)
+    - [TLV Example](#tlv-example)
+    - [How to Read TLV Tables](#how-to-read-tlv-tables)
+- [Message Structure](#message-structure)
+  - [Request Message](#request-message)
+  - [Response Message](#response-message)
+  - [Notification Message](#notification-message)
+  - [Data File Message](#data-file-message)
 
 ---
 
-### [About Messages](#31-about-messages)
+### About Messages
 
 The host and the device communicate with each other by exchanging blocks of data called **Messages**, which are standardized wrappers containing a **payload** that is either a command **Request**, a command **Response**, an unsolicited **Notification**, or a **File**.
 
@@ -37,19 +37,19 @@ Messages can be nested. For example, a top-level secure wrapper request from the
 
 **Data Files.** Data files are large payloads exchanged between host and device using a stream approach. They must consist only of primitive data.
 
-All MMS devices follow a common schema for sending and receiving messages, documented in section [3.2 Message Format](#32-message-format).
+All MMS devices follow a common schema for sending and receiving messages, documented in section [Message Format](#message-format).
 
-### [Message Format](#32-message-format)
+### Message Format
 
 This section defines how messages are structured in MMS communication using Tag-Length-Value (TLV) encoding, conforming to DER (Distinguished Encoding Rules). Each message follows the MMS framework and may contain nested TLV objects.
 
-Refer to [3.2.1 TLV Encoding](#321-tlv-encoding) for specific rules, [3.2.1.1 TLV Example](#3211-tlv-example) for a full message breakdown, and [3.2.1.2 How to Read TLV Tables](#3212-how-to-read-tlv-tables) for guidance interpreting nesting and formatting.
+Refer to [TLV Encoding](#tlv-encoding) for specific rules, [TLV Example](#tlv-example) for a full message breakdown, and [How to Read TLV Tables](#how-to-read-tlv-tables) for guidance interpreting nesting and formatting.
 
-### [Message Structure](#33-message-structure)
+### Message Structure
 
 Each message type follow a specific structure, detailed in the subsections below.
 
-#### [Request Message](#331-request-message)
+#### Request Message
 
 ### **Table 10 - Request Message Format**
 
@@ -67,7 +67,7 @@ Each message type follow a specific structure, detailed in the subsections below
 | 84     | var  | Request Payload (See Section 6 Commands)                                                                                 | B   | R   |         |
 | 9E     | var  | Reserved                                                                                                                | B   | O   |         |
 
-#### [Response Message](#332-response-message)
+#### Response Message
 
 ### **Table 11 - Response Message Format**
 
@@ -125,7 +125,7 @@ Each message type follow a specific structure, detailed in the subsections below
 | Request Handler    | 02  | 05  | 24  | Invalid DSN                                                             |
 | Request Handler    | 02  | 05  | 25  | Invalid Challenge                                                       |
 
-#### [Notification Message](#333-notification-message)
+#### Notification Message
 
 ### **Table 13 - Notification Message Format**
 
@@ -148,7 +148,7 @@ Each message type follow a specific structure, detailed in the subsections below
 | 84     | var | Notification Payload                                                                                                       | B   | O   |         |
 | 9E     | var | Reserved                                                                                                                   | B   | O   |         |
 
-#### [Data File Message](#334-data-file-message)
+#### Data File Message
 
 ### **Table 14 - Data File Message Format**
 
@@ -168,4 +168,5 @@ Each message type follow a specific structure, detailed in the subsections below
 | Example (Hex) |
 |---------------|
 | AA 00 81 08 84 08 D8 21 00 00 00 01 84 40 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F 10 11 12 13 14 15 16 17 18 19 1A 1B 1C 1D 1E 1F 20 21 22 23 24 25 26 27 28 29 2A 2B 2C 2D 2E 2F 30 31 32 33 34 35 36 37 38 39 3A 3B 3C 3D 3E 3F |
+
 
