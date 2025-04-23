@@ -43,7 +43,7 @@ PCI Security Standards Council® is a registered trademark of the PCI Security S
 
 EMV® is a registered trademark in the U.S. and other countries and an unregistered trademark elsewhere. The EMV trademark is owned by EMVCo, LLC. The Contactless Indicator mark, consisting of four graduating arcs, is a trademark owned by and used with permission of EMVCo, LLC.
 
-The *Bluetooth®*® word mark and logos are registered trademarks owned by Bluetooth® SIG, Inc. and any use of such marks by MagTek is under license.
+The *Bluetooth®* word mark and logos are registered trademarks owned by Bluetooth® SIG, Inc. and any use of such marks by MagTek is under license.
 
 Google Play™ store, Google Wallet™ payment service, and Android™ platform are trademarks of Google LLC.
 
