@@ -10,7 +10,7 @@ nav_order: 1
 
 ### Table of Contents
 
-- [Introduction](#introduction)
+
   - [About This Document](#about-this-document)
   - [About Terminology](#about-terminology)
   - [About SDKs and Sample Code](#about-sdks-and-sample-code)
