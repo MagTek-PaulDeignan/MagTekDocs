@@ -8,7 +8,7 @@ nav_order: 2
 
 ---
 
-### Table of Contents
+### Contents
 
 
   - [How to Use USB Connections (USB Only)](#how-to-use-usb-connections-usb-only)

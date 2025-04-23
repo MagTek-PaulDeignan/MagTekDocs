@@ -8,7 +8,7 @@ nav_order: 1
 
 ---
 
-### Table of Contents
+### Contents
 
 
   - [About This Document](#about-this-document)
