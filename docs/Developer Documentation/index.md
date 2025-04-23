@@ -2,12 +2,8 @@
 title: Developer Documentation
 layout: home
 nav_order: 8
-parent: docs
+has_children: true
 ---
 # Developer Documentation
 
-<script>
-  window.$docsify = {
-    loadSidebar: true
-  }
-</script>
+
