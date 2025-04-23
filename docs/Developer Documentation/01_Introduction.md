@@ -185,7 +185,7 @@ Connection Types / Data Formats
 <thead>
 <tr>
 <th style="text-align: center;">Product / Connection</th>
-<th style="text-align: center;">Bluetooth®® LE GATT</th>
+<th style="text-align: center;">Bluetooth® LE GATT</th>
 <th style="text-align: center;">RS‑232 / UART</th>
 <th style="text-align: center;">USB HID</th>
 <th style="text-align: center;">WLAN</th>
