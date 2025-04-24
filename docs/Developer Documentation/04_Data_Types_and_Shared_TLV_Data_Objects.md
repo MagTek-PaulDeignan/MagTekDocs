@@ -4,6 +4,43 @@ layout: home
 parent: DynaFlex Family Programmer's Manual
 nav_order: 4
 ---
+---
+
+  - [Data Types and Shared TLV Data Objects](#data-types-and-shared-tlv-data-objects)
+    - [Primitive Data Types](#primitive-data-types)
+    - [About Track Data](#about-track-data)
+    - [Display Strings](#display-strings)
+    - [Encryption Type](#encryption-type)
+    - [EMV ARQC Type](#emv-arqc-type)
+    - [EMV ARPC Type](#emv-arpc-type)
+    - [EMV Batch Data Type](#emv-batch-data-type)
+    - [EMV Terminal Configuration File Type](#emv-terminal-configuration-file-type)
+    - [EMV Processing Configuration File Type](#emv-processing-configuration-file-type)
+    - [EMV Entry Point Configuration File Type](#emv-entry-point-configuration-file-type)
+    - [EMV Configuration CA Public Keys File Type](#emv-configuration-ca-public-keys-file-type)
+    - [EMV American Express DRL Configuration File Type (Not Supported on Expresspay 4.x)](#emv-american-express-drl-configuration-file-type-not-supported-on-expresspay-4x)
+    - [Signature Capture File Type (Touch Only)](#signature-capture-file-type-touch-only)
+    - [Security Operation Type](#security-operation-type)
+    - [Security Parameters Type](#security-parameters-type)
+    - [Key Information Type](#key-information-type)
+    - [NFC UID Type (EMV Contactless Only)](#nfc-uid-type-emv-contactless-only)
+    - [GPO Response Type (EMV Contactless Only)](#gpo-response-type-emv-contactless-only)
+    - [TR-31 Key Block Type](#tr-31-key-block-type)
+    - [Miniature Certificate Type (MAGTEK INTERNAL ONLY)](#miniature-certificate-type-magtek-internal-only)
+    - [Firmware File Type (MAGTEK INTERNAL ONLY)](#firmware-file-type-magtek-internal-only)
+    - [TrackType Type (MAGTEK INTERNAL ONLY FOR NOW)](#tracktype-type-magtek-internal-only-for-now)
+    - [CardData Type (MAGTEK INTERNAL ONLY FOR NOW)](#carddata-type-magtek-internal-only-for-now)
+    - [TagsType Type (MAGTEK INTERNAL ONLY FOR NOW)](#tagstype-type-magtek-internal-only-for-now)
+    - [TLVType Type (MAGTEK INTERNAL ONLY FOR NOW)](#tlvtype-type-magtek-internal-only-for-now)
+    - [Common File Structure](#common-file-structure)
+    - [Certificate File Types](#certificate-file-types)
+    - [Certificate Signing Request (CSR) File Types](#certificate-signing-request-csr-file-types)
+    - [UI Configuration File Type (MAGTEK INTERNAL ONLY)](#ui-configuration-file-type-magtek-internal-only)
+    - [Card Emulation](#card-emulation)
+
+---
+
+
 ## Data Types and Shared TLV Data Objects
 
 This section describes the primitive and composed data types referred to
