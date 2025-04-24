@@ -2,6 +2,7 @@
 title: Configurations
 layout: home
 parent: DynaFlex Family Programmer's Manual
+has_children: true
 nav_order: 8
 ---
 ## Configuration
