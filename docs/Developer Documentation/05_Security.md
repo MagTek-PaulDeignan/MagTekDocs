@@ -4,6 +4,19 @@ layout: home
 parent: DynaFlex Family Programmer's Manual
 nav_order: 5
 ---
+
+  - [About Message Authentication Codes (MAC)](#about-message-authentication-codes-mac)
+    - [MACs for EMV Data](#macs-for-emv-data)
+  - [About Key Serial Numbers (KSNs)](#about-key-serial-numbers-ksns)
+  - [About Encryption and Decryption](#about-encryption-and-decryption)
+  - [How to Determine the Key](#how-to-determine-the-key)
+  - [How to Decrypt Data](#how-to-decrypt-data)
+  - [24 Hour Automatic Reset PCI Requirement](#24-hour-automatic-reset-pci-requirement)
+  - [Device Lock Feature](#device-lock-feature)
+
+---
+
+
 ## Security
 
 ### About Message Authentication Codes (MAC)
