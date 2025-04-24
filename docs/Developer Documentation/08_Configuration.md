@@ -20,7 +20,6 @@ about the device and to configure / customize device behavior:
   further information about OIDs, see **Appendix A Object IDs (OIDs) and
   ITU-T X660**.
 
-<!-- -->
 
 - **Files** are larger configuration values, which include custom
   graphics files and large configuration data blobs such as EMV terminal
