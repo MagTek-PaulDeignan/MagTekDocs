@@ -1,0 +1,41 @@
+---
+title: Load CAPK with AID: 0000000000 to erase all current CAPK keys with this CAPK key:
+layout: home
+parent: Configuration
+nav_order: 248
+---
+
+## Load CAPK with AID: 0000000000 to erase all current CAPK keys with this CAPK key:
+
+---
+
+- [Load CAPK with AID: 0000000000 to erase all current CAPK keys with this CAPK key:](#load-capk-with-aid-0000000000-to-erase-all-current-capk-keys-with-this-capk-key)
+
+---
+
+
+**Table 1193 - Get Request Example**
+
+| Example (Hex) |
+|----|
+| AA00810401CED8128444D812810400000300A22B81040000008D8201048320B9C1F228E41A1F0B6173E00423C5B58A952DE1111E0CC5E33C3044A5D3FD2FCAA30A81083030303030333030870101 |
+
+**Table 1194 - Get Response Example**
+
+| Example (Hex)                |
+|------------------------------|
+| AA00810482CED812820400000000 |
+
+**Table 1195 - Get Request Example**
+
+| Example (Hex) |
+|----|
+| AA0081080400D8120000030084818D4D47544B41503130C10400000300CE7D000000000000016000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000583F99A8DF1A414B11A1607402AE67722C4F59B9 |
+
+**Table 1196 - Get Response Example**
+
+| Example (Hex)                |
+|------------------------------|
+| AA0081048200D812820400000000 |
+
+###
