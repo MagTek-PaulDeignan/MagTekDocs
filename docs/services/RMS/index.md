@@ -2,6 +2,7 @@
 title: Reader Management System
 layout: home
 parent: Services
+has_children: true
 nav_order: 1
 ---
 

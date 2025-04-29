@@ -1,6 +1,6 @@
 ---
 title: (RMS) Android Application
-
+has_children: true
 layout: home
 ---
 # Overview
