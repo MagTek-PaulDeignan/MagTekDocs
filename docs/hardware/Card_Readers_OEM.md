@@ -2,6 +2,7 @@
 title: Card Readers & OEM Components
 layout: home
 parent: Hardware
+has_children: true
 nav_order: 1
 ---
 
