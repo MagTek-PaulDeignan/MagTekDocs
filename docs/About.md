@@ -21,3 +21,4 @@ Founded in 1972, MagTek is a leading manufacturer of electronic systems for the 
 
 
 **Subscribe** or **Unsubscribe** to our [**Mailing List**](https://www.magtek.com/about/contact)
+
