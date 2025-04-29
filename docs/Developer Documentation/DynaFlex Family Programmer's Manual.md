@@ -1,13 +1,9 @@
 ---
 title: DynaFlex Family Programmer's Manual
 layout: home
-Parent: Developer Documentation
-
+parent: Developer Documentation
+nav_order: 1
 ---
-
-
-
-
 
 # D100005000: DynaFlex, DynaProx, DynaFlex II Go Family Multi-Interface Card Reader Platform
 
