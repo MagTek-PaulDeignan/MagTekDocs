@@ -4,7 +4,6 @@ layout: home
 parent: DynaProx
 nav_order: 1
 ---
-
 <table>
 <colgroup>
 <col style="width: 100%" />
@@ -16,7 +15,7 @@ nav_order: 1
 <p>Installation and Operation Manual</p></td>
 </tr>
 <tr>
-<td><img src="C:\Users\AndrewS\OneDrive - MagTek, Inc\AndrewS\Files to MD\media/media/image1.png" style="width:3.05in;height:3in" /></td>
+<td>![Figure 1. image1.png](../Hardware/Images/image1.png)</td>
 </tr>
 <tr>
 <td><p>February 2024</p>
@@ -335,7 +334,7 @@ Designed to simplify development efforts, DynaProx and DynaProx BCR are availabl
 **Figure 1‑1** shows the major components of DynaProx with barcode reader. Models without a barcode reader are identical to the diagram, but do not have a camera and do not have a QR code printed on the front face.
 
 <figure>
-<img src="C:\Users\AndrewS\OneDrive - MagTek, Inc\AndrewS\Files to MD\media/media/image3.png" style="width:6.5in;height:2.87986in" alt="Diagram, engineering drawing Description automatically generated" />
+![Figure 2. image3.png](../Hardware/Images/image3.png)
 <figcaption><p>Figure 1‑1 - DynaProx Major Components</p></figcaption>
 </figure>
 
@@ -403,7 +402,7 @@ The guidelines in the following sections are intended to help project planners a
 
 # Handling and Storage
 
-| <img src="C:\Users\AndrewS\OneDrive - MagTek, Inc\AndrewS\Files to MD\media/media/image4.png" style="width:1.58in;height:0.3in" /> |
+| ![Figure 3. image4.png](../Hardware/Images/image4.png) |
 |----|
 | Proper handling of the device throughout delivery, assembly, shipping, installation, usage, and maintenance is very important. Not following the guidelines in this document could damage the device, render it inoperable, and/or violate the conditions of the warranty. |
 
@@ -454,7 +453,7 @@ The following sections provide steps for connecting DynaProx to a host via the v
 ### How to Connect DynaProx to a Host via USB
 
 <figure>
-<img src="C:\Users\AndrewS\OneDrive - MagTek, Inc\AndrewS\Files to MD\media/media/image5.png" style="width:4.52083in;height:3.80208in" alt="Diagram, engineering drawing Description automatically generated" />
+![Figure 4. image5.png](../Hardware/Images/image5.png)
 <figcaption><p>Figure 4‑1 - Connecting to a USB Host</p></figcaption>
 </figure>
 
@@ -471,22 +470,22 @@ Note: A poor quality cable, or cable longer than 12ft in length, can result in u
 4)  If the specific device serial number you are connecting has not been connected to the host before, Windows system tray on the host reports it is **Setting up a device**, see **Figure 4‑2 – Device Setup**. When installation is complete (approximately 30 seconds later depending on the host), Windows reports **Device is ready**, (see **Figure 4‑3 – Setup Complete)** and the device shows in Windows Device Manager under **Human Interface Devices** (**see Figure 4‑4 – Windows Device Manager**) as two devices: **HID-compliant vendor-defined device** (see **Figure 4‑5 – HID Compliant Vendor-defined Device Properties**) with VID **0801** and PID **2020**, and **USB Input Device**.
 
 <figure>
-<img src="C:\Users\AndrewS\OneDrive - MagTek, Inc\AndrewS\Files to MD\media/media/image6.png" style="width:4.45749in;height:1.70394in" />
+![Figure 5. image6.png](../Hardware/Images/image6.png)
 <figcaption><p>Figure 4‑2 – Device Setup</p></figcaption>
 </figure>
 
 <figure>
-<img src="C:\Users\AndrewS\OneDrive - MagTek, Inc\AndrewS\Files to MD\media/media/image7.png" style="width:4.48295in;height:1.77281in" />
+![Figure 6. image7.png](../Hardware/Images/image7.png)
 <figcaption><p>Figure 4‑3 – Setup Complete</p></figcaption>
 </figure>
 
 <figure>
-<img src="C:\Users\AndrewS\OneDrive - MagTek, Inc\AndrewS\Files to MD\media/media/image8.png" style="width:2.84375in;height:3in" />
+![Figure 7. image8.png](../Hardware/Images/image8.png)
 <figcaption><p>Figure 4‑4 – Windows Device Manager</p></figcaption>
 </figure>
 
 <figure>
-<img src="C:\Users\AndrewS\OneDrive - MagTek, Inc\AndrewS\Files to MD\media/media/image9.png" style="width:2.77in;height:3in" />
+![Figure 8. image9.png](../Hardware/Images/image9.png)
 <figcaption><p>Figure 4‑5 – HID Compliant Vendor-defined Device Properties</p></figcaption>
 </figure>
 
@@ -554,7 +553,7 @@ The RS-232 interface on DynaProx will provide a UART interface at RS-232 signal 
 The RS-232 cable will be customer dependent. A sample cable can be provided that has the mating connector for DynaProx and color-coded wires. See **Figure 4‑6 - Cables and Connectors.**
 
 <figure>
-<img src="C:\Users\AndrewS\OneDrive - MagTek, Inc\AndrewS\Files to MD\media/media/image10.png" style="width:6.44417in;height:3.8in" />
+![Figure 9. image10.png](../Hardware/Images/image10.png)
 <figcaption><p>Figure 4‑6 - Cables and Connectors</p></figcaption>
 </figure>
 
@@ -580,7 +579,7 @@ DynaProx products are designed to provide flexible mounting options:
 </colgroup>
 <thead>
 <tr>
-<th><img src="C:\Users\AndrewS\OneDrive - MagTek, Inc\AndrewS\Files to MD\media/media/image4.png" style="width:1.58in;height:0.3in" /></th>
+<th>![Figure 10. image4.png](../Hardware/Images/image4.png)</th>
 </tr>
 </thead>
 <tbody>
@@ -606,7 +605,7 @@ When designing the mechanical portions of a solution that incorporates DynaProx 
 Overall dimensions of the device are shown in **Figure 4‑7**. On request, MagTek can provide a 3D model of the device’s envelope to assist with the mechanical portion of solution design. MagTek strongly recommends building and testing prototypes with actual devices before finalizing the solution design.
 
 <figure>
-<img src="C:\Users\AndrewS\OneDrive - MagTek, Inc\AndrewS\Files to MD\media/media/image11.png" style="width:6.30208in;height:4.27083in" alt="Diagram Description automatically generated" />
+![Figure 11. image11.png](../Hardware/Images/image11.png)
 <figcaption><p>Figure 4‑7 - DynaProx Overall Dimensions</p></figcaption>
 </figure>
 
@@ -617,21 +616,21 @@ When mounting DynaProx, make sure gasket is seated properly to ensure IP65 ratin
 The suggested panel cutouts for the USB and RS-232 connectors are shown in **Figure 4‑10** with a DynaProx shown for reference. The dimensions for the suggested panel cutouts are shown in **Figure 4‑11**.
 
 <figure>
-<img src="C:\Users\AndrewS\OneDrive - MagTek, Inc\AndrewS\Files to MD\media/media/image12.png" style="width:3.56571in;height:3.9in" alt="Diagram Description automatically generated" />
+![Figure 12. image12.png](../Hardware/Images/image12.png)
 <figcaption><p>Figure 4‑8 - DynaProx Mounting Hole Locations</p></figcaption>
 </figure>
 
-<img src="C:\Users\AndrewS\OneDrive - MagTek, Inc\AndrewS\Files to MD\media/media/image13.png" style="width:3.63in;height:3in" />
+![Figure 13. image13.png](../Hardware/Images/image13.png)
 
 Figure 4‑9 – DynaProx Gasket
 
 <figure>
-<img src="C:\Users\AndrewS\OneDrive - MagTek, Inc\AndrewS\Files to MD\media/media/image14.png" style="width:6.21681in;height:5.79629in" alt="A picture containing diagram Description automatically generated" />
+![Figure 14. image14.png](../Hardware/Images/image14.png)
 <figcaption><p>Figure 4‑10 – DynaProx Suggested USB and RS-232 Panel Cutouts</p></figcaption>
 </figure>
 
 <figure>
-<img src="C:\Users\AndrewS\OneDrive - MagTek, Inc\AndrewS\Files to MD\media/media/image15.png" style="width:6.5in;height:5.54097in" alt="Diagram Description automatically generated" />
+![Figure 15. image15.png](../Hardware/Images/image15.png)
 <figcaption><p>Figure 4‑11 – DynaProx Suggested USB and RS-232 Panel Cutout Dimensions</p></figcaption>
 </figure>
 
@@ -642,7 +641,7 @@ When designing the enclosure or mounting bracket, make sure there is adequate cl
 Major Components, see **Figure 4‑12 - DynaProx Major Components.**
 
 <figure>
-<img src="C:\Users\AndrewS\OneDrive - MagTek, Inc\AndrewS\Files to MD\media/media/image16.png" style="width:3.41in;height:6in" alt="Diagram Description automatically generated" />
+![Figure 16. image16.png](../Hardware/Images/image16.png)
 <figcaption><p>Figure 4‑12 - DynaProx Major Components</p></figcaption>
 </figure>
 
@@ -662,21 +661,21 @@ Major Components, see **Figure 4‑12 - DynaProx Major Components.**
 1\. Place the DynaProx face down on a clean, soft surface to avoid scratching the front face of the device. Using minimal toque, use (4) M4 screws to attach the stand to the body.
 
 <figure>
-<img src="C:\Users\AndrewS\OneDrive - MagTek, Inc\AndrewS\Files to MD\media/media/image17.png" style="width:2.16in;height:3in" alt="A picture containing projector Description automatically generated" />
+![Figure 17. image17.png](../Hardware/Images/image17.png)
 <figcaption><p>Figure 4‑13 - Suggested Installation for DynaProx Stand</p></figcaption>
 </figure>
 
 2\. Insert the cable and connect securely to the DynaProx device. Clip the cable securely into the cable management hooks. Channel the cable outside the back end of the stand body.
 
 <figure>
-<img src="C:\Users\AndrewS\OneDrive - MagTek, Inc\AndrewS\Files to MD\media/media/image18.png" style="width:1.85in;height:1.8in" alt="Diagram, engineering drawing Description automatically generated" />
+![Figure 18. image18.png](../Hardware/Images/image18.png)
 <figcaption><p>Figure 4‑14 - Cable Management</p></figcaption>
 </figure>
 
 3\. Align the assembly base plate and using the (2) flat-head screws, screw the base plate to the stand body. See **Figure 4‑15 – Baseplate Installation.**
 
 <figure>
-<img src="C:\Users\AndrewS\OneDrive - MagTek, Inc\AndrewS\Files to MD\media/media/image19.png" style="width:2.08483in;height:2.37513in" />
+![Figure 19. image19.png](../Hardware/Images/image19.png)
 <figcaption><p>Figure 4‑15 – Baseplate Installation</p></figcaption>
 </figure>
 
@@ -692,7 +691,7 @@ Follow Steps 1 through 2, then –
 
 3.  Using (2) M4 x 0.7mm thread pitch (not included) screws, screw up through the pre-drilled holes to the baseplate. Screws should be long enough to go through the surface and no more than 0.25” into the stand body.
 
-<img src="C:\Users\AndrewS\OneDrive - MagTek, Inc\AndrewS\Files to MD\media/media/image20.png" style="width:2.81338in;height:5.04655in" alt="A picture containing diagram Description automatically generated" />
+![Figure 20. image20.png](../Hardware/Images/image20.png)
 
 **1.20"\[30.5mm\]**
 
@@ -738,7 +737,7 @@ As mentioned in section **1.4 About DynaProx Components**, DynaProx models equip
 
 - DynaProx devices do not feature any input components such as buttons or touch screens.
 
-<img src="C:\Users\AndrewS\OneDrive - MagTek, Inc\AndrewS\Files to MD\media/media/image21.jpg" style="width:2.20492in;height:2.5in" alt="A picture containing appliance, kitchen appliance, sketch, drawing Description automatically generated" /><img src="C:\Users\AndrewS\OneDrive - MagTek, Inc\AndrewS\Files to MD\media/media/image22.jpg" style="width:2.26052in;height:2.5in" alt="A close-up of a machine Description automatically generated with low confidence" />
+![Figure 21. image21.jpg](../Hardware/Images/image21.jpg)![Figure 22. image22.jpg](../Hardware/Images/image22.jpg)
 
 **Figure 6‑1 – DynaProx and DynaProx BCR**
 
@@ -748,7 +747,7 @@ As mentioned in section **1.4 About DynaProx Components**, DynaProx models equip
 
 The arrangement of the four mono LEDs on DynaProx and DynaProx BCR devices is illustrated in **Figure 6‑2**. The LEDs are labeled LEDs 1 to 4 and are ordered from left to right on the device.
 
-<img src="C:\Users\AndrewS\OneDrive - MagTek, Inc\AndrewS\Files to MD\media/media/image21.jpg" style="width:2.20492in;height:2.5in" alt="A picture containing appliance, kitchen appliance, sketch, drawing Description automatically generated" /><img src="C:\Users\AndrewS\OneDrive - MagTek, Inc\AndrewS\Files to MD\media/media/image22.jpg" style="width:2.26052in;height:2.5in" alt="A close-up of a machine Description automatically generated with low confidence" />
+![Figure 23. image21.jpg](../Hardware/Images/image21.jpg)![Figure 24. image22.jpg](../Hardware/Images/image22.jpg)
 
 **1 2 3 4**
 
@@ -766,7 +765,7 @@ The arrangement of the four mono LEDs on DynaProx and DynaProx BCR devices is il
 
 > DynaProx devices equipped with a bar code reader have a status light that indicates whether the barcode feature is powered on or off.
 >
-> <img src="C:\Users\AndrewS\OneDrive - MagTek, Inc\AndrewS\Files to MD\media/media/image22.jpg" style="width:1.70988in;height:2in" alt="A close-up of a machine Description automatically generated with low confidence" />
+> ![Figure 25. image22.jpg](../Hardware/Images/image22.jpg)
 
 **BCR Light ON BCR Light OFF**
 
@@ -784,7 +783,7 @@ This section contains information regarding the operational modes of DynaProx's 
 
 When the device USB cable is connected to the host USB port, a brief beep will sound and all four LEDs will turn on for half a second, as shown in **Figure 6‑5**. Following this, LED 1 and LED 2 will remain illuminated, while LED 3 and LED 4 will remain unlit. After a duration of 10 seconds, all LEDs will turn off, and the device will enter an idle state. This occurs because the host sets the USB port into suspension mode, prompting the device to enter an idle state.
 
-<img src="C:\Users\AndrewS\OneDrive - MagTek, Inc\AndrewS\Files to MD\media/media/image21.jpg" style="width:1.76393in;height:2in" alt="A picture containing appliance, kitchen appliance, sketch, drawing Description automatically generated" /><img src="C:\Users\AndrewS\OneDrive - MagTek, Inc\AndrewS\Files to MD\media/media/image21.jpg" style="width:1.76393in;height:2in" alt="A picture containing appliance, kitchen appliance, sketch, drawing Description automatically generated" /><img src="C:\Users\AndrewS\OneDrive - MagTek, Inc\AndrewS\Files to MD\media/media/image21.jpg" style="width:1.76393in;height:2in" alt="A picture containing appliance, kitchen appliance, sketch, drawing Description automatically generated" />
+![Figure 26. image21.jpg](../Hardware/Images/image21.jpg)![Figure 27. image21.jpg](../Hardware/Images/image21.jpg)![Figure 28. image21.jpg](../Hardware/Images/image21.jpg)
 
 **Figure 6‑5 – LED Power on Sequence – USB Power On**
 
@@ -792,7 +791,7 @@ When the device USB cable is connected to the host USB port, a brief beep will s
 
 When DynaProx is in an idle state, it can be detected by a host through the USB HID port see **Figure 6‑6**. After the host has connected to DynaProx, LED 1 and LED 2 will stay on. The device is in Ready State.
 
-<img src="C:\Users\AndrewS\OneDrive - MagTek, Inc\AndrewS\Files to MD\media/media/image21.jpg" style="width:2.20492in;height:2.5in" alt="A picture containing appliance, kitchen appliance, sketch, drawing Description automatically generated" /><img src="C:\Users\AndrewS\OneDrive - MagTek, Inc\AndrewS\Files to MD\media/media/image21.jpg" style="width:2.20492in;height:2.5in" alt="A picture containing appliance, kitchen appliance, sketch, drawing Description automatically generated" />
+![Figure 29. image21.jpg](../Hardware/Images/image21.jpg)![Figure 30. image21.jpg](../Hardware/Images/image21.jpg)
 
 **Figure 6‑6 - LEDs Status (Idle State) Before Host Detection and LED Status (Ready State) After Connecting to Host**
 
@@ -800,11 +799,11 @@ When DynaProx is in an idle state, it can be detected by a host through the USB 
 
 When the device is in ready state, two LEDs will be illuminated see **Figure 6‑7**. When a card is detected only LED 1 will be on. If the device has a BCR and it is enabled, the BCR light will also be turned on see **Figure 6‑8**.
 
-<img src="C:\Users\AndrewS\OneDrive - MagTek, Inc\AndrewS\Files to MD\media/media/image21.jpg" style="width:2.20492in;height:2.5in" alt="A picture containing appliance, kitchen appliance, sketch, drawing Description automatically generated" />
+![Figure 31. image21.jpg](../Hardware/Images/image21.jpg)
 
 **Figure 6‑7 - Ready State**
 
-<img src="C:\Users\AndrewS\OneDrive - MagTek, Inc\AndrewS\Files to MD\media/media/image22.jpg" style="width:2.13734in;height:2.5in" alt="A close-up of a machine Description automatically generated with low confidence" />
+![Figure 32. image22.jpg](../Hardware/Images/image22.jpg)
 
 **Figure 6‑8 – Card detected.**
 
@@ -812,11 +811,11 @@ When the device is in ready state, two LEDs will be illuminated see **Figure 6�
 
 When a card is read, all four LEDs will turn on in sequence (1, 2, 3, and 4) followed by a long beep, indicating a successful transaction, see **Figure 6‑9**. After a successful transaction, the device will return to the ready state when the transaction is complete, see **Figure 6‑10**.
 
-<img src="C:\Users\AndrewS\OneDrive - MagTek, Inc\AndrewS\Files to MD\media/media/image27.png" style="width:6.36458in;height:2.32292in" alt="A picture containing graphical user interface Description automatically generated" />
+![Figure 33. image27.png](../Hardware/Images/image27.png)
 
 **Figure 6‑9 – LED Sequence – Payment Transaction Successful**
 
-<img src="C:\Users\AndrewS\OneDrive - MagTek, Inc\AndrewS\Files to MD\media/media/image22.jpg" style="width:2.13734in;height:2.5in" alt="A close-up of a machine Description automatically generated with low confidence" />
+![Figure 34. image22.jpg](../Hardware/Images/image22.jpg)
 
 **Figure 6‑10 – Return to Ready State After Successful Transaction**
 
@@ -824,21 +823,21 @@ When a card is read, all four LEDs will turn on in sequence (1, 2, 3, and 4) fol
 
 When the device is in ready state, two LEDs will be illuminated see **Figure 6‑11**. When a card is detected, only LED 1 will be turned on. If the device has a BCR and it is enabled, the BCR light will also be turned on see **Figure 6‑12**.
 
-<img src="C:\Users\AndrewS\OneDrive - MagTek, Inc\AndrewS\Files to MD\media/media/image22.jpg" style="width:2.13734in;height:2.5in" alt="A close-up of a machine Description automatically generated with low confidence" />
+![Figure 35. image22.jpg](../Hardware/Images/image22.jpg)
 
 **Figure 6‑11 - Ready State**
 
-<img src="C:\Users\AndrewS\OneDrive - MagTek, Inc\AndrewS\Files to MD\media/media/image22.jpg" style="width:2.13734in;height:2.5in" alt="A close-up of a machine Description automatically generated with low confidence" />
+![Figure 36. image22.jpg](../Hardware/Images/image22.jpg)
 
 **Figure 6‑12 – Card Detected**
 
 In the event of a failed or canceled transaction, LED 1 will stay illuminated, and the device will emit two short beeps. If the device is equipped with a BCR, its light will also be on, as shown in **Figure 6‑13**. The device will then return to the ready state, as demonstrated in **Figure 6‑14**.
 
-<img src="C:\Users\AndrewS\OneDrive - MagTek, Inc\AndrewS\Files to MD\media/media/image22.jpg" style="width:2.13734in;height:2.5in" alt="A close-up of a machine Description automatically generated with low confidence" />
+![Figure 37. image22.jpg](../Hardware/Images/image22.jpg)
 
 **Figure 6‑13 - Payment Transaction Failed**
 
-<img src="C:\Users\AndrewS\OneDrive - MagTek, Inc\AndrewS\Files to MD\media/media/image22.jpg" style="width:2.13734in;height:2.5in" alt="A close-up of a machine Description automatically generated with low confidence" />
+![Figure 38. image22.jpg](../Hardware/Images/image22.jpg)
 
 **Figure 6‑14 - Ready State**
 
@@ -846,7 +845,7 @@ In the event of a failed or canceled transaction, LED 1 will stay illuminated, a
 
 Upon being connected to USB power (after a delay of three seconds), the device will emit a short beep, and all four LEDs will turn on for half a second, as shown in **Figure 6‑15**. The device will then return to the Ready State.
 
-<img src="C:\Users\AndrewS\OneDrive - MagTek, Inc\AndrewS\Files to MD\media/media/image21.jpg" style="width:2.20492in;height:2.5in" alt="A picture containing appliance, kitchen appliance, sketch, drawing Description automatically generated" /><img src="C:\Users\AndrewS\OneDrive - MagTek, Inc\AndrewS\Files to MD\media/media/image21.jpg" style="width:2.20492in;height:2.5in" alt="A picture containing appliance, kitchen appliance, sketch, drawing Description automatically generated" />
+![Figure 39. image21.jpg](../Hardware/Images/image21.jpg)![Figure 40. image21.jpg](../Hardware/Images/image21.jpg)
 
 **Figure 6‑15 - Device Connected to USB Power**
 
@@ -854,7 +853,7 @@ Upon being connected to USB power (after a delay of three seconds), the device w
 
 Upon being connected to RS-232 power (after a delay of three seconds), the device will emit a short beep, and all four LEDs will turn on for half a second, see **Figure 6‑16**. The device will then return to ready state.
 
-<img src="C:\Users\AndrewS\OneDrive - MagTek, Inc\AndrewS\Files to MD\media/media/image21.jpg" style="width:2.20492in;height:2.5in" alt="A picture containing appliance, kitchen appliance, sketch, drawing Description automatically generated" /><img src="C:\Users\AndrewS\OneDrive - MagTek, Inc\AndrewS\Files to MD\media/media/image21.jpg" style="width:2.20492in;height:2.5in" alt="A picture containing appliance, kitchen appliance, sketch, drawing Description automatically generated" />
+![Figure 41. image21.jpg](../Hardware/Images/image21.jpg)![Figure 42. image21.jpg](../Hardware/Images/image21.jpg)
 
 **Figure 6‑16 - Successful Connection to RS-232 Power Supply**
 
@@ -862,13 +861,13 @@ Upon being connected to RS-232 power (after a delay of three seconds), the devic
 
 While in an idle state see **Figure 6‑17**, as described in section **6.3.2.1 Power On** , if an RS-232 power supply is connected to the device, it will remain in the idle state.
 
-<img src="C:\Users\AndrewS\OneDrive - MagTek, Inc\AndrewS\Files to MD\media/media/image21.jpg" style="width:2.20492in;height:2.5in" alt="A picture containing appliance, kitchen appliance, sketch, drawing Description automatically generated" />
+![Figure 43. image21.jpg](../Hardware/Images/image21.jpg)
 
 **Figure 6‑17 - Device in Idle State Before RS-232 Power Supply Connection**
 
 When the device is in a ready state, as explained in section **6.3.2.1 Power On** , connecting an RS-232 power supply to it will not change its state and it will remain in the ready state see **Figure 6‑18**.
 
-<img src="C:\Users\AndrewS\OneDrive - MagTek, Inc\AndrewS\Files to MD\media/media/image21.jpg" style="width:2.20492in;height:2.5in" alt="A picture containing appliance, kitchen appliance, sketch, drawing Description automatically generated" />
+![Figure 44. image21.jpg](../Hardware/Images/image21.jpg)
 
 **Figure 6‑18 - Ready State**
 
@@ -914,20 +913,20 @@ Table 6‑2 - DynaProx LED Patterns
 <tbody>
 <tr>
 <td><p>Solid</p>
-<p><img src="C:\Users\AndrewS\OneDrive - MagTek, Inc\AndrewS\Files to MD\media/media/image28.png" style="width:0.28125in;height:0.28125in" /><img src="C:\Users\AndrewS\OneDrive - MagTek, Inc\AndrewS\Files to MD\media/media/image28.png" style="width:0.28125in;height:0.28125in" /><img src="C:\Users\AndrewS\OneDrive - MagTek, Inc\AndrewS\Files to MD\media/media/image28.png" style="width:0.28125in;height:0.28125in" /><img src="C:\Users\AndrewS\OneDrive - MagTek, Inc\AndrewS\Files to MD\media/media/image28.png" style="width:0.28125in;height:0.28125in" /></p></td>
+<p>![Figure 45. image28.png](../Hardware/Images/image28.png)![Figure 46. image28.png](../Hardware/Images/image28.png)![Figure 47. image28.png](../Hardware/Images/image28.png)![Figure 48. image28.png](../Hardware/Images/image28.png)</p></td>
 <td><p><strong>Solid</strong> LEDs generally require an operator or cardholder to take action to change the state the LED is reporting.</p>
 <p>Example: Host is connected. Cardholder or host would have to disconnect.</p>
 <p>Example: Host is disconnected. Host would have to initiate connection.</p></td>
 </tr>
 <tr>
 <td><p>Blinking</p>
-<p><img src="C:\Users\AndrewS\OneDrive - MagTek, Inc\AndrewS\Files to MD\media/media/image29.png" style="width:0.28125in;height:0.28125in" /><img src="C:\Users\AndrewS\OneDrive - MagTek, Inc\AndrewS\Files to MD\media/media/image29.png" style="width:0.28125in;height:0.28125in" /><img src="C:\Users\AndrewS\OneDrive - MagTek, Inc\AndrewS\Files to MD\media/media/image29.png" style="width:0.28125in;height:0.28125in" /><img src="C:\Users\AndrewS\OneDrive - MagTek, Inc\AndrewS\Files to MD\media/media/image29.png" style="width:0.28125in;height:0.28125in" /></p></td>
+<p>![Figure 49. image29.png](../Hardware/Images/image29.png)![Figure 50. image29.png](../Hardware/Images/image29.png)![Figure 51. image29.png](../Hardware/Images/image29.png)![Figure 52. image29.png](../Hardware/Images/image29.png)</p></td>
 <td><p><strong>Blinking</strong> LEDs generally indicate the device is in the process of doing / attempting something. Blink duty cycle and blink period are generally selected to show urgency or ongoing progress through a series of steps.</p>
 <p>Example: Device is attempting to connect to the 802.11 access point.</p></td>
 </tr>
 <tr>
 <td><p>Short time</p>
-<p><img src="C:\Users\AndrewS\OneDrive - MagTek, Inc\AndrewS\Files to MD\media/media/image28.png" style="width:0.28125in;height:0.28125in" /><img src="C:\Users\AndrewS\OneDrive - MagTek, Inc\AndrewS\Files to MD\media/media/image28.png" style="width:0.28125in;height:0.28125in" /><img src="C:\Users\AndrewS\OneDrive - MagTek, Inc\AndrewS\Files to MD\media/media/image28.png" style="width:0.28125in;height:0.28125in" /><img src="C:\Users\AndrewS\OneDrive - MagTek, Inc\AndrewS\Files to MD\media/media/image28.png" style="width:0.28125in;height:0.28125in" /></p></td>
+<p>![Figure 53. image28.png](../Hardware/Images/image28.png)![Figure 54. image28.png](../Hardware/Images/image28.png)![Figure 55. image28.png](../Hardware/Images/image28.png)![Figure 56. image28.png](../Hardware/Images/image28.png)</p></td>
 <td><p>LEDs sometimes light for a <strong>short time</strong> to indicate some process has ended (success or failure) and the device is going to transition to another state soon.</p>
 <p>Example: Successful card read.</p></td>
 </tr>
@@ -1044,12 +1043,12 @@ To tap a contactless card or smartphone, follow these steps:
 
     4)  The device notifies the host that the transaction failed. If this occurs, the host software may choose to retry the transaction or revert to prompting the operator to perform another operation that is specific to the solution design.
 
-<img src="C:\Users\AndrewS\OneDrive - MagTek, Inc\AndrewS\Files to MD\media/media/image30.jpeg" style="width:1.725in;height:2.5in" /><img src="C:\Users\AndrewS\OneDrive - MagTek, Inc\AndrewS\Files to MD\media/media/image31.png" style="width:1.39166in;height:2.5in" />
+![Figure 57. image30.jpeg](../Hardware/Images/image30.jpeg)![Figure 58. image31.png](../Hardware/Images/image31.png)
 
 Figure 6‑19 - Tapping a Contactless Card / Smartphone
 
 <figure>
-<img src="C:\Users\AndrewS\OneDrive - MagTek, Inc\AndrewS\Files to MD\media/media/image27.png" style="width:6.36458in;height:2.64583in" alt="A picture containing graphical user interface Description automatically generated" />
+![Figure 59. image27.png](../Hardware/Images/image27.png)
 <figcaption><p>Figure 6‑20 – Contactless Read LED Sequence</p></figcaption>
 </figure>
 
@@ -1082,7 +1081,7 @@ To scan a barcode, follow these steps:
     2)  The device turns off the barcode reader indicator LED.
 
 <figure>
-<img src="C:\Users\AndrewS\OneDrive - MagTek, Inc\AndrewS\Files to MD\media/media/image32.png" style="width:1.75in;height:2.5in" />
+![Figure 60. image32.png](../Hardware/Images/image32.png)
 <figcaption><p>Figure 6‑21 - Scanning a Barcode</p></figcaption>
 </figure>
 
@@ -1146,7 +1145,7 @@ To tap an NFC Contactless IC Product and Send Pass-through commands, follow thes
 </colgroup>
 <thead>
 <tr>
-<th><img src="C:\Users\AndrewS\OneDrive - MagTek, Inc\AndrewS\Files to MD\media/media/image4.png" style="width:1.58in;height:0.3in" /></th>
+<th>![Figure 61. image4.png](../Hardware/Images/image4.png)</th>
 </tr>
 </thead>
 <tbody>
@@ -1559,7 +1558,7 @@ This product is recognized per ***UL 60950‑1, 2nd Edition, 2011‑12‑19*** (
 
 **RoHS STATEMENT**
 
-When ordered as RoHS compliant, this product meets the Electrical and Electronic Equipment (EEE) Reduction of Hazardous Substances (RoHS) Directive (EU) 2015/863 amending Annex II to Directive 2011/65/EU. The marking is clearly recognizable, either as written words like “Pb-free,” “lead-free,” or as another clear symbol (<img src="C:\Users\AndrewS\OneDrive - MagTek, Inc\AndrewS\Files to MD\media/media/image33.png" style="width:0.20833in;height:0.17708in" alt="PbFreeSym" />).
+When ordered as RoHS compliant, this product meets the Electrical and Electronic Equipment (EEE) Reduction of Hazardous Substances (RoHS) Directive (EU) 2015/863 amending Annex II to Directive 2011/65/EU. The marking is clearly recognizable, either as written words like “Pb-free,” “lead-free,” or as another clear symbol (![Figure 62. image33.png](../Hardware/Images/image33.png)).
 
 **PCI Statement**
 
@@ -1579,7 +1578,7 @@ When granted, PCI SSC approval is provided by PCI SSC to ensure certain security
 </colgroup>
 <thead>
 <tr>
-<th style="text-align: center;"><img src="C:\Users\AndrewS\OneDrive - MagTek, Inc\AndrewS\Files to MD\media/media/image4.png" style="width:1.58in;height:0.3in" alt="A picture containing text, font, graphics, logo Description automatically generated" /></th>
+<th style="text-align: center;">![Figure 63. image4.png](../Hardware/Images/image4.png)</th>
 </tr>
 </thead>
 <tbody>
