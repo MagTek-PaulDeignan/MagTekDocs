@@ -466,8 +466,7 @@ interfaces (APIs).
 ## About DynaProx Components
 
 **Figure 1‑1** shows the major components of DynaProx with barcode
-reader. Models without a barcode reader are identical to the diagram,
-but do not have a camera and do not have a QR code printed on the front
+reader. Models without a barcode reader are identical to the diagram, but do not have a camera and do not have a QR code printed on the front
 face.
 
 <figure>
