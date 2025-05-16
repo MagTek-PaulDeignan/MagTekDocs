@@ -828,7 +828,7 @@ J1 of DynaProx and are listed below. **See Table 4‑1 - RS-232 Signals.**
 
 #### RS-232 Cable
 
-The RS-232 cable will be customer dependent. A sample cable can be
+The *RS-232* cable will be customer dependent. A sample cable can be
 provided that has the mating connector for DynaProx and color-coded
 wires. See **Figure 4‑6 - Cables and Connectors.**
 
