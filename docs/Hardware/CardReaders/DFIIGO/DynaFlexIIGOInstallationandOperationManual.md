@@ -44,13 +44,13 @@ Microsoft®, Windows®, and .NET® are registered trademarks of Microsoft Corpor
 
 All other system names and product names are the property of their respective owners.
 
-Table 01 - Revisions
+Table 1 - Revisions
 
 | Rev Number | Date              | Notes                                                                                                                                                                                                                                                                                                                                                                                       |
 |------------|-------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | 100        | November 16, 2023 | Initial release                                                                                                                                                                                                                                                                                                                                                                             |
 | 110        | February 1, 2024  | Update all Device Images, Update Device Specifications throughout document; Updated **1.1 Key Features and Components** to include NFC Tag/Mifare Classic/Mifare DESFire Light, and Buzzer command support; Added **6.4.1 How to Play a Sequence of Tones**; Added Error! Reference source not found. Error! Reference source not found.**.** miscellaneous clarifications and corrections. |
-| 120        | April 12, 2024    | Update **Table 12 - DynaFlex II Go Accessories** with current USB Type A-C and type C cable Part Numbers and Descriptions, Add section **7.5.7 DynaFlex II Go Bluetooth® Low Energy (LE) Sleep Mode,** Add **6.2 Physical Button Operation**, Add reference to BLE Sleep mode in **6.3 About Operating Modes**                                                                              |
+| 120        | April 12, 2024    | Update **Table 2 - DynaFlex II Go Accessories** with current USB Type A-C and type C cable Part Numbers and Descriptions, Add section **7.5.7 DynaFlex II Go Bluetooth® Low Energy (LE) Sleep Mode,** Add **6.2 Physical Button Operation**, Add reference to BLE Sleep mode in **6.3 About Operating Modes**                                                                              |
 | 121        | May 15, 2024      | Updated **7.6.2** **MSR Payment Transaction Successful (Connected via USB)**and **7.6.6** **MSR Payment Transaction Successful (Connected via Bluetooth® LE)** with correct LED behavior for MSR Transactions                                                                                                                                                                               |
 | 122        | February 14, 2025 | Removed UL language from Boiler Plate and updated Safety Language in **Appendix D**.                                                                                                                                                                                                                                                                                                        |
 | 123        | February 27, 2025 | Removed the word "preferred" from wired connection specification for USB 3.0 in **Appendix A Technical Specifications.**                                                                                                                                                                                                                                                                    |
@@ -60,154 +60,79 @@ Table 01 - Revisions
 
 # Table of Contents
 
-[Table of Contents](#_Toc200020340)
-
-[1 Introduction](#introduction)
-
-[1.1 Key Features and Components](#_Toc200020342)
-
-[1.2 Available Models and Accessories](#_Toc200020343)
-
-[1.3 About Terminology](#about-terminology)
-
-[2 Planning and Preparation](#_Toc200020345)
-
-[2.1 Logistical Planning](#_Toc200020346)
-
-[3 Handling and Storage](#_Toc200020347)
-
-[3.1 Handling to Avoid Damage](#_Toc200020348)
-
-[3.2 Handling to Avoid Accidental Tamper](#_Toc200020349)
-
-[4 Installation](#_Toc200020350)
-
-[4.1 About Inspection](#_Toc200020351)
-
-[4.2 About Host Software](#_Toc200020352)
-
-[4.3 Connecting DynaFlex II Go to a Host](#_Toc200020353)
-
-[4.3.1 How to Connect DynaFlex II Go to a Host Computer via USB-C](#_Toc200020354)
-
-[4.3.2 How to Connect DynaFlex II Go to an iOS Host via Bluetooth® Low Energy (LE)](#_Toc200020355)
-
-[4.3.3 How to Connect DynaFlex II Go to an Android Host via Bluetooth® Low Energy (LE)](#_Toc200020356)
-
-[4.3.4 How to Connect DynaFlex II Go to a Windows 10 Host [Version 1703 or Above] via Bluetooth® Low Energy (LE) (Windows Drivers)](#_Toc200020357)
-
-[4.4 Mounting](#mounting)
-
-[4.4.1 About Mounting](#about-mounting)
-
-[4.4.2 How to Mount DynaFlex II Go](#_Toc200020360)
-
-[5 Configuration](#_Toc200020361)
-
-[6 Operation](#_Toc200020362)
-
-[6.1 Operation Overview](#operation-overview)
-
-[6.2 Physical Button Operation](#_Toc200020364)
-
-[6.3 About Operating Modes](#_Toc200020365)
-
-[6.4 About Sounds](#_Toc200020366)
-
-[6.4.1 How to Play a Sequence of Tones](#_Toc200020367)
-
-[7 Introduction to User Interface](#introduction-to-user-interface)
-
-[7.1 Component Details](#_Toc200020369)
-
-[7.2 Power On via USB Cable LED Behavior](#_Toc200020370)
-
-[7.3 USB Enumeration](#_Toc200020371)
-
-[7.4 About the Status LEDs](#_Toc200020372)
-
-[7.5 Bluetooth® Low Energy (LE) LED Behavior](#_Toc200020373)
-
-[7.5.1 Bluetooth® Low Energy (LE) Status LED 2 and LED 3](#bluetooth-low-energy-le-status-led-2-and-led-3)
-
-[7.5.2 Power On DynaFlex II Go in Battery Operating Mode](#power-on-dynaflex-ii-go-in-battery-operating-mode)
-
-[7.5.3 Power Off DynaFlex II Go in Battery Operating Mode](#power-off-dynaflex-ii-go-in-battery-operating-mode)
-
-[7.5.4 DynaFlex II Go Bluetooth® Low Energy (LE) Host Pairing](#dynaflex-ii-go-bluetooth-low-energy-le-host-pairing)
-
-[7.5.5 DynaFlex II Go Bluetooth® Low Energy (LE) Host Connected](#dynaflex-ii-go-bluetooth-low-energy-le-host-connected)
-
-[7.5.6 DynaFlex II Go Bluetooth® Low Energy (LE) Host Disconnect](#dynaflex-ii-go-bluetooth-low-energy-le-host-disconnect)
-
-[7.5.7 DynaFlex II Go Bluetooth® Low Energy (LE) Sleep Mode](#_Toc200020380)
-
-[7.6 LED Behavior: Successful Transactions](#led-behavior-successful-transactions)
-
-[7.6.1 BCR Payment Transaction Successful (Connected via USB)](#bcr-payment-transaction-successful-connected-via-usb)
-
-[7.6.2 MSR Payment Transaction Successful (Connected via USB)](#_Toc200020383)
-
-[7.6.3 EMV Contact Payment Transaction Successful (Connected via USB)](#emv-contact-payment-transaction-successful-connected-via-usb)
-
-[7.6.4 EMV Contactless Payment Transaction Successful (Connected via USB)](#emv-contactless-payment-transaction-successful-connected-via-usb)
-
-[7.6.5 BCR Payment Transaction Successful (Connected via Bluetooth® LE)](#bcr-payment-transaction-successful-connected-via-bluetooth-le)
-
-[7.6.6 MSR Payment Transaction Successful (Connected via Bluetooth® LE)](#_Toc200020387)
-
-[7.6.7 EMV Contact Payment Transaction Successful (Connected via Bluetooth® LE)](#emv-contact-payment-transaction-successful-connected-via-bluetooth-le)
-
-[7.6.8 EMV Contactless Payment Transaction Successful (Connected via Bluetooth® LE)](#emv-contactless-payment-transaction-successful-connected-via-bluetooth-le)
-
-[7.7 LED Behavior: Errors, Timeouts, and Canceled Transactions](#_Toc200020390)
-
-[7.8 Power Management](#_Toc200020391)
-
-[7.8.1 About Power](#_Toc200020392)
-
-[7.8.2 How to Charge the Battery](#_Toc200020393)
-
-[7.8.3 How to Power On / Wake Up from Standby Mode / Power Off](#_Toc200020394)
-
-[7.8.4 About Maintenance Reset](#_Toc200020395)
-
-[7.9 Card Reading](#_Toc200020396)
-
-[7.9.1 About Reading Cards](#_Toc200020397)
-
-[7.9.2 How to Tap Contactless Cards / Devices](#_Toc200020398)
-
-[7.9.3 How to Scan Barcodes](#_Toc200020399)
-
-[7.9.4 Apple VAS for DynaFlex II Go](#_Toc200020400)
-
-[7.9.4.1 VAS App and Payment Mode (Dual Mode)](#vas-app-and-payment-mode-dual-mode)
-
-[7.9.4.2 VAS App Only Mode (VAS Mode)](#vas-app-only-mode-vas-mode)
-
-[7.9.4.3 VAS App or Payment Mode (Single Mode)](#vas-app-or-payment-mode-single-mode)
-
-[7.9.4.4 Payment Only Mode (Payment Mode)](#payment-only-mode-payment-mode)
-
-[7.9.5 How to Tap Contactless NFC Tags / MIFARE Classic / MIFARE DESFire /MIFARE Plus Cards and Send Pass-through Commands](#_Toc200020405)
-
-[8 Maintenance](#_Toc200020406)
-
-[8.1 Mechanical Maintenance](#_Toc200020407)
-
-[8.2 Updates to Firmware, Documentation, Security Guidance](#_Toc200020408)
-
-[9 Developing Custom Software](#_Toc200020409)
-
-[Appendix A Technical Specifications](#_Toc200020410)
-
-[Appendix B Barcode Reader Symbologies](#_Toc200020411)
-
-[Appendix C Optional Accessories](#_Toc200020412)
-
-[Appendix D Warranty, Standards, and Certifications](#_Toc200020413)
-
+- [Introduction](#introduction)
+  - [Key Features and Components](#key-features-and-components)
+  - [Available Models and Accessories](#available-models-and-accessories)
+  - [About Terminology](#about-terminology)
+- [Planning and Preparation](#planning-and-preparation)
+  - [Logistical Planning](#logistical-planning)
+- [Handling and Storage](#handling-and-storage)
+  - [Handling to Avoid Damage](#handling-to-avoid-damage)
+  - [Handling to Avoid Accidental Tamper](#handling-to-avoid-accidental-tamper)
+- [Installation](#installation)
+  - [About Inspection](#about-inspection)
+  - [About Host Software](#about-host-software)
+  - [Connecting DynaFlex II Go to a Host](#connecting-dynaflex-ii-go-to-a-host)
+    - [How to Connect DynaFlex II Go to a Host Computer via USB-C](#how-to-connect-dynaflex-ii-go-to-a-host-computer-via-usb-c)
+    - [How to Connect DynaFlex II Go to an iOS Host via Bluetooth® Low Energy (LE)](#how-to-connect-dynaflex-ii-go-to-an-ios-host-via-bluetooth-low-energy-le)
+    - [How to Connect DynaFlex II Go to an Android Host via Bluetooth® Low Energy (LE)](#how-to-connect-dynaflex-ii-go-to-an-android-host-via-bluetooth-low-energy-le)
+    - [How to Connect DynaFlex II Go to a Windows 10 Host [Version 1703 or Above] via Bluetooth® Low Energy (LE) (Windows Drivers)](#how-to-connect-dynaflex-ii-go-to-a-windows-10-host-version-1703-or-above-via-bluetooth-low-energy-le-windows-drivers)
+  - [Mounting](#mounting)
+    - [About Mounting](#about-mounting)
+    - [How to Mount DynaFlex II Go](#how-to-mount-dynaflex-ii-go)
+- [Configuration](#configuration)
+- [Operation](#operation)
+  - [Operation Overview](#operation-overview)
+  - [Physical Button Operation](#physical-button-operation)
+  - [About Operating Modes](#about-operating-modes)
+  - [About Sounds](#about-sounds)
+    - [How to Play a Sequence of Tones](#how-to-play-a-sequence-of-tones)
+- [Introduction to User Interface](#introduction-to-user-interface)
+  - [Component Details](#component-details)
+  - [Power On via USB Cable LED Behavior](#power-on-via-usb-cable-led-behavior)
+  - [USB Enumeration](#usb-enumeration)
+  - [About the Status LEDs](#about-the-status-leds)
+  - [Bluetooth® Low Energy (LE) LED Behavior](#bluetooth-low-energy-le-led-behavior)
+    - [Bluetooth® Low Energy (LE) Status LED 2 and LED 3](#bluetooth-low-energy-le-status-led-2-and-led-3)
+    - [Power On DynaFlex II Go in Battery Operating Mode](#power-on-dynaflex-ii-go-in-battery-operating-mode)
+    - [Power Off DynaFlex II Go in Battery Operating Mode](#power-off-dynaflex-ii-go-in-battery-operating-mode)
+    - [DynaFlex II Go Bluetooth® Low Energy (LE) Host Pairing](#dynaflex-ii-go-bluetooth-low-energy-le-host-pairing)
+    - [DynaFlex II Go Bluetooth® Low Energy (LE) Host Connected](#dynaflex-ii-go-bluetooth-low-energy-le-host-connected)
+    - [DynaFlex II Go Bluetooth® Low Energy (LE) Host Disconnect](#dynaflex-ii-go-bluetooth-low-energy-le-host-disconnect)
+    - [DynaFlex II Go Bluetooth® Low Energy (LE) Sleep Mode](#dynaflex-ii-go-bluetooth-low-energy-le-sleep-mode)
+  - [LED Behavior: Successful Transactions](#led-behavior-successful-transactions)
+    - [BCR Payment Transaction Successful (Connected via USB)](#bcr-payment-transaction-successful-connected-via-usb)
+    - [MSR Payment Transaction Successful (Connected via USB)](#msr-payment-transaction-successful-connected-via-usb)
+    - [EMV Contact Payment Transaction Successful (Connected via USB)](#emv-contact-payment-transaction-successful-connected-via-usb)
+    - [EMV Contactless Payment Transaction Successful (Connected via USB)](#emv-contactless-payment-transaction-successful-connected-via-usb)
+    - [BCR Payment Transaction Successful (Connected via Bluetooth® LE)](#bcr-payment-transaction-successful-connected-via-bluetooth-le)
+    - [MSR Payment Transaction Successful (Connected via Bluetooth® LE)](#msr-payment-transaction-successful-connected-via-bluetooth-le)
+    - [EMV Contact Payment Transaction Successful (Connected via Bluetooth® LE)](#emv-contact-payment-transaction-successful-connected-via-bluetooth-le)
+    - [EMV Contactless Payment Transaction Successful (Connected via Bluetooth® LE)](#emv-contactless-payment-transaction-successful-connected-via-bluetooth-le)
+  - [LED Behavior: Errors, Timeouts, and Canceled Transactions](#led-behavior-errors-timeouts-and-canceled-transactions)
+  - [Power Management](#power-management)
+    - [About Power](#about-power)
+    - [How to Charge the Battery](#how-to-charge-the-battery)
+    - [How to Power On / Wake Up from Standby Mode / Power Off](#how-to-power-on--wake-up-from-standby-mode--power-off)
+    - [About Maintenance Reset](#about-maintenance-reset)
+  - [Card Reading](#card-reading)
+    - [About Reading Cards](#about-reading-cards)
+    - [How to Tap Contactless Cards / Devices](#how-to-tap-contactless-cards--devices)
+    - [How to Scan Barcodes](#how-to-scan-barcodes)
+    - [Apple VAS for DynaFlex II Go](#apple-vas-for-dynaflex-ii-go)
+      - [VAS App and Payment Mode (Dual Mode)](#vas-app-and-payment-mode-dual-mode)
+      - [VAS App Only Mode (VAS Mode)](#vas-app-only-mode-vas-mode)
+      - [VAS App or Payment Mode (Single Mode)](#vas-app-or-payment-mode-single-mode)
+      - [Payment Only Mode (Payment Mode)](#payment-only-mode-payment-mode)
+    - [How to Tap Contactless NFC Tags / MIFARE Classic / MIFARE DESFire /MIFARE Plus Cards and Send Pass-through Commands](#how-to-tap-contactless-nfc-tags--mifare-classic--mifare-desfire-mifare-plus-cards-and-send-pass-through-commands)
+- [Maintenance](#maintenance)
+  - [Mechanical Maintenance](#mechanical-maintenance)
+  - [Updates to Firmware, Documentation, Security Guidance](#updates-to-firmware-documentation-security-guidance)
+- [Developing Custom Software](#developing-custom-software)
+          - [Technical Specifications](#technical-specifications)
+          - [Barcode Reader Symbologies](#barcode-reader-symbologies)
+          - [Optional Accessories](#optional-accessories)
+          - [Warranty, Standards, and Certifications](#warranty-standards-and-certifications)
 # Introduction
 
 DynaFlex II Go and DynaFlex II Go with Barcode Reader (BCR) deliver the next generation of mobile payment solutions. Both models offer an integrated secure card reader authenticator for magnetic stripe cards, EMV chip cards (contact and contactless), and NFC enabled mobile wallets including Samsung Pay, Google Pay™ with support for Google VAS, and Apple Pay® with support for Apple VAS. Ideal for cafés, restaurants, boutiques, airlines, retail banks and other developers looking to build a secure payment solution that accepts contactless EMV and NFC payments. DynaFlex II Go is suited for deployment in many scenarios, including mobile handsets, tablets, and desktop computers.
@@ -245,7 +170,7 @@ Figure 11 - DynaFlex II Go Major Components
 
 ## Available Models and Accessories
 
-Table 11 - Available Models and Options
+Table 3 - Available Models and Options
 
 | Part No. | Description                                                               | Display | Connection(s)                 | Operating Systems                        |
 |----------|---------------------------------------------------------------------------|---------|-------------------------------|------------------------------------------|
@@ -258,7 +183,7 @@ Table 11 - Available Models and Options
 | 21078406 | DynaFlex II Go, PCI, BCR, BLACK, LOCKED MAGENSA BUNDLE LMB                | None    | USB-C, iAP2®                  | MS Windows, Mac OS, Linux; Android Phone |
 | 21078407 | DynaFlex II Go, PCI, BLACK, LOCKED MAGENSA BUNDLE LMB                     | None    | USB-C, iAP2®                  | MS Windows, Mac OS, Linux; Android Phone |
 
-Table 12 - DynaFlex II Go Accessories
+Table 2 - DynaFlex II Go Accessories
 
 | Part \#                                                                                | Description                                    | Accessory Notes                                                           |
 |----------------------------------------------------------------------------------------|------------------------------------------------|---------------------------------------------------------------------------|
@@ -281,8 +206,8 @@ The guidelines in the following sections are intended to help project planners a
 
 ## Logistical Planning
 
--   Determine what type of **host** DynaFlex II Go will connect to. For a list of supported device types and operating systems, see **Table 11**. When planning, be sure to include any additional support or devices required by the host and DynaFlex II Go, such as physical locations, mounting, power connections, and charging cradles.
--   Determine what **connection** the host will use to communicate with the device. The available connections are USB-C for power and control and Bluetooth® Low Energy (LE) for wireless connectivity (see **Table 11**).
+-   Determine what type of **host** DynaFlex II Go will connect to. For a list of supported device types and operating systems, see **Table 3**. When planning, be sure to include any additional support or devices required by the host and DynaFlex II Go, such as physical locations, mounting, power connections, and charging cradles.
+-   Determine what **connection** the host will use to communicate with the device. The available connections are USB-C for power and control and Bluetooth® Low Energy (LE) for wireless connectivity (see **Table 3**).
 -   Determine what **software** will be installed on the host and how it will be configured. Software can include the operating system, transaction processing software, security software, and so on. If teams other than the software development team will be involved in preliminary device testing, MagTek recommends the solution development team provide a smoke test harness early in the development process to allow basic testing (for example, communication adapter testing). In addition, be sure to plan for any additional support required by the software, such as software licenses and network connections. Information about software is provided in section **4.2 About Host Software**.
 -   Determine how the device will be physically presented to the cardholder. If the device is mounted, make sure there is adequate clearance for cardholders to swipe, insert, and tap. If the solution design includes metal objects anywhere near the device, including metal enclosures, make sure that at all points the metal is no closer than 15mm from the MSR swipe path or card insertion slot. Proximity to metal can adversely affect the device’s performance.
 -   Determine how the device should be configured and specify that configuration when ordering the device. A full list of configurable options is documented in **D998200597 DynaFlex II Go Programmer’s Manual (COMMANDS)**.
@@ -348,7 +273,7 @@ The following sections describe how to connect DynaFlex II Go to a host using th
 
 Figure 41 - Connecting to a Host via USB-C
 
-To connect DynaFlex II Go products to a USB host computer or charger using the USB-C port, follow these steps (for reference see **Figure 41**):For best results, use the cable that is included with the device or another cable from **Table 12 - DynaFlex II Go Accessories** on page **9**. Connect the USB-C end of the cable to DynaFlex II Go see **Figure 41 - Connecting to a Host via USB-C**.
+To connect DynaFlex II Go products to a USB host computer or charger using the USB-C port, follow these steps (for reference see **Figure 41**):For best results, use the cable that is included with the device or another cable from **Table 2 - DynaFlex II Go Accessories** on page **9**. Connect the USB-C end of the cable to DynaFlex II Go see **Figure 41 - Connecting to a Host via USB-C**.
 
 1.  Connect the other end of the USB cable to the host’s USB port.
 2.  As soon as the device starts receiving power through USB, it automatically powers on.
@@ -464,13 +389,13 @@ For each transaction type, the host software directs the cardholder. The transac
 
 ## Physical Button Operation
 
-All DynaFlex II Go devices have a single physical button, see **Figure 61 - Power Button**. Pressing and holding this button can activate extra functions. To active a specific function, press and hold the button until a specific number of beeps are heard. **Table 61 - Button Functions** contains functions that can be activated. Beep counts that are not listed are not supported.
+All DynaFlex II Go devices have a single physical button, see **Figure 61 - Power Button**. Pressing and holding this button can activate extra functions. To active a specific function, press and hold the button until a specific number of beeps are heard. **Table 6 - Button Functions** contains functions that can be activated. Beep counts that are not listed are not supported.
 
 ![A close-up of a device Description automatically generated](<DynaFlex II Go Images/f978f9763e490b07b99c80ece38ec294.png>)
 
 **Figure 61 - Power Button**
 
-**Table 61 - Button Functions**
+**Table 6 - Button Functions**
 
 | Beep Count | Function                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
 |------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -588,7 +513,7 @@ DynaFlex II Go provides four LEDs (see section **7.1 Component Details**), numbe
 
 In this manual, specific blinking patterns are described in more detail in the sections where they are relevant. For example, information about how the LEDs show the device’s connection status is in section **4.3 Connecting DynaFlex II Go** to a Host.
 
-Table 71 - DynaFlex II Go LED Allocation
+Table 8 - DynaFlex II Go LED Allocation
 
 | In This Context                              | LED1                                                                                                                                          | LED2              | LED3              | LED4             |
 |----------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------|-------------------|-------------------|------------------|
@@ -596,7 +521,7 @@ Table 71 - DynaFlex II Go LED Allocation
 | Active Mode, armed for a tap transaction     | Armed for Tap                                                                                                                                 | Tap Read Progress | Tap Read Progress | Card Read Result |
 | Device-wide failure                          | During major failures (such as tamper), **LED1-LED4** report the nature of the failure based on the most likely steps required to resolve it. |                   |                   |                  |
 
-Table 72 - DynaFlex II Go LED Patterns
+Table 9 - DynaFlex II Go LED Patterns
 
 | Color        | Means                                                                                                                                                                                                                                                                                                          |
 |--------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -772,16 +697,16 @@ Figure 727 - LED Sequence – Payment Transaction Successful EMV Contactless (Co
 
 ## LED Behavior: Errors, Timeouts, and Canceled Transactions
 
-**Table 73 - LED Behavior for Errors, Timeouts, and Canceled Transactions,** contains LED behavior related to errors, timeouts, and canceled transactions. If the device is exhibiting LED behavior not previously mentioned, it may be contained in this section.
+**Table 10 - LED Behavior for Errors, Timeouts, and Canceled Transactions,** contains LED behavior related to errors, timeouts, and canceled transactions. If the device is exhibiting LED behavior not previously mentioned, it may be contained in this section.
 
-Table 72 - LED and BCR Indicator Light ON/OFF State
+Table 9 - LED and BCR Indicator Light ON/OFF State
 
 | **ON/OFF State**        |                                                                                                                                                                    |
 |-------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **LED**                 | **![A green and grey circles Description automatically generated](<DynaFlex II Go Images/6514c3a70db2c32d4e197391ea2c64aa.png>)**                                  |
 | **BCR Indicator Light** | **![A couple of triangles with shadows Description automatically generated with medium confidence](<DynaFlex II Go Images/087cf4d85d952661bfb764ad2598951a.png>)** |
 
-Table 73 - LED Behavior for Errors, Timeouts, and Canceled Transactions
+Table 10 - LED Behavior for Errors, Timeouts, and Canceled Transactions
 
 | **Device Model**                                                   | **Error LED Behavior**                                                 | **Timeout LED Behavior**                    | **Cancel LED Behavior**                                                |
 |--------------------------------------------------------------------|------------------------------------------------------------------------|---------------------------------------------|------------------------------------------------------------------------|
@@ -1030,7 +955,7 @@ For more information about developing custom applications that integrate with Dy
 
 Barcode symbology refers to the way in which data is encoded in a barcode. It uses either spaced lines, dots, or squares. When read, these symbols are decoded and converted to data. The table below lists all of the supported symbologies and which are enabled by default.
 
-Table 91 - Barcode Reader Supported Symbologies
+Table 13 - Barcode Reader Supported Symbologies
 
 | Symbology             | Default  |
 |-----------------------|----------|
