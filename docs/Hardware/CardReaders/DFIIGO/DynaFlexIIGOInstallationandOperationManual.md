@@ -17,7 +17,7 @@ const toggleDarkMode = document.querySelector('.js-toggle-dark-mode');
    }
  });
  </script>
- 
+
 | DynaFlex II GO Installation and Operation Manual                                                                     |
 |-----------------------------------------------------------------------------------------------------------------------------|
 | ![A close-up of a device Description automatically generated](<DynaFlex II Go Images/9fd12164974def7ad4c3fe270a989cc3.png>) |
