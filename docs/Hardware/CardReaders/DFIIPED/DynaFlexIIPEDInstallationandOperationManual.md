@@ -20,19 +20,38 @@ const toggleDarkMode = document.querySelector('.js-toggle-dark-mode');
  });
  </script>
 
-<div style="position: fixed; left: 0; top: 0; width: 200px; height: 100%; overflow-y: auto; background-color: #f4f4f4; padding: 10px; border-right: 1px solid #ccc;">
-  <strong>Navigation</strong>
-  <ul>
-    <li><a href="#introduction">Introduction</a></li>
-    <li><a href="#installation">Installation</a></li>
-    <li><a href="#configuration">Configuration</a></li>
-    <li><a href="#troubleshooting">Troubleshooting</a></li>
-  </ul>
+<div id="toc" style="position: fixed; top: 10px; right: 10px; width: 250px; max-height: 90vh; overflow-y: auto; padding: 10px; background: #f9f9f9; border: 1px solid #ccc; font-size: 14px;">
+  <strong>Table of Contents</strong>
+  <ul id="toc-list"></ul>
 </div>
 
-<div style="margin-left: 220px; padding: 1em;">
-  <!-- Your main content goes here -->
-</div>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const tocList = document.getElementById("toc-list");
+  const headers = document.querySelectorAll("h1, h2, h3");
+  headers.forEach((header, index) => {
+    if (!header.id) {
+      header.id = "section-" + index; // Add ID if missing
+    }
+
+    const li = document.createElement("li");
+    const a = document.createElement("a");
+    a.href = "#" + header.id;
+    a.textContent = header.textContent;
+    li.appendChild(a);
+
+    // Indent based on heading level
+    if (header.tagName === "H2") {
+      li.style.marginLeft = "10px";
+    } else if (header.tagName === "H3") {
+      li.style.marginLeft = "20px";
+    }
+
+    tocList.appendChild(li);
+  });
+});
+</script>
+
 
 
 | DynaFlex II PED Installation and Operation Manual                                                                                                                                                      |
