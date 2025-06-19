@@ -4,7 +4,21 @@ layout: home
 parent: DynaProx
 nav_order: 1
 ---
+<button class="btn js-toggle-dark-mode">Preview dark color scheme</button>
 
+<script>
+const toggleDarkMode = document.querySelector('.js-toggle-dark-mode');
+
+ jtd.addEvent(toggleDarkMode, 'click', function(){
+   if (jtd.getTheme() === 'dark') {
+     jtd.setTheme('light');
+     toggleDarkMode.textContent = 'Preview dark color scheme';
+   } else {
+     jtd.setTheme('dark');
+     toggleDarkMode.textContent = 'Return to the light side';
+   }
+ });
+ </script>
 | DynaProx Installation and Operation Manual                 |
 |-------------------------------------------------------------------------|
 | ![](<DynaProx Images/e08900f40bb00367ab695d3c7a29a4a0.png>)             |
