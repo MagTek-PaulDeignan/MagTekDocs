@@ -4,6 +4,8 @@ layout: home
 parent: DynaFlex II GO
 nav_order: 1
 ---
+<button class="btn js-toggle-dark-mode">Preview dark color scheme</button>
+
 <script>
 const toggleDarkMode = document.querySelector('.js-toggle-dark-mode');
 
@@ -17,6 +19,9 @@ const toggleDarkMode = document.querySelector('.js-toggle-dark-mode');
    }
  });
  </script>
+
+
+
 
 | DynaFlex II GO Installation and Operation Manual                                                                     |
 |-----------------------------------------------------------------------------------------------------------------------------|
