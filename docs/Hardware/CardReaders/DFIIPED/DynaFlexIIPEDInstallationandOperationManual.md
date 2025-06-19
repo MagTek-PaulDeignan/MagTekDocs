@@ -264,7 +264,7 @@ DynaFlex II is a secure card reader authenticator engineered for attended, unatt
 
 For details on how to set up Google Wallet Smart Tap for DynaFlex II, see **D100006469** **DYNAFLEX, DYNAPROX, DYNAFLEX II GO FAMILY - GOOGLE WALLET SMART TAP SETUP GUIDE.** For details on how to set up Apple VAS for DynaFlex II, see **D998200597 DYNAFLEX II GO PROGRAMMER'S MANUAL (COMMANDS).**
 
-## About Terminology
+# # About Terminology
 
 In this document, DynaFlex II products are referred to as the **device** or inclusively as **DynaFlex II products**. They are designed to be connected to a **host**, which is a piece of general-purpose electronic equipment which sends commands and data to, and receives data from, the device. Host types include PC and Mac computers/laptops, tablets, and smartphones. The host must have **software** installed that communicates with the device and is capable of processing transactions. During a transaction, the host and its software interact with the **operator**, such as a customer service representative, while the device interacts with the **cardholder** (even if the cardholder is using a virtual representation of the card account, such as a smartphone).
 
@@ -274,15 +274,15 @@ Throughout this document:
 -   **DynaFlex II PED** refers to DynaFlex II PED products with a display, including those with a kiosk back cover and barcode reader.
 -   **DynaFlex II** refers to DynaFlex II devices that are not equipped with a touchscreen display, including those with a kiosk back cover and barcode reader.
 
-## Magensa Services
+# # Magensa Services
 
 DynaFlex II products can be paired with Magensa Services to make the certification cycle easier and remove unencrypted data from the payment environment. A service representative will collaborate with you to determine if Magensa Decrypt, Magensa Decrypt and Forward, or the Magensa Payment Protection Gateway is best for you.
 
-## MagTek Support
+# # MagTek Support
 
 MagTek offers developer tools, including free software developer kits with APIs. Support is available at <https://www.magtek.com/support>. For faster development, use MagneFlex Prism, a suite of interface tools for browser and middleware applications that streamline the development process. Instead of creating multiple interfaces for the hardware device, POS application, and gateway, you can use MagneFlex. It drives the hardware, interfaces with the POS app, and handles data processing commands.
 
-## Available Models and Accessories
+# # Available Models and Accessories
 
 Table 2 - Available Models and Options
 
@@ -313,7 +313,7 @@ Table 2 - Available Models and Options
 | 1000008560 | FOOT, BACK, SIDE B, ADHESIVE MOUNTING STRIP, DYNAFLEX | Optional, specify 1 ea. for complete replacement |
 | 1000008561 | FOOT, FRONT, ADHESIVE MOUNTING STRIP, DYNAFLEX        | Optional, specify 1 ea. For complete replacement |
 
-## About DynaFlex II Components
+# # About DynaFlex II Components
 
 The major components of the DynaFlex II product family are detailed in this section. For models without a touchscreen display (DynaFlex II and DynaFlex II Kiosk), the components are identical however, the touchscreen and its bezel are replaced with a faceplate displaying the contactless indicator logo at the optimal contactless landing zone (see **Figure 1**).
 
@@ -339,13 +339,13 @@ Figure 3 - Charging Station Major Components
 |----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Proper handling of the device throughout delivery, assembly, shipping, installation, usage, and maintenance is very important. Not following the guidelines in this document could damage the device, render it inoperable, and/or violate the conditions of the warranty. |
 
-## Inspection
+# # Inspection
 
 Before unpacking the device, it is important to inspect its secure packaging to make sure it has not been tampered with in storage or in transit. MagTek provides details for inspecting the integrity of the device’s secure packaging in **D998200524 DynaFlex II Family, Package Inspection**
 
 It is important to inspect a new device regularly and thoroughly before deployment and a device in live usage (including its immediate surroundings), to make sure malicious individuals have not tampered with it or its surroundings. MagTek recommends conducting inspection training for all device operators and an inspection schedule with checkpoints in place to make sure operators are performing inspections as specified and as scheduled. MagTek provides easy-to-follow device inspection references in **D998200524 DynaFlex II PED Products, Device Inspection**, **D998200539- DynaFlex II PED Kiosk Products, Device Inspection**, *D***998200563 DynaFlex II Products, Device Inspection,** *and* **D998200566** **DynaFlex II Kiosk Products, Device Inspection.**
 
-## Handling to Avoid Damage
+# # Handling to Avoid Damage
 
 Upon receiving the device, inspect it to make sure it originated from an authentic source and has not been tampered with. For details, see **D998200524 DynaFlex II PED Products, Device Inspection**, **D998200539 DynaFlex II PED Kiosk Products, Device Inspection**, **D998200563 DynaFlex II Products, Device Inspection,** *and* **D998200566** **DynaFlex II Kiosk Products, Device Inspection,** available from MagTek.
 
@@ -357,7 +357,7 @@ Do not drop or shake the device.
 
 For information about ongoing maintenance of the device, such as cleaning, see section **5 Maintenance.**
 
-## Handling to Avoid Accidental Tamper
+# # Handling to Avoid Accidental Tamper
 
 DynaFlex II products implement active tamper detection, which uses a small amount of electricity even when the device is completely powered off. The device primarily powers its active tamper detection circuitry using its rechargeable battery to back up the coin cell. Devices with a rechargeable battery ship with the battery charged to between 45% and 65%, which provides a shelf life of up to 10 years. However, if the rechargeable battery completely discharges or the device does not contain a rechargeable battery, the device continues to power its active tamper detection circuitry using its non-rechargeable backup battery, which provides an additional 5 years of backup shelf life across the entire life of the device but does not recharge. If the rechargeable battery and the backup battery are both allowed to completely discharge, the device’s tamper detection engages and locks down the device, and it must be returned to the manufacturer to reset.
 
@@ -374,17 +374,17 @@ To avoid accidental tamper events and to optimally condition the battery, follow
 
 Installing DynaFlex II products is straightforward: The manufacturer or acquirer configures the preferred settings, keys, terminal, and payment brand settings before deployment; end users need only set up a host with appropriate software, configure the software, and connect the device to the host. This section provides general information about inspecting, connecting, and installing **DynaFlex II products**.
 
-## About Host Software
+# # About Host Software
 
 In any solution, **DynaFlex II products** are connected to a host, which must have software installed that can communicate with the device, and which is capable of processing transactions. To set up the host to work with **DynaFlex II products**, follow the installation and configuration instructions provided by the vendor of the host or the host software. For information about developing custom host software, see section **6 Developing Custom Software**.
 
-## Connecting to a Host
+# # Connecting to a Host
 
-### About Connecting to a Host
+## # About Connecting to a Host
 
 The following sections provide information on how to connect **DynaFlex II products** to a host via USB.
 
-### How to Connect DynaFlex II Products to a Host or Charger via USB
+## # How to Connect DynaFlex II Products to a Host or Charger via USB
 
 ![](<DynaFlex II PED Images/77b114e6a6fcf8e1ec20ac760b27d6f8.jpg>)![](<DynaFlex II PED Images/6554e3a16d1acc42febbc3948dcbee68.jpg>)
 
@@ -413,9 +413,9 @@ Figure 6 - Device is Ready
 8.  After successfully connecting to the host operating system via USB, devices with a touchscreen display a **Welcome** screen or a customizable graphic.
 9.  The operating system may put the device into **USB Suspend** mode. See section **4.6.6 About USB Suspend**.
 
-## Mounting
+# # Mounting
 
-### About Mounting
+## # About Mounting
 
 The DynaFlex II product line offers versatile mounting solutions, including:
 
@@ -439,7 +439,7 @@ Figure 9 - Charging Station Compatibility
 
 -   **Custom Mounting Options**: DynaFlex II devices can be attached to custom mounting brackets or housed within an enclosure, enabling integration into larger system designs.
 
-### How to mount DynaFlex II
+## # How to mount DynaFlex II
 
 1.  Verify that the protective film has been removed from the adhesive mounting strips located on the underside of the device (see **Figure 7**).
 2.  Mount DynaFlex II devices onto a smooth, flat, and non-porous surface by pressing the device firmly using the adhesive mounting strips (see **Figure 10**).
@@ -455,7 +455,7 @@ For instructions on using the optional charging station, refer to Section **3.3.
 
 If your installation requires custom mounting brackets, contact your MagTek representative for design advice and assistance from MagTek’s Engineering team.
 
-### How to Mount DynaFlex II Kiosk Models
+## # How to Mount DynaFlex II Kiosk Models
 
 | ![](<DynaFlex II PED Images/bdb6a105147891251b84fbdb350ba870.png>)                                                                                                                                                                                                                                                                                           |
 |--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -493,7 +493,7 @@ As a security measure, the device must be installed such that cardholders have a
 
 **Figure 13**). This is to allow cardholders to easily detect suspicious objects in or around the swipe path and card slot entry, such as bugs / skimmers / tapping mechanisms, and their wires or antennas. Be sure to select an installation height and mounting angle that meet this requirement.
 
-### How to Mount the Charging Station
+## # How to Mount the Charging Station
 
 To mount the optional charging station to a countertop using the four adhesive mounting strips on the underside of the charging station (see **Figure 14)**, follow these steps:
 
@@ -537,7 +537,7 @@ Figure 17 - Screw Installation
 
 # Operation
 
-## About Operating Modes
+# # About Operating Modes
 
 While in use, the DynaFlex II family of products switch between distinct operating modes. It is crucial for operators to comprehend these modes to effectively operate the device:
 
@@ -546,7 +546,7 @@ While in use, the DynaFlex II family of products switch between distinct operati
 -   **USB Suspend Mode** occurs when the USB host that is providing power to the device sends a **USB Suspend** control event to the device to conserve power. The device responds by powering off nearly all its modules including the display and listening for the USB host to send a **USB Resume** control event. To move the device from USB, Suspend Mode to Active Mode, the host software must open a USB connection to communicate with the device, which signals the operating system that the device is in active use and should be allowed to draw full power from the USB port. It is not necessary for the host software to send commands to the device at that time.
 -   **Active Mode** is the device’s normal “awake” state when it is in use. In this mode, the touchscreen display and LEDs are powered on, and the device is ready to receive commands from the host. This mode can be divided into substates like Active/Host Not Connected, Active/Host Connected, Active/Host Communicating, Active/Armed for Read, Active/Reading, and so on. These substates differ in the amount of power they consume and are mostly under the control of the host software. To move the device from Active Mode to Powered Off mode, press and hold the pushbutton for 8 seconds. If the device does not respond, continue holding the pushbutton for longer than 12 seconds to force immediate power off without a proper shutdown sequence. To move the device from Active Mode to Reset Mode, press the recessed switch.
 
-## Operation Overview
+# # Operation Overview
 
 During normal operation, the operator initiates a transaction from the host, and the cardholder interacts with the device. Devices with a touchscreen display provide on-screen prompts and interactive features such as buttons and signature capture.
 
@@ -558,7 +558,7 @@ If the device cannot read payment data, the host software may direct it to promp
 
 Figure 19 - Typical Transaction Sequence
 
-## About the Status LEDs
+# # About the Status LEDs
 
 DynaFlex II provides four RGB LEDs directly below the chip card insertion slot (see section **1.5 About DynaFlex II Components**), numbered LED1 through LED4, which report the device’s current operating status.
 
@@ -593,11 +593,11 @@ Table 6 – DynaFlex II LED Patterns
 | Blinking  ![](<DynaFlex II PED Images/9dd9d76090579c35b67a7dde2a242c7a.png>)![](<DynaFlex II PED Images/ae3e401dd7fb296257ebe1e78e9b8831.png>)![](<DynaFlex II PED Images/bad702d1f486c3f13b37a8902862f1c3.png>)![](<DynaFlex II PED Images/f66c35a8ccf312a323dff14360cb1c22.png>)   | **Blinking** LEDs indicate the device is in the process of doing / attempting something. Blink duty cycle and blink period are selected to show urgency or ongoing progress through a series of steps.  Example: Device is attempting to connect to the WLAN access point. |
 | Short time  ![](<DynaFlex II PED Images/5e855b2318b51c316cf1754dc8c9f1ae.png>)![](<DynaFlex II PED Images/0c83bb2713d527c82f6b534a3be79160.png>)![](<DynaFlex II PED Images/96667fed4612d491e627cf5e14b0490f.png>)![](<DynaFlex II PED Images/771a43cebf86dc8c53632bc62abec13a.png>) | LEDs sometimes illuminate for a **short time** to indicate a process has ended (success or failure) and the device is going to transition to another state soon.  Example: Successful card read.                                                                           |
 
-## About the Touchscreen Display
+# # About the Touchscreen Display
 
 This section applies only to **DynaFlex II PED** models, which are equipped with a display and touchscreen. When using a DynaFlex II model that does not have a display, the device reports ongoing status to the host, which must present any necessary prompts and status information to the operator and / or the cardholder.
 
-### Welcome Page / Active Idle Page
+## # Welcome Page / Active Idle Page
 
 When the device is powered on, in Active mode, and idle (not performing a transaction or displaying host-driven user interface prompts), it displays **Welcome** or a custom graphic if it is configured to do so. If the host software is designed to receive and respond to cardholder input messages, pressing any area on the touchscreen when it is idle may trigger the host to perform an operation, such as starting a transaction. For more information about custom graphics, see **D998200383 DynaFlex and DynaFlex Pro Programmer’s Manual (COMMANDS)**.
 
@@ -635,7 +635,7 @@ The device may show text other than “Welcome” when it is Active / idle under
 -   **OFFLINE / Keys missing** indicates the device is missing one of the encryption keys that are critical to its data security systems. The device needs to have keys properly injected. If this occurs, remove the device from service and contact the manufacturer or your reseller for support.
 -   **OFFLINE** without any clarifying text indicates the device is not ready for normal operation.
 
-### Device Information Page
+## # Device Information Page
 
 While powering on, the touchscreen briefly displays a page of information about the device, including the installed firmware part numbers and versions and other identifying information. To determine a device’s PCI certification status, compare the contents of this screen to the device’s listing on [www.pcisecuritystandards.org](http://www.pcisecuritystandards.org), **Approved PTS Devices**. Note that in PCI listings, lowercase “x” is a wildcard meaning ‘any single character.
 
@@ -651,7 +651,7 @@ While on the **Welcome** screen, press the **Pushbutton** and hold for 3 beeps t
 
 Figure 22 - Device Information Screen for WLAN device
 
-### Connection Status Page
+## # Connection Status Page
 
 In addition to the icons at the top of the display, WLAN enabled devices have a **WLAN Status** screen that reports more details about the device’s 802.11 wireless (see **Figure 23**) connection. To access it, while on the **Welcome** screen, press the **Pushbutton** and hold for three beeps to get to the **Settings** menu, then select **Connection**, and **WLAN Settings**, then select **WLAN Status**. To return to the **Welcome** screen, select **Back** and **Exit**
 
@@ -661,7 +661,7 @@ In addition to the icons at the top of the display, WLAN enabled devices have a 
 
 Figure 23 - WLAN Status Screen
 
-### SoftAP Page
+## # SoftAP Page
 
 To configure WLAN enabled devices via SoftAP mode (see **Figure 24)** complete the following steps:
 
@@ -676,7 +676,7 @@ To return to the **Welcome** screen, select **Back** and **Exit**.
 
 Figure 24 – SoftAP Mode screen
 
-## About Sounds
+# # About Sounds
 
 DynaFlex II products are equipped with an audio transducer (audible signal) that provides feedback to operators and cardholders about the internal state of the device:
 
@@ -691,16 +691,16 @@ The device provides an internal setting the host can use to adjust the global sy
 -   Check to see whether the host software you are using provides a feature to check and/or adjust the volume setting.
 -   If the host software does not provide that feature, request help from the development team that built the host software to check / change the volume setting. For details, see **D998200383 DYNAFLEX PRODUCTS PROGRAMMER’S MANUAL (COMMANDS)**.
 
-### How to Play a Sequence of Tones
+## # How to Play a Sequence of Tones
 
 DynaFlex II devices can play a customizable sequence of tones if configured to do so. To play a sequence of tones, follow these steps:
 
 1.  Make sure the device is in idle state.
 2.  Send a Buzzer command to the device to play a sequence of tones. For details, see **D998200383 DYNAFLEX PRODUCTS PROGRAMMER’S MANUAL (COMMANDS)**.
 
-## Power Management
+# # Power Management
 
-### About Power
+## # About Power
 
 This device incorporates a built-in Lithium-ion rechargeable battery, which requires little maintenance. It is not subject to “charge memory” and therefore does not require deep discharge cycles to restore its charge capacity like many other battery technologies.
 
@@ -713,7 +713,7 @@ If the device is not connected to USB power, or if the USB connection does not p
 
 The device’s rechargeable battery is designed to last hundreds of charging cycles, but with time and / or with use, its charge capacity will naturally degrade. Following the recommendations in this section will maintain the battery’s charge capacity for as long as possible.
 
-### How to Check Battery Level
+## # How to Check Battery Level
 
 When powered on, DynaFlex II starts in the idle / waiting state and shows a **Welcome** page on the touchscreen. See **4.6.4 How to Power On / Wake Up from Standby Mode / Power Off.** This page indicates battery level and charge status on the top right corner of the screen. See **Figure 25 Welcome Screen.**
 
@@ -734,7 +734,7 @@ Table 8 - Battery Power Level and Charge Status Icons
 | ![C:\\GitProjects\\dpm3_mainapp_no_kernels\\GUI_COLOR_DPM3\\battery_empty.bmp](<DynaFlex II PED Images/b06af78b67e3de52b5998243899ec4ad.png>)            | Battery is empty, below 3% charged.                    |
 | ![C:\\GitProjects\\dpm3_mainapp_no_kernels\\GUI_COLOR_DPM3\\battery_plugged.bmp](<DynaFlex II PED Images/55f0fac105270125f77ee82d5413f937.png>)          | Battery is charging.                                   |
 
-### How to Charge the Battery
+## # How to Charge the Battery
 
 | ![](<DynaFlex II PED Images/03555afcb3177a7ebf5f264c12d86851.png>)                                                                         |
 |--------------------------------------------------------------------------------------------------------------------------------------------|
@@ -752,7 +752,7 @@ To charge the device in the optional charging station *for power only (no USB co
 
 For important information about the device’s power systems, optimal charging methods during regular use, optimal handling and storage, and other information about keeping the device’s power systems in the best possible condition, see section **2.3 Handling to Avoid Accidental Tamper** and section **4.6.1 About Power**.
 
-### How to Power On / Wake Up from Standby Mode / Power Off
+## # How to Power On / Wake Up from Standby Mode / Power Off
 
 To power on the device, press and hold the **Pushbutton** for one second, or connect the device to USB power. After powering on, devices with touchscreens show a page of information about the device, then transition to showing the **Welcome** page or custom graphics, if they are configured to do so. For more information about custom graphics, see **D998200383 DynaFlex Products Programmer’s Manual (COMMANDS)**.
 
@@ -762,13 +762,13 @@ To reset the device, see section **4.6.5 How to Force Reset**.
 
 If all LEDs are off, the device is in Powered Off mode, USB Suspend mode, or Standby mode. For details about reading the status of the device with LEDs, see section **4.1 About Operating Modes** and section **4.3 About the Status LEDs**.
 
-### How to Force Reset
+## # How to Force Reset
 
 To force the device to reset, power it off then power it on again (see section **4.6.4 How to Power On / Wake Up from Standby Mode / Power Off**). Alternatively, you may use a small tool such as a paperclip to carefully press the **Recessed Switch** inside the small hole on the bottom of the device (see section **1.5 About DynaFlex II** Components on page **8**). The host may also reset the device by sending the **Reset Device** command (see section **6 Developing Custom Software**).
 
 The device also automatically powers off if the rechargeable battery reaches a level that is low enough to prevent the device from successfully completing a transaction.
 
-### About USB Suspend
+## # About USB Suspend
 
 When the device is connected to a host via USB (see section **3.2.2 How to Connect DynaFlex II Products to a Host or Charger** via USB), the host and its operating system can use standard USB functions to put the device into **USB Suspend** mode to conserve power (see section **4.1 About Operating Modes**). This occurs when there is no software running on the host that has an active USB connection with the device. When the device goes into USB Suspend mode, the device’s display and LEDs turn off. When the host wakes up the device from USB Suspend, the device returns to normal operation.
 
@@ -776,11 +776,11 @@ It is possible to configure a Windows host to not suspend the device by editing 
 
 ![](<DynaFlex II PED Images/b5a7837f9eee59f0c6b9d4c3588d4b38.png>)
 
-### About Maintenance Reset
+## # About Maintenance Reset
 
 For security purposes, the device is designed to perform an automatic maintenance reset periodically to clear all data from memory. When the device has been on continuously for 23 hours, it terminates all current operations, stops responding to new commands, and immediately performs a full reset. At the end of the automatic maintenance reset, the device powers back on and returns to normal operation.
 
-## How to Start a Handheld Transaction Using Wireless LAN
+# # How to Start a Handheld Transaction Using Wireless LAN
 
 The operator uses the point of sale to start a transaction by following these steps and guidelines below:
 
@@ -789,9 +789,9 @@ The operator uses the point of sale to start a transaction by following these st
 3.  Start the transaction using the point of sale’s interface. Depending on how the host software is designed, the host sends various messages requesting that the cardholder or operator enter additional information, and the device requests payment as described in section **4.8 Using the Reader**
 4.  Should the device run out of battery or the device is disconnected from the network during a transaction, the operator should cancel the transaction on the point of sale, and proceed to repeat these steps to initiate the transaction again.
 
-## Using the Reader
+# # Using the Reader
 
-### About Reading Cards
+## # About Reading Cards
 
 The steps for starting a transaction and reading a card or contactless payment device are different depending on the device’s configuration and on the design of the host software. Host software developers should see section **6 Developing Custom Software** for implementation references. The solution developer should provide solution-specific instructions for operators to follow. A transaction follows this essential flow:
 
@@ -804,7 +804,7 @@ The steps for starting a transaction and reading a card or contactless payment d
 7.  Devices with a touchscreen, display messages prompting the cardholder to perform certain actions. The host should also monitor the progress of the transaction, and when necessary, should report issues to the operator, who may need to relay the messages to the cardholder.
 8.  The device reports the success or failure of the transaction to the cardholder and to the host.
 
-### How to Swipe Magnetic Stripe Cards
+## # How to Swipe Magnetic Stripe Cards
 
 To swipe magnetic stripe cards, follow these steps:
 
@@ -841,7 +841,7 @@ Figure 26 – Example Card Swipe Screens
 
 Figure 27 – Swiping a Magnetic Stripe Card
 
-### How to Insert Contact Chip Cards
+## # How to Insert Contact Chip Cards
 
 To insert contact chip cards, follow these steps:
 
@@ -880,7 +880,7 @@ Figure 28 – Example Card Insertion Screens
 
 Figure 29 – Inserting a Chip Card
 
-### How to Tap Contactless Cards / Devices
+## # How to Tap Contactless Cards / Devices
 
 To tap a contactless card or smartphone, follow these steps:
 
@@ -918,7 +918,7 @@ Figure 32 – Tapping a Contactless Card / Smartphone
 
 **Figure 31 – Tap Read Is Complete**
 
-### How to Tap Contactless NFC Tags / MIFARE Classic / MIFARE DESFire /MIFARE Plus Cards and Send Pass-through Commands
+## # How to Tap Contactless NFC Tags / MIFARE Classic / MIFARE DESFire /MIFARE Plus Cards and Send Pass-through Commands
 
 To tap a contactless NFC Tags / MIFARE Classic / MIFARE DESFire /MIFARE Plus cards, follow these steps:
 
@@ -934,7 +934,7 @@ To tap a contactless NFC Tags / MIFARE Classic / MIFARE DESFire /MIFARE Plus car
     4.  If an error is detected, the device will end the transaction and emit two beeps to signal the error. The user then needs to remove the card.
 4.  The device notifies the host that the transaction has ended with the NFC Tag removed.
 
-### How to Scan Barcodes
+## # How to Scan Barcodes
 
 To scan a barcode, follow these steps:
 
@@ -957,7 +957,7 @@ To scan a barcode, follow these steps:
 
 Figure 33 – Scanning a Barcode
 
-### How to Enter Card Information Manually
+## # How to Enter Card Information Manually
 
 Devices with touchscreen displays provide support for starting a transaction that immediately prompts the operator or cardholder to enter card data manually. Manual card entry can be useful in the following situations:
 
@@ -990,7 +990,7 @@ Figure 35 – Enter Expiration Date
 
 Figure 36 – Enter CVV/CVC/Card ID
 
-### How to Verify the Transaction Amount
+## # How to Verify the Transaction Amount
 
 When the device is processing a transaction using the EMV Transaction Flow (as opposed to the Quick Chip Transaction Flow), devices with a touchscreen display the amount of the transaction when they prompt the cardholder to swipe, dip, or tap a card or payment device, as shown in **Figure 37.** The cardholder implicitly confirms / accepts the transaction amount by presenting payment.
 
@@ -998,7 +998,7 @@ When the device is processing a transaction using the EMV Transaction Flow (as o
 
 Figure 37 - Example Transaction Amount Screens
 
-### How to Enter PINs
+## # How to Enter PINs
 
 Devices with a touchscreen display provide support for requesting a PIN from the cardholder. The device prompts the cardholder to **ENTER PIN** (see **Figure 38**) as required by the financial institution. The device expects the PIN to be between 4 and 12 digits long. After entering the PIN, the cardholder must press the **ENTER** button.
 
@@ -1012,7 +1012,7 @@ If the double PIN entry option is enabled, the device prompts the cardholder to 
 
 Figure 39 – Enter PIN Again
 
-### How to Enter Tip
+## # How to Enter Tip
 
 Devices with a touchscreen display provide support for requesting a Tip Entry from the cardholder. The device prompts the cardholder to **Enter Tip** (see **Figure 40** – Enter Tip).
 
@@ -1032,7 +1032,7 @@ After finalizing the Tip, and pressing the **Submit** button, the device prompts
 
 Figure 42 – Example Present Payment Screen
 
-### How to Enter Sale Amount
+## # How to Enter Sale Amount
 
 Devices with a touchscreen display and active connection to a Wireless Local Area Network (WLAN) Host provide support for entering a Sale Amount from the cardholder. The device prompts the cardholder with the **Start Sale** button (see **Figure 43**)
 
@@ -1048,7 +1048,7 @@ Figure 44 - Enter Sale Amount
 
 After the cardholder enters the Sale Amount and presses **Enter**, the device prompts the cardholder to enter Tip (see section **4.8.10 How to Enter Tip**)
 
-### How to Use Signature Capture
+## # How to Use Signature Capture
 
 | ![A black and white sign Description automatically generated with low confidence](<DynaFlex II PED Images/bdb6a105147891251b84fbdb350ba870.png>)      |
 |-------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -1064,7 +1064,7 @@ Devices that do not have a touchscreen display cannot prompt for or collect a si
 
 # Maintenance
 
-## Mechanical Maintenance
+# # Mechanical Maintenance
 
 | ![](<DynaFlex II PED Images/bdb6a105147891251b84fbdb350ba870.png>)                                                                                                                                                                                                                                            |
 |---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -1076,7 +1076,7 @@ MagTek’s double-sided cleaning card **96700004** is designed to clean the magn
 
 If the device’s micro-suction mounting feet lose their holding power over time, use a clean, damp, lint-free cloth to wipe the mounting feet and the mounting surface clean, then let both surfaces air dry. This should restore the mounting feet’s holding power. If the mounting feet are damaged and unusable, replacements are available. See section **1.4 Available Models and Accessories**.
 
-## Updates to Firmware, Documentation, Security Guidance
+# # Updates to Firmware, Documentation, Security Guidance
 
 In addition to the security guidance in the product manuals, MagTek may provide updates to this document, as well as supplemental security guidance or notices regarding vulnerabilities, at [www.magtek.com](http://www.magtek.com). MagTek advises checking the product’s home page periodically for the most up-to-date information.
 
@@ -1116,7 +1116,7 @@ In addition to the SDK API libraries, software developers also have the option t
 
 For more information about developing custom applications that integrate with DynaFlex II, see the MagTek web site or contact your reseller or MagTek Support Services.
 
-###### Technical Specifications
+##### # Technical Specifications
 
 | DynaFlex II Products Technical Specifications                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |                                                                                                                                                                                                                                                                                                                                               |
 |-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -1180,7 +1180,7 @@ For more information about developing custom applications that integrate with Dy
 | Battery Shelf Life:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       | 5 years or longer (backup battery)                                                                                                                                                                                                                                                                                                            |
 | Battery Cycle Life:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       | After 500 charge / discharge cycles, battery capacity remains above 80%.                                                                                                                                                                                                                                                                      |
 
-###### Warranty, Standards, and Certifications
+##### # Warranty, Standards, and Certifications
 
 Limited Warranty
 
