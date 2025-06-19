@@ -83,141 +83,75 @@ Table 1 - Revisions
 | 401        | March 13, 2024     | Updated section **4.3.1 About Connecting to a Host** and **Appendix A Technical Specifications** with updated guidelines regarding cable length and quality.                                                                                                                                                                                 |
 | 402        | June 5, 2025       | Add MIFARE Plus, remove MIFARE Lite in **6.7.5 How to Tap Contactless NFC Tags / MIFARE Classic / MIFARE DESFire /MIFARE Plus Cards and Send Pass-through Commands**; Update **Appendix A** **Technical Specifications** storage and operating relative humidity values from 5% to 90% RH non-condensing to Up to 90% RH non-condensing**.** |
 
-# Table of Contents
+## Table of Contents
+
+- [Introduction](#introduction)
+  - [Key Features](#key-features)
+  - [Build for New Markets](#build-for-new-markets)
+  - [Easier Integration](#easier-integration)
+  - [About DynaProx Components](#about-dynaprox-components)
+  - [Available Models and Accessories](#available-models-and-accessories)
+  - [About Terminology](#about-terminology)
+- [Planning and Preparation](#planning-and-preparation)
+  - [Logistical Planning](#logistical-planning)
+- [Handling and Storage](#handling-and-storage)
+  - [Handling to Avoid Damage](#handling-to-avoid-damage)
+  - [Handling to Avoid Accidental Tamper](#handling-to-avoid-accidental-tamper)
+- [Installation](#installation)
+  - [About Inspection](#about-inspection)
+  - [About Host Software](#about-host-software)
+  - [Connecting to a Host](#connecting-to-a-host)
+    - [About Connecting to a Host](#about-connecting-to-a-host)
+    - [How to Connect DynaProx to a Host via USB](#how-to-connect-dynaprox-to-a-host-via-usb)
+    - [How to Connect DynaProx to a Host via RS-232](#how-to-connect-dynaprox-to-a-host-via-rs-232)
+      - [RS-232 Cable](#rs-232-cable)
+      - [Chassis Ground](#chassis-ground)
+  - [Mounting](#mounting)
+    - [About Mounting](#about-mounting)
+    - [How to Mount DynaProx](#how-to-mount-dynaprox)
+    - [How to Mount the Stand](#how-to-mount-the-stand)
+- [Configuration](#configuration)
+- [Operation](#operation)
+  - [About Operating Modes](#about-operating-modes)
+  - [Operation Overview](#operation-overview)
+  - [Introduction to User Interface](#introduction-to-user-interface)
+    - [Component Details](#component-details)
+    - [Modes of Operation](#modes-of-operation)
+      - [Power On via USB Cable](#power-on-via-usb-cable)
+      - [USB Enumeration](#usb-enumeration)
+      - [Payment Transaction](#payment-transaction)
+      - [Payment Transaction Successful](#payment-transaction-successful)
+      - [Payment Transaction Unsuccessful](#payment-transaction-unsuccessful)
+    - [USB Power Supply](#usb-power-supply)
+    - [RS-232 Power Supply](#rs-232-power-supply)
+    - [Adding an RS-232 Power Supply](#adding-an-rs-232-power-supply)
+    - [Event Notification Mode](#event-notification-mode)
+    - [Bar Code Read Only](#bar-code-read-only)
+  - [About the Status LEDs](#about-the-status-leds)
+  - [About Sounds](#about-sounds)
+    - [How to Play a Sequence of Tones](#how-to-play-a-sequence-of-tones)
+  - [Power Management](#power-management)
+    - [About Power](#about-power)
+    - [How to Power On / Wake Up from Standby Mode / Power Off](#how-to-power-on--wake-up-from-standby-mode--power-off)
+    - [About Maintenance Reset](#about-maintenance-reset)
+  - [Card Reading](#card-reading)
+    - [About Reading Cards](#about-reading-cards)
+    - [How to Tap Contactless Cards / Devices](#how-to-tap-contactless-cards--devices)
+    - [How to Scan Barcodes](#how-to-scan-barcodes)
+    - [Apple VAS for DynaProx](#apple-vas-for-dynaprox)
+      - [VAS App and Payment Mode (Dual Mode)](#vas-app-and-payment-mode-dual-mode)
+      - [VAS App Only Mode (VAS Mode)](#vas-app-only-mode-vas-mode)
+      - [VAS App or Payment Mode (Single Mode)](#vas-app-or-payment-mode-single-mode)
+      - [Payment Only Mode (Payment Mode)](#payment-only-mode-payment-mode)
+    - [How to Tap Contactless NFC Tags / MIFARE Classic / MIFARE DESFire /MIFARE Plus Cards and Send Pass-through Commands](#how-to-tap-contactless-nfc-tags--mifare-classic--mifare-desfire-mifare-plus-cards-and-send-pass-through-commands)
+- [Maintenance](#maintenance)
+  - [Mechanical Maintenance](#mechanical-maintenance)
+  - [Updates to Firmware, Documentation, Security Guidance](#updates-to-firmware-documentation-security-guidance)
+- [Developing Custom Software](#developing-custom-software)
+          - [Technical Specifications](#technical-specifications)
+          - [Barcode Reader Symbologies](#barcode-reader-symbologies)
+          - [Warranty, Standards, and Certifications](#warranty-standards-and-certifications)
 
-[Table of Contents](#_Toc194477510)
-
-[1 Introduction](#_Toc194477511)
-
-[1.1 Key Features](#_Toc194477512)
-
-[1.2 Build for New Markets](#_Toc194477513)
-
-[1.3 Easier Integration](#easier-integration)
-
-[1.4 About DynaProx Components](#_Toc194477515)
-
-[1.5 Available Models and Accessories](#_Toc194477516)
-
-[1.6 About Terminology](#about-terminology)
-
-[2 Planning and Preparation](#_Toc194477518)
-
-[2.1 Logistical Planning](#_Toc194477519)
-
-[3 Handling and Storage](#_Toc194477520)
-
-[3.1 Handling to Avoid Damage](#_Toc194477521)
-
-[3.2 Handling to Avoid Accidental Tamper](#_Toc194477522)
-
-[4 Installation](#_Toc194477523)
-
-[4.1 About Inspection](#_Toc194477524)
-
-[4.2 About Host Software](#_Toc194477525)
-
-[4.3 Connecting to a Host](#_Toc194477526)
-
-[4.3.1 About Connecting to a Host](#_Toc194477527)
-
-[4.3.2 How to Connect DynaProx to a Host via USB](#_Toc194477528)
-
-[4.3.3 How to Connect DynaProx to a Host via RS-232](#how-to-connect-dynaprox-to-a-host-via-rs-232)
-
-[4.3.3.1 RS-232 Cable](#rs-232-cable)
-
-[4.3.3.2 Chassis Ground](#chassis-ground)
-
-[4.4 Mounting](#_Toc194477532)
-
-[4.4.1 About Mounting](#about-mounting)
-
-[4.4.2 How to Mount DynaProx](#_Toc194477534)
-
-[4.4.3 How to Mount the Stand](#_Toc194477535)
-
-[5 Configuration](#_Toc194477536)
-
-[6 Operation](#_Toc194477537)
-
-[6.1 About Operating Modes](#_Toc194477538)
-
-[6.2 Operation Overview](#_Toc194477539)
-
-[6.3 Introduction to User Interface](#_Toc194477540)
-
-[6.3.1 Component Details](#component-details)
-
-[6.3.2 Modes of Operation](#modes-of-operation)
-
-[6.3.2.1 Power On via USB Cable](#_Toc194477543)
-
-[6.3.2.2 USB Enumeration](#_Toc194477544)
-
-[6.3.2.3 Payment Transaction](#_Toc194477545)
-
-[6.3.2.4 Payment Transaction Successful](#payment-transaction-successful)
-
-[6.3.2.5 Payment Transaction Unsuccessful](#_Toc194477547)
-
-[6.3.3 USB Power Supply](#_Toc194477548)
-
-[6.3.4 RS-232 Power Supply](#_Toc194477549)
-
-[6.3.5 Adding an RS-232 Power Supply](#_Toc194477550)
-
-[6.3.6 Event Notification Mode](#event-notification-mode)
-
-[6.3.7 Bar Code Read Only](#bar-code-read-only)
-
-[6.4 About the Status LEDs](#_Toc194477553)
-
-[6.5 About Sounds](#_Toc194477554)
-
-[6.5.1 How to Play a Sequence of Tones](#_Toc194477555)
-
-[6.6 Power Management](#_Toc194477556)
-
-[6.6.1 About Power](#_Toc194477557)
-
-[6.6.2 How to Power On / Wake Up from Standby Mode / Power Off](#_Toc194477558)
-
-[6.6.3 About Maintenance Reset](#_Toc194477559)
-
-[6.7 Card Reading](#card-reading)
-
-[6.7.1 About Reading Cards](#_Toc194477561)
-
-[6.7.2 How to Tap Contactless Cards / Devices](#_Toc194477562)
-
-[6.7.3 How to Scan Barcodes](#_Toc194477563)
-
-[6.7.4 Apple VAS for DynaProx](#_Toc194477564)
-
-[6.7.4.1 VAS App and Payment Mode (Dual Mode)](#vas-app-and-payment-mode-dual-mode)
-
-[6.7.4.2 VAS App Only Mode (VAS Mode)](#vas-app-only-mode-vas-mode)
-
-[6.7.4.3 VAS App or Payment Mode (Single Mode)](#vas-app-or-payment-mode-single-mode)
-
-[6.7.4.4 Payment Only Mode (Payment Mode)](#payment-only-mode-payment-mode)
-
-[6.7.5 How to Tap Contactless NFC Tags / MIFARE Classic / MIFARE DESFire /MIFARE Plus Cards and Send Pass-through Commands](#_Toc194477569)
-
-[7 Maintenance](#_Toc194477570)
-
-[7.1 Mechanical Maintenance](#_Toc194477571)
-
-[7.2 Updates to Firmware, Documentation, Security Guidance](#_Toc194477572)
-
-[8 Developing Custom Software](#_Toc194477573)
-
-[Appendix A Technical Specifications](#_Toc194477574)
-
-[Appendix B Barcode Reader Symbologies](#_Toc194477575)
-
-[Appendix C Warranty, Standards, and Certifications](#warranty-standards-and-certifications)
 
 # Introduction
 
