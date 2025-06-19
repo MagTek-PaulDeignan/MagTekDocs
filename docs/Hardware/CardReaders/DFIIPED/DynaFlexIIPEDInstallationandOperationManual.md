@@ -20,6 +20,21 @@ const toggleDarkMode = document.querySelector('.js-toggle-dark-mode');
  });
  </script>
 
+<div style="position: fixed; left: 0; top: 0; width: 200px; height: 100%; overflow-y: auto; background-color: #f4f4f4; padding: 10px; border-right: 1px solid #ccc;">
+  <strong>Navigation</strong>
+  <ul>
+    <li><a href="#introduction">Introduction</a></li>
+    <li><a href="#installation">Installation</a></li>
+    <li><a href="#configuration">Configuration</a></li>
+    <li><a href="#troubleshooting">Troubleshooting</a></li>
+  </ul>
+</div>
+
+<div style="margin-left: 220px; padding: 1em;">
+  <!-- Your main content goes here -->
+</div>
+
+
 | DynaFlex II PED Installation and Operation Manual                                                                                                                                                      |
 |-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | ![A close-up of a credit card reader Description automatically generated](<DynaFlex II PED Images/2e0af249a7a6574e16b220db98bf7e95.jpg>)![](<DynaFlex II PED Images/ee3e17c34b913c38a1e55f5bb4e69fe5.jpeg>) |
