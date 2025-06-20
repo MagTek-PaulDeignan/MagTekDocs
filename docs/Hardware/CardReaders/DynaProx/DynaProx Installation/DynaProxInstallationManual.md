@@ -188,15 +188,15 @@ Designed to simplify development efforts, DynaProx and DynaProx BCR are availabl
 
 ## About DynaProx Components
 
-**Figure 2** shows the major components of DynaProx with barcode reader. Models without a barcode reader are identical to the diagram, but do not have a camera and do not have a QR code printed on the front face.
+**Figure 1** shows the major components of DynaProx with barcode reader. Models without a barcode reader are identical to the diagram, but do not have a camera and do not have a QR code printed on the front face.
 
 ![Diagram, engineering drawing Description automatically generated](<DynaProx Images/bb960085b28a8d626efc84d3e70bff92.png>)
 
-Figure 2 - DynaProx Major Components
+Figure 1 - DynaProx Major Components
 
 ## Available Models and Accessories
 
-Table 3 - Available Models and Options
+Table 2 - Available Models and Options
 
 | Part No. | Description                                                 | Display | Connection(s) | Notes                                    |
 |----------|-------------------------------------------------------------|---------|---------------|------------------------------------------|
@@ -205,7 +205,7 @@ Table 3 - Available Models and Options
 | 21078043 | DYNAPROX, PCI, BLACK, USB AND RS-232, COUNTERTOP STAND      | None    | USB-C, RS-232 | MS Windows, Mac OS, Linux; Android Phone |
 | 21078044 | DYNAPROX, PCI, BCR, BLACK, USB AND RS-232, COUNTERTOP STAND | None    | USB-C, RS-232 | MS Windows, Mac OS, Linux; Android Phone |
 
-Table 4 - DynaProx Accessories
+Table 3 - DynaProx Accessories
 
 | Part \#    | Description                                                  | Accessory Notes                                                                     |
 |------------|--------------------------------------------------------------|-------------------------------------------------------------------------------------|
@@ -323,9 +323,9 @@ Figure 7 – HID Compliant Vendor-defined Device Properties
 
 ### How to Connect DynaProx to a Host via RS-232
 
-The RS-232 interface on DynaProx will provide a UART interface at RS-232 signal levels. No flow control is provided. The signals provided are on J1 of DynaProx and are listed below. **See Table 2 - RS-232 Signals.**
+The RS-232 interface on DynaProx will provide a UART interface at RS-232 signal levels. No flow control is provided. The signals provided are on J1 of DynaProx and are listed below. **See Table 4 - RS-232 Signals.**
 
-Table 2 - RS-232 Signals
+Table 4 - RS-232 Signals
 
 | DynaProx     | Comment    |                        |
 |--------------|------------|------------------------|
@@ -454,11 +454,11 @@ Follow Steps 1 through 2, then –
 
 ![A picture containing diagram Description automatically generated](<DynaProx Images/fdf23f078c4aea5946a35cc1ed6d51d3.png>)
 
-Figure 1 - Recommended Disassembly Procedure
+Figure 17a - Recommended Disassembly Procedure
 
 **Disassembly**
 
-Repeat assembly in reverse order to remove device from counter installation and stand. See **Figure 1 - Recommended Disassembly Procedure.**
+Repeat assembly in reverse order to remove device from counter installation and stand. See **Figure 17a - Recommended Disassembly Procedure.**
 
 # Configuration
 
