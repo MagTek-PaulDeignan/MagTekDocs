@@ -68,7 +68,8 @@ MIFARE, the MIFARE logo, MIFARE Ultralight, MIFARE Plus, MIFARE Classic, MIFARE 
 
 All other system names and product names are the property of their respective owners.
 
-Table 01 - Revisions
+<a name="table-01---revisions"></a>
+**[Table 01](#table-01)** – Revisions
 
 | Rev Number | Date          | Notes                                                                                                                                                                                                                                                                                                                                |
 |------------|---------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -109,7 +110,8 @@ MagTek offers developer tools, including free software developer kits with APIs.
 
 ## Available Models and Accessories
 
-Table 11 - Available Models and Options
+<a name="table-11---available-models-and-options"></a>
+**[Table 11](#table-11)** – Available Models and Options
 
 | Part No.                                                                                    | Description                                                       | Display     | Connection(s)      |
 |---------------------------------------------------------------------------------------------|-------------------------------------------------------------------|-------------|--------------------|
@@ -126,7 +128,8 @@ Table 11 - Available Models and Options
 | 21078334                                                                                    | DYNAFLEX II PED, KIOSK, PCI, TOUCHSCREEN DISPLAY, BCR, BLACK, USB | Touchscreen | USB-C              |
 | All models are black by default and have countertop, handheld, and custom mounting options. |                                                                   |             |                    |
 
-**Table 12 – DynaFlex II Accessories**
+**<a name="table-12---dynaflex-ii-accessories"></a>
+**[Table 12](#table-12)** – DynaFlex II Accessories**
 
 | Part \#    | Description                                           | Accessory Notes                                  |
 |------------|-------------------------------------------------------|--------------------------------------------------|
@@ -140,23 +143,26 @@ Table 11 - Available Models and Options
 
 ## About DynaFlex II Components
 
-The major components of the DynaFlex II product family are detailed in this section. For models without a touchscreen display (DynaFlex II and DynaFlex II Kiosk), the components are identical however, the touchscreen and its bezel are replaced with a faceplate displaying the contactless indicator logo at the optimal contactless landing zone (see **Figure 11**).
+The major components of the DynaFlex II product family are detailed in this section. For models without a touchscreen display (DynaFlex II and DynaFlex II Kiosk), the components are identical however, the touchscreen and its bezel are replaced with a faceplate displaying the contactless indicator logo at the optimal contactless landing zone (see **[Figure 11](#figure-11)**).
 
 ![A diagram of a chip card reader Description automatically generated](<DynaFlex II PED Images/51dac222dbb3396b3ff95eeae00f8610.jpg>)
 
-Figure 11 - DynaFlex II Major components
+<a name="figure-11---dynaflex-ii-major-components"></a>
+**[Figure 11](#figure-11)** – DynaFlex II Major components
 
-DynaFlex II PED models without a barcode reader are also identical however, the edge incorporating the barcode reader is a single straight line and there is no QR code marking on the face of the device (see **Figure 12**).
+DynaFlex II PED models without a barcode reader are also identical however, the edge incorporating the barcode reader is a single straight line and there is no QR code marking on the face of the device (see **[Figure 12](#figure-12)**).
 
 ![A computer mouse and a mousetrap Description automatically generated with medium confidence](<DynaFlex II PED Images/4f305d9e65278d8de291847058bf113e.png>)![](<DynaFlex II PED Images/5352d5c4be99d69c36b9c06099f2584b.png>)
 
-Figure 12 - DynaFlex II PED BCR Major Components
+<a name="figure-12---dynaflex-ii-ped-bcr-major-components"></a>
+**[Figure 12](#figure-12)** – DynaFlex II PED BCR Major Components
 
-**Figure 13** illustrates the major components of the optional charging station. Note, the charging station is only compatible with non-kiosk models of the device.
+**[Figure 13](#figure-13)** illustrates the major components of the optional charging station. Note, the charging station is only compatible with non-kiosk models of the device.
 
 ![A drawing of a computer device Description automatically generated with medium confidence](<DynaFlex II PED Images/8843e0acef67d2389c8d366e7b36a220.jpg>)
 
-Figure 13 - Charging Station Major Components
+<a name="figure-13---charging-station-major-components"></a>
+**[Figure 13](#figure-13)** – Charging Station Major Components
 
 # Inspection, Handling and Storage
 
@@ -213,25 +219,31 @@ The following sections provide information on how to connect **DynaFlex II produ
 
 ![](<DynaFlex II PED Images/77b114e6a6fcf8e1ec20ac760b27d6f8.jpg>)![](<DynaFlex II PED Images/6554e3a16d1acc42febbc3948dcbee68.jpg>)
 
-Figure 31 - Connecting to a USB Host or USB Charger. Left: Countertop Models. Right: Kiosk Models
+<a name="figure-31---connecting-to-a-usb-host-or-usb-charger-left-countertop-models-right-kiosk-models"></a>
+**[Figure 31](#figure-31)** – Connecting to a USB Host or USB Charger. Left: Countertop Models. Right: Kiosk Models
 
-To connect **DynaFlex II products** to a USB host or charger using the USB-C port, follow these steps (for reference see **Figure 31** and section **1.5 About DynaFlex II Components**):
+To connect **DynaFlex II products** to a USB host or charger using the USB-C port, follow these steps (for reference see **[Figure 31](#figure-31)** and section **1.5 About DynaFlex II Components**):
 
-1.  For best results, use the cable that is included with the device or another cable from **Table 12 – DynaFlex II Accessories** on page **7**. These cables are designed specifically for DynaFlex II products and include ferrite shielding at both ends of the cable to reduce emissions and interference. If the solution design requires an alternate cable, contact MagTek for assistance with ferrite selection and placement, and with connector overmold design.
+1.  For best results, use the cable that is included with the device or another cable from **<a name="table-12---dynaflex-ii-accessories"></a>
+**[Table 12](#table-12)** – DynaFlex II Accessories** on page **7**. These cables are designed specifically for DynaFlex II products and include ferrite shielding at both ends of the cable to reduce emissions and interference. If the solution design requires an alternate cable, contact MagTek for assistance with ferrite selection and placement, and with connector overmold design.
 2.  Connect the USB-C end of the cable to DynaFlex II or DynaFlex II PED.
 3.  If you plan to route the cable out the back of the device, route the cable through the cable management clip to change its direction. Even if you are not routing out the back, you may use the cable clip for strain relief, to help stabilize the mechanical connection when cardholders or operators move the device or the cable.
 4.  Route the cable in the desired direction (e.g., out the back, left, right, down into the countertop, or into the mounting compartment of a kiosk).
 5.  Connect the other end of the USB cable to the charger or to the host’s USB port.
 6.  As soon as the device starts receiving power through USB, it automatically powers on.
-7.  If the specific device serial number you are connecting has not been connected to the host before, the device shows **Welcome** on the display, and the Windows system tray on the host reports it is **Setting up a device** (see **Figure 32 - Setting Up a Device**), When installation is complete (approximately 30 seconds later depending on the host), Windows reports **Device is ready**,(see **Figure 33 - Device is Ready**) and the device shows in Windows Device Manager under **Human Interface Devices** as two devices: **HID-compliant vendor-defined device** with VID **0801** and PID **2020**, and **USB Input Device**.
+7.  If the specific device serial number you are connecting has not been connected to the host before, the device shows **Welcome** on the display, and the Windows system tray on the host reports it is **Setting up a device** (see **<a name="figure-32---setting-up-a-device-when-installation-is-complete-approximately-30-seconds-later-depending-on-the-host-windows-reports-device-is-ready-see-figure-33-device-is-ready-and-the-device-shows-in-windows-device-manager-under-human-interface-devices-as-two-devices-hid-compliant-vendor-defined-device-with-vid-0801-and-pid-2020-and-usb-input-device"></a>
+**[Figure 32](#figure-32)** – Setting Up a Device**), When installation is complete (approximately 30 seconds later depending on the host), Windows reports **Device is ready**,(see **<a name="figure-33---device-is-ready"></a>
+**[Figure 33](#figure-33)** – Device is Ready**) and the device shows in Windows Device Manager under **Human Interface Devices** as two devices: **HID-compliant vendor-defined device** with VID **0801** and PID **2020**, and **USB Input Device**.
 
 ![](<DynaFlex II PED Images/d5841466310637ef396b297725110ce3.png>)
 
-Figure 32 - Setting Up a Device
+<a name="figure-32---setting-up-a-device"></a>
+**[Figure 32](#figure-32)** – Setting Up a Device
 
 ![](<DynaFlex II PED Images/5242ab19616db3c9047b5c511b6cf3ff.png>)
 
-Figure 33 - Device is Ready
+<a name="figure-33---device-is-ready"></a>
+**[Figure 33](#figure-33)** – Device is Ready
 
 ![](<DynaFlex II PED Images/2594ddbb972171fe207210fcccaee568.png>)![](<DynaFlex II PED Images/3f65691eadfe285152b3250ddfcd407e.png>)
 
@@ -244,34 +256,38 @@ Figure 33 - Device is Ready
 
 The DynaFlex II product line offers versatile mounting solutions, including:
 
--   **Integrated Slip-Resistant Adhesive Strips**: The underside of the device features three adhesive mounting strips (see **Figure 34**) that provide secure attachment to any clean, non-porous surface. These strips come with a protective film that must be removed before installing onto a surface.
+-   **Integrated Slip-Resistant Adhesive Strips**: The underside of the device features three adhesive mounting strips (see **[Figure 34](#figure-34)**) that provide secure attachment to any clean, non-porous surface. These strips come with a protective film that must be removed before installing onto a surface.
 
 ![A close-up of a device Description automatically generated](<DynaFlex II PED Images/6658d869079af0301016c5e5efe8b716.jpg>)
 
-Figure 34 - Adhesive Mounting Strip and Protective Film
+<a name="figure-34---adhesive-mounting-strip-and-protective-film"></a>
+**[Figure 34](#figure-34)** – Adhesive Mounting Strip and Protective Film
 
--   **Lanyard Mount Point**: The integrated mount point allows the device to be hung or carried, making it easy to store and handle, particularly in grab-and-go payment environments (see **Figure 35**).
+-   **Lanyard Mount Point**: The integrated mount point allows the device to be hung or carried, making it easy to store and handle, particularly in grab-and-go payment environments (see **[Figure 35](#figure-35)**).
 
 ![A close-up of a printer Description automatically generated](<DynaFlex II PED Images/943ab23a84415076f979e76de7af57e3.jpg>)
 
-Figure 35 - Lanyard Mount Point
+<a name="figure-35---lanyard-mount-point"></a>
+**[Figure 35](#figure-35)** – Lanyard Mount Point
 
 -   **Charging Station Compatibility (Non-Kiosk Models)**: Non-kiosk versions of the device can be placed in an optional charging station. This station can be used in conjunction with the lanyard mount point for quick access and easy drop-in charging between handheld uses.
 
 ![A drawing of a printer Description automatically generated](<DynaFlex II PED Images/29ada735f3f190d27f0b43db9936f89f.jpg>)
 
-Figure 36 - Charging Station Compatibility
+<a name="figure-36---charging-station-compatibility"></a>
+**[Figure 36](#figure-36)** – Charging Station Compatibility
 
 -   **Custom Mounting Options**: DynaFlex II devices can be attached to custom mounting brackets or housed within an enclosure, enabling integration into larger system designs.
 
 ### How to mount DynaFlex II
 
-1.  Verify that the protective film has been removed from the adhesive mounting strips located on the underside of the device (see **Figure 34**).
-2.  Mount DynaFlex II devices onto a smooth, flat, and non-porous surface by pressing the device firmly using the adhesive mounting strips (see **Figure 37**).
+1.  Verify that the protective film has been removed from the adhesive mounting strips located on the underside of the device (see **[Figure 34](#figure-34)**).
+2.  Mount DynaFlex II devices onto a smooth, flat, and non-porous surface by pressing the device firmly using the adhesive mounting strips (see **[Figure 37](#figure-37)**).
 
 ![A close-up of a scanner Description automatically generated](<DynaFlex II PED Images/ee812fa591ebcdb053249443a098c7af.jpeg>)
 
-Figure 37 - Mounting DynaFlex onto a Nonporous Surface
+<a name="figure-37---mounting-dynaflex-onto-a-nonporous-surface"></a>
+**[Figure 37](#figure-37)** – Mounting DynaFlex onto a Nonporous Surface
 
 3.  Do not mount the device on rough, dirty, or uneven surfaces.
 4.  To uninstall the device, twist it to disengage the mounting feet from the mounting surface.
@@ -296,31 +312,34 @@ When designing the mechanical portions of a solution that incorporates DynaFlex 
 -   Determine device orientation. The device supports all four orientations.
 -   Review any additional requirements from other agencies, such as PCI and EMV solution certification requirements, safety ordinances, and so on, which may introduce additional constraints to the design.
 
-Overall dimensions of the device are shown in **Figure 38** and **Figure 39**. On request, MagTek can provide a 3D model of the device’s envelope to assist with the mechanical portion of solution design. MagTek strongly recommends building and testing prototypes with actual devices before finalizing the solution design.
+Overall dimensions of the device are shown in **[Figure 38](#figure-38)** and **[Figure 39](#figure-39)**. On request, MagTek can provide a 3D model of the device’s envelope to assist with the mechanical portion of solution design. MagTek strongly recommends building and testing prototypes with actual devices before finalizing the solution design.
 
 ![A drawing of a computer Description automatically generated](<DynaFlex II PED Images/cadc51b3f0ee4a3d86719f41ec11b756.JPG>)
 
-Figure 38 – DynaFlex II Kiosk Models Overall Dimensions
+<a name="figure-38---dynaflex-ii-kiosk-models-overall-dimensions"></a>
+**[Figure 38](#figure-38)** – DynaFlex II Kiosk Models Overall Dimensions
 
-The screw hole placement on the bottom of DynaFlex II Kiosk models is detailed in **Figure 39**. The holes are designed to accommodate screw size **M4 x 0.7mm** and a maximum screw depth of 0.315 inches (8mm). The recommended torque range for installing the screws is 20 to 22 in-lbs. (2.3 to 2.5 N-m).
+The screw hole placement on the bottom of DynaFlex II Kiosk models is detailed in **[Figure 39](#figure-39)**. The holes are designed to accommodate screw size **M4 x 0.7mm** and a maximum screw depth of 0.315 inches (8mm). The recommended torque range for installing the screws is 20 to 22 in-lbs. (2.3 to 2.5 N-m).
 
 ![A diagram of a device Description automatically generated](<DynaFlex II PED Images/57e20c21311b25263d69b0612c0ee4d0.jpeg>)
 
-Figure 39 – DynaFlex II Kiosk Models Mounting Hole Locations
+<a name="figure-39---dynaflex-ii-kiosk-models-mounting-hole-locations"></a>
+**[Figure 39](#figure-39)** – DynaFlex II Kiosk Models Mounting Hole Locations
 
 When designing an enclosure or mounting bracket, make sure there is adequate clearance for cardholders to swipe, insert, and tap. If the solution design includes metal objects anywhere near the device, including metal enclosures, ensure that at all points the metal is no further forward than 15mm below the top face of the device. Proximity to metal can adversely affect the device’s performance.
 
 ![](<DynaFlex II PED Images/a3bfa6ff455e43de3907e3c781d0e291.png>)
 
-**Figure 310 - Unobstructed View of Card Insertion Slot, Swipe Path and Contactless Landing Zone**
+**<a name="figure-310---unobstructed-view-of-card-insertion-slot-swipe-path-and-contactless-landing-zone"></a>
+**[Figure 310](#figure-310)** – Unobstructed View of Card Insertion Slot, Swipe Path and Contactless Landing Zone**
 
 As a security measure, the device must be installed such that cardholders have a full, unobstructed view of the housing around the card insertion slot opening (“entry zone”) and MSR swipe path prior to insertion or swipe (see
 
-**Figure 310**). This is to allow cardholders to easily detect suspicious objects in or around the swipe path and card slot entry, such as bugs / skimmers / tapping mechanisms, and their wires or antennas. Be sure to select an installation height and mounting angle that meet this requirement.
+**[Figure 310](#figure-310)**). This is to allow cardholders to easily detect suspicious objects in or around the swipe path and card slot entry, such as bugs / skimmers / tapping mechanisms, and their wires or antennas. Be sure to select an installation height and mounting angle that meet this requirement.
 
 ### How to Mount the Charging Station
 
-To mount the optional charging station to a countertop using the four adhesive mounting strips on the underside of the charging station (see **Figure 312)**, follow these steps:
+To mount the optional charging station to a countertop using the four adhesive mounting strips on the underside of the charging station (see **[Figure 312](#figure-312))**, follow these steps:
 
 1.  Determine where the charging station will be placed.
     1.  Remove the adhesive strip protective film, ensure the mounting surface is a clean, smooth, and flat surface. It is important to avoid rough, dirty, or uneven surfaces.
@@ -333,32 +352,37 @@ To mount the optional charging station to a countertop using the four adhesive m
 
 ![](<DynaFlex II PED Images/b4f6b18a817d76906620edb397826072.png>)
 
-Figure 311 - Charging Station Dimensions
+<a name="figure-311---charging-station-dimensions"></a>
+**[Figure 311](#figure-311)** – Charging Station Dimensions
 
 ![](<DynaFlex II PED Images/9bcd8046c20e8d964539758708f59f8e.JPG>)
 
-Figure 312 - Charging Station Mounting Surfaces and Screw Holes
+<a name="figure-312---charging-station-mounting-surfaces-and-screw-holes"></a>
+**[Figure 312](#figure-312)** – Charging Station Mounting Surfaces and Screw Holes
 
-To mount the charging station to a countertop, table, or flat surface using the screw holes on the underside of the charging station (see **Figure 312**), follow these steps:
+To mount the charging station to a countertop, table, or flat surface using the screw holes on the underside of the charging station (see **[Figure 312](#figure-312)**), follow these steps:
 
 1.  Determine where the charging station will be installed.
-    1.  Mark the location of the screw holes by placing the device over the area where it is to be installed (see **Figure 313**).
+    1.  Mark the location of the screw holes by placing the device over the area where it is to be installed (see **[Figure 313](#figure-313)**).
     2.  Once the appropriate measurements have been taken and marked, drill the screw holes into the installation surface.
-    3.  Using (2) M4 x 0.7mm thread pitch (not included) screws, screw up through the drilled holes in the mounting surface, see **Figure 314**.
+    3.  Using (2) M4 x 0.7mm thread pitch (not included) screws, screw up through the drilled holes in the mounting surface, see **[Figure 314](#figure-314)**.
 2.  Connect the charging station to a USB port or to a USB charger with a minimum of 1A current capability. For the best results, use the cable that is included with the device. It includes shielding at both ends of the cable to reduce interference.
 3.  To uninstall, remove the screws from the underside of the charging station.
 
 ![Diagram of a device with measurements Description automatically generated with medium confidence](<DynaFlex II PED Images/efd58e2bf92f8a8ee4077635f61840a2.JPG>)
 
-Figure 313 – Preparing a Flat Surface for Mounting the Charging Station
+<a name="figure-313---preparing-a-flat-surface-for-mounting-the-charging-station"></a>
+**[Figure 313](#figure-313)** – Preparing a Flat Surface for Mounting the Charging Station
 
 ![A drawing of a box with a red line Description automatically generated](<DynaFlex II PED Images/b72c9731b1d3688800b702aae1bfb72f.PNG>)
 
-Figure 314 - Screw Installation
+<a name="figure-314---screw-installation"></a>
+**[Figure 314](#figure-314)** – Screw Installation
 
 ![](<DynaFlex II PED Images/761ed1d625d3692b8d2bda39c2ef139e.png>)
 
-**Figure 315 – Connecting DynaFlex II to the Optional Charging Station**
+**<a name="figure-315---connecting-dynaflex-ii-to-the-optional-charging-station"></a>
+**[Figure 315](#figure-315)** – Connecting DynaFlex II to the Optional Charging Station**
 
 # Operation
 
@@ -375,25 +399,27 @@ While in use, the DynaFlex II family of products switch between distinct operati
 
 During normal operation, the operator initiates a transaction from the host, and the cardholder interacts with the device. Devices with a touchscreen display provide on-screen prompts and interactive features such as buttons and signature capture.
 
-Transaction types may include sales, refunds, voids, authorization, new accounts, teller window applications, checking, savings, mortgages, retail transactions, or any other type of transaction where there is interaction between the cardholder and the operator. For each transaction type, the host software can direct the device to prompt the cardholder for any combination of magnetic stripe swipe, EMV contact card insertion, and/or contactless payment tap, and the transaction flow on the device may differ depending on what the host software specifies and what the cardholder does. Section **4.8 Using the Reader** provides examples of the cardholder experience for each type of payment. **Figure 41** shows a typical point of sale (POS) transaction sequence.
+Transaction types may include sales, refunds, voids, authorization, new accounts, teller window applications, checking, savings, mortgages, retail transactions, or any other type of transaction where there is interaction between the cardholder and the operator. For each transaction type, the host software can direct the device to prompt the cardholder for any combination of magnetic stripe swipe, EMV contact card insertion, and/or contactless payment tap, and the transaction flow on the device may differ depending on what the host software specifies and what the cardholder does. Section **4.8 Using the Reader** provides examples of the cardholder experience for each type of payment. **[Figure 41](#figure-41)** shows a typical point of sale (POS) transaction sequence.
 
 If the device cannot read payment data, the host software may direct it to prompt the cardholder to repeat the action or request the cardholder revert to a different form of payment (such as using the magnetic stripe reader as a fallback instead of the chip card insertion slot).
 
 ![](<DynaFlex II PED Images/e1b45407e4f2c77369ee83b8e8acef6b.png>)![](<DynaFlex II PED Images/5a5ae61e42bb71202f670f38c140bdd0.png>)![](<DynaFlex II PED Images/943eb58b82cc6c3c09d66c1e0db13e89.png>)![Text Description automatically generated with low confidence](<DynaFlex II PED Images/3213d1ac55f34ecaaf7e19b519832ddf.png>)![](<DynaFlex II PED Images/b84c02a96fc22007fd30dbf2c99de1b4.png>)![](<DynaFlex II PED Images/efddd058051044b6b4e8053e14ba0392.png>)![](<DynaFlex II PED Images/3a6e878c615967b9e83cd56498af20b6.png>)![](<DynaFlex II PED Images/c0c13e59cff84fae79d8f67d0e20662b.png>)
 
-Figure 41 - Typical Transaction Sequence
+<a name="figure-41---typical-transaction-sequence"></a>
+**[Figure 41](#figure-41)** – Typical Transaction Sequence
 
 ## About the Status LEDs
 
 DynaFlex II provides four RGB LEDs directly below the chip card insertion slot (see section **1.5 About DynaFlex II Components**), numbered LED1 through LED4, which report the device’s current operating status.
 
--   The meaning of each LED depends on the device’s operating mode. See section **4.1 About Operating Modes** and **Table 41 below**. Most of the time, operators will check the device’s status using the LEDs when it is in **Active Mode** while the device is not performing a transaction.
--   LED colors have specific meanings, as described in **Table 42**. They are based on international conventions for traffic light colors, with additional colors reserved for unusual / special cases.
--   LED blinking patterns have specific meanings as well, as described in **Table 43**. A blinking LED means the device is actively doing something to change the state that the LED is indicating and solid indicates a persistent state that would require an operator or cardholder to take action to change. One major exception is a device-wide functional failure state, such as a tamper state, where all LEDs flash urgently to call the attention of an advanced operator to intervene.
+-   The meaning of each LED depends on the device’s operating mode. See section **4.1 About Operating Modes** and **[Table 41](#table-41) below**. Most of the time, operators will check the device’s status using the LEDs when it is in **Active Mode** while the device is not performing a transaction.
+-   LED colors have specific meanings, as described in **[Table 42](#table-42)**. They are based on international conventions for traffic light colors, with additional colors reserved for unusual / special cases.
+-   LED blinking patterns have specific meanings as well, as described in **[Table 43](#table-43)**. A blinking LED means the device is actively doing something to change the state that the LED is indicating and solid indicates a persistent state that would require an operator or cardholder to take action to change. One major exception is a device-wide functional failure state, such as a tamper state, where all LEDs flash urgently to call the attention of an advanced operator to intervene.
 
 In this manual, specific combinations of LED colors and blinking patterns are described in more detail in the sections where they are relevant and use the same icons in the tables below to indicate color and blinking patterns. For example, information about how the LEDs show the device’s connection status is in section **3.2 Connecting to a Host**.
 
-Table 41 – DynaFlex II LED Allocation
+<a name="table-41---dynaflex-ii-led-allocation"></a>
+**[Table 41](#table-41)** – DynaFlex II LED Allocation
 
 | In This Context                              | LED1                                                                                                                              | LED2              | LED3              | LED4             |
 |----------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------|-------------------|-------------------|------------------|
@@ -401,7 +427,8 @@ Table 41 – DynaFlex II LED Allocation
 | Active Mode: Armed for a Tap Transaction     | Armed for Tap                                                                                                                     | Tap Read Progress | Tap Read Progress | Card Read Result |
 | Device-Wide Failure                          | During major failures (such as tamper), **LED1-LED4** report the nature of the failure based on the steps required to resolve it. |                   |                   |                  |
 
-Table 42 – DynaFlex II LED Colors
+<a name="table-42---dynaflex-ii-led-colors"></a>
+**[Table 42](#table-42)** – DynaFlex II LED Colors
 
 | Color                                                                     | Means                                                                                                                |
 |---------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------|
@@ -410,7 +437,8 @@ Table 42 – DynaFlex II LED Colors
 | ![](<DynaFlex II PED Images/96667fed4612d491e627cf5e14b0490f.png>) Green  | Go, going, or went. LED3 will show status for WebSocket connection: Green connected, yellow Waiting for connection.  |
 | Other Colors                                                              | Reserved                                                                                                             |
 
-Table 43 – DynaFlex II LED Patterns
+<a name="table-43---dynaflex-ii-led-patterns"></a>
+**[Table 43](#table-43)** – DynaFlex II LED Patterns
 
 | Color                                                                                                                                                                                                                                                                                | Means                                                                                                                                                                                                                                                                      |
 |--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -426,9 +454,10 @@ This section applies only to **DynaFlex II PED** models, which are equipped with
 
 When the device is powered on, in Active mode, and idle (not performing a transaction or displaying host-driven user interface prompts), it displays **Welcome** or a custom graphic if it is configured to do so. If the host software is designed to receive and respond to cardholder input messages, pressing any area on the touchscreen when it is idle may trigger the host to perform an operation, such as starting a transaction. For more information about custom graphics, see **D998200383 DynaFlex and DynaFlex Pro Programmer’s Manual (COMMANDS)**.
 
-WLAN enabled devices also report current status in a set of icons at the top of the **Welcome** screen. **Table 44 below** shows the icons and describes their meanings. For example, in **Figure 42**, the device is connected to a USB host and wireless access point, TLS is enabled, the battery level is OK, the device is charging, and it is idle, waiting for the host to initiate a transaction.
+WLAN enabled devices also report current status in a set of icons at the top of the **Welcome** screen. **[Table 44](#table-44) below** shows the icons and describes their meanings. For example, in **[Figure 42](#figure-42)**, the device is connected to a USB host and wireless access point, TLS is enabled, the battery level is OK, the device is charging, and it is idle, waiting for the host to initiate a transaction.
 
-Table 44 – Status Icon Meaning
+<a name="table-44---status-icon-meaning"></a>
+**[Table 44](#table-44)** – Status Icon Meaning
 
 | Status Icon                                                                                                                                              | Meaning                                                                                                                                                                                                                                                |
 |----------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -448,7 +477,8 @@ Table 44 – Status Icon Meaning
 
 ![A screenshot of a phone Description automatically generated](<DynaFlex II PED Images/f6918e30c9bc97f51f3908ae092a1750.png>)![](<DynaFlex II PED Images/fd37901e96f09957edf53680ff2b95c8.png>)
 
-Figure 42 - Welcome Page Examples
+<a name="figure-42---welcome-page-examples"></a>
+**[Figure 42](#figure-42)** – Welcome Page Examples
 
 The device may show text other than “Welcome” when it is Active / idle under certain conditions:
 
@@ -466,29 +496,32 @@ While powering on, the touchscreen briefly displays a page of information about 
 
 ![](<DynaFlex II PED Images/599842dc6b568d9ddc62cc6d947d7379.png>)
 
-Figure 43 - Device Information Screen
+<a name="figure-43---device-information-screen"></a>
+**[Figure 43](#figure-43)** – Device Information Screen
 
-To view details pertinent to the device’s PCI certification status on WLAN enabled devices - including the installed firmware part numbers and versions as well as other identifying information (see **Figure 44**) complete the following actions:
+To view details pertinent to the device’s PCI certification status on WLAN enabled devices - including the installed firmware part numbers and versions as well as other identifying information (see **[Figure 44](#figure-44)**) complete the following actions:
 
 While on the **Welcome** screen, press the **Pushbutton** and hold for 3 beeps to access the **Settings** menu, then select **Firmware** and **Main** to return to the **Welcome** screen, select **Back** and **Exit**
 
 ![](<DynaFlex II PED Images/097da369a90e553db62429738633d231.png>) ![](<DynaFlex II PED Images/714a5c44a9b24b03cc7e432a74b5e9ee.png>)
 
-Figure 44 - Device Information Screen for WLAN device
+<a name="figure-44---device-information-screen-for-wlan-device"></a>
+**[Figure 44](#figure-44)** – Device Information Screen for WLAN device
 
 ### Connection Status Page
 
-In addition to the icons at the top of the display, WLAN enabled devices have a **WLAN Status** screen that reports more details about the device’s 802.11 wireless (see **Figure 45**) connection. To access it, while on the **Welcome** screen, press the **Pushbutton** and hold for three beeps to get to the **Settings** menu, then select **Connection**, and **WLAN Settings**, then select **WLAN Status**. To return to the **Welcome** screen, select **Back** and **Exit**
+In addition to the icons at the top of the display, WLAN enabled devices have a **WLAN Status** screen that reports more details about the device’s 802.11 wireless (see **[Figure 45](#figure-45)**) connection. To access it, while on the **Welcome** screen, press the **Pushbutton** and hold for three beeps to get to the **Settings** menu, then select **Connection**, and **WLAN Settings**, then select **WLAN Status**. To return to the **Welcome** screen, select **Back** and **Exit**
 
 ![Graphical user interface, application Description automatically generated](<DynaFlex II PED Images/2fce061461ee799f19f5bffd94f9617c.png>)![Graphical user interface, application Description automatically generated](<DynaFlex II PED Images/3d747135313fa97ed8f15f74ee375392.png>)
 
 ![Graphical user interface Description automatically generated with low confidence](<DynaFlex II PED Images/143b25d043a9bd1e0ef6cf71d30f2b8c.png>)
 
-Figure 45 - WLAN Status Screen
+<a name="figure-45---wlan-status-screen"></a>
+**[Figure 45](#figure-45)** – WLAN Status Screen
 
 ### SoftAP Page
 
-To configure WLAN enabled devices via SoftAP mode (see **Figure 46)** complete the following steps:
+To configure WLAN enabled devices via SoftAP mode (see **[Figure 46](#figure-46))** complete the following steps:
 
 1.  While on the **Welcome** screen, press the **Pushbutton** and hold for three beeps to get to the **Settings** menu.
 2.  Press **Connection**
@@ -499,7 +532,8 @@ To return to the **Welcome** screen, select **Back** and **Exit**.
 
 ![Graphical user interface, application Description automatically generated with medium confidence](<DynaFlex II PED Images/24fa639efa82c1b305b8e0beeaf1b72b.png>)
 
-Figure 46 – SoftAP Mode screen
+<a name="figure-46---softap-mode-screen"></a>
+**[Figure 46](#figure-46)** – SoftAP Mode screen
 
 ## About Sounds
 
@@ -540,15 +574,17 @@ The device’s rechargeable battery is designed to last hundreds of charging cyc
 
 ### How to Check Battery Level
 
-When powered on, DynaFlex II starts in the idle / waiting state and shows a **Welcome** page on the touchscreen. See **4.6.4 How to Power On / Wake Up from Standby Mode / Power Off.** This page indicates battery level and charge status on the top right corner of the screen. See **Figure 47 Welcome Screen.**
+When powered on, DynaFlex II starts in the idle / waiting state and shows a **Welcome** page on the touchscreen. See **4.6.4 How to Power On / Wake Up from Standby Mode / Power Off.** This page indicates battery level and charge status on the top right corner of the screen. See **[Figure 47](#figure-47) Welcome Screen.**
 
 ![Text, letter Description automatically generated](<DynaFlex II PED Images/a4f8c336eb8528dff88adc4d948ed584.png>)
 
-Figure 47 Welcome Screen
+[Figure 47](#figure-47) Welcome Screen
 
-The table of symbols below describes the various power level and charge status icons. See **Table 45 - Battery Power Level and Charge Status Icons.**
+The table of symbols below describes the various power level and charge status icons. See **<a name="table-45---battery-power-level-and-charge-status-icons"></a>
+**[Table 45](#table-45)** – Battery Power Level and Charge Status Icons.**
 
-Table 45 - Battery Power Level and Charge Status Icons
+<a name="table-45---battery-power-level-and-charge-status-icons"></a>
+**[Table 45](#table-45)** – Battery Power Level and Charge Status Icons
 
 | Battery Power Level and Charge Status Icons                                                                                                              |                                                        |
 |----------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------|
@@ -572,7 +608,8 @@ To charge the device without an optional charging station, connect it to a USB c
 To charge the device in the optional charging station *for power only (no USB communication)*:
 
 1.  Make sure the charging station is properly installed and is receiving USB power. See section **3.3.4 How to Mount the Charging Station**.
-2.  Place the device in the charging station with the charging contacts pointing into the charging station and the device’s face pointing toward the ceiling as shown in **Figure 315 – Connecting DynaFlex II to the Optional Charging Station**.
+2.  Place the device in the charging station with the charging contacts pointing into the charging station and the device’s face pointing toward the ceiling as shown in **<a name="figure-315---connecting-dynaflex-ii-to-the-optional-charging-station"></a>
+**[Figure 315](#figure-315)** – Connecting DynaFlex II to the Optional Charging Station**.
 3.  Check the device’s LEDs to make sure it is charging.
 
 For important information about the device’s power systems, optimal charging methods during regular use, optimal handling and storage, and other information about keeping the device’s power systems in the best possible condition, see section **2.3 Handling to Avoid Accidental Tamper** and section **4.6.1 About Power**.
@@ -634,11 +671,11 @@ The steps for starting a transaction and reading a card or contactless payment d
 To swipe magnetic stripe cards, follow these steps:
 
 1.  Wait for the device to display an action prompt, or, if the solution is designed to respond to cardholder actions that occur while the device is idle, such as swiping, inserting, or tapping a card or electronic payment device, or pressing the touchscreen, initiate the transaction by performing one of those actions instead of waiting. In these cases, the device may automatically and rapidly pass through several of the steps below without requiring cardholder interaction.
-    1.  Devices with a display show on-screen text and buttons (see **Figure 48** **below** for examples).
+    1.  Devices with a display show on-screen text and buttons (see **[Figure 48](#figure-48)** **below** for examples).
     2.  The device shows the transaction status using the LEDs. If the host has directed the device to enable the contactless interface, LED1 lights solid green and all other LEDs are off, per EMV standards, to indicate it is ready for a tap. If the host has directed the device to disable the contactless interface, the device continues to show idle statuses on LED1 and LED2.
     3.  All devices report detailed transaction status to the host, and host software may report that information to operators so they can guide cardholders through the transaction (for example, “swipe, insert, or tap your card now please”).
 2.  Locate the magnetic stripe reader swipe path on the face of the device.
-3.  Orient the card with the magnetic stripe facing away from the cardholder and the touchscreen or contactless landing zone, toward the LEDs and the chip card insertion slot as shown in **Figure 49**.
+3.  Orient the card with the magnetic stripe facing away from the cardholder and the touchscreen or contactless landing zone, toward the LEDs and the chip card insertion slot as shown in **[Figure 49](#figure-49)**.
 4.  Swipe the card through the magnetic stripe reader in either direction.
 5.  Look for a prompt that the device has successfully read the card:
     1.  The device turns LED4 green for a short time.
@@ -660,21 +697,23 @@ Immediately after the user swipes a magnetic stripe card, the device disables th
 
 ![](<DynaFlex II PED Images/5a5ae61e42bb71202f670f38c140bdd0.png>)![](<DynaFlex II PED Images/5de28fafe0ae6d50039cc9cc9d3d0a61.png>)
 
-Figure 48 – Example Card Swipe Screens
+<a name="figure-48---example-card-swipe-screens"></a>
+**[Figure 48](#figure-48)** – Example Card Swipe Screens
 
 ![](<DynaFlex II PED Images/3e86bbfcfd9250568337c532d4ac2ade.png>)
 
-Figure 49 – Swiping a Magnetic Stripe Card
+<a name="figure-49---swiping-a-magnetic-stripe-card"></a>
+**[Figure 49](#figure-49)** – Swiping a Magnetic Stripe Card
 
 ### How to Insert Contact Chip Cards
 
 To insert contact chip cards, follow these steps:
 
 1.  Wait for the device to display an action prompt, or, if the solution is designed to respond to cardholder actions that occur while the device is idle, such as swiping, inserting, or tapping a card or electronic payment device, or pressing the touchscreen, initiate the transaction by performing one of those actions instead of waiting. In these cases, the device may automatically and rapidly pass through several of the steps below without requiring cardholder interaction.
-    1.  Devices with a touchscreen display on-screen text and buttons (see **Figure 410** **below** for examples).
+    1.  Devices with a touchscreen display on-screen text and buttons (see **[Figure 410](#figure-410)** **below** for examples).
     2.  Devices with or without a touchscreen show the transaction status using the LEDs. If the host has directed the device to enable the contactless interface, LED1 lights solid green and all other LEDs are off, per EMV standards, to indicate it is ready for a tap, swipe, or insert. If the host has directed the device to disable the contactless interface, the device continues to show idle statuses on LED1 and LED2.
     3.  All devices report detailed transaction status to the host, and host software may report that information to operators so they can guide cardholders through the transaction (for example, “swipe, insert, or tap your card now please”).
-2.  Locate the chip card insertion slot on the face of the device, as shown in **Figure 411**.
+2.  Locate the chip card insertion slot on the face of the device, as shown in **[Figure 411](#figure-411)**.
 3.  Orient the chip card so the chip faces the cardholder, toward the touchscreen or contactless landing zone and the LEDs.
 4.  Insert the chip card into the slot, then push gently on the card until it stops. There should not be any substantial resistance until the chip card is fully inserted.
 5.  Wait for a prompt that the device has successfully read the card, then remove the card.
@@ -699,24 +738,26 @@ Immediately after the user inserts a chip card, the device disables the option t
 
 ![](<DynaFlex II PED Images/5a5ae61e42bb71202f670f38c140bdd0.png>)![](<DynaFlex II PED Images/fb8d3eb52db598e2f4d5f62a761f0f02.png>)![](<DynaFlex II PED Images/b84c02a96fc22007fd30dbf2c99de1b4.png>)
 
-Figure 410 – Example Card Insertion Screens
+<a name="figure-410---example-card-insertion-screens"></a>
+**[Figure 410](#figure-410)** – Example Card Insertion Screens
 
 ![](<DynaFlex II PED Images/91f6f9408433c25b48c91ec16586ac37.png>)
 
-Figure 411 – Inserting a Chip Card
+<a name="figure-411---inserting-a-chip-card"></a>
+**[Figure 411](#figure-411)** – Inserting a Chip Card
 
 ### How to Tap Contactless Cards / Devices
 
 To tap a contactless card or smartphone, follow these steps:
 
 1.  Wait for the device to display an action prompt, or, if the solution is designed to respond to cardholder actions that occur while the device is idle, such as swiping, inserting, or tapping a card or electronic payment device, or pressing the touchscreen, initiate the transaction by performing one of those actions instead of waiting. In these cases, the device may automatically and rapidly pass through several of the steps below without requiring cardholder interaction.
-    1.  Devices with a touchscreen show on-screen text and buttons (see **Figure 412** **below** for examples).
+    1.  Devices with a touchscreen show on-screen text and buttons (see **[Figure 412](#figure-412)** **below** for examples).
     2.  Devices with or without a touchscreen show the transaction status using the LEDs. LED1 lights solid green and all other LEDs are off, per EMV standards, to indicate it is ready for a tap (or swipe or insert, if the host has enabled those interfaces for this transaction).
     3.  All devices report detailed transaction status to the host, and host software may report that information to operators so they can guide cardholders through the transaction (for example, “please tap your card now”).
 2.  If the cardholder is using an electronic payment device, such as a smartphone, make sure the payment device has **NFC** turned **On** and has a payment app configured to process transactions. For details, see the documentation provided by the smartphone manufacturer and payment app publisher.
-3.  Briefly hold the card, smartphone, or other contactless payment device over the contactless landing zone, indicated by the EMVCo Contactless Indicator symbol on the device’s face (see **Figure 412**). Because each smartphone model may have its NFC antenna placed differently, the ideal tap position may vary by make and model. For example, Samsung users may need to center the phone on the contactless landing zone, while Apple users may need to tap the top of the phone on the contactless landing zone.
+3.  Briefly hold the card, smartphone, or other contactless payment device over the contactless landing zone, indicated by the EMVCo Contactless Indicator symbol on the device’s face (see **[Figure 412](#figure-412)**). Because each smartphone model may have its NFC antenna placed differently, the ideal tap position may vary by make and model. For example, Samsung users may need to center the phone on the contactless landing zone, while Apple users may need to tap the top of the phone on the contactless landing zone.
 4.  Wait for a prompt that the device has successfully read the card, smartphone, or other contactless payment device, then remove it from the contactless landing zone.
-    1.  The device quickly lights the second LED green to show it is processing, then lights the third LED green to show it has successfully read the tap, then lights the fourth LED green to show the read is complete (see **Figure 414**).
+    1.  The device quickly lights the second LED green to show it is processing, then lights the third LED green to show it has successfully read the tap, then lights the fourth LED green to show the read is complete (see **[Figure 414](#figure-414)**).
     2.  The device beeps once.
     3.  If the device has a touchscreen:
         1.  The device may display **PROCESSING**.
@@ -733,22 +774,25 @@ To tap a contactless card or smartphone, follow these steps:
 
 ![](<DynaFlex II PED Images/5a5ae61e42bb71202f670f38c140bdd0.png>)![](<DynaFlex II PED Images/153e31a328bf55d94646a989d1bd1e7b.png>)
 
-Figure 412 – Example Contactless Transaction Screens
+<a name="figure-412---example-contactless-transaction-screens"></a>
+**[Figure 412](#figure-412)** – Example Contactless Transaction Screens
 
 ![](<DynaFlex II PED Images/094e6e552335e0a8f64db9c8c5796922.png>)![](<DynaFlex II PED Images/d575015d0fc1eabad649f6c92220123a.png>)
 
-Figure 413 – Tapping a Contactless Card / Smartphone
+<a name="figure-413---tapping-a-contactless-card-smartphone"></a>
+**[Figure 413](#figure-413)** – Tapping a Contactless Card / Smartphone
 
 ![](<DynaFlex II PED Images/7ac420b4615e876636fe3b9ff87dc498.png>)![](<DynaFlex II PED Images/ee90868d2735539ada2487190c34d096.png>)![](<DynaFlex II PED Images/d6e835dcc95fcbc5ab527bbca81317dd.png>)![](<DynaFlex II PED Images/785b4eb732880d763908624e901ed5c5.png>)
 
-**Figure 414 – Tap Read Is Complete**
+**<a name="figure-414---tap-read-is-complete"></a>
+**[Figure 414](#figure-414)** – Tap Read Is Complete**
 
 ### How to Tap Contactless NFC Tags / MIFARE Classic / MIFARE DESFire /MIFARE Plus Cards and Send Pass-through Commands
 
 To tap a contactless NFC Tags / MIFARE Classic / MIFARE DESFire /MIFARE Plus cards, follow these steps:
 
 1.  Wait for the device to display an action prompt. If the solution is designed to respond to cardholder actions that occur while the device is idle, such as swiping, inserting, or tapping a card or electronic payment device, or pressing the touchscreen, initiate the transaction by performing one of those actions instead of waiting. In these cases, the device may automatically and rapidly pass through several of the steps below without requiring cardholder interaction.
-    1.  Devices with a touchscreen display on-screen text and buttons (see **Figure 412** for examples) via the host.
+    1.  Devices with a touchscreen display on-screen text and buttons (see **[Figure 412](#figure-412)** for examples) via the host.
     2.  Devices with or without a touchscreen show the transaction status using the LEDs. LED1 illuminates solid green, and all other LEDs are off, per EMV standards, to indicate it is ready for a tap (or swipe / insert, if the host has enabled those interfaces for this transaction).
     3.  All devices report detailed transaction status to the host, and host software may report that information to operators so they can guide cardholders through the transaction (for example, “please tap your card now”).
 2.  Place the card over the device's designated contactless landing zone, marked by the EMVCo Contactless Indicator symbol on the front face of the device.
@@ -780,7 +824,8 @@ To scan a barcode, follow these steps:
 
 ![](<DynaFlex II PED Images/6672cca37583b097712d59d3ab80ae72.png>)
 
-Figure 415 – Scanning a Barcode
+<a name="figure-415---scanning-a-barcode"></a>
+**[Figure 415](#figure-415)** – Scanning a Barcode
 
 ### How to Enter Card Information Manually
 
@@ -794,8 +839,8 @@ Devices with touchscreen displays provide support for starting a transaction tha
 To enter card information manually, follow these steps. For every prompt below, press the **Enter** button after entering data to move to the next step, or press the **Backsp** button to delete data that has already been entered but stay on the same step, or press the **Cancel** button to completely end the transaction:
 
 1.  The operator starts a transaction, specifying manual card entry, optionally specifying a transaction amount and cash back amount. If the solution is designed to respond to cardholder actions that occur while the device is idle, such as pressing the touchscreen, the operator may initiate the transaction by performing one of those actions instead of initiating the transaction from the host.
-2.  The device shows a numeric keypad and a prompt to enter **Card Number** (see **Figure 416**). Enter the card number and press the **Enter** button. If the device double-beeps when pressing the **Enter** button and does not proceed to the next step, the PAN is not valid. The device may be configured to enable MOD10 validation, which makes sure the card number passes a validity check to prevent errors during entry. It is also possible you have entered too many or too few PAN digits. Double-check the card number and use the **Backsp** button to correct any errors, then press **Enter**.
-3.  The device displays a numeric keypad and a prompt to enter **Exp Date (MMYY)** (see **Figure 417**). Enter the expiration date on the card and press the **Enter** button.
+2.  The device shows a numeric keypad and a prompt to enter **Card Number** (see **[Figure 416](#figure-416)**). Enter the card number and press the **Enter** button. If the device double-beeps when pressing the **Enter** button and does not proceed to the next step, the PAN is not valid. The device may be configured to enable MOD10 validation, which makes sure the card number passes a validity check to prevent errors during entry. It is also possible you have entered too many or too few PAN digits. Double-check the card number and use the **Backsp** button to correct any errors, then press **Enter**.
+3.  The device displays a numeric keypad and a prompt to enter **Exp Date (MMYY)** (see **[Figure 417](#figure-417)**). Enter the expiration date on the card and press the **Enter** button.
 4.  The device shows a numeric keypad and a prompt to enter **CVV/CVC/Card ID**. Enter the card verification code / value, then press the **Enter** button. This code is a 3- or 4- digit number printed on the front or back of the card, and is also referred to as a security code, security validation value, CAV2, CVC2, CVV2, or CID, depending on which payment brand issued the card.
 5.  The device shows a summary of all the data that was entered during the transaction. If the operator specified a transaction amount when starting the transaction, the summary includes the total transaction amount (purchase amount plus cash back, if any).
 6.  Verify all the information is correct:
@@ -805,71 +850,82 @@ To enter card information manually, follow these steps. For every prompt below, 
 
 ![](<DynaFlex II PED Images/17cd92a760e895176fe75556576db18f.png>)
 
-Figure 416 – Enter Card Number
+<a name="figure-416---enter-card-number"></a>
+**[Figure 416](#figure-416)** – Enter Card Number
 
 ![](<DynaFlex II PED Images/225ef6fcb25efe4098f698f89b598e2a.png>)
 
-Figure 417 – Enter Expiration Date
+<a name="figure-417---enter-expiration-date"></a>
+**[Figure 417](#figure-417)** – Enter Expiration Date
 
 ![](<DynaFlex II PED Images/3a9b6342505c243b37b16a876da4ed6d.png>)
 
-Figure 418 – Enter CVV/CVC/Card ID
+<a name="figure-418---enter-cvv-cvc-card-id"></a>
+**[Figure 418](#figure-418)** – Enter CVV/CVC/Card ID
 
 ### How to Verify the Transaction Amount
 
-When the device is processing a transaction using the EMV Transaction Flow (as opposed to the Quick Chip Transaction Flow), devices with a touchscreen display the amount of the transaction when they prompt the cardholder to swipe, dip, or tap a card or payment device, as shown in **Figure 1.** The cardholder implicitly confirms / accepts the transaction amount by presenting payment.
+When the device is processing a transaction using the EMV Transaction Flow (as opposed to the Quick Chip Transaction Flow), devices with a touchscreen display the amount of the transaction when they prompt the cardholder to swipe, dip, or tap a card or payment device, as shown in **[Figure 1](#figure-1).** The cardholder implicitly confirms / accepts the transaction amount by presenting payment.
 
 ![Text, shape Description automatically generated with medium confidence](<DynaFlex II PED Images/971a93e22e22ba8906f7669d38e8e736.png>)![Text, letter Description automatically generated](<DynaFlex II PED Images/89d5fa19f4ef476456cc3d1534cc2ec2.png>)
 
-Figure 1 - Example Transaction Amount Screens
+<a name="figure-1---example-transaction-amount-screens"></a>
+**[Figure 1](#figure-1)** – Example Transaction Amount Screens
 
 ### How to Enter PINs
 
-Devices with a touchscreen display provide support for requesting a PIN from the cardholder. The device prompts the cardholder to **ENTER PIN** (see **Figure 420**) as required by the financial institution. The device expects the PIN to be between 4 and 12 digits long. After entering the PIN, the cardholder must press the **ENTER** button.
+Devices with a touchscreen display provide support for requesting a PIN from the cardholder. The device prompts the cardholder to **ENTER PIN** (see **[Figure 420](#figure-420)**) as required by the financial institution. The device expects the PIN to be between 4 and 12 digits long. After entering the PIN, the cardholder must press the **ENTER** button.
 
 ![Calendar Description automatically generated](<DynaFlex II PED Images/39ca4f6afee8f3450c121c246823b2ea.png>)
 
-Figure 420 – Enter PIN
+<a name="figure-420---enter-pin"></a>
+**[Figure 420](#figure-420)** – Enter PIN
 
-If the double PIN entry option is enabled, the device prompts the cardholder to enter the PIN a second time (see **Figure 421**). *The process for re-entry is identical to the process for the first entry*.
+If the double PIN entry option is enabled, the device prompts the cardholder to enter the PIN a second time (see **[Figure 421](#figure-421)**). *The process for re-entry is identical to the process for the first entry*.
 
 ![Calendar Description automatically generated](<DynaFlex II PED Images/2f50bbe350d5e814275728cc85a23f1c.png>)
 
-Figure 421 – Enter PIN Again
+<a name="figure-421---enter-pin-again"></a>
+**[Figure 421](#figure-421)** – Enter PIN Again
 
 ### How to Enter Tip
 
-Devices with a touchscreen display provide support for requesting a Tip Entry from the cardholder. The device prompts the cardholder to **Enter Tip** (see **Figure 422** – Enter Tip).
+Devices with a touchscreen display provide support for requesting a Tip Entry from the cardholder. The device prompts the cardholder to **Enter Tip** (see **[Figure 422](#figure-422)** – Enter Tip).
 
 ![A screenshot of a table Description automatically generated](<DynaFlex II PED Images/8cb408316a3ae822e1b682fc60aa28b5.png>)
 
-Figure 422 – Enter Tip
+<a name="figure-422---enter-tip"></a>
+**[Figure 422](#figure-422)** – Enter Tip
 
 If the cardholder selects a **Custom** button, the device prompts a keypad for the cardholder to **Enter Tip Amount** (see Figure **423** – Enter Tip Amount). After entering the Tip Amount, the cardholder must press the **Enter** button.
 
 ![A screenshot of a number grid Description automatically generated](<DynaFlex II PED Images/3e01c71efdb258e973121cf2944c59e8.png>)
 
-Figure 423 – Enter Tip Amount
+<a name="figure-423---enter-tip-amount"></a>
+**[Figure 423](#figure-423)** – Enter Tip Amount
 
-After finalizing the Tip, and pressing the **Submit** button, the device prompts the cardholder to present a payment (see **Figure 424**). The on-screen prompt is different depending on which payment method(s) the host directed the device to enable for the transaction. If the Quick Chip flow is in effect, the prompt does not include the transaction amount. If the Full EMV flow is in effect, the prompt includes the transaction amount.
+After finalizing the Tip, and pressing the **Submit** button, the device prompts the cardholder to present a payment (see **[Figure 424](#figure-424)**). The on-screen prompt is different depending on which payment method(s) the host directed the device to enable for the transaction. If the Quick Chip flow is in effect, the prompt does not include the transaction amount. If the Full EMV flow is in effect, the prompt includes the transaction amount.
 
 ![A screen shot of a card Description automatically generated](<DynaFlex II PED Images/c58ce8b7bf69285e10584ab900d5b49e.png>)
 
-Figure 424 – Example Present Payment Screen
+<a name="figure-424---example-present-payment-screen"></a>
+**[Figure 424](#figure-424)** – Example Present Payment Screen
 
 ### How to Enter Sale Amount
 
-Devices with a touchscreen display and active connection to a Wireless Local Area Network (WLAN) Host provide support for entering a Sale Amount from the cardholder. The device prompts the cardholder with the **Start Sale** button (see **Figure 425**)
+Devices with a touchscreen display and active connection to a Wireless Local Area Network (WLAN) Host provide support for entering a Sale Amount from the cardholder. The device prompts the cardholder with the **Start Sale** button (see **[Figure 425](#figure-425)**)
 
 ![A screenshot of a computer Description automatically generated](<DynaFlex II PED Images/eb647ef6aa84aa708f28c723d877b1f0.png>)
 
-Figure 425 - Start Sale Screen
+<a name="figure-425---start-sale-screen"></a>
+**[Figure 425](#figure-425)** – Start Sale Screen
 
-When the cardholder presses the **Start Sale** button, the device prompts the cardholder to **Enter Sale Amount** (see **Figure 426**)
+When the cardholder presses the **Start Sale** button, the device prompts the cardholder to **Enter Sale Amount** (see **[Figure 426](#figure-426)**)
 
 ![A screenshot of a computer screen Description automatically generated](<DynaFlex II PED Images/c68faead48a9c4e6b051fa59d9d60150.png>)
 
-Figure 426 - Enter Sale Amount
+<a name="figure-426---enter-sale-amount"></a>
+**[Figure 426](#figure-426)** – Enter Sale Amount
 
 After the cardholder enters the Sale Amount and presses **Enter**, the device prompts the cardholder to enter Tip (see section **4.8.10 How to Enter Tip**)
 
@@ -879,11 +935,13 @@ After the cardholder enters the Sale Amount and presses **Enter**, the device pr
 |-------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Do not use a stylus or other hard object on the touchscreen. The touchscreen is designed for fingers only and can be scratched or damaged if misused. |
 
-When a device with a touchscreen display prompts cardholders with a **PLEASE SIGN** page, (**Figure 427 - Signature Capture Requested)** cardholders should use the tip of their finger to *press and glide against the screen to sign*, then press the **OK** button. To clear the current signature on the display and start over, press the **Clear** button.
+When a device with a touchscreen display prompts cardholders with a **PLEASE SIGN** page, (**<a name="figure-427---signature-capture-requested-cardholders-should-use-the-tip-of-their-finger-to-press-and-glide-against-the-screen-to-sign-then-press-the-ok-button-to-clear-the-current-signature-on-the-display-and-start-over-press-the-clear-button"></a>
+**[Figure 427](#figure-427)** – Signature Capture Requested)** cardholders should use the tip of their finger to *press and glide against the screen to sign*, then press the **OK** button. To clear the current signature on the display and start over, press the **Clear** button.
 
 ![Shape Description automatically generated](<DynaFlex II PED Images/3a6e878c615967b9e83cd56498af20b6.png>)
 
-Figure 427 - Signature Capture Requested
+<a name="figure-427---signature-capture-requested"></a>
+**[Figure 427](#figure-427)** – Signature Capture Requested
 
 Devices that do not have a touchscreen display cannot prompt for or collect a signature. When these devices are aware that a signature is required to complete a transaction, they send a notification message to the host that includes the status **Signature Capture Requested**. In this case, the solution design collects the cardholder’s signature via a different method.
 
@@ -946,7 +1004,7 @@ For more information about developing custom applications that integrate with Dy
 | DynaFlex II Products Technical Specifications                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |                                                                                                                                                                                                                                                                                                                                               |
 |-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Reference Standards and Certifications                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |                                                                                                                                                                                                                                                                                                                                               |
-| ISO 7810, ISO 7811, AAMVA ISO/IEC 7816-1, 2, 3, & 4 Identification Cards Integrated Circuits with Contacts EMV ICC Specifications for Payment Systems Version 4.3, L1 Contact and L2 Contact EMV Contactless Level 1 Version 3.0 MasterCard TQM MCL v3.1.3, payWave v2.2, Expresspay 4.0.2, D-PAS Terminal Payment Application v1.0, D-PAS Terminal Application Specification Bulletins CL TAS-002 v1.1, CL TAS-003 v1.0, CL TAS-004 v1.0 PCI PTS POI v6.x PED PCI PTS POI v6.x SCR TDEA (3DES)-CBC using DUKPT FCC Part 15 Low Power Transceiver, RX verified per FCC Title 47 Part 15 Subclass C UL 60950 1, 2nd Edition, 2011 12 19 (Information Technology Equipment - Safety - Part 1: General Requirements), CSA C22.2 No. 60950 1 07, 2nd Edition, 2011 12 (Information Technology Equipment - Safety - Part 1: General Requirements) CE Certified UKCA Certified CE Safety: IEC 62368-1: 2014 UL/CSA 62368-1: 2nd Edition Canada ISED Certified Japan VCCI Certified (not applicable to WLAN models) Japan MIC Certified (not applicable to WLAN models) AS/NZS CISPR 32 (2013), AS/NZS 4268 Table 1, Row 59 DTS 2400-2483MHz SRD (WLAN), and AS/NZS 4268 (2017) Table 1, Row 43 13.553-13.567MHz (contactless reader) RoHS Compliant the Electrical and Electronic Equipment (EEE) Reduction of Hazardous Substances (RoHS) European Directive 2002/95/EC California Proposition 65 (California) IPC-A-610 Class II Assembly EU Directive Waste Electrical and Electronic Equipment (WEEE) EU Directive Restriction of Hazardous Substances (RoHS) Universal Serial Bus Specifications 1.1, 2.0 IEEE 802.11 b/g/n, IEEE 802.11i-2004 WPA2-PSK, TKIP, AES, SHA-256 TCP/IP secured by Transport Layer Security (TLS) Protocol v1.2 |                                                                                                                                                                                                                                                                                                                                               |
+| ISO 7810, ISO 7811, AAMVA ISO/IEC 7816-1, 2, 3, & 4 Identification Cards Integrated Circuits with Contacts EMV ICC Specifications for Payment Systems Version 4.3, L1 Contact and L2 Contact EMV Contactless Level 1 Version 3.0 MasterCard TQM MCL v3.1.3, payWave v2.2, Expresspay 4.0.2, D-PAS Terminal Payment Application v1.0, D-PAS Terminal Application Specification Bulletins CL TAS-002 v1.1, CL TAS-003 v1.0, CL TAS-004 v1.0 PCI PTS POI v6.x PED PCI PTS POI v6.x SCR TDEA (3DES)-CBC using DUKPT FCC Part 15 Low Power Transceiver, RX verified per FCC Title 47 Part 15 Subclass C UL 60950 1, 2nd Edition, 2011 12 19 (Information Technology Equipment - Safety - Part 1: General Requirements), CSA C22.2 No. 60950 1 07, 2nd Edition, 2011 12 (Information Technology Equipment - Safety - Part 1: General Requirements) CE Certified UKCA Certified CE Safety: IEC 62368-1: 2014 UL/CSA 62368-1: 2nd Edition Canada ISED Certified Japan VCCI Certified (not applicable to WLAN models) Japan MIC Certified (not applicable to WLAN models) AS/NZS CISPR 32 (2013), AS/NZS 4268 [Table 1](#table-1), Row 59 DTS 2400-2483MHz SRD (WLAN), and AS/NZS 4268 (2017) [Table 1](#table-1), Row 43 13.553-13.567MHz (contactless reader) RoHS Compliant the Electrical and Electronic Equipment (EEE) Reduction of Hazardous Substances (RoHS) European Directive 2002/95/EC California Proposition 65 (California) IPC-A-610 Class II Assembly EU Directive Waste Electrical and Electronic Equipment (WEEE) EU Directive Restriction of Hazardous Substances (RoHS) Universal Serial Bus Specifications 1.1, 2.0 IEEE 802.11 b/g/n, IEEE 802.11i-2004 WPA2-PSK, TKIP, AES, SHA-256 TCP/IP secured by Transport Layer Security (TLS) Protocol v1.2 |                                                                                                                                                                                                                                                                                                                                               |
 | Physical Characteristics                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |                                                                                                                                                                                                                                                                                                                                               |
 | Dimensions (L x W x H):                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   | DynaFlex II and DynaFlex II PED: 4.1 in. W x 3.7 in. L x 1.9 in. H (103.3mm x 95.1mm x 48.5mm)  DynaFlex II Kiosk and DynaFlex II PED Kiosk: 4.1 in. W x 3.7 in. L x 1.9 in. H (103.3mm x 95.1mm x 48.3mm)                                                                                                                                    |
 | Weight                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    | DynaFlex II USB = 8.4 oz. (238g) DynaFlex II PED USB= 8.7 oz. (246g) DynaFlex II PED WLAN = 8.9 oz. (252g) Kiosk Models, add 1.1 oz. (30g) BCR Models, add 0.12 oz. (3.5g)                                                                                                                                                                    |
@@ -1086,7 +1144,7 @@ Hereby, MagTek Inc. declares that the radio equipment types **Wideband Transmiss
 
 Australia / New Zealand Statement
 
-Testing for compliance with AS/NZS standards was performed by a registered and accredited laboratory. The unit under test was found compliant with standards established under AS/NZS CISPR 32 (2013), AS/NZS 4268 Table 1, Row 59 DTS 2400-2483MHz SRD (802.11), and AS/NZS 4268 (2017) Table 1, Row 43 13.553-13.567MHz (contactless reader).
+Testing for compliance with AS/NZS standards was performed by a registered and accredited laboratory. The unit under test was found compliant with standards established under AS/NZS CISPR 32 (2013), AS/NZS 4268 [Table 1](#table-1), Row 59 DTS 2400-2483MHz SRD (802.11), and AS/NZS 4268 (2017) [Table 1](#table-1), Row 43 13.553-13.567MHz (contactless reader).
 
 UL/CSA
 
