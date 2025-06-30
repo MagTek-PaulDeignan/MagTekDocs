@@ -141,8 +141,6 @@ All other system names and product names are the property of their respective ow
 | 100        | July 30, 2024 | Complete rewrite of sections **1 Introduction, 2 Inspection, Handling** and Storage**, 3 Installation, 4 Operation;** Updated coversheet photos with current device appearance                                                                                                                                                       |
 | 101        | June 5, 2025  | Add MIFARE Plus, remove MIFARE Lite in **4.8.5 How to Tap Contactless NFC Tags / MIFARE Classic / MIFARE DESFire /MIFARE Plus Cards and Send Pass-through Commands;** Update **Appendix A Technical Specifications** storage and operating relative humidity values from 5% to 90% RH non-condensing to Up to 90% RH non-condensing. |
 
-# Table of Contents
-
 
 
 # Introduction
@@ -189,8 +187,7 @@ MagTek offers developer tools, including free software developer kits with APIs.
 | 21078334                                                                                    | DYNAFLEX II PED, KIOSK, PCI, TOUCHSCREEN DISPLAY, BCR, BLACK, USB | Touchscreen | USB-C              |
 | All models are black by default and have countertop, handheld, and custom mounting options. |                                                                   |             |                    |
 
-<a name="table-3---dynaflex-ii-accessories"></a>
-**Table 3** – DynaFlex II Accessories**
+**Table 12 – DynaFlex II Accessories**
 
 | Part \#    | Description                                           | Accessory Notes                                  |
 |------------|-------------------------------------------------------|--------------------------------------------------|
@@ -204,30 +201,30 @@ MagTek offers developer tools, including free software developer kits with APIs.
 
 ## About DynaFlex II Components
 
-The major components of the DynaFlex II product family are detailed in this section. For models without a touchscreen display (DynaFlex II and DynaFlex II Kiosk), the components are identical however, the touchscreen and its bezel are replaced with a faceplate displaying the contactless indicator logo at the optimal contactless landing zone (see **Figure 38**).
+The major components of the DynaFlex II product family are detailed in this section. For models without a touchscreen display (DynaFlex II and DynaFlex II Kiosk), the components are identical however, the touchscreen and its bezel are replaced with a faceplate displaying the contactless indicator logo at the optimal contactless landing zone (see **Figure 1**).
 
-![A diagram of a chip card reader Description automatically generated](<DynaFlex II PED Images/51dac222dbb3396b3ff95eeae00f8610.jpg>)
+![A diagram of a chip card reader Description automatically generated](<Apollo Family Master Images/51dac222dbb3396b3ff95eeae00f8610.jpg>)
 
 <a name="figure-1---dynaflex-ii-major-components"></a>
-**Figure 38** – DynaFlex II Major components
+**Figure 1** – DynaFlex II Major components
 
 DynaFlex II PED models without a barcode reader are also identical however, the edge incorporating the barcode reader is a single straight line and there is no QR code marking on the face of the device (see **Figure 2**).
 
-![A computer mouse and a mousetrap Description automatically generated with medium confidence](<DynaFlex II PED Images/4f305d9e65278d8de291847058bf113e.png>)![](<DynaFlex II PED Images/5352d5c4be99d69c36b9c06099f2584b.png>)
+![A computer mouse and a mousetrap Description automatically generated with medium confidence](<Apollo Family Master Images/4f305d9e65278d8de291847058bf113e.png>)![](<Apollo Family Master Images/5352d5c4be99d69c36b9c06099f2584b.png>)
 
 <a name="figure-2---dynaflex-ii-ped-bcr-major-components"></a>
 **Figure 2** – DynaFlex II PED BCR Major Components
 
 **Figure 3** illustrates the major components of the optional charging station. Note, the charging station is only compatible with non-kiosk models of the device.
 
-![A drawing of a computer device Description automatically generated with medium confidence](<DynaFlex II PED Images/8843e0acef67d2389c8d366e7b36a220.jpg>)
+![A drawing of a computer device Description automatically generated with medium confidence](<Apollo Family Master Images/8843e0acef67d2389c8d366e7b36a220.jpg>)
 
 <a name="figure-3---charging-station-major-components"></a>
 **Figure 3** – Charging Station Major Components
 
 # Inspection, Handling and Storage
 
-| ![](<DynaFlex II PED Images/bdb6a105147891251b84fbdb350ba870.png>)                                                                                                                                                                                                         |
+| ![](<Apollo Family Master Images/bdb6a105147891251b84fbdb350ba870.png>)                                                                                                                                                                                                    |
 |----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Proper handling of the device throughout delivery, assembly, shipping, installation, usage, and maintenance is very important. Not following the guidelines in this document could damage the device, render it inoperable, and/or violate the conditions of the warranty. |
 
@@ -278,34 +275,32 @@ The following sections provide information on how to connect **DynaFlex II produ
 
 ### How to Connect DynaFlex II Products to a Host or Charger via USB
 
-![](<DynaFlex II PED Images/77b114e6a6fcf8e1ec20ac760b27d6f8.jpg>)![](<DynaFlex II PED Images/6554e3a16d1acc42febbc3948dcbee68.jpg>)
+![](<Apollo Family Master Images/77b114e6a6fcf8e1ec20ac760b27d6f8.jpg>)![](<Apollo Family Master Images/6554e3a16d1acc42febbc3948dcbee68.jpg>)
 
 <a name="figure-4---connecting-to-a-usb-host-or-usb-charger-left-countertop-models-right-kiosk-models"></a>
 **Figure 4** – Connecting to a USB Host or USB Charger. Left: Countertop Models. Right: Kiosk Models
 
 To connect **DynaFlex II products** to a USB host or charger using the USB-C port, follow these steps (for reference see **Figure 4** and section **1.5 About DynaFlex II Components**):
 
-<a name="table-4---dynaflex-ii-accessories-on-page-7-these-cables-are-designed-specifically-for-dynaflex-ii-products-and-include-ferrite-shielding-at-both-ends-of-the-cable-to-reduce-emissions-and-interference-if-the-solution-design-requires-an-alternate-cable-contact-magtek-for-assistance-with-ferrite-selection-and-placement-and-with-connector-overmold-design"></a>
-**Table 4** – DynaFlex II Accessories** on page **7**. These cables are designed specifically for DynaFlex II products and include ferrite shielding at both ends of the cable to reduce emissions and interference. If the solution design requires an alternate cable, contact MagTek for assistance with ferrite selection and placement, and with connector overmold design.
+1.  For best results, use the cable that is included with the device or another cable from **Table 12 – DynaFlex II Accessories** on page **7**. These cables are designed specifically for DynaFlex II products and include ferrite shielding at both ends of the cable to reduce emissions and interference. If the solution design requires an alternate cable, contact MagTek for assistance with ferrite selection and placement, and with connector overmold design.
 2.  Connect the USB-C end of the cable to DynaFlex II or DynaFlex II PED.
 3.  If you plan to route the cable out the back of the device, route the cable through the cable management clip to change its direction. Even if you are not routing out the back, you may use the cable clip for strain relief, to help stabilize the mechanical connection when cardholders or operators move the device or the cable.
 4.  Route the cable in the desired direction (e.g., out the back, left, right, down into the countertop, or into the mounting compartment of a kiosk).
 5.  Connect the other end of the USB cable to the charger or to the host’s USB port.
 6.  As soon as the device starts receiving power through USB, it automatically powers on.
-<a name="figure-5---setting-up-a-device-when-installation-is-complete-approximately-30-seconds-later-depending-on-the-host-windows-reports-device-is-ready-see-figure-33-device-is-ready-and-the-device-shows-in-windows-device-manager-under-human-interface-devices-as-two-devices-hid-compliant-vendor-defined-device-with-vid-0801-and-pid-2020-and-usb-input-device"></a>
-**Figure 5** – Setting Up a Device**), When installation is complete (approximately 30 seconds later depending on the host), Windows reports **Device is ready**,(see **Figure 7 - Device is Ready**) and the device shows in Windows Device Manager under **Human Interface Devices** as two devices: **HID-compliant vendor-defined device** with VID **0801** and PID **2020**, and **USB Input Device**.
+7.  If the specific device serial number you are connecting has not been connected to the host before, the device shows **Welcome** on the display, and the Windows system tray on the host reports it is **Setting up a device** (see **Figure 5 - Setting Up a Device**), When installation is complete (approximately 30 seconds later depending on the host), Windows reports **Device is ready**,(see **Figure 6 - Device is Ready**) and the device shows in Windows Device Manager under **Human Interface Devices** as two devices: **HID-compliant vendor-defined device** with VID **0801** and PID **2020**, and **USB Input Device**.
 
-![](<DynaFlex II PED Images/d5841466310637ef396b297725110ce3.png>)
+![](<Apollo Family Master Images/d5841466310637ef396b297725110ce3.png>)
 
-<a name="figure-6---setting-up-a-device"></a>
-**Figure 6** – Setting Up a Device
+<a name="figure-5---setting-up-a-device"></a>
+**Figure 5** – Setting Up a Device
 
-![](<DynaFlex II PED Images/5242ab19616db3c9047b5c511b6cf3ff.png>)
+![](<Apollo Family Master Images/5242ab19616db3c9047b5c511b6cf3ff.png>)
 
-<a name="figure-7---device-is-ready"></a>
-**Figure 7** – Device is Ready
+<a name="figure-6---device-is-ready"></a>
+**Figure 6** – Device is Ready
 
-![](<DynaFlex II PED Images/2594ddbb972171fe207210fcccaee568.png>)![](<DynaFlex II PED Images/3f65691eadfe285152b3250ddfcd407e.png>)
+![](<Apollo Family Master Images/2594ddbb972171fe207210fcccaee568.png>)![](<Apollo Family Master Images/3f65691eadfe285152b3250ddfcd407e.png>)
 
 8.  After successfully connecting to the host operating system via USB, devices with a touchscreen display a **Welcome** screen or a customizable graphic.
 9.  The operating system may put the device into **USB Suspend** mode. See section **4.6.6 About USB Suspend**.
@@ -316,38 +311,38 @@ To connect **DynaFlex II products** to a USB host or charger using the USB-C por
 
 The DynaFlex II product line offers versatile mounting solutions, including:
 
--   **Integrated Slip-Resistant Adhesive Strips**: The underside of the device features three adhesive mounting strips (see **Figure 8**) that provide secure attachment to any clean, non-porous surface. These strips come with a protective film that must be removed before installing onto a surface.
+-   **Integrated Slip-Resistant Adhesive Strips**: The underside of the device features three adhesive mounting strips (see **Figure 7**) that provide secure attachment to any clean, non-porous surface. These strips come with a protective film that must be removed before installing onto a surface.
 
-![A close-up of a device Description automatically generated](<DynaFlex II PED Images/6658d869079af0301016c5e5efe8b716.jpg>)
+![A close-up of a device Description automatically generated](<Apollo Family Master Images/6658d869079af0301016c5e5efe8b716.jpg>)
 
-<a name="figure-8---adhesive-mounting-strip-and-protective-film"></a>
-**Figure 8** – Adhesive Mounting Strip and Protective Film
+<a name="figure-7---adhesive-mounting-strip-and-protective-film"></a>
+**Figure 7** – Adhesive Mounting Strip and Protective Film
 
--   **Lanyard Mount Point**: The integrated mount point allows the device to be hung or carried, making it easy to store and handle, particularly in grab-and-go payment environments (see **Figure 9**).
+-   **Lanyard Mount Point**: The integrated mount point allows the device to be hung or carried, making it easy to store and handle, particularly in grab-and-go payment environments (see **Figure 8**).
 
-![A close-up of a printer Description automatically generated](<DynaFlex II PED Images/943ab23a84415076f979e76de7af57e3.jpg>)
+![A close-up of a printer Description automatically generated](<Apollo Family Master Images/943ab23a84415076f979e76de7af57e3.jpg>)
 
-<a name="figure-9---lanyard-mount-point"></a>
-**Figure 9** – Lanyard Mount Point
+<a name="figure-8---lanyard-mount-point"></a>
+**Figure 8** – Lanyard Mount Point
 
 -   **Charging Station Compatibility (Non-Kiosk Models)**: Non-kiosk versions of the device can be placed in an optional charging station. This station can be used in conjunction with the lanyard mount point for quick access and easy drop-in charging between handheld uses.
 
-![A drawing of a printer Description automatically generated](<DynaFlex II PED Images/29ada735f3f190d27f0b43db9936f89f.jpg>)
+![A drawing of a printer Description automatically generated](<Apollo Family Master Images/29ada735f3f190d27f0b43db9936f89f.jpg>)
 
-<a name="figure-10---charging-station-compatibility"></a>
-**Figure 10** – Charging Station Compatibility
+<a name="figure-9---charging-station-compatibility"></a>
+**Figure 9** – Charging Station Compatibility
 
 -   **Custom Mounting Options**: DynaFlex II devices can be attached to custom mounting brackets or housed within an enclosure, enabling integration into larger system designs.
 
 ### How to mount DynaFlex II
 
-1.  Verify that the protective film has been removed from the adhesive mounting strips located on the underside of the device (see **Figure 8**).
-2.  Mount DynaFlex II devices onto a smooth, flat, and non-porous surface by pressing the device firmly using the adhesive mounting strips (see **Figure 11**).
+1.  Verify that the protective film has been removed from the adhesive mounting strips located on the underside of the device (see **Figure 7**).
+2.  Mount DynaFlex II devices onto a smooth, flat, and non-porous surface by pressing the device firmly using the adhesive mounting strips (see **Figure 10**).
 
-![A close-up of a scanner Description automatically generated](<DynaFlex II PED Images/ee812fa591ebcdb053249443a098c7af.jpeg>)
+![A close-up of a scanner Description automatically generated](<Apollo Family Master Images/ee812fa591ebcdb053249443a098c7af.jpeg>)
 
-<a name="figure-11---mounting-dynaflex-onto-a-nonporous-surface"></a>
-**Figure 38** – Mounting DynaFlex onto a Nonporous Surface
+<a name="figure-10---mounting-dynaflex-onto-a-nonporous-surface"></a>
+**Figure 10** – Mounting DynaFlex onto a Nonporous Surface
 
 3.  Do not mount the device on rough, dirty, or uneven surfaces.
 4.  To uninstall the device, twist it to disengage the mounting feet from the mounting surface.
@@ -358,7 +353,7 @@ If your installation requires custom mounting brackets, contact your MagTek repr
 
 ### How to Mount DynaFlex II Kiosk Models
 
-| ![](<DynaFlex II PED Images/bdb6a105147891251b84fbdb350ba870.png>)                                                                                                                                                                                                                                                                                           |
+| ![](<Apollo Family Master Images/bdb6a105147891251b84fbdb350ba870.png>)                                                                                                                                                                                                                                                                                      |
 |--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | This document describes how to use DynaFlex II Kiosk models securely. Using the device in any way other than the approved methods described in this document invalidates the PCI PTS POI approval of the device.  Not following the guidelines in this section could damage the device, render it inoperable, and/or violate the conditions of the warranty. |
 
@@ -372,34 +367,33 @@ When designing the mechanical portions of a solution that incorporates DynaFlex 
 -   Determine device orientation. The device supports all four orientations.
 -   Review any additional requirements from other agencies, such as PCI and EMV solution certification requirements, safety ordinances, and so on, which may introduce additional constraints to the design.
 
-Overall dimensions of the device are shown in **Figure 12** and **Figure 13**. On request, MagTek can provide a 3D model of the device’s envelope to assist with the mechanical portion of solution design. MagTek strongly recommends building and testing prototypes with actual devices before finalizing the solution design.
+Overall dimensions of the device are shown in **Figure 11** and **Figure 12**. On request, MagTek can provide a 3D model of the device’s envelope to assist with the mechanical portion of solution design. MagTek strongly recommends building and testing prototypes with actual devices before finalizing the solution design.
 
-![A drawing of a computer Description automatically generated](<DynaFlex II PED Images/cadc51b3f0ee4a3d86719f41ec11b756.JPG>)
+![A drawing of a computer Description automatically generated](<Apollo Family Master Images/cadc51b3f0ee4a3d86719f41ec11b756.JPG>)
 
-<a name="figure-12---dynaflex-ii-kiosk-models-overall-dimensions"></a>
-**Figure 2** – DynaFlex II Kiosk Models Overall Dimensions
+<a name="figure-11---dynaflex-ii-kiosk-models-overall-dimensions"></a>
+**Figure 1** – DynaFlex II Kiosk Models Overall Dimensions
 
-The screw hole placement on the bottom of DynaFlex II Kiosk models is detailed in **Figure 13**. The holes are designed to accommodate screw size **M4 x 0.7mm** and a maximum screw depth of 0.315 inches (8mm). The recommended torque range for installing the screws is 20 to 22 in-lbs. (2.3 to 2.5 N-m).
+The screw hole placement on the bottom of DynaFlex II Kiosk models is detailed in **Figure 12**. The holes are designed to accommodate screw size **M4 x 0.7mm** and a maximum screw depth of 0.315 inches (8mm). The recommended torque range for installing the screws is 20 to 22 in-lbs. (2.3 to 2.5 N-m).
 
-![A diagram of a device Description automatically generated](<DynaFlex II PED Images/57e20c21311b25263d69b0612c0ee4d0.jpeg>)
+![A diagram of a device Description automatically generated](<Apollo Family Master Images/57e20c21311b25263d69b0612c0ee4d0.jpeg>)
 
-<a name="figure-13---dynaflex-ii-kiosk-models-mounting-hole-locations"></a>
-**Figure 3** – DynaFlex II Kiosk Models Mounting Hole Locations
+<a name="figure-12---dynaflex-ii-kiosk-models-mounting-hole-locations"></a>
+**Figure 2** – DynaFlex II Kiosk Models Mounting Hole Locations
 
 When designing an enclosure or mounting bracket, make sure there is adequate clearance for cardholders to swipe, insert, and tap. If the solution design includes metal objects anywhere near the device, including metal enclosures, ensure that at all points the metal is no further forward than 15mm below the top face of the device. Proximity to metal can adversely affect the device’s performance.
 
-![](<DynaFlex II PED Images/a3bfa6ff455e43de3907e3c781d0e291.png>)
+![](<Apollo Family Master Images/a3bfa6ff455e43de3907e3c781d0e291.png>)
 
-<a name="figure-14---unobstructed-view-of-card-insertion-slot-swipe-path-and-contactless-landing-zone"></a>
-**Figure 14** – Unobstructed View of Card Insertion Slot, Swipe Path and Contactless Landing Zone**
+**Figure 310 - Unobstructed View of Card Insertion Slot, Swipe Path and Contactless Landing Zone**
 
 As a security measure, the device must be installed such that cardholders have a full, unobstructed view of the housing around the card insertion slot opening (“entry zone”) and MSR swipe path prior to insertion or swipe (see
 
-**Figure 14**). This is to allow cardholders to easily detect suspicious objects in or around the swipe path and card slot entry, such as bugs / skimmers / tapping mechanisms, and their wires or antennas. Be sure to select an installation height and mounting angle that meet this requirement.
+**Figure 310**). This is to allow cardholders to easily detect suspicious objects in or around the swipe path and card slot entry, such as bugs / skimmers / tapping mechanisms, and their wires or antennas. Be sure to select an installation height and mounting angle that meet this requirement.
 
 ### How to Mount the Charging Station
 
-To mount the optional charging station to a countertop using the four adhesive mounting strips on the underside of the charging station (see **Figure 16)**, follow these steps:
+To mount the optional charging station to a countertop using the four adhesive mounting strips on the underside of the charging station (see **Figure 14)**, follow these steps:
 
 1.  Determine where the charging station will be placed.
     1.  Remove the adhesive strip protective film, ensure the mounting surface is a clean, smooth, and flat surface. It is important to avoid rough, dirty, or uneven surfaces.
@@ -410,39 +404,38 @@ To mount the optional charging station to a countertop using the four adhesive m
 
 **Note**: The adhesive mounting strips used to mount the charging station to a surface may become less effective if dust and or debris accumulate on them. If this occurs, wipe them down with a damp cloth to restore their adhesive properties.
 
-![](<DynaFlex II PED Images/b4f6b18a817d76906620edb397826072.png>)
+![](<Apollo Family Master Images/b4f6b18a817d76906620edb397826072.png>)
 
-<a name="figure-15---charging-station-dimensions"></a>
-**Figure 15** – Charging Station Dimensions
+<a name="figure-13---charging-station-dimensions"></a>
+**Figure 3** – Charging Station Dimensions
 
-![](<DynaFlex II PED Images/9bcd8046c20e8d964539758708f59f8e.JPG>)
+![](<Apollo Family Master Images/9bcd8046c20e8d964539758708f59f8e.JPG>)
 
-<a name="figure-16---charging-station-mounting-surfaces-and-screw-holes"></a>
-**Figure 16** – Charging Station Mounting Surfaces and Screw Holes
+<a name="figure-14---charging-station-mounting-surfaces-and-screw-holes"></a>
+**Figure 14** – Charging Station Mounting Surfaces and Screw Holes
 
-To mount the charging station to a countertop, table, or flat surface using the screw holes on the underside of the charging station (see **Figure 16**), follow these steps:
+To mount the charging station to a countertop, table, or flat surface using the screw holes on the underside of the charging station (see **Figure 14**), follow these steps:
 
 1.  Determine where the charging station will be installed.
-    1.  Mark the location of the screw holes by placing the device over the area where it is to be installed (see **Figure 17**).
+    1.  Mark the location of the screw holes by placing the device over the area where it is to be installed (see **Figure 15**).
     2.  Once the appropriate measurements have been taken and marked, drill the screw holes into the installation surface.
-    3.  Using (2) M4 x 0.7mm thread pitch (not included) screws, screw up through the drilled holes in the mounting surface, see **Figure 18**.
+    3.  Using (2) M4 x 0.7mm thread pitch (not included) screws, screw up through the drilled holes in the mounting surface, see **Figure 16**.
 2.  Connect the charging station to a USB port or to a USB charger with a minimum of 1A current capability. For the best results, use the cable that is included with the device. It includes shielding at both ends of the cable to reduce interference.
 3.  To uninstall, remove the screws from the underside of the charging station.
 
-![Diagram of a device with measurements Description automatically generated with medium confidence](<DynaFlex II PED Images/efd58e2bf92f8a8ee4077635f61840a2.JPG>)
+![Diagram of a device with measurements Description automatically generated with medium confidence](<Apollo Family Master Images/efd58e2bf92f8a8ee4077635f61840a2.JPG>)
 
-<a name="figure-17---preparing-a-flat-surface-for-mounting-the-charging-station"></a>
-**Figure 17** – Preparing a Flat Surface for Mounting the Charging Station
+<a name="figure-15---preparing-a-flat-surface-for-mounting-the-charging-station"></a>
+**Figure 15** – Preparing a Flat Surface for Mounting the Charging Station
 
-![A drawing of a box with a red line Description automatically generated](<DynaFlex II PED Images/b72c9731b1d3688800b702aae1bfb72f.PNG>)
+![A drawing of a box with a red line Description automatically generated](<Apollo Family Master Images/b72c9731b1d3688800b702aae1bfb72f.PNG>)
 
-<a name="figure-18---screw-installation"></a>
-**Figure 18** – Screw Installation
+<a name="figure-16---screw-installation"></a>
+**Figure 16** – Screw Installation
 
-![](<DynaFlex II PED Images/761ed1d625d3692b8d2bda39c2ef139e.png>)
+![](<Apollo Family Master Images/761ed1d625d3692b8d2bda39c2ef139e.png>)
 
-<a name="figure-19---connecting-dynaflex-ii-to-the-optional-charging-station"></a>
-**Figure 19** – Connecting DynaFlex II to the Optional Charging Station**
+**Figure 315 – Connecting DynaFlex II to the Optional Charging Station**
 
 # Operation
 
@@ -459,27 +452,27 @@ While in use, the DynaFlex II family of products switch between distinct operati
 
 During normal operation, the operator initiates a transaction from the host, and the cardholder interacts with the device. Devices with a touchscreen display provide on-screen prompts and interactive features such as buttons and signature capture.
 
-Transaction types may include sales, refunds, voids, authorization, new accounts, teller window applications, checking, savings, mortgages, retail transactions, or any other type of transaction where there is interaction between the cardholder and the operator. For each transaction type, the host software can direct the device to prompt the cardholder for any combination of magnetic stripe swipe, EMV contact card insertion, and/or contactless payment tap, and the transaction flow on the device may differ depending on what the host software specifies and what the cardholder does. Section **4.8 Using the Reader** provides examples of the cardholder experience for each type of payment. **Figure 20** shows a typical point of sale (POS) transaction sequence.
+Transaction types may include sales, refunds, voids, authorization, new accounts, teller window applications, checking, savings, mortgages, retail transactions, or any other type of transaction where there is interaction between the cardholder and the operator. For each transaction type, the host software can direct the device to prompt the cardholder for any combination of magnetic stripe swipe, EMV contact card insertion, and/or contactless payment tap, and the transaction flow on the device may differ depending on what the host software specifies and what the cardholder does. Section **4.8 Using the Reader** provides examples of the cardholder experience for each type of payment. **Figure 17** shows a typical point of sale (POS) transaction sequence.
 
 If the device cannot read payment data, the host software may direct it to prompt the cardholder to repeat the action or request the cardholder revert to a different form of payment (such as using the magnetic stripe reader as a fallback instead of the chip card insertion slot).
 
-![](<DynaFlex II PED Images/e1b45407e4f2c77369ee83b8e8acef6b.png>)![](<DynaFlex II PED Images/5a5ae61e42bb71202f670f38c140bdd0.png>)![](<DynaFlex II PED Images/943eb58b82cc6c3c09d66c1e0db13e89.png>)![Text Description automatically generated with low confidence](<DynaFlex II PED Images/3213d1ac55f34ecaaf7e19b519832ddf.png>)![](<DynaFlex II PED Images/b84c02a96fc22007fd30dbf2c99de1b4.png>)![](<DynaFlex II PED Images/efddd058051044b6b4e8053e14ba0392.png>)![](<DynaFlex II PED Images/3a6e878c615967b9e83cd56498af20b6.png>)![](<DynaFlex II PED Images/c0c13e59cff84fae79d8f67d0e20662b.png>)
+![](<Apollo Family Master Images/e1b45407e4f2c77369ee83b8e8acef6b.png>)![](<Apollo Family Master Images/5a5ae61e42bb71202f670f38c140bdd0.png>)![](<Apollo Family Master Images/943eb58b82cc6c3c09d66c1e0db13e89.png>)![Text Description automatically generated with low confidence](<Apollo Family Master Images/3213d1ac55f34ecaaf7e19b519832ddf.png>)![](<Apollo Family Master Images/b84c02a96fc22007fd30dbf2c99de1b4.png>)![](<Apollo Family Master Images/efddd058051044b6b4e8053e14ba0392.png>)![](<Apollo Family Master Images/3a6e878c615967b9e83cd56498af20b6.png>)![](<Apollo Family Master Images/c0c13e59cff84fae79d8f67d0e20662b.png>)
 
-<a name="figure-20---typical-transaction-sequence"></a>
-**Figure 20** – Typical Transaction Sequence
+<a name="figure-17---typical-transaction-sequence"></a>
+**Figure 17** – Typical Transaction Sequence
 
 ## About the Status LEDs
 
 DynaFlex II provides four RGB LEDs directly below the chip card insertion slot (see section **1.5 About DynaFlex II Components**), numbered LED1 through LED4, which report the device’s current operating status.
 
--   The meaning of each LED depends on the device’s operating mode. See section **4.1 About Operating Modes** and **Table 5 below**. Most of the time, operators will check the device’s status using the LEDs when it is in **Active Mode** while the device is not performing a transaction.
--   LED colors have specific meanings, as described in **Table 6**. They are based on international conventions for traffic light colors, with additional colors reserved for unusual / special cases.
--   LED blinking patterns have specific meanings as well, as described in **Table 7**. A blinking LED means the device is actively doing something to change the state that the LED is indicating and solid indicates a persistent state that would require an operator or cardholder to take action to change. One major exception is a device-wide functional failure state, such as a tamper state, where all LEDs flash urgently to call the attention of an advanced operator to intervene.
+-   The meaning of each LED depends on the device’s operating mode. See section **4.1 About Operating Modes** and **Table 3 below**. Most of the time, operators will check the device’s status using the LEDs when it is in **Active Mode** while the device is not performing a transaction.
+-   LED colors have specific meanings, as described in **Table 4**. They are based on international conventions for traffic light colors, with additional colors reserved for unusual / special cases.
+-   LED blinking patterns have specific meanings as well, as described in **Table 5**. A blinking LED means the device is actively doing something to change the state that the LED is indicating and solid indicates a persistent state that would require an operator or cardholder to take action to change. One major exception is a device-wide functional failure state, such as a tamper state, where all LEDs flash urgently to call the attention of an advanced operator to intervene.
 
 In this manual, specific combinations of LED colors and blinking patterns are described in more detail in the sections where they are relevant and use the same icons in the tables below to indicate color and blinking patterns. For example, information about how the LEDs show the device’s connection status is in section **3.2 Connecting to a Host**.
 
-<a name="table-5---dynaflex-ii-led-allocation"></a>
-**Table 5** – DynaFlex II LED Allocation
+<a name="table-3---dynaflex-ii-led-allocation"></a>
+**Table 3** – DynaFlex II LED Allocation
 
 | In This Context                              | LED1                                                                                                                              | LED2              | LED3              | LED4             |
 |----------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------|-------------------|-------------------|------------------|
@@ -487,24 +480,24 @@ In this manual, specific combinations of LED colors and blinking patterns are de
 | Active Mode: Armed for a Tap Transaction     | Armed for Tap                                                                                                                     | Tap Read Progress | Tap Read Progress | Card Read Result |
 | Device-Wide Failure                          | During major failures (such as tamper), **LED1-LED4** report the nature of the failure based on the steps required to resolve it. |                   |                   |                  |
 
-<a name="table-6---dynaflex-ii-led-colors"></a>
-**Table 6** – DynaFlex II LED Colors
+<a name="table-4---dynaflex-ii-led-colors"></a>
+**Table 4** – DynaFlex II LED Colors
 
-| Color                                                                     | Means                                                                                                                |
-|---------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------|
-| ![](<DynaFlex II PED Images/5e855b2318b51c316cf1754dc8c9f1ae.png>) Red    | Stop or stopped  Example: LED1 is red. **Stop** using device: Battery is about to run out of charge.                 |
-| ![](<DynaFlex II PED Images/0c83bb2713d527c82f6b534a3be79160.png>) Yellow | Wait or waiting  LED2 will show status for Access Point connection: Green connected, yellow waiting for connection.  |
-| ![](<DynaFlex II PED Images/96667fed4612d491e627cf5e14b0490f.png>) Green  | Go, going, or went. LED3 will show status for WebSocket connection: Green connected, yellow Waiting for connection.  |
-| Other Colors                                                              | Reserved                                                                                                             |
+| Color                                                                          | Means                                                                                                                |
+|--------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------|
+| ![](<Apollo Family Master Images/5e855b2318b51c316cf1754dc8c9f1ae.png>) Red    | Stop or stopped  Example: LED1 is red. **Stop** using device: Battery is about to run out of charge.                 |
+| ![](<Apollo Family Master Images/0c83bb2713d527c82f6b534a3be79160.png>) Yellow | Wait or waiting  LED2 will show status for Access Point connection: Green connected, yellow waiting for connection.  |
+| ![](<Apollo Family Master Images/96667fed4612d491e627cf5e14b0490f.png>) Green  | Go, going, or went. LED3 will show status for WebSocket connection: Green connected, yellow Waiting for connection.  |
+| Other Colors                                                                   | Reserved                                                                                                             |
 
-<a name="table-7---dynaflex-ii-led-patterns"></a>
-**Table 7** – DynaFlex II LED Patterns
+<a name="table-5---dynaflex-ii-led-patterns"></a>
+**Table 5** – DynaFlex II LED Patterns
 
-| Color                                                                                                                                                                                                                                                                                | Means                                                                                                                                                                                                                                                                      |
-|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Solid  ![](<DynaFlex II PED Images/5e855b2318b51c316cf1754dc8c9f1ae.png>)![](<DynaFlex II PED Images/0c83bb2713d527c82f6b534a3be79160.png>)![](<DynaFlex II PED Images/96667fed4612d491e627cf5e14b0490f.png>)![](<DynaFlex II PED Images/771a43cebf86dc8c53632bc62abec13a.png>)      | **Solid** LEDs require an operator or cardholder to take action to change the state the LED is reporting.  Example: Host is connected. Cardholder or host would have to disconnect. Example: Host is disconnected. Host would have to initiate connection.                 |
-| Blinking  ![](<DynaFlex II PED Images/9dd9d76090579c35b67a7dde2a242c7a.png>)![](<DynaFlex II PED Images/ae3e401dd7fb296257ebe1e78e9b8831.png>)![](<DynaFlex II PED Images/bad702d1f486c3f13b37a8902862f1c3.png>)![](<DynaFlex II PED Images/f66c35a8ccf312a323dff14360cb1c22.png>)   | **Blinking** LEDs indicate the device is in the process of doing / attempting something. Blink duty cycle and blink period are selected to show urgency or ongoing progress through a series of steps.  Example: Device is attempting to connect to the WLAN access point. |
-| Short time  ![](<DynaFlex II PED Images/5e855b2318b51c316cf1754dc8c9f1ae.png>)![](<DynaFlex II PED Images/0c83bb2713d527c82f6b534a3be79160.png>)![](<DynaFlex II PED Images/96667fed4612d491e627cf5e14b0490f.png>)![](<DynaFlex II PED Images/771a43cebf86dc8c53632bc62abec13a.png>) | LEDs sometimes illuminate for a **short time** to indicate a process has ended (success or failure) and the device is going to transition to another state soon.  Example: Successful card read.                                                                           |
+| Color                                                                                                                                                                                                                                                                                                    | Means                                                                                                                                                                                                                                                                      |
+|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Solid  ![](<Apollo Family Master Images/5e855b2318b51c316cf1754dc8c9f1ae.png>)![](<Apollo Family Master Images/0c83bb2713d527c82f6b534a3be79160.png>)![](<Apollo Family Master Images/96667fed4612d491e627cf5e14b0490f.png>)![](<Apollo Family Master Images/771a43cebf86dc8c53632bc62abec13a.png>)      | **Solid** LEDs require an operator or cardholder to take action to change the state the LED is reporting.  Example: Host is connected. Cardholder or host would have to disconnect. Example: Host is disconnected. Host would have to initiate connection.                 |
+| Blinking  ![](<Apollo Family Master Images/9dd9d76090579c35b67a7dde2a242c7a.png>)![](<Apollo Family Master Images/ae3e401dd7fb296257ebe1e78e9b8831.png>)![](<Apollo Family Master Images/bad702d1f486c3f13b37a8902862f1c3.png>)![](<Apollo Family Master Images/f66c35a8ccf312a323dff14360cb1c22.png>)   | **Blinking** LEDs indicate the device is in the process of doing / attempting something. Blink duty cycle and blink period are selected to show urgency or ongoing progress through a series of steps.  Example: Device is attempting to connect to the WLAN access point. |
+| Short time  ![](<Apollo Family Master Images/5e855b2318b51c316cf1754dc8c9f1ae.png>)![](<Apollo Family Master Images/0c83bb2713d527c82f6b534a3be79160.png>)![](<Apollo Family Master Images/96667fed4612d491e627cf5e14b0490f.png>)![](<Apollo Family Master Images/771a43cebf86dc8c53632bc62abec13a.png>) | LEDs sometimes illuminate for a **short time** to indicate a process has ended (success or failure) and the device is going to transition to another state soon.  Example: Successful card read.                                                                           |
 
 ## About the Touchscreen Display
 
@@ -514,31 +507,31 @@ This section applies only to **DynaFlex II PED** models, which are equipped with
 
 When the device is powered on, in Active mode, and idle (not performing a transaction or displaying host-driven user interface prompts), it displays **Welcome** or a custom graphic if it is configured to do so. If the host software is designed to receive and respond to cardholder input messages, pressing any area on the touchscreen when it is idle may trigger the host to perform an operation, such as starting a transaction. For more information about custom graphics, see **D998200383 DynaFlex and DynaFlex Pro Programmer’s Manual (COMMANDS)**.
 
-WLAN enabled devices also report current status in a set of icons at the top of the **Welcome** screen. **Table 8 below** shows the icons and describes their meanings. For example, in **Figure 21**, the device is connected to a USB host and wireless access point, TLS is enabled, the battery level is OK, the device is charging, and it is idle, waiting for the host to initiate a transaction.
+WLAN enabled devices also report current status in a set of icons at the top of the **Welcome** screen. **Table 6 below** shows the icons and describes their meanings. For example, in **Figure 18**, the device is connected to a USB host and wireless access point, TLS is enabled, the battery level is OK, the device is charging, and it is idle, waiting for the host to initiate a transaction.
 
-<a name="table-8---status-icon-meaning"></a>
-**Table 8** – Status Icon Meaning
+<a name="table-6---status-icon-meaning"></a>
+**Table 6** – Status Icon Meaning
 
-| Status Icon                                                                                                                                              | Meaning                                                                                                                                                                                                                                                |
-|----------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| ![](<DynaFlex II PED Images/d3da1b0cfb52b8571ba040e20c1f69a8.png>)                                                                                       | Device’s Active Connection is set to USB, and the device has successfully established a USB communication connection with the host.                                                                                                                    |
-| ![](<DynaFlex II PED Images/1f7a468502ee76572d5fbeaefc8a31a6.png>)                                                                                       | WLAN is not configured                                                                                                                                                                                                                                 |
-| ![](<DynaFlex II PED Images/a4cf07b623fd22873be0c91024016621.png>)                                                                                       | Blinking to show device is connecting to a wireless access point                                                                                                                                                                                       |
-| **![](<DynaFlex II PED Images/9e96d36e49479a44824686f0810c11b8.png>)**                                                                                   | WebSocket is active or connected                                                                                                                                                                                                                       |
-| **![](<DynaFlex II PED Images/6c8086a719810ac49b74b22e3249aca1.png>)**                                                                                   | WebSocket is inactive or disconnected                                                                                                                                                                                                                  |
-| ![](<DynaFlex II PED Images/4552d4e5b2ccf0b7cd9a307572695709.png>)                                                                                       | Device’s Active Connection is set to 802.11 wireless, and the device is connected to a wireless access point. The number of bars indicates the strength of the signal the device is receiving from the wireless access point (commonly known as RSSI). |
-| ![](<DynaFlex II PED Images/88af17f14d4cf83ec9f4e990ea6980a6.png>) and ![](<DynaFlex II PED Images/63b855de247c2fffe69cc6b5c5c149b4.png>)                | TLS security on the 802.11 wireless connection is Disabled (red open padlock) TLS security on the 802.11 wireless connection is Enabled (black closed padlock)                                                                                         |
-| ![C:\\GitProjects\\dpm3_mainapp_no_kernels\\GUI_COLOR_DPM3\\battery_excellent.bmp](<DynaFlex II PED Images/3e00eeac7f32abac658c23d95fbd607b.png>)        | Battery is fully charged.                                                                                                                                                                                                                              |
-| ![C:\\GitProjects\\dpm3_mainapp_no_kernels\\GUI_COLOR_DPM3\\battery_good.bmp](<DynaFlex II PED Images/9ecdae89a5762825c92b15ce36b2c480.png>)             | Battery is OK, between 20% and 95% charged.                                                                                                                                                                                                            |
-| ![C:\\GitProjects\\dpm3_mainapp_no_kernels\\GUI_COLOR_DPM3\\battery_low_yellow.bmp](<DynaFlex II PED Images/4ae74b0708000ecdcc062831ef6d1bde.png>)       | Battery is low, between 10% and 20% charged.                                                                                                                                                                                                           |
-| ![C:\\GitProjects\\dpm3_mainapp_no_kernels\\GUI_COLOR_DPM3\\battery_critical_low_red.bmp](<DynaFlex II PED Images/05174bd5123a5b136dfb8e4e82597486.png>) | Battery is critically low, between 3% and 10% charged.                                                                                                                                                                                                 |
-| ![C:\\GitProjects\\dpm3_mainapp_no_kernels\\GUI_COLOR_DPM3\\battery_empty.bmp](<DynaFlex II PED Images/b06af78b67e3de52b5998243899ec4ad.png>)            | Battery is empty, below 3% charged.                                                                                                                                                                                                                    |
-| ![C:\\GitProjects\\dpm3_mainapp_no_kernels\\GUI_COLOR_DPM3\\battery_plugged.bmp](<DynaFlex II PED Images/55f0fac105270125f77ee82d5413f937.png>)          | Battery is charging.                                                                                                                                                                                                                                   |
+| Status Icon                                                                                                                                                   | Meaning                                                                                                                                                                                                                                                |
+|---------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| ![](<Apollo Family Master Images/d3da1b0cfb52b8571ba040e20c1f69a8.png>)                                                                                       | Device’s Active Connection is set to USB, and the device has successfully established a USB communication connection with the host.                                                                                                                    |
+| ![](<Apollo Family Master Images/1f7a468502ee76572d5fbeaefc8a31a6.png>)                                                                                       | WLAN is not configured                                                                                                                                                                                                                                 |
+| ![](<Apollo Family Master Images/a4cf07b623fd22873be0c91024016621.png>)                                                                                       | Blinking to show device is connecting to a wireless access point                                                                                                                                                                                       |
+| **![](<Apollo Family Master Images/9e96d36e49479a44824686f0810c11b8.png>)**                                                                                   | WebSocket is active or connected                                                                                                                                                                                                                       |
+| **![](<Apollo Family Master Images/6c8086a719810ac49b74b22e3249aca1.png>)**                                                                                   | WebSocket is inactive or disconnected                                                                                                                                                                                                                  |
+| ![](<Apollo Family Master Images/4552d4e5b2ccf0b7cd9a307572695709.png>)                                                                                       | Device’s Active Connection is set to 802.11 wireless, and the device is connected to a wireless access point. The number of bars indicates the strength of the signal the device is receiving from the wireless access point (commonly known as RSSI). |
+| ![](<Apollo Family Master Images/88af17f14d4cf83ec9f4e990ea6980a6.png>) and ![](<Apollo Family Master Images/63b855de247c2fffe69cc6b5c5c149b4.png>)           | TLS security on the 802.11 wireless connection is Disabled (red open padlock) TLS security on the 802.11 wireless connection is Enabled (black closed padlock)                                                                                         |
+| ![C:\\GitProjects\\dpm3_mainapp_no_kernels\\GUI_COLOR_DPM3\\battery_excellent.bmp](<Apollo Family Master Images/3e00eeac7f32abac658c23d95fbd607b.png>)        | Battery is fully charged.                                                                                                                                                                                                                              |
+| ![C:\\GitProjects\\dpm3_mainapp_no_kernels\\GUI_COLOR_DPM3\\battery_good.bmp](<Apollo Family Master Images/9ecdae89a5762825c92b15ce36b2c480.png>)             | Battery is OK, between 20% and 95% charged.                                                                                                                                                                                                            |
+| ![C:\\GitProjects\\dpm3_mainapp_no_kernels\\GUI_COLOR_DPM3\\battery_low_yellow.bmp](<Apollo Family Master Images/4ae74b0708000ecdcc062831ef6d1bde.png>)       | Battery is low, between 10% and 20% charged.                                                                                                                                                                                                           |
+| ![C:\\GitProjects\\dpm3_mainapp_no_kernels\\GUI_COLOR_DPM3\\battery_critical_low_red.bmp](<Apollo Family Master Images/05174bd5123a5b136dfb8e4e82597486.png>) | Battery is critically low, between 3% and 10% charged.                                                                                                                                                                                                 |
+| ![C:\\GitProjects\\dpm3_mainapp_no_kernels\\GUI_COLOR_DPM3\\battery_empty.bmp](<Apollo Family Master Images/b06af78b67e3de52b5998243899ec4ad.png>)            | Battery is empty, below 3% charged.                                                                                                                                                                                                                    |
+| ![C:\\GitProjects\\dpm3_mainapp_no_kernels\\GUI_COLOR_DPM3\\battery_plugged.bmp](<Apollo Family Master Images/55f0fac105270125f77ee82d5413f937.png>)          | Battery is charging.                                                                                                                                                                                                                                   |
 
-![A screenshot of a phone Description automatically generated](<DynaFlex II PED Images/f6918e30c9bc97f51f3908ae092a1750.png>)![](<DynaFlex II PED Images/fd37901e96f09957edf53680ff2b95c8.png>)
+![A screenshot of a phone Description automatically generated](<Apollo Family Master Images/f6918e30c9bc97f51f3908ae092a1750.png>)![](<Apollo Family Master Images/fd37901e96f09957edf53680ff2b95c8.png>)
 
-<a name="figure-21---welcome-page-examples"></a>
-**Figure 21** – Welcome Page Examples
+<a name="figure-18---welcome-page-examples"></a>
+**Figure 18** – Welcome Page Examples
 
 The device may show text other than “Welcome” when it is Active / idle under certain conditions:
 
@@ -554,34 +547,34 @@ The device may show text other than “Welcome” when it is Active / idle under
 
 While powering on, the touchscreen briefly displays a page of information about the device, including the installed firmware part numbers and versions and other identifying information. To determine a device’s PCI certification status, compare the contents of this screen to the device’s listing on [www.pcisecuritystandards.org](http://www.pcisecuritystandards.org), **Approved PTS Devices**. Note that in PCI listings, lowercase “x” is a wildcard meaning ‘any single character.
 
-![](<DynaFlex II PED Images/599842dc6b568d9ddc62cc6d947d7379.png>)
+![](<Apollo Family Master Images/599842dc6b568d9ddc62cc6d947d7379.png>)
 
-<a name="figure-22---device-information-screen"></a>
-**Figure 22** – Device Information Screen
+<a name="figure-19---device-information-screen"></a>
+**Figure 19** – Device Information Screen
 
-To view details pertinent to the device’s PCI certification status on WLAN enabled devices - including the installed firmware part numbers and versions as well as other identifying information (see **Figure 23**) complete the following actions:
+To view details pertinent to the device’s PCI certification status on WLAN enabled devices - including the installed firmware part numbers and versions as well as other identifying information (see **Figure 20**) complete the following actions:
 
 While on the **Welcome** screen, press the **Pushbutton** and hold for 3 beeps to access the **Settings** menu, then select **Firmware** and **Main** to return to the **Welcome** screen, select **Back** and **Exit**
 
-![](<DynaFlex II PED Images/097da369a90e553db62429738633d231.png>) ![](<DynaFlex II PED Images/714a5c44a9b24b03cc7e432a74b5e9ee.png>)
+![](<Apollo Family Master Images/097da369a90e553db62429738633d231.png>) ![](<Apollo Family Master Images/714a5c44a9b24b03cc7e432a74b5e9ee.png>)
 
-<a name="figure-23---device-information-screen-for-wlan-device"></a>
-**Figure 23** – Device Information Screen for WLAN device
+<a name="figure-20---device-information-screen-for-wlan-device"></a>
+**Figure 20** – Device Information Screen for WLAN device
 
 ### Connection Status Page
 
-In addition to the icons at the top of the display, WLAN enabled devices have a **WLAN Status** screen that reports more details about the device’s 802.11 wireless (see **Figure 24**) connection. To access it, while on the **Welcome** screen, press the **Pushbutton** and hold for three beeps to get to the **Settings** menu, then select **Connection**, and **WLAN Settings**, then select **WLAN Status**. To return to the **Welcome** screen, select **Back** and **Exit**
+In addition to the icons at the top of the display, WLAN enabled devices have a **WLAN Status** screen that reports more details about the device’s 802.11 wireless (see **Figure 21**) connection. To access it, while on the **Welcome** screen, press the **Pushbutton** and hold for three beeps to get to the **Settings** menu, then select **Connection**, and **WLAN Settings**, then select **WLAN Status**. To return to the **Welcome** screen, select **Back** and **Exit**
 
-![Graphical user interface, application Description automatically generated](<DynaFlex II PED Images/2fce061461ee799f19f5bffd94f9617c.png>)![Graphical user interface, application Description automatically generated](<DynaFlex II PED Images/3d747135313fa97ed8f15f74ee375392.png>)
+![Graphical user interface, application Description automatically generated](<Apollo Family Master Images/2fce061461ee799f19f5bffd94f9617c.png>)![Graphical user interface, application Description automatically generated](<Apollo Family Master Images/3d747135313fa97ed8f15f74ee375392.png>)
 
-![Graphical user interface Description automatically generated with low confidence](<DynaFlex II PED Images/143b25d043a9bd1e0ef6cf71d30f2b8c.png>)
+![Graphical user interface Description automatically generated with low confidence](<Apollo Family Master Images/143b25d043a9bd1e0ef6cf71d30f2b8c.png>)
 
-<a name="figure-24---wlan-status-screen"></a>
-**Figure 24** – WLAN Status Screen
+<a name="figure-21---wlan-status-screen"></a>
+**Figure 21** – WLAN Status Screen
 
 ### SoftAP Page
 
-To configure WLAN enabled devices via SoftAP mode (see **Figure 25)** complete the following steps:
+To configure WLAN enabled devices via SoftAP mode (see **Figure 22)** complete the following steps:
 
 1.  While on the **Welcome** screen, press the **Pushbutton** and hold for three beeps to get to the **Settings** menu.
 2.  Press **Connection**
@@ -590,10 +583,10 @@ To configure WLAN enabled devices via SoftAP mode (see **Figure 25)** complete t
 
 To return to the **Welcome** screen, select **Back** and **Exit**.
 
-![Graphical user interface, application Description automatically generated with medium confidence](<DynaFlex II PED Images/24fa639efa82c1b305b8e0beeaf1b72b.png>)
+![Graphical user interface, application Description automatically generated with medium confidence](<Apollo Family Master Images/24fa639efa82c1b305b8e0beeaf1b72b.png>)
 
-<a name="figure-25---softap-mode-screen"></a>
-**Figure 25** – SoftAP Mode screen
+<a name="figure-22---softap-mode-screen"></a>
+**Figure 22** – SoftAP Mode screen
 
 ## About Sounds
 
@@ -636,28 +629,27 @@ The device’s rechargeable battery is designed to last hundreds of charging cyc
 
 When powered on, DynaFlex II starts in the idle / waiting state and shows a **Welcome** page on the touchscreen. See **4.6.4 How to Power On / Wake Up from Standby Mode / Power Off.** This page indicates battery level and charge status on the top right corner of the screen. See **Figure 47 Welcome Screen.**
 
-![Text, letter Description automatically generated](<DynaFlex II PED Images/a4f8c336eb8528dff88adc4d948ed584.png>)
+![Text, letter Description automatically generated](<Apollo Family Master Images/a4f8c336eb8528dff88adc4d948ed584.png>)
 
 Figure 47 Welcome Screen
 
-<a name="table-9---battery-power-level-and-charge-status-icons"></a>
-**Table 9** – Battery Power Level and Charge Status Icons.**
+The table of symbols below describes the various power level and charge status icons. See **Table 7 - Battery Power Level and Charge Status Icons.**
 
-<a name="table-10---battery-power-level-and-charge-status-icons"></a>
-**Table 10** – Battery Power Level and Charge Status Icons
+<a name="table-7---battery-power-level-and-charge-status-icons"></a>
+**Table 7** – Battery Power Level and Charge Status Icons
 
-| Battery Power Level and Charge Status Icons                                                                                                              |                                                        |
-|----------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------|
-| ![C:\\GitProjects\\dpm3_mainapp_no_kernels\\GUI_COLOR_DPM3\\battery_excellent.bmp](<DynaFlex II PED Images/3e00eeac7f32abac658c23d95fbd607b.png>)        | Battery is fully charged.                              |
-| ![C:\\GitProjects\\dpm3_mainapp_no_kernels\\GUI_COLOR_DPM3\\battery_good.bmp](<DynaFlex II PED Images/9ecdae89a5762825c92b15ce36b2c480.png>)             | Battery is OK, between 20% and 95% charged.            |
-| ![C:\\GitProjects\\dpm3_mainapp_no_kernels\\GUI_COLOR_DPM3\\battery_low_yellow.bmp](<DynaFlex II PED Images/4ae74b0708000ecdcc062831ef6d1bde.png>)       | Battery is low, between 10% and 20% charged.           |
-| ![C:\\GitProjects\\dpm3_mainapp_no_kernels\\GUI_COLOR_DPM3\\battery_critical_low_red.bmp](<DynaFlex II PED Images/05174bd5123a5b136dfb8e4e82597486.png>) | Battery is critically low, between 3% and 10% charged. |
-| ![C:\\GitProjects\\dpm3_mainapp_no_kernels\\GUI_COLOR_DPM3\\battery_empty.bmp](<DynaFlex II PED Images/b06af78b67e3de52b5998243899ec4ad.png>)            | Battery is empty, below 3% charged.                    |
-| ![C:\\GitProjects\\dpm3_mainapp_no_kernels\\GUI_COLOR_DPM3\\battery_plugged.bmp](<DynaFlex II PED Images/55f0fac105270125f77ee82d5413f937.png>)          | Battery is charging.                                   |
+| Battery Power Level and Charge Status Icons                                                                                                                   |                                                        |
+|---------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------|
+| ![C:\\GitProjects\\dpm3_mainapp_no_kernels\\GUI_COLOR_DPM3\\battery_excellent.bmp](<Apollo Family Master Images/3e00eeac7f32abac658c23d95fbd607b.png>)        | Battery is fully charged.                              |
+| ![C:\\GitProjects\\dpm3_mainapp_no_kernels\\GUI_COLOR_DPM3\\battery_good.bmp](<Apollo Family Master Images/9ecdae89a5762825c92b15ce36b2c480.png>)             | Battery is OK, between 20% and 95% charged.            |
+| ![C:\\GitProjects\\dpm3_mainapp_no_kernels\\GUI_COLOR_DPM3\\battery_low_yellow.bmp](<Apollo Family Master Images/4ae74b0708000ecdcc062831ef6d1bde.png>)       | Battery is low, between 10% and 20% charged.           |
+| ![C:\\GitProjects\\dpm3_mainapp_no_kernels\\GUI_COLOR_DPM3\\battery_critical_low_red.bmp](<Apollo Family Master Images/05174bd5123a5b136dfb8e4e82597486.png>) | Battery is critically low, between 3% and 10% charged. |
+| ![C:\\GitProjects\\dpm3_mainapp_no_kernels\\GUI_COLOR_DPM3\\battery_empty.bmp](<Apollo Family Master Images/b06af78b67e3de52b5998243899ec4ad.png>)            | Battery is empty, below 3% charged.                    |
+| ![C:\\GitProjects\\dpm3_mainapp_no_kernels\\GUI_COLOR_DPM3\\battery_plugged.bmp](<Apollo Family Master Images/55f0fac105270125f77ee82d5413f937.png>)          | Battery is charging.                                   |
 
 ### How to Charge the Battery
 
-| ![](<DynaFlex II PED Images/03555afcb3177a7ebf5f264c12d86851.png>)                                                                         |
+| ![](<Apollo Family Master Images/03555afcb3177a7ebf5f264c12d86851.png>)                                                                    |
 |--------------------------------------------------------------------------------------------------------------------------------------------|
 | Per UL requirements, the device is designed to not recharge its internal battery when the external temperature is below 0°C or above 40°C. |
 
@@ -668,8 +660,7 @@ To charge the device without an optional charging station, connect it to a USB c
 To charge the device in the optional charging station *for power only (no USB communication)*:
 
 1.  Make sure the charging station is properly installed and is receiving USB power. See section **3.3.4 How to Mount the Charging Station**.
-<a name="figure-26---connecting-dynaflex-ii-to-the-optional-charging-station"></a>
-**Figure 26** – Connecting DynaFlex II to the Optional Charging Station**.
+2.  Place the device in the charging station with the charging contacts pointing into the charging station and the device’s face pointing toward the ceiling as shown in **Figure 315 – Connecting DynaFlex II to the Optional Charging Station**.
 3.  Check the device’s LEDs to make sure it is charging.
 
 For important information about the device’s power systems, optimal charging methods during regular use, optimal handling and storage, and other information about keeping the device’s power systems in the best possible condition, see section **2.3 Handling to Avoid Accidental Tamper** and section **4.6.1 About Power**.
@@ -696,7 +687,7 @@ When the device is connected to a host via USB (see section **3.2.2 How to Conne
 
 It is possible to configure a Windows host to not suspend the device by editing the registry. Open **HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Enum\\USB\\VID_0801&PID_2020**, then open the folder with the device’s serial number inside that folder and open the **Device Parameters** folder inside that. Set the value of **EnhancedPowerManagementEnabled** equal to **0**. After changing the setting, physically disconnect and re-connect the device to the host.
 
-![](<DynaFlex II PED Images/b5a7837f9eee59f0c6b9d4c3588d4b38.png>)
+![](<Apollo Family Master Images/b5a7837f9eee59f0c6b9d4c3588d4b38.png>)
 
 ### About Maintenance Reset
 
@@ -731,11 +722,11 @@ The steps for starting a transaction and reading a card or contactless payment d
 To swipe magnetic stripe cards, follow these steps:
 
 1.  Wait for the device to display an action prompt, or, if the solution is designed to respond to cardholder actions that occur while the device is idle, such as swiping, inserting, or tapping a card or electronic payment device, or pressing the touchscreen, initiate the transaction by performing one of those actions instead of waiting. In these cases, the device may automatically and rapidly pass through several of the steps below without requiring cardholder interaction.
-    1.  Devices with a display show on-screen text and buttons (see **Figure 27** **below** for examples).
+    1.  Devices with a display show on-screen text and buttons (see **Figure 23** **below** for examples).
     2.  The device shows the transaction status using the LEDs. If the host has directed the device to enable the contactless interface, LED1 lights solid green and all other LEDs are off, per EMV standards, to indicate it is ready for a tap. If the host has directed the device to disable the contactless interface, the device continues to show idle statuses on LED1 and LED2.
     3.  All devices report detailed transaction status to the host, and host software may report that information to operators so they can guide cardholders through the transaction (for example, “swipe, insert, or tap your card now please”).
 2.  Locate the magnetic stripe reader swipe path on the face of the device.
-3.  Orient the card with the magnetic stripe facing away from the cardholder and the touchscreen or contactless landing zone, toward the LEDs and the chip card insertion slot as shown in **Figure 28**.
+3.  Orient the card with the magnetic stripe facing away from the cardholder and the touchscreen or contactless landing zone, toward the LEDs and the chip card insertion slot as shown in **Figure 24**.
 4.  Swipe the card through the magnetic stripe reader in either direction.
 5.  Look for a prompt that the device has successfully read the card:
     1.  The device turns LED4 green for a short time.
@@ -755,25 +746,25 @@ To swipe magnetic stripe cards, follow these steps:
 
 Immediately after the user swipes a magnetic stripe card, the device disables the option to use the contactless interface. If the cardholder needs to revert to a contactless card or device for payment while a transaction is in process, the operator should cancel the transaction and start again.
 
-![](<DynaFlex II PED Images/5a5ae61e42bb71202f670f38c140bdd0.png>)![](<DynaFlex II PED Images/5de28fafe0ae6d50039cc9cc9d3d0a61.png>)
+![](<Apollo Family Master Images/5a5ae61e42bb71202f670f38c140bdd0.png>)![](<Apollo Family Master Images/5de28fafe0ae6d50039cc9cc9d3d0a61.png>)
 
-<a name="figure-27---example-card-swipe-screens"></a>
-**Figure 27** – Example Card Swipe Screens
+<a name="figure-23---example-card-swipe-screens"></a>
+**Figure 23** – Example Card Swipe Screens
 
-![](<DynaFlex II PED Images/3e86bbfcfd9250568337c532d4ac2ade.png>)
+![](<Apollo Family Master Images/3e86bbfcfd9250568337c532d4ac2ade.png>)
 
-<a name="figure-28---swiping-a-magnetic-stripe-card"></a>
-**Figure 28** – Swiping a Magnetic Stripe Card
+<a name="figure-24---swiping-a-magnetic-stripe-card"></a>
+**Figure 24** – Swiping a Magnetic Stripe Card
 
 ### How to Insert Contact Chip Cards
 
 To insert contact chip cards, follow these steps:
 
 1.  Wait for the device to display an action prompt, or, if the solution is designed to respond to cardholder actions that occur while the device is idle, such as swiping, inserting, or tapping a card or electronic payment device, or pressing the touchscreen, initiate the transaction by performing one of those actions instead of waiting. In these cases, the device may automatically and rapidly pass through several of the steps below without requiring cardholder interaction.
-    1.  Devices with a touchscreen display on-screen text and buttons (see **Figure 29** **below** for examples).
+    1.  Devices with a touchscreen display on-screen text and buttons (see **Figure 25** **below** for examples).
     2.  Devices with or without a touchscreen show the transaction status using the LEDs. If the host has directed the device to enable the contactless interface, LED1 lights solid green and all other LEDs are off, per EMV standards, to indicate it is ready for a tap, swipe, or insert. If the host has directed the device to disable the contactless interface, the device continues to show idle statuses on LED1 and LED2.
     3.  All devices report detailed transaction status to the host, and host software may report that information to operators so they can guide cardholders through the transaction (for example, “swipe, insert, or tap your card now please”).
-2.  Locate the chip card insertion slot on the face of the device, as shown in **Figure 30**.
+2.  Locate the chip card insertion slot on the face of the device, as shown in **Figure 26**.
 3.  Orient the chip card so the chip faces the cardholder, toward the touchscreen or contactless landing zone and the LEDs.
 4.  Insert the chip card into the slot, then push gently on the card until it stops. There should not be any substantial resistance until the chip card is fully inserted.
 5.  Wait for a prompt that the device has successfully read the card, then remove the card.
@@ -796,28 +787,28 @@ To insert contact chip cards, follow these steps:
 
 Immediately after the user inserts a chip card, the device disables the option to use the contactless interface. If the cardholder needs to revert to a contactless card or device for payment while a transaction is in process, the operator should cancel the transaction and start again.
 
-![](<DynaFlex II PED Images/5a5ae61e42bb71202f670f38c140bdd0.png>)![](<DynaFlex II PED Images/fb8d3eb52db598e2f4d5f62a761f0f02.png>)![](<DynaFlex II PED Images/b84c02a96fc22007fd30dbf2c99de1b4.png>)
+![](<Apollo Family Master Images/5a5ae61e42bb71202f670f38c140bdd0.png>)![](<Apollo Family Master Images/fb8d3eb52db598e2f4d5f62a761f0f02.png>)![](<Apollo Family Master Images/b84c02a96fc22007fd30dbf2c99de1b4.png>)
 
-<a name="figure-29---example-card-insertion-screens"></a>
-**Figure 29** – Example Card Insertion Screens
+<a name="figure-25---example-card-insertion-screens"></a>
+**Figure 25** – Example Card Insertion Screens
 
-![](<DynaFlex II PED Images/91f6f9408433c25b48c91ec16586ac37.png>)
+![](<Apollo Family Master Images/91f6f9408433c25b48c91ec16586ac37.png>)
 
-<a name="figure-30---inserting-a-chip-card"></a>
-**Figure 30** – Inserting a Chip Card
+<a name="figure-26---inserting-a-chip-card"></a>
+**Figure 26** – Inserting a Chip Card
 
 ### How to Tap Contactless Cards / Devices
 
 To tap a contactless card or smartphone, follow these steps:
 
 1.  Wait for the device to display an action prompt, or, if the solution is designed to respond to cardholder actions that occur while the device is idle, such as swiping, inserting, or tapping a card or electronic payment device, or pressing the touchscreen, initiate the transaction by performing one of those actions instead of waiting. In these cases, the device may automatically and rapidly pass through several of the steps below without requiring cardholder interaction.
-    1.  Devices with a touchscreen show on-screen text and buttons (see **Figure 31** **below** for examples).
+    1.  Devices with a touchscreen show on-screen text and buttons (see **Figure 27** **below** for examples).
     2.  Devices with or without a touchscreen show the transaction status using the LEDs. LED1 lights solid green and all other LEDs are off, per EMV standards, to indicate it is ready for a tap (or swipe or insert, if the host has enabled those interfaces for this transaction).
     3.  All devices report detailed transaction status to the host, and host software may report that information to operators so they can guide cardholders through the transaction (for example, “please tap your card now”).
 2.  If the cardholder is using an electronic payment device, such as a smartphone, make sure the payment device has **NFC** turned **On** and has a payment app configured to process transactions. For details, see the documentation provided by the smartphone manufacturer and payment app publisher.
-3.  Briefly hold the card, smartphone, or other contactless payment device over the contactless landing zone, indicated by the EMVCo Contactless Indicator symbol on the device’s face (see **Figure 31**). Because each smartphone model may have its NFC antenna placed differently, the ideal tap position may vary by make and model. For example, Samsung users may need to center the phone on the contactless landing zone, while Apple users may need to tap the top of the phone on the contactless landing zone.
+3.  Briefly hold the card, smartphone, or other contactless payment device over the contactless landing zone, indicated by the EMVCo Contactless Indicator symbol on the device’s face (see **Figure 27**). Because each smartphone model may have its NFC antenna placed differently, the ideal tap position may vary by make and model. For example, Samsung users may need to center the phone on the contactless landing zone, while Apple users may need to tap the top of the phone on the contactless landing zone.
 4.  Wait for a prompt that the device has successfully read the card, smartphone, or other contactless payment device, then remove it from the contactless landing zone.
-    1.  The device quickly lights the second LED green to show it is processing, then lights the third LED green to show it has successfully read the tap, then lights the fourth LED green to show the read is complete (see **Figure 33**).
+    1.  The device quickly lights the second LED green to show it is processing, then lights the third LED green to show it has successfully read the tap, then lights the fourth LED green to show the read is complete (see **Figure 414**).
     2.  The device beeps once.
     3.  If the device has a touchscreen:
         1.  The device may display **PROCESSING**.
@@ -832,27 +823,26 @@ To tap a contactless card or smartphone, follow these steps:
     4.  Devices with a touchscreen display **INSERT, SWIPE, OR TRY ANOTHER CARD**, then **THANK YOU**. The device then returns to the idle page (see section **4.4.1 Welcome Page / Active Idle Page**).
     5.  The device notifies the host that the transaction failed. If this occurs, the host software may choose to retry the transaction (for example, with different payment types enabled) or revert to prompting the operator to enter card data manually (see section **4.8.7 How to Enter Card Information Manually)**.
 
-![](<DynaFlex II PED Images/5a5ae61e42bb71202f670f38c140bdd0.png>)![](<DynaFlex II PED Images/153e31a328bf55d94646a989d1bd1e7b.png>)
+![](<Apollo Family Master Images/5a5ae61e42bb71202f670f38c140bdd0.png>)![](<Apollo Family Master Images/153e31a328bf55d94646a989d1bd1e7b.png>)
 
-<a name="figure-31---example-contactless-transaction-screens"></a>
-**Figure 4** – Example Contactless Transaction Screens
+<a name="figure-27---example-contactless-transaction-screens"></a>
+**Figure 27** – Example Contactless Transaction Screens
 
-![](<DynaFlex II PED Images/094e6e552335e0a8f64db9c8c5796922.png>)![](<DynaFlex II PED Images/d575015d0fc1eabad649f6c92220123a.png>)
+![](<Apollo Family Master Images/094e6e552335e0a8f64db9c8c5796922.png>)![](<Apollo Family Master Images/d575015d0fc1eabad649f6c92220123a.png>)
 
-<a name="figure-32---tapping-a-contactless-card-smartphone"></a>
-**Figure 6** – Tapping a Contactless Card / Smartphone
+<a name="figure-28---tapping-a-contactless-card-smartphone"></a>
+**Figure 28** – Tapping a Contactless Card / Smartphone
 
-![](<DynaFlex II PED Images/7ac420b4615e876636fe3b9ff87dc498.png>)![](<DynaFlex II PED Images/ee90868d2735539ada2487190c34d096.png>)![](<DynaFlex II PED Images/d6e835dcc95fcbc5ab527bbca81317dd.png>)![](<DynaFlex II PED Images/785b4eb732880d763908624e901ed5c5.png>)
+![](<Apollo Family Master Images/7ac420b4615e876636fe3b9ff87dc498.png>)![](<Apollo Family Master Images/ee90868d2735539ada2487190c34d096.png>)![](<Apollo Family Master Images/d6e835dcc95fcbc5ab527bbca81317dd.png>)![](<Apollo Family Master Images/785b4eb732880d763908624e901ed5c5.png>)
 
-<a name="figure-33---tap-read-is-complete"></a>
-**Figure 7** – Tap Read Is Complete**
+**Figure 414 – Tap Read Is Complete**
 
 ### How to Tap Contactless NFC Tags / MIFARE Classic / MIFARE DESFire /MIFARE Plus Cards and Send Pass-through Commands
 
 To tap a contactless NFC Tags / MIFARE Classic / MIFARE DESFire /MIFARE Plus cards, follow these steps:
 
 1.  Wait for the device to display an action prompt. If the solution is designed to respond to cardholder actions that occur while the device is idle, such as swiping, inserting, or tapping a card or electronic payment device, or pressing the touchscreen, initiate the transaction by performing one of those actions instead of waiting. In these cases, the device may automatically and rapidly pass through several of the steps below without requiring cardholder interaction.
-    1.  Devices with a touchscreen display on-screen text and buttons (see **Figure 31** for examples) via the host.
+    1.  Devices with a touchscreen display on-screen text and buttons (see **Figure 27** for examples) via the host.
     2.  Devices with or without a touchscreen show the transaction status using the LEDs. LED1 illuminates solid green, and all other LEDs are off, per EMV standards, to indicate it is ready for a tap (or swipe / insert, if the host has enabled those interfaces for this transaction).
     3.  All devices report detailed transaction status to the host, and host software may report that information to operators so they can guide cardholders through the transaction (for example, “please tap your card now”).
 2.  Place the card over the device's designated contactless landing zone, marked by the EMVCo Contactless Indicator symbol on the front face of the device.
@@ -882,10 +872,10 @@ To scan a barcode, follow these steps:
     2.  The device beeps once.
     3.  The device turns off the barcode reader indicator LED.
 
-![](<DynaFlex II PED Images/6672cca37583b097712d59d3ab80ae72.png>)
+![](<Apollo Family Master Images/6672cca37583b097712d59d3ab80ae72.png>)
 
-<a name="figure-34---scanning-a-barcode"></a>
-**Figure 8** – Scanning a Barcode
+<a name="figure-29---scanning-a-barcode"></a>
+**Figure 29** – Scanning a Barcode
 
 ### How to Enter Card Information Manually
 
@@ -899,8 +889,8 @@ Devices with touchscreen displays provide support for starting a transaction tha
 To enter card information manually, follow these steps. For every prompt below, press the **Enter** button after entering data to move to the next step, or press the **Backsp** button to delete data that has already been entered but stay on the same step, or press the **Cancel** button to completely end the transaction:
 
 1.  The operator starts a transaction, specifying manual card entry, optionally specifying a transaction amount and cash back amount. If the solution is designed to respond to cardholder actions that occur while the device is idle, such as pressing the touchscreen, the operator may initiate the transaction by performing one of those actions instead of initiating the transaction from the host.
-2.  The device shows a numeric keypad and a prompt to enter **Card Number** (see **Figure 35**). Enter the card number and press the **Enter** button. If the device double-beeps when pressing the **Enter** button and does not proceed to the next step, the PAN is not valid. The device may be configured to enable MOD10 validation, which makes sure the card number passes a validity check to prevent errors during entry. It is also possible you have entered too many or too few PAN digits. Double-check the card number and use the **Backsp** button to correct any errors, then press **Enter**.
-3.  The device displays a numeric keypad and a prompt to enter **Exp Date (MMYY)** (see **Figure 36**). Enter the expiration date on the card and press the **Enter** button.
+2.  The device shows a numeric keypad and a prompt to enter **Card Number** (see **Figure 30**). Enter the card number and press the **Enter** button. If the device double-beeps when pressing the **Enter** button and does not proceed to the next step, the PAN is not valid. The device may be configured to enable MOD10 validation, which makes sure the card number passes a validity check to prevent errors during entry. It is also possible you have entered too many or too few PAN digits. Double-check the card number and use the **Backsp** button to correct any errors, then press **Enter**.
+3.  The device displays a numeric keypad and a prompt to enter **Exp Date (MMYY)** (see **Figure 31**). Enter the expiration date on the card and press the **Enter** button.
 4.  The device shows a numeric keypad and a prompt to enter **CVV/CVC/Card ID**. Enter the card verification code / value, then press the **Enter** button. This code is a 3- or 4- digit number printed on the front or back of the card, and is also referred to as a security code, security validation value, CAV2, CVC2, CVV2, or CID, depending on which payment brand issued the card.
 5.  The device shows a summary of all the data that was entered during the transaction. If the operator specified a transaction amount when starting the transaction, the summary includes the total transaction amount (purchase amount plus cash back, if any).
 6.  Verify all the information is correct:
@@ -908,100 +898,99 @@ To enter card information manually, follow these steps. For every prompt below, 
     2.  If it is correct but the cardholder or operator wishes to stop the transaction, press the **Cancel** button to completely end the transaction.
     3.  If it is not correct, press the **Cancel** button to completely end the transaction, and start the transaction again from the first step.
 
-![](<DynaFlex II PED Images/17cd92a760e895176fe75556576db18f.png>)
+![](<Apollo Family Master Images/17cd92a760e895176fe75556576db18f.png>)
 
-<a name="figure-35---enter-card-number"></a>
-**Figure 9** – Enter Card Number
+<a name="figure-30---enter-card-number"></a>
+**Figure 30** – Enter Card Number
 
-![](<DynaFlex II PED Images/225ef6fcb25efe4098f698f89b598e2a.png>)
+![](<Apollo Family Master Images/225ef6fcb25efe4098f698f89b598e2a.png>)
 
-<a name="figure-36---enter-expiration-date"></a>
-**Figure 10** – Enter Expiration Date
+<a name="figure-31---enter-expiration-date"></a>
+**Figure 4** – Enter Expiration Date
 
-![](<DynaFlex II PED Images/3a9b6342505c243b37b16a876da4ed6d.png>)
+![](<Apollo Family Master Images/3a9b6342505c243b37b16a876da4ed6d.png>)
 
-<a name="figure-37---enter-cvv-cvc-card-id"></a>
-**Figure 11** – Enter CVV/CVC/Card ID
+<a name="figure-32---enter-cvv-cvc-card-id"></a>
+**Figure 5** – Enter CVV/CVC/Card ID
 
 ### How to Verify the Transaction Amount
 
-When the device is processing a transaction using the EMV Transaction Flow (as opposed to the Quick Chip Transaction Flow), devices with a touchscreen display the amount of the transaction when they prompt the cardholder to swipe, dip, or tap a card or payment device, as shown in **Figure 38.** The cardholder implicitly confirms / accepts the transaction amount by presenting payment.
+When the device is processing a transaction using the EMV Transaction Flow (as opposed to the Quick Chip Transaction Flow), devices with a touchscreen display the amount of the transaction when they prompt the cardholder to swipe, dip, or tap a card or payment device, as shown in **Figure 33.** The cardholder implicitly confirms / accepts the transaction amount by presenting payment.
 
-![Text, shape Description automatically generated with medium confidence](<DynaFlex II PED Images/971a93e22e22ba8906f7669d38e8e736.png>)![Text, letter Description automatically generated](<DynaFlex II PED Images/89d5fa19f4ef476456cc3d1534cc2ec2.png>)
+![Text, shape Description automatically generated with medium confidence](<Apollo Family Master Images/971a93e22e22ba8906f7669d38e8e736.png>)![Text, letter Description automatically generated](<Apollo Family Master Images/89d5fa19f4ef476456cc3d1534cc2ec2.png>)
 
-<a name="figure-38---example-transaction-amount-screens"></a>
-**Figure 12** – Example Transaction Amount Screens
+<a name="figure-33---example-transaction-amount-screens"></a>
+**Figure 6** – Example Transaction Amount Screens
 
 ### How to Enter PINs
 
-Devices with a touchscreen display provide support for requesting a PIN from the cardholder. The device prompts the cardholder to **ENTER PIN** (see **Figure 39**) as required by the financial institution. The device expects the PIN to be between 4 and 12 digits long. After entering the PIN, the cardholder must press the **ENTER** button.
+Devices with a touchscreen display provide support for requesting a PIN from the cardholder. The device prompts the cardholder to **ENTER PIN** (see **Figure 34**) as required by the financial institution. The device expects the PIN to be between 4 and 12 digits long. After entering the PIN, the cardholder must press the **ENTER** button.
 
-![Calendar Description automatically generated](<DynaFlex II PED Images/39ca4f6afee8f3450c121c246823b2ea.png>)
+![Calendar Description automatically generated](<Apollo Family Master Images/39ca4f6afee8f3450c121c246823b2ea.png>)
 
-<a name="figure-39---enter-pin"></a>
-**Figure 13** – Enter PIN
+<a name="figure-34---enter-pin"></a>
+**Figure 7** – Enter PIN
 
-If the double PIN entry option is enabled, the device prompts the cardholder to enter the PIN a second time (see **Figure 40**). *The process for re-entry is identical to the process for the first entry*.
+If the double PIN entry option is enabled, the device prompts the cardholder to enter the PIN a second time (see **Figure 35**). *The process for re-entry is identical to the process for the first entry*.
 
-![Calendar Description automatically generated](<DynaFlex II PED Images/2f50bbe350d5e814275728cc85a23f1c.png>)
+![Calendar Description automatically generated](<Apollo Family Master Images/2f50bbe350d5e814275728cc85a23f1c.png>)
 
-<a name="figure-40---enter-pin-again"></a>
-**Figure 40** – Enter PIN Again
+<a name="figure-35---enter-pin-again"></a>
+**Figure 8** – Enter PIN Again
 
 ### How to Enter Tip
 
-Devices with a touchscreen display provide support for requesting a Tip Entry from the cardholder. The device prompts the cardholder to **Enter Tip** (see **Figure 41** – Enter Tip).
+Devices with a touchscreen display provide support for requesting a Tip Entry from the cardholder. The device prompts the cardholder to **Enter Tip** (see **Figure 36** – Enter Tip).
 
-![A screenshot of a table Description automatically generated](<DynaFlex II PED Images/8cb408316a3ae822e1b682fc60aa28b5.png>)
+![A screenshot of a table Description automatically generated](<Apollo Family Master Images/8cb408316a3ae822e1b682fc60aa28b5.png>)
 
-<a name="figure-41---enter-tip"></a>
-**Figure 20** – Enter Tip
+<a name="figure-36---enter-tip"></a>
+**Figure 9** – Enter Tip
 
 If the cardholder selects a **Custom** button, the device prompts a keypad for the cardholder to **Enter Tip Amount** (see Figure **423** – Enter Tip Amount). After entering the Tip Amount, the cardholder must press the **Enter** button.
 
-![A screenshot of a number grid Description automatically generated](<DynaFlex II PED Images/3e01c71efdb258e973121cf2944c59e8.png>)
+![A screenshot of a number grid Description automatically generated](<Apollo Family Master Images/3e01c71efdb258e973121cf2944c59e8.png>)
 
-<a name="figure-42---enter-tip-amount"></a>
-**Figure 21** – Enter Tip Amount
+<a name="figure-37---enter-tip-amount"></a>
+**Figure 10** – Enter Tip Amount
 
-After finalizing the Tip, and pressing the **Submit** button, the device prompts the cardholder to present a payment (see **Figure 43**). The on-screen prompt is different depending on which payment method(s) the host directed the device to enable for the transaction. If the Quick Chip flow is in effect, the prompt does not include the transaction amount. If the Full EMV flow is in effect, the prompt includes the transaction amount.
+After finalizing the Tip, and pressing the **Submit** button, the device prompts the cardholder to present a payment (see **Figure 38**). The on-screen prompt is different depending on which payment method(s) the host directed the device to enable for the transaction. If the Quick Chip flow is in effect, the prompt does not include the transaction amount. If the Full EMV flow is in effect, the prompt includes the transaction amount.
 
-![A screen shot of a card Description automatically generated](<DynaFlex II PED Images/c58ce8b7bf69285e10584ab900d5b49e.png>)
+![A screen shot of a card Description automatically generated](<Apollo Family Master Images/c58ce8b7bf69285e10584ab900d5b49e.png>)
 
-<a name="figure-43---example-present-payment-screen"></a>
-**Figure 22** – Example Present Payment Screen
+<a name="figure-38---example-present-payment-screen"></a>
+**Figure 11** – Example Present Payment Screen
 
 ### How to Enter Sale Amount
 
-Devices with a touchscreen display and active connection to a Wireless Local Area Network (WLAN) Host provide support for entering a Sale Amount from the cardholder. The device prompts the cardholder with the **Start Sale** button (see **Figure 44**)
+Devices with a touchscreen display and active connection to a Wireless Local Area Network (WLAN) Host provide support for entering a Sale Amount from the cardholder. The device prompts the cardholder with the **Start Sale** button (see **Figure 39**)
 
-![A screenshot of a computer Description automatically generated](<DynaFlex II PED Images/eb647ef6aa84aa708f28c723d877b1f0.png>)
+![A screenshot of a computer Description automatically generated](<Apollo Family Master Images/eb647ef6aa84aa708f28c723d877b1f0.png>)
 
-<a name="figure-44---start-sale-screen"></a>
-**Figure 23** – Start Sale Screen
+<a name="figure-39---start-sale-screen"></a>
+**Figure 12** – Start Sale Screen
 
-When the cardholder presses the **Start Sale** button, the device prompts the cardholder to **Enter Sale Amount** (see **Figure 45**)
+When the cardholder presses the **Start Sale** button, the device prompts the cardholder to **Enter Sale Amount** (see **Figure 40**)
 
-![A screenshot of a computer screen Description automatically generated](<DynaFlex II PED Images/c68faead48a9c4e6b051fa59d9d60150.png>)
+![A screenshot of a computer screen Description automatically generated](<Apollo Family Master Images/c68faead48a9c4e6b051fa59d9d60150.png>)
 
-<a name="figure-45---enter-sale-amount"></a>
-**Figure 24** – Enter Sale Amount
+<a name="figure-40---enter-sale-amount"></a>
+**Figure 40** – Enter Sale Amount
 
 After the cardholder enters the Sale Amount and presses **Enter**, the device prompts the cardholder to enter Tip (see section **4.8.10 How to Enter Tip**)
 
 ### How to Use Signature Capture
 
-| ![A black and white sign Description automatically generated with low confidence](<DynaFlex II PED Images/bdb6a105147891251b84fbdb350ba870.png>)      |
+| ![A black and white sign Description automatically generated with low confidence](<Apollo Family Master Images/bdb6a105147891251b84fbdb350ba870.png>) |
 |-------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Do not use a stylus or other hard object on the touchscreen. The touchscreen is designed for fingers only and can be scratched or damaged if misused. |
 
-<a name="figure-46---signature-capture-requested-cardholders-should-use-the-tip-of-their-finger-to-press-and-glide-against-the-screen-to-sign-then-press-the-ok-button-to-clear-the-current-signature-on-the-display-and-start-over-press-the-clear-button"></a>
-**Figure 25** – Signature Capture Requested)** cardholders should use the tip of their finger to *press and glide against the screen to sign*, then press the **OK** button. To clear the current signature on the display and start over, press the **Clear** button.
+When a device with a touchscreen display prompts cardholders with a **PLEASE SIGN** page, (**Figure 41 - Signature Capture Requested)** cardholders should use the tip of their finger to *press and glide against the screen to sign*, then press the **OK** button. To clear the current signature on the display and start over, press the **Clear** button.
 
-![Shape Description automatically generated](<DynaFlex II PED Images/3a6e878c615967b9e83cd56498af20b6.png>)
+![Shape Description automatically generated](<Apollo Family Master Images/3a6e878c615967b9e83cd56498af20b6.png>)
 
-<a name="figure-47---signature-capture-requested"></a>
-**Figure 47** – Signature Capture Requested
+<a name="figure-41---signature-capture-requested"></a>
+**Figure 17** – Signature Capture Requested
 
 Devices that do not have a touchscreen display cannot prompt for or collect a signature. When these devices are aware that a signature is required to complete a transaction, they send a notification message to the host that includes the status **Signature Capture Requested**. In this case, the solution design collects the cardholder’s signature via a different method.
 
@@ -1009,7 +998,7 @@ Devices that do not have a touchscreen display cannot prompt for or collect a si
 
 ## Mechanical Maintenance
 
-| ![](<DynaFlex II PED Images/bdb6a105147891251b84fbdb350ba870.png>)                                                                                                                                                                                                                                            |
+| ![](<Apollo Family Master Images/bdb6a105147891251b84fbdb350ba870.png>)                                                                                                                                                                                                                                       |
 |---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | To avoid damaging the read head and contact block, only clean the MSR swipe path and insertion slot with approved cleaning cards.  DO NOT use liquid cleaning products or insert any other objects into the device.  DO NOT apply any liquid directly onto the device, to avoid seepage into the electronics. |
 
@@ -1212,7 +1201,7 @@ This product is recognized per **UL 609501, 2nd Edition, 20111219** (Information
 
 RoHS STATEMENT
 
-When ordered as RoHS compliant, this product meets the Electrical and Electronic Equipment (EEE) Reduction of Hazardous Substances (RoHS) Directive (EU) 2015/863 amending Annex II to Directive 2011/65/EU. The marking is clearly recognizable, either as written words like “Pb-free,” “lead-free,” or as another clear symbol (![PbFreeSym](<DynaFlex II PED Images/4d77d9668e7bdc54b2ee2546cc21077c.png>)).
+When ordered as RoHS compliant, this product meets the Electrical and Electronic Equipment (EEE) Reduction of Hazardous Substances (RoHS) Directive (EU) 2015/863 amending Annex II to Directive 2011/65/EU. The marking is clearly recognizable, either as written words like “Pb-free,” “lead-free,” or as another clear symbol (![PbFreeSym](<Apollo Family Master Images/4d77d9668e7bdc54b2ee2546cc21077c.png>)).
 
 PCI Statement
 
