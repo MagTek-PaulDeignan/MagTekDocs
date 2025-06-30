@@ -1,25 +1,3 @@
----
-title: DynaFlex II PED Installation and Operation Manual
-layout: home
-parent: DynaFlex II PED
-nav_order: 1
----
-<button class="btn js-toggle-dark-mode">Preview dark color scheme</button>
-
-<script>
-const toggleDarkMode = document.querySelector('.js-toggle-dark-mode');
-
- jtd.addEvent(toggleDarkMode, 'click', function(){
-   if (jtd.getTheme() === 'dark') {
-     jtd.setTheme('light');
-     toggleDarkMode.textContent = 'Preview dark color scheme';
-   } else {
-     jtd.setTheme('dark');
-     toggleDarkMode.textContent = 'Return to the light side';
-   }
- });
- </script>
-
 # Table of Contents
 
 - [Introduction](#introduction)
@@ -81,6 +59,28 @@ const toggleDarkMode = document.querySelector('.js-toggle-dark-mode');
 - [Developing Custom Software](#developing-custom-software)
           - [Technical Specifications](#technical-specifications)
           - [Warranty, Standards, and Certifications](#warranty-standards-and-certifications)
+
+---
+title: DynaFlex II PED Installation and Operation Manual
+layout: home
+parent: DynaFlex II PED
+nav_order: 1
+---
+<button class="btn js-toggle-dark-mode">Preview dark color scheme</button>
+
+<script>
+const toggleDarkMode = document.querySelector('.js-toggle-dark-mode');
+
+ jtd.addEvent(toggleDarkMode, 'click', function(){
+   if (jtd.getTheme() === 'dark') {
+     jtd.setTheme('light');
+     toggleDarkMode.textContent = 'Preview dark color scheme';
+   } else {
+     jtd.setTheme('dark');
+     toggleDarkMode.textContent = 'Return to the light side';
+   }
+ });
+ </script>
 
 
 | DynaFlex II PED Installation and Operation Manual                                                                                                                                                     |
@@ -190,7 +190,7 @@ MagTek offers developer tools, including free software developer kits with APIs.
 | 21078334                                                                                    | DYNAFLEX II PED, KIOSK, PCI, TOUCHSCREEN DISPLAY, BCR, BLACK, USB | Touchscreen | USB-C              |
 | All models are black by default and have countertop, handheld, and custom mounting options. |                                                                   |             |                    |
 
-**<a name="table-3---dynaflex-ii-accessories"></a>
+<a name="table-3---dynaflex-ii-accessories"></a>
 **Table 3** – DynaFlex II Accessories**
 
 | Part \#    | Description                                           | Accessory Notes                                  |
@@ -286,16 +286,15 @@ The following sections provide information on how to connect **DynaFlex II produ
 
 To connect **DynaFlex II products** to a USB host or charger using the USB-C port, follow these steps (for reference see **Figure 4** and section **1.5 About DynaFlex II Components**):
 
-1.  For best results, use the cable that is included with the device or another cable from **<a name="table-3---dynaflex-ii-accessories"></a>
-**Table 3** – DynaFlex II Accessories** on page **7**. These cables are designed specifically for DynaFlex II products and include ferrite shielding at both ends of the cable to reduce emissions and interference. If the solution design requires an alternate cable, contact MagTek for assistance with ferrite selection and placement, and with connector overmold design.
+<a name="table-4---dynaflex-ii-accessories-on-page-7-these-cables-are-designed-specifically-for-dynaflex-ii-products-and-include-ferrite-shielding-at-both-ends-of-the-cable-to-reduce-emissions-and-interference-if-the-solution-design-requires-an-alternate-cable-contact-magtek-for-assistance-with-ferrite-selection-and-placement-and-with-connector-overmold-design"></a>
+**Table 4** – DynaFlex II Accessories** on page **7**. These cables are designed specifically for DynaFlex II products and include ferrite shielding at both ends of the cable to reduce emissions and interference. If the solution design requires an alternate cable, contact MagTek for assistance with ferrite selection and placement, and with connector overmold design.
 2.  Connect the USB-C end of the cable to DynaFlex II or DynaFlex II PED.
 3.  If you plan to route the cable out the back of the device, route the cable through the cable management clip to change its direction. Even if you are not routing out the back, you may use the cable clip for strain relief, to help stabilize the mechanical connection when cardholders or operators move the device or the cable.
 4.  Route the cable in the desired direction (e.g., out the back, left, right, down into the countertop, or into the mounting compartment of a kiosk).
 5.  Connect the other end of the USB cable to the charger or to the host’s USB port.
 6.  As soon as the device starts receiving power through USB, it automatically powers on.
-7.  If the specific device serial number you are connecting has not been connected to the host before, the device shows **Welcome** on the display, and the Windows system tray on the host reports it is **Setting up a device** (see **<a name="figure-5---setting-up-a-device-when-installation-is-complete-approximately-30-seconds-later-depending-on-the-host-windows-reports-device-is-ready-see-figure-33-device-is-ready-and-the-device-shows-in-windows-device-manager-under-human-interface-devices-as-two-devices-hid-compliant-vendor-defined-device-with-vid-0801-and-pid-2020-and-usb-input-device"></a>
-**Figure 5** – Setting Up a Device**), When installation is complete (approximately 30 seconds later depending on the host), Windows reports **Device is ready**,(see **<a name="figure-7---device-is-ready"></a>
-**Figure 7** – Device is Ready**) and the device shows in Windows Device Manager under **Human Interface Devices** as two devices: **HID-compliant vendor-defined device** with VID **0801** and PID **2020**, and **USB Input Device**.
+<a name="figure-5---setting-up-a-device-when-installation-is-complete-approximately-30-seconds-later-depending-on-the-host-windows-reports-device-is-ready-see-figure-33-device-is-ready-and-the-device-shows-in-windows-device-manager-under-human-interface-devices-as-two-devices-hid-compliant-vendor-defined-device-with-vid-0801-and-pid-2020-and-usb-input-device"></a>
+**Figure 5** – Setting Up a Device**), When installation is complete (approximately 30 seconds later depending on the host), Windows reports **Device is ready**,(see **Figure 7 - Device is Ready**) and the device shows in Windows Device Manager under **Human Interface Devices** as two devices: **HID-compliant vendor-defined device** with VID **0801** and PID **2020**, and **USB Input Device**.
 
 ![](<DynaFlex II PED Images/d5841466310637ef396b297725110ce3.png>)
 
@@ -392,7 +391,7 @@ When designing an enclosure or mounting bracket, make sure there is adequate cle
 
 ![](<DynaFlex II PED Images/a3bfa6ff455e43de3907e3c781d0e291.png>)
 
-**<a name="figure-14---unobstructed-view-of-card-insertion-slot-swipe-path-and-contactless-landing-zone"></a>
+<a name="figure-14---unobstructed-view-of-card-insertion-slot-swipe-path-and-contactless-landing-zone"></a>
 **Figure 14** – Unobstructed View of Card Insertion Slot, Swipe Path and Contactless Landing Zone**
 
 As a security measure, the device must be installed such that cardholders have a full, unobstructed view of the housing around the card insertion slot opening (“entry zone”) and MSR swipe path prior to insertion or swipe (see
@@ -443,7 +442,7 @@ To mount the charging station to a countertop, table, or flat surface using the 
 
 ![](<DynaFlex II PED Images/761ed1d625d3692b8d2bda39c2ef139e.png>)
 
-**<a name="figure-19---connecting-dynaflex-ii-to-the-optional-charging-station"></a>
+<a name="figure-19---connecting-dynaflex-ii-to-the-optional-charging-station"></a>
 **Figure 19** – Connecting DynaFlex II to the Optional Charging Station**
 
 # Operation
@@ -642,7 +641,7 @@ When powered on, DynaFlex II starts in the idle / waiting state and shows a **We
 
 Figure 47 Welcome Screen
 
-The table of symbols below describes the various power level and charge status icons. See **<a name="table-9---battery-power-level-and-charge-status-icons"></a>
+<a name="table-9---battery-power-level-and-charge-status-icons"></a>
 **Table 9** – Battery Power Level and Charge Status Icons.**
 
 <a name="table-10---battery-power-level-and-charge-status-icons"></a>
@@ -670,8 +669,8 @@ To charge the device without an optional charging station, connect it to a USB c
 To charge the device in the optional charging station *for power only (no USB communication)*:
 
 1.  Make sure the charging station is properly installed and is receiving USB power. See section **3.3.4 How to Mount the Charging Station**.
-2.  Place the device in the charging station with the charging contacts pointing into the charging station and the device’s face pointing toward the ceiling as shown in **<a name="figure-19---connecting-dynaflex-ii-to-the-optional-charging-station"></a>
-**Figure 19** – Connecting DynaFlex II to the Optional Charging Station**.
+<a name="figure-26---connecting-dynaflex-ii-to-the-optional-charging-station"></a>
+**Figure 26** – Connecting DynaFlex II to the Optional Charging Station**.
 3.  Check the device’s LEDs to make sure it is charging.
 
 For important information about the device’s power systems, optimal charging methods during regular use, optimal handling and storage, and other information about keeping the device’s power systems in the best possible condition, see section **2.3 Handling to Avoid Accidental Tamper** and section **4.6.1 About Power**.
@@ -846,7 +845,7 @@ To tap a contactless card or smartphone, follow these steps:
 
 ![](<DynaFlex II PED Images/7ac420b4615e876636fe3b9ff87dc498.png>)![](<DynaFlex II PED Images/ee90868d2735539ada2487190c34d096.png>)![](<DynaFlex II PED Images/d6e835dcc95fcbc5ab527bbca81317dd.png>)![](<DynaFlex II PED Images/785b4eb732880d763908624e901ed5c5.png>)
 
-**<a name="figure-33---tap-read-is-complete"></a>
+<a name="figure-33---tap-read-is-complete"></a>
 **Figure 7** – Tap Read Is Complete**
 
 ### How to Tap Contactless NFC Tags / MIFARE Classic / MIFARE DESFire /MIFARE Plus Cards and Send Pass-through Commands
@@ -997,7 +996,7 @@ After the cardholder enters the Sale Amount and presses **Enter**, the device pr
 |-------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Do not use a stylus or other hard object on the touchscreen. The touchscreen is designed for fingers only and can be scratched or damaged if misused. |
 
-When a device with a touchscreen display prompts cardholders with a **PLEASE SIGN** page, (**<a name="figure-46---signature-capture-requested-cardholders-should-use-the-tip-of-their-finger-to-press-and-glide-against-the-screen-to-sign-then-press-the-ok-button-to-clear-the-current-signature-on-the-display-and-start-over-press-the-clear-button"></a>
+<a name="figure-46---signature-capture-requested-cardholders-should-use-the-tip-of-their-finger-to-press-and-glide-against-the-screen-to-sign-then-press-the-ok-button-to-clear-the-current-signature-on-the-display-and-start-over-press-the-clear-button"></a>
 **Figure 25** – Signature Capture Requested)** cardholders should use the tip of their finger to *press and glide against the screen to sign*, then press the **OK** button. To clear the current signature on the display and start over, press the **Clear** button.
 
 ![Shape Description automatically generated](<DynaFlex II PED Images/3a6e878c615967b9e83cd56498af20b6.png>)
