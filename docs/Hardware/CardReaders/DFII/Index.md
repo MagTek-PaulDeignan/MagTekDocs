@@ -1,7 +1,7 @@
 ---
 title: DynaFlex II
 layout: home
-parent: Card Readers & OEM Components
+parent: MMS Dyna Devices
 nav_order: 1
 
 ---
