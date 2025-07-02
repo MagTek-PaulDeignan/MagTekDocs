@@ -1,7 +1,7 @@
 ---
 title: MagneSafe V5 Secure Card Reader Authenticators
 layout: home
-parent: Hardware
+parent: Card Readers & OEM Components
 nav_order: 2
 ---
 

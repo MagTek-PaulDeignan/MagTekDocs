@@ -1,7 +1,7 @@
 ---
 title: Magnetic Stripe Card Readers and Keypad
 layout: home
-parent: Hardware
+parent: Card Readers & OEM Components
 nav_order: 3
 ---
 

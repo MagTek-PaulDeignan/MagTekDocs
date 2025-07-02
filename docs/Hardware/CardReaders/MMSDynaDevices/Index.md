@@ -1,7 +1,7 @@
 ---
 title: MMS Dyna Devices
 layout: home
-parent: Hardware
+parent: Card Readers & OEM Components
 nav_order: 1
 ---
 
