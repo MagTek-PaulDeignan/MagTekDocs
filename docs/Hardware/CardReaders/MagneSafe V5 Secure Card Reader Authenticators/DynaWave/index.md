@@ -5,7 +5,7 @@ parent: MagneSafe V5 Secure Card Reader Authenticators
 nav_order: 5
 ---
 
-# DynaPro Go
+# DynaWave
 
 ![DynaWave Image](Images/img01.jpg)
 
