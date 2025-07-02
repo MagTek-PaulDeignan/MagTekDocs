@@ -10,7 +10,7 @@ nav_order: 4
 ![DynaPro Go Image](Images/img01.jpg)
 
 
-Handheld and versatile, ready for mobile payments and secure PIN entry
+Handheld and versatile, ready for mobile payments and secure PIN entry.
 
 [Installation and Operation Manual](https://www.magtek.com/content/documentationfiles/d998200129.pdf)
 
