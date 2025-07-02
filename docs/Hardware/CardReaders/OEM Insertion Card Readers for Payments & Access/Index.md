@@ -2,7 +2,7 @@
 title: OEM Insertion Card Readers for Payments & Access
 layout: home
 parent: Hardware
-nav_order: 2
+nav_order: 3
 ---
 
 # OEM Insertion Card Readers for Payments & Access
