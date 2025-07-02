@@ -4,6 +4,25 @@ layout: home
 parent: DynaFlex II GO
 nav_order: 1
 ---
+<style>
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+
+th {
+  background-color: black;
+  color: white;
+}
+</style>
+
 <button class="btn js-toggle-dark-mode">Preview dark color scheme</button>
 
 <script>
