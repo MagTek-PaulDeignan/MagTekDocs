@@ -2,7 +2,7 @@
 title: oDynamo
 layout: home
 parent: OEM Insertion Card Readers for Payments & Access
-nav_order: 5
+nav_order: 3
 ---
 
 # oDynamo
