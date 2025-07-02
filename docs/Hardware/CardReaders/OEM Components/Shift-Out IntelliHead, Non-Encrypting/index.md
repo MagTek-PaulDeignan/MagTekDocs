@@ -11,5 +11,5 @@ nav_order: 2
 
 MagTek’s Shift-Out IntelliHead consists of a high-performance multi-channel fully integrated magnetic stripe decoder chip encapsulated within a low-profile magnetic read-head.
 
-[Technical Reference Manual](hhttps://www.magtek.com/content/documentationfiles/d99875258.pdf)
+[Technical Reference Manual](https://www.magtek.com/content/documentationfiles/d99875258.pdf)
 
