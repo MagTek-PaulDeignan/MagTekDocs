@@ -119,70 +119,34 @@ Table 01 - Revisions
 
 # Table of Contents
 
-[Table of Contents](#_Toc191988842)
+- [Overview](#overview)
+  - [Purpose](#purpose)
+  - [Benefits](#benefits)
+    - [iOS System Requirements](#ios-system-requirements)
+    - [RMS iOS Application](#rms-ios-application)
+- [Magensa Remote Services](#magensa-remote-services)
+- [Installation and User Interface](#installation-and-user-interface)
+  - [Installation](#installation)
+  - [Tabs](#tabs)
+    - [Connect](#connect)
+    - [Device](#device)
+    - [Configs](#configs)
+    - [Commands](#commands)
+    - [About](#about)
+- [User Instructions](#user-instructions)
+  - [Connect to an iOS Device](#connect-to-an-ios-device)
+    - [Lighting/USB-C Cable](#lightingusb-c-cable)
+    - [Bluetooth LE](#bluetooth-le)
+    - [Bluetooth LE - Connecting a MagneSafe Device](#bluetooth-le---connecting-a-magnesafe-device)
+    - [WebSocket](#websocket)
+  - [Update Firmware and EMV Tags/CAPKS](#update-firmware-and-emv-tagscapks)
+    - [Updates Successful](#updates-successful)
+  - [Configurations](#configurations)
+  - [Commands](#commands-1)
+- [Glossary of Terms](#glossary-of-terms)
+- [Related Documentation](#related-documentation)
+- [Warranty and Software License](#warranty-and-software-license)
 
-[1 Overview](#_Toc191988843)
-
-[1.1 Purpose](#_Toc191988844)
-
-[1.2 Benefits](#_Toc191988845)
-
-[iOS System Requirements](#_Toc191988846)
-
-[RMS iOS Application](#_Toc191988847)
-
-[2 Magensa Remote Services](#magensa-remote-services)
-
-[3 Installation and User Interface](#_Toc191988849)
-
-[3.1 Installation](#_Toc191988850)
-
-[3.2 Tabs](#tabs)
-
-[3.2.1 Connect](#connect)
-
-[3.2.2 Device](#device)
-
-[3.2.3 Configs](#configs)
-
-[3.2.4 Commands](#commands)
-
-[3.2.5 About](#about)
-
-[4 User Instructions](#_Toc191988857)
-
-[4.1 Connect to an iOS Device](#_Toc191988858)
-
-[4.1.1 Lighting/USB-C Cable](#lightingusb-c-cable)
-
-[4.1.2 Bluetooth LE](#bluetooth-le)
-
-[4.1.2.1 Bluetooth LE - Connecting a MagneSafe
-Device](#bluetooth-le---connecting-a-magnesafe-device)
-
-[4.1.3 WebSocket](#_Toc191988862)
-
-[4.2 Update Firmware and EMV Tags/CAPKS](#update-firmware-and-emv-tagscapks)
-
-[4.2.1.1 Updates Successful](#_Toc191988864)
-
-[4.3 Configurations](#configurations)
-
-[4.4 Commands](#_Toc191988866)
-
-[Appendix A Glossary of Terms](#_Toc191988867)
-
-[Appendix B Related Documentation](#_Toc191988868)
-
-[B.1 Installation and Operation Manuals](#_Toc191988869)
-
-[B.2 Programmers Manuals](#_Toc191988870)
-
-[Appendix C Warranty and Software License](#_Toc191988871)
-
-[C.1 Limited Warranty](#_Toc191988872)
-
-[C.2 SOFTWARE LICENSE AGREEMENT](#_Toc191988873)
 
 # Overview
 
