@@ -40,6 +40,66 @@ const toggleDarkMode = document.querySelector('.js-toggle-dark-mode');
    }
  });
  </script>
+<style>
+#floating-toc {
+  position: fixed;
+  top: 100px;
+  right: 20px;
+  width: 260px;
+  max-height: 80vh;
+  overflow-y: auto;
+  padding: 12px;
+  background: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 0.9em;
+  z-index: 999;
+}
+#floating-toc ul {
+  list-style: none;
+  padding-left: 0;
+}
+#floating-toc li {
+  margin: 4px 0;
+}
+#floating-toc a {
+  text-decoration: none;
+  color: #0366d6;
+}
+#floating-toc a:hover {
+  text-decoration: underline;
+}
+</style>
+
+<div id="floating-toc">
+  <strong>On this page</strong>
+  <ul id="toc-list"></ul>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const headings = document.querySelectorAll("h2, h3, h4");
+  const tocList = document.getElementById("toc-list");
+
+  headings.forEach((heading) => {
+    const text = heading.textContent;
+    const anchor = heading.id || text.toLowerCase().replace(/[^\w\s-]/g, '').replace(/\s+/g, '-');
+    heading.id = anchor;
+
+    const li = document.createElement("li");
+    li.style.marginLeft = heading.tagName === "H3" ? "10px" :
+                          heading.tagName === "H4" ? "20px" : "0";
+
+    const link = document.createElement("a");
+    link.href = `#${anchor}`;
+    link.textContent = text;
+
+    li.appendChild(link);
+    tocList.appendChild(li);
+  });
+});
+</script>
+
 
 # MMS Dyna Devices Master Programmer's Manual 
 
