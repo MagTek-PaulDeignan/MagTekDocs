@@ -721,13 +721,14 @@ of physical connection layers, which can include universal serial bus (USB)
 acting as a vendor-defined HID device (“USB HID”), wireless LAN (WLAN),
 Bluetooth®, Bluetooth® Low Energy (“Bluetooth® LE”), RS-232, Apple Lightning,
 and so on. The set of available physical connection types and the data formats
-available on each connection type is device dependent. [**Table 2**](#table-2---device-connection-types--data-formats) shows the
+available on each connection type is device dependent. [[**Table 2**](#table-2---device-connection-types--data-formats)](#table-2---device-connection-types--data-formats) shows the
 physical connection types available on each product, and the data formats
 supported on each connection type for that device. Details about connection
 types and formats can be found in section [**2 Connection Types**](#connection-types). Section
 headings in this document include tags that indicate which connection types
 and/or data formats they apply to.
 
+<a name="table-2---device-connection-types--data-formats"></a>
 <a name="table-2---device-connection-types--data-formats"></a>
 Table 2 - Device Connection Types / Data Formats
 
@@ -755,10 +756,11 @@ Much of the information in this document is applicable to multiple devices. When
 developing solutions that use a specific device or set of devices, integrators
 must be aware of each device’s connection types, data formats, features, and
 configuration options, which affect the availability and behavior of some
-commands. [**Table 3**](#table-3---device-features) provides a list of device features that may impact command
+commands. [[**Table 3**](#table-3---device-features)](#table-3---device-features) provides a list of device features that may impact command
 availability and behavior. All section headings in this document include tags
 that indicate which features they apply to.
 
+<a name="table-3---device-features"></a>
 <a name="table-3---device-features"></a>
 Table 3 - Device Features
 
@@ -786,7 +788,7 @@ Table 3 - Device Features
 
 # Connection Types
 
-[**Table 2**](#table-2---device-connection-types--data-formats) on page **36** includes a list of connection types available for
+[[**Table 2**](#table-2---device-connection-types--data-formats)](#table-2---device-connection-types--data-formats) on page **36** includes a list of connection types available for
 each device. The following subsections provide details developers will need to
 communicate with the device using each connection type.
 
@@ -889,14 +891,14 @@ general sequence to send a request and receive a response:
     refer to this length as the “Report Length” or “Report Count”). MMS devices
     using USB HID generally use a payload length of 64 bytes.
     1.  If the message length fits the **Single Packet** payload length of 62
-        bytes, wrap the message in the Single Packet format shown in [**Table 4**](#table-4---single-packet-format).
+        bytes, wrap the message in the Single Packet format shown in [[**Table 4**](#table-4---single-packet-format)](#table-4---single-packet-format).
     2.  If the message length does not fit the Single Packet payload length,
         wrap the message in the format of a single **Multi-Packet Head**,
         followed by zero or more **Multi-Packet Middles** as necessary, followed
-        by one **Multi-Packet Tail**, as shown in [**Table 5**](#table-5---multi-packet-head-format), [**Table 6**](#table-6---multi-packet-middle-format), and
-        [**Table 7**](#table-7---multi-packet-tail-format). If necessary, the host can cancel in the middle of a
+        by one **Multi-Packet Tail**, as shown in [[**Table 5**](#table-5---multi-packet-head-format)](#table-5---multi-packet-head-format), [[**Table 6**](#table-6---multi-packet-middle-format)](#table-6---multi-packet-middle-format), and
+        [[**Table 7**](#table-7---multi-packet-tail-format)](#table-7---multi-packet-tail-format). If necessary, the host can cancel in the middle of a
         Multi-Packet message using the **Multi-Packet Cancel** packet shown in
-        [**Table 8**](#table-8---multi-packet-cancel-format).
+        [[**Table 8**](#table-8---multi-packet-cancel-format)](#table-8---multi-packet-cancel-format).
 6.  For each packet, send an Output Report to the device, and wait for the
     device to ACK the output report USB packet. Upon ACK, either send the next
     packet in the sequence (if any), or begin listening for an Input Report
@@ -912,6 +914,7 @@ general sequence to send a request and receive a response:
     documentation for the command.
 
 <a name="table-4---single-packet-format"></a>
+<a name="table-4---single-packet-format"></a>
 Table 4 - Single Packet Format
 
 | Byte Offset | Field Name         | Field Value                          |
@@ -922,6 +925,7 @@ Table 4 - Single Packet Format
 | N+2..63     | Padding, if needed | 0x00                                 |
 
 <a name="table-5---multi-packet-head-format"></a>
+<a name="table-5---multi-packet-head-format"></a>
 Table 5 - Multi-Packet Head Format
 
 | Byte Offset | Field Name     | Field Value                                                                                                      |
@@ -930,6 +934,7 @@ Table 5 - Multi-Packet Head Format
 | 1..4        | Message Length | Total message length before decomposing into packets, denoted as **N**. If 62 or less, use Single Packet Format. |
 | 5..63       | Message Part   | First 59 bytes of message from section **2.7**                                                                   |
 
+<a name="table-6---multi-packet-middle-format"></a>
 <a name="table-6---multi-packet-middle-format"></a>
 Table 6 - Multi-Packet Middle Format
 
@@ -940,6 +945,7 @@ Table 6 - Multi-Packet Middle Format
 | 3..63       | Message Part  | Next 61 bytes of message from section **2.7**                                            |
 
 <a name="table-7---multi-packet-tail-format"></a>
+<a name="table-7---multi-packet-tail-format"></a>
 Table 7 - Multi-Packet Tail Format
 
 | Byte Offset | Field Name               | Field Value                                                                                       |
@@ -949,6 +955,7 @@ Table 7 - Multi-Packet Tail Format
 | 2..n+1      | Message Part             | Final n bytes of message exactly as described in section **2.7**                                  |
 | n+2..63     | Padding, if needed       | 0x00                                                                                              |
 
+<a name="table-8---multi-packet-cancel-format"></a>
 <a name="table-8---multi-packet-cancel-format"></a>
 Table 8 - Multi-Packet Cancel Format
 
@@ -985,7 +992,7 @@ accordance with the USB HID specification.
 Some response and notification messages defined in section **2.7** may exceed
 the maximum packet length allowed by USB HID. If the message can’t fit into one
 packet, the device sends multiple packets, each containing partial message data
-using the same message packet structures described in section **2.1.3**, [**Table 4**](#table-4---single-packet-format), [**Table 5**](#table-5---multi-packet-head-format), [**Table 6**](#table-6---multi-packet-middle-format), [**Table 7**](#table-7---multi-packet-tail-format), [**Table 8**](#table-8---multi-packet-cancel-format).
+using the same message packet structures described in section **2.1.3**, [[**Table 4**](#table-4---single-packet-format)](#table-4---single-packet-format), [[**Table 5**](#table-5---multi-packet-head-format)](#table-5---multi-packet-head-format), [[**Table 6**](#table-6---multi-packet-middle-format)](#table-6---multi-packet-middle-format), [[**Table 7**](#table-7---multi-packet-tail-format)](#table-7---multi-packet-tail-format), [[**Table 8**](#table-8---multi-packet-cancel-format)](#table-8---multi-packet-cancel-format).
 
 Upon receiving an input report, the host can determine the size of message
 packet Input Reports by looking at the HID report descriptor. The host can
@@ -1316,7 +1323,7 @@ For connection types that do not include error detection and correction, such as
 serial protocols, which provides a means for the host and device to
 re-synchronize in the case of connection errors by watching for specifically
 reserved frame delimiters marking the start and end of a message. The MMS SLIP
-wrapper is defined in [**Table 9**](#table-9---mms-slip-wrapper).
+wrapper is defined in [[**Table 9**](#table-9---mms-slip-wrapper)](#table-9---mms-slip-wrapper).
 
 All messages start with SLIP’s frame delimiter **C0**, and must consider SLIP
 escape sequences that deal with occurrences of C0 inside the SLIP data frame:
@@ -1343,6 +1350,7 @@ For general information about messages, see section **2.7**.
 
 For specific messages, see sections [**6 Commands**](#commands) and **7 Notifications**.
 
+<a name="table-9---mms-slip-wrapper"></a>
 <a name="table-9---mms-slip-wrapper"></a>
 Table 9 - MMS SLIP Wrapper
 
@@ -1588,6 +1596,7 @@ inside the TLV data object.
 See **Table 10 below** for an example.
 
 <a name="table-10---tlv-table-example"></a>
+<a name="table-10---tlv-table-example"></a>
 Table 10 - TLV Table Example
 
 | Tag    | Len | Value / Description                                                                                                                                                                                                                                                                                                                    | Typ | Req | Default  |
@@ -1611,6 +1620,7 @@ below.
 #### Request Message
 
 <a name="table-11---request-message-format"></a>
+<a name="table-11---request-message-format"></a>
 Table 11 - Request Message Format
 
 | Tag                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                | Len   | Value / Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                | Typ | Req | Default |
@@ -1627,6 +1637,7 @@ Table 11 - Request Message Format
 
 #### Response Message
 
+<a name="table-12---response-message-format"></a>
 <a name="table-12---response-message-format"></a>
 Table 12 - Response Message Format
 
@@ -1648,6 +1659,7 @@ Table 12 - Response Message Format
 | 84                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 | var   | Response Payload As documented in the message’s Response table in section [**6 Commands**](#commands).                                                                                                                                                                                                | B   | O   |         |
 | 9E                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 | var   | Reserved                                                                                                                                                                                                                                                                                 | B   | O   |         |
 
+<a name="table-13---operation-status-detail-codes"></a>
 <a name="table-13---operation-status-detail-codes"></a>
 Table 13 - Operation Status Detail Codes
 
@@ -1766,6 +1778,7 @@ Table 13 - Operation Status Detail Codes
 #### Notification Message
 
 <a name="table-14---notification-message-format"></a>
+<a name="table-14---notification-message-format"></a>
 Table 14 - Notification Message Format
 
 | Tag                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                | Len   | Value / Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    | Typ | Req | Default |
@@ -1797,6 +1810,7 @@ successful invocation of **Command 0xD811 - Start Send File to Device
 **Command 0xD821 - Start Get File from Device**.
 
 <a name="table-15---data-file-message-format"></a>
+<a name="table-15---data-file-message-format"></a>
 Table 15 - Data File Message Format
 
 | Tag                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                | Len | Value / Description                                                                                                                                                                                                                                                                                  | Typ | Req | Default |
@@ -1810,6 +1824,7 @@ Table 15 - Data File Message Format
 | /null                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              | (4) | File Type The file type as defined in **Command Group 0xD8nn - File Operations**                                                                                                                                                                                                                     | B   | R   |         |
 | 84                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 | var | File Payload As documented in section **6.7.1 About Files**.                                                                                                                                                                                                                                         | B   | R   |         |
 
+<a name="table-16---data-file-message-example"></a>
 <a name="table-16---data-file-message-example"></a>
 Table 16 - Data File Message Example
 
@@ -1846,12 +1861,13 @@ same underlying standards. Describing all possible formats is beyond the scope
 of this document, but this section describes how to parse data from tracks 1, 2,
 and 3 in a generic ISO/ABA compliant format as an example.
 
-[**Table 17**](#table-17---example-generic-isoaba-track-data-format) shows an example of ISO/ABA track data the device sends to the
+[[**Table 17**](#table-17---example-generic-isoaba-track-data-format)](#table-17---example-generic-isoaba-track-data-format) shows an example of ISO/ABA track data the device sends to the
 host, using unmasked placeholder numbers to make it easier to see the relative
 positions of the values embedded in the track data. It is important to note that
 some cards do not include Track 3 data. Manually entered data does not include
 Track 3.
 
+<a name="table-17---example-generic-isoaba-track-data-format"></a>
 <a name="table-17---example-generic-isoaba-track-data-format"></a>
 Table 17 - Example Generic ISO/ABA Track Data Format
 
@@ -1861,7 +1877,7 @@ Table 17 - Example Generic ISO/ABA Track Data Format
 | Track 2 Data                      | ;5555555555555555=33338880004444006?                        |
 | Track 3 Data                      | ;5555555555555555=333388800044440000006?                    |
 
-The example track data in [**Table 17**](#table-17---example-generic-isoaba-track-data-format) can be interpreted as follows:
+The example track data in [[**Table 17**](#table-17---example-generic-isoaba-track-data-format)](#table-17---example-generic-isoaba-track-data-format) can be interpreted as follows:
 
 -   The **%**, **?**, and **;** are Sentinels / delimiters, and are taken
     directly from the data on the card.
@@ -1897,6 +1913,7 @@ The example track data in [**Table 17**](#table-17---example-generic-isoaba-trac
 The Display Strings type provides a pre-defined set of messages by string ID
 that the host and device use for various user interface features.
 
+<a name="table-18---display-string-ids-and-strings"></a>
 <a name="table-18---display-string-ids-and-strings"></a>
 Table 18 - Display String IDs and Strings
 
@@ -1991,12 +2008,13 @@ possible values are an ORed bitmask using the following elements:
 
 ## EMV ARQC Type
 
-The device formats ARQC messages as shown in [**Table 19**](#table-19---emv-arqc-dynapro-format-type). The default is an EMV
+The device formats ARQC messages as shown in [[**Table 19**](#table-19---emv-arqc-dynapro-format-type)](#table-19---emv-arqc-dynapro-format-type). The default is an EMV
 standard list of ARQC message tags. The host may also customize the contents of
 ARQC messages by setting **Property 1.1.1.1.1.2 EMV ARQC Message Tag List**.
 
 ### EMV ARQC (DynaPro Format) Type
 
+<a name="table-19---emv-arqc-dynapro-format-type"></a>
 <a name="table-19---emv-arqc-dynapro-format-type"></a>
 Table 19 - EMV ARQC (DynaPro Format) Type
 
@@ -2024,7 +2042,7 @@ Table 19 - EMV ARQC (DynaPro Format) Type
 | ///DF5D                                                                                                                                                                                                                                             | 06  | Tip Amount                                                                                                                                                                                                                                                                                                                                                                                                                          | B   | O   |         |
 | ///DF5E                                                                                                                                                                                                                                             | 06  | Tax Amount                                                                                                                                                                                                                                                                                                                                                                                                                          | B   | O   |         |
 | ///F8                                                                                                                                                                                                                                               | var | Container for Encrypted Data                                                                                                                                                                                                                                                                                                                                                                                                        | T   | R   |         |
-| ////DFDF59                                                                                                                                                                                                                                          | var | Encrypted Data Primitive Decrypt the value of this TLV data object using the algorithm and variant specified in the **Encrypted Transaction Data KSN** parameter and the **Encrypted Transaction Data Encryption Type** parameter to read its contents. See [**Table 20**](#table-20---emv-arqc-dynapro-format-dfdf59-decrypted-contents) on page **71** for the data structure as it should appear after decryption.                                                                                | B   | R   |         |
+| ////DFDF59                                                                                                                                                                                                                                          | var | Encrypted Data Primitive Decrypt the value of this TLV data object using the algorithm and variant specified in the **Encrypted Transaction Data KSN** parameter and the **Encrypted Transaction Data Encryption Type** parameter to read its contents. See [[**Table 20**](#table-20---emv-arqc-dynapro-format-dfdf59-decrypted-contents)](#table-20---emv-arqc-dynapro-format-dfdf59-decrypted-contents) on page **71** for the data structure as it should appear after decryption.                                                                                | B   | R   |         |
 | ////DFDF56                                                                                                                                                                                                                                          | var | Encrypted Transaction Data KSN                                                                                                                                                                                                                                                                                                                                                                                                      | B   | R   |         |
 | ////DFDF57                                                                                                                                                                                                                                          | 01  | Encrypted Transaction Data Encryption Type See section **4.4 Encryption Type** for a list of valid values.                                                                                                                                                                                                                                                                                                                          | B   | R   |         |
 | ////DFDF58                                                                                                                                                                                                                                          | 01  | Number of Padding Bytes Number of bytes added to DFDF59 value to force its length to a multiple of 8 bytes for TDES, or 16 bytes for AES.                                                                                                                                                                                                                                                                                           | B   | R   |         |
@@ -2040,8 +2058,9 @@ configuration. As a requirement for using DUKPT encryption algorithms, the
 device pads it so the length of its value is a multiple of 8 bytes for TDES, or
 16 bytes for AES. The device uses container DFDF58 to report how many bytes of
 data object DFDF59 are padding. Data object DFDF59 itself is formatted like
-[**Table 20**](#table-20---emv-arqc-dynapro-format-dfdf59-decrypted-contents) after the host decrypts it.
+[[**Table 20**](#table-20---emv-arqc-dynapro-format-dfdf59-decrypted-contents)](#table-20---emv-arqc-dynapro-format-dfdf59-decrypted-contents) after the host decrypts it.
 
+<a name="table-20---emv-arqc-dynapro-format-dfdf59-decrypted-contents"></a>
 <a name="table-20---emv-arqc-dynapro-format-dfdf59-decrypted-contents"></a>
 Table 20 - EMV ARQC (DynaPro Format) DFDF59 Decrypted Contents
 
@@ -2287,6 +2306,7 @@ Table 28 – EMV Batch Data (DynaPro Format) DFDF59 Decrypted Contents
 | null     | (var) | Padding to force DFDF59 plus padding to be a multiple of 8 bytes                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      | B   |     |         |
 
 <a name="table-29---emv-batch-data-dynapro-format-dfdf59-decrypted-contents"></a>
+<a name="table-29---emv-batch-data-dynapro-format-dfdf59-decrypted-contents"></a>
 Table 29 - EMV Batch Data (DynaPro Format) DFDF59 Decrypted Contents
 
 | Tag  | Len   | Value / Description                                                                                                                                             | Typ | Req | Default |
@@ -2302,6 +2322,7 @@ Table 29 - EMV Batch Data (DynaPro Format) DFDF59 Decrypted Contents
 Merchant Data is normally used by the host for receipt printing. The contents of
 this container are not customizable.
 
+<a name="table-30---merchant-data-container"></a>
 <a name="table-30---merchant-data-container"></a>
 Table 30 - Merchant Data Container
 
@@ -2354,6 +2375,7 @@ possible valid values and their effects on device behavior, see **EMV Integrated
 Circuit Card Specifications for Payment Systems v4.3**.
 
 <a name="table-31---emv-configuration-terminal-file-type"></a>
+<a name="table-31---emv-configuration-terminal-file-type"></a>
 Table 31 - EMV Configuration Terminal File Type
 
 | Tag                                                                                        | Len | Value / Description                                     | Typ | Req | Example        |
@@ -2396,6 +2418,7 @@ instance of an Entry Point Table when it loads the **EMV Entry Point
 Configuration File Type** .
 
 <a name="table-32---emv-configuration-processing-file-type"></a>
+<a name="table-32---emv-configuration-processing-file-type"></a>
 Table 32 - EMV Configuration Processing File Type
 
 | Tag                                                                                                                                | Len     | Value / Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 | Typ | Req | Example              |
@@ -2433,6 +2456,7 @@ The host uses **Command 0xD812 - Start Send File to Device (Unsecured)** to load
 this file type to control the behavior of the device’s EMV kernels.
 
 <a name="table-33---emv-entry-point-configuration-file-type-header"></a>
+<a name="table-33---emv-entry-point-configuration-file-type-header"></a>
 Table 33 - EMV Entry Point Configuration File Type Header
 
 | Tag                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     | Value (hex) | Description |
@@ -2443,6 +2467,7 @@ Table 33 - EMV Entry Point Configuration File Type Header
 
 ### 4.10.1 Mastercard MCL Entry Point Table
 
+<a name="table-34---mastercard-mcl-entry-point-table"></a>
 <a name="table-34---mastercard-mcl-entry-point-table"></a>
 Table 34 - Mastercard MCL Entry Point Table
 
@@ -2490,6 +2515,7 @@ Table 34 - Mastercard MCL Entry Point Table
 ### 4.10.2 Visa payWave Entry Point Table
 
 <a name="table-35---visa-paywave-entry-point-table"></a>
+<a name="table-35---visa-paywave-entry-point-table"></a>
 Table 35 - Visa payWave Entry Point Table
 
 | Tag    | Len | Value / Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       | Typ | Req | Example           |
@@ -2514,6 +2540,7 @@ Table 35 - Visa payWave Entry Point Table
 
 ### 4.10.3 American Express Expresspay Entry Point Table
 
+<a name="table-36---american-express-expresspay-entry-point-table"></a>
 <a name="table-36---american-express-expresspay-entry-point-table"></a>
 Table 36 - American Express Expresspay Entry Point Table
 
@@ -2542,6 +2569,7 @@ Table 36 - American Express Expresspay Entry Point Table
 
 ### 4.10.4 Discover D-PAS Entry Point Table
 
+<a name="table-37---discover-d-pas-entry-point-table"></a>
 <a name="table-37---discover-d-pas-entry-point-table"></a>
 Table 37 - Discover D-PAS Entry Point Table
 
@@ -2590,6 +2618,7 @@ Table 38 – China Unionpay Entry Point Table
 
 ### 4.10.6 JCB Entry Point Table (Common Kernel Only)
 
+<a name="table-39---jcb-entry-point-table"></a>
 <a name="table-39---jcb-entry-point-table"></a>
 Table 39 - JCB Entry Point Table
 
@@ -2651,9 +2680,10 @@ MagTek provides tools that allow these settings to be loaded using a Microsoft
 Excel spreadsheet in xlsx format for more convenient authoring, review, and
 change tracking. For a reference sample spreadsheet, contact MagTek Support
 Services. The MagTek tools expect the spreadsheet to be formatted format as
-shown in [**Table 41**](#table-41---emv-configuration-ca-keys-file-type). Each CA Key to be supported is defined in a tab of the
+shown in [[**Table 41**](#table-41---emv-configuration-ca-keys-file-type)](#table-41---emv-configuration-ca-keys-file-type). Each CA Key to be supported is defined in a tab of the
 Excel file.
 
+<a name="table-41---emv-configuration-ca-keys-file-type"></a>
 <a name="table-41---emv-configuration-ca-keys-file-type"></a>
 Table 41 - EMV Configuration CA Keys File Type
 
@@ -2665,8 +2695,9 @@ Table 41 - EMV Configuration CA Keys File Type
 | DFDF7C | 01 or 03 | CA Public Key Exponent          | B   | R   | 03                                                          |
 | DFDF7D | 14       | CA Public Key Checksum          | B   | R   | EB FA 0D 5D 06 D8 CE 70 2D A3 EA E8 90 70 1D 45 E2 74 C8 45 |
 
-The MagTek tool converts the spreadsheet data into the format shown in [**Table 42**](#table-42---ca-keys-raw-format).
+The MagTek tool converts the spreadsheet data into the format shown in [[**Table 42**](#table-42---ca-keys-raw-format)](#table-42---ca-keys-raw-format).
 
+<a name="table-42---ca-keys-raw-format"></a>
 <a name="table-42---ca-keys-raw-format"></a>
 Table 42 - CA Keys Raw Format
 
@@ -2695,8 +2726,9 @@ MagTek provides tools that allow these settings to be loaded using a Microsoft
 Excel spreadsheet in xlsx format for more convenient authoring, review, and
 change tracking. For a reference sample spreadsheet, contact MagTek Support
 Services. The MagTek tools expect the spreadsheet to be formatted as shown in
-[**Table 43**](#table-43---emv-configuration-american-express-drl-set-file-type). Each DRL to be supported is defined in a tab of the Excel file.
+[[**Table 43**](#table-43---emv-configuration-american-express-drl-set-file-type)](#table-43---emv-configuration-american-express-drl-set-file-type). Each DRL to be supported is defined in a tab of the Excel file.
 
+<a name="table-43---emv-configuration-american-express-drl-set-file-type"></a>
 <a name="table-43---emv-configuration-american-express-drl-set-file-type"></a>
 Table 43 - EMV Configuration American Express DRL Set File Type
 
@@ -2707,8 +2739,9 @@ Table 43 - EMV Configuration American Express DRL Set File Type
 | DF26 | 06  | Reader CVM Required Limit            | B   | R   | 00 00 00 00 10 00 |
 
 The MagTek tool converts the spreadsheet data into the raw format shown in
-[**Table 44**](#table-44---raw-emv-configuration-american-express-drl-set-file-type):
+[[**Table 44**](#table-44---raw-emv-configuration-american-express-drl-set-file-type)](#table-44---raw-emv-configuration-american-express-drl-set-file-type):
 
+<a name="table-44---raw-emv-configuration-american-express-drl-set-file-type"></a>
 <a name="table-44---raw-emv-configuration-american-express-drl-set-file-type"></a>
 Table 44 -Raw EMV Configuration American Express DRL Set File Type
 
@@ -2731,6 +2764,7 @@ below. If the encryption is enabled in Command 0x1801, please refer to Encrypted
 Signature Capture File Type below.
 
 <a name="table-45---signature-capture-file-type"></a>
+<a name="table-45---signature-capture-file-type"></a>
 Table 45 - Signature Capture File Type
 
 | Tag | Len | Value / Description                                                                                                                                                                                                                                                                 | Typ | Req | Default                                                        |
@@ -2738,6 +2772,7 @@ Table 45 - Signature Capture File Type
 | 81  | 08  | Signature Window Width and Height Bytes 0..1 = Left edge (minimum value of all X coordinates) Bytes 2..3 = Right edge (maximum value of all X coordinates) Bytes 4..5 = Top edge (minimum value of all Y coordinates) Bytes 6..7 = Bottom edge (maximum value of all Y coordinates) | B   | R   | 0000 00FD 0000 0078 (landscape) 0000 00C8 0000 00B9 (portrait) |
 | 82  | var | Signature Coordinate Values List This is a blob that consists of a raw list of point coordinates representing the signature. Each coordinate is 4 bytes long, where the first 2 bytes are the X coordinate of that point and the second 2 bytes are the Y coordinate of that point. | B   | O   |                                                                |
 
+<a name="table-46---encrypted-signature-capture-file-type"></a>
 <a name="table-46---encrypted-signature-capture-file-type"></a>
 Table 46 - Encrypted Signature Capture File Type
 
@@ -2753,6 +2788,7 @@ Table 46 - Encrypted Signature Capture File Type
 | PKCS7 padding for MAC calculation, maximum 16 bytes, minimum 1 byte                   |     |                                                                                                                                                                                                                                           |     |     |         |
 | Four-byte MAC checksum. The host should calculate the MAC and verify that it matches. |     |                                                                                                                                                                                                                                           |     |     |         |
 
+<a name="table-47---encrypted-signature-capture-file-type-after-decryption"></a>
 <a name="table-47---encrypted-signature-capture-file-type-after-decryption"></a>
 Table 47 - Encrypted Signature Capture File Type (after decryption)
 
@@ -2787,6 +2823,7 @@ security operation, including the algorithms and methods to be used in that
 operation.
 
 <a name="table-48---security-operation-type"></a>
+<a name="table-48---security-operation-type"></a>
 Table 48 - Security Operation Type
 
 | Offset | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        | Typ | Req | Default |
@@ -2800,11 +2837,12 @@ Table 48 - Security Operation Type
 ## Security Parameters Type
 
 <a name="table-49---security-parameters-type"></a>
+<a name="table-49---security-parameters-type"></a>
 Table 49 - Security Parameters Type
 
 | Tag                                                                                   | Len | Value / Description                                                                                | Typ | Req                 | Default |     |         |
 |---------------------------------------------------------------------------------------|-----|----------------------------------------------------------------------------------------------------|-----|---------------------|---------|-----|---------|
-| 81                                                                                    | var | Operation This contains an instance of a  [**Table 46**](#table-46---encrypted-signature-capture-file-type) - Encrypted Signature Capture File Type Tag | Len | Value / Description | Typ     | Req | Default |
+| 81                                                                                    | var | Operation This contains an instance of a  [[**Table 46**](#table-46---encrypted-signature-capture-file-type)](#table-46---encrypted-signature-capture-file-type) - Encrypted Signature Capture File Type Tag | Len | Value / Description | Typ     | Req | Default |
 | F9                                                                                    | var | Container for MAC structure and generic data.                                                      | T   | R                   |         |     |         |
 | /81                                                                                   | var | MAC KSN, 10 bytes for TDES, 12 bytes for AES                                                       | B   | R                   |         |     |         |
 | /82                                                                                   | var | MAC Encryption Type                                                                                | B   | R                   |         |     |         |
@@ -2815,6 +2853,7 @@ Table 49 - Security Parameters Type
 | PKCS7 padding for MAC calculation, maximum 16 bytes, minimum 1 byte                   |     |                                                                                                    |     |                     |         |     |         |
 | Four-byte MAC checksum. The host should calculate the MAC and verify that it matches. |     |                                                                                                    |     |                     |         |     |         |
 
+<a name="table-47---encrypted-signature-capture-file-type-after-decryption"></a>
 <a name="table-47---encrypted-signature-capture-file-type-after-decryption"></a>
 Table 47 - Encrypted Signature Capture File Type (after decryption)
 
@@ -2901,6 +2940,7 @@ O
 ## Key Information Type
 
 <a name="table-50---key-information-type"></a>
+<a name="table-50---key-information-type"></a>
 Table 50 - Key Information Type
 
 | Tag | Len | Value / Description                                                                                      | Typ | Req | Default |
@@ -2972,6 +3012,7 @@ example, March 23, 2020 4:19PM is encoded as **2020-03-23T16:19** at minimum,
 but could also be **2020-03-23T16:19:00.000Z**.
 
 <a name="table-53---tr-31-block-fixed-header"></a>
+<a name="table-53---tr-31-block-fixed-header"></a>
 Table 53 - TR-31 Block Fixed Header
 
 | Offset | Name             | Fixed Value | Variable                                                                                                      |
@@ -2987,6 +3028,7 @@ Table 53 - TR-31 Block Fixed Header
 | 14..15 | Reserved         | ‘00’        |                                                                                                               |
 
 <a name="table-54---tr-31-key-type-table---usagealgorithmmode"></a>
+<a name="table-54---tr-31-key-type-table---usagealgorithmmode"></a>
 Table 54 - TR-31 Key Type Table - Usage/Algorithm/Mode
 
 | Key Type          | Usage | Algorithm AES/TDEA | Mode of Use (Both, To, From) |
@@ -2996,6 +3038,7 @@ Table 54 - TR-31 Key Type Table - Usage/Algorithm/Mode
 | Fixed MAC (CMAC)  | ‘M6’  | ‘A’ / ‘T’          | (‘C’, ’G’, ’V’)              |
 | Fixed Encrypt     | ‘D0’  | ‘A’ / ‘T’          | (‘B’, ‘E’, ‘D’)              |
 
+<a name="table-55---tr-31-optional-blocks"></a>
 <a name="table-55---tr-31-optional-blocks"></a>
 Table 55 - TR-31 Optional Blocks
 
@@ -3010,6 +3053,7 @@ Table 55 - TR-31 Optional Blocks
 | ‘21’ | MagTek Additional Key Info From **Table 56 - MagTek Custom TR-31 Small Optional Block** |
 
 <a name="table-56---magtek-custom-tr-31-small-optional-block"></a>
+<a name="table-56---magtek-custom-tr-31-small-optional-block"></a>
 Table 56 - MagTek Custom TR-31 Small Optional Block
 
 | Offset | Name           | Value           | Variable                                                             |
@@ -3022,6 +3066,7 @@ Table 56 - MagTek Custom TR-31 Small Optional Block
 | 12     | Data           | ‘T’,’P’, or ‘0’ | Field Data for Key Environment T = Test P = Production 0 = Erase Key |
 | 13…    | Added elements |                 | More Fields (Tags, Lengths, and Data)                                |
 
+<a name="table-57---magtek-custom-key-data-fields"></a>
 <a name="table-57---magtek-custom-key-data-fields"></a>
 Table 57 - MagTek Custom Key Data Fields
 
@@ -3036,6 +3081,7 @@ Table 57 - MagTek Custom Key Data Fields
 | ‘32’     | ‘10’        | Challenge Token 10h = 16 characters                                                          |
 | ‘33’     | ‘10’ ..‘18’ | Expiration Date/Time This is in UTC format, use short form if possible. Reserved.            |
 
+<a name="table-58---key-slot-ids"></a>
 <a name="table-58---key-slot-ids"></a>
 Table 58 - Key Slot IDs
 
@@ -3070,6 +3116,7 @@ Each OID value contains a two-byte DUKPT slot ID and a one-byte transformation
 ID.
 
 <a name="table-59---sred-data-ids-and-oids"></a>
+<a name="table-59---sred-data-ids-and-oids"></a>
 Table 59 - SRED Data IDs and OIDs
 
 | **SRED Data ID**                                   | **OID**        | **OID Size** |
@@ -3099,6 +3146,7 @@ specifications.
 ### Restrictions of a DUKPT Slot ID
 
 <a name="table-60---transformation-ids-for-dukpt-legacy-and-aes"></a>
+<a name="table-60---transformation-ids-for-dukpt-legacy-and-aes"></a>
 Table 60 - Transformation IDs for DUKPT Legacy and AES
 
 | **Transformation** **ID \#** | **Usage Name**      | **Type** | **Data for calculation** |
@@ -3118,6 +3166,7 @@ Table 60 - Transformation IDs for DUKPT Legacy and AES
 | C                            | Data Decryption     | AES      | 0x3001                   |
 | D                            | Data Enc/Decryption | AES      | 0x3002                   |
 
+<a name="table-61---the-definition-of-restriction-bit-map"></a>
 <a name="table-61---the-definition-of-restriction-bit-map"></a>
 Table 61 - The definition of Restriction bit map
 
@@ -3145,18 +3194,19 @@ This Key Set can be used for PIN Encryption only.
 SRED Data ID map configuration values (Slot ID and Transformation ID) must be
 checked and rejected if they don’t meet the following conditions.
 
-a). The DUKPT Slot ID must be loaded. ([**Table 62**](#table-62---settings-of-injected-dukpt-slot-ids))
+a). The DUKPT Slot ID must be loaded. ([[**Table 62**](#table-62---settings-of-injected-dukpt-slot-ids)](#table-62---settings-of-injected-dukpt-slot-ids))
 
 b). The loaded DUKPT Slot ID must allows this type of SRED Data ID. (Table
 61**)**
 
-c). The transformation must be allowed by [**Table 63**](#table-63---allowed-key-mapping-table).
+c). The transformation must be allowed by [[**Table 63**](#table-63---allowed-key-mapping-table)](#table-63---allowed-key-mapping-table).
 
 ### The settings of DUKPT Slot IDs injected through TR31
 
 Here is the list of parameters of 4 DUKPT Slot IDs based on the existing Key
 Injection Tool.
 
+<a name="table-62---settings-of-injected-dukpt-slot-ids"></a>
 <a name="table-62---settings-of-injected-dukpt-slot-ids"></a>
 Table 62 - Settings of Injected DUKPT Slot IDs
 
@@ -3169,6 +3219,7 @@ Table 62 - Settings of Injected DUKPT Slot IDs
 
 ### The Allowed Key Mapping Table
 
+<a name="table-63---allowed-key-mapping-table"></a>
 <a name="table-63---allowed-key-mapping-table"></a>
 Table 63 - Allowed Key Mapping Table
 
@@ -3213,6 +3264,7 @@ Figure 4.191 - Configuration Usage Values
 ## Miniature Certificate Type (MAGTEK INTERNAL ONLY)
 
 <a name="table-64---miniature-certificate-type"></a>
+<a name="table-64---miniature-certificate-type"></a>
 Table 64 - Miniature Certificate Type
 
 | Tag                                                                          | Len | Value / Description                                                   | Typ | Req | Example                       |
@@ -3239,6 +3291,7 @@ The **TrackType** TLV data object is used to define magnetic stripe data and
 variations thereof.
 
 <a name="table-65---response-track-type"></a>
+<a name="table-65---response-track-type"></a>
 Table 65 - Response Track Type
 
 | Tag   | Len | Value / Description                                                                                                                               | Typ | Req | Default |
@@ -3255,6 +3308,7 @@ Table 65 - Response Track Type
 The **CardData** TLV data object is used to contain all available information
 about non-EMV cards.
 
+<a name="table-66---response-card-data-type-wip"></a>
 <a name="table-66---response-card-data-type-wip"></a>
 Table 66 - Response Card Data Type (wip)
 
@@ -3315,6 +3369,7 @@ The following is a list of file types that conform to this format.
 2.  **Certificate File Types**
 3.  **Certificate Signing Request (CSR) File Types**
 
+<a name="table-67---common-file-structure"></a>
 <a name="table-67---common-file-structure"></a>
 Table 67 - Common File Structure
 
@@ -3613,6 +3668,7 @@ The Host App may retrieve this information (CFG0006869-100) from OID
 0x020102080101.
 
 <a name="table-68---format-of-a-signed-ui-configuration-file"></a>
+<a name="table-68---format-of-a-signed-ui-configuration-file"></a>
 Table 68 - Format of a Signed UI Configuration File
 
 | Tag                                                                                                                                                                            | Len   | Description                                                                                    | Value (example)                 | Offset             |
@@ -3645,6 +3701,7 @@ Host application sends the “Signed UI configuration file” to the device with
 
 File ID for UI Configuration File is 0x06000000.
 
+<a name="table-69---format-of-an-ui-configuration-file-signing-mini-cert-signed-by-the"></a>
 <a name="table-69---format-of-an-ui-configuration-file-signing-mini-cert-signed-by-the"></a>
 Table 69 - Format of an UI Configuration File Signing Mini-cert Signed by the
 Base Mini-cert
@@ -4319,6 +4376,7 @@ command has not been executed. See **Table 72 - Response Example for Command
 0x1001 – Start Transaction Command not executed due to Battery Charge State**.
 
 <a name="table-70---request-data-for-command-0x1001---start-transaction"></a>
+<a name="table-70---request-data-for-command-0x1001---start-transaction"></a>
 Table 70 - Request Data for Command 0x1001 - Start Transaction
 
 | Tag                                                                                      | Len | Value / Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       | Typ | Req | Default |
@@ -4348,6 +4406,7 @@ Table 70 - Request Data for Command 0x1001 - Start Transaction
 | End of any wrappers, at minimum including **Request Message** found on page **55**       |     |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |     |     |         |
 
 <a name="table-71---response-data-for-command-0x1001---start-transaction"></a>
+<a name="table-71---response-data-for-command-0x1001---start-transaction"></a>
 Table 71 - Response Data for Command 0x1001 - Start Transaction
 
 | Tag                                                                                       | Len | Value / Description | Typ | Req | Default |
@@ -4357,6 +4416,7 @@ Table 71 - Response Data for Command 0x1001 - Start Transaction
 | No parameters.                                                                            |     |                     |     |     |         |
 | End of any wrappers, at minimum including **Response Message** found on page **56**       |     |                     |     |     |         |
 
+<a name="table-72---response-example-for-command-0x1001--start-transaction-command-not"></a>
 <a name="table-72---response-example-for-command-0x1001--start-transaction-command-not"></a>
 Table 72 - Response Example for Command 0x1001 – Start Transaction Command not
 executed due to Battery Charge State
@@ -4369,6 +4429,7 @@ If the request started successfully, the Request Status in the message wrapper
 is **OK, Started / Running, All good / requested operation was successful**.
 
 <a name="table-73---request-example-msr-contact-and-contactless-only"></a>
+<a name="table-73---request-example-msr-contact-and-contactless-only"></a>
 Table 73 - Request Example (MSR, Contact, and Contactless Only)
 
 | Example (Hex)                                                                                                                                                                                                        |
@@ -4376,12 +4437,14 @@ Table 73 - Request Example (MSR, Contact, and Contactless Only)
 | AA 00 81 04 01 00 10 01 84 3D 10 01 82 01 3C A3 09 81 01 01 82 01 01 83 01 01 84 02 00 03 86 27 9C 01 00 9F 02 06 00 00 00 00 01 00 9F 03 06 00 00 00 00 00 00 5F 2A 02 08 40 5F 36 01 02 9F 15 02 00 00 9F 53 01 00 |
 
 <a name="table-74---request-example-contactless-only"></a>
+<a name="table-74---request-example-contactless-only"></a>
 Table 74 - Request Example (Contactless Only)
 
 | Example (Hex)                                                                                                                                                                                                        |
 |----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | AA 00 81 04 01 00 10 01 84 3D 10 01 82 01 3C A3 09 81 01 00 82 01 00 83 01 01 84 02 00 03 86 27 9C 01 00 9F 02 06 00 00 00 00 01 00 9F 03 06 00 00 00 00 00 00 5F 2A 02 08 40 5F 36 01 02 9F 15 02 00 00 9F 53 01 00 |
 
+<a name="table-75---response-example"></a>
 <a name="table-75---response-example"></a>
 Table 75 - Response Example
 
@@ -4403,6 +4466,7 @@ The host uses this command to provide the device with additional / modified data
 to resume a transaction that is currently paused.
 
 <a name="table-76---request-data-for-command-0x1004---resume-transaction"></a>
+<a name="table-76---request-data-for-command-0x1004---resume-transaction"></a>
 Table 76 - Request Data for Command 0x1004 - Resume Transaction
 
 | Tag                                                                                | Len | Value / Description                                                                             | Typ | Req | Default |
@@ -4415,6 +4479,7 @@ Table 76 - Request Data for Command 0x1004 - Resume Transaction
 | 86                                                                                 | var | Transaction TLV Update  Not applicable when Resume Code = **Waiting for ARPC**                  | B   | O   |         |
 | End of any wrappers, at minimum including **Request Message** found on page **55** |     |                                                                                                 |     |     |         |
 
+<a name="table-77---response-data-for-command-0x1004---resume-transaction"></a>
 <a name="table-77---response-data-for-command-0x1004---resume-transaction"></a>
 Table 77 - Response Data for Command 0x1004 - Resume Transaction
 
@@ -4429,12 +4494,14 @@ If the request started successfully, the Request Status in the message wrapper
 is **OK, Started / Running, All good / requested operation was successful**.
 
 <a name="table-78---request-example"></a>
+<a name="table-78---request-example"></a>
 Table 78 - Request Example
 
 | Example (Hex)                                                                                                                    |
 |----------------------------------------------------------------------------------------------------------------------------------|
 | AA 00 81 04 01 00 10 04 84 21 10 04 81 01 00 82 01 78 84 17 FF 74 14 DF DF 25 08 99 26 90 E1 16 12 07 10 FA 06 70 04 8A 02 30 30 |
 
+<a name="table-79---response-example"></a>
 <a name="table-79---response-example"></a>
 Table 79 - Response Example
 
@@ -4466,6 +4533,7 @@ The sequence of events is as follows:
     idle state.
 
 <a name="table-80---request-data-for-command-0x1008---cancel-transaction"></a>
+<a name="table-80---request-data-for-command-0x1008---cancel-transaction"></a>
 Table 80 - Request Data for Command 0x1008 - Cancel Transaction
 
 | Tag                                                                                      | Len | Value / Description | Typ | Req | Default |
@@ -4475,6 +4543,7 @@ Table 80 - Request Data for Command 0x1008 - Cancel Transaction
 | No parameters.                                                                           |     |                     |     |     |         |
 | End of any wrappers, at minimum including **Request Message** found on page **55**       |     |                     |     |     |         |
 
+<a name="table-81---response-data-for-command-0x1008---cancel-transaction"></a>
 <a name="table-81---response-data-for-command-0x1008---cancel-transaction"></a>
 Table 81 - Response Data for Command 0x1008 - Cancel Transaction
 
@@ -4486,12 +4555,14 @@ Table 81 - Response Data for Command 0x1008 - Cancel Transaction
 | End of any wrappers, at minimum including **Response Message** found on page **56**       |     |                     |     |     |         |
 
 <a name="table-82---request-example"></a>
+<a name="table-82---request-example"></a>
 Table 82 - Request Example
 
 | Example (Hex)                       |
 |-------------------------------------|
 | AA 00 81 04 01 13 10 08 84 02 10 08 |
 
+<a name="table-83---response-example"></a>
 <a name="table-83---response-example"></a>
 Table 83 - Response Example
 
@@ -4524,6 +4595,7 @@ commands and receive responses to and from a Ntag/MIFARE Ultralight. Do not
 change the address 0x00 for read protection of Ultralight C/AES card because the
 device will fail to access the card if the address 0x00 is read protected.
 
+<a name="table-84---request-data-for-command-0x1100--pass-through-command-for"></a>
 <a name="table-84---request-data-for-command-0x1100--pass-through-command-for"></a>
 Table 84 - Request Data for Command 0x1100 – Pass Through Command For
 NTag/MIFARE Ultralight, Type 2.
@@ -4592,6 +4664,7 @@ Table 88 – MIFARE Ultralight AES Commands
 | AUTHENTICATE | 2      | The AUTHENTICATE command is used to authenticate with a 3-pass mutual authentication the MIFARE Ultralight AES and PCD. The cryptographic method is based on AES in Cipher-Block chaining (CBC) mode according to NIST Special Publication 800-38A. The used key is a 128-bit AES Key. Remark: To reduce the risk on card-only side channel attack to the AES keys, a failed authentication limit (AUTH_LIM) can be set. The 16 bytes of the AES [DataProtKey] are programmed to memory pages from 30h to 33h. Keys themselves can be written during personalization or at any later stage in a secure environment, as long as the key is not locked for update in the user configuration segment. AES [UIDRetrKey] is stored in memory addresses from 34h until 37h. In case keys are not locked, MIFARE Ultralight AES allows to change AES-keys without authentication as long as AUTH0 is not set to a page address before or at page address where keys bytes are stored. Otherwise MIFARE Ultralight AES requires to be in the AUTHENTICATED state to allow to write AES keys. The key itself can be written using the WRITE with Byte 0 is always sent first. On example of AES [DataProtKey] = 000102030405060708090A0B0C0D0E0Fh, the command sequence needed for key programming with WRITE command is: • A2 30 0F 0E 0D 0C • A2 31 0B 0A 09 08 • A2 32 07 06 05 04 • A2 33 03 02 01 00 On example of AES [UIDRetrKey] = 000102030405060708090A0B0C0D0E0Fh, the command sequence needed for key programming with WRITE command is: • A2 34 0F 0E 0D 0C • A2 35 0B 0A 09 08 • A2 36 07 06 05 04 • A2 37 03 02 01 00 The 16-byte of the same AES [DataProtKey] are programed to the Device using **Property 1.2.1.1.4.2 MIFARE Ultralight AES DataProtKey**. The 16-byte of the same AES [UIDRetrKey] are programed to the Device using **Property 1.2.1.1.4.3 MIFARE Ultralight AES UIDRetrKey**. The 16-byte of the AES [OriginalityKey] are programed to the Device using **Property 1.2.1.1.4.4 MIFARE Ultralight AES OriginalityKey.** This key value is only known by NXP.  Byte 0 = 0x1A Byte 1 = Key option  0x00 = DataProtKey   0x01 = UIDRetrKey  0x02 = OriginalityKey |
 
 <a name="table-89---response-data-for-command-0x1100--pass-through-command-for"></a>
+<a name="table-89---response-data-for-command-0x1100--pass-through-command-for"></a>
 Table 89 - Response Data for Command 0x1100 – Pass Through Command For
 NTag/MIFARE Ultralight, Type 2
 
@@ -4607,12 +4680,14 @@ If the request started successfully, the Request Status in the message wrapper
 is **OK, Started / Running, All good / requested operation was successful**.
 
 <a name="table-90---request-example-get-version"></a>
+<a name="table-90---request-example-get-version"></a>
 Table 90 - Request Example (Get Version)
 
 | Example (Hex)                                                  |
 |----------------------------------------------------------------|
 | AA 00 81 04 01 39 11 00 84 0B 11 00 81 01 60 82 01 00 83 01 00 |
 
+<a name="table-91---response-example-get-version"></a>
 <a name="table-91---response-example-get-version"></a>
 Table 91 - Response Example (Get Version)
 
@@ -4622,6 +4697,7 @@ Table 91 - Response Example (Get Version)
 
 #### Encrypted Data Format
 
+<a name="table-92---payload-for-encrypted-nfcmifare-data"></a>
 <a name="table-92---payload-for-encrypted-nfcmifare-data"></a>
 Table 92 - Payload for Encrypted NFC/MIFARE Data
 
@@ -4658,6 +4734,7 @@ pass-through session, the Host application can send the last command, CANCEL
 command (0xFF), or receive error response from the MIFARE Tag.
 
 <a name="table-94---request-data-for-command-0x1101---pass-through-command-for-mifare"></a>
+<a name="table-94---request-data-for-command-0x1101---pass-through-command-for-mifare"></a>
 Table 94 - Request Data for Command 0x1101 - Pass Through Command for MIFARE
 Classic/MINI®/Plus SL1 (Security Level 1)
 
@@ -4692,6 +4769,7 @@ Table 96 – MIFARE Plus EV1/EV2/SE/X SL1 (Security Level 1) Commands
 | CANCEL                                   | 1      | This command is used to terminate the pass-through command session.  Byte 0 = 0xFF                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    | Y   | Y   | Y  | Y |
 
 <a name="table-97---response-data-for-command-0x1101--pass-through-command-for-mifare"></a>
+<a name="table-97---response-data-for-command-0x1101--pass-through-command-for-mifare"></a>
 Table 97 - Response Data for Command 0x1101 – Pass Through Command for MIFARE
 Classic/MINI®/Plus SL1 (Security Level 1), Type 2
 
@@ -4707,6 +4785,7 @@ If the request started successfully, the Request Status in the message wrapper
 is **OK, Started / Running, All good / requested operation was successful**.
 
 <a name="table-98---request-example-read-sector-0-block-number-start-0---end-0-keytype"></a>
+<a name="table-98---request-example-read-sector-0-block-number-start-0---end-0-keytype"></a>
 Table 98 - Request Example (Read Sector 0, Block Number Start 0 - End 0, KeyType
 A, Key = FFFFFFFFFFFF)
 
@@ -4714,6 +4793,7 @@ A, Key = FFFFFFFFFFFF)
 |----------------------------------------------------------------------------------------------|
 | AA 00 81 04 01 19 11 01 84 15 11 01 81 0B 30 00 00 00 00 FF FF FF FF FF FF 82 01 00 83 01 00 |
 
+<a name="table-99---response-example-read-sector-0-block-number-start-0---end-0"></a>
 <a name="table-99---response-example-read-sector-0-block-number-start-0---end-0"></a>
 Table 99 - Response Example (Read Sector 0, Block Number Start 0 - End 0,
 KeyType A, Key = FFFFFFFFFFFF)
@@ -4725,11 +4805,12 @@ KeyType A, Key = FFFFFFFFFFFF)
 #### Encrypted Data Format
 
 <a name="table-100---payload-for-encrypted-nfcmifare-data"></a>
+<a name="table-100---payload-for-encrypted-nfcmifare-data"></a>
 Table 100 - Payload for Encrypted NFC/MIFARE Data
 
 | Tag                                                                             | Len | Value / Description                                                                                                                                                                                                                                                                          | Typ | Req | Default |
 |---------------------------------------------------------------------------------|-----|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----|-----|---------|
-| /DFDF59                                                                         | var | Encrypted Data Primitive  Decrypt the value of this TLV data object using the algorithm and variant specified in the **Encrypted Data KSN** parameter and the **Encrypted Data Encryption Type** parameter to read its contents. The format of the decrypted data is shown in [**Table 353**](#table-353---notification-payload-for-barcode-reader-read-barcode-result). | B   | R   |         |
+| /DFDF59                                                                         | var | Encrypted Data Primitive  Decrypt the value of this TLV data object using the algorithm and variant specified in the **Encrypted Data KSN** parameter and the **Encrypted Data Encryption Type** parameter to read its contents. The format of the decrypted data is shown in [[**Table 353**](#table-353---notification-payload-for-barcode-reader-read-barcode-result)](#table-353---notification-payload-for-barcode-reader-read-barcode-result). | B   | R   |         |
 | /DFDF50                                                                         | var | Encrypted Data KSN                                                                                                                                                                                                                                                                           | B   | R   |         |
 | /DFDF51                                                                         | 01  | Encrypted Data Encryption Type See section 4.4 Encryption Type for a list of valid values.                                                                                                                                                                                                   | B   | R   |         |
 | End of any wrappers, at minimum including Response Message found on page **56** |     |                                                                                                                                                                                                                                                                                              |     |     |         |
@@ -4750,6 +4831,7 @@ There will be a fixed 30 second timeout for commands that require multiple
 command/responses.
 
 <a name="table-102---request-data-for-command-0x1102--pass-through-command-for-mifare"></a>
+<a name="table-102---request-data-for-command-0x1102--pass-through-command-for-mifare"></a>
 Table 102 - Request Data for Command 0x1102 – Pass Through Command for MIFARE
 DESFire, Type 4
 
@@ -4762,6 +4844,7 @@ DESFire, Type 4
 | 83                                                                                   | 01  | 00 – Expect More Commands 01 – FF (Last Command)   If last command, Device will provide a single beep after receiving a successful response from tag, otherwise, device will provide a double beep | B   | R   |         |
 | End of any wrappers, at minimum including Request Message found on page **55**       |     |                                                                                                                                                                                                    |     |     |         |
 
+<a name="table-103---response-data-for-command-0x1102--pass-through-command-for-mifare"></a>
 <a name="table-103---response-data-for-command-0x1102--pass-through-command-for-mifare"></a>
 Table 103 - Response Data for Command 0x1102 – Pass Through Command for MIFARE
 DESFire, Type 4
@@ -4778,12 +4861,14 @@ If the request started successfully, the Request Status in the message wrapper
 is **OK, Started / Running, All good / requested operation was successful**.
 
 <a name="table-104---request-example-get-version-part-1"></a>
+<a name="table-104---request-example-get-version-part-1"></a>
 Table 104 - Request Example (Get Version Part 1)
 
 | Example (Hex)                                                              |
 |----------------------------------------------------------------------------|
 | AA 00 81 04 01 13 11 02 84 0F 11 02 81 05 90 60 00 00 00 82 01 00 83 01 00 |
 
+<a name="table-105---response-example-get-version-part-1"></a>
 <a name="table-105---response-example-get-version-part-1"></a>
 Table 105 - Response Example (Get Version Part 1)
 
@@ -4794,11 +4879,12 @@ Table 105 - Response Example (Get Version Part 1)
 #### Encrypted Data Format
 
 <a name="table-106---payload-for-encrypted-nfcmifare-data"></a>
+<a name="table-106---payload-for-encrypted-nfcmifare-data"></a>
 Table 106 - Payload for Encrypted NFC/MIFARE Data
 
 | Tag                                              | Len | Value / Description                                                                                                                                                                                                                                                                          | Typ | Req | Default |
 |--------------------------------------------------|-----|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----|-----|---------|
-| /DFDF59                                          | var | Encrypted Data Primitive  Decrypt the value of this TLV data object using the algorithm and variant specified in the **Encrypted Data KSN** parameter and the **Encrypted Data Encryption Type** parameter to read its contents. The format of the decrypted data is shown in [**Table 353**](#table-353---notification-payload-for-barcode-reader-read-barcode-result). | B   | R   |         |
+| /DFDF59                                          | var | Encrypted Data Primitive  Decrypt the value of this TLV data object using the algorithm and variant specified in the **Encrypted Data KSN** parameter and the **Encrypted Data Encryption Type** parameter to read its contents. The format of the decrypted data is shown in [[**Table 353**](#table-353---notification-payload-for-barcode-reader-read-barcode-result)](#table-353---notification-payload-for-barcode-reader-read-barcode-result). | B   | R   |         |
 | /DFDF50                                          | var | Encrypted Data KSN                                                                                                                                                                                                                                                                           | B   | R   |         |
 | /DFDF51                                          | 01  | Encrypted Data Encryption Type See section **4.4 Encryption Type** for a list of valid values.                                                                                                                                                                                               | B   | R   |         |
 | End of Notification Message found on page **62** |     |                                                                                                                                                                                                                                                                                              |     |     |         |
@@ -4835,6 +4921,7 @@ sheet MIFARE Plus Functionality of implementations on smart card controllers
 (3.4)
 
 <a name="table-108---command-0x1103--pass-through-command-for-mifare-plus-type-2"></a>
+<a name="table-108---command-0x1103--pass-through-command-for-mifare-plus-type-2"></a>
 Table 108 - Command 0x1103 – Pass Through Command for MIFARE Plus, Type 2
 
 | Tag                                                                                  | Len | Value / Description                                                                                                                                                                                                        | Typ | Req | Default |
@@ -4846,6 +4933,7 @@ Table 108 - Command 0x1103 – Pass Through Command for MIFARE Plus, Type 2
 | 83                                                                                   | 01  | 00 – Expect More Commands 01 – FF (Last Command)   If this is the last command, the Device will provide a single beep after receiving a successful response from the tag, otherwise, the device will provide a double beep | B   | R   |         |
 | End of any wrappers, at minimum including Request Message found on page **55**       |     |                                                                                                                                                                                                                            |     |     |         |
 
+<a name="table-109---mifare-plus-ev1ev2sex-sl0-security-level-0-commands"></a>
 <a name="table-109---mifare-plus-ev1ev2sex-sl0-security-level-0-commands"></a>
 Table 109 - MIFARE Plus EV1/EV2/SE/X SL0 (Security Level 0) Commands
 
@@ -4898,6 +4986,7 @@ Table 110 – MIFARE Plus EV1/EV2/SE/X SL3 (Security Level 3) Commands
 | CANCEL                                   | 1        | This command is used to terminate the pass-through command session.  Byte 0 = 0xFF                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   | Y   | Y   | Y  | Y |
 
 <a name="table-111---response-data-for-command-0x1103--pass-through-command-for-mifare"></a>
+<a name="table-111---response-data-for-command-0x1103--pass-through-command-for-mifare"></a>
 Table 111 - Response Data for Command 0x1103 – Pass Through Command for MIFARE
 Plus, Type 2
 
@@ -4913,12 +5002,14 @@ If the request started successfully, the Request Status in the message wrapper
 is **OK, Started / Running, All good / requested operation was successful**.
 
 <a name="table-112---request-example-get-version"></a>
+<a name="table-112---request-example-get-version"></a>
 Table 112 - Request Example (Get Version)
 
 | Example (Hex)                                                  |
 |----------------------------------------------------------------|
 | AA 00 81 04 01 DA 11 03 84 0B 11 03 81 01 60 82 01 00 83 01 00 |
 
+<a name="table-113---response-example-get-version"></a>
 <a name="table-113---response-example-get-version"></a>
 Table 113 - Response Example (Get Version)
 
@@ -4929,11 +5020,12 @@ Table 113 - Response Example (Get Version)
 #### Encrypted Data Format
 
 <a name="table-114---payload-for-encrypted-nfcmifare-data"></a>
+<a name="table-114---payload-for-encrypted-nfcmifare-data"></a>
 Table 114 - Payload for Encrypted NFC/MIFARE Data
 
 | Tag                                              | Len | Value / Description                                                                                                                                                                                                                                                                          | Typ | Req | Default |
 |--------------------------------------------------|-----|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----|-----|---------|
-| /DFDF59                                          | var | Encrypted Data Primitive  Decrypt the value of this TLV data object using the algorithm and variant specified in the **Encrypted Data KSN** parameter and the **Encrypted Data Encryption Type** parameter to read its contents. The format of the decrypted data is shown in [**Table 353**](#table-353---notification-payload-for-barcode-reader-read-barcode-result). | B   | R   |         |
+| /DFDF59                                          | var | Encrypted Data Primitive  Decrypt the value of this TLV data object using the algorithm and variant specified in the **Encrypted Data KSN** parameter and the **Encrypted Data Encryption Type** parameter to read its contents. The format of the decrypted data is shown in [[**Table 353**](#table-353---notification-payload-for-barcode-reader-read-barcode-result)](#table-353---notification-payload-for-barcode-reader-read-barcode-result). | B   | R   |         |
 | /DFDF50                                          | var | Encrypted Data KSN                                                                                                                                                                                                                                                                           | B   | R   |         |
 | /DFDF51                                          | 01  | Encrypted Data Encryption Type See section **4.4 Encryption Type** for a list of valid values.                                                                                                                                                                                               | B   | R   |         |
 | End of Notification Message found on page **62** |     |                                                                                                                                                                                                                                                                                              |     |     |         |
@@ -4975,6 +5067,7 @@ The sequence of events is as follows:
     to retrieve the data as a **Signature Capture File Type**.
 
 <a name="table-116---request-data-for-command-0x1801---request-cardholder-signature"></a>
+<a name="table-116---request-data-for-command-0x1801---request-cardholder-signature"></a>
 Table 116 - Request Data for Command 0x1801 - Request Cardholder Signature
 (Touch Only)
 
@@ -4992,6 +5085,7 @@ Table 116 - Request Data for Command 0x1801 - Request Cardholder Signature
 | End of any wrappers, at minimum including **Request Message** found on page **55**       |     |                                                                                                                                                       |     |     |         |
 
 <a name="table-117---response-data-for-command-0x1801---request-cardholder-signature"></a>
+<a name="table-117---response-data-for-command-0x1801---request-cardholder-signature"></a>
 Table 117 - Response Data for Command 0x1801 - Request Cardholder Signature
 (Touch Only)
 
@@ -5006,12 +5100,14 @@ If the request started successfully, the Request Status in the message wrapper
 is **OK, Started / Running, All good / requested operation was successful**.
 
 <a name="table-118---request-example"></a>
+<a name="table-118---request-example"></a>
 Table 118 - Request Example
 
 | Example (Hex)                                |
 |----------------------------------------------|
 | AA 00 81 04 01 00 18 01 84 05 18 01 81 01 1E |
 
+<a name="table-119---response-example"></a>
 <a name="table-119---response-example"></a>
 Table 119 - Response Example
 
@@ -5041,6 +5137,7 @@ The sequence of events is as follows:
     the format below.
 
 <a name="table-120---request-data-for-command-0x1802---report-cardholder-selection"></a>
+<a name="table-120---request-data-for-command-0x1802---report-cardholder-selection"></a>
 Table 120 - Request Data for Command 0x1802 - Report Cardholder Selection
 
 | Tag                                                                                      | Len | Value / Description                                                                                                                                                                                                                                                     | Typ | Req | Default |
@@ -5051,6 +5148,7 @@ Table 120 - Request Data for Command 0x1802 - Report Cardholder Selection
 | 82                                                                                       | 01  | Selection Result Menu item index the cardholder selected. If the cardholder made no selection or the operation terminated abnormally, the device does not include this parameter.                                                                                       | B   | O   |         |
 | End of any wrappers, at minimum including **Request Message** found on page **55**       |     |                                                                                                                                                                                                                                                                         |     |     |         |
 
+<a name="table-121---response-data-for-command-0x1802---report-cardholder-selection"></a>
 <a name="table-121---response-data-for-command-0x1802---report-cardholder-selection"></a>
 Table 121 - Response Data for Command 0x1802 - Report Cardholder Selection
 
@@ -5065,12 +5163,14 @@ If the request started successfully, the Request Status in the message wrapper
 is **OK, Started / Running, All good / requested operation was successful**.
 
 <a name="table-122---request-example"></a>
+<a name="table-122---request-example"></a>
 Table 122 - Request Example
 
 | Example (Hex)                                         |
 |-------------------------------------------------------|
 | AA 00 81 04 01 00 18 02 84 08 18 02 81 01 00 82 01 00 |
 
+<a name="table-123---response-example"></a>
 <a name="table-123---response-example"></a>
 Table 123 - Response Example
 
@@ -5109,6 +5209,7 @@ The sequence of events is as follows:
             inform the host.
 
 <a name="table-124---request-data-for-command-0x1803---display-message-display-only"></a>
+<a name="table-124---request-data-for-command-0x1803---display-message-display-only"></a>
 Table 124 - Request Data for Command 0x1803 - Display Message (Display Only)
 
 | Tag                                                                                      | Len | Value / Description                                                                                                                                                                         | Typ | Req | Default |
@@ -5120,6 +5221,7 @@ Table 124 - Request Data for Command 0x1803 - Display Message (Display Only)
 | End of any wrappers, at minimum including **Request Message** found on page **55**       |     |                                                                                                                                                                                             |     |     |         |
 
 <a name="table-125---response-data-for-command-0x1803---display-message-display-only"></a>
+<a name="table-125---response-data-for-command-0x1803---display-message-display-only"></a>
 Table 125 - Response Data for Command 0x1803 - Display Message (Display Only)
 
 | Tag                                                                                       | Len | Value / Description | Typ | Req | Default |
@@ -5130,12 +5232,14 @@ Table 125 - Response Data for Command 0x1803 - Display Message (Display Only)
 | End of any wrappers, at minimum including **Response Message** found on page **56**       |     |                     |     |     |         |
 
 <a name="table-126---request-example"></a>
+<a name="table-126---request-example"></a>
 Table 126 - Request Example
 
 | Example (Hex)                             |
 |-------------------------------------------|
 | AA00 810401551803 8408 1803 810102 820116 |
 
+<a name="table-127---response-example"></a>
 <a name="table-127---response-example"></a>
 Table 127 - Response Example
 
@@ -5179,6 +5283,7 @@ The sequence of events is as follows:
             additional supporting information.
 
 <a name="table-128---request-data-for-command-0x1804---read-barcode-bcr-only"></a>
+<a name="table-128---request-data-for-command-0x1804---read-barcode-bcr-only"></a>
 Table 128 - Request Data for Command 0x1804 - Read Barcode (BCR Only)
 
 | Tag                                                                                      | Len | Value / Description                                                                                                                                                                                                                                                                                                                                                                                                                                    | Typ | Req | Default |
@@ -5192,6 +5297,7 @@ Table 128 - Request Data for Command 0x1804 - Read Barcode (BCR Only)
 | End of any wrappers, at minimum including **Request Message** found on page **55**       |     |                                                                                                                                                                                                                                                                                                                                                                                                                                                        |     |     |         |
 
 <a name="table-129---response-data-for-command-0x1804---read-barcode-bcr-only"></a>
+<a name="table-129---response-data-for-command-0x1804---read-barcode-bcr-only"></a>
 Table 129 - Response Data for Command 0x1804 - Read Barcode (BCR Only)
 
 | Tag                                                                                       | Len | Value / Description | Typ | Req | Default |
@@ -5202,12 +5308,14 @@ Table 129 - Response Data for Command 0x1804 - Read Barcode (BCR Only)
 | End of any wrappers, at minimum including **Response Message** found on page **56**       |     |                     |     |     |         |
 
 <a name="table-130---request-example"></a>
+<a name="table-130---request-example"></a>
 Table 130 - Request Example
 
 | Example (Hex)                                    |
 |--------------------------------------------------|
 | AA00 810401031804 840B 1804 810101 82010F 830101 |
 
+<a name="table-131---response-example"></a>
 <a name="table-131---response-example"></a>
 Table 131 - Response Example
 
@@ -5239,6 +5347,7 @@ The sequence of events is as follows:
     buzzer for that transaction to take over.
 
 <a name="table-132---request-data-for-command-0x1805---buzzer"></a>
+<a name="table-132---request-data-for-command-0x1805---buzzer"></a>
 Table 132 - Request Data for Command 0x1805 - Buzzer
 
 | Tag                                                                                      | Len  | Value / Description                                                                                                                                                                                                                                                                                                                                                                      | Typ | Req | Default |
@@ -5248,6 +5357,7 @@ Table 132 - Request Data for Command 0x1805 - Buzzer
 | 81                                                                                       | N\*4 | N = Number of tones 0x01 – Min (1 tone) 0x0A – Max (10 tones)  4 = 4 bytes data parameter for each tone in the sequence Byte0-Byte1 – Frequency in units of 1 Hz 0x0000..0x0031 (\< 50 Hz, Silent) 0x0032 - Min (50 Hz) 0x0FA0 - Max (4000 Hz) 0x0FA1..0xFFFF (\> 4000 Hz, Error) Byte 2-Byte3 – Duration of tone in units of 1 millisecond 0x0001 – Min (1 ms) 0xFFFF – Max (65535 ms)  | B   | R   |         |
 | End of any wrappers, at minimum including **Request Message** found on page **55**       |      |                                                                                                                                                                                                                                                                                                                                                                                          |     |     |         |
 
+<a name="table-133---response-data-for-command-0x1805---buzzer"></a>
 <a name="table-133---response-data-for-command-0x1805---buzzer"></a>
 Table 133 - Response Data for Command 0x1805 - Buzzer
 
@@ -5259,12 +5369,14 @@ Table 133 - Response Data for Command 0x1805 - Buzzer
 | End of any wrappers, at minimum including **Response Message** found on page **56**       |     |                     |     |     |         |
 
 <a name="table-134---request-example-for-a-sequence-of-5-tones"></a>
+<a name="table-134---request-example-for-a-sequence-of-5-tones"></a>
 Table 134 - Request Example for a sequence of 5 tones
 
 | Example (Hex)                                                                      |
 |------------------------------------------------------------------------------------|
 | AA00 810401031805 8418 1805 8114 00C8 01F4 0190 01F4 0258 01F4 0190 01F4 00C8 01F4 |
 
+<a name="table-135---response-example"></a>
 <a name="table-135---response-example"></a>
 Table 135 - Response Example
 
@@ -5297,6 +5409,7 @@ The sequence of events is as follows:
     longer in Active/Idle.
 
 <a name="table-136---request-data-for-command-0x1821---show-image-display-only"></a>
+<a name="table-136---request-data-for-command-0x1821---show-image-display-only"></a>
 Table 136 - Request Data for Command 0x1821 - Show Image (Display Only)
 
 | Tag                                                                                      | Len | Value / Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         | Typ | Req | Default |
@@ -5308,6 +5421,7 @@ Table 136 - Request Data for Command 0x1821 - Show Image (Display Only)
 | 83                                                                                       | 01  | Display Time 0x00 = Show image until device changes state                                                                                                                                                                                                                                                                                                                                                                                                                                                   | B   | O   | 0       |
 | End of any wrappers, at minimum including **Request Message** found on page **55**       |     |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |     |     |         |
 
+<a name="table-137---response-data-for-command-0x1821---show-image-display-only"></a>
 <a name="table-137---response-data-for-command-0x1821---show-image-display-only"></a>
 Table 137 - Response Data for Command 0x1821 - Show Image (Display Only)
 
@@ -5322,12 +5436,14 @@ If the request started successfully, the Request Status in the message wrapper
 is **All Good, Requested Operation Was Successful**.
 
 <a name="table-138---request-example"></a>
+<a name="table-138---request-example"></a>
 Table 138 - Request Example
 
 | Example (Hex)                                         |
 |-------------------------------------------------------|
 | AA 00 81 04 01 2C 18 21 84 08 18 21 81 01 03 83 01 00 |
 
+<a name="table-139---response-example"></a>
 <a name="table-139---response-example"></a>
 Table 139 - Response Example
 
@@ -5367,6 +5483,7 @@ The sequence of events is as follows:
             Out** / **Reserved**.
 
 <a name="table-140---request-data-for-command-0x1822---show-qr-code-display-only"></a>
+<a name="table-140---request-data-for-command-0x1822---show-qr-code-display-only"></a>
 Table 140 - Request Data for Command 0x1822 - Show QR Code (Display Only)
 
 | Tag                                                                                      | Len | Value / Description                                                                                                                                                                                                                                                                                                                                                                                                                                 | Typ | Req | Default          |
@@ -5385,6 +5502,7 @@ Table 140 - Request Data for Command 0x1822 - Show QR Code (Display Only)
 | End of any wrappers, at minimum including **Request Message** found on page **55**       |     |                                                                                                                                                                                                                                                                                                                                                                                                                                                     |     |     |                  |
 
 <a name="table-141---response-data-for-command-0x1822---show-qr-code-display-only"></a>
+<a name="table-141---response-data-for-command-0x1822---show-qr-code-display-only"></a>
 Table 141 - Response Data for Command 0x1822 - Show QR Code (Display Only)
 
 | Tag                                                                                       | Len | Value / Description | Typ | Req | Default |
@@ -5398,6 +5516,7 @@ If the request started successfully, the Request Status in the message wrapper
 is **All Good, Requested Operation Was Successful**.
 
 <a name="table-142---request-example"></a>
+<a name="table-142---request-example"></a>
 Table 142 - Request Example
 
 | Example (Hex)                                                                                                                                                                                                                    |
@@ -5405,12 +5524,14 @@ Table 142 - Request Example
 | AA 00 81 04 01 05 18 22 84 41 18 22 81 01 3C 82 0F 54 68 69 73 20 69 73 20 61 20 74 65 73 74 21 83 01 00 84 01 FF 85 01 01 86 01 28 87 03 00 00 00 88 03 FF FF FF 89 13 50 6c 65 61 73 65 20 73 63 61 6e 20 51 52 20 63 6f 64 65 |
 
 <a name="table-629---response-example"></a>
+<a name="table-629---response-example"></a>
 Table 629 - Response Example
 
 | Example (Hex)                             |
 |-------------------------------------------|
 | AA 00 81 04 82 2C 18 22 82 04 00 00 00 00 |
 
+<a name="table-630---notification-example"></a>
 <a name="table-630---notification-example"></a>
 Table 630 - Notification Example
 
@@ -5462,6 +5583,7 @@ The sequence of events is as follows:
             Complete** to inform the host.
 
 <a name="table-143---request-data-for-command-0x1823---show-bitmap-image-display-only"></a>
+<a name="table-143---request-data-for-command-0x1823---show-bitmap-image-display-only"></a>
 Table 143 - Request Data for Command 0x1823 - Show Bitmap Image (Display Only)
 
 | Tag                                                                                      | Len | Value / Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      | Typ | Req | Default  |
@@ -5477,6 +5599,7 @@ Table 143 - Request Data for Command 0x1823 - Show Bitmap Image (Display Only)
 | End of any wrappers, at minimum including Request Message found on page 55               |     |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |     |     |          |
 
 <a name="table-144---response-data-for-command-0x1823---show-bitmap-image-display-only"></a>
+<a name="table-144---response-data-for-command-0x1823---show-bitmap-image-display-only"></a>
 Table 144 - Response Data for Command 0x1823 - Show Bitmap Image (Display Only)
 
 | Tag                                                                                       | Len | Value / Description | Typ | Req | Default |
@@ -5490,6 +5613,7 @@ If the request started successfully, the Request Status in the message wrapper
 is **All Good, Requested Operation Was Successful**.
 
 <a name="table-145---request-example"></a>
+<a name="table-145---request-example"></a>
 Table 145 - Request Example
 
 | Example (Hex)                                                                                                                                                                                                                    |
@@ -5497,12 +5621,14 @@ Table 145 - Request Example
 | AA 00 81 04 01 05 18 22 84 41 18 22 81 01 3C 82 0F 54 68 69 73 20 69 73 20 61 20 74 65 73 74 21 83 01 00 84 01 FF 85 01 01 86 01 28 87 03 00 00 00 88 03 FF FF FF 89 13 50 6c 65 61 73 65 20 73 63 61 6e 20 51 52 20 63 6f 64 65 |
 
 <a name="table-629---response-example"></a>
+<a name="table-629---response-example"></a>
 Table 629 - Response Example
 
 | Example (Hex)                             |
 |-------------------------------------------|
 | AA 00 81 04 82 2C 18 22 82 04 00 00 00 00 |
 
+<a name="table-630---notification-example"></a>
 <a name="table-630---notification-example"></a>
 Table 630 - Notification Example
 
@@ -5529,12 +5655,14 @@ Table 146 – Request Data for Command 0x1831
 | 82                                                               | 01  | UI page option 0x00 – Enter Sale Amount page. Device responds with Notification 0x1803 - User Interface Host Action Request with ‘Touchscreen, \$Amount button selected’ content. | B   | R   |         |
 
 <a name="table-147---request-example--display-enter-sale-amount-page"></a>
+<a name="table-147---request-example--display-enter-sale-amount-page"></a>
 Table 147 - Request Example – (Display Enter Sale Amount Page)
 
 | Example (Hex)                                         |
 |-------------------------------------------------------|
 | AA 00 81 04 01 2C 18 31 84 08 18 31 81 01 00 82 01 00 |
 
+<a name="table-148---response-example"></a>
 <a name="table-148---response-example"></a>
 Table 148 - Response Example
 
@@ -5783,6 +5911,7 @@ Table 149 – Request Data for Command 0x1830
 | End of any wrappers, at minimum **Response Message** found on page **56**                 |     |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |     |     |         |
 
 <a name="table-150---response-data-for-command-0x1830---display-flexible-ui-pages"></a>
+<a name="table-150---response-data-for-command-0x1830---display-flexible-ui-pages"></a>
 Table 150 - Response Data for Command 0x1830 - Display Flexible UI Pages
 (Display Only)
 
@@ -5797,12 +5926,14 @@ If the request started successfully, the Request Status in the message wrapper
 is **All good / requested operation was successful**.
 
 <a name="table-151---request-example"></a>
+<a name="table-151---request-example"></a>
 Table 151 - Request Example
 
 | Example (Hex)                                                                                               |
 |-------------------------------------------------------------------------------------------------------------|
 | AA 00 81 04 01 2C 18 30 84 1A 18 30 81 01 00 82 01 00 83 02 00 05 A1 0C 83 0A 54 48 41 4E 4B 20 59 4F 55 00 |
 
+<a name="table-152---response-example"></a>
 <a name="table-152---response-example"></a>
 Table 152 - Response Example
 
@@ -5836,6 +5967,7 @@ The sequence of events is as follows:
     a 0x1805 notification to inform the host.
 
 <a name="table-153---request-data-for-command-0x1840--card-emulation"></a>
+<a name="table-153---request-data-for-command-0x1840--card-emulation"></a>
 Table 153 - Request Data for Command 0x1840 – Card Emulation
 
 | Tag | Len     | Value / Description                                                                                                                                 | Req | Default |
@@ -5845,6 +5977,7 @@ Table 153 - Request Data for Command 0x1840 – Card Emulation
 | /83 | \<= 254 | URL URL to use as card data. Required when starting card emulation. Optional and ignored if canceling emulation. Example: <https://www.magtek.com/> | O/R |         |
 
 <a name="table-154---request-example"></a>
+<a name="table-154---request-example"></a>
 Table 154 - Request Example
 
 | Example (Hex)                                                                                                                    |
@@ -5852,12 +5985,14 @@ Table 154 - Request Example
 | AA 00 81 04 01 01 18 40 84 21 18 40 81 01 01 82 01 00 83 17 68 74 74 70 73 3A 2F 2F 77 77 77 2E 6D 61 67 74 65 6B 2E 63 6F 6D 2F |
 
 <a name="table-155---response-example"></a>
+<a name="table-155---response-example"></a>
 Table 155 - Response Example
 
 | Example (Hex)                             |
 |-------------------------------------------|
 | AA 00 81 04 82 01 18 40 82 04 01 00 00 00 |
 
+<a name="table-156---example-of-0x1840-cancel-command"></a>
 <a name="table-156---example-of-0x1840-cancel-command"></a>
 Table 156 - Example of 0x1840 Cancel Command
 
@@ -5880,6 +6015,7 @@ The sequence of events is as follows:
 4.  The device starts an automatic reset within 500ms.
 
 <a name="table-157---request-data-for-command-0x1f01---reset-device"></a>
+<a name="table-157---request-data-for-command-0x1f01---reset-device"></a>
 Table 157 - Request Data for Command 0x1F01 - Reset Device
 
 | Tag                                                                                      | Len | Value / Description                                                                                                                                                                                            | Typ | Req | Default |
@@ -5889,6 +6025,7 @@ Table 157 - Request Data for Command 0x1F01 - Reset Device
 | 81                                                                                       | 01  | Power Off Option 0x00 = Reset 0x01 = Power Off Power off only works while a device is running on its battery. If a device is powered off while it is powered by USB, the device will immediately turn back on. | B   | O   | 0x00    |
 | End of any wrappers, at minimum including **Request Message** found on page **55**       |     |                                                                                                                                                                                                                |     |     |         |
 
+<a name="table-158---response-data-for-command-0x1f01---reset-device"></a>
 <a name="table-158---response-data-for-command-0x1f01---reset-device"></a>
 Table 158 - Response Data for Command 0x1F01 - Reset Device
 
@@ -5900,12 +6037,14 @@ Table 158 - Response Data for Command 0x1F01 - Reset Device
 | End of any wrappers, at minimum including **Response Message** found on page **56**       |     |                     |     |     |         |
 
 <a name="table-159---request-example"></a>
+<a name="table-159---request-example"></a>
 Table 159 - Request Example
 
 | Example (Hex)                       |
 |-------------------------------------|
 | AA 00 81 04 01 12 1F 01 84 02 1F 01 |
 
+<a name="table-160---response-example"></a>
 <a name="table-160---response-example"></a>
 Table 160 - Response Example
 
@@ -5930,6 +6069,7 @@ The sequence of events is as follows:
     change them.
 
 <a name="table-161---request-data-for-command-0x1f02---set-notification-subscriptions"></a>
+<a name="table-161---request-data-for-command-0x1f02---set-notification-subscriptions"></a>
 Table 161 - Request Data for Command 0x1F02 - Set Notification Subscriptions
 
 | Tag                                                                                      | Len | Value / Description                                                                                                                                                                                                                                                                                                                                                                                                                                 | Typ | Req | Default |
@@ -5947,6 +6087,7 @@ Table 161 - Request Data for Command 0x1F02 - Set Notification Subscriptions
 | End of any wrappers, at minimum including **Request Message** found on page **55**       |     |                                                                                                                                                                                                                                                                                                                                                                                                                                                     |     |     |         |
 
 <a name="table-162---response-data-for-command-0x1f02---set-notification-subscriptions"></a>
+<a name="table-162---response-data-for-command-0x1f02---set-notification-subscriptions"></a>
 Table 162 - Response Data for Command 0x1F02 - Set Notification Subscriptions
 
 | Tag                                                                                       | Len | Value / Description | Typ | Req | Default |
@@ -5957,12 +6098,14 @@ Table 162 - Response Data for Command 0x1F02 - Set Notification Subscriptions
 | End of any wrappers, at minimum including **Response Message** found on page **56**       |     |                     |     |     |         |
 
 <a name="table-163---request-example"></a>
+<a name="table-163---request-example"></a>
 Table 163 - Request Example
 
 | Example (Hex)               |
 |-----------------------------|
 | AA00 810401551F02 8402 1F02 |
 
+<a name="table-164---response-example"></a>
 <a name="table-164---response-example"></a>
 Table 164 - Response Example
 
@@ -6010,6 +6153,7 @@ the session. The other clients do not need to send any commands. When the
 session expires, all clients will be disconnected.
 
 <a name="table-165---request-data-for-command-0x1f03---extend-session-session-management"></a>
+<a name="table-165---request-data-for-command-0x1f03---extend-session-session-management"></a>
 Table 165 - Request Data for Command 0x1F03 - Extend Session (Session Management
 Only)
 
@@ -6019,6 +6163,7 @@ Only)
 | 1F03 = **Command 0x1F03 - Extend Session (Session Management Only)**                     |     |                     |     |     |         |
 | End of any wrappers, at minimum including **Request Message** found on page **55**       |     |                     |     |     |         |
 
+<a name="table-166---response-data-for-command-0x1f03---extend-session-session"></a>
 <a name="table-166---response-data-for-command-0x1f03---extend-session-session"></a>
 Table 166 - Response Data for Command 0x1F03 - Extend Session (Session
 Management Only)Extend Session
@@ -6031,12 +6176,14 @@ Management Only)Extend Session
 | End of any wrappers, at minimum including **Response Message** found on page **56**       |     |                     |     |     |         |
 
 <a name="table-167---request-example"></a>
+<a name="table-167---request-example"></a>
 Table 167 - Request Example
 
 | Example (Hex)               |
 |-----------------------------|
 | AA00 810401551F03 8402 1F03 |
 
+<a name="table-168---response-example"></a>
 <a name="table-168---response-example"></a>
 Table 168 - Response Example
 
@@ -6058,6 +6205,7 @@ The sequence of events is as follows:
 4.  The device terminates the Bluetooth® LE connection within around 500ms.
 
 <a name="table-169---request-data-for-command-0x1f04--terminate-bluetooth-le-connection"></a>
+<a name="table-169---request-data-for-command-0x1f04--terminate-bluetooth-le-connection"></a>
 Table 169 - Request Data for Command 0x1F04 – Terminate Bluetooth® LE Connection
 
 | Tag                                                                                      | Len | Value / Description | Typ | Req | Default |
@@ -6067,6 +6215,7 @@ Table 169 - Request Data for Command 0x1F04 – Terminate Bluetooth® LE Connect
 | No parameters.                                                                           |     |                     |     |     |         |
 | End of any wrappers, at minimum including **Request Message** found on page **55**       |     |                     |     |     |         |
 
+<a name="table-170---response-data-for-command-0x1f04--terminate-bluetooth-le"></a>
 <a name="table-170---response-data-for-command-0x1f04--terminate-bluetooth-le"></a>
 Table 170 - Response Data for Command 0x1F04 – Terminate Bluetooth® LE
 Connection
@@ -6079,12 +6228,14 @@ Connection
 | End of any wrappers, at minimum including **Response Message** found on page **56**       |     |                     |     |     |         |
 
 <a name="table-171---request-example"></a>
+<a name="table-171---request-example"></a>
 Table 171 - Request Example
 
 | Example (Hex)                       |
 |-------------------------------------|
 | AA 00 81 04 01 55 1F 04 84 02 1F 04 |
 
+<a name="table-172---response-example"></a>
 <a name="table-172---response-example"></a>
 Table 172 - Response Example
 
@@ -6107,6 +6258,7 @@ The sequence of events is as follows:
 4.  The device erases all Bluetooth® LE bonds within around 500ms.
 
 <a name="table-173---request-data-for-command-0x1f05--erase-all-bluetooth-le-bonds"></a>
+<a name="table-173---request-data-for-command-0x1f05--erase-all-bluetooth-le-bonds"></a>
 Table 173 - Request Data for Command 0x1F05 – Erase All Bluetooth® LE Bonds
 
 | Tag                                                                                      | Len | Value / Description | Typ | Req | Default |
@@ -6116,6 +6268,7 @@ Table 173 - Request Data for Command 0x1F05 – Erase All Bluetooth® LE Bonds
 | No parameters.                                                                           |     |                     |     |     |         |
 | End of any wrappers, at minimum including **Request Message** found on page **55**       |     |                     |     |     |         |
 
+<a name="table-174---response-data-for-command-0x1f05--erase-all-bluetooth-le-bonds"></a>
 <a name="table-174---response-data-for-command-0x1f05--erase-all-bluetooth-le-bonds"></a>
 Table 174 - Response Data for Command 0x1F05 – Erase All Bluetooth® LE Bonds
 
@@ -6127,12 +6280,14 @@ Table 174 - Response Data for Command 0x1F05 – Erase All Bluetooth® LE Bonds
 | End of any wrappers, at minimum including **Response Message** found on page **56**       |     |                     |     |     |         |
 
 <a name="table-175---request-example"></a>
+<a name="table-175---request-example"></a>
 Table 175 - Request Example
 
 | Example (Hex)                       |
 |-------------------------------------|
 | AA 00 81 04 01 55 1F 05 84 02 1F 05 |
 
+<a name="table-176---response-example"></a>
 <a name="table-176---response-example"></a>
 Table 176 - Response Example
 
@@ -6177,12 +6332,12 @@ it starts a “PIN Entry session.” While in PIN Entry Mode:
 
 The usual sequence is as follows:
 
-1.  The host invokes this command using the format in [**Table 177**](#table-177---request-data-for-command-0x2001---request-pin-with-host-supplied).
+1.  The host invokes this command using the format in [[**Table 177**](#table-177---request-data-for-command-0x2001---request-pin-with-host-supplied)](#table-177---request-data-for-command-0x2001---request-pin-with-host-supplied).
 2.  If an error occurs, the device returns a command response message as shown
-    in [**Table 178**](#table-178---response-data-for-command-0x2001---request-pin-with-host-supplied) with Response Status, Operation Status Summary byte set to
+    in [[**Table 178**](#table-178---response-data-for-command-0x2001---request-pin-with-host-supplied)](#table-178---response-data-for-command-0x2001---request-pin-with-host-supplied) with Response Status, Operation Status Summary byte set to
     0x80 (Failed to start operation), and terminates the command.
 3.  If no error occurs, the device returns a command response message as shown
-    in [**Table 178**](#table-178---response-data-for-command-0x2001---request-pin-with-host-supplied) with Response Status, Operation Status Summary byte set to
+    in [[**Table 178**](#table-178---response-data-for-command-0x2001---request-pin-with-host-supplied)](#table-178---response-data-for-command-0x2001---request-pin-with-host-supplied) with Response Status, Operation Status Summary byte set to
     0x01 (OK, Started / Running), and enters PIN Entry Mode.
 4.  The device shows one of the predefined messages specified by the **User
     Interface Sequence** parameter and waits up to the specified **Timeout** for
@@ -6194,7 +6349,7 @@ The usual sequence is as follows:
     or **Wait Time** timeout), the device sends **Notification 0x0205 - Banking
     Functions Operation Complete** to report **Touchscreen** / **PIN Entry**. If
     PIN entry is successful, the report also contains a payload as shown in
-    [**Table 326**](#table-326---notification-payload-for-touchscreen-pin-entry-success-data). The EPB format the device uses depends on the parameters the
+    [[**Table 326**](#table-326---notification-payload-for-touchscreen-pin-entry-success-data)](#table-326---notification-payload-for-touchscreen-pin-entry-success-data). The EPB format the device uses depends on the parameters the
     host specified in the command:
     1.  If the host provided the **Account Number** data in the command, the
         device creates the EPB using the **PIN Block Format** the host specified
@@ -6261,6 +6416,7 @@ The usual sequence is as follows:
             attention to the display.
 
 <a name="table-177---request-data-for-command-0x2001---request-pin-with-host-supplied"></a>
+<a name="table-177---request-data-for-command-0x2001---request-pin-with-host-supplied"></a>
 Table 177 - Request Data for Command 0x2001 - Request PIN with Host Supplied
 Account Data (Banking Functions Only)
 
@@ -6278,6 +6434,7 @@ Account Data (Banking Functions Only)
 | End of any wrappers, at minimum including **Request Message** found on page **55**               |     |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |     |     |         |
 
 <a name="table-178---response-data-for-command-0x2001---request-pin-with-host-supplied"></a>
+<a name="table-178---response-data-for-command-0x2001---request-pin-with-host-supplied"></a>
 Table 178 - Response Data for Command 0x2001 - Request PIN with Host Supplied
 Account Data (Banking Functions Only)
 
@@ -6292,6 +6449,7 @@ If the request started successfully, the Response Status in the message wrapper
 is **OK, Started/Running**.
 
 <a name="table-179---request-example-for-command-0x2001---request-pin-with-host-supplied"></a>
+<a name="table-179---request-example-for-command-0x2001---request-pin-with-host-supplied"></a>
 Table 179 - Request Example for Command 0x2001 - Request PIN with Host Supplied
 Account Data (Banking Functions Only)
 
@@ -6299,6 +6457,7 @@ Account Data (Banking Functions Only)
 |-------------------------------------------------------------------------------------------------------------------|
 | AA 00 81 04 01 09 20 01 84 1C 20 01 81 01 3C 82 01 00 83 02 08 04 85 01 00 A1 0B 81 01 0C 82 06 12 34 56 78 90 12 |
 
+<a name="table-180---response-example-command-0x2001---request-pin-with-host-supplied"></a>
 <a name="table-180---response-example-command-0x2001---request-pin-with-host-supplied"></a>
 Table 180 - Response Example Command 0x2001 - Request PIN with Host Supplied
 Account Data (Banking Functions Only)
@@ -6342,12 +6501,12 @@ it starts a “PIN Entry session.” While in PIN Entry Mode:
 
 The usual sequence is as follows:
 
-1.  The host invokes this command using the format in [**Table 181**](#table-181---request-data-for-command-0x2002---request-pin-with-card-supplied).
+1.  The host invokes this command using the format in [[**Table 181**](#table-181---request-data-for-command-0x2002---request-pin-with-card-supplied)](#table-181---request-data-for-command-0x2002---request-pin-with-card-supplied).
 2.  If an error occurs, the device returns a command response message as shown
-    in [**Table 182**](#table-182---response-data-for-command-0x2002---request-pin-with-card-supplied) with Response Status, Operation Status Summary byte set to
+    in [[**Table 182**](#table-182---response-data-for-command-0x2002---request-pin-with-card-supplied)](#table-182---response-data-for-command-0x2002---request-pin-with-card-supplied) with Response Status, Operation Status Summary byte set to
     0x80 (Failed to start operation), and terminates the command.
 3.  If no error occurs, the device returns a command response message as shown
-    in [**Table 182**](#table-182---response-data-for-command-0x2002---request-pin-with-card-supplied) with Response Status, Operation Status Summary byte set to
+    in [[**Table 182**](#table-182---response-data-for-command-0x2002---request-pin-with-card-supplied)](#table-182---response-data-for-command-0x2002---request-pin-with-card-supplied) with Response Status, Operation Status Summary byte set to
     0x01 (OK, Started / Running), and enters PIN Entry Mode.
 4.  The device shows a prompt requesting the cardholder present one of the
     payment technologies specified in the **Reader Options** parameter, and
@@ -6376,7 +6535,7 @@ The usual sequence is as follows:
     or **Wait Time** timeout), the device sends a **Notification 0x0205 -
     Banking Functions Operation Complete** to report **Touchscreen** **PIN
     Entry**. If PIN entry is successful, the report also contains a payload as
-    shown in [**Table 327**](#table-327---notification-payload-for-touchscreen-pin-entry-success-data). The device creates the EPB using the **PIN Block
+    shown in [[**Table 327**](#table-327---notification-payload-for-touchscreen-pin-entry-success-data)](#table-327---notification-payload-for-touchscreen-pin-entry-success-data). The device creates the EPB using the **PIN Block
     Format** the host specified in the command.
 12. If the host is performing a PIN Verification function (such as **User
     Interface Sequence** = **Enter PIN**), the host software uses the financial
@@ -6438,6 +6597,7 @@ The usual sequence is as follows:
             attention to the display.
 
 <a name="table-181---request-data-for-command-0x2002---request-pin-with-card-supplied"></a>
+<a name="table-181---request-data-for-command-0x2002---request-pin-with-card-supplied"></a>
 Table 181 - Request Data for Command 0x2002 - Request PIN with Card Supplied
 Account Data (Banking Functions Only)
 
@@ -6457,6 +6617,7 @@ Account Data (Banking Functions Only)
 | End of any wrappers, at minimum including **Request Message** found on page **55**                |     |                                                                                                                                                                                                                                                                                                                                                                                            |     |     |         |
 
 <a name="table-182---response-data-for-command-0x2002---request-pin-with-card-supplied"></a>
+<a name="table-182---response-data-for-command-0x2002---request-pin-with-card-supplied"></a>
 Table 182 - Response Data for Command 0x2002 - Request PIN with Card Supplied
 Account Data (Banking Functions Only)
 
@@ -6471,6 +6632,7 @@ If the request started successfully, the Request Status in the message wrapper
 is **OK / Operation Started**.
 
 <a name="table-183---request-example-command-0x2002---request-pin-with-card-supplied"></a>
+<a name="table-183---request-example-command-0x2002---request-pin-with-card-supplied"></a>
 Table 183 - Request Example Command 0x2002 - Request PIN with Card Supplied
 Account Data (Banking Functions Only)
 
@@ -6478,6 +6640,7 @@ Account Data (Banking Functions Only)
 |-------------------------------------------------------------------------------------------------------------------|
 | AA 00 81 04 01 0C 20 02 84 1C 20 02 81 01 3C A3 09 81 01 01 82 01 01 83 01 01 A4 0A 82 01 01 83 02 08 04 85 01 00 |
 
+<a name="table-184---response-example-command-0x2002---request-pin-with-card-supplied"></a>
 <a name="table-184---response-example-command-0x2002---request-pin-with-card-supplied"></a>
 Table 184 - Response Example Command 0x2002 - Request PIN with Card Supplied
 Account Data (Banking Functions Only)
@@ -6517,6 +6680,7 @@ To get a property, the sequence of events is as follows:
     the device returns a failure response with no command-specific parameters.
 
 <a name="table-185---request-data-for-command-0xd101---get-property"></a>
+<a name="table-185---request-data-for-command-0xd101---get-property"></a>
 Table 185 - Request Data for Command 0xD101 - Get Property
 
 | Tag                                                                                      | Len | Value / Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  | Typ | Req | Default              |
@@ -6530,6 +6694,7 @@ Table 185 - Request Data for Command 0xD101 - Get Property
 | 89                                                                                       | var | Property OID Remainder This contains the remaining numbers of the Property’s OID, BER TLV encoded per **X.660** section **8 Basic encoding rules**. For details about TLV encoding an OID. To request a set of properties in a branch of the Property OID structure, the host should pass a partial Property OID, and the device returns the value of all properties from the specified tree level downward.  For simplicity, include all numbers except the final number of the property’s OID in **Property Type** and **Property OID Tree Prefix**, and include the final number of the OID OR 0xC0 here, then append constant byte 0x00. These two bytes represent a single empty BER TLV primitive data object. | B   | R   |                      |
 | End of any wrappers, at minimum including **Request Message** found on page **55**       |     |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |     |     |                      |
 
+<a name="table-186---response-data-for-command-0xd101---get-property"></a>
 <a name="table-186---response-data-for-command-0xd101---get-property"></a>
 Table 186 - Response Data for Command 0xD101 - Get Property
 
@@ -6548,12 +6713,14 @@ If the request started successfully, the Request Status in the message wrapper
 is **OK, Started / Running, All good / requested operation was successful**.
 
 <a name="table-187---request-example"></a>
+<a name="table-187---request-example"></a>
 Table 187 - Request Example
 
 | Example (Hex)                                                                                                                                              |
 |------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Get **Property 1.2.7.1.1.1 Device Reset Occurred Notification Control** using “simple” form:  AA00 8104 0155D101 840F D101 8501 01 8704 02070101 8902 C100 |
 
+<a name="table-188---response-example"></a>
 <a name="table-188---response-example"></a>
 Table 188 - Response Example
 
@@ -6562,12 +6729,14 @@ Table 188 - Response Example
 | Get **Property 1.2.7.1.1.1 Device Reset Occurred Notification Control** using “simple” form:  AA00 8104 8255D101 8204 00000000 84820010 D101 8501 01 8704 02070101 8903 C101 00 |
 
 <a name="table-189---request-example"></a>
+<a name="table-189---request-example"></a>
 Table 189 - Request Example
 
 | Example (Hex)                                                                                                                                                                    |
 |----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Get **Property 1.2.7.1.1.1 Device Reset Occurred Notification Control** using longer Property OID Remainder:  AA00 8104 0155D101 8411 D101 8501 01 890A E208 E706 E104 E102 C100 |
 
+<a name="table-190---response-example"></a>
 <a name="table-190---response-example"></a>
 Table 190 - Response Example
 
@@ -6576,12 +6745,14 @@ Table 190 - Response Example
 | Get **Property 1.2.7.1.1.1 Device Reset Occurred Notification Control** using longer Property OID Remainder:  AA00 8104 8255D101 8204 00000000 84820012 D101 8501 01 890B E209 E707 E105 E103 C101 00 |
 
 <a name="table-191---request-example"></a>
+<a name="table-191---request-example"></a>
 Table 191 - Request Example
 
 | Example (Hex)                                                                                                                                 |
 |-----------------------------------------------------------------------------------------------------------------------------------------------|
 | Get **Property Subgroup 2.1.2.2.nn Core Firmware Information** using “simple” form:  AA00 8104 0155D101 840D D101 8501 02 8702 0102 8902 C200 |
 
+<a name="table-192---response-example"></a>
 <a name="table-192---response-example"></a>
 Table 192 - Response Example
 
@@ -6624,6 +6795,7 @@ To set a property, the sequence of events is as follows:
     parameters.
 
 <a name="table-193---request-data-for-command-0xd111---set-property-unsecured"></a>
+<a name="table-193---request-data-for-command-0xd111---set-property-unsecured"></a>
 Table 193 - Request Data for Command 0xD111 - Set Property (Unsecured)
 
 | Tag                                                                                      | Len | Value / Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   | Typ | Req | Default              |
@@ -6637,6 +6809,7 @@ Table 193 - Request Data for Command 0xD111 - Set Property (Unsecured)
 | 89                                                                                       | var | Property OID Remainder This contains the remaining numbers of the Property’s OID, BER TLV encoded per **X.660** section **8 Basic encoding rules**. For details about TLV encoding an OID.  For simplicity, include all numbers except the final number of the property’s OID in **Property Type** and **Property OID Tree Prefix**, and include the final number of the OID OR 0xC0 here, then append a length corresponding one of the following, then append the value to set the property to: If the length of the value you are setting is 0x7F or shorter, include one byte equal to the length of the value. If the length of the value you are setting is greater than 0x7F but less than 0xFFFF, append 82, then two bytes equal to the length of the value. | B   | R   |                      |
 | End of any wrappers, at minimum including **Request Message** found on page **55**       |     |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |     |     |                      |
 
+<a name="table-194---response-data-for-command-0xd111---set-property-unsecured"></a>
 <a name="table-194---response-data-for-command-0xd111---set-property-unsecured"></a>
 Table 194 - Response Data for Command 0xD111 - Set Property (Unsecured)
 
@@ -6652,12 +6825,14 @@ Table 194 - Response Data for Command 0xD111 - Set Property (Unsecured)
 | End of any wrappers, at minimum including **Response Message** found on page **56**       |     |                                                                                                                                                                                                   |     |     |         |
 
 <a name="table-195---request-example"></a>
+<a name="table-195---request-example"></a>
 Table 195 - Request Example
 
 | Example (Hex)                                                                                                                                         |
 |-------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Set **Property 1.2.7.1.1.1 Device Reset Occurred Notification Control** AA 00 81 04 01 55 D1 11 84 10 D1 11 85 01 01 87 04 02 07 01 01 89 03 C1 01 00 |
 
+<a name="table-196---response-example"></a>
 <a name="table-196---response-example"></a>
 Table 196 - Response Example
 
@@ -6700,6 +6875,7 @@ The sequence of events is as follows:
 4.  The device automatically resets and applies the new settings.
 
 <a name="table-197---request-data-for-command-0xd201"></a>
+<a name="table-197---request-data-for-command-0xd201"></a>
 Table 197 - Request Data for Command 0xD201
 
 | Tag                                                                                       | Len | Value / Description                                                                                           | Typ | Req | Default |
@@ -6709,6 +6885,7 @@ Table 197 - Request Data for Command 0xD201
 | 81                                                                                        | 01  | Default Values to Use 0x01 = Use Firmware Defaults (see section **8**) Other Values = Reserved for future use | B   | R   | 01      |
 | End of any wrappers, at minimum including **Request Message** found on page **55**        |     |                                                                                                               |     |     |         |
 
+<a name="table-198---response-data-for-command-0xd201"></a>
 <a name="table-198---response-data-for-command-0xd201"></a>
 Table 198 - Response Data for Command 0xD201
 
@@ -6720,12 +6897,14 @@ Table 198 - Response Data for Command 0xD201
 | End of any wrappers, at minimum including **Response Message** found on page **56**       |     |                     |     |     |         |
 
 <a name="table-199---request-example"></a>
+<a name="table-199---request-example"></a>
 Table 199 - Request Example
 
 | Example (Hex)                      |
 |------------------------------------|
 | AA00 81040101D201 8405 D201 810101 |
 
+<a name="table-200---response-example"></a>
 <a name="table-200---response-example"></a>
 Table 200 - Response Example
 
@@ -6768,6 +6947,7 @@ Table. File types marked as Secured = Yes must be loaded using **Command 0xD811
 No can be loaded using **Command 0xD812 - Start Send File to Device
 (Unsecured)**.
 
+<a name="table-201---file-types"></a>
 <a name="table-201---file-types"></a>
 Table 201 - File Types
 
@@ -6841,6 +7021,7 @@ The sequence of events is as follows:
     resets.
 
 <a name="table-202---request-data-for-command-0xd801---load-firmware-file"></a>
+<a name="table-202---request-data-for-command-0xd801---load-firmware-file"></a>
 Table 202 - Request Data for Command 0xD801 - Load Firmware File
 
 | Tag                                                                                      | Len | Value / Description                                                                                                                                                                                                               | Typ | Req | Default |
@@ -6855,6 +7036,7 @@ Table 202 - Request Data for Command 0xD801 - Load Firmware File
 | End of any wrappers, at minimum including **Request Message** found on page **55**       |     |                                                                                                                                                                                                                                   |     |     |         |
 
 <a name="table-203---response-data-for-command-0xd801---load-firmware-file"></a>
+<a name="table-203---response-data-for-command-0xd801---load-firmware-file"></a>
 Table 203 - Response Data for Command 0xD801 - Load Firmware File
 
 | Tag                                                                                       | Len | Value / Description | Typ | Req | Default |
@@ -6864,6 +7046,7 @@ Table 203 - Response Data for Command 0xD801 - Load Firmware File
 | No parameters.                                                                            |     |                     |     |     |         |
 | End of any wrappers, at minimum including **Response Message** found on page **56**       |     |                     |     |     |         |
 
+<a name="table-204---response-example-for-command-0xd801-battery-charge-state"></a>
 <a name="table-204---response-example-for-command-0xd801-battery-charge-state"></a>
 Table 204 - Response Example for Command 0xD801 Battery Charge State
 
@@ -6875,12 +7058,14 @@ If the request started successfully, the Request Status in the message wrapper
 is **OK, Started / Running, All good / requested operation was successful**.
 
 <a name="table-205---request-example"></a>
+<a name="table-205---request-example"></a>
 Table 205 - Request Example
 
 | Example (Hex)                                                                                                                                                                                                                                             |
 |-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | AA 00 81 04 01 01 D8 01 84 83 0C 76 58 D8 01 81 01 03 85 02 00 01 86 20 DF C7 1E 09 A3 CE 8E 86 B0 F5 B6 75 BE B7 7A 0E 82 33 BF F1 8A CD 8F 38 34 B0 DB 20 D9 40 4B 28 87 83 0C 76 28  Plus 0C7628 bytes of firmware Payload, excluded here for brevity. |
 
+<a name="table-206---response-example"></a>
 <a name="table-206---response-example"></a>
 Table 206 - Response Example
 
@@ -6910,7 +7095,7 @@ The sequence of events is as follows:
     **6.7.1 About Files**), and either opens an existing file in its file system
     for reading, or begins constructing it.
 3.  The host constructs **Command 0xD811 - Start Send File to Device (Secured)**
-    per [**Table 207**](#table-207---request-data-for-command-0xd811---start-send-file-to-device).
+    per [[**Table 207**](#table-207---request-data-for-command-0xd811---start-send-file-to-device)](#table-207---request-data-for-command-0xd811---start-send-file-to-device).
 4.  The host constructs **Command 0xEEEE - Send Secured Command to Device**
     using the previously constructed command as the payload, and sends that
     command to the device as a **Request Message** to start the process of
@@ -6939,6 +7124,7 @@ The sequence of events is as follows:
     **Data File Message**.
 
 <a name="table-207---request-data-for-command-0xd811---start-send-file-to-device"></a>
+<a name="table-207---request-data-for-command-0xd811---start-send-file-to-device"></a>
 Table 207 - Request Data for Command 0xD811 - Start Send File to Device
 (Secured)
 
@@ -6960,6 +7146,7 @@ Table 207 - Request Data for Command 0xD811 - Start Send File to Device
 | End of any wrappers, at minimum including **Request Message** found on page **55**       |     |                                                                                                                                            |     |     |         |
 
 <a name="table-208---response-data-for-command-0xd811---start-send-file-to-device"></a>
+<a name="table-208---response-data-for-command-0xd811---start-send-file-to-device"></a>
 Table 208 - Response Data for Command 0xD811 - Start Send File to Device
 (Secured)
 
@@ -6976,12 +7163,14 @@ is **OK, Started / Running, All good / requested operation was successful**.
 **Note: For additional support, please contact MagTek Support.**
 
 <a name="table-209---request-example"></a>
+<a name="table-209---request-example"></a>
 Table 209 - Request Example
 
 | Example (Hex)                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 |-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | AA 00 81 04 01 04 D8 11 84 81 8F EE EE A1 19 81 05 03 03 06 02 08 84 00 85 00 A8 0A 81 02 11 02 82 00 86 00 88 00 A9 00 82 04 FF FF FF F0 83 08 C9 65 45 F2 97 69 85 B1 84 4E D8 11 81 04 00 00 03 00 A2 2B 81 04 00 00 02 99 82 01 04 83 20 87 A4 B3 54 61 C5 CB D3 1D DC BA 9D 65 25 5A D4 6A 22 FA 51 5E FD 65 87 AF AC A8 8C 4F AF 80 9B A3 14 38 31 30 38 33 30 33 30 33 30 33 30 33 30 33 33 33 30 33 30 87 01 01 9E 10 7D E4 27 C8 A0 70 72 08 19 0A 1E 0A 3F 48 BB F1 |
 
+<a name="table-210---response-example"></a>
 <a name="table-210---response-example"></a>
 Table 210 - Response Example
 
@@ -7006,7 +7195,7 @@ The sequence of events is as follows:
     **6.7.1 About Files**), and either opens an existing file in its file system
     for reading, or begins constructing it.
 2.  The host constructs **Command 0xD812 - Start Send File to Device
-    (Unsecured)** per [**Table 211**](#table-211---request-data-for-command-0xd812---start-send-file-to-device).
+    (Unsecured)** per [[**Table 211**](#table-211---request-data-for-command-0xd812---start-send-file-to-device)](#table-211---request-data-for-command-0xd812---start-send-file-to-device).
 3.  The host sends that command to the device as a **Request Message** to start
     the process of uploading a file.
 4.  The device sends a **Response Message** so the host knows it can begin
@@ -7033,6 +7222,7 @@ any portion of an existing image will delete that image.
 incorrect.](Images/c2b58fc44c8bde6be1a9c217283b9d2f.png)
 
 <a name="table-211---request-data-for-command-0xd812---start-send-file-to-device"></a>
+<a name="table-211---request-data-for-command-0xd812---start-send-file-to-device"></a>
 Table 211 - Request Data for Command 0xD812 - Start Send File to Device
 (Unsecured)
 
@@ -7054,6 +7244,7 @@ Table 211 - Request Data for Command 0xD812 - Start Send File to Device
 | End of any wrappers, at minimum including **Request Message** found on page **55**       |     |                                                                                                                                            |     |     |         |
 
 <a name="table-212---response-data-for-command-0xd812---start-send-file-to-device"></a>
+<a name="table-212---response-data-for-command-0xd812---start-send-file-to-device"></a>
 Table 212 - Response Data for Command 0xD812 - Start Send File to Device
 (Unsecured)
 
@@ -7070,12 +7261,14 @@ is **OK, Started / Running, All good / requested operation was successful**.
 **Note: For additional support, please contact MagTek Support.**
 
 <a name="table-213---request-example"></a>
+<a name="table-213---request-example"></a>
 Table 213 - Request Example
 
 | Example (Hex)                                                                                                                                                                                                                               |
 |---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | AA 00 81 04 01 07 D8 12  84 44 D8 12 81 04 02 00 00 00 A2 2B  81 04 00 02 58 38 82 01 04 83 20 D5 B8 BF 2F 3A 15 D9 EE 1D 0D E5 8E DD 68 37 73 18 51 C7 3C 3D 79 58 2B A6 07 90 5C 2B 86 3C E5 A3 0A 81 08 30 32 30 30 30 30 30 30 87 01 01 |
 
+<a name="table-214---response-example"></a>
 <a name="table-214---response-example"></a>
 Table 214 - Response Example
 
@@ -7111,6 +7304,7 @@ The sequence of events is as follows:
     response to ensure the file has not been tampered with.
 
 <a name="table-215---request-data-for-command-0xd821---start-get-file-from-device"></a>
+<a name="table-215---request-data-for-command-0xd821---start-get-file-from-device"></a>
 Table 215 - Request Data for Command 0xD821 - Start Get File from Device
 
 | Tag                                                                                      | Len | Value / Description                                                                              | Typ | Req | Default |
@@ -7121,6 +7315,7 @@ Table 215 - Request Data for Command 0xD821 - Start Get File from Device
 | 87                                                                                       | 01  | Progress indicator behavior (Reserved for future use / Subject to change) 0x00 = None 0x01 = LED | B   | O   | Null    |
 | End of any wrappers, at minimum including **Request Message** found on page **55**       |     |                                                                                                  |     |     |         |
 
+<a name="table-216---response-data-for-command-0xd821---start-get-file-from-device"></a>
 <a name="table-216---response-data-for-command-0xd821---start-get-file-from-device"></a>
 Table 216 - Response Data for Command 0xD821 - Start Get File from Device
 
@@ -7144,12 +7339,14 @@ If the request started successfully, the Request Status in the message wrapper
 is **OK, Done.**
 
 <a name="table-217---request-example"></a>
+<a name="table-217---request-example"></a>
 Table 217 - Request Example
 
 | Example (Hex)                                                  |
 |----------------------------------------------------------------|
 | AA 00 81 04 01 08 D8 21 84 0B D8 21 81 04 00 00 00 01 87 01 01 |
 
+<a name="table-218---response-example"></a>
 <a name="table-218---response-example"></a>
 Table 218 - Response Example
 
@@ -7183,6 +7380,7 @@ The sequence of events is as follows:
     host.
 
 <a name="table-219---request-data-for-command-0xd825---get-file-info-from-device"></a>
+<a name="table-219---request-data-for-command-0xd825---get-file-info-from-device"></a>
 Table 219 - Request Data for Command 0xD825 - Get File Info from Device
 
 | Tag                                                                                      | Len | Value / Description    | Typ | Req | Default |
@@ -7192,6 +7390,7 @@ Table 219 - Request Data for Command 0xD825 - Get File Info from Device
 | 81                                                                                       | 04  | File ID from Table 201 | B   | R   |         |
 | End of any wrappers, at minimum including **Request Message** found on page **55**       |     |                        |     |     |         |
 
+<a name="table-220---response-data-for-command-0xd825---get-file-info-from-device"></a>
 <a name="table-220---response-data-for-command-0xd825---get-file-info-from-device"></a>
 Table 220 - Response Data for Command 0xD825 - Get File Info from Device
 
@@ -7215,12 +7414,14 @@ If the request started successfully, the Request Status in the message wrapper
 is **OK, Started / Running, All good / requested operation was successful**.
 
 <a name="table-221---request-example"></a>
+<a name="table-221---request-example"></a>
 Table 221 - Request Example
 
 | Example (Hex)                                         |
 |-------------------------------------------------------|
 | AA 00 81 04 01 08 D8 21 84 08 D8 25 81 04 00 00 00 01 |
 
+<a name="table-222---response-example"></a>
 <a name="table-222---response-example"></a>
 Table 222 - Response Example
 
@@ -7235,7 +7436,7 @@ Table 222 - Response Example
 The host uses this command to request the deletion of a file stored on the
 device. File types include
 
-Custom Idle Page Image 1 to 4 in [**Table 211**](#table-211---request-data-for-command-0xd812---start-send-file-to-device).
+Custom Idle Page Image 1 to 4 in [[**Table 211**](#table-211---request-data-for-command-0xd812---start-send-file-to-device)](#table-211---request-data-for-command-0xd812---start-send-file-to-device).
 
 The sequence of events is as follows:
 
@@ -7249,6 +7450,7 @@ format below.
 to the host.
 
 <a name="table-223---request-data-for-command-0xd831--delete-file-from-device"></a>
+<a name="table-223---request-data-for-command-0xd831--delete-file-from-device"></a>
 Table 223 - Request Data for Command 0xD831 – Delete File from Device
 
 | Tag                                                                                      | Len | Value / Description    | Typ | Req | Default |
@@ -7258,6 +7460,7 @@ Table 223 - Request Data for Command 0xD831 – Delete File from Device
 | 81                                                                                       | 04  | File ID from Table 201 | B   | R   |         |
 | End of any wrappers, at minimum including **Request Message** found on page **55**       |     |                        |     |     |         |
 
+<a name="table-224---response-data-for-command-0xd831--delete-file-from-device"></a>
 <a name="table-224---response-data-for-command-0xd831--delete-file-from-device"></a>
 Table 224 - Response Data for Command 0xD831 – Delete File from Device
 
@@ -7269,12 +7472,14 @@ Table 224 - Response Data for Command 0xD831 – Delete File from Device
 | End of any wrappers, at minimum including **Response Message** found on page **56**       |     |                     |     |     |         |
 
 <a name="table-225---request-example"></a>
+<a name="table-225---request-example"></a>
 Table 225 - Request Example
 
 | Example (Hex)                                         |
 |-------------------------------------------------------|
 | AA 00 81 04 01 05 D8 31 84 08 D8 31 81 04 02 00 00 00 |
 
+<a name="table-226---response-example"></a>
 <a name="table-226---response-example"></a>
 Table 226 - Response Example
 
@@ -7302,6 +7507,7 @@ The sequence of events is as follows:
     Failed** to the host. In both cases, the device automatically resets.
 
 <a name="table-227---request-data-for-command-0xd901---commit-firmware-from-file"></a>
+<a name="table-227---request-data-for-command-0xd901---commit-firmware-from-file"></a>
 Table 227 - Request Data for Command 0xD901 - Commit Firmware from File
 
 | Tag                                                                                      | Len | Value / Description                                                                                                     | Typ | Req | Default |
@@ -7314,6 +7520,7 @@ Table 227 - Request Data for Command 0xD901 - Commit Firmware from File
 | 86                                                                                       | 20  | Hash Checksum This is a SHA-256 hash of the entire **Firmware File Type (MAGTEK INTERNAL ONLY)** object being uploaded. | B   | R   |         |
 | End of any wrappers, at minimum including **Request Message** found on page **55**       |     |                                                                                                                         |     |     |         |
 
+<a name="table-228---response-data-for-command-0xd901---commit-firmware-from-file"></a>
 <a name="table-228---response-data-for-command-0xd901---commit-firmware-from-file"></a>
 Table 228 - Response Data for Command 0xD901 - Commit Firmware from File
 
@@ -7328,6 +7535,7 @@ If the request started successfully, the Request Status in the message wrapper
 is **OK, Started / Running, All good / requested operation was successful**.
 
 <a name="table-229---request-example"></a>
+<a name="table-229---request-example"></a>
 Table 229 - Request Example
 
 | Example (Hex)                                                                                                                                                           |
@@ -7335,12 +7543,14 @@ Table 229 - Request Example
 | AA 00 81 04 01 02 D9 01 84 2E D9 01 81 01 03 82 01 00 85 02 00 01 86 20 DF C7 1E 09 A3 CE 8E 86 B0 F5 B6 75 BE B7 7A 0E 82 33 BF F1 8A CD 8F 38 34 B0 DB 20 D9 40 4B 28 |
 
 <a name="table-230---response-example"></a>
+<a name="table-230---response-example"></a>
 Table 230 - Response Example
 
 | Example (Hex)                             |
 |-------------------------------------------|
 | AA 00 81 04 82 02 D9 01 82 04 00 00 00 00 |
 
+<a name="table-231---notification-example"></a>
 <a name="table-231---notification-example"></a>
 Table 231 - Notification Example
 
@@ -7368,6 +7578,7 @@ The sequence of events is as follows:
     back the exact parameters the host sent in the command request.
 
 <a name="table-232---request-data-for-command-0xdf01---echo"></a>
+<a name="table-232---request-data-for-command-0xdf01---echo"></a>
 Table 232 - Request Data for Command 0xDF01 - Echo
 
 | Tag                                                                                      | Len | Value / Description | Typ | Req | Default |
@@ -7378,6 +7589,7 @@ Table 232 - Request Data for Command 0xDF01 - Echo
 | 82                                                                                       | var | Data to be echoed   | B   | O   |         |
 | End of any wrappers, at minimum including **Request Message** found on page **55**       |     |                     |     |     |         |
 
+<a name="table-233---response-data-for-command-0xdf01---echo"></a>
 <a name="table-233---response-data-for-command-0xdf01---echo"></a>
 Table 233 - Response Data for Command 0xDF01 - Echo
 
@@ -7390,12 +7602,14 @@ Table 233 - Response Data for Command 0xDF01 - Echo
 | End of any wrappers, at minimum including **Response Message** found on page **56**       |     |                     |     |     |         |
 
 <a name="table-234---request-example"></a>
+<a name="table-234---request-example"></a>
 Table 234 - Request Example
 
 | Example (Hex)                                      |
 |----------------------------------------------------|
 | AA 00 81 04 01 01 DF 01 84 07 DF 01 81 03 01 02 03 |
 
+<a name="table-235---response-example"></a>
 <a name="table-235---response-example"></a>
 Table 235 - Response Example
 
@@ -7435,6 +7649,7 @@ The sequence of events is as follows:
     replayed later.
 
 <a name="table-236---request-data-for-command-0xe001---get-challenge"></a>
+<a name="table-236---request-data-for-command-0xe001---get-challenge"></a>
 Table 236 - Request Data for Command 0xE001 - Get Challenge
 
 |  Tag                                                                                     | Len | Value / Description        | Typ | Req | Default |
@@ -7444,6 +7659,7 @@ Table 236 - Request Data for Command 0xE001 - Get Challenge
 | 81                                                                                       | 02  | Request ID to be protected | B   | R   |         |
 | End of any wrappers, at minimum including **Request Message** found on page **55**       |     |                            |     |     |         |
 
+<a name="table-237---response-data-for-command-0xe001---get-challengeget-challenge"></a>
 <a name="table-237---response-data-for-command-0xe001---get-challengeget-challenge"></a>
 Table 237 - Response Data for Command 0xE001 - Get ChallengeGet Challenge
 
@@ -7457,12 +7673,14 @@ Table 237 - Response Data for Command 0xE001 - Get ChallengeGet Challenge
 | End of any wrappers, at minimum including **Response Message** found on page **56**       |     |                                                                                                                                                                                                                                                                         |     |     |         |
 
 <a name="table-238---request-example"></a>
+<a name="table-238---request-example"></a>
 Table 238 - Request Example
 
 | Example (Hex)                                   |
 |-------------------------------------------------|
 | AA 00 81 04 01 13 E0 01 84 06 E0 01 81 02 F0 12 |
 
+<a name="table-239---response-example"></a>
 <a name="table-239---response-example"></a>
 Table 239 - Response Example
 
@@ -7508,6 +7726,7 @@ The sequence of events is as follows:
     determine the format of the response.
 
 <a name="table-240---request-data-for-command-0xeeee---send-secured-command-to-device"></a>
+<a name="table-240---request-data-for-command-0xeeee---send-secured-command-to-device"></a>
 Table 240 - Request Data for Command 0xEEEE - Send Secured Command to Device
 
 | Tag                                                                                      | Len | Value / Description                                                                                                                                                                                                                                                               | Typ | Req | Default |
@@ -7522,12 +7741,14 @@ Table 240 - Request Data for Command 0xEEEE - Send Secured Command to Device
 | End of any wrappers, at minimum including **Request Message** found on page **55**       |     |                                                                                                                                                                                                                                                                                   |     |     |         |
 
 <a name="table-241---request-example-using-mac"></a>
+<a name="table-241---request-example-using-mac"></a>
 Table 241 - Request Example Using MAC
 
 | Example (Hex)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
 |-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | This example wraps **Command 0xD811 - Start Send File to Device (Secured)**.  AA 00 81 04 01 04 D8 11 84 81 8F EE EE A1 19 81 05 03 03 06 02 08 84 00 85 00 A8 0A 81 02 11 02 82 00 86 00 88 00 A9 00 82 04 FF FF FF F0 83 08 C9 65 45 F2 97 69 85 B1 84 4E D8 11 81 04 00 00 03 00 A2 2B 81 04 00 00 02 99 82 01 04 83 20 87 A4 B3 54 61 C5 CB D3 1D DC BA 9D 65 25 5A D4 6A 22 FA 51 5E FD 65 87 AF AC A8 8C 4F AF 80 9B A3 14 38 31 30 38 33 30 33 30 33 30 33 30 33 30 33 33 33 30 33 30 87 01 01 9E 10 7D E4 27 C8 A0 70 72 08 19 0A 1E 0A 3F 48 BB F1 |
 
+<a name="table-242---request-example-using-ecdsa"></a>
 <a name="table-242---request-example-using-ecdsa"></a>
 Table 242 - Request Example Using ECDSA
 
@@ -7542,6 +7763,7 @@ Table 242 - Request Example Using ECDSA
 The host uses this command to load a key into one of several available slots in
 the device’s secure memory.
 
+<a name="table-243---device-key-id--slot"></a>
 <a name="table-243---device-key-id--slot"></a>
 Table 243 - Device Key ID / Slot
 
@@ -7578,6 +7800,7 @@ is as follows:
 5.  The device sends a response in the format below to the host.
 
 <a name="table-244---request-data-for-command-0xef01---load-key-using-tr-31"></a>
+<a name="table-244---request-data-for-command-0xef01---load-key-using-tr-31"></a>
 Table 244 - Request Data for Command 0xEF01 - Load Key Using TR-31
 
 |  Tag                                                                                     | Len | Value / Description                                              | Typ | Req | Default |
@@ -7587,6 +7810,7 @@ Table 244 - Request Data for Command 0xEF01 - Load Key Using TR-31
 | 84                                                                                       | var | Key Block This is a populated, secured **TR-31 Key Block Type**. | B   | R   |         |
 | End of any wrappers, at minimum including **Request Message** found on page **55**       |     |                                                                  |     |     |         |
 
+<a name="table-245---response-data-for-command-0xef01---load-key-using-tr-31"></a>
 <a name="table-245---response-data-for-command-0xef01---load-key-using-tr-31"></a>
 Table 245 - Response Data for Command 0xEF01 - Load Key Using TR-31
 
@@ -7598,12 +7822,14 @@ Table 245 - Response Data for Command 0xEF01 - Load Key Using TR-31
 | End of any wrappers, at minimum including **Response Message** found on page **56**       |     |                     |     |     |         |
 
 <a name="table-246---request-example"></a>
+<a name="table-246---request-example"></a>
 Table 246 - Request Example
 
 | Example (Hex)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
 |-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | AA 00 81 04 01 1A EF 01 84 82 01 36 EF 01 84 82 01 30 44 30 33 30 34 42 31 54 58 30 30 4E 30 36 30 30 49 4B 31 38 46 46 46 46 39 38 37 36 35 34 33 32 31 30 33 30 30 30 30 30 32 31 35 38 4D 47 54 4B 31 30 30 31 54 31 31 30 34 32 30 30 37 31 32 30 34 31 30 38 31 32 31 30 34 30 30 33 46 33 31 30 37 42 35 30 41 46 44 32 33 32 31 30 43 39 33 36 31 39 44 44 41 41 32 31 33 36 43 37 33 33 31 30 32 30 32 30 31 32 30 34 54 31 37 31 36 33 30 5A 4B 50 30 45 30 31 39 33 36 46 41 33 32 45 4B 43 30 41 30 30 34 35 30 30 54 53 31 34 32 30 32 30 30 39 30 32 54 31 35 35 38 30 32 5A 50 42 30 34 35 37 32 31 37 46 33 34 37 31 34 43 32 42 38 38 46 33 39 35 35 32 32 32 46 46 35 39 41 41 30 35 37 44 39 39 41 46 38 32 41 37 35 37 32 46 39 33 38 46 38 33 38 42 43 36 35 45 45 35 34 46 39 34 37 46 35 39 41 30 36 43 44 34 35 35 31 39 32 32 37 41 32 35 35 43 37 44 35 44 37 43 38 36 37 34 35 30 33 46 41 43 36 46 41 37 31 33 32 43 38 46 41 39 39 36 42 34 45 42 36 41 41 31 31 34 46 45 |
 
+<a name="table-247---response-example"></a>
 <a name="table-247---response-example"></a>
 Table 247 - Response Example
 
@@ -7644,6 +7870,7 @@ The sequence of events is as follows:
     as the next step. See this command for more detail and more potential steps.
 
 <a name="table-248---request-data-for-command-0xef02--generate-csr-keys-wlan-only"></a>
+<a name="table-248---request-data-for-command-0xef02--generate-csr-keys-wlan-only"></a>
 Table 248 - Request Data for Command 0xEF02 – Generate CSR keys (WLAN Only)
 
 |  Tag                                                                                     | Len | Value / Description | Typ | Req | Default |
@@ -7653,6 +7880,7 @@ Table 248 - Request Data for Command 0xEF02 – Generate CSR keys (WLAN Only)
 | No parameters.                                                                           |     |                     |     |     |         |
 | End of any wrappers, at minimum including **Request Message** found on page **55**       |     |                     |     |     |         |
 
+<a name="table-249---response-data-for-command-0xef02--generate-csr-keys-wlan-only"></a>
 <a name="table-249---response-data-for-command-0xef02--generate-csr-keys-wlan-only"></a>
 Table 249 - Response Data for Command 0xEF02 – Generate CSR keys (WLAN Only)
 
@@ -7664,12 +7892,14 @@ Table 249 - Response Data for Command 0xEF02 – Generate CSR keys (WLAN Only)
 | End of any wrappers, at minimum including **Response Message** found on page **56**       |     |                     |     |     |         |
 
 <a name="table-250---request-example"></a>
+<a name="table-250---request-example"></a>
 Table 250 - Request Example
 
 | Example (Hex)                  |
 |--------------------------------|
 | AA00 81 04 0155EF02 84 02 EF02 |
 
+<a name="table-251---response-example"></a>
 <a name="table-251---response-example"></a>
 Table 251 - Response Example
 
@@ -7700,6 +7930,7 @@ The sequence of events is as follows:
     Send File to Device (Secured)**.
 
 <a name="table-252---request-data-for-command-0xef03--generate-csr-wlan-only"></a>
+<a name="table-252---request-data-for-command-0xef03--generate-csr-wlan-only"></a>
 Table 252 - Request Data for Command 0xEF03 – Generate CSR (WLAN Only)
 
 |  Tag                                                                                     | Len | Value / Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            | Typ | Req | Default                                                                                                                          |
@@ -7712,6 +7943,7 @@ Table 252 - Request Data for Command 0xEF03 – Generate CSR (WLAN Only)
 | End of any wrappers, at minimum including **Request Message** found on page **55**       |     |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |     |     |                                                                                                                                  |
 
 <a name="table-253---response-data-for-command-0xef03--generate-csr-wlan-only"></a>
+<a name="table-253---response-data-for-command-0xef03--generate-csr-wlan-only"></a>
 Table 253 - Response Data for Command 0xEF03 – Generate CSR (WLAN Only)
 
 | Tag                                                                                       | Len | Value / Description | Typ | Req | Default |
@@ -7722,12 +7954,14 @@ Table 253 - Response Data for Command 0xEF03 – Generate CSR (WLAN Only)
 | End of any wrappers, at minimum including **Response Message** found on page **56**       |     |                     |     |     |         |
 
 <a name="table-254---request-example"></a>
+<a name="table-254---request-example"></a>
 Table 254 - Request Example
 
 | Example (Hex)                  |
 |--------------------------------|
 | AA00 81 04 0155EF03 84 02 EF03 |
 
+<a name="table-255---response-example"></a>
 <a name="table-255---response-example"></a>
 Table 255 - Response Example
 
@@ -7754,6 +7988,7 @@ The sequence of events is as follows:
     failure will be sent to the host.
 
 <a name="table-256---request-data-for-command-0xef04--load-ltpk-protection-key-magtek"></a>
+<a name="table-256---request-data-for-command-0xef04--load-ltpk-protection-key-magtek"></a>
 Table 256 - Request Data for Command 0xEF04 – Load LTPK Protection Key (MAGTEK
 INTERNAL ONLY FOR NOW)
 
@@ -7767,6 +8002,7 @@ INTERNAL ONLY FOR NOW)
 | End of any wrappers, at minimum including **Request Message** found on page **55**       |     |                                                                                                                |     |     |         |
 
 <a name="table-257---response-data-for-command-0xef04--load-ltpk-protection-key-magtek"></a>
+<a name="table-257---response-data-for-command-0xef04--load-ltpk-protection-key-magtek"></a>
 Table 257 - Response Data for Command 0xEF04 – Load LTPK Protection Key (MAGTEK
 INTERNAL ONLY FOR NOW)
 
@@ -7778,12 +8014,14 @@ INTERNAL ONLY FOR NOW)
 | End of any wrappers, at minimum including **Response Message** found on page **56**       |     |                     |     |     |         |
 
 <a name="table-258---request-example"></a>
+<a name="table-258---request-example"></a>
 Table 258 - Request Example
 
 | Example (Hex)                                                                                                                                                  |
 |----------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | AA 00 81 04 01 06 EF 04 84 2B EF 04 81 01 01 82 20 22 F0 66 59 0B DA 04 F7 B9 99 B6 B4 B4 BC 2E 0D 95 92 C2 7A B1 55 98 2A 31 D3 06 CC E6 6B CF 85 83 02 84 99 |
 
+<a name="table-259---response-example"></a>
 <a name="table-259---response-example"></a>
 Table 259 - Response Example
 
@@ -7816,6 +8054,7 @@ through KPM.
 failure will be sent to the host.
 
 <a name="table-260---request-data-for-command-0xef05--load-encrypted-ltpk-and-version"></a>
+<a name="table-260---request-data-for-command-0xef05--load-encrypted-ltpk-and-version"></a>
 Table 260 - Request Data for Command 0xEF05 – Load Encrypted LTPK and Version
 (MAGTEK INTERNAL ONLY FOR NOW)
 
@@ -7831,6 +8070,7 @@ Table 260 - Request Data for Command 0xEF05 – Load Encrypted LTPK and Version
 | End of any wrappers, at minimum including **Request Message** found on page **55**                                        |     |                                                                                                                  |     |     |         |
 
 <a name="table-261---response-data-for-command-0xef05--load-encrypted-ltpk-and-version"></a>
+<a name="table-261---response-data-for-command-0xef05--load-encrypted-ltpk-and-version"></a>
 Table 261 - Response Data for Command 0xEF05 – Load Encrypted LTPK and Version
 (MAGTEK INTERNAL ONLY FOR NOW)
 
@@ -7842,12 +8082,14 @@ Table 261 - Response Data for Command 0xEF05 – Load Encrypted LTPK and Version
 | End of any wrappers, at minimum including **Response Message** found on page **56**        |     |                     |     |     |         |
 
 <a name="table-262---request-example"></a>
+<a name="table-262---request-example"></a>
 Table 262 - Request Example
 
 | Example (Hex)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
 |----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | AA 00 81 04 01 07 EF 05 84 81 96 EF 05 81 01 01 82 04 00 00 00 02 83 02 00 79 85 81 80 A1 9A 2D F7 B9 99 57 9B 89 5E 58 1B AD 26 52 77 EB B8 AC 6F 6A BE A8 21 D6 38 0D 54 0B 24 65 F4 EC D4 1D 73 E1 5A BE 9F 13 6B 85 DD 96 60 FD 33 6C 23 15 14 0B 53 AC FF EF 1C 1B 22 BD 56 D7 86 6D 82 D4 E0 E6 0B F5 07 E6 5D A5 EF C2 89 A1 33 28 E1 C7 D2 00 7C 8C B8 C5 D5 F9 5B D7 4F ED BB 40 9F 10 1D 43 08 97 5B 4A 1F D4 50 EB 2B 73 82 C9 C9 6C 4C 9C BC 05 F0 74 11 3E 7E 9C 60 02 DC 86 02 69 DF |
 
+<a name="table-263---response-example"></a>
 <a name="table-263---response-example"></a>
 Table 263 - Response Example
 
@@ -7864,6 +8106,7 @@ to the value of **Property 1.2.5.2.1.2 Device Lock State After Reset** after a
 reset or a power cycle. See **Device Lock Feature** for more information.
 
 <a name="table-264---request-data-for-command-0xef06--change-device-lock-state"></a>
+<a name="table-264---request-data-for-command-0xef06--change-device-lock-state"></a>
 Table 264 - Request Data for Command 0xEF06 – Change Device Lock State
 
 | Tag                                                                                      | Len   | Value / Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              | Typ | Req | Default |
@@ -7876,6 +8119,7 @@ Table 264 - Request Data for Command 0xEF06 – Change Device Lock State
 | End of any wrappers, at minimum including **Request Message** found on page **55**       |       |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |     |     |         |
 
 <a name="table-265---response-data-for-command-0xef06--change-device-lock-state"></a>
+<a name="table-265---response-data-for-command-0xef06--change-device-lock-state"></a>
 Table 265 - Response Data for Command 0xEF06 – Change Device Lock State
 
 | Tag                                                                                       | Len | Value / Description | Typ | Req | Default |
@@ -7886,12 +8130,14 @@ Table 265 - Response Data for Command 0xEF06 – Change Device Lock State
 | End of any wrappers, at minimum including **Response Message** found on page **56**       |     |                     |     |     |         |
 
 <a name="table-266---request-example"></a>
+<a name="table-266---request-example"></a>
 Table 266 - Request Example
 
 | Example (Hex)                                              |
 |------------------------------------------------------------|
 | AA00 81 04 0155EF06 84 0E EF06 810100 820100 8304 34333231 |
 
+<a name="table-267---response-example"></a>
 <a name="table-267---response-example"></a>
 Table 267 - Response Example
 
@@ -7909,6 +8155,7 @@ lock passcode using MagTek security or to see its default value see **Property
 information.
 
 <a name="table-268---request-data-for-command-0xef07--change-device-lock-passcode"></a>
+<a name="table-268---request-data-for-command-0xef07--change-device-lock-passcode"></a>
 Table 268 - Request Data for Command 0xEF07 – Change Device Lock Passcode
 
 | Tag                                                                                      | Len   | Value / Description                                                                                                             | Typ | Req | Default |
@@ -7920,6 +8167,7 @@ Table 268 - Request Data for Command 0xEF07 – Change Device Lock Passcode
 | End of any wrappers, at minimum including **Request Message** found on page **55**       |       |                                                                                                                                 |     |     |         |
 
 <a name="table-269---response-data-for-command-0xef07--change-device-lock-passcode"></a>
+<a name="table-269---response-data-for-command-0xef07--change-device-lock-passcode"></a>
 Table 269 - Response Data for Command 0xEF07 – Change Device Lock Passcode
 
 | Tag                                                                                       | Len | Value / Description | Typ | Req | Default |
@@ -7930,12 +8178,14 @@ Table 269 - Response Data for Command 0xEF07 – Change Device Lock Passcode
 | End of any wrappers, at minimum including **Response Message** found on page **56**       |     |                     |     |     |         |
 
 <a name="table-270---request-example"></a>
+<a name="table-270---request-example"></a>
 Table 270 - Request Example
 
 | Example (Hex)                                            |
 |----------------------------------------------------------|
 | AA00 81 04 0155EF07 84 0E EF07 810434333231 820434333231 |
 
+<a name="table-271---response-example"></a>
 <a name="table-271---response-example"></a>
 Table 271 - Response Example
 
@@ -7953,6 +8203,7 @@ value see **Property 1.2.5.2.1.3 Device Lock Passcode**. See **Device Lock
 Feature** for more information.
 
 <a name="table-272---request-data-for-command-0xef08--reset-device-lock-passcode-magtek"></a>
+<a name="table-272---request-data-for-command-0xef08--reset-device-lock-passcode-magtek"></a>
 Table 272 - Request Data for Command 0xEF08 – Reset Device Lock Passcode (MAGTEK
 INTERNAL ONLY FOR NOW)
 
@@ -7963,6 +8214,7 @@ INTERNAL ONLY FOR NOW)
 | 81                                                                                       | 4   | Device Serial Number. See **Property 2.2.1.1.1.1 Serial Number** for the format. | B   | M   |         |
 | End of any wrappers, at minimum including **Request Message** found on page **55**       |     |                                                                                  |     |     |         |
 
+<a name="table-273---response-data-for-command-0xef08--reset-device-lock-passcode"></a>
 <a name="table-273---response-data-for-command-0xef08--reset-device-lock-passcode"></a>
 Table 273 - Response Data for Command 0xEF08 – Reset Device Lock Passcode
 (MAGTEK INTERNAL ONLY FOR NOW)
@@ -7975,6 +8227,7 @@ Table 273 - Response Data for Command 0xEF08 – Reset Device Lock Passcode
 | End of any wrappers, at minimum including **Response Message** found on page **56**       |     |                     |     |     |         |
 
 <a name="table-274---request-example"></a>
+<a name="table-274---request-example"></a>
 Table 274 - Request Example
 
 | Example (Hex)                                 |
@@ -7985,6 +8238,7 @@ Table 275 -
 
 Response Example
 
+<a name="table-276---response-example"></a>
 <a name="table-276---response-example"></a>
 Table 276 - Response Example
 
@@ -8065,6 +8319,7 @@ decryption)**
 | AA-00 81-04-01-03-EF-09 // P1, Message Info, 0xEF09 Command 84-3E-EF-09 // P4, Request Payload A3-3A // User data parameters, total 58 bytes 81-20 // User data item \#0, 32 bytes 00-01-02-03-04-05-06-07-08-09-0A-0B-0C-0D-0E-0F 10-11-12-13-14-15-16-17-18-19-1A-1B-1C-1D-1E-1F 82-06 // User data item \#1, 6 bytes 00-01-02-03-04-05 83-06 // User data item \#2, 6 bytes 06-07-08-09-0A-0B 84-06 // User data item \#3, 6 bytes 0C-0D-0E-0F-10-11 |
 
 <a name="table-281---response-example"></a>
+<a name="table-281---response-example"></a>
 Table 281 - Response Example
 
 | Example (Hex)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
@@ -8088,6 +8343,7 @@ The sequence of events is as follows:
 3.  The device sends a response in the format below to the host.
 
 <a name="table-282---request-data-for-command-0xef11---get-key-info"></a>
+<a name="table-282---request-data-for-command-0xef11---get-key-info"></a>
 Table 282 - Request Data for Command 0xEF11 - Get Key Info
 
 |  Tag                                                                                     | Len | Value / Description                                         | Typ | Req | Default |
@@ -8097,6 +8353,7 @@ Table 282 - Request Data for Command 0xEF11 - Get Key Info
 | 81                                                                                       | 02  | Key Slot ID See **Table 58 - Key Slot ID** on page **119**. | B   | R   |         |
 | End of any wrappers, at minimum including **Request Message** found on page **55**       |     |                                                             |     |     |         |
 
+<a name="table-283---response-data-for-command-0xef11---get-key-info"></a>
 <a name="table-283---response-data-for-command-0xef11---get-key-info"></a>
 Table 283 - Response Data for Command 0xEF11 - Get Key Info
 
@@ -8118,12 +8375,14 @@ Table 283 - Response Data for Command 0xEF11 - Get Key Info
 | 89                                       | var | Timestamp This comes from the TR-31 block or from device’s real-time clock.                                                                                                                                                | B   | O   |         |
 
 <a name="table-284---request-example"></a>
+<a name="table-284---request-example"></a>
 Table 284 - Request Example
 
 | Example (Hex)                                   |
 |-------------------------------------------------|
 | AA 00 81 04 01 21 EF 11 84 06 EF 11 81 02 20 07 |
 
+<a name="table-285---response-example"></a>
 <a name="table-285---response-example"></a>
 Table 285 - Response Example
 
@@ -8156,7 +8415,7 @@ The sequence of events is as follows:
         the signature.
     2.  Build the **Security Parameters Type** portion of the wrapper with:
         1.  
-        2.  [**Table 46**](#table-46---encrypted-signature-capture-file-type) - Encrypted Signature Capture File Type
+        2.  [[**Table 46**](#table-46---encrypted-signature-capture-file-type)](#table-46---encrypted-signature-capture-file-type) - Encrypted Signature Capture File Type
 
 | Tag                                                                                   | Len | Value / Description                               | Typ | Req | Default |
 |---------------------------------------------------------------------------------------|-----|---------------------------------------------------|-----|-----|---------|
@@ -8170,6 +8429,7 @@ The sequence of events is as follows:
 | PKCS7 padding for MAC calculation, maximum 16 bytes, minimum 1 byte                   |     |                                                   |     |     |         |
 | Four-byte MAC checksum. The host should calculate the MAC and verify that it matches. |     |                                                   |     |     |         |
 
+<a name="table-47---encrypted-signature-capture-file-type-after-decryption"></a>
 <a name="table-47---encrypted-signature-capture-file-type-after-decryption"></a>
 Table 47 - Encrypted Signature Capture File Type (after decryption)
 
@@ -8209,6 +8469,7 @@ Table 47 - Encrypted Signature Capture File Type (after decryption)
         format below to report the failure to the host.
 
 <a name="table-286---request-data-for-command-0xf012---force-tamper-magtek-internal"></a>
+<a name="table-286---request-data-for-command-0xf012---force-tamper-magtek-internal"></a>
 Table 286 - Request Data for Command 0xF012 - Force Tamper (MAGTEK INTERNAL
 ONLY)
 
@@ -8219,6 +8480,7 @@ ONLY)
 | No parameters.                                                                           |     |                     |     |     |         |
 | End of any wrappers, at minimum including **Request Message** found on page **55**       |     |                     |     |     |         |
 
+<a name="table-287---response-data-for-command-0xf012---force-tamper-magtek-internal"></a>
 <a name="table-287---response-data-for-command-0xf012---force-tamper-magtek-internal"></a>
 Table 287 - Response Data for Command 0xF012 - Force Tamper (MAGTEK INTERNAL
 ONLY)
@@ -8231,12 +8493,14 @@ ONLY)
 | End of any wrappers, at minimum including **Response Message** found on page **56**       |     |                     |     |     |         |
 
 <a name="table-288---request-example"></a>
+<a name="table-288---request-example"></a>
 Table 288 - Request Example
 
 | Example (Hex)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
 |----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | AA 00 81 04 01 14 F0 12 84 81 CA EE EE A1 24 81 04 02 01 04 05 84 00 85 00 A8 16 81 02 00 00 82 07 45 43 43 53 49 47 4E 86 05 45 43 44 53 41 88 00 A9 00 82 04 B5 03 3D A0 83 08 3B 4F A0 62 69 BB 73 38 84 02 F0 12 9E 81 8B 30 81 88 02 42 01 F7 60 F4 89 8A 81 6D E2 4E 6C 5D D1 66 41 A4 34 54 E7 32 93 48 3D E5 7D 2C C6 16 F6 E8 CC 98 C6 5D 26 A6 20 60 B7 D1 EF 78 DB 85 32 82 72 67 23 8B 04 00 93 98 14 4E 2C 47 1A 3B F6 B6 B8 93 D2 EA 02 42 01 84 B4 A4 5C 9F D8 EC AD E2 29 F8 AD 8B DD AF 4C 4E 85 F9 B9 E2 AC 7E 7D 3B AE DB 83 47 AD 1B 95 91 32 C4 AA 0F 31 B0 8C 1B 2D AD C0 76 4C A1 AB D2 9F 3B 25 6A 87 36 AC 40 67 B9 33 5B 20 36 50 30 |
 
+<a name="table-289---response-example"></a>
 <a name="table-289---response-example"></a>
 Table 289 - Response Example
 
@@ -8261,7 +8525,7 @@ The sequence of events is as follows:
         the signature.
     2.  Build the **Security Parameters Type** portion of the wrapper with:
         1.  
-        2.  [**Table 46**](#table-46---encrypted-signature-capture-file-type) - Encrypted Signature Capture File Type
+        2.  [[**Table 46**](#table-46---encrypted-signature-capture-file-type)](#table-46---encrypted-signature-capture-file-type) - Encrypted Signature Capture File Type
 
 | Tag                                                                                   | Len | Value / Description                               | Typ | Req | Default |
 |---------------------------------------------------------------------------------------|-----|---------------------------------------------------|-----|-----|---------|
@@ -8275,6 +8539,7 @@ The sequence of events is as follows:
 | PKCS7 padding for MAC calculation, maximum 16 bytes, minimum 1 byte                   |     |                                                   |     |     |         |
 | Four-byte MAC checksum. The host should calculate the MAC and verify that it matches. |     |                                                   |     |     |         |
 
+<a name="table-47---encrypted-signature-capture-file-type-after-decryption"></a>
 <a name="table-47---encrypted-signature-capture-file-type-after-decryption"></a>
 Table 47 - Encrypted Signature Capture File Type (after decryption)
 
@@ -8311,6 +8576,7 @@ Table 47 - Encrypted Signature Capture File Type (after decryption)
     host.
 
 <a name="table-290---request-data-for-command-0xf014---read-log-magtek-internal-only"></a>
+<a name="table-290---request-data-for-command-0xf014---read-log-magtek-internal-only"></a>
 Table 290 - Request Data for Command 0xF014 - Read Log (MAGTEK INTERNAL ONLY)
 
 | Tag                                                                                      | Len | Value / Description | Typ | Req | Default |
@@ -8320,6 +8586,7 @@ Table 290 - Request Data for Command 0xF014 - Read Log (MAGTEK INTERNAL ONLY)
 | No parameters.                                                                           |     |                     |     |     |         |
 | End of any wrappers, at minimum including **Request Message** found on page **55**       |     |                     |     |     |         |
 
+<a name="table-291---response-data-for-command-0xf014---read-log-magtek-internal-only"></a>
 <a name="table-291---response-data-for-command-0xf014---read-log-magtek-internal-only"></a>
 Table 291 - Response Data for Command 0xF014 - Read Log (MAGTEK INTERNAL ONLY)
 
@@ -8361,6 +8628,7 @@ automatically reboot after tamper, or wait to be powered up after a powered-off
 tamper, before system resources are available to write the event to the log.
 
 <a name="table-292---sensor-bit-values-in-tamper-log"></a>
+<a name="table-292---sensor-bit-values-in-tamper-log"></a>
 Table 292 - Sensor Bit Values In Tamper Log
 
 | Bit    | Tamper Sensor                                                                                                                                                                                                        |
@@ -8386,12 +8654,14 @@ Table 292 - Sensor Bit Values In Tamper Log
 | 24..31 | Reserved and set to 0                                                                                                                                                                                                |
 
 <a name="table-293---request-example"></a>
+<a name="table-293---request-example"></a>
 Table 293 - Request Example
 
 | Example (Hex)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
 |----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | AA 00 81 04 01 32 F0 14 84 81 CA EE EE A1 24 81 04 02 01 04 05 84 00 85 00 A8 16 81 02 00 00 82 07 45 43 43 53 49 47 4E 86 05 45 43 44 53 41 88 00 A9 00 82 04 BE 00 06 80 83 08 88 D3 F5 28 2B CF 07 ED 84 02 F0 14 9E 81 8B 30 81 88 02 42 00 99 F6 96 30 7D 27 CB 59 B8 A9 F1 C1 7A C5 A8 D1 62 C2 8A 5A 9A F2 82 25 DD AF A7 C6 62 D3 57 70 DB 52 E6 EC 77 7F 20 2D CE DB F0 5E 84 77 B4 7B EA 8F 42 FB 6B 49 41 6F 78 33 08 DB 31 94 D0 2A 18 02 42 00 93 06 2A CF 5C 29 4E D5 FE 7B 1D 00 3E 68 C9 DA 4D 94 16 DA F9 86 CC BB 18 54 2E C4 44 28 B8 1C 62 CF 9E 47 46 20 7C 20 EF DF 71 05 49 B7 F9 F7 A0 0B 4D 7C 6C 77 EB 93 AF D3 40 ED 3A 28 10 A9 B4 |
 
+<a name="table-294---response-example"></a>
 <a name="table-294---response-example"></a>
 Table 294 - Response Example
 
@@ -8418,7 +8688,7 @@ The sequence of events is as follows:
         the signature.
     2.  Build the **Security Parameters Type** portion of the wrapper with:
         1.  
-        2.  [**Table 46**](#table-46---encrypted-signature-capture-file-type) - Encrypted Signature Capture File Type
+        2.  [[**Table 46**](#table-46---encrypted-signature-capture-file-type)](#table-46---encrypted-signature-capture-file-type) - Encrypted Signature Capture File Type
 
 | Tag                                                                                   | Len | Value / Description                               | Typ | Req | Default |
 |---------------------------------------------------------------------------------------|-----|---------------------------------------------------|-----|-----|---------|
@@ -8432,6 +8702,7 @@ The sequence of events is as follows:
 | PKCS7 padding for MAC calculation, maximum 16 bytes, minimum 1 byte                   |     |                                                   |     |     |         |
 | Four-byte MAC checksum. The host should calculate the MAC and verify that it matches. |     |                                                   |     |     |         |
 
+<a name="table-47---encrypted-signature-capture-file-type-after-decryption"></a>
 <a name="table-47---encrypted-signature-capture-file-type-after-decryption"></a>
 Table 47 - Encrypted Signature Capture File Type (after decryption)
 
@@ -8474,6 +8745,7 @@ Table 47 - Encrypted Signature Capture File Type (after decryption)
     tamper, the response reports a failure.
 
 <a name="table-295---request-data-for-command-0xf015---read-log--clear-tamper-magtek"></a>
+<a name="table-295---request-data-for-command-0xf015---read-log--clear-tamper-magtek"></a>
 Table 295 - Request Data for Command 0xF015 - Read Log & Clear Tamper (MAGTEK
 INTERNAL ONLY)
 
@@ -8484,6 +8756,7 @@ INTERNAL ONLY)
 | No parameters.                                                                           |     |                     |     |     |         |
 | End of any wrappers, at minimum including **Request Message** found on page **55**       |     |                     |     |     |         |
 
+<a name="table-296---response-data-for-command-0xf015---read-log--clear-tamper-magtek"></a>
 <a name="table-296---response-data-for-command-0xf015---read-log--clear-tamper-magtek"></a>
 Table 296 - Response Data for Command 0xF015 - Read Log & Clear Tamper (MAGTEK
 INTERNAL ONLY)
@@ -8526,6 +8799,7 @@ automatically reboot after tamper, or wait to be powered up after a powered-off
 tamper, before system resources are available to write the event to the log.
 
 <a name="table-297---sensor-bit-values-in-tamper-log"></a>
+<a name="table-297---sensor-bit-values-in-tamper-log"></a>
 Table 297 - Sensor Bit Values in Tamper Log
 
 | Bit    | Tamper Sensor                                                                                                                                                                                                        |
@@ -8551,12 +8825,14 @@ Table 297 - Sensor Bit Values in Tamper Log
 | 24..31 | Reserved and set to 0                                                                                                                                                                                                |
 
 <a name="table-298---request-example"></a>
+<a name="table-298---request-example"></a>
 Table 298 - Request Example
 
 | Example (Hex)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
 |----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | AA 00 81 04 01 0F F0 15 84 81 C8 EE EE A1 24 81 04 02 01 06 05 84 00 85 00 A8 16 81 02 00 00 82 07 45 43 43 53 49 47 4E 86 05 45 43 44 53 41 88 00 A9 00 82 04 B5 03 3D A0 83 08 5B 6B 45 4B 00 5B CE 31 84 02 F0 15 9E 81 89 30 81 86 02 41 52 5B 04 9A C7 CC 56 DE 5A EA 89 62 47 BB B8 0D 93 80 CE C8 AD 6E 16 F7 6E DA 08 42 0B 9C 69 77 61 B0 99 FC 05 7D AE AF 75 79 9C 7B B3 81 72 5C 4E 5B 92 DC F3 B6 85 5E B3 A2 71 0D 1D 93 B5 0D 0C 02 41 46 47 0A EF 6F D5 97 ED 4F 41 E8 3C FD 20 A1 CE 7D E5 CA D3 E8 22 3B ED BC 2A 8A A0 BF 73 72 81 35 4F CB 52 B6 A9 07 6F 36 7F 5D 35 D5 29 3D 5D 78 17 0E B2 D6 AA A5 0D B3 4D B9 04 2C 03 6A AC A5 |
 
+<a name="table-299---response-example"></a>
 <a name="table-299---response-example"></a>
 Table 299 - Response Example
 
@@ -8585,7 +8861,7 @@ The sequence of events is as follows:
         the signature.
     2.  Build the **Security Parameters Type** portion of the wrapper with:
         1.  
-        2.  [**Table 46**](#table-46---encrypted-signature-capture-file-type) - Encrypted Signature Capture File Type
+        2.  [[**Table 46**](#table-46---encrypted-signature-capture-file-type)](#table-46---encrypted-signature-capture-file-type) - Encrypted Signature Capture File Type
 
 | Tag                                                                                   | Len | Value / Description                               | Typ | Req | Default |
 |---------------------------------------------------------------------------------------|-----|---------------------------------------------------|-----|-----|---------|
@@ -8599,6 +8875,7 @@ The sequence of events is as follows:
 | PKCS7 padding for MAC calculation, maximum 16 bytes, minimum 1 byte                   |     |                                                   |     |     |         |
 | Four-byte MAC checksum. The host should calculate the MAC and verify that it matches. |     |                                                   |     |     |         |
 
+<a name="table-47---encrypted-signature-capture-file-type-after-decryption"></a>
 <a name="table-47---encrypted-signature-capture-file-type-after-decryption"></a>
 Table 47 - Encrypted Signature Capture File Type (after decryption)
 
@@ -8648,6 +8925,7 @@ Table 47 - Encrypted Signature Capture File Type (after decryption)
     9.  Activate and lock the tamper protection mechanism.
 3.  The device sends a **Response Message** to the host to indicate the result.
 
+<a name="table-300---request-data-for-command-0xf016---activate-device-security-magtek"></a>
 <a name="table-300---request-data-for-command-0xf016---activate-device-security-magtek"></a>
 Table 300 - Request Data for Command 0xF016 - Activate Device Security (MAGTEK
 INTERNAL ONLY)
@@ -8699,6 +8977,7 @@ INTERNAL ONLY)
 | End of any wrappers, at minimum including **Request Message** found on page **55**       |      |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |     |     |         |
 
 <a name="table-301---response-data-for-command-0xf016---activate-device-security-magtek"></a>
+<a name="table-301---response-data-for-command-0xf016---activate-device-security-magtek"></a>
 Table 301 - Response Data for Command 0xF016 - Activate Device Security (MAGTEK
 INTERNAL ONLY)
 
@@ -8713,12 +8992,14 @@ If the request started successfully, the Request Status in the message wrapper
 is **OK, Started / Running, All good / requested operation was successful**.
 
 <a name="table-302---request-example"></a>
+<a name="table-302---request-example"></a>
 Table 302 - Request Example
 
 | Example (Hex)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
 |----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | AA 00 81 04 01 0F F0 16 84 81 EA EE EE A1 24 81 04 02 01 06 05 84 00 85 00 A8 16 81 02 00 00 82 07 45 43 43 53 49 47 4E 86 05 45 43 44 53 41 88 00 A9 00 82 04 B5 03 3D A0 83 08 BE A5 45 81 90 C9 28 0C 84 22 F0 16 81 07 08 1A 0E 16 28 04 0C 85 0B 44 65 76 65 6C 6F 70 6D 65 6E 74 86 08 31 32 33 34 35 36 37 38 9E 81 8B 30 81 88 02 42 00 CD C1 EC 9E D1 30 A6 19 0A 8D 27 F6 65 26 4A 97 3C 79 94 60 BA 57 4D 64 4A 47 FC 72 6B 83 1F 1F DB 05 40 E3 70 16 17 DB 5E A6 93 77 1D 40 F5 DE 0A 9E 01 7A B3 6D DA 8A 73 94 46 1A 68 99 B6 8C 9F 02 42 01 5E 40 4E 4C F9 BF 1B 10 4D BE 7C F6 F9 FE F8 77 1E D0 1A FE AA FC 8B BD 06 BB 8A E5 A5 B3 0E 2E B4 CC DE 60 48 96 2A 84 38 E0 41 45 CD A2 4B F9 36 DA 61 BE 06 A6 CA F2 2F 17 EC DA 0D 59 D0 01 EC |
 
+<a name="table-303---response-example"></a>
 <a name="table-303---response-example"></a>
 Table 303 - Response Example
 
@@ -8747,7 +9028,7 @@ The sequence of events is as follows:
         the signature.
     2.  Build the **Security Parameters Type** portion of the wrapper with:
         1.  
-        2.  [**Table 46**](#table-46---encrypted-signature-capture-file-type) - Encrypted Signature Capture File Type
+        2.  [[**Table 46**](#table-46---encrypted-signature-capture-file-type)](#table-46---encrypted-signature-capture-file-type) - Encrypted Signature Capture File Type
 
 | Tag                                                                                   | Len | Value / Description                               | Typ | Req | Default |
 |---------------------------------------------------------------------------------------|-----|---------------------------------------------------|-----|-----|---------|
@@ -8761,6 +9042,7 @@ The sequence of events is as follows:
 | PKCS7 padding for MAC calculation, maximum 16 bytes, minimum 1 byte                   |     |                                                   |     |     |         |
 | Four-byte MAC checksum. The host should calculate the MAC and verify that it matches. |     |                                                   |     |     |         |
 
+<a name="table-47---encrypted-signature-capture-file-type-after-decryption"></a>
 <a name="table-47---encrypted-signature-capture-file-type-after-decryption"></a>
 Table 47 - Encrypted Signature Capture File Type (after decryption)
 
@@ -8815,6 +9097,7 @@ Table 47 - Encrypted Signature Capture File Type (after decryption)
     process with a new TEMP KBPK.
 
 <a name="table-304---request-data-for-command-0xf017---establish-ephemeral-kbpk"></a>
+<a name="table-304---request-data-for-command-0xf017---establish-ephemeral-kbpk"></a>
 Table 304 - Request Data for Command 0xF017 - Establish Ephemeral KBPK
 
 | Tag                                                                                      | Len | Value / Description                                                                                                                                                                               | Typ | Req | Default |
@@ -8825,6 +9108,7 @@ Table 304 - Request Data for Command 0xF017 - Establish Ephemeral KBPK
 | 83                                                                                       | var | Host Ephemeral Public Key This parameter is in ASN.1 format. The information of the cipher and key size are included in the ASN.1 Public Key file (PKCS\#8).                                      | B   | R   |         |
 | 84                                                                                       | 08  | Host Random Token This contains an 8 byte random number generated by the host.                                                                                                                    | B   | R   |         |
 
+<a name="table-305---response-data-for-command-0xf017---establish-ephemeral-kbpk"></a>
 <a name="table-305---response-data-for-command-0xf017---establish-ephemeral-kbpk"></a>
 Table 305 - Response Data for Command 0xF017 - Establish Ephemeral KBPK
 
@@ -8838,12 +9122,14 @@ Table 305 - Response Data for Command 0xF017 - Establish Ephemeral KBPK
 | End of any wrappers, at minimum including **Response Message** found on page **56**       |     |                                                                                                                                                                                                            |     |     |         |
 
 <a name="table-306---request-example"></a>
+<a name="table-306---request-example"></a>
 Table 306 - Request Example
 
 | Example (Hex)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
 |-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | AA 00  81 04 01 10 F0 17  84 82 01 8C  EE EE // Secure Wrapper A1 24  81 04 02 01 04 05 84 00 85 00 A8 16  81 02 00 00 82 07 45 43 43 53 49 47 4E  86 05 45 43 44 53 41  88 00 A9 00 82 04 B5 03 3D A0 83 08 ED B0 79 E6 E3 F1 83 AE 84 81 C3 // payload is 0xF017 command body F0 17  A1 14 // Security parameters 81 04 01 01 05 01 84 00 A8 0A 81 02 00 00 82 00  86 00 88 00 83 81 9E // TL of PKCS8 public key 30 81 9B // V of PKCS8 public key 30 10 06 07 2A 86 48 CE 3D 02 01  06 05 2B 81 04 00 23  03 81 86  00 04 01 64 1C DA 45 C5 56 B3 8B 31 29 8C 94 A1 E7 95  C9 D3 85 C0 4D F3 15 13 D9 91 43 84 58 15 CD 45  6B 67 F6 AC 7C 56 DF F8 0C 65 A7 CF 81 F1 13 2F  AA E5 22 10 78 23 C9 4F 1D CD 24 42 EC 1A 3F A4  75 58 00 97 59 96 9E 01 D0 62 47 B7 EF 5F 0B D0 8B E6  CA 12 F0 3C 13 43 AF 15 21 92 3D 6B FE 47 74 68  38 3F DD 1E 90 2B FD 0F D6 DA 7A A1 E9 A1 98 85  3A DA 93 6D EE 05 61 87 8B 81 BF 6A 78 2F 40 A5  E8 66  84 08 BD E3 77 88 83 0C F6 37 // TLV of 8-byte random \# for TEMP-KBPK  // end of 0xF017 command body 9E 81 8B 30 81 88  02 42  00 C4 13 1D C2 13 7A F6 FD F0 F1 BB BD 14 C2 4A  FE D7 6F BC 80 91 84 26 43 85 40 B6 5D BE 1D 9C  74 90 77 B6 41 62 69 52 04 72 93 C0 9C 59 2A DB  03 31 0F 8A 28 C0 DB 1A B7 1B 51 B3 E6 BD FF 50  77 CA  02 42 01 EE D8 2D 9F A3 D1 98 4E 74 C8 85 11 52 93 15  FF 9D 7D 5A 03 FD 84 B8 B9 09 20 8B 15 98 7A 5E  56 A5 61 71 9A 0A B9 D1 DA 1C 96 1D 0C EF F0 D2 E3 A4 22 84 60 E2 AA 8C AA 2B 8B AE 02 50 D8 B3 CF 84 |
 
+<a name="table-307---response-example"></a>
 <a name="table-307---response-example"></a>
 Table 307 - Response Example
 
@@ -8872,7 +9158,7 @@ documentation about a specific notification:
     \- Transaction Information Update**.
 3.  Within that subsection, use the four bytes of **Notification Detail Code**
     in the message to look up the notification in the **Notification Detail
-    Code** table. For example, **0x07080302** leads to a row in [**Table 308**](#table-308---notification-detail-codes)
+    Code** table. For example, **0x07080302** leads to a row in [[**Table 308**](#table-308---notification-detail-codes)](#table-308---notification-detail-codes)
     that provides practical information about what event led to the
     notification, and how to interpret the Notification Payload.
 
@@ -8884,7 +9170,7 @@ This notification reports information about progress and state changes that
 occur during a transaction.
 
 For this notification, **Notification Detail** described in section **3.2.2.3
-Notification Message** contains one byte each, shown in [**Table 308**](#table-308---notification-detail-codes), to
+Notification Message** contains one byte each, shown in [[**Table 308**](#table-308---notification-detail-codes)](#table-308---notification-detail-codes), to
 indicate:
 
 -   The **Payment Technology** (PT) involved
@@ -8894,6 +9180,7 @@ indicate:
 -   An **Extra** field (Ext) that has different meanings depending on the
     Reason.
 
+<a name="table-308---notification-detail-codes"></a>
 <a name="table-308---notification-detail-codes"></a>
 Table 308 - Notification Detail Codes
 
@@ -8947,7 +9234,7 @@ Table 308 - Notification Detail Codes
 | 20                                                                                                                                                                                                                                                                   | 08  | 07  | 02  | EMV Contactless, Data Update, GPO Response, Data Attached In this case, the device includes additional data, defined in **Table 309**, in the **Notification Payload** portion of the **Notification Message** (EMV Contactless Only)                                                                                                                                                                                                                                                                                                                                                                                                                                         |
 | Payment Technology **0x30 Barcode Reader** contains transaction notification detail codes involving barcodes (BCR Only). Reason 0x01 = Barcode Event                                                                                                                 |     |     |     |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
 | 30                                                                                                                                                                                                                                                                   | 01  | 01  | 00  | (BCR Only) Barcode Reader, Barcode Event, Read, Reserved                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
-| 30                                                                                                                                                                                                                                                                   | 08  | 00  | 02  | Barcode Reader, Barcode Update, Type, Data Attached Type 0x00 = Unknown Type 0x01 = MagTek Type 0x02 = EMV The barcode reader has successfully read a barcode. In this case, the device includes barcode data in the **Notification Payload** portion of the **Notification Message**. If the data is encrypted, the data is in the format described in [**Table 352**](#table-352---notification-payload-for-barcode-reader-read-barcode-result). Data that is not encrypted is in the format described in [**Table 353**](#table-353---notification-payload-for-barcode-reader-read-barcode-result) (BCR Only) Barcode Reader, Barcode Event, MagTek Blob Type, Data Attached In this case, the device includes additional data, defined in **Table 309**, in the **Notification Payload** portion of the **Notification Message**. |
+| 30                                                                                                                                                                                                                                                                   | 08  | 00  | 02  | Barcode Reader, Barcode Update, Type, Data Attached Type 0x00 = Unknown Type 0x01 = MagTek Type 0x02 = EMV The barcode reader has successfully read a barcode. In this case, the device includes barcode data in the **Notification Payload** portion of the **Notification Message**. If the data is encrypted, the data is in the format described in [[**Table 352**](#table-352---notification-payload-for-barcode-reader-read-barcode-result)](#table-352---notification-payload-for-barcode-reader-read-barcode-result). Data that is not encrypted is in the format described in [[**Table 353**](#table-353---notification-payload-for-barcode-reader-read-barcode-result)](#table-353---notification-payload-for-barcode-reader-read-barcode-result) (BCR Only) Barcode Reader, Barcode Event, MagTek Blob Type, Data Attached In this case, the device includes additional data, defined in **Table 309**, in the **Notification Payload** portion of the **Notification Message**. |
 
 **Table 309 - Notification Payload for Data Update, ARQC Update (Quick Chip),
 Data Attached**
@@ -8961,6 +9248,7 @@ Data Attached**
 | End of **Notification Message** found on page **62**       |     |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |     |     |         |
 
 <a name="table-310---notification-payload-for-barcode-reader-barcode-event-type"></a>
+<a name="table-310---notification-payload-for-barcode-reader-barcode-event-type"></a>
 Table 310 - Notification Payload for Barcode Reader, Barcode Event, Type
 (Encrypted Data Attached)
 
@@ -8969,11 +9257,12 @@ Table 310 - Notification Payload for Barcode Reader, Barcode Event, Type
 | Beginning of **Notification Message** found on page **62** |     |                                                                                                                                                                                                                                                                                              |     |     |         |
 | 1805 = User Interface Operation Complete                   |     |                                                                                                                                                                                                                                                                                              |     |     |         |
 | 84                                                         | var | Notification Payload                                                                                                                                                                                                                                                                         | B   | R   |         |
-| /DFDF59                                                    | var | Encrypted Data Primitive  Decrypt the value of this TLV data object using the algorithm and variant specified in the **Encrypted Data KSN** parameter and the **Encrypted Data Encryption Type** parameter to read its contents. The format of the decrypted data is shown in [**Table 311**](#table-311---notification-payload-for-barcode-reader-barcode-event-type-data). | B   | R   |         |
+| /DFDF59                                                    | var | Encrypted Data Primitive  Decrypt the value of this TLV data object using the algorithm and variant specified in the **Encrypted Data KSN** parameter and the **Encrypted Data Encryption Type** parameter to read its contents. The format of the decrypted data is shown in [[**Table 311**](#table-311---notification-payload-for-barcode-reader-barcode-event-type-data)](#table-311---notification-payload-for-barcode-reader-barcode-event-type-data). | B   | R   |         |
 | /DFDF50                                                    | var | Encrypted Data KSN                                                                                                                                                                                                                                                                           | B   | R   |         |
 | /DFDF51                                                    | 01  | Encrypted Data Encryption Type See section **4.4 Encryption Type** for a list of valid values.                                                                                                                                                                                               | B   | R   |         |
 | End of **Notification Message** found on page **62**       |     |                                                                                                                                                                                                                                                                                              |     |     |         |
 
+<a name="table-311---notification-payload-for-barcode-reader-barcode-event-type-data"></a>
 <a name="table-311---notification-payload-for-barcode-reader-barcode-event-type-data"></a>
 Table 311 - Notification Payload for Barcode Reader, Barcode Event, Type, Data
 Attached (Unencrypted Data)
@@ -8992,6 +9281,7 @@ Table 312 – VAS Error Report
 | /DF75   | var | VAS Error Report Byte 1 = SW1 returned by the Apple or Android device Byte 2 = SW2 returned by the Apple or Android device Byte 3 = Slot Number Byte 4 = Where in the VAS command sequence the error occurred. 0x00 = Select OSE Error 0x01 = Get VAS Data Error (Apple only) 0x02 = Select Smart Tap Error (Google only) 0x03 = Negotiate Secure Session Error (Google only) 0x04 = Get Select Smart Tap Error (Google only) | B   | R   |         |
 
 <a name="table-313---notification-example"></a>
+<a name="table-313---notification-example"></a>
 Table 313 - Notification Example
 
 | Example (Hex)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
@@ -9004,7 +9294,7 @@ This notification requests the host take action to support a transaction in
 progress.
 
 For this notification, **Notification Detail** described in section **3.2.2.3
-Notification Message** contains one byte each, shown in [**Table 314**](#table-314---notification-detail-codes), to
+Notification Message** contains one byte each, shown in [[**Table 314**](#table-314---notification-detail-codes)](#table-314---notification-detail-codes), to
 indicate:
 
 -   The **Payment Technology**, which is always set to 0x00.
@@ -9015,6 +9305,7 @@ indicate:
     Reason.
 
 <a name="table-314---notification-detail-codes"></a>
+<a name="table-314---notification-detail-codes"></a>
 Table 314 - Notification Detail Codes
 
 | PT                                                                                  | Rsn | Det | Ext | Meaning |
@@ -9023,9 +9314,10 @@ Table 314 - Notification Detail Codes
 |                                                                                     |     |     |     |         |
 
 **Notification Payload** described in section **3.2.2.3 Notification Message**
-is only included in some cases, described in [**Table 308**](#table-308---notification-detail-codes). When a Notification
-Payload is included, it follows the structure shown in [**Table 315**](#table-315---notification-payload-for-transaction-host-action-request).
+is only included in some cases, described in [[**Table 308**](#table-308---notification-detail-codes)](#table-308---notification-detail-codes). When a Notification
+Payload is included, it follows the structure shown in [[**Table 315**](#table-315---notification-payload-for-transaction-host-action-request)](#table-315---notification-payload-for-transaction-host-action-request).
 
+<a name="table-315---notification-payload-for-transaction-host-action-request"></a>
 <a name="table-315---notification-payload-for-transaction-host-action-request"></a>
 Table 315 - Notification Payload for Transaction Host Action Request
 
@@ -9037,6 +9329,7 @@ Table 315 - Notification Payload for Transaction Host Action Request
 | End of **Notification Message** found on page **62**                                            |     |                     |     |     |         |
 
 <a name="table-316---notification-example-for-display-message-request-notifications-no"></a>
+<a name="table-316---notification-example-for-display-message-request-notifications-no"></a>
 Table 316 - Notification Example for Display Message Request Notifications (No
 Display Only)
 
@@ -9045,6 +9338,7 @@ Display Only)
 | Display Message Request to show PROCESSING AA 00 81 04 83 00 01 03 // Notification source/type = 0x0103 82 04  00  01 // 0x01=Display Message Request 01 // 0x01=Data Attached  00  84 82 00 12 // Payload, 18 bytes (using two-byte Length) 81 01 01 // Clear Screen is enabled 82 82 00 0B // Messages, 11 bytes (using two-byte Length) 50 52 4F 43 45 53 53 49 4E 47 00 // “PROCESSING” (line terminator is 0x00) |
 
 <a name="table-317---notification-example-for-cardholder-selection-request-no-display"></a>
+<a name="table-317---notification-example-for-cardholder-selection-request-no-display"></a>
 Table 317 - Notification Example for Cardholder Selection Request (No Display
 Only)
 
@@ -9052,6 +9346,7 @@ Only)
 |-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Cardholder Selection Request to show: APPLICATION SELECT 1 - VISA CREDIT 2 - VISA DEBIT 3 - VISA ELECTRON  AA 00 81 04 83 00 01 03 // Notification source/type = 0x0103 82 04 00  02 // 0x02=Cardholder Selection Request 00  00 // Timeout, TT=0x00 84 82 00 4B // Payload, 75 bytes (using two-byte Length)  81 01 01 // Clear Display 82 82 00 44 // Messages, 68 bytes (using two-byte Length)  41 50 50 4C 49 43 41 54 49 4F 4E 20 53 45 4C 45 43 54 0A 31 20 2D 20 56 49 53 41 20 43 52 45 44 49 54 0A 32 20 2D 20 56 49 53 41 20 44 45 42 49 54 0A 33 20 2D 20 56 49 53 41 20 45 4C 45 43 54 52 4F 4E 00 |
 
+<a name="table-318---notification-example-for-online-pin-request-magtek-internal-only"></a>
 <a name="table-318---notification-example-for-online-pin-request-magtek-internal-only"></a>
 Table 318 - Notification Example for Online PIN Request (MAGTEK INTERNAL ONLY
 FOR NOW, No Display Only)
@@ -9065,7 +9360,7 @@ FOR NOW, No Display Only)
 This notification fulfills callback subscriptions the host has requested.
 
 For this notification, **Notification Detail** described in section **3.2.2.3
-Notification Message** contains one byte each, shown in [**Table 319**](#table-319---notification-detail-codes), to
+Notification Message** contains one byte each, shown in [[**Table 319**](#table-319---notification-detail-codes)](#table-319---notification-detail-codes), to
 indicate:
 
 -   The …
@@ -9075,6 +9370,7 @@ indicate:
 -   An **Extra** field (Ext) that has different meanings depending on the
     Reason.
 
+<a name="table-319---notification-detail-codes"></a>
 <a name="table-319---notification-detail-codes"></a>
 Table 319 - Notification Detail Codes
 
@@ -9091,9 +9387,10 @@ Table 319 - Notification Detail Codes
 |                                                                                      |    |     |     |         |
 
 **Notification Payload** described in section **3.2.2.3 Notification Message**
-is only included in some cases, described in [**Table 308**](#table-308---notification-detail-codes). When a Notification
-Payload is included, it follows the structure shown in [**Table 320**](#table-320---notification-payload).
+is only included in some cases, described in [[**Table 308**](#table-308---notification-detail-codes)](#table-308---notification-detail-codes). When a Notification
+Payload is included, it follows the structure shown in [[**Table 320**](#table-320---notification-payload)](#table-320---notification-payload).
 
+<a name="table-320---notification-payload"></a>
 <a name="table-320---notification-payload"></a>
 Table 320 - Notification Payload
 
@@ -9108,6 +9405,7 @@ Table 320 - Notification Payload
 | End of **Notification Message** found on page **62**                                 |     |                     |     |     |         |
 
 <a name="table-321---notification-example"></a>
+<a name="table-321---notification-example"></a>
 Table 321 - Notification Example
 
 | Example (Hex)                             |
@@ -9120,7 +9418,7 @@ This notification reports the final result of a transaction the host initiated
 using **Command 0x1001 - Start Transaction**.
 
 For this notification, **Notification Detail** described in section **3.2.2.3
-Notification Message** contains one byte each, shown in [**Table 322**](#table-322---notification-detail-codes), to
+Notification Message** contains one byte each, shown in [[**Table 322**](#table-322---notification-detail-codes)](#table-322---notification-detail-codes), to
 indicate:
 
 -   The **Payment Technology** (PT) involved
@@ -9130,6 +9428,7 @@ indicate:
 -   An **Extra** field (Ext) that has different meanings depending on the
     Reason.
 
+<a name="table-322---notification-detail-codes"></a>
 <a name="table-322---notification-detail-codes"></a>
 Table 322 - Notification Detail Codes
 
@@ -9238,6 +9537,7 @@ Table 322 - Notification Detail Codes
 | 20                                                                                                                                                                                                                                                                                                                         | 05  | 00  | 00  | PICC, NFC TAG, Tag Removed, Reserved (EMV Contactless Only)                                                                                                                                                                            |
 
 <a name="table-323---notification-example"></a>
+<a name="table-323---notification-example"></a>
 Table 323 - Notification Example
 
 | Example (Hex)                             |
@@ -9262,6 +9562,7 @@ Notification Detail Codes**, to indicate:
 -   An **Extra** field (Ext) that has different meanings depending on the
     Reason.
 
+<a name="table-324---notification-detail-codes"></a>
 <a name="table-324---notification-detail-codes"></a>
 Table 324 - Notification Detail Codes
 
@@ -9289,7 +9590,7 @@ This notification requests that the host take action during operations involving
 the device’s Banking Functions modules.
 
 For this notification, **Notification Detail** described in section **3.2.2.3
-Notification Message** contains one byte each, shown in [**Table 345**](#table-345---notification-detail-codes), to
+Notification Message** contains one byte each, shown in [[**Table 345**](#table-345---notification-detail-codes)](#table-345---notification-detail-codes), to
 indicate:
 
 -   The **User Interface Module** (UI) involved
@@ -9305,7 +9606,7 @@ This notification reports information about progress and state changes that
 occur during interaction with the Banking Functions modules.
 
 For this notification, **Notification Detail** described in section **3.2.2.3
-Notification Message** contains one byte each, shown in [**Table 350**](#table-350---notification-detail-codes), to
+Notification Message** contains one byte each, shown in [[**Table 350**](#table-350---notification-detail-codes)](#table-350---notification-detail-codes), to
 indicate:
 
 -   The **User Interface Module** (UI) involved
@@ -9316,12 +9617,13 @@ indicate:
     Reason.
 
 <a name="table-325---notification-detail-codes"></a>
+<a name="table-325---notification-detail-codes"></a>
 Table 325 - Notification Detail Codes
 
 | UI                                                                                                                                                                                                          | Rsn | Det | Ext | Meaning                                                                                                                                                                                                                        |
 |-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----|-----|-----|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Module **0x01 Touchscreen** contains UI notification detail codes that are specific to the touchscreen module (Touch Only) Reason 0x01 = Signature Capture Reason 0x02 = PIN Entry (Banking Functions Only) |     |     |     |                                                                                                                                                                                                                                |
-| 01                                                                                                                                                                                                          | 02  | 01  | 01  | (Banking Functions Only) Touchscreen, PIN Entry, Success, Data Attached In this case, the device includes additional data defined in [**Table 326**](#table-326---notification-payload-for-touchscreen-pin-entry-success-data), or in [**Table 327**](#table-327---notification-payload-for-touchscreen-pin-entry-success-data) if the device is including account data with PIN data. |
+| 01                                                                                                                                                                                                          | 02  | 01  | 01  | (Banking Functions Only) Touchscreen, PIN Entry, Success, Data Attached In this case, the device includes additional data defined in [[**Table 326**](#table-326---notification-payload-for-touchscreen-pin-entry-success-data)](#table-326---notification-payload-for-touchscreen-pin-entry-success-data), or in [[**Table 327**](#table-327---notification-payload-for-touchscreen-pin-entry-success-data)](#table-327---notification-payload-for-touchscreen-pin-entry-success-data) if the device is including account data with PIN data. |
 | 01                                                                                                                                                                                                          | 02  | 02  | 01  | (Banking Functions Only) Touchscreen, PIN Entry, Operation Failed, Timeout                                                                                                                                                     |
 | 01                                                                                                                                                                                                          | 02  | 02  | 02  | (Banking Functions Only) Touchscreen, PIN Entry, Operation Failed, Hardware Not Available                                                                                                                                      |
 | 01                                                                                                                                                                                                          | 02  | 02  | 03  | (Banking Functions Only) Touchscreen, PIN Entry, Operation Failed, Canceled                                                                                                                                                    |
@@ -9329,6 +9631,7 @@ Table 325 - Notification Detail Codes
 | 01                                                                                                                                                                                                          | 02  | 02  | 05  | (Banking Functions Only) Touchscreen, PIN Entry, Operation Failed, PIN Verify Failed                                                                                                                                           |
 | 01                                                                                                                                                                                                          | 02  | 02  | 06  | (Banking Functions Only) Touchscreen, PIN Entry, Operation Failed, Account Data Capture Failed                                                                                                                                 |
 
+<a name="table-326---notification-payload-for-touchscreen-pin-entry-success-data"></a>
 <a name="table-326---notification-payload-for-touchscreen-pin-entry-success-data"></a>
 Table 326 - Notification Payload for Touchscreen, PIN Entry, Success, Data
 Attached without Account Data (Banking Functions Only)
@@ -9346,6 +9649,7 @@ Attached without Account Data (Banking Functions Only)
 | End of **Notification Message** found on page **62**       |     |                                                                                                  |     |     |         |
 
 <a name="table-327---notification-payload-for-touchscreen-pin-entry-success-data"></a>
+<a name="table-327---notification-payload-for-touchscreen-pin-entry-success-data"></a>
 Table 327 - Notification Payload for Touchscreen, PIN Entry, Success, Data
 Attached with Account Data (Banking Functions Only)
 
@@ -9354,7 +9658,7 @@ Attached with Account Data (Banking Functions Only)
 | Beginning of **Notification Message** found on page **62** |     |                                                                                                                                                                                                                                                                                              |     |     |         |
 | 0205 = User Interface Operation Complete                   |     |                                                                                                                                                                                                                                                                                              |     |     |         |
 | 84                                                         | var | Notification Payload                                                                                                                                                                                                                                                                         | B   | R   |         |
-| /DFDF59                                                    | var | Encrypted Data Primitive  Decrypt the value of this TLV data object using the algorithm and variant specified in the **Encrypted Data KSN** parameter and the **Encrypted Data Encryption Type** parameter to read its contents. The format of the decrypted data is shown in [**Table 328**](#table-328---account-data-dfdf59-decrypted-contents-banking-functions-only). | B   | R   |         |
+| /DFDF59                                                    | var | Encrypted Data Primitive  Decrypt the value of this TLV data object using the algorithm and variant specified in the **Encrypted Data KSN** parameter and the **Encrypted Data Encryption Type** parameter to read its contents. The format of the decrypted data is shown in [[**Table 328**](#table-328---account-data-dfdf59-decrypted-contents-banking-functions-only)](#table-328---account-data-dfdf59-decrypted-contents-banking-functions-only). | B   | R   |         |
 | /DFDF56                                                    | var | Encrypted Data KSN                                                                                                                                                                                                                                                                           | B   | R   |         |
 | /DFDF57                                                    | 01  | Encrypted Data Encryption Type See section **4.4 Encryption Type** for a list of valid values.                                                                                                                                                                                               | B   | R   |         |
 | /F5                                                        | var | Container for Encrypted PIN Data                                                                                                                                                                                                                                                             | TC  | R   |         |
@@ -9364,6 +9668,7 @@ Attached with Account Data (Banking Functions Only)
 | //DFDF42                                                   | 01  | PIN Encryption Type See section **4.4 Encryption Type** for a list of valid values.                                                                                                                                                                                                          | B   | R   |         |
 | End of **Notification Message** found on page **62**       |     |                                                                                                                                                                                                                                                                                              |     |     |         |
 
+<a name="table-328---account-data-dfdf59-decrypted-contents-banking-functions-only"></a>
 <a name="table-328---account-data-dfdf59-decrypted-contents-banking-functions-only"></a>
 Table 328 - Account Data DFDF59 Decrypted Contents (Banking Functions Only)
 
@@ -9385,6 +9690,7 @@ operations the host initiated using **Command 0xD801 - Load Firmware File** and
 those two commands are shown in the table below.
 
 <a name="table-329---notification-detail-codes"></a>
+<a name="table-329---notification-detail-codes"></a>
 Table 329 - Notification Detail Codes
 
 | B1 | B2 | B3 | B4 | Meaning                                     |
@@ -9399,6 +9705,7 @@ initiated using **Command 0xD801 - Load Firmware File** and **Command 0xD901 -
 Commit Firmware from File**. The **Notification Detail** for those two commands
 are shown in the table below.
 
+<a name="table-330---notification-detail-codes"></a>
 <a name="table-330---notification-detail-codes"></a>
 Table 330 - Notification Detail Codes
 
@@ -9430,7 +9737,7 @@ host receives from the firmware’s integrated display interface (**Notification
 Source 0x18nn - Notifications from User Interface**), and so on.
 
 For this notification, **Notification Detail** described in section **3.2.2.3
-Notification Message** contains one byte each, shown in [**Table 331**](#table-331---notification-detail-codes) **below**,
+Notification Message** contains one byte each, shown in [[**Table 331**](#table-331---notification-detail-codes)](#table-331---notification-detail-codes) **below**,
 to indicate:
 
 -   The **Category** (Cat) of notification (for example, the subsystem the
@@ -9443,16 +9750,17 @@ to indicate:
 
 The other optional message parameters in the **Notification Message** depend on
 which combination of four bytes is included in **Notification Detail**, and are
-described in [**Table 331**](#table-331---notification-detail-codes).
+described in [[**Table 331**](#table-331---notification-detail-codes)](#table-331---notification-detail-codes).
 
+<a name="table-331---notification-detail-codes"></a>
 <a name="table-331---notification-detail-codes"></a>
 Table 331 - Notification Detail Codes
 
 | Cat                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  | Rsn | Det | Ext | Meaning                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
 |----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----|-----|-----|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Category **0x00 Power / Reset** contains notification detail codes involving the device’s power and reset functionality. Each possible notification has a unique **Reason** value: Reason 0x00 = Device Reset Occurred Reason 0x01 = Device Reset Will Occur Soon Reason 0x02 = Low Battery Reason 0x03 = Key Management Reason 0x04 = Temperature                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |     |     |     |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
-| 00                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   | 00  | 00  | 00  | Power/Reset, Device Reset Occurred, Reserved, Reserved  The device sends and repeats this notification after the device power cycles or resets, depending on the setting in **Property 1.2.7.1.1.1 Device Reset Occurred Notification Control**. If it is set to repeat, it does so until the host acknowledges it using **Property 1.2.7.1.1.2 Device Reset Occurred Notification Acknowledged**.  These notifications always include the **Notification Payload** parameter in the **Notification Message**, as shown in [**Table 345**](#table-345---notification-detail-codes).                                                                                                                                                  |
-| 00                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   | 01  | 00  | 00  | Power/Reset, Device Reset Will Occur Soon, Reserved, Reserved  The device sends this notification before it automatically resets to conform to PCI’s 24 hour Self-Test requirement, and behaves according to the setting in [**Property 1.2.7.1.1.3 Device Reset Will Occur Soon Notification Control**](#property-127113-device-reset-will-occur-soon-notification-control).  See **24 Hour Automatic Reset PCI Requirement** for more information.  These notifications always include the **Notification Payload** parameter in the **Notification Message**, which directly contains one byte indicating the number of minutes (0x01 to 0xFF) until the device will perform the reset. |
+| 00                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   | 00  | 00  | 00  | Power/Reset, Device Reset Occurred, Reserved, Reserved  The device sends and repeats this notification after the device power cycles or resets, depending on the setting in **Property 1.2.7.1.1.1 Device Reset Occurred Notification Control**. If it is set to repeat, it does so until the host acknowledges it using **Property 1.2.7.1.1.2 Device Reset Occurred Notification Acknowledged**.  These notifications always include the **Notification Payload** parameter in the **Notification Message**, as shown in [[**Table 345**](#table-345---notification-detail-codes)](#table-345---notification-detail-codes).                                                                                                                                                  |
+| 00                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   | 01  | 00  | 00  | Power/Reset, Device Reset Will Occur Soon, Reserved, Reserved  The device sends this notification before it automatically resets to conform to PCI’s 24 hour Self-Test requirement, and behaves according to the setting in [**Property 1.2.7.1.1.3 Device Reset Will Occur Soon Notification Control**](#property-127113-device-reset-will-occur-soon-notification-control).  See [**24 Hour Automatic Reset PCI Requirement**](#24-hour-automatic-reset-pci-requirement) for more information.  These notifications always include the **Notification Payload** parameter in the **Notification Message**, which directly contains one byte indicating the number of minutes (0x01 to 0xFF) until the device will perform the reset. |
 | 00                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   | 02  | 00  | 00  | Power/Reset, Battery, Low Battery Warning, Percent  The device sends this notification when the battery charge reaches 15 percent. If a device is powered on with a charge that is already 15 percent or below, this notification is sent shortly after power up and includes the current battery charge percentage. Percent indicates the percent of battery charge remaining.                                                                                                                                                                                                                                                                                                            |
 | 00                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   | 02  | 01  | 00  | Power/Reset, Battery, Power Down Imminent, Reserved  The device sends this notification one minute before it automatically powers down the device because the battery charge has reached 0 percent.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
 | 00                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   | 02  | 02  | 00  | Power/Reset, Battery, Battery Charge Complete, Reserved  The device sends this notification when the battery charger detects that the battery is fully charged.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
@@ -9487,11 +9795,11 @@ Table 331 - Notification Detail Codes
 | 01                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   | 02  | 00  | 00  | User Event, Card Seated in Slot, Reserved, Reserved (EMV Contact Only)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
 | 01                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   | 03  | 00  | 00  | User Event, Card Unseated from Slot, Reserved, Reserved (EMV Contact Only)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 | 01                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   | 04  | 00  | 00  | User Event, Card Swiped, Reserved, Reserved (MSR Only) When the host receives this notification, it should call **Command 0x1001 - Start Transaction** before the timeout configured in **Property 1.2.7.1.2.2 User Event Notification MSR Data Timeout (MSR Only)** to process the MSR swipe data the device is temporarily storing in memory.                                                                                                                                                                                                                                                                                                                                            |
-| 01                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   | 05  | 00  | 00  | User Event, Touch Sensor Press On Display, Reserved, Reserved (Touch Only) These notifications always include the **Notification Payload** parameter in the **Notification Message**, as shown in [**Table 337**](#table-337---notification-payload-for-touch-sensor-press-or-release-on-display).                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
-| 01                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   | 06  | 00  | 00  | User Event, Touch Sensor Release On Display, Reserved, Reserved (Touch Only) These notifications always include the **Notification Payload** parameter in the **Notification Message**, as shown in [**Table 337**](#table-337---notification-payload-for-touch-sensor-press-or-release-on-display).                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
-| 01                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   | 07  | 00  | 00  | Barcode Reader, Read Barcode Result, Type, Reserved (BCR Only) Type 0x00 = Unknown Type 0x01 = MagTek Type 0x02 = EMV The barcode reader has successfully read a barcode. In this case, the device includes barcode data in the **Notification Payload** portion of the **Notification Message**. If the data is encrypted, the data is in the format described in [**Table 352**](#table-352---notification-payload-for-barcode-reader-read-barcode-result). Data that is not encrypted is in the format described in [**Table 353**](#table-353---notification-payload-for-barcode-reader-read-barcode-result).                                                                                                                                                                                                                                  |
+| 01                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   | 05  | 00  | 00  | User Event, Touch Sensor Press On Display, Reserved, Reserved (Touch Only) These notifications always include the **Notification Payload** parameter in the **Notification Message**, as shown in [[**Table 337**](#table-337---notification-payload-for-touch-sensor-press-or-release-on-display)](#table-337---notification-payload-for-touch-sensor-press-or-release-on-display).                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| 01                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   | 06  | 00  | 00  | User Event, Touch Sensor Release On Display, Reserved, Reserved (Touch Only) These notifications always include the **Notification Payload** parameter in the **Notification Message**, as shown in [[**Table 337**](#table-337---notification-payload-for-touch-sensor-press-or-release-on-display)](#table-337---notification-payload-for-touch-sensor-press-or-release-on-display).                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+| 01                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   | 07  | 00  | 00  | Barcode Reader, Read Barcode Result, Type, Reserved (BCR Only) Type 0x00 = Unknown Type 0x01 = MagTek Type 0x02 = EMV The barcode reader has successfully read a barcode. In this case, the device includes barcode data in the **Notification Payload** portion of the **Notification Message**. If the data is encrypted, the data is in the format described in [[**Table 352**](#table-352---notification-payload-for-barcode-reader-read-barcode-result)](#table-352---notification-payload-for-barcode-reader-read-barcode-result). Data that is not encrypted is in the format described in [[**Table 353**](#table-353---notification-payload-for-barcode-reader-read-barcode-result)](#table-353---notification-payload-for-barcode-reader-read-barcode-result).                                                                                                                                                                                                                                  |
 | Category **0x02 Session Management** contains notification detail codes involving session management functionality (Session Management Only). Each possible notification has a unique **Reason** value: Reason 0x00 = Session Expiring Soon                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |     |     |     |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
-| 02                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   | 00  | 00  | 00  | Session Management, Session Expiring Soon, Reserved, Reserved  The device sends this notification 5 minutes before a session expires and every minute after that until the session is extended or the connection is closed. The host can optionally extend the session with **Command 0x1F03 - Extend Session** or by sending any command request.  These notifications always include the **Notification Payload** parameter in the **Notification Message**, as shown in [**Table 339**](#table-339---notification-payload-for-session-expiring-soon-session-management).                                                                                                                                                                                                  |
+| 02                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   | 00  | 00  | 00  | Session Management, Session Expiring Soon, Reserved, Reserved  The device sends this notification 5 minutes before a session expires and every minute after that until the session is extended or the connection is closed. The host can optionally extend the session with **Command 0x1F03 - Extend Session** or by sending any command request.  These notifications always include the **Notification Payload** parameter in the **Notification Message**, as shown in [[**Table 339**](#table-339---notification-payload-for-session-expiring-soon-session-management)](#table-339---notification-payload-for-session-expiring-soon-session-management).                                                                                                                                                                                                  |
 | Category **0x03 Key Management** contains notification detail codes involving key management functionality (WLAN Only). Each possible notification has a unique **Reason** value: Reason 0x00 = CSR keys generated Reason  0x01 = Certificate Expiring Soon                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |     |     |     |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
 | 03                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   | 00  | 00  | 00  | Key management, CSR keys generated, Reserved, Reserved  This notification does not include a Notification Payload. See **Command 0xEF02 – Generate CSR keys (WLAN Only)** for more information.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
 | 03                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   | 01  | 00  | 00  | Key management, Certificate Expiring Soon, Reserved, Reserved  See **Property 1.2.2.1.1.B Certificate Expiring Soon Notification Threshold** for more information.  These notifications always include the **Notification Payload** parameter in the **Notification Message**, as shown in **Table 341 - Notification Payload for Key management, Certificate Expiring Soon**.                                                                                                                                                                                                                                                                                                             |
@@ -9537,12 +9845,14 @@ power source. See **Table 14 - Notification Message Format** and **Table 334 -
 Battery Charged Notification Example**.
 
 <a name="table-334---battery-charged-notification-example"></a>
+<a name="table-334---battery-charged-notification-example"></a>
 Table 334 - Battery Charged Notification Example
 
 | Example (Hex)                          |
 |----------------------------------------|
 | AA 00 81 04 83 00 10 01 82 00 02 02 00 |
 
+<a name="table-335---notification-payload-for-device-reset-occurred"></a>
 <a name="table-335---notification-payload-for-device-reset-occurred"></a>
 Table 335 - Notification Payload for Device Reset Occurred
 
@@ -9556,12 +9866,14 @@ Table 335 - Notification Payload for Device Reset Occurred
 | End of **Notification Message** found on page **62**       |     |                                                                                                               |     |     |         |
 
 <a name="table-336---notification-example-for-device-reset-occurred"></a>
+<a name="table-336---notification-example-for-device-reset-occurred"></a>
 Table 336 - Notification Example for Device Reset Occurred
 
 | Example (Hex)                                                   |
 |-----------------------------------------------------------------|
 | AA00 81 04 83001001 82 04 00000000 84 08 1001 81 01 02 82 01 00 |
 
+<a name="table-337---notification-payload-for-touch-sensor-press-or-release-on-display"></a>
 <a name="table-337---notification-payload-for-touch-sensor-press-or-release-on-display"></a>
 Table 337 - Notification Payload for Touch Sensor Press or Release On Display
 (Touch Only)
@@ -9574,6 +9886,7 @@ Table 337 - Notification Payload for Touch Sensor Press or Release On Display
 | End of **Notification Message** found on page **62**       |     |                                                                                                                                                                                                                                                                                                                                                                                                                                         |     |     |         |
 
 <a name="table-338---notification-example-for-touch-sensor-press-or-release-on-display"></a>
+<a name="table-338---notification-example-for-touch-sensor-press-or-release-on-display"></a>
 Table 338 - Notification Example for Touch Sensor Press or Release On Display
 (Touch Only)
 
@@ -9581,6 +9894,7 @@ Table 338 - Notification Example for Touch Sensor Press or Release On Display
 |-----------------------------------------------------------------|
 | AA00 81 04 83001001 82 04 00000000 84 08 1001 81 04 00 80 00 80 |
 
+<a name="table-339---notification-payload-for-session-expiring-soon-session-management"></a>
 <a name="table-339---notification-payload-for-session-expiring-soon-session-management"></a>
 Table 339 - Notification Payload for Session Expiring Soon (Session Management
 Only)
@@ -9596,6 +9910,7 @@ Only)
 | End of **Notification Message** found on page **62**       |     |                                                                                                                                                                                                                                                                                                                                                                                                                                |     |     |         |
 
 <a name="table-340---notification-example-for-session-expiring-soon-session-management"></a>
+<a name="table-340---notification-example-for-session-expiring-soon-session-management"></a>
 Table 340 - Notification Example for Session Expiring Soon (Session Management
 Only)
 
@@ -9603,6 +9918,7 @@ Only)
 |--------------------------------------------------------------------------|
 | AA00 81 04 83001001 82 04 00000000 84 0B 1001 81 01 00 82 01 00 83 01 05 |
 
+<a name="table-341---notification-payload-for-key-management-certificate-expiring-soon"></a>
 <a name="table-341---notification-payload-for-key-management-certificate-expiring-soon"></a>
 Table 341 - Notification Payload for Key management, Certificate Expiring Soon
 (Session Management Only)
@@ -9617,6 +9933,7 @@ Table 341 - Notification Payload for Key management, Certificate Expiring Soon
 | End of **Notification Message** found on page **62**       |     |                                                                                                                                                                                                                                                      |     |     |         |
 
 <a name="table-342---notification-example-for-key-management-certificate-expiring-soon"></a>
+<a name="table-342---notification-example-for-key-management-certificate-expiring-soon"></a>
 Table 342 - Notification Example for Key management, Certificate Expiring Soon
 (Session Management Only)
 
@@ -9624,6 +9941,7 @@ Table 342 - Notification Example for Key management, Certificate Expiring Soon
 |-----------------------------------------------------------------|
 | AA00 81 04 83001001 82 04 00000000 84 08 1001 81 01 02 82 01 00 |
 
+<a name="table-343---notification-payload-for-uid"></a>
 <a name="table-343---notification-payload-for-uid"></a>
 Table 343 - Notification Payload for UID
 
@@ -9664,7 +9982,7 @@ This notification requests that the host take action during operations involving
 the device’s User Interface modules.
 
 For this notification, **Notification Detail** described in section **3.2.2.3
-Notification Message** contains one byte each, shown in [**Table 345**](#table-345---notification-detail-codes), to
+Notification Message** contains one byte each, shown in [[**Table 345**](#table-345---notification-detail-codes)](#table-345---notification-detail-codes), to
 indicate:
 
 -   The **User Interface Module** (UI) involved
@@ -9674,6 +9992,7 @@ indicate:
 -   An **Extra** field (Ext) that has different meanings depending on the
     Reason.
 
+<a name="table-345---notification-detail-codes"></a>
 <a name="table-345---notification-detail-codes"></a>
 Table 345 - Notification Detail Codes
 
@@ -9695,11 +10014,12 @@ Table 345 - Notification Detail Codes
 | 01                                                                                                                                                                                                                                                                                                                                                                                                                                                                  | 05  | 00  | 00  | Touchscreen, Present card functional button Right selected                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
 | Module **0x02 Display** contains UI notification detail codes that are specific to the display module. The device primarily uses these notifications to request that the host stand in as a display to interact with cardholders / operators when the device does not have a display of its own (No Display Only). Reason 0x01 = Display Message Request Reason 0x02 = Cardholder Selection Request Reason 0x03 = Online PIN Request (MAGTEK INTERNAL ONLY FOR NOW) |     |     |     |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
 | 02                                                                                                                                                                                                                                                                                                                                                                                                                                                                  | 01  | 00  | 00  | Display, Display Message, No Data Attached, Clear Display. The host should clear any existing messages it is currently displaying (No Display Only).                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
-| 02                                                                                                                                                                                                                                                                                                                                                                                                                                                                  | 01  | 01  | 00  | Display, Display Message, Data Attached, No Cancel Function (No Display Only) In this case, the notification includes additional data and display control, defined in [**Table 346**](#table-346---notification-payload-for-display-message-request-notifications-no), in the **Notification Payload** portion of the **Notification Message**.  This notification is for simple messages. The host should show the requested message until another notification arrives or until the host needs to use the display for its own purposes. For example, during a transaction, this notification will pass along the simple messages in the transaction sequence like **CARD READ OK - REMOVE CARD**, **THANK YOU**, and **WELCOME**.                                                              |
-| 02                                                                                                                                                                                                                                                                                                                                                                                                                                                                  | 01  | 02  | 00  | Display, Display Message, Data Attached, Include Cancel Function (No Display Only) In this case, the notification includes additional data and display control, defined in [**Table 346**](#table-346---notification-payload-for-display-message-request-notifications-no), in the **Notification Payload** portion of the **Notification Message**.  The host should show the requested message and should allow the request to be canceled by a cardholder or operator. For example, during a transaction, this notification will pass along the simple messages in the transaction sequence like “TAP, INSERT, or SWIPE CARD,” where cancelation is appropriate. If the cancel button involves canceling the whole transaction, the host should send **Command 0x1008 - Cancel Transaction**. |
-| 02                                                                                                                                                                                                                                                                                                                                                                                                                                                                  | 02  | 00  | 00  | Display, Cardholder Selection, Data Attached, Reserved (No Display Only) In this case, the notification includes additional data and display control, defined in [**Table 348**](#table-348---notification-payload-for-cardholder-selection-notifications-no), in the **Notification Payload** portion of the **Notification Message**.  The host should show the requested selection, then send **Command 0x1802 - Report Cardholder Selection** to device to return the cardholder’s selection to the device.                                                                                                                                                                                                                                                                               |
-| 02                                                                                                                                                                                                                                                                                                                                                                                                                                                                  | 03  | 00  | 00  | (MAGTEK INTERNAL ONLY FOR NOW, No Display Only) Display, Online PIN Request, Application ID / Amount, Data Attached, Reserved.  In this case, the notification includes additional data, defined in [**Table 349**](#table-349---notification-payload-for-display-online-pin-request-notifications), in the **Notification Payload** portion of the **Notification Message**.  The host must send Command TBD to the device to indicate PIN Capture data and result.                                                                                                                                                                                                                                                                                                                             |
+| 02                                                                                                                                                                                                                                                                                                                                                                                                                                                                  | 01  | 01  | 00  | Display, Display Message, Data Attached, No Cancel Function (No Display Only) In this case, the notification includes additional data and display control, defined in [[**Table 346**](#table-346---notification-payload-for-display-message-request-notifications-no)](#table-346---notification-payload-for-display-message-request-notifications-no), in the **Notification Payload** portion of the **Notification Message**.  This notification is for simple messages. The host should show the requested message until another notification arrives or until the host needs to use the display for its own purposes. For example, during a transaction, this notification will pass along the simple messages in the transaction sequence like **CARD READ OK - REMOVE CARD**, **THANK YOU**, and **WELCOME**.                                                              |
+| 02                                                                                                                                                                                                                                                                                                                                                                                                                                                                  | 01  | 02  | 00  | Display, Display Message, Data Attached, Include Cancel Function (No Display Only) In this case, the notification includes additional data and display control, defined in [[**Table 346**](#table-346---notification-payload-for-display-message-request-notifications-no)](#table-346---notification-payload-for-display-message-request-notifications-no), in the **Notification Payload** portion of the **Notification Message**.  The host should show the requested message and should allow the request to be canceled by a cardholder or operator. For example, during a transaction, this notification will pass along the simple messages in the transaction sequence like “TAP, INSERT, or SWIPE CARD,” where cancelation is appropriate. If the cancel button involves canceling the whole transaction, the host should send **Command 0x1008 - Cancel Transaction**. |
+| 02                                                                                                                                                                                                                                                                                                                                                                                                                                                                  | 02  | 00  | 00  | Display, Cardholder Selection, Data Attached, Reserved (No Display Only) In this case, the notification includes additional data and display control, defined in [[**Table 348**](#table-348---notification-payload-for-cardholder-selection-notifications-no)](#table-348---notification-payload-for-cardholder-selection-notifications-no), in the **Notification Payload** portion of the **Notification Message**.  The host should show the requested selection, then send **Command 0x1802 - Report Cardholder Selection** to device to return the cardholder’s selection to the device.                                                                                                                                                                                                                                                                               |
+| 02                                                                                                                                                                                                                                                                                                                                                                                                                                                                  | 03  | 00  | 00  | (MAGTEK INTERNAL ONLY FOR NOW, No Display Only) Display, Online PIN Request, Application ID / Amount, Data Attached, Reserved.  In this case, the notification includes additional data, defined in [[**Table 349**](#table-349---notification-payload-for-display-online-pin-request-notifications)](#table-349---notification-payload-for-display-online-pin-request-notifications), in the **Notification Payload** portion of the **Notification Message**.  The host must send Command TBD to the device to indicate PIN Capture data and result.                                                                                                                                                                                                                                                                                                                             |
 
+<a name="table-346---notification-payload-for-display-message-request-notifications-no"></a>
 <a name="table-346---notification-payload-for-display-message-request-notifications-no"></a>
 Table 346 - Notification Payload for Display Message Request Notifications (No
 Display Only)
@@ -9726,6 +10046,7 @@ Attached**
 | End of **Notification Message** found on page **62.**       |     |                                                |     |     |         |
 
 <a name="table-348---notification-payload-for-cardholder-selection-notifications-no"></a>
+<a name="table-348---notification-payload-for-cardholder-selection-notifications-no"></a>
 Table 348 - Notification Payload for Cardholder Selection Notifications (No
 Display Only)
 
@@ -9738,6 +10059,7 @@ Display Only)
 | /83                                                                 | var | Message This parameter is a set of one or more ASCII strings the host should show, with each string terminated by any one of the following characters. MagTek recommends proceeding to the next row on receiving any of these characters: Null (0x00) LF (0x0A) The end of the Message parameter. | B   | R   |         |
 | End of **Notification Message** found on page **62**                |     |                                                                                                                                                                                                                                                                                                   |     |     |         |
 
+<a name="table-349---notification-payload-for-display-online-pin-request-notifications"></a>
 <a name="table-349---notification-payload-for-display-online-pin-request-notifications"></a>
 Table 349 - Notification Payload for Display Online PIN Request Notifications
 (MAGTEK INTERNAL ONLY FOR NOW, No Display Only)
@@ -9757,7 +10079,7 @@ This notification reports information about progress and state changes that
 occur during interaction with the User Interface modules.
 
 For this notification, **Notification Detail** described in section **3.2.2.3
-Notification Message** contains one byte each, shown in [**Table 350**](#table-350---notification-detail-codes), to
+Notification Message** contains one byte each, shown in [[**Table 350**](#table-350---notification-detail-codes)](#table-350---notification-detail-codes), to
 indicate:
 
 -   The **User Interface Module** (UI) involved
@@ -9768,19 +10090,20 @@ indicate:
     Reason.
 
 <a name="table-350---notification-detail-codes"></a>
+<a name="table-350---notification-detail-codes"></a>
 Table 350 - Notification Detail Codes
 
 | UI                                                                                                                                                                                                                                                                     | Rsn | Det | Ext | Meaning                                                                                                                                                                                                                                                                                                                                                                                             |
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----|-----|-----|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Module **0x01 Touchscreen** contains UI notification detail codes that are specific to the touchscreen module (Touch Only) Reason 0x01 = Signature Capture                                                                                                             |     |     |     |                                                                                                                                                                                                                                                                                                                                                                                                     |
-| 01                                                                                                                                                                                                                                                                     | 01  | 01  | 01  | Touchscreen, Signature Capture, Success, Data Available (Touch Only) In this case, the device includes the File ID as defined in [**Table 351**](#table-351---additional-detail-for-touchscreen-signature-capture-success-data) in the **Additional Detail** portion of the **Notification Message**. The host should use this File ID and call [**Command 0xD825 – Start Get File from Device**](#_Command_0xD821_-).                                                               |
+| 01                                                                                                                                                                                                                                                                     | 01  | 01  | 01  | Touchscreen, Signature Capture, Success, Data Available (Touch Only) In this case, the device includes the File ID as defined in [[**Table 351**](#table-351---additional-detail-for-touchscreen-signature-capture-success-data)](#table-351---additional-detail-for-touchscreen-signature-capture-success-data) in the **Additional Detail** portion of the **Notification Message**. The host should use this File ID and call [**Command 0xD825 – Start Get File from Device**](#_Command_0xD821_-).                                                               |
 | 01                                                                                                                                                                                                                                                                     | 01  | 02  | 01  | Touchscreen, Signature Capture, Operation Failed, Timeout (Touch Only)                                                                                                                                                                                                                                                                                                                              |
 | 01                                                                                                                                                                                                                                                                     | 01  | 02  | 02  | Touchscreen, Signature Capture, Operation Failed, Hardware Not Available (Touch Only)                                                                                                                                                                                                                                                                                                               |
 | Module **0x02 Display** contains UI notification detail codes that are specific to the display module (Display Only). Reason 0x01 = Display Message Request Reason 0x02 = Cardholder Selection Request Reason 0x03 = Online PIN Request (MAGTEK INTERNAL ONLY FOR NOW) |     |     |     |                                                                                                                                                                                                                                                                                                                                                                                                     |
 | 02                                                                                                                                                                                                                                                                     | 01  | 00  | 00  | Display, Display Message, Timed Out, Reserved The device has finished displaying a message requested by the host using **Command 0x1803 - Display Message**.                                                                                                                                                                                                                                        |
 | Module **0x04 Barcode Reader** contains notification detail codes that are specific to the barcode reader module. Reason 0x03 = Read Barcode Result                                                                                                                    |     |     |     |                                                                                                                                                                                                                                                                                                                                                                                                     |
-| 04                                                                                                                                                                                                                                                                     | 03  | 01  | 00  | Barcode Reader, Read Barcode Result, Success, Unidentified Type The barcode reader has successfully read a barcode. In this case, the device includes barcode data in the **Notification Payload** portion of the **Notification Message**. If the data is encrypted, the data is in the format described in [**Table 352**](#table-352---notification-payload-for-barcode-reader-read-barcode-result). Data that is not encrypted is in the format described in [**Table 353**](#table-353---notification-payload-for-barcode-reader-read-barcode-result). |
-| 04                                                                                                                                                                                                                                                                     | 03  | 01  | 01  | Barcode Reader, Read Barcode Result, Success, MagTek Blob Type The barcode reader has successfully read a barcode. In this case, the device includes barcode data in the **Notification Payload** portion of the **Notification Message**. MagTek Blob data is always encrypted. The data is in the format described in [**Table 352**](#table-352---notification-payload-for-barcode-reader-read-barcode-result).                                                              |
+| 04                                                                                                                                                                                                                                                                     | 03  | 01  | 00  | Barcode Reader, Read Barcode Result, Success, Unidentified Type The barcode reader has successfully read a barcode. In this case, the device includes barcode data in the **Notification Payload** portion of the **Notification Message**. If the data is encrypted, the data is in the format described in [[**Table 352**](#table-352---notification-payload-for-barcode-reader-read-barcode-result)](#table-352---notification-payload-for-barcode-reader-read-barcode-result). Data that is not encrypted is in the format described in [[**Table 353**](#table-353---notification-payload-for-barcode-reader-read-barcode-result)](#table-353---notification-payload-for-barcode-reader-read-barcode-result). |
+| 04                                                                                                                                                                                                                                                                     | 03  | 01  | 01  | Barcode Reader, Read Barcode Result, Success, MagTek Blob Type The barcode reader has successfully read a barcode. In this case, the device includes barcode data in the **Notification Payload** portion of the **Notification Message**. MagTek Blob data is always encrypted. The data is in the format described in [[**Table 352**](#table-352---notification-payload-for-barcode-reader-read-barcode-result)](#table-352---notification-payload-for-barcode-reader-read-barcode-result).                                                              |
 | 04                                                                                                                                                                                                                                                                     | 03  | 01  | 02  | Barcode Reader, Read Barcode Result, Success, EMV Type The barcode reader has successfully read a barcode. In this case, the device includes barcode data in the **Notification Payload** portion of the **Notification Message**. EMV barcode data is always encrypted. The data is in the format described in **Table 352.**                                                                      |
 | 04                                                                                                                                                                                                                                                                     | 03  | 02  | 01  | Barcode Reader, Read Barcode Result, Operation Failed, Timeout                                                                                                                                                                                                                                                                                                                                      |
 | Module **0x05 Buzzer** contains notification detail codes that are specific to the buzzer module. Reason 0x04 = Buzzer Result                                                                                                                                          |     |     |     |                                                                                                                                                                                                                                                                                                                                                                                                     |
@@ -9793,6 +10116,7 @@ Table 350 - Notification Detail Codes
 | 06                                                                                                                                                                                                                                                                     | 05  | 02  | 04  | Card Emulation, Card Emulation Result, Operation Fail, Error                                                                                                                                                                                                                                                                                                                                        |
 
 <a name="table-351---additional-detail-for-touchscreen-signature-capture-success-data"></a>
+<a name="table-351---additional-detail-for-touchscreen-signature-capture-success-data"></a>
 Table 351 - Additional Detail for Touchscreen, Signature Capture, Success, Data
 Available (Touch Only)
 
@@ -9803,6 +10127,7 @@ Available (Touch Only)
 | End of **Notification Message** found on page **62**       |     |                        |     |     |         |
 
 <a name="table-352---notification-payload-for-barcode-reader-read-barcode-result"></a>
+<a name="table-352---notification-payload-for-barcode-reader-read-barcode-result"></a>
 Table 352 - Notification Payload for Barcode Reader, Read Barcode Result,
 Success (Encrypted Data Attached)
 
@@ -9811,11 +10136,12 @@ Success (Encrypted Data Attached)
 | Beginning of **Notification Message** found on page **62** |     |                                                                                                                                                                                                                                                                                              |     |     |         |
 | 1805 = User Interface Operation Complete                   |     |                                                                                                                                                                                                                                                                                              |     |     |         |
 | 84                                                         | var | Notification Payload                                                                                                                                                                                                                                                                         | B   | R   |         |
-| /DFDF59                                                    | var | Encrypted Data Primitive  Decrypt the value of this TLV data object using the algorithm and variant specified in the **Encrypted Data KSN** parameter and the **Encrypted Data Encryption Type** parameter to read its contents. The format of the decrypted data is shown in [**Table 353**](#table-353---notification-payload-for-barcode-reader-read-barcode-result). | B   | R   |         |
+| /DFDF59                                                    | var | Encrypted Data Primitive  Decrypt the value of this TLV data object using the algorithm and variant specified in the **Encrypted Data KSN** parameter and the **Encrypted Data Encryption Type** parameter to read its contents. The format of the decrypted data is shown in [[**Table 353**](#table-353---notification-payload-for-barcode-reader-read-barcode-result)](#table-353---notification-payload-for-barcode-reader-read-barcode-result). | B   | R   |         |
 | /DFDF50                                                    | var | Encrypted Data KSN                                                                                                                                                                                                                                                                           | B   | R   |         |
 | /DFDF51                                                    | 01  | Encrypted Data Encryption Type See section **4.4 Encryption Type** for a list of valid values.                                                                                                                                                                                               | B   | R   |         |
 | End of **Notification Message** found on page **62**       |     |                                                                                                                                                                                                                                                                                              |     |     |         |
 
+<a name="table-353---notification-payload-for-barcode-reader-read-barcode-result"></a>
 <a name="table-353---notification-payload-for-barcode-reader-read-barcode-result"></a>
 Table 353 - Notification Payload for Barcode Reader, Read Barcode Result,
 Success (Unencrypted Data)
@@ -9990,6 +10316,7 @@ overall property **type**, **module**, and **submodule**.
 #### Property 1.1.1.1.1.1 EMV Terminal Identification
 
 <a name="table-355---property-111111-emv-terminal-identification"></a>
+<a name="table-355---property-111111-emv-terminal-identification"></a>
 Table 355 - Property 1.1.1.1.1.1 EMV Terminal Identification
 
 | Property Description |                                                                                                                                                                                                                                                                                                   |
@@ -10005,12 +10332,14 @@ Table 355 - Property 1.1.1.1.1.1 EMV Terminal Identification
 | Default              | “00000000” (0x3030303030303030)                                                                                                                                                                                                                                                                   |
 
 <a name="table-356---get-request-example"></a>
+<a name="table-356---get-request-example"></a>
 Table 356 - Get Request Example
 
 | Example (Hex)                                                                                               |
 |-------------------------------------------------------------------------------------------------------------|
 | AA 00 81 04 01 04 D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0A E1 08 E1 06 E1 04 E1 02 C1 00 |
 
+<a name="table-357---get-response-example"></a>
 <a name="table-357---get-response-example"></a>
 Table 357 - Get Response Example
 
@@ -10019,12 +10348,14 @@ Table 357 - Get Response Example
 | AA 00 81 04 82 04 D1 01 82 04 00 00 00 00 84 82 00 22 D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 12 E1 10 E1 0E E1 0C E1 0A C1 08 30 30 30 30 30 30 30 30 |
 
 <a name="table-358---set-request-example"></a>
+<a name="table-358---set-request-example"></a>
 Table 358 - Set Request Example
 
 | Example (Hex)                                                                                                                       |
 |-------------------------------------------------------------------------------------------------------------------------------------|
 | AA 00 81 04 01 3E D1 11 84 22 D1 11 81 07 2B 06 01 04 01 F6 09 85 01 01 89 12 E1 10 E1 0E E1 0C E1 0A C1 08 31 31 31 31 31 31 31 31 |
 
+<a name="table-359---set-response-example"></a>
 <a name="table-359---set-response-example"></a>
 Table 359 - Set Response Example
 
@@ -10034,6 +10365,7 @@ Table 359 - Set Response Example
 
 #### Property 1.1.1.1.1.2 EMV ARQC Message Tag List
 
+<a name="table-360---property-111112-emv-arqc-message-tag-list"></a>
 <a name="table-360---property-111112-emv-arqc-message-tag-list"></a>
 Table 360 - Property 1.1.1.1.1.2 EMV ARQC Message Tag List
 
@@ -10050,12 +10382,14 @@ Table 360 - Property 1.1.1.1.1.2 EMV ARQC Message Tag List
 | Default              | 50 5A 57 82 84 95 9A 9B 9C F4 5F 1A 5F 20 5F 24 5F 2A 5F 30 5F 34 9F 02 9F 03 9F 06 9F 09 9F 10 9F 15 9F 1A 9F 1D 9F 1E 9F 24 9F 26 9F 27 9F 33 9F 34 9F 35 9F 36 9F 37 9F 39 9F 41 9F 45 9F 4C 9F 4E 9F 5D 9F 66 9F 6E 9F 7C         |
 
 <a name="table-361---get-request-example"></a>
+<a name="table-361---get-request-example"></a>
 Table 361 - Get Request Example
 
 | Example (Hex)                                                                                               |
 |-------------------------------------------------------------------------------------------------------------|
 | AA 00 81 04 01 08 D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0A E1 08 E1 06 E1 04 E1 02 C2 00 |
 
+<a name="table-362---get-response-example"></a>
 <a name="table-362---get-response-example"></a>
 Table 362 - Get Response Example
 
@@ -10064,12 +10398,14 @@ Table 362 - Get Response Example
 | AA 00 81 04 82 08 D1 01 82 04 00 00 00 00 84 82 00 64 D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 54 E1 52 E1 50 E1 4E E1 4C C2 4A 50 5A 57 82 84 95 9A 9B 9C F4 5F 1A 5F 20 5F 24 5F 2A 5F 30 5F 34 9F 02 9F 03 9F 06 9F 09 9F 10 9F 15 9F 1A 9F 1D 9F 1E 9F 24 9F 26 9F 27 9F 33 9F 34 9F 35 9F 36 9F 37 9F 39 9F 41 9F 45 9F 4C 9F 4E 9F 5D 9F 66 9F 6E 9F 7C |
 
 <a name="table-363---set-request-example"></a>
+<a name="table-363---set-request-example"></a>
 Table 363 - Set Request Example
 
 | Example (Hex)                                                                                                                                                                                                                                                                                                                             |
 |-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | AA 00 81 04 01 09 D1 11 84 64 D1 11 81 07 2B 06 01 04 01 F6 09 85 01 01 89 54 E1 52 E1 50 E1 4E E1 4C C2 4A 50 5A 57 82 84 95 9A 9B 9C F4 5F 1A 5F 20 5F 24 5F 2A 5F 30 5F 34 9F 02 9F 03 9F 06 9F 09 9F 10 9F 15 9F 1A 9F 1D 9F 1E 9F 24 9F 26 9F 27 9F 33 9F 34 9F 35 9F 36 9F 37 9F 39 9F 41 9F 45 9F 4C 9F 4E 9F 5D 9F 66 9F 6E 9F 7C |
 
+<a name="table-364---set-response-example"></a>
 <a name="table-364---set-response-example"></a>
 Table 364 - Set Response Example
 
@@ -10079,6 +10415,7 @@ Table 364 - Set Response Example
 
 #### Property 1.1.1.1.1.3 EMV Batch Data Tag List
 
+<a name="table-365---property-111113-emv-batch-data-tag-list"></a>
 <a name="table-365---property-111113-emv-batch-data-tag-list"></a>
 Table 365 - Property 1.1.1.1.1.3 EMV Batch Data Tag List
 
@@ -10095,12 +10432,14 @@ Table 365 - Property 1.1.1.1.1.3 EMV Batch Data Tag List
 | Default              | 50 57 5A 82 84 8E 95 9A 9C F4 5F 20 5F 24 5F 25 5F 28 5F 2A 5F 2D 5F 34 9F 02 9F 03 9F 07 9F 09 9F 0B 9F 0D 9F 0E 9F 0F 9F 10 9F 11 9F 12 9F 15 9F 16 9F 1A 9F 1C 9F 1E 9F 21 9F 24 9F 26 9F 27 9F 33 9F 34 9F 35 9F 36 9F 37 DF DF 25                                             |
 
 <a name="table-366---get-request-example"></a>
+<a name="table-366---get-request-example"></a>
 Table 366 - Get Request Example
 
 | Example (Hex)                                                                                               |
 |-------------------------------------------------------------------------------------------------------------|
 | AA 00 81 04 01 15 D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0A E1 08 E1 06 E1 04 E1 02 C3 00 |
 
+<a name="table-367---get-response-example"></a>
 <a name="table-367---get-response-example"></a>
 Table 367 - Get Response Example
 
@@ -10109,12 +10448,14 @@ Table 367 - Get Response Example
 | AA 00 81 04 82 15 D1 01 82 04 00 00 00 00 84 82 00 66 D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 56 E1 54 E1 52 E1 50 E1 4E C3 4C 50 57 5A 82 84 8E 95 9A 9C 5F 20 5F 24 5F 25 5F 28 5F 2A 5F 2D 5F 34 9F 02 9F 03 9F 07 9F 09 9F 0B 9F 0D 9F 0E 9F 0F 9F 10 9F 11 9F 12 9F 15 9F 16 9F 1A 9F 1C 9F 1E 9F 21 9F 24 9F 26 9F 27 9F 33 9F 34 9F 35 9F 36 9F 37 DF DF 25 |
 
 <a name="table-368---set-request-example"></a>
+<a name="table-368---set-request-example"></a>
 Table 368 - Set Request Example
 
 | Example (Hex)                                                                                                                                                                                                                                                                                                                                   |
 |-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | AA 00 81 04 01 0B D1 11 84 66 D1 11 81 07 2B 06 01 04 01 F6 09 85 01 01 89 56 E1 54 E1 52 E1 50 E1 4E C3 4C 50 57 5A 82 84 8E 95 9A 9C 5F 20 5F 24 5F 25 5F 28 5F 2A 5F 2D 5F 34 9F 02 9F 03 9F 07 9F 09 9F 0B 9F 0D 9F 0E 9F 0F 9F 10 9F 11 9F 12 9F 15 9F 16 9F 1A 9F 1C 9F 1E 9F 21 9F 24 9F 26 9F 27 9F 33 9F 34 9F 35 9F 36 9F 37 DF DF 25 |
 
+<a name="table-369---set-response-example"></a>
 <a name="table-369---set-response-example"></a>
 Table 369 - Set Response Example
 
@@ -10124,6 +10465,7 @@ Table 369 - Set Response Example
 
 #### Property 1.1.1.1.1.4 EMV Reversal Data Tag List (EMV Contact Only)
 
+<a name="table-370---property-111114-emv-reversal-data-tag-list-emv-contact-only"></a>
 <a name="table-370---property-111114-emv-reversal-data-tag-list-emv-contact-only"></a>
 Table 370 - Property 1.1.1.1.1.4 EMV Reversal Data Tag List (EMV Contact Only)
 
@@ -10140,12 +10482,14 @@ Table 370 - Property 1.1.1.1.1.4 EMV Reversal Data Tag List (EMV Contact Only)
 | Default              | 57 5A 82 8A 95 9A 9C 5F 24 5F 2A 5F 34 9F 01 9F 02 9F 10 9F 15 9F 16 9F 1A 9F 1C 9F 21 9F 33 9F 35 9F 36 9F 39 9F 5B DF DF 25                                                                                                                                            |
 
 <a name="table-371---get-request-example"></a>
+<a name="table-371---get-request-example"></a>
 Table 371 - Get Request Example
 
 | Example (Hex)                                                                                               |
 |-------------------------------------------------------------------------------------------------------------|
 | AA 00 81 04 01 16 D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0A E1 08 E1 06 E1 04 E1 02 C4 00 |
 
+<a name="table-372---get-response-example"></a>
 <a name="table-372---get-response-example"></a>
 Table 372 - Get Response Example
 
@@ -10154,12 +10498,14 @@ Table 372 - Get Response Example
 | AA 00 81 04 82 16 D1 01 82 04 00 00 00 00 84 82 00 44 D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 34 E1 32 E1 30 E1 2E E1 2C C4 2A 57 5A 82 8A 95 9A 9C 5F 24 5F 2A 5F 34 9F 01 9F 02 9F 10 9F 15 9F 16 9F 1A 9F 1C 9F 21 9F 33 9F 35 9F 36 9F 39 9F 5B DF DF 25 |
 
 <a name="table-373---set-request-example"></a>
+<a name="table-373---set-request-example"></a>
 Table 373 - Set Request Example
 
 | Example (Hex)                                                                                                                                                                                                                             |
 |-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | AA 00 81 04 01 0D D1 11 84 44 D1 11 81 07 2B 06 01 04 01 F6 09 85 01 01 89 34 E1 32 E1 30 E1 2E E1 2C C4 2A 57 5A 82 8A 95 9A 9C 5F 24 5F 2A 5F 34 9F 01 9F 02 9F 10 9F 15 9F 16 9F 1A 9F 1C 9F 21 9F 33 9F 35 9F 36 9F 39 9F 5B DF DF 25 |
 
+<a name="table-374---set-response-example"></a>
 <a name="table-374---set-response-example"></a>
 Table 374 - Set Response Example
 
@@ -10169,6 +10515,7 @@ Table 374 - Set Response Example
 
 #### Property 1.1.1.1.1.5 ARPC Receive Timeout
 
+<a name="table-375---property-111115-arpc-receive-timeout"></a>
 <a name="table-375---property-111115-arpc-receive-timeout"></a>
 Table 375 - Property 1.1.1.1.1.5 ARPC Receive Timeout
 
@@ -10185,12 +10532,14 @@ Table 375 - Property 1.1.1.1.1.5 ARPC Receive Timeout
 | Default              | 0xFF                                                                                                                                                                                                                                                  |
 
 <a name="table-376---get-request-example"></a>
+<a name="table-376---get-request-example"></a>
 Table 376 - Get Request Example
 
 | Example (Hex)                                                |
 |--------------------------------------------------------------|
 | AA00 8104 0155D101 840F D101 8501 01 8704 01010101 8902 C500 |
 
+<a name="table-377---get-response-example"></a>
 <a name="table-377---get-response-example"></a>
 Table 377 - Get Response Example
 
@@ -10199,12 +10548,14 @@ Table 377 - Get Response Example
 | AA 00 81 04 82 55 D1 01 82 04 00 00 00 00 84 82 00 10 D1 01 85 01 01 87 04 01 01 01 01 89 03 C5 01 FF |
 
 <a name="table-378---set-request-example"></a>
+<a name="table-378---set-request-example"></a>
 Table 378 - Set Request Example
 
 | Example (Hex)                                               |
 |-------------------------------------------------------------|
 | AA00 81040155D111 8410 D111 850101 870401010101 8903 C501FF |
 
+<a name="table-379---set-response-example"></a>
 <a name="table-379---set-response-example"></a>
 Table 379 - Set Response Example
 
@@ -10214,6 +10565,7 @@ Table 379 - Set Response Example
 
 #### Property 1.1.1.1.1.6 ARPC Retry Attempts
 
+<a name="table-380---property-111116-arpc-retry-attempts"></a>
 <a name="table-380---property-111116-arpc-retry-attempts"></a>
 Table 380 - Property 1.1.1.1.1.6 ARPC Retry Attempts
 
@@ -10230,12 +10582,14 @@ Table 380 - Property 1.1.1.1.1.6 ARPC Retry Attempts
 | Default              | 0x00                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
 
 <a name="table-381---get-request-example"></a>
+<a name="table-381---get-request-example"></a>
 Table 381 - Get Request Example
 
 | Example (Hex)                                                |
 |--------------------------------------------------------------|
 | AA00 8104 0155D101 840F D101 8501 01 8704 01010101 8902 C600 |
 
+<a name="table-382---get-response-example"></a>
 <a name="table-382---get-response-example"></a>
 Table 382 - Get Response Example
 
@@ -10244,12 +10598,14 @@ Table 382 - Get Response Example
 | AA 00 81 04 82 55 D1 01 82 04 00 00 00 00 84 82 00 10 D1 01 85 01 01 87 04 01 01 01 01 89 03 C6 01 00 |
 
 <a name="table-383---set-request-example"></a>
+<a name="table-383---set-request-example"></a>
 Table 383 - Set Request Example
 
 | Example (Hex)                                               |
 |-------------------------------------------------------------|
 | AA00 81040155D111 8410 D111 850101 870401010101 8903 C60100 |
 
+<a name="table-384---set-response-example"></a>
 <a name="table-384---set-response-example"></a>
 Table 384 - Set Response Example
 
@@ -10259,6 +10615,7 @@ Table 384 - Set Response Example
 
 #### Property 1.1.1.1.1.7 Apple VAS Merchant ID and URL Slot 1
 
+<a name="table-385---property-111117-apple-vas-merchant-id-and-url-slot-1"></a>
 <a name="table-385---property-111117-apple-vas-merchant-id-and-url-slot-1"></a>
 Table 385 - Property 1.1.1.1.1.7 Apple VAS Merchant ID and URL Slot 1
 
@@ -10275,6 +10632,7 @@ Table 385 - Property 1.1.1.1.1.7 Apple VAS Merchant ID and URL Slot 1
 | Default              | 0x00                                                                                                            |
 
 <a name="table-386---vas-merchant-id-and-url-type"></a>
+<a name="table-386---vas-merchant-id-and-url-type"></a>
 Table 386 - VAS Merchant ID and URL Type
 
 | Tag  | Len            | Value / Description | Typ | Req | Default |
@@ -10283,12 +10641,14 @@ Table 386 - VAS Merchant ID and URL Type
 | 9F29 | Var up to 0x40 | Merchant URL        | B   | O   |         |
 
 <a name="table-387---get-request-example"></a>
+<a name="table-387---get-request-example"></a>
 Table 387 - Get Request Example
 
 | Example (Hex)                                                |
 |--------------------------------------------------------------|
 | AA00 8104 0155D101 840F D101 8501 01 8704 01010101 8902 C700 |
 
+<a name="table-388---get-response-example"></a>
 <a name="table-388---get-response-example"></a>
 Table 388 - Get Response Example
 
@@ -10297,12 +10657,14 @@ Table 388 - Get Response Example
 | AA 00 81 04 82 55 D1 01 82 04 00 00 00 00 84 82 00 49 D1 01 85 01 01 87 04 01 01 01 01 89 3C C7 3A 9F 25 20 3E 22 54 3A AF 0A C5 E4 AC FC 25 67 1A 6E BF 6E DE 5A C1 96 74 6C 55 F3 D4 37 08 19 FF F9 22 C3 9F 29 14 77 77 77 2E 65 78 61 6D 70 6C 65 2D 75 72 6C 2E 63 6F 6D |
 
 <a name="table-389---set-request-example"></a>
+<a name="table-389---set-request-example"></a>
 Table 389 - Set Request Example
 
 | Example (Hex)                                               |
 |-------------------------------------------------------------|
 | AA00 81040155D111 8410 D111 850101 870401010101 8903 C70100 |
 
+<a name="table-390---set-response-example"></a>
 <a name="table-390---set-response-example"></a>
 Table 390 - Set Response Example
 
@@ -10312,6 +10674,7 @@ Table 390 - Set Response Example
 
 #### Property 1.1.1.1.1.8 Apple VAS Merchant ID and URL Slot 2
 
+<a name="table-391---property-111118-apple-vas-merchant-id-and-url-slot-2"></a>
 <a name="table-391---property-111118-apple-vas-merchant-id-and-url-slot-2"></a>
 Table 391 - Property 1.1.1.1.1.8 Apple VAS Merchant ID and URL Slot 2
 
@@ -10328,12 +10691,14 @@ Table 391 - Property 1.1.1.1.1.8 Apple VAS Merchant ID and URL Slot 2
 | Default              | 0x00                                                                                                            |
 
 <a name="table-392---get-request-example"></a>
+<a name="table-392---get-request-example"></a>
 Table 392 - Get Request Example
 
 | Example (Hex)                                                |
 |--------------------------------------------------------------|
 | AA00 8104 0155D101 840F D101 8501 01 8704 01010101 8902 C800 |
 
+<a name="table-393---get-response-example"></a>
 <a name="table-393---get-response-example"></a>
 Table 393 - Get Response Example
 
@@ -10342,12 +10707,14 @@ Table 393 - Get Response Example
 | AA 00 81 04 82 55 D1 01 82 04 00 00 00 00 84 82 00 49 D1 01 85 01 01 87 04 01 01 01 01 89 3C C8 3A 9F 25 20 3E 22 54 3A AF 0A C5 E4 AC FC 25 67 1A 6E BF 6E DE 5A C1 96 74 6C 55 F3 D4 37 08 19 FF F9 22 C3 9F 29 14 77 77 77 2E 65 78 61 6D 70 6C 65 2D 75 72 6C 2E 63 6F 6D |
 
 <a name="table-394---set-request-example"></a>
+<a name="table-394---set-request-example"></a>
 Table 394 - Set Request Example
 
 | Example (Hex)                                               |
 |-------------------------------------------------------------|
 | AA00 81040155D111 8410 D111 850101 870401010101 8903 C80100 |
 
+<a name="table-395---set-response-example"></a>
 <a name="table-395---set-response-example"></a>
 Table 395 - Set Response Example
 
@@ -10357,6 +10724,7 @@ Table 395 - Set Response Example
 
 #### Property 1.1.1.1.1.9 Apple VAS Merchant ID and URL Slot 3
 
+<a name="table-396---property-111119-apple-vas-merchant-id-and-url-slot-3"></a>
 <a name="table-396---property-111119-apple-vas-merchant-id-and-url-slot-3"></a>
 Table 396 - Property 1.1.1.1.1.9 Apple VAS Merchant ID and URL Slot 3
 
@@ -10373,12 +10741,14 @@ Table 396 - Property 1.1.1.1.1.9 Apple VAS Merchant ID and URL Slot 3
 | Default              | 0x00                                                                                                            |
 
 <a name="table-397---get-request-example"></a>
+<a name="table-397---get-request-example"></a>
 Table 397 - Get Request Example
 
 | Example (Hex)                                                |
 |--------------------------------------------------------------|
 | AA00 8104 0155D101 840F D101 8501 01 8704 01010101 8902 C900 |
 
+<a name="table-398---get-response-example"></a>
 <a name="table-398---get-response-example"></a>
 Table 398 - Get Response Example
 
@@ -10387,12 +10757,14 @@ Table 398 - Get Response Example
 | AA 00 81 04 82 55 D1 01 82 04 00 00 00 00 84 82 00 49 D1 01 85 01 01 87 04 01 01 01 01 89 3C C9 3A 9F 25 20 3E 22 54 3A AF 0A C5 E4 AC FC 25 67 1A 6E BF 6E DE 5A C1 96 74 6C 55 F3 D4 37 08 19 FF F9 22 C3 9F 29 14 77 77 77 2E 65 78 61 6D 70 6C 65 2D 75 72 6C 2E 63 6F 6D |
 
 <a name="table-399---set-request-example"></a>
+<a name="table-399---set-request-example"></a>
 Table 399 - Set Request Example
 
 | Example (Hex)                                               |
 |-------------------------------------------------------------|
 | AA00 81040155D111 8410 D111 850101 870401010101 8903 C90100 |
 
+<a name="table-400---set-response-example"></a>
 <a name="table-400---set-response-example"></a>
 Table 400 - Set Response Example
 
@@ -10402,6 +10774,7 @@ Table 400 - Set Response Example
 
 #### Property 1.1.1.1.1.A Apple VAS Merchant ID and URL Slot 4
 
+<a name="table-401---property-11111a-apple-vas-merchant-id-and-url-slot-4"></a>
 <a name="table-401---property-11111a-apple-vas-merchant-id-and-url-slot-4"></a>
 Table 401 - Property 1.1.1.1.1.A Apple VAS Merchant ID and URL Slot 4
 
@@ -10418,12 +10791,14 @@ Table 401 - Property 1.1.1.1.1.A Apple VAS Merchant ID and URL Slot 4
 | Default              | 0x00                                                                                                            |
 
 <a name="table-402---get-request-example"></a>
+<a name="table-402---get-request-example"></a>
 Table 402 - Get Request Example
 
 | Example (Hex)                                                |
 |--------------------------------------------------------------|
 | AA00 8104 0155D101 840F D101 8501 01 8704 01010101 8902 CA00 |
 
+<a name="table-403---get-response-example"></a>
 <a name="table-403---get-response-example"></a>
 Table 403 - Get Response Example
 
@@ -10432,12 +10807,14 @@ Table 403 - Get Response Example
 | AA 00 81 04 82 55 D1 01 82 04 00 00 00 00 84 82 00 49 D1 01 85 01 01 87 04 01 01 01 01 89 3C CA 3A 9F 25 20 3E 22 54 3A AF 0A C5 E4 AC FC 25 67 1A 6E BF 6E DE 5A C1 96 74 6C 55 F3 D4 37 08 19 FF F9 22 C3 9F 29 14 77 77 77 2E 65 78 61 6D 70 6C 65 2D 75 72 6C 2E 63 6F 6D |
 
 <a name="table-404---set-request-example"></a>
+<a name="table-404---set-request-example"></a>
 Table 404 - Set Request Example
 
 | Example (Hex)                                               |
 |-------------------------------------------------------------|
 | AA00 81040155D111 8410 D111 850101 870401010101 8903 CA0100 |
 
+<a name="table-405---set-response-example"></a>
 <a name="table-405---set-response-example"></a>
 Table 405 - Set Response Example
 
@@ -10447,6 +10824,7 @@ Table 405 - Set Response Example
 
 #### Property 1.1.1.1.1.B Apple VAS Merchant ID and URL Slot 5
 
+<a name="table-406---property-11111b-apple-vas-merchant-id-and-url-slot-5"></a>
 <a name="table-406---property-11111b-apple-vas-merchant-id-and-url-slot-5"></a>
 Table 406 - Property 1.1.1.1.1.B Apple VAS Merchant ID and URL Slot 5
 
@@ -10463,12 +10841,14 @@ Table 406 - Property 1.1.1.1.1.B Apple VAS Merchant ID and URL Slot 5
 | Default              | 0x00                                                                                                            |
 
 <a name="table-407---get-request-example"></a>
+<a name="table-407---get-request-example"></a>
 Table 407 - Get Request Example
 
 | Example (Hex)                                                |
 |--------------------------------------------------------------|
 | AA00 8104 0155D101 840F D101 8501 01 8704 01010101 8902 CB00 |
 
+<a name="table-408---get-response-example"></a>
 <a name="table-408---get-response-example"></a>
 Table 408 - Get Response Example
 
@@ -10477,12 +10857,14 @@ Table 408 - Get Response Example
 | AA 00 81 04 82 55 D1 01 82 04 00 00 00 00 84 82 00 49 D1 01 85 01 01 87 04 01 01 01 01 89 3C CB 3A 9F 25 20 3E 22 54 3A AF 0A C5 E4 AC FC 25 67 1A 6E BF 6E DE 5A C1 96 74 6C 55 F3 D4 37 08 19 FF F9 22 C3 9F 29 14 77 77 77 2E 65 78 61 6D 70 6C 65 2D 75 72 6C 2E 63 6F 6D |
 
 <a name="table-409---set-request-example"></a>
+<a name="table-409---set-request-example"></a>
 Table 409 - Set Request Example
 
 | Example (Hex)                                               |
 |-------------------------------------------------------------|
 | AA00 81040155D111 8410 D111 850101 870401010101 8903 CB0100 |
 
+<a name="table-410---set-response-example"></a>
 <a name="table-410---set-response-example"></a>
 Table 410 - Set Response Example
 
@@ -10492,6 +10874,7 @@ Table 410 - Set Response Example
 
 #### Property 1.1.1.1.1.C Apple VAS Merchant ID and URL Slot 6
 
+<a name="table-411---property-11111c-apple-vas-merchant-id-and-url-slot-6"></a>
 <a name="table-411---property-11111c-apple-vas-merchant-id-and-url-slot-6"></a>
 Table 411 - Property 1.1.1.1.1.C Apple VAS Merchant ID and URL Slot 6
 
@@ -10508,12 +10891,14 @@ Table 411 - Property 1.1.1.1.1.C Apple VAS Merchant ID and URL Slot 6
 | Default              | 0x00                                                                                                            |
 
 <a name="table-412---get-request-example"></a>
+<a name="table-412---get-request-example"></a>
 Table 412 - Get Request Example
 
 | Example (Hex)                                                |
 |--------------------------------------------------------------|
 | AA00 8104 0155D101 840F D101 8501 01 8704 01010101 8902 CC00 |
 
+<a name="table-413---get-response-example"></a>
 <a name="table-413---get-response-example"></a>
 Table 413 - Get Response Example
 
@@ -10522,12 +10907,14 @@ Table 413 - Get Response Example
 | AA 00 81 04 82 55 D1 01 82 04 00 00 00 00 84 82 00 49 D1 01 85 01 01 87 04 01 01 01 01 89 3C CC 3A 9F 25 20 3E 22 54 3A AF 0A C5 E4 AC FC 25 67 1A 6E BF 6E DE 5A C1 96 74 6C 55 F3 D4 37 08 19 FF F9 22 C3 9F 29 14 77 77 77 2E 65 78 61 6D 70 6C 65 2D 75 72 6C 2E 63 6F 6D |
 
 <a name="table-414---set-request-example"></a>
+<a name="table-414---set-request-example"></a>
 Table 414 - Set Request Example
 
 | Example (Hex)                                               |
 |-------------------------------------------------------------|
 | AA00 81040155D111 8410 D111 850101 870401010101 8903 CC0100 |
 
+<a name="table-415---set-response-example"></a>
 <a name="table-415---set-response-example"></a>
 Table 415 - Set Response Example
 
@@ -10537,6 +10924,7 @@ Table 415 - Set Response Example
 
 #### Property 1.1.1.1.1.D Apple iAP2 AppBundleID
 
+<a name="table-416---property-11111d-apple-iap2-appbundleid"></a>
 <a name="table-416---property-11111d-apple-iap2-appbundleid"></a>
 Table 416 - Property 1.1.1.1.1.D Apple iAP2 AppBundleID
 
@@ -10553,12 +10941,14 @@ Table 416 - Property 1.1.1.1.1.D Apple iAP2 AppBundleID
 | Default              | com.magtek.dynaflex2go                                                                                                                                  |
 
 <a name="table-417---get-request-example"></a>
+<a name="table-417---get-request-example"></a>
 Table 417 - Get Request Example
 
 | Example (Hex)                                                                                               |
 |-------------------------------------------------------------------------------------------------------------|
 | AA 00 81 04 01 06 D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0A E1 08 E1 06 E1 04 E1 02 CD 00 |
 
+<a name="table-418---get-response-example"></a>
 <a name="table-418---get-response-example"></a>
 Table 418 - Get Response Example
 
@@ -10567,12 +10957,14 @@ Table 418 - Get Response Example
 | AA 00 81 04 82 06 D1 01 82 04 00 00 00 00 84 82 00 4C D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 3C E1 3A E1 38 E1 36 E1 34 CD 32 63 6F 6D 2E 6D 61 67 74 65 6B 2E 64 79 6E 61 66 6C 65 78 32 67 6F 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 |
 
 <a name="table-419---set-request-example"></a>
+<a name="table-419---set-request-example"></a>
 Table 419 - Set Request Example
 
 | Example (Hex)                                                                                                                                                                                                                                                     |
 |-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | AA 00 81 04 01 07 D1 11 84 4C D1 11 81 07 2B 06 01 04 01 F6 09 85 01 01 89 3C E1 3A E1 38 E1 36 E1 34 CD 32 63 6F 6D 2E 6D 61 67 74 65 6B 2E 64 79 6E 61 66 6C 65 78 32 67 6F 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 |
 
+<a name="table-420---set-response-example"></a>
 <a name="table-420---set-response-example"></a>
 Table 420 - Set Response Example
 
@@ -10616,12 +11008,14 @@ Table 8.26421 - Get Response Example
 | AA 00 81 04 82 55 D1 01 82 04 00 00 00 00 84 82 00 1E D1 01 85 01 01 87 04 01 01 01 01 89 11 D0 0F DF 7C 08 32 30 31 38 30 36 30 38 DF 7D 01 00 |
 
 <a name="table-4226---set-request-example"></a>
+<a name="table-4226---set-request-example"></a>
 Table 4226 - Set Request Example
 
 | Example (Hex)                                                                                                  |
 |----------------------------------------------------------------------------------------------------------------|
 | AA00 81048255D111 8427 D111 8107 2B06010401F609 8501 01 8704 01010101 8911 D00F DF7C083230313830363038DF7D0100 |
 
+<a name="table-423---set-response-example"></a>
 <a name="table-423---set-response-example"></a>
 Table 423 - Set Response Example
 
@@ -10664,6 +11058,7 @@ Table 8.271 - Set Request Example
 | AA00 81048255D111 8427 D111 8107 2B06010401F609 8501 01 8704 01010101 8911 D10F DF7C083230313830363038DF7D0100 |
 
 <a name="table-4242---set-response-example"></a>
+<a name="table-4242---set-response-example"></a>
 Table 4242 - Set Response Example
 
 | Example (Hex)                                                                                                                                                               |
@@ -10704,6 +11099,7 @@ Table 8.276 - Set Request Example
 |----------------------------------------------------------------------------------------------------------------|
 | AA00 81048255D111 8427 D111 8107 2B06010401F609 8501 01 8704 01010101 8911 D20F DF7C083230313830363038DF7D0100 |
 
+<a name="table-4257---set-response-example"></a>
 <a name="table-4257---set-response-example"></a>
 Table 4257 - Set Response Example
 
@@ -10916,6 +11312,7 @@ Table 8.287 - Set Response Example
 #### Property 1.1.1.1.2.1 Start Transaction on Touchscreen Event Control(Touch Only)
 
 <a name="table-426---property-111121-start-transaction-on-touchscreen-event"></a>
+<a name="table-426---property-111121-start-transaction-on-touchscreen-event"></a>
 Table 426 - Property 1.1.1.1.2.1 Start Transaction on Touchscreen Event
 Control(Touch Only)
 
@@ -10932,12 +11329,14 @@ Control(Touch Only)
 | Default              | 0x00 - Do not start Transaction on Touchscreen event s                                                                       |
 
 <a name="table-427---get-request-example"></a>
+<a name="table-427---get-request-example"></a>
 Table 427 - Get Request Example
 
 | Example (Hex)                                      |
 |----------------------------------------------------|
 | AA0081040155D101840FD1018501018704010101028902C100 |
 
+<a name="table-428---get-response-example"></a>
 <a name="table-428---get-response-example"></a>
 Table 428 - Get Response Example
 
@@ -10946,12 +11345,14 @@ Table 428 - Get Response Example
 | AA0081048255D10182040000000084820010D1018501018704010101028903C10100 |
 
 <a name="table-429---set-request-example"></a>
+<a name="table-429---set-request-example"></a>
 Table 429 - Set Request Example
 
 | Example (Hex)                                        |
 |------------------------------------------------------|
 | AA0081040155D1118410D1118501018704010101028903C10100 |
 
+<a name="table-430---set-response-example"></a>
 <a name="table-430---set-response-example"></a>
 Table 430 - Set Response Example
 
@@ -10961,6 +11362,7 @@ Table 430 - Set Response Example
 
 #### Property 1.1.1.1.2.2 Tip Mode(Touch Only)
 
+<a name="table-431---property-111122-tip-modetouch-only"></a>
 <a name="table-431---property-111122-tip-modetouch-only"></a>
 Table 431 - Property 1.1.1.1.2.2 Tip Mode(Touch Only)
 
@@ -10977,12 +11379,14 @@ Table 431 - Property 1.1.1.1.2.2 Tip Mode(Touch Only)
 | Default              | 0x1, // show tip GUI using % 0x0, 0x0, 0x0, 0x0, 0x15, // button 1, %, value 15 0x0, 0x0, 0x0, 0x0, 0x20, // button 2, %, value 20 0x0, 0x0, 0x0, 0x0, 0x25, // button 3, %, value 25 0x2, 0x0, 0x0, 0x0, 0x0, // button 4 'no tip' 0x1, 0x0, 0x0, 0x0, 0x0, // button 5 'custom' 0x3, 0x0, 0x0, 0x0, 0x0, // button 6 disabled                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
 
 <a name="table-432---get-request-example"></a>
+<a name="table-432---get-request-example"></a>
 Table 432 - Get Request Example
 
 | Example (Hex)                                                |
 |--------------------------------------------------------------|
 | AA00 8104 0155D101 840F D101 8501 01 8704 01010102 8902 C200 |
 
+<a name="table-433---get-response-example"></a>
 <a name="table-433---get-response-example"></a>
 Table 433 - Get Response Example
 
@@ -10991,12 +11395,14 @@ Table 433 - Get Response Example
 | AA0081048255D1018204000000008482002ED1018501018704010101028921C21F00000000001500000000200000000025020000000001000000000300000000  |
 
 <a name="table-434---set-request-example"></a>
+<a name="table-434---set-request-example"></a>
 Table 434 - Set Request Example
 
 | Example (Hex)                                                                                                    |
 |------------------------------------------------------------------------------------------------------------------|
 | AA0081040155D111842ED1118501018704010101028921C21F00000000001500000000200000000025020000000001000000000300000000 |
 
+<a name="table-435---set-response-example"></a>
 <a name="table-435---set-response-example"></a>
 Table 435 - Set Response Example
 
@@ -11006,6 +11412,7 @@ Table 435 - Set Response Example
 
 #### Property 1.1.1.1.2.3 Tax Rate (Touch Only)
 
+<a name="table-436---property-111123-tax-rate-touch-only"></a>
 <a name="table-436---property-111123-tax-rate-touch-only"></a>
 Table 436 - Property 1.1.1.1.2.3 Tax Rate (Touch Only)
 
@@ -11022,12 +11429,14 @@ Table 436 - Property 1.1.1.1.2.3 Tax Rate (Touch Only)
 | Default              | 0x000000 - Tax Display and Calculation Disabled                                                          |
 
 <a name="table-437---get-request-example"></a>
+<a name="table-437---get-request-example"></a>
 Table 437 - Get Request Example
 
 | Example (Hex)                                      |
 |----------------------------------------------------|
 | AA0081040155D101840FD1018501018704010101028902C300 |
 
+<a name="table-438---get-response-example"></a>
 <a name="table-438---get-response-example"></a>
 Table 438 - Get Response Example
 
@@ -11036,12 +11445,14 @@ Table 438 - Get Response Example
 | AA0081048255D10182040000000084820012D1018501018704010101028905C303000000 |
 
 <a name="table-439---set-request-example"></a>
+<a name="table-439---set-request-example"></a>
 Table 439 - Set Request Example
 
 | Example (Hex)                                            |
 |----------------------------------------------------------|
 | AA0081040155D1118412D1118501018704010101028905C303108725 |
 
+<a name="table-440---set-response-example"></a>
 <a name="table-440---set-response-example"></a>
 Table 440 - Set Response Example
 
@@ -11051,6 +11462,7 @@ Table 440 - Set Response Example
 
 #### Property 1.1.1.1.2.4 Display Tax or Surcharge (Touch Only)
 
+<a name="table-441---property-111124-display-tax-or-surcharge-touch-only"></a>
 <a name="table-441---property-111124-display-tax-or-surcharge-touch-only"></a>
 Table 441 - Property 1.1.1.1.2.4 Display Tax or Surcharge (Touch Only)
 
@@ -11067,12 +11479,14 @@ Table 441 - Property 1.1.1.1.2.4 Display Tax or Surcharge (Touch Only)
 | Default              | 0x00 – Display Tax                                                                   |
 
 <a name="table-442---get-request-example"></a>
+<a name="table-442---get-request-example"></a>
 Table 442 - Get Request Example
 
 | Example (Hex)                                      |
 |----------------------------------------------------|
 | AA0081040155D101840FD1018501018704010101028902C400 |
 
+<a name="table-443---get-response-example"></a>
 <a name="table-443---get-response-example"></a>
 Table 443 - Get Response Example
 
@@ -11081,12 +11495,14 @@ Table 443 - Get Response Example
 | AA0081048255D10182040000000084820010D1018501018704010101028903C40100 |
 
 <a name="table-444---set-request-example"></a>
+<a name="table-444---set-request-example"></a>
 Table 444 - Set Request Example
 
 | Example (Hex)                                        |
 |------------------------------------------------------|
 | AA0081040155D1118410D1118501018704010101028903C40100 |
 
+<a name="table-445---set-response-example"></a>
 <a name="table-445---set-response-example"></a>
 Table 445 - Set Response Example
 
@@ -11096,6 +11512,7 @@ Table 445 - Set Response Example
 
 #### Property 1.1.1.1.2.5 Disabled Tip Button Display Mode (Touch Only)
 
+<a name="table-446---property-111125-disabled-tip-button-display-mode-touch-only"></a>
 <a name="table-446---property-111125-disabled-tip-button-display-mode-touch-only"></a>
 Table 446 - Property 1.1.1.1.2.5 Disabled Tip Button Display Mode (Touch Only)
 
@@ -11112,12 +11529,14 @@ Table 446 - Property 1.1.1.1.2.5 Disabled Tip Button Display Mode (Touch Only)
 | Default              | 0x02 - Invisible                                                                                  |
 
 <a name="table-447---get-request-example"></a>
+<a name="table-447---get-request-example"></a>
 Table 447 - Get Request Example
 
 | Example (Hex)                                      |
 |----------------------------------------------------|
 | AA0081040155D101840FD1018501018704010101028902C500 |
 
+<a name="table-448---get-response-example"></a>
 <a name="table-448---get-response-example"></a>
 Table 448 - Get Response Example
 
@@ -11126,12 +11545,14 @@ Table 448 - Get Response Example
 | AA0081048255D10182040000000084820010D1018501018704010101028903C50100 |
 
 <a name="table-449---set-request-example"></a>
+<a name="table-449---set-request-example"></a>
 Table 449 - Set Request Example
 
 | Example (Hex)                                        |
 |------------------------------------------------------|
 | AA0081040155D1118410D1118501018704010101028903C50100 |
 
+<a name="table-450---set-response-example"></a>
 <a name="table-450---set-response-example"></a>
 Table 450 - Set Response Example
 
@@ -11141,6 +11562,7 @@ Table 450 - Set Response Example
 
 #### Property 1.1.1.1.2.6 Tip Mode Enable Submit on Amount Button Press
 
+<a name="table-451---property-111126-tip-mode-enable-submit-on-amount-button-press"></a>
 <a name="table-451---property-111126-tip-mode-enable-submit-on-amount-button-press"></a>
 Table 451 - Property 1.1.1.1.2.6 Tip Mode Enable Submit on Amount Button Press
 
@@ -11157,12 +11579,14 @@ Table 451 - Property 1.1.1.1.2.6 Tip Mode Enable Submit on Amount Button Press
 | Default              | 0x00 - Disabled                                                                                                                                                          |
 
 <a name="table-452---get-request-example"></a>
+<a name="table-452---get-request-example"></a>
 Table 452 - Get Request Example
 
 | Example (Hex)                                      |
 |----------------------------------------------------|
 | AA0081040155D101840FD1018501018704010101028902C600 |
 
+<a name="table-453---get-response-example"></a>
 <a name="table-453---get-response-example"></a>
 Table 453 - Get Response Example
 
@@ -11171,12 +11595,14 @@ Table 453 - Get Response Example
 | AA0081048255D10182040000000084820010D1018501018704010101028903C60101 |
 
 <a name="table-454---set-request-example"></a>
+<a name="table-454---set-request-example"></a>
 Table 454 - Set Request Example
 
 | Example (Hex)                                        |
 |------------------------------------------------------|
 | AA0081040155D1118410D1118501018704010101028903C60101 |
 
+<a name="table-455---set-response-example"></a>
 <a name="table-455---set-response-example"></a>
 Table 455 - Set Response Example
 
@@ -11186,6 +11612,7 @@ Table 455 - Set Response Example
 
 #### Property 1.1.1.1.3.1 Timeout (Touch Only)
 
+<a name="table-456---property-111131-timeout-touch-only"></a>
 <a name="table-456---property-111131-timeout-touch-only"></a>
 Table 456 - Property 1.1.1.1.3.1 Timeout (Touch Only)
 
@@ -11202,12 +11629,14 @@ Table 456 - Property 1.1.1.1.3.1 Timeout (Touch Only)
 | Default              | 0x78 – 120 seconds                               |
 
 <a name="table-457---get-request-example"></a>
+<a name="table-457---get-request-example"></a>
 Table 457 - Get Request Example
 
 | Example (Hex)                                      |
 |----------------------------------------------------|
 | AA0081040155D101840FD1018501018704010101038902C100 |
 
+<a name="table-458---get-response-example"></a>
 <a name="table-458---get-response-example"></a>
 Table 458 - Get Response Example
 
@@ -11216,12 +11645,14 @@ Table 458 - Get Response Example
 | AA0081048255D10182040000000084820010D1018501018704010101038903C10178 |
 
 <a name="table-459---set-request-example"></a>
+<a name="table-459---set-request-example"></a>
 Table 459 - Set Request Example
 
 | Example (Hex)                                        |
 |------------------------------------------------------|
 | AA0081040155D1118410D1118501018704010101038903C10150 |
 
+<a name="table-460---set-response-example"></a>
 <a name="table-460---set-response-example"></a>
 Table 460 - Set Response Example
 
@@ -11231,6 +11662,7 @@ Table 460 - Set Response Example
 
 #### Property 1.1.1.1.3.2 Reader Options (Touch Only)
 
+<a name="table-461---property-111132-reader-options-touch-only"></a>
 <a name="table-461---property-111132-reader-options-touch-only"></a>
 Table 461 - Property 1.1.1.1.3.2 Reader Options (Touch Only)
 
@@ -11247,12 +11679,14 @@ Table 461 - Property 1.1.1.1.3.2 Reader Options (Touch Only)
 | Default              | 810101 820101 830101 85020101 860100 MSR Enabled Contact Enabled Contactless Enabled BCR Enabled and Encrypt Non-EMV PIN Block Format 0 |
 
 <a name="table-462---get-request-example"></a>
+<a name="table-462---get-request-example"></a>
 Table 462 - Get Request Example
 
 | Example (Hex)                                      |
 |----------------------------------------------------|
 | AA0081040155D101840FD1018501018704010101038902C200 |
 
+<a name="table-463---get-response-example"></a>
 <a name="table-463---get-response-example"></a>
 Table 463 - Get Response Example
 
@@ -11261,12 +11695,14 @@ Table 463 - Get Response Example
 | AA0081048255D10182040000000084820023D1018501018704010101038916C2148101018201018301018400000085020101860100 |
 
 <a name="table-464---set-request-example"></a>
+<a name="table-464---set-request-example"></a>
 Table 464 - Set Request Example
 
 | Example (Hex)                                                                      |
 |------------------------------------------------------------------------------------|
 | AA0081040155D111841FD1118501018704010101038912C21081010182010183010185020101860100 |
 
+<a name="table-465---set-response-example"></a>
 <a name="table-465---set-response-example"></a>
 Table 465 - Set Response Example
 
@@ -11276,6 +11712,7 @@ Table 465 - Set Response Example
 
 #### Property 1.1.1.1.3.3 Transaction Options (Touch Only)
 
+<a name="table-466---property-111133-transaction-options-touch-only"></a>
 <a name="table-466---property-111133-transaction-options-touch-only"></a>
 Table 466 - Property 1.1.1.1.3.3 Transaction Options (Touch Only)
 
@@ -11292,12 +11729,14 @@ Table 466 - Property 1.1.1.1.3.3 Transaction Options (Touch Only)
 | Default              | 84020007 Apple VAS Disabled Quickchip Skip MSR signature capture if service code is chip card Do not display amount in Quickchip |
 
 <a name="table-467---get-request-example"></a>
+<a name="table-467---get-request-example"></a>
 Table 467 - Get Request Example
 
 | Example (Hex)                                      |
 |----------------------------------------------------|
 | AA0081040155D101840FD1018501018704010101038902C300 |
 
+<a name="table-468---get-response-example"></a>
 <a name="table-468---get-response-example"></a>
 Table 468 - Get Response Example
 
@@ -11306,12 +11745,14 @@ Table 468 - Get Response Example
 | AA0081048255D10182040000000084820023D1018501018704010101038916C3148402000700000000000000000000000000000000 |
 
 <a name="table-469---set-request-example"></a>
+<a name="table-469---set-request-example"></a>
 Table 469 - Set Request Example
 
 | Example (Hex)                                              |
 |------------------------------------------------------------|
 | AA0081040155D1118413D1118501018704010101038906C30484020007 |
 
+<a name="table-470---set-response-example"></a>
 <a name="table-470---set-response-example"></a>
 Table 470 - Set Response Example
 
@@ -11321,6 +11762,7 @@ Table 470 - Set Response Example
 
 #### Property 1.1.1.1.3.4 Other TLV (Touch Only)
 
+<a name="table-471---property-111134-other-tlv-touch-only"></a>
 <a name="table-471---property-111134-other-tlv-touch-only"></a>
 Table 471 - Property 1.1.1.1.3.4 Other TLV (Touch Only)
 
@@ -11337,12 +11779,14 @@ Table 471 - Property 1.1.1.1.3.4 Other TLV (Touch Only)
 | Default              | 9C0100 9F0206000000000100 9F0306000000000000 5F2A020840 5F360102 Transaction Type = Purchase Default Amount for Quickchip = \$1.00 Amount, Other = 0 Transaction Currency Code = US Dollar Transaction Currency Exponent = 2 |
 
 <a name="table-472---get-request-example"></a>
+<a name="table-472---get-request-example"></a>
 Table 472 - Get Request Example
 
 | Example (Hex)                                      |
 |----------------------------------------------------|
 | AA0081040155D101840FD1018501018704010101038902C400 |
 
+<a name="table-473---get-response-example"></a>
 <a name="table-473---get-response-example"></a>
 Table 473 - Get Response Example
 
@@ -11351,12 +11795,14 @@ Table 473 - Get Response Example
 | AA0081048255D1018204000000008482002DD1018501018704010101038920C41E9C01009F02060000000001009F03060000000000005F2A0208405F360102 |
 
 <a name="table-474---set-request-example"></a>
+<a name="table-474---set-request-example"></a>
 Table 474 - Set Request Example
 
 | Example (Hex)                                                                                                  |
 |----------------------------------------------------------------------------------------------------------------|
 | AA0081040155D111842DD1118501018704010101038920C41E9C01009F02060000000001009F03060000000000005F2A0208405F360102 |
 
+<a name="table-475---set-response-example"></a>
 <a name="table-475---set-response-example"></a>
 Table 475 - Set Response Example
 
@@ -11366,6 +11812,7 @@ Table 475 - Set Response Example
 
 #### Property 1.1.1.1.4.1 EMV Configuration Filename
 
+<a name="table-476---property-111141-emv-configuration-filename"></a>
 <a name="table-476---property-111141-emv-configuration-filename"></a>
 Table 476 - Property 1.1.1.1.4.1 EMV Configuration Filename
 
@@ -11382,12 +11829,14 @@ Table 476 - Property 1.1.1.1.4.1 EMV Configuration Filename
 | Default              | None                                                                                 |
 
 <a name="table-477---get-request-example"></a>
+<a name="table-477---get-request-example"></a>
 Table 477 - Get Request Example
 
 | Example (Hex)                                                            |
 |--------------------------------------------------------------------------|
 | AA0081040106D101841AD10181072B06010401F609850101890AE108E106E104E402C100 |
 
+<a name="table-478---get-response-example"></a>
 <a name="table-478---get-response-example"></a>
 Table 478 - Get Response Example
 
@@ -11396,12 +11845,14 @@ Table 478 - Get Response Example
 | AA0081048206D10182040000000084820028D10181072B06010401F609850101 8918E116E114E112E410C10E434647303030363831322D323030 |
 
 <a name="table-479---set-request-example"></a>
+<a name="table-479---set-request-example"></a>
 Table 479 - Set Request Example
 
 | Example (Hex)                                                                                         |
 |-------------------------------------------------------------------------------------------------------|
 | AA0081040106D1118428D11181072B06010401F6098501018918E116E114E112E410C10E 434647303030363831322D323030 |
 
+<a name="table-480---set-response-example"></a>
 <a name="table-480---set-response-example"></a>
 Table 480 - Set Response Example
 
@@ -11411,6 +11862,7 @@ Table 480 - Set Response Example
 
 #### Property 1.1.1.1.4.2 CA Public Key Configuration Filename
 
+<a name="table-481---property-111142-ca-public-key-configuration-filename"></a>
 <a name="table-481---property-111142-ca-public-key-configuration-filename"></a>
 Table 481 - Property 1.1.1.1.4.2 CA Public Key Configuration Filename
 
@@ -11427,12 +11879,14 @@ Table 481 - Property 1.1.1.1.4.2 CA Public Key Configuration Filename
 | Default              | None                                                                                           |
 
 <a name="table-482---get-request-example"></a>
+<a name="table-482---get-request-example"></a>
 Table 482 - Get Request Example
 
 | Example (Hex)                                                            |
 |--------------------------------------------------------------------------|
 | AA0081040106D101841AD10181072B06010401F609850101890AE108E106E104E402C200 |
 
+<a name="table-483---get-response-example"></a>
 <a name="table-483---get-response-example"></a>
 Table 483 - Get Response Example
 
@@ -11441,12 +11895,14 @@ Table 483 - Get Response Example
 | AA0081048206D10182040000000084820028D10181072B06010401F609850101 8918E116E114E112E410C20E434647303030363831322D323030 |
 
 <a name="table-484---set-request-example"></a>
+<a name="table-484---set-request-example"></a>
 Table 484 - Set Request Example
 
 | Example (Hex)                                                                                         |
 |-------------------------------------------------------------------------------------------------------|
 | AA0081040106D1118428D11181072B06010401F6098501018918E116E114E112E410C20E 434647303030363831322D323030 |
 
+<a name="table-485---set-response-example"></a>
 <a name="table-485---set-response-example"></a>
 Table 485 - Set Response Example
 
@@ -11456,6 +11912,7 @@ Table 485 - Set Response Example
 
 #### Property 1.1.1.1.5.1 Report All Available Tags Enable
 
+<a name="table-486---property-111151-report-all-available-tags-enable"></a>
 <a name="table-486---property-111151-report-all-available-tags-enable"></a>
 Table 486 - Property 1.1.1.1.5.1 Report All Available Tags Enable
 
@@ -11472,12 +11929,14 @@ Table 486 - Property 1.1.1.1.5.1 Report All Available Tags Enable
 | Default              | 0x0                                                                                                                            |
 
 <a name="table-487---get-request-example"></a>
+<a name="table-487---get-request-example"></a>
 Table 487 - Get Request Example
 
 | Example (Hex)                                      |
 |----------------------------------------------------|
 | AA0081040155D101840FD1018501018704010101058902C100 |
 
+<a name="table-488---get-response-example"></a>
 <a name="table-488---get-response-example"></a>
 Table 488 - Get Response Example
 
@@ -11486,12 +11945,14 @@ Table 488 - Get Response Example
 | AA0081048255D10182040000000084820010D1018501018704010101058903C10100 |
 
 <a name="table-489---set-request-example-enable---0x01"></a>
+<a name="table-489---set-request-example-enable---0x01"></a>
 Table 489 - Set Request Example (enable - 0x01)
 
 | Example (Hex)                                        |
 |------------------------------------------------------|
 | AA0081040155D1118410D1118501018704010101058903C10101 |
 
+<a name="table-490---set-response-example"></a>
 <a name="table-490---set-response-example"></a>
 Table 490 - Set Response Example
 
@@ -11501,6 +11962,7 @@ Table 490 - Set Response Example
 
 #### Property 1.1.1.1.5.2 Encrypted Sensitive Tag List
 
+<a name="table-491---property-111152-encrypted-sensitive-tag-list"></a>
 <a name="table-491---property-111152-encrypted-sensitive-tag-list"></a>
 Table 491 - Property 1.1.1.1.5.2 Encrypted Sensitive Tag List
 
@@ -11517,12 +11979,14 @@ Table 491 - Property 1.1.1.1.5.2 Encrypted Sensitive Tag List
 | Default              | 0x5A, 0x57, 0x5F26, 0x5F24, 0x5F30, 0x9F36, 0x9F37, 0xF4, 0xF5                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 
 <a name="table-492---get-request-example"></a>
+<a name="table-492---get-request-example"></a>
 Table 492 - Get Request Example
 
 | Example (Hex)                                      |
 |----------------------------------------------------|
 | AA0081040155D101840FD1018501018704010101058902C200 |
 
+<a name="table-493---get-response-example"></a>
 <a name="table-493---get-response-example"></a>
 Table 493 - Get Response Example
 
@@ -11531,12 +11995,14 @@ Table 493 - Get Response Example
 | AA0081048255D1018204000000008482001DD1018501018704010101058910C20E5A575F265F245F309F369F37F4F5 |
 
 <a name="table-494---set-request-example"></a>
+<a name="table-494---set-request-example"></a>
 Table 494 - Set Request Example
 
 | Example (Hex)                                                                  |
 |--------------------------------------------------------------------------------|
 | AA0081040155D111841DD1118501018704010101058910C20E5A575F265F245F309F369F37F4F5 |
 
+<a name="table-495---set-response-example"></a>
 <a name="table-495---set-response-example"></a>
 Table 495 - Set Response Example
 
@@ -11546,6 +12012,7 @@ Table 495 - Set Response Example
 
 #### Property 1.1.1.1.5.3 MSR Cleartext Tag List
 
+<a name="table-496---property-111153-msr-cleartext-tag-list"></a>
 <a name="table-496---property-111153-msr-cleartext-tag-list"></a>
 Table 496 - Property 1.1.1.1.5.3 MSR Cleartext Tag List
 
@@ -11562,12 +12029,14 @@ Table 496 - Property 1.1.1.1.5.3 MSR Cleartext Tag List
 | Default              | 0x9A, 0x9C, 0x5F2A, 0x9F02, 0x9F03, 0x9F15, 0x9F1E, 0x9F35, 0x9F39, 0x9F41, 0x9F4E          |
 
 <a name="table-497---get-request-example"></a>
+<a name="table-497---get-request-example"></a>
 Table 497 - Get Request Example
 
 | Example (Hex)                                      |
 |----------------------------------------------------|
 | AA0081040155D101840FD1018501018704010101058902C300 |
 
+<a name="table-498---get-response-example"></a>
 <a name="table-498---get-response-example"></a>
 Table 498 - Get Response Example
 
@@ -11576,12 +12045,14 @@ Table 498 - Get Response Example
 | AA0081048255D10182040000000084820023D1018501018704010101058916C3149A9C5F2A9F029F039F159F1E9F359F399F419F4E |
 
 <a name="table-499---set-request-example"></a>
+<a name="table-499---set-request-example"></a>
 Table 499 - Set Request Example
 
 | Example (Hex)                                                                              |
 |--------------------------------------------------------------------------------------------|
 | AA0081040155D1118423D1118501018704010101058916C3149A9C5F2A9F029F039F159F1E9F359F399F419F4E |
 
+<a name="table-500---set-response-example"></a>
 <a name="table-500---set-response-example"></a>
 Table 500 - Set Response Example
 
@@ -11593,6 +12064,7 @@ Table 500 - Set Response Example
 
 #### Property 1.1.2.2.1.2 ISO/ABA Masking Character
 
+<a name="table-501---property-112212-isoaba-masking-character"></a>
 <a name="table-501---property-112212-isoaba-masking-character"></a>
 Table 501 - Property 1.1.2.2.1.2 ISO/ABA Masking Character
 
@@ -11609,12 +12081,14 @@ Table 501 - Property 1.1.2.2.1.2 ISO/ABA Masking Character
 | Default              | ‘0’                                                                                                                                                                                                                                                                                                                                                    |
 
 <a name="table-502---get-request-example"></a>
+<a name="table-502---get-request-example"></a>
 Table 502 - Get Request Example
 
 | Example (Hex)                                                                                               |
 |-------------------------------------------------------------------------------------------------------------|
 | AA 00 81 04 01 17 D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0A E1 08 E2 06 E2 04 E1 02 C2 00 |
 
+<a name="table-503---get-response-example"></a>
 <a name="table-503---get-response-example"></a>
 Table 503 - Get Response Example
 
@@ -11623,12 +12097,14 @@ Table 503 - Get Response Example
 | AA 00 81 04 82 17 D1 01 82 04 00 00 00 00 84 82 00 1B D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0B E1 09 E2 07 E2 05 E1 03 C2 01 2A |
 
 <a name="table-504---set-request-example"></a>
+<a name="table-504---set-request-example"></a>
 Table 504 - Set Request Example
 
 | Example (Hex)                                                                                                  |
 |----------------------------------------------------------------------------------------------------------------|
 | AA 00 81 04 01 0F D1 11 84 1B D1 11 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0B E1 09 E2 07 E2 05 E1 03 C2 01 30 |
 
+<a name="table-505---set-response-example"></a>
 <a name="table-505---set-response-example"></a>
 Table 505 - Set Response Example
 
@@ -11651,11 +12127,12 @@ For chip card transactions, masked track 2 data is contained in TLV data object
 DFDF4D. For magnetic stripe transactions, masked track 1, 2 and 3 data is
 contained in TLV data objects DFDF31, DFDF33 and DFDF35, respectively.
 
-[**Table 506**](#table-506---sample-isoaba-track-data-clear-text--decrypted) **below** provides an example of data from tracks 1, 2, and 3 of
+[[**Table 506**](#table-506---sample-isoaba-track-data-clear-text--decrypted)](#table-506---sample-isoaba-track-data-clear-text--decrypted) **below** provides an example of data from tracks 1, 2, and 3 of
 an ISO/ABA card after it has been decrypted or if the device has sent it in the
-clear. [**Table 507**](#table-507---sample-isoaba-track-data-masked) shows the same data as it might appear with a specific set
+clear. [[**Table 507**](#table-507---sample-isoaba-track-data-masked)](#table-507---sample-isoaba-track-data-masked) shows the same data as it might appear with a specific set
 of masking rules applied.
 
+<a name="table-506---sample-isoaba-track-data-clear-text--decrypted"></a>
 <a name="table-506---sample-isoaba-track-data-clear-text--decrypted"></a>
 Table 506 - Sample ISO/ABA Track Data, Clear Text / Decrypted
 
@@ -11665,6 +12142,7 @@ Table 506 - Sample ISO/ABA Track Data, Clear Text / Decrypted
 | Track 2                                           | ;6011000995500000=15121015432112345678?                      |
 | Track 3                                           | ;6011000995500000=15121015432112345678333333333333333333333? |
 
+<a name="table-507---sample-isoaba-track-data-masked"></a>
 <a name="table-507---sample-isoaba-track-data-masked"></a>
 Table 507 - Sample ISO/ABA Track Data, Masked
 
@@ -11676,6 +12154,7 @@ Table 507 - Sample ISO/ABA Track Data, Masked
 
 #### Property 1.1.2.2.1.3 PAN Number of Leading Unmasked Characters
 
+<a name="table-508---property-112213-pan-number-of-leading-unmasked-characters"></a>
 <a name="table-508---property-112213-pan-number-of-leading-unmasked-characters"></a>
 Table 508 - Property 1.1.2.2.1.3 PAN Number of Leading Unmasked Characters
 
@@ -11692,12 +12171,14 @@ Table 508 - Property 1.1.2.2.1.3 PAN Number of Leading Unmasked Characters
 | Default              | 0x04                                                                                                                                                                                                                                                                          |
 
 <a name="table-509---get-request-example"></a>
+<a name="table-509---get-request-example"></a>
 Table 509 - Get Request Example
 
 | Example (Hex)                                                                                               |
 |-------------------------------------------------------------------------------------------------------------|
 | AA 00 81 04 01 18 D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0A E1 08 E2 06 E2 04 E1 02 C3 00 |
 
+<a name="table-510---get-response-example"></a>
 <a name="table-510---get-response-example"></a>
 Table 510 - Get Response Example
 
@@ -11706,12 +12187,14 @@ Table 510 - Get Response Example
 | AA 00 81 04 82 18 D1 01 82 04 00 00 00 00 84 82 00 1B D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0B E1 09 E2 07 E2 05 E1 03 C3 01 04 |
 
 <a name="table-511---set-request-example"></a>
+<a name="table-511---set-request-example"></a>
 Table 511 - Set Request Example
 
 | Example (Hex)                                                                                                  |
 |----------------------------------------------------------------------------------------------------------------|
 | AA 00 81 04 01 10 D1 11 84 1B D1 11 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0B E1 09 E2 07 E2 05 E1 03 C3 01 04 |
 
+<a name="table-512---set-response-example"></a>
 <a name="table-512---set-response-example"></a>
 Table 512 - Set Response Example
 
@@ -11721,6 +12204,7 @@ Table 512 - Set Response Example
 
 #### Property 1.1.2.2.1.4 PAN Number of Trailing Unmasked Characters
 
+<a name="table-513---property-112214-pan-number-of-trailing-unmasked-characters"></a>
 <a name="table-513---property-112214-pan-number-of-trailing-unmasked-characters"></a>
 Table 513 - Property 1.1.2.2.1.4 PAN Number of Trailing Unmasked Characters
 
@@ -11737,12 +12221,14 @@ Table 513 - Property 1.1.2.2.1.4 PAN Number of Trailing Unmasked Characters
 | Default              | 0x04                                                                                                                                                                                                                                                                           |
 
 <a name="table-514---get-request-example"></a>
+<a name="table-514---get-request-example"></a>
 Table 514 - Get Request Example
 
 | Example (Hex)                                                                                               |
 |-------------------------------------------------------------------------------------------------------------|
 | AA 00 81 04 01 19 D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0A E1 08 E2 06 E2 04 E1 02 C4 00 |
 
+<a name="table-515---get-response-example"></a>
 <a name="table-515---get-response-example"></a>
 Table 515 - Get Response Example
 
@@ -11751,12 +12237,14 @@ Table 515 - Get Response Example
 | AA 00 81 04 82 19 D1 01 82 04 00 00 00 00 84 82 00 1B D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0B E1 09 E2 07 E2 05 E1 03 C4 01 04 |
 
 <a name="table-516---set-request-example"></a>
+<a name="table-516---set-request-example"></a>
 Table 516 - Set Request Example
 
 | Example (Hex)                                                                                                  |
 |----------------------------------------------------------------------------------------------------------------|
 | AA 00 81 04 01 11 D1 11 84 1B D1 11 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0B E1 09 E2 07 E2 05 E1 03 C4 01 04 |
 
+<a name="table-517---set-response-example"></a>
 <a name="table-517---set-response-example"></a>
 Table 517 - Set Response Example
 
@@ -11766,6 +12254,7 @@ Table 517 - Set Response Example
 
 #### Property 1.1.2.2.1.5 PAN MOD 10 Check Digit Correction
 
+<a name="table-518---property-112215-pan-mod-10-check-digit-correction"></a>
 <a name="table-518---property-112215-pan-mod-10-check-digit-correction"></a>
 Table 518 - Property 1.1.2.2.1.5 PAN MOD 10 Check Digit Correction
 
@@ -11782,12 +12271,14 @@ Table 518 - Property 1.1.2.2.1.5 PAN MOD 10 Check Digit Correction
 | Default              | 0x01                                                                                                                                                                                                                                                                                                                                                                                                                    |
 
 <a name="table-519---get-request-example"></a>
+<a name="table-519---get-request-example"></a>
 Table 519 - Get Request Example
 
 | Example (Hex)                                                                                               |
 |-------------------------------------------------------------------------------------------------------------|
 | AA 00 81 04 01 1A D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0A E1 08 E2 06 E2 04 E1 02 C5 00 |
 
+<a name="table-520---get-response-example"></a>
 <a name="table-520---get-response-example"></a>
 Table 520 - Get Response Example
 
@@ -11796,12 +12287,14 @@ Table 520 - Get Response Example
 | AA 00 81 04 82 1A D1 01 82 04 00 00 00 00 84 82 00 1B D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0B E1 09 E2 07 E2 05 E1 03 C5 01 01 |
 
 <a name="table-521---set-request-example"></a>
+<a name="table-521---set-request-example"></a>
 Table 521 - Set Request Example
 
 | Example (Hex)                                                                                                  |
 |----------------------------------------------------------------------------------------------------------------|
 | AA 00 81 04 01 12 D1 11 84 1B D1 11 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0B E1 09 E2 07 E2 05 E1 03 C5 01 01 |
 
+<a name="table-522---set-response-example"></a>
 <a name="table-522---set-response-example"></a>
 Table 522 - Set Response Example
 
@@ -11811,6 +12304,7 @@ Table 522 - Set Response Example
 
 #### Property 1.1.2.2.1.6 PAN MOD 10 Check Digit Validation (MCE Only)
 
+<a name="table-523---property-112216-pan-mod-10-check-digit-validation-mce-only"></a>
 <a name="table-523---property-112216-pan-mod-10-check-digit-validation-mce-only"></a>
 Table 523 - Property 1.1.2.2.1.6 PAN MOD 10 Check Digit Validation (MCE Only)
 
@@ -11827,12 +12321,14 @@ Table 523 - Property 1.1.2.2.1.6 PAN MOD 10 Check Digit Validation (MCE Only)
 | Default              | 0x00                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
 
 <a name="table-524---get-request-example"></a>
+<a name="table-524---get-request-example"></a>
 Table 524 - Get Request Example
 
 | Example (Hex)                                                                                               |
 |-------------------------------------------------------------------------------------------------------------|
 | AA 00 81 04 01 1A D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0A E1 08 E2 06 E2 04 E1 02 C6 00 |
 
+<a name="table-525---get-response-example"></a>
 <a name="table-525---get-response-example"></a>
 Table 525 - Get Response Example
 
@@ -11841,12 +12337,14 @@ Table 525 - Get Response Example
 | AA 00 81 04 82 1A D1 01 82 04 00 00 00 00 84 82 00 1B D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0B E1 09 E2 07 E2 05 E1 03 C6 01 00 |
 
 <a name="table-526---set-request-example"></a>
+<a name="table-526---set-request-example"></a>
 Table 526 - Set Request Example
 
 | Example (Hex)                                                                                                  |
 |----------------------------------------------------------------------------------------------------------------|
 | AA 00 81 04 01 12 D1 11 84 1B D1 11 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0B E1 09 E2 07 E2 05 E1 03 C6 01 01 |
 
+<a name="table-527---set-response-example"></a>
 <a name="table-527---set-response-example"></a>
 Table 527 - Set Response Example
 
@@ -11856,6 +12354,7 @@ Table 527 - Set Response Example
 
 #### Property 1.1.2.4.1.1 Key Mapping of PIN-TDES (Touch Only)
 
+<a name="table-528---property-112411-key-mapping-of-pin-tdes-touch-onlykey-mapping"></a>
 <a name="table-528---property-112411-key-mapping-of-pin-tdes-touch-onlykey-mapping"></a>
 Table 528 - Property 1.1.2.4.1.1 Key Mapping of PIN-TDES (Touch Only)Key Mapping
 of PIN-TDES
@@ -11873,12 +12372,14 @@ of PIN-TDES
 | Default              | 0x00, 0x00, 0x01                                                                                        |
 
 <a name="table-529---get-request-example"></a>
+<a name="table-529---get-request-example"></a>
 Table 529 - Get Request Example
 
 | Example (Hex)                                                                 |
 |-------------------------------------------------------------------------------|
 | AA00 81040159D101 841AD101 81072B06010401F609 850101 890AE108E206E404E102C100 |
 
+<a name="table-530---get-response-example"></a>
 <a name="table-530---get-response-example"></a>
 Table 530 - Get Response Example
 
@@ -11887,12 +12388,14 @@ Table 530 - Get Response Example
 | AA00 81048259D101 820400000000 8482001DD101 81072B06010401F609 850101  890DE10BE209E407E105C1 03200701 |
 
 <a name="table-531---set-request-example"></a>
+<a name="table-531---set-request-example"></a>
 Table 531 - Set Request Example
 
 | Example (Hex)                                                                        |
 |--------------------------------------------------------------------------------------|
 | AA00 8104015AD111 841DD111 81072B06010401F609 850101 890DE10BE209E407E105C1 03200701 |
 
+<a name="table-532---set-response-example"></a>
 <a name="table-532---set-response-example"></a>
 Table 532 - Set Response Example
 
@@ -11902,6 +12405,7 @@ Table 532 - Set Response Example
 
 #### Property 1.1.2.4.1.2 Key Mapping of Account Data
 
+<a name="table-533---property-112412-key-mapping-of-account-datakey-mapping-of"></a>
 <a name="table-533---property-112412-key-mapping-of-account-datakey-mapping-of"></a>
 Table 533 - Property 1.1.2.4.1.2 Key Mapping of Account DataKey Mapping of
 Account Data
@@ -11919,12 +12423,14 @@ Account Data
 | Default              | 0x20, 0x07, 0x04                                                                                                  |
 
 <a name="table-534---get-request-example"></a>
+<a name="table-534---get-request-example"></a>
 Table 534 - Get Request Example
 
 | Example (Hex)                                                                 |
 |-------------------------------------------------------------------------------|
 | AA00 81040159D101 841AD101 81072B06010401F609 850101 890AE108E206E404E102C200 |
 
+<a name="table-535---get-response-example"></a>
 <a name="table-535---get-response-example"></a>
 Table 535 - Get Response Example
 
@@ -11933,12 +12439,14 @@ Table 535 - Get Response Example
 | AA00 81048259D101 820400000000 8482001DD101 81072B06010401F609 850101  890DE10BE209E407E105C2 03200704 |
 
 <a name="table-536---set-request-example"></a>
+<a name="table-536---set-request-example"></a>
 Table 536 - Set Request Example
 
 | Example (Hex)                                                                        |
 |--------------------------------------------------------------------------------------|
 | AA00 8104015AD111 841DD111 81072B06010401F609 850101 890DE10BE209E407E105C2 03200704 |
 
+<a name="table-537---set-response-example"></a>
 <a name="table-537---set-response-example"></a>
 Table 537 - Set Response Example
 
@@ -11948,6 +12456,7 @@ Table 537 - Set Response Example
 
 #### Property 1.1.2.4.1.3 Key Mapping of MAC
 
+<a name="table-538---property-112413-key-mapping-of-mackey-mapping-of-mac"></a>
 <a name="table-538---property-112413-key-mapping-of-mackey-mapping-of-mac"></a>
 Table 538 - Property 1.1.2.4.1.3 Key Mapping of MACKey Mapping of MAC
 
@@ -11964,12 +12473,14 @@ Table 538 - Property 1.1.2.4.1.3 Key Mapping of MACKey Mapping of MAC
 | Default              | 0x20, 0x07, 0x02                                                                                         |
 
 <a name="table-539---get-request-example"></a>
+<a name="table-539---get-request-example"></a>
 Table 539 - Get Request Example
 
 | Example (Hex)                                                                 |
 |-------------------------------------------------------------------------------|
 | AA00 81040159D101 841AD101 81072B06010401F609 850101 890AE108E206E404E102C300 |
 
+<a name="table-540---get-response-example"></a>
 <a name="table-540---get-response-example"></a>
 Table 540 - Get Response Example
 
@@ -11978,12 +12489,14 @@ Table 540 - Get Response Example
 | AA00 81048259D101 820400000000 8482001DD101 81072B06010401F609 850101  890DE10BE209E407E105C3 03200702 |
 
 <a name="table-541---set-request-example"></a>
+<a name="table-541---set-request-example"></a>
 Table 541 - Set Request Example
 
 | Example (Hex)                                                                        |
 |--------------------------------------------------------------------------------------|
 | AA00 8104015AD111 841DD111 81072B06010401F609 850101 890DE10BE209E407E105C3 03200702 |
 
+<a name="table-542---set-response-example"></a>
 <a name="table-542---set-response-example"></a>
 Table 542 - Set Response Example
 
@@ -11993,6 +12506,7 @@ Table 542 - Set Response Example
 
 #### Property 1.1.2.4.1.4 Key Mapping of Magneprint (MSR Only)
 
+<a name="table-543---property-112414-key-mapping-of-magneprint-msr-onlykey-mapping"></a>
 <a name="table-543---property-112414-key-mapping-of-magneprint-msr-onlykey-mapping"></a>
 Table 543 - Property 1.1.2.4.1.4 Key Mapping of Magneprint (MSR Only)Key Mapping
 of Magneprint
@@ -12010,12 +12524,14 @@ of Magneprint
 | Default              | 0x20, 0x07, 0x04                                                                                                |
 
 <a name="table-544---get-request-example"></a>
+<a name="table-544---get-request-example"></a>
 Table 544 - Get Request Example
 
 | Example (Hex)                                                                 |
 |-------------------------------------------------------------------------------|
 | AA00 81040159D101 841AD101 81072B06010401F609 850101 890AE108E206E404E102C400 |
 
+<a name="table-545---get-response-example"></a>
 <a name="table-545---get-response-example"></a>
 Table 545 - Get Response Example
 
@@ -12024,12 +12540,14 @@ Table 545 - Get Response Example
 | AA00 81048259D101 820400000000 8482001DD101 81072B06010401F609 850101  890DE10BE209E407E105C4 03200704 |
 
 <a name="table-546---set-request-example"></a>
+<a name="table-546---set-request-example"></a>
 Table 546 - Set Request Example
 
 | Example (Hex)                                                                        |
 |--------------------------------------------------------------------------------------|
 | AA00 8104015AD111 841DD111 81072B06010401F609 850101 890DE10BE209E407E105C4 03200704 |
 
+<a name="table-547---set-response-example"></a>
 <a name="table-547---set-response-example"></a>
 Table 547 - Set Response Example
 
@@ -12048,6 +12566,7 @@ This OID is reserved for Mey Mapping of User Data 1.
 #### Property 1.1.2.4.1.7 Key Mapping of PIN-AES (Touch Only)
 
 <a name="table-548---property-112417-key-mapping-of-pin-aes-touch-onlykey-mapping"></a>
+<a name="table-548---property-112417-key-mapping-of-pin-aes-touch-onlykey-mapping"></a>
 Table 548 - Property 1.1.2.4.1.7 Key Mapping of PIN-AES (Touch Only)Key Mapping
 of PIN-AES
 
@@ -12064,12 +12583,14 @@ of PIN-AES
 | Default              | 0x00, 0x00, 0x07                                                                                     |
 
 <a name="table-549---get-request-example"></a>
+<a name="table-549---get-request-example"></a>
 Table 549 - Get Request Example
 
 | Example (Hex)                                                                 |
 |-------------------------------------------------------------------------------|
 | AA00 81040159D101 841AD101 81072B06010401F609 850101 890AE108E206E404E102C700 |
 
+<a name="table-550---get-response-example"></a>
 <a name="table-550---get-response-example"></a>
 Table 550 - Get Response Example
 
@@ -12078,12 +12599,14 @@ Table 550 - Get Response Example
 | AA00 81048259D101 820400000000 8482001DD101 81072B06010401F609 850101  890DE10BE209E407E105C7 03200207 |
 
 <a name="table-551---set-request-example"></a>
+<a name="table-551---set-request-example"></a>
 Table 551 - Set Request Example
 
 | Example (Hex)                                                                        |
 |--------------------------------------------------------------------------------------|
 | AA00 8104015AD111 841DD111 81072B06010401F609 850101 890DE10BE209E407E105C7 03200207 |
 
+<a name="table-552---set-response-example"></a>
 <a name="table-552---set-response-example"></a>
 Table 552 - Set Response Example
 
@@ -12093,6 +12616,7 @@ Table 552 - Set Response Example
 
 #### Property 1.1.2.5.1.1 AAMVA Allowed (MSR Only)
 
+<a name="table-553---property-112511-aamva-allowed-msr-only"></a>
 <a name="table-553---property-112511-aamva-allowed-msr-only"></a>
 Table 553 - Property 1.1.2.5.1.1 AAMVA Allowed (MSR Only)
 
@@ -12109,12 +12633,14 @@ Table 553 - Property 1.1.2.5.1.1 AAMVA Allowed (MSR Only)
 | Default              | 0x01                                                                                                                                                                                                                                                                                                                                                                           |
 
 <a name="table-554---get-request-example"></a>
+<a name="table-554---get-request-example"></a>
 Table 554 - Get Request Example
 
 | Example (Hex)                                                                                               |
 |-------------------------------------------------------------------------------------------------------------|
 | AA 00 81 04 01 1B D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0A E1 08 E2 06 E5 04 E1 02 C1 00 |
 
+<a name="table-555---get-response-example"></a>
 <a name="table-555---get-response-example"></a>
 Table 555 - Get Response Example
 
@@ -12123,12 +12649,14 @@ Table 555 - Get Response Example
 | AA 00 81 04 82 1B D1 01 82 04 00 00 00 00 84 82 00 1B D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0B E1 09 E2 07 E5 05 E1 03 C1 01 01 |
 
 <a name="table-556---set-request-example"></a>
+<a name="table-556---set-request-example"></a>
 Table 556 - Set Request Example
 
 | Example (Hex)                                                                                                  |
 |----------------------------------------------------------------------------------------------------------------|
 | AA 00 81 04 01 14 D1 11 84 1B D1 11 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0B E1 09 E2 07 E5 05 E1 03 C1 01 01 |
 
+<a name="table-557---set-response-example"></a>
 <a name="table-557---set-response-example"></a>
 Table 557 - Set Response Example
 
@@ -12138,6 +12666,7 @@ Table 557 - Set Response Example
 
 #### Property 1.1.2.5.1.2 Track 1 Enable (MSR Only)
 
+<a name="table-558---property-112512-track-1-enable-msr-only"></a>
 <a name="table-558---property-112512-track-1-enable-msr-only"></a>
 Table 558 - Property 1.1.2.5.1.2 Track 1 Enable (MSR Only)
 
@@ -12154,12 +12683,14 @@ Table 558 - Property 1.1.2.5.1.2 Track 1 Enable (MSR Only)
 | Default              | 0x01                                                                                                                                                                                        |
 
 <a name="table-559---get-request-example"></a>
+<a name="table-559---get-request-example"></a>
 Table 559 - Get Request Example
 
 | Example (Hex)                                                                                               |
 |-------------------------------------------------------------------------------------------------------------|
 | AA 00 81 04 01 1C D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0A E1 08 E2 06 E5 04 E1 02 C2 00 |
 
+<a name="table-560---get-response-example"></a>
 <a name="table-560---get-response-example"></a>
 Table 560 - Get Response Example
 
@@ -12168,12 +12699,14 @@ Table 560 - Get Response Example
 | AA 00 81 04 82 1C D1 01 82 04 00 00 00 00 84 82 00 1B D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0B E1 09 E2 07 E5 05 E1 03 C2 01 01 |
 
 <a name="table-561---set-request-example"></a>
+<a name="table-561---set-request-example"></a>
 Table 561 - Set Request Example
 
 | Example (Hex)                                                                                                  |
 |----------------------------------------------------------------------------------------------------------------|
 | AA 00 81 04 01 17 D1 11 84 1B D1 11 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0B E1 09 E2 07 E5 05 E1 03 C2 01 01 |
 
+<a name="table-562---set-response-example"></a>
 <a name="table-562---set-response-example"></a>
 Table 562 - Set Response Example
 
@@ -12183,6 +12716,7 @@ Table 562 - Set Response Example
 
 #### Property 1.1.2.5.1.3 Track 2 Enable (MSR Only)
 
+<a name="table-563---property-112513-track-2-enable-msr-only"></a>
 <a name="table-563---property-112513-track-2-enable-msr-only"></a>
 Table 563 - Property 1.1.2.5.1.3 Track 2 Enable (MSR Only)
 
@@ -12199,12 +12733,14 @@ Table 563 - Property 1.1.2.5.1.3 Track 2 Enable (MSR Only)
 | Default              | 0x01                                                                                                                                                                                        |
 
 <a name="table-564---get-request-example"></a>
+<a name="table-564---get-request-example"></a>
 Table 564 - Get Request Example
 
 | Example (Hex)                                                                                               |
 |-------------------------------------------------------------------------------------------------------------|
 | AA 00 81 04 01 1D D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0A E1 08 E2 06 E5 04 E1 02 C3 00 |
 
+<a name="table-565---get-response-example"></a>
 <a name="table-565---get-response-example"></a>
 Table 565 - Get Response Example
 
@@ -12213,12 +12749,14 @@ Table 565 - Get Response Example
 | AA 00 81 04 82 1D D1 01 82 04 00 00 00 00 84 82 00 1B D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0B E1 09 E2 07 E5 05 E1 03 C3 01 01 |
 
 <a name="table-566---set-request-example"></a>
+<a name="table-566---set-request-example"></a>
 Table 566 - Set Request Example
 
 | Example (Hex)                                                                                                  |
 |----------------------------------------------------------------------------------------------------------------|
 | AA 00 81 04 01 09 D1 11 84 1B D1 11 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0B E1 09 E2 07 E5 05 E1 03 C3 01 01 |
 
+<a name="table-567---set-response-example"></a>
 <a name="table-567---set-response-example"></a>
 Table 567 - Set Response Example
 
@@ -12228,6 +12766,7 @@ Table 567 - Set Response Example
 
 #### Property 1.1.2.5.1.4 Track 3 Enable (MSR Only)
 
+<a name="table-568---property-112514-track-3-enable-msr-only"></a>
 <a name="table-568---property-112514-track-3-enable-msr-only"></a>
 Table 568 - Property 1.1.2.5.1.4 Track 3 Enable (MSR Only)
 
@@ -12244,12 +12783,14 @@ Table 568 - Property 1.1.2.5.1.4 Track 3 Enable (MSR Only)
 | Default              | 0x01                                                                                                                                                                                        |
 
 <a name="table-569---get-request-example"></a>
+<a name="table-569---get-request-example"></a>
 Table 569 - Get Request Example
 
 | Example (Hex)                                                                                               |
 |-------------------------------------------------------------------------------------------------------------|
 | AA 00 81 04 01 02 D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0A E1 08 E2 06 E5 04 E1 02 C4 00 |
 
+<a name="table-570---get-response-example"></a>
 <a name="table-570---get-response-example"></a>
 Table 570 - Get Response Example
 
@@ -12258,12 +12799,14 @@ Table 570 - Get Response Example
 | AA 00 81 04 82 02 D1 01 82 04 00 00 00 00 84 82 00 1B D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0B E1 09 E2 07 E5 05 E1 03 C4 01 01 |
 
 <a name="table-571---set-request-example"></a>
+<a name="table-571---set-request-example"></a>
 Table 571 - Set Request Example
 
 | Example (Hex)                                                                                                  |
 |----------------------------------------------------------------------------------------------------------------|
 | AA 00 81 04 01 0A D1 11 84 1B D1 11 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0B E1 09 E2 07 E5 05 E1 03 C4 01 01 |
 
+<a name="table-572---set-response-example"></a>
 <a name="table-572---set-response-example"></a>
 Table 572 - Set Response Example
 
@@ -12273,6 +12816,7 @@ Table 572 - Set Response Example
 
 #### Property 1.1.2.6.1.1 Selectable Card Data Encryption Enable (MAGTEK INTERNAL ONLY)
 
+<a name="table-573---property-112611-selectable-card-data-encryption-enable-magtek"></a>
 <a name="table-573---property-112611-selectable-card-data-encryption-enable-magtek"></a>
 Table 573 - Property 1.1.2.6.1.1 Selectable Card Data Encryption Enable (MAGTEK
 INTERNAL ONLY)
@@ -12290,12 +12834,14 @@ INTERNAL ONLY)
 | Default              | 0x0000                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
 
 <a name="table-574---get-request-example"></a>
+<a name="table-574---get-request-example"></a>
 Table 574 - Get Request Example
 
 | Example (Hex)                                                                                               |
 |-------------------------------------------------------------------------------------------------------------|
 | AA 00 81 04 01 06 D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0A E1 08 E2 06 E6 04 E1 02 C1 00 |
 
+<a name="table-575---get-response-example"></a>
 <a name="table-575---get-response-example"></a>
 Table 575 - Get Response Example
 
@@ -12304,12 +12850,14 @@ Table 575 - Get Response Example
 | AA 00 81 04 82 06 D1 01 82 04 00 00 00 00 84 82 00 1C D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0C E1 0A E2 08 E6 06 E1 04 C1 02 3F 00 |
 
 <a name="table-576---set-request-example"></a>
+<a name="table-576---set-request-example"></a>
 Table 576 - Set Request Example
 
 | Example (Hex)                                                                                                                                                                                                                                                                                                        |
 |----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | AA 00 81 04 01 0B D1 12 84 5D EE EE A1 19 81 05 03 03 06 02 08 84 00 85 00 A8 0A 81 02 11 11 82 00 86 00 88 00 A9 00 82 04 BE 00 11 D0 83 08 E7 9F B1 FE 99 9F 8D A2 84 1C D1 12 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0C E1 0A E2 08 E6 06 E1 04 C1 02 3F 00 9E 10 D9 38 F1 6E 7F 8C CE 87 02 35 0F DF 8C C2 75 64 |
 
+<a name="table-577---set-response-example"></a>
 <a name="table-577---set-response-example"></a>
 Table 577 - Set Response Example
 
@@ -12323,6 +12871,7 @@ Table 577 - Set Response Example
 
 #### Property 1.2.1.1.1.1 Device-Driven Fallback Behavior (MSR Only)
 
+<a name="table-578---property-121111-device-driven-fallback-behavior-msr-only"></a>
 <a name="table-578---property-121111-device-driven-fallback-behavior-msr-only"></a>
 Table 578 - Property 1.2.1.1.1.1 Device-Driven Fallback Behavior (MSR Only)
 
@@ -12339,12 +12888,14 @@ Table 578 - Property 1.2.1.1.1.1 Device-Driven Fallback Behavior (MSR Only)
 | Default              | 0x01                                                                                                                                                                                             |
 
 <a name="table-579---get-request-example"></a>
+<a name="table-579---get-request-example"></a>
 Table 579 - Get Request Example
 
 | Example (Hex)                                                                                               |
 |-------------------------------------------------------------------------------------------------------------|
 | AA 00 81 04 01 04 D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0A E2 08 E1 06 E1 04 E1 02 C1 00 |
 
+<a name="table-580---get-response-example"></a>
 <a name="table-580---get-response-example"></a>
 Table 580 - Get Response Example
 
@@ -12353,12 +12904,14 @@ Table 580 - Get Response Example
 | AA 00 81 04 82 04 D1 01 82 04 00 00 00 00 84 82 00 1B D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0B E2 09 E1 07 E1 05 E1 03 C1 01 01 |
 
 <a name="table-581---set-request-example"></a>
+<a name="table-581---set-request-example"></a>
 Table 581 - Set Request Example
 
 | Example (Hex)                                                                                                  |
 |----------------------------------------------------------------------------------------------------------------|
 | AA 00 81 04 01 02 D1 11 84 1B D1 11 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0B E2 09 E1 07 E1 05 E1 03 C1 01 01 |
 
+<a name="table-582---set-response-example"></a>
 <a name="table-582---set-response-example"></a>
 Table 582 - Set Response Example
 
@@ -12368,6 +12921,7 @@ Table 582 - Set Response Example
 
 #### Property 1.2.1.1.1.2 Application Selection Behavior (Contactless Only)
 
+<a name="table-583---property-121112-application-selection-behavior-contactless"></a>
 <a name="table-583---property-121112-application-selection-behavior-contactless"></a>
 Table 583 - Property 1.2.1.1.1.2 Application Selection Behavior (Contactless
 Only)Application Selection Behavior
@@ -12385,12 +12939,14 @@ Only)Application Selection Behavior
 | Default              | 0x00 – Card Preference                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
 
 <a name="table-584---get-request-example"></a>
+<a name="table-584---get-request-example"></a>
 Table 584 - Get Request Example
 
 | Example (Hex)                                                |
 |--------------------------------------------------------------|
 | AA00 8104 0155D101 840F D101 8501 01 8704 02010101 8902 C200 |
 
+<a name="table-585---get-response-example"></a>
 <a name="table-585---get-response-example"></a>
 Table 585 - Get Response Example
 
@@ -12399,12 +12955,14 @@ Table 585 - Get Response Example
 | AA 00 81 04 82 55 D1 01 82 04 00 00 00 00 84 82 00 10 D1 01 85 01 01 87 04 02 01 01 01 89 03 C2 01 00 |
 
 <a name="table-586---set-request-example"></a>
+<a name="table-586---set-request-example"></a>
 Table 586 - Set Request Example
 
 | Example (Hex)                                               |
 |-------------------------------------------------------------|
 | AA00 81040155D111 8410 D111 850101 870402010101 8903 C20103 |
 
+<a name="table-587---set-response-example"></a>
 <a name="table-587---set-response-example"></a>
 Table 587 - Set Response Example
 
@@ -12414,6 +12972,7 @@ Table 587 - Set Response Example
 
 #### Property 1.2.1.1.2.1 Signature Capture Control
 
+<a name="table-588---property-121121-signature-capture-control"></a>
 <a name="table-588---property-121121-signature-capture-control"></a>
 Table 588 - Property 1.2.1.1.2.1 Signature Capture Control
 
@@ -12430,12 +12989,14 @@ Table 588 - Property 1.2.1.1.2.1 Signature Capture Control
 | Default              | 0x00                                                                                                                                                                                                                                     |
 
 <a name="table-589---get-request-example"></a>
+<a name="table-589---get-request-example"></a>
 Table 589 - Get Request Example
 
 | Example (Hex)                                                                                               |
 |-------------------------------------------------------------------------------------------------------------|
 | AA 00 81 04 01 04 D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0A E2 08 E1 06 E1 04 E2 02 C1 00 |
 
+<a name="table-590---get-response-example"></a>
 <a name="table-590---get-response-example"></a>
 Table 590 - Get Response Example
 
@@ -12444,12 +13005,14 @@ Table 590 - Get Response Example
 | AA 00 81 04 82 04 D1 01 82 04 00 00 00 00 84 82 00 1B D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0B E2 09 E1 07 E1 05 E2 03 C1 01 01 |
 
 <a name="table-591---set-request-example"></a>
+<a name="table-591---set-request-example"></a>
 Table 591 - Set Request Example
 
 | Example (Hex)                                                                                                  |
 |----------------------------------------------------------------------------------------------------------------|
 | AA 00 81 04 01 02 D1 11 84 1B D1 11 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0B E2 09 E1 07 E1 05 E2 03 C1 01 01 |
 
+<a name="table-592---set-response-example"></a>
 <a name="table-592---set-response-example"></a>
 Table 592 - Set Response Example
 
@@ -12459,6 +13022,7 @@ Table 592 - Set Response Example
 
 #### Property 1.2.1.1.2.2 Include Signature Data in EMV Batch Data (Touch Only)
 
+<a name="table-593---property-121122-include-signature-data-in-emv-batch-data-touch"></a>
 <a name="table-593---property-121122-include-signature-data-in-emv-batch-data-touch"></a>
 Table 593 - Property 1.2.1.1.2.2 Include Signature Data in EMV Batch Data (Touch
 Only)
@@ -12476,12 +13040,14 @@ Only)
 | Default              | 0x00                                                                                                                                                                                                                                                                            |
 
 <a name="table-594---get-request-example"></a>
+<a name="table-594---get-request-example"></a>
 Table 594 - Get Request Example
 
 | Example (Hex)                                                                                               |
 |-------------------------------------------------------------------------------------------------------------|
 | AA 00 81 04 01 04 D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0A E2 08 E1 06 E1 04 E2 02 C2 00 |
 
+<a name="table-595---get-response-example"></a>
 <a name="table-595---get-response-example"></a>
 Table 595 - Get Response Example
 
@@ -12490,12 +13056,14 @@ Table 595 - Get Response Example
 | AA 00 81 04 82 04 D1 01 82 04 00 00 00 00 84 82 00 1B D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0B E2 09 E1 07 E1 05 E2 03 C2 01 01 |
 
 <a name="table-596---set-request-example"></a>
+<a name="table-596---set-request-example"></a>
 Table 596 - Set Request Example
 
 | Example (Hex)                                                                                                  |
 |----------------------------------------------------------------------------------------------------------------|
 | AA 00 81 04 01 02 D1 11 84 1B D1 11 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0B E2 09 E1 07 E1 05 E2 03 C2 01 01 |
 
+<a name="table-597---set-response-example"></a>
 <a name="table-597---set-response-example"></a>
 Table 597 - Set Response Example
 
@@ -12505,6 +13073,7 @@ Table 597 - Set Response Example
 
 #### Property 1.2.1.1.2.3 Signature Timing Window (Touch Only)
 
+<a name="table-598---property-121123-signature-timing-window-touch-only"></a>
 <a name="table-598---property-121123-signature-timing-window-touch-only"></a>
 Table 598 - Property 1.2.1.1.2.3 Signature Timing Window (Touch Only)
 
@@ -12521,12 +13090,14 @@ Table 598 - Property 1.2.1.1.2.3 Signature Timing Window (Touch Only)
 | Default              | 0x01 (second)                                                                                                                                                                                                                                                   |
 
 <a name="table-599---get-request-example"></a>
+<a name="table-599---get-request-example"></a>
 Table 599 - Get Request Example
 
 | Example (Hex)                                                                                               |
 |-------------------------------------------------------------------------------------------------------------|
 | AA 00 81 04 01 04 D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0A E2 08 E1 06 E1 04 E2 02 C3 00 |
 
+<a name="table-600---get-response-example"></a>
 <a name="table-600---get-response-example"></a>
 Table 600 - Get Response Example
 
@@ -12535,12 +13106,14 @@ Table 600 - Get Response Example
 | AA 00 81 04 82 04 D1 01 82 04 00 00 00 00 84 82 00 1B D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0B E2 09 E1 07 E1 05 E2 03 C3 01 03 |
 
 <a name="table-601---set-request-example"></a>
+<a name="table-601---set-request-example"></a>
 Table 601 - Set Request Example
 
 | Example (Hex)                                                                                                  |
 |----------------------------------------------------------------------------------------------------------------|
 | AA 00 81 04 01 02 D1 11 84 1B D1 11 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0B E2 09 E1 07 E1 05 E2 03 C3 01 01 |
 
+<a name="table-602---set-response-example"></a>
 <a name="table-602---set-response-example"></a>
 Table 602 - Set Response Example
 
@@ -12550,6 +13123,7 @@ Table 602 - Set Response Example
 
 #### Property 1.2.1.1.3.1 Contactless Low Power Card Detect (Contactless Only)
 
+<a name="table-603---property-121131-contactless-low-power-card-detect-contactless"></a>
 <a name="table-603---property-121131-contactless-low-power-card-detect-contactless"></a>
 Table 603 - Property 1.2.1.1.3.1 Contactless Low Power Card Detect (Contactless
 Only)
@@ -12567,12 +13141,14 @@ Only)
 | Default              | 0x00 - Disabled                                                                                                                                                                                                                                                                                                        |
 
 <a name="table-604---get-request-example"></a>
+<a name="table-604---get-request-example"></a>
 Table 604 - Get Request Example
 
 | Example (Hex)                                                              |
 |----------------------------------------------------------------------------|
 | AA 00 81 04 01 55 D1 01 84 0F D1 01 85 01 01 87 04 02 01 01 03 89 02 C1 00 |
 
+<a name="table-605---get-response-example"></a>
 <a name="table-605---get-response-example"></a>
 Table 605 - Get Response Example
 
@@ -12581,12 +13157,14 @@ Table 605 - Get Response Example
 | AA 00 81 04 82 55 D1 01 82 04 00 00 00 00 84 82 00 10 D1 01 85 01 01 87 04 02 01 01 03 89 03 C1 01 00 |
 
 <a name="table-606---set-request-example"></a>
+<a name="table-606---set-request-example"></a>
 Table 606 - Set Request Example
 
 | Example (Hex)                                                                 |
 |-------------------------------------------------------------------------------|
 | AA 00 81 04 01 55 D1 11 84 10 D1 11 85 01 01 87 04 02 01 01 03 89 03 C1 01 00 |
 
+<a name="table-607---set-response-example"></a>
 <a name="table-607---set-response-example"></a>
 Table 607 - Set Response Example
 
@@ -12596,6 +13174,7 @@ Table 607 - Set Response Example
 
 #### Property 1.2.1.1.4.1 MIFARE Ultralight C 2keys3DES
 
+<a name="table-608---property-121141-mifare-ultralight-c-2keys3des"></a>
 <a name="table-608---property-121141-mifare-ultralight-c-2keys3des"></a>
 Table 608 - Property 1.2.1.1.4.1 MIFARE Ultralight C 2keys3DES
 
@@ -12612,12 +13191,14 @@ Table 608 - Property 1.2.1.1.4.1 MIFARE Ultralight C 2keys3DES
 | Default              | 49454D4B 41455242 214E4143 554F5946                                                                                                                                                                                                                                                                                                                                     |
 
 <a name="table-609---get-request-example"></a>
+<a name="table-609---get-request-example"></a>
 Table 609 - Get Request Example
 
 | Example (Hex)                                                                                               |
 |-------------------------------------------------------------------------------------------------------------|
 | AA 00 81 04 01 06 D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0A E2 08 E1 06 E1 04 E4 02 C1 00 |
 
+<a name="table-610---get-response-example"></a>
 <a name="table-610---get-response-example"></a>
 Table 610 - Get Response Example
 
@@ -12626,12 +13207,14 @@ Table 610 - Get Response Example
 | AA 00 81 04 82 06 D1 01 82 04 00 00 00 00 84 82 00 1D D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0D E2 0B E1 09 E1 07 E4 05 C1 03 29 07 96 |
 
 <a name="table-611---set-request-example"></a>
+<a name="table-611---set-request-example"></a>
 Table 611 - Set Request Example
 
 | Example (Hex)                                                                                                              |
 |----------------------------------------------------------------------------------------------------------------------------|
 | AA 00 81 04 01 55 D1 11 84 1F D1 11 85 01 01 87 04 02 01 01 04 89 12 C1 10 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F |
 
+<a name="table-612---set-response-example"></a>
 <a name="table-612---set-response-example"></a>
 Table 612 - Set Response Example
 
@@ -12641,6 +13224,7 @@ Table 612 - Set Response Example
 
 #### Property 1.2.1.1.4.2 MIFARE Ultralight AES DataProtKey.
 
+<a name="table-613---property-121142-mifare-ultralight-aes-dataprotkey"></a>
 <a name="table-613---property-121142-mifare-ultralight-aes-dataprotkey"></a>
 Table 613 - Property 1.2.1.1.4.2 MIFARE Ultralight AES DataProtKey.
 
@@ -12657,12 +13241,14 @@ Table 613 - Property 1.2.1.1.4.2 MIFARE Ultralight AES DataProtKey.
 | Default              | 00000000 00000000 00000000 00000000                                                                                                                                                                                                                                                                                                                                  |
 
 <a name="table-614---get-request-example"></a>
+<a name="table-614---get-request-example"></a>
 Table 614 - Get Request Example
 
 | Example (Hex)                                                                                               |
 |-------------------------------------------------------------------------------------------------------------|
 | AA 00 81 04 01 06 D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0A E2 08 E1 06 E1 04 E4 02 C2 00 |
 
+<a name="table-615---get-response-example"></a>
 <a name="table-615---get-response-example"></a>
 Table 615 - Get Response Example
 
@@ -12671,12 +13257,14 @@ Table 615 - Get Response Example
 | AA00810482D3D1018204000000008482001ED10181072B06010401F609850101890EE20CE10AE108E406C204763CBCDE |
 
 <a name="table-616---set-request-example"></a>
+<a name="table-616---set-request-example"></a>
 Table 616 - Set Request Example
 
 | Example (Hex)                                                                                                              |
 |----------------------------------------------------------------------------------------------------------------------------|
 | AA 00 81 04 01 55 D1 11 84 1F D1 11 85 01 01 87 04 02 01 01 04 89 12 C2 10 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F |
 
+<a name="table-617---set-response-example"></a>
 <a name="table-617---set-response-example"></a>
 Table 617 - Set Response Example
 
@@ -12686,6 +13274,7 @@ Table 617 - Set Response Example
 
 #### Property 1.2.1.1.4.3 MIFARE Ultralight AES UIDRetrKey.
 
+<a name="table-618---property-121143-mifare-ultralight-aes-uidretrkey"></a>
 <a name="table-618---property-121143-mifare-ultralight-aes-uidretrkey"></a>
 Table 618 - Property 1.2.1.1.4.3 MIFARE Ultralight AES UIDRetrKey.
 
@@ -12702,12 +13291,14 @@ Table 618 - Property 1.2.1.1.4.3 MIFARE Ultralight AES UIDRetrKey.
 | Default              | 00000000 00000000 00000000 00000000                                                                                                                                                                                                                                                                                                                                     |
 
 <a name="table-619---get-request-example"></a>
+<a name="table-619---get-request-example"></a>
 Table 619 - Get Request Example
 
 | Example (Hex)                                                                                               |
 |-------------------------------------------------------------------------------------------------------------|
 | AA 00 81 04 01 06 D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0A E2 08 E1 06 E1 04 E4 02 C3 00 |
 
+<a name="table-620---get-response-example"></a>
 <a name="table-620---get-response-example"></a>
 Table 620 - Get Response Example
 
@@ -12716,12 +13307,14 @@ Table 620 - Get Response Example
 | AA00810482D3D1018204000000008482001ED10181072B06010401F609850101890EE20CE10AE108E406C304B548CFB4 |
 
 <a name="table-621---set-request-example"></a>
+<a name="table-621---set-request-example"></a>
 Table 621 - Set Request Example
 
 | Example (Hex)                                                                                                              |
 |----------------------------------------------------------------------------------------------------------------------------|
 | AA 00 81 04 01 55 D1 11 84 1F D1 11 85 01 01 87 04 02 01 01 04 89 12 C3 10 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F |
 
+<a name="table-622---set-response-example"></a>
 <a name="table-622---set-response-example"></a>
 Table 622 - Set Response Example
 
@@ -12731,6 +13324,7 @@ Table 622 - Set Response Example
 
 #### Property 1.2.1.1.4.4 MIFARE Ultralight AES OriginalityKey.
 
+<a name="table-623---property-121144-mifare-ultralight-aes-originalitykey"></a>
 <a name="table-623---property-121144-mifare-ultralight-aes-originalitykey"></a>
 Table 623 - Property 1.2.1.1.4.4 MIFARE Ultralight AES OriginalityKey.
 
@@ -12747,12 +13341,14 @@ Table 623 - Property 1.2.1.1.4.4 MIFARE Ultralight AES OriginalityKey.
 | Default              | 00000000 00000000 00000000 00000000                                                                                                                                                                                                                                                                                                                          |
 
 <a name="table-624---get-request-example"></a>
+<a name="table-624---get-request-example"></a>
 Table 624 - Get Request Example
 
 | Example (Hex)                                                                                               |
 |-------------------------------------------------------------------------------------------------------------|
 | AA 00 81 04 01 06 D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0A E2 08 E1 06 E1 04 E4 02 C4 00 |
 
+<a name="table-625---get-response-example"></a>
 <a name="table-625---get-response-example"></a>
 Table 625 - Get Response Example
 
@@ -12761,12 +13357,14 @@ Table 625 - Get Response Example
 | AA00810482D3D1018204000000008482001ED10181072B06010401F609850101890EE20CE10AE108E406C404763CBCDE |
 
 <a name="table-626---set-request-example"></a>
+<a name="table-626---set-request-example"></a>
 Table 626 - Set Request Example
 
 | Example (Hex)                                                                                                              |
 |----------------------------------------------------------------------------------------------------------------------------|
 | AA 00 81 04 01 55 D1 11 84 1F D1 11 85 01 01 87 04 02 01 01 04 89 12 C4 10 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F |
 
+<a name="table-627---set-response-example"></a>
 <a name="table-627---set-response-example"></a>
 Table 627 - Set Response Example
 
@@ -12776,6 +13374,7 @@ Table 627 - Set Response Example
 
 #### Property 1.2.1.1.4.5 MIFARE Plus AES_Key1.
 
+<a name="table-628---property-121145-mifare-plus-aes_key1"></a>
 <a name="table-628---property-121145-mifare-plus-aes_key1"></a>
 Table 628 - Property 1.2.1.1.4.5 MIFARE Plus AES_Key1.
 
@@ -12792,12 +13391,14 @@ Table 628 - Property 1.2.1.1.4.5 MIFARE Plus AES_Key1.
 | Default              | 00000000 00000000 00000000 00000000                                                                                                                                                                                                                                                                                                   |
 
 <a name="table-629---get-request-example"></a>
+<a name="table-629---get-request-example"></a>
 Table 629 - Get Request Example
 
 | Example (Hex)                                                                                               |
 |-------------------------------------------------------------------------------------------------------------|
 | AA 00 81 04 01 06 D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0A E2 08 E1 06 E1 04 E4 02 C5 00 |
 
+<a name="table-630---get-response-example"></a>
 <a name="table-630---get-response-example"></a>
 Table 630 - Get Response Example
 
@@ -12806,12 +13407,14 @@ Table 630 - Get Response Example
 | AA00810482D3D1018204000000008482001ED10181072B06010401F609850101890EE20CE10AE108E406C504763CBCDE |
 
 <a name="table-631---set-request-example"></a>
+<a name="table-631---set-request-example"></a>
 Table 631 - Set Request Example
 
 | Example (Hex)                                                                                                              |
 |----------------------------------------------------------------------------------------------------------------------------|
 | AA 00 81 04 01 55 D1 11 84 1F D1 11 85 01 01 87 04 02 01 01 04 89 12 C5 10 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F |
 
+<a name="table-632---set-response-example"></a>
 <a name="table-632---set-response-example"></a>
 Table 632 - Set Response Example
 
@@ -12821,6 +13424,7 @@ Table 632 - Set Response Example
 
 #### Property 1.2.1.1.4.6 MIFARE Plus AES_Key2.
 
+<a name="table-633---property-121146-mifare-plus-aes_key2"></a>
 <a name="table-633---property-121146-mifare-plus-aes_key2"></a>
 Table 633 - Property 1.2.1.1.4.6 MIFARE Plus AES_Key2.
 
@@ -12837,12 +13441,14 @@ Table 633 - Property 1.2.1.1.4.6 MIFARE Plus AES_Key2.
 | Default              | 00000000 00000000 00000000 00000000                                                                                                                                                                                                                                                                                                   |
 
 <a name="table-634---get-request-example"></a>
+<a name="table-634---get-request-example"></a>
 Table 634 - Get Request Example
 
 | Example (Hex)                                                                                               |
 |-------------------------------------------------------------------------------------------------------------|
 | AA 00 81 04 01 06 D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0A E2 08 E1 06 E1 04 E4 02 C6 00 |
 
+<a name="table-635---get-response-example"></a>
 <a name="table-635---get-response-example"></a>
 Table 635 - Get Response Example
 
@@ -12851,12 +13457,14 @@ Table 635 - Get Response Example
 | AA00810482D3D1018204000000008482001ED10181072B06010401F609850101890EE20CE10AE108E406C604763CBCDE |
 
 <a name="table-636---set-request-example"></a>
+<a name="table-636---set-request-example"></a>
 Table 636 - Set Request Example
 
 | Example (Hex)                                                                                                              |
 |----------------------------------------------------------------------------------------------------------------------------|
 | AA 00 81 04 01 55 D1 11 84 1F D1 11 85 01 01 87 04 02 01 01 04 89 12 C6 10 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F |
 
+<a name="table-637---set-response-example"></a>
 <a name="table-637---set-response-example"></a>
 Table 637 - Set Response Example
 
@@ -12866,6 +13474,7 @@ Table 637 - Set Response Example
 
 #### Property 1.2.1.1.4.7 MIFARE Plus AES_Key3.
 
+<a name="table-638---property-121147-mifare-plus-aes_key3"></a>
 <a name="table-638---property-121147-mifare-plus-aes_key3"></a>
 Table 638 - Property 1.2.1.1.4.7 MIFARE Plus AES_Key3.
 
@@ -12882,12 +13491,14 @@ Table 638 - Property 1.2.1.1.4.7 MIFARE Plus AES_Key3.
 | Default              | 00000000 00000000 00000000 00000000                                                                                                                                                                                                                                                                                                   |
 
 <a name="table-639---get-request-example"></a>
+<a name="table-639---get-request-example"></a>
 Table 639 - Get Request Example
 
 | Example (Hex)                                                                                               |
 |-------------------------------------------------------------------------------------------------------------|
 | AA 00 81 04 01 06 D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0A E2 08 E1 06 E1 04 E4 02 C7 00 |
 
+<a name="table-640---get-response-example"></a>
 <a name="table-640---get-response-example"></a>
 Table 640 - Get Response Example
 
@@ -12896,12 +13507,14 @@ Table 640 - Get Response Example
 | AA00810482D3D1018204000000008482001ED10181072B06010401F609850101890EE20CE10AE108E406C704763CBCDE |
 
 <a name="table-641---set-request-example"></a>
+<a name="table-641---set-request-example"></a>
 Table 641 - Set Request Example
 
 | Example (Hex)                                                                                                              |
 |----------------------------------------------------------------------------------------------------------------------------|
 | AA 00 81 04 01 55 D1 11 84 1F D1 11 85 01 01 87 04 02 01 01 04 89 12 C7 10 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F |
 
+<a name="table-642---set-response-example"></a>
 <a name="table-642---set-response-example"></a>
 Table 642 - Set Response Example
 
@@ -12911,6 +13524,7 @@ Table 642 - Set Response Example
 
 #### Property 1.2.1.1.4.8 MIFARE Plus AES_Key4.
 
+<a name="table-643---property-121148-mifare-plus-aes_key4"></a>
 <a name="table-643---property-121148-mifare-plus-aes_key4"></a>
 Table 643 - Property 1.2.1.1.4.8 MIFARE Plus AES_Key4.
 
@@ -12927,12 +13541,14 @@ Table 643 - Property 1.2.1.1.4.8 MIFARE Plus AES_Key4.
 | Default              | 00000000 00000000 00000000 00000000                                                                                                                                                                                                                                                                                                   |
 
 <a name="table-644---get-request-example"></a>
+<a name="table-644---get-request-example"></a>
 Table 644 - Get Request Example
 
 | Example (Hex)                                                                                               |
 |-------------------------------------------------------------------------------------------------------------|
 | AA 00 81 04 01 06 D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0A E2 08 E1 06 E1 04 E4 02 C8 00 |
 
+<a name="table-645---get-response-example"></a>
 <a name="table-645---get-response-example"></a>
 Table 645 - Get Response Example
 
@@ -12941,12 +13557,14 @@ Table 645 - Get Response Example
 | AA00810482D3D1018204000000008482001ED10181072B06010401F609850101890EE20CE10AE108E406C804763CBCDE |
 
 <a name="table-646---set-request-example"></a>
+<a name="table-646---set-request-example"></a>
 Table 646 - Set Request Example
 
 | Example (Hex)                                                                                                              |
 |----------------------------------------------------------------------------------------------------------------------------|
 | AA 00 81 04 01 55 D1 11 84 1F D1 11 85 01 01 87 04 02 01 01 04 89 12 C8 10 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F |
 
+<a name="table-647---set-response-example"></a>
 <a name="table-647---set-response-example"></a>
 Table 647 - Set Response Example
 
@@ -12956,6 +13574,7 @@ Table 647 - Set Response Example
 
 #### Property 1.2.1.1.4.9 MIFARE Plus AES_Key5.
 
+<a name="table-648---property-121149-mifare-plus-aes_key5"></a>
 <a name="table-648---property-121149-mifare-plus-aes_key5"></a>
 Table 648 - Property 1.2.1.1.4.9 MIFARE Plus AES_Key5.
 
@@ -12972,12 +13591,14 @@ Table 648 - Property 1.2.1.1.4.9 MIFARE Plus AES_Key5.
 | Default              | 00000000 00000000 00000000 00000000                                                                                                                                                                                                                                                                                                   |
 
 <a name="table-649---get-request-example"></a>
+<a name="table-649---get-request-example"></a>
 Table 649 - Get Request Example
 
 | Example (Hex)                                                                                               |
 |-------------------------------------------------------------------------------------------------------------|
 | AA 00 81 04 01 06 D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0A E2 08 E1 06 E1 04 E4 02 C9 00 |
 
+<a name="table-650---get-response-example"></a>
 <a name="table-650---get-response-example"></a>
 Table 650 - Get Response Example
 
@@ -12986,12 +13607,14 @@ Table 650 - Get Response Example
 | AA00810482D3D1018204000000008482001ED10181072B06010401F609850101890EE20CE10AE108E406C904763CBCDE |
 
 <a name="table-651---set-request-example"></a>
+<a name="table-651---set-request-example"></a>
 Table 651 - Set Request Example
 
 | Example (Hex)                                                                                                              |
 |----------------------------------------------------------------------------------------------------------------------------|
 | AA 00 81 04 01 55 D1 11 84 1F D1 11 85 01 01 87 04 02 01 01 04 89 12 C9 10 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F |
 
+<a name="table-652---set-response-example"></a>
 <a name="table-652---set-response-example"></a>
 Table 652 - Set Response Example
 
@@ -13001,6 +13624,7 @@ Table 652 - Set Response Example
 
 #### Property 1.2.1.1.4.A MIFARE Plus AES_Key6.
 
+<a name="table-653---property-12114a-mifare-plus-aes_key6"></a>
 <a name="table-653---property-12114a-mifare-plus-aes_key6"></a>
 Table 653 - Property 1.2.1.1.4.A MIFARE Plus AES_Key6.
 
@@ -13017,12 +13641,14 @@ Table 653 - Property 1.2.1.1.4.A MIFARE Plus AES_Key6.
 | Default              | 00000000 00000000 00000000 00000000                                                                                                                                                                                                                                                                                                   |
 
 <a name="table-654---get-request-example"></a>
+<a name="table-654---get-request-example"></a>
 Table 654 - Get Request Example
 
 | Example (Hex)                                                                                               |
 |-------------------------------------------------------------------------------------------------------------|
 | AA 00 81 04 01 06 D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0A E2 08 E1 06 E1 04 E4 02 CA 00 |
 
+<a name="table-655---get-response-example"></a>
 <a name="table-655---get-response-example"></a>
 Table 655 - Get Response Example
 
@@ -13031,12 +13657,14 @@ Table 655 - Get Response Example
 | AA00810482D3D1018204000000008482001ED10181072B06010401F609850101890EE20CE10AE108E406CA04763CBCDE |
 
 <a name="table-656---set-request-example"></a>
+<a name="table-656---set-request-example"></a>
 Table 656 - Set Request Example
 
 | Example (Hex)                                                                                                              |
 |----------------------------------------------------------------------------------------------------------------------------|
 | AA 00 81 04 01 55 D1 11 84 1F D1 11 85 01 01 87 04 02 01 01 04 89 12 CA 10 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F |
 
+<a name="table-657---set-response-example"></a>
 <a name="table-657---set-response-example"></a>
 Table 657 - Set Response Example
 
@@ -13046,6 +13674,7 @@ Table 657 - Set Response Example
 
 #### Property 1.2.1.1.5.1 MCE Mode Setting
 
+<a name="table-658---property-121151-mce-mode-setting"></a>
 <a name="table-658---property-121151-mce-mode-setting"></a>
 Table 658 - Property 1.2.1.1.5.1 MCE Mode Setting
 
@@ -13062,12 +13691,14 @@ Table 658 - Property 1.2.1.1.5.1 MCE Mode Setting
 | Default              | 0x00                                                                                                                                                                       |
 
 <a name="table-659---get-request-example"></a>
+<a name="table-659---get-request-example"></a>
 Table 659 - Get Request Example
 
 | Example (Hex)                                                                                               |
 |-------------------------------------------------------------------------------------------------------------|
 | AA 00 81 04 01 06 D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0A E2 08 E1 06 E1 04 E5 02 C1 00 |
 
+<a name="table-660---get-response-example"></a>
 <a name="table-660---get-response-example"></a>
 Table 660 - Get Response Example
 
@@ -13076,12 +13707,14 @@ Table 660 - Get Response Example
 | AA 00 81 04 82 06 D1 01 82 04 00 00 00 00 84 82 00 1B D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0B E2 09 E1 07 E1 05 E5 03 C1 01 03 |
 
 <a name="table-661---set-request-example"></a>
+<a name="table-661---set-request-example"></a>
 Table 661 - Set Request Example
 
 | Example (Hex)                                                                                                  |
 |----------------------------------------------------------------------------------------------------------------|
 | AA 00 81 04 01 06 D1 11 84 1B D1 11 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0B E2 09 E1 07 E1 05 E5 03 C1 01 03 |
 
+<a name="table-662---set-response-example"></a>
 <a name="table-662---set-response-example"></a>
 Table 662 - Set Response Example
 
@@ -13093,6 +13726,7 @@ Table 662 - Set Response Example
 
 #### Property 1.2.2.1.1.1 SSID
 
+<a name="table-663---property-122111-ssid"></a>
 <a name="table-663---property-122111-ssid"></a>
 Table 663 - Property 1.2.2.1.1.1 SSID
 
@@ -13109,12 +13743,14 @@ Table 663 - Property 1.2.2.1.1.1 SSID
 | Default              | None                                                                                                                                                            |
 
 <a name="table-664---get-request-example"></a>
+<a name="table-664---get-request-example"></a>
 Table 664 - Get Request Example
 
 | Example (Hex)                                                                 |
 |-------------------------------------------------------------------------------|
 | AA00 81040122D101 841AD101 81072B06010401F609 850101 890AE208E206E104E102C100 |
 
+<a name="table-665---get-response-example"></a>
 <a name="table-665---get-response-example"></a>
 Table 665 - Get Response Example
 
@@ -13123,12 +13759,14 @@ Table 665 - Get Response Example
 | AA00 81048222D101 820400000000 8482003AD101 81072B06010401F609 850101 892AE228E226E124E122C1204D79535349440000000000000000000000000000000000000000000000000000 |
 
 <a name="table-666---set-request-example"></a>
+<a name="table-666---set-request-example"></a>
 Table 666 - Set Request Example
 
 | Example (Hex)                                                                                                                                  |
 |------------------------------------------------------------------------------------------------------------------------------------------------|
 | AA00 81040121D111 843AD111 81072B06010401F609 850101 892AE228E226E124E122C120 4D79535349440000000000000000000000000000000000000000000000000000 |
 
+<a name="table-667---set-response-example"></a>
 <a name="table-667---set-response-example"></a>
 Table 667 - Set Response Example
 
@@ -13138,6 +13776,7 @@ Table 667 - Set Response Example
 
 #### Property 1.2.2.1.1.2 Password
 
+<a name="table-668---property-122112-password"></a>
 <a name="table-668---property-122112-password"></a>
 Table 668 - Property 1.2.2.1.1.2 Password
 
@@ -13154,12 +13793,14 @@ Table 668 - Property 1.2.2.1.1.2 Password
 | Default              | None                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
 
 <a name="table-669---get-request-example"></a>
+<a name="table-669---get-request-example"></a>
 Table 669 - Get Request Example
 
 | Example (Hex)                                                                 |
 |-------------------------------------------------------------------------------|
 | AA00 81040110D101 841AD101 81072B06010401F609 850101 890AE208E206E104E102C200 |
 
+<a name="table-670---get-response-example"></a>
 <a name="table-670---get-response-example"></a>
 Table 670 - Get Response Example
 
@@ -13168,12 +13809,14 @@ Table 670 - Get Response Example
 | AA00 8104820CD101 820400000000 84820059D101 81072B06010401F609 850101 8949E247E245E143E141C23F00000000 |
 
 <a name="table-671---set-request-example"></a>
+<a name="table-671---set-request-example"></a>
 Table 671 - Set Request Example
 
 | Example (Hex)                                                                                 |
 |-----------------------------------------------------------------------------------------------|
 | AA00 81040112D111 8459D111 81072B06010401F609 850101 8949E247E245E143E141C23F546F744031386342 |
 
+<a name="table-672---set-response-example"></a>
 <a name="table-672---set-response-example"></a>
 Table 672 - Set Response Example
 
@@ -13183,6 +13826,7 @@ Table 672 - Set Response Example
 
 #### Property 1.2.2.1.1.3 Security Mode
 
+<a name="table-673---property-122113-security-mode"></a>
 <a name="table-673---property-122113-security-mode"></a>
 Table 673 - Property 1.2.2.1.1.3 Security Mode
 
@@ -13199,12 +13843,14 @@ Table 673 - Property 1.2.2.1.1.3 Security Mode
 | Default              | None                                                                                                                                                                                    |
 
 <a name="table-674---get-request-example"></a>
+<a name="table-674---get-request-example"></a>
 Table 674 - Get Request Example
 
 | Example (Hex)                                                                 |
 |-------------------------------------------------------------------------------|
 | AA00 81040103D101 841AD101 81072B06010401F609 850101 890AE208E206E104E102C300 |
 
+<a name="table-675---get-response-example"></a>
 <a name="table-675---get-response-example"></a>
 Table 675 - Get Response Example
 
@@ -13213,12 +13859,14 @@ Table 675 - Get Response Example
 | AA00 81048203D101 820400000000 8482001BD101 81072B06010401F609 850101 890BE209E207E105E103C30100 |
 
 <a name="table-676---set-request-example"></a>
+<a name="table-676---set-request-example"></a>
 Table 676 - Set Request Example
 
 | Example (Hex)                                                                   |
 |---------------------------------------------------------------------------------|
 | AA00 81040104D111 841BD111 81072B06010401F609 850101 890BE209E207E105E103C30101 |
 
+<a name="table-677---set-response-example"></a>
 <a name="table-677---set-response-example"></a>
 Table 677 - Set Response Example
 
@@ -13228,6 +13876,7 @@ Table 677 - Set Response Example
 
 #### Property 1.2.2.1.1.4 Static IP Address
 
+<a name="table-678---property-122114-static-ip-address"></a>
 <a name="table-678---property-122114-static-ip-address"></a>
 Table 678 - Property 1.2.2.1.1.4 Static IP Address
 
@@ -13244,12 +13893,14 @@ Table 678 - Property 1.2.2.1.1.4 Static IP Address
 | Default              | None                                                                                                                                     |
 
 <a name="table-679---get-request-example"></a>
+<a name="table-679---get-request-example"></a>
 Table 679 - Get Request Example
 
 | Example (Hex)                                                                 |
 |-------------------------------------------------------------------------------|
 | AA00 81040105D101 841AD101 81072B06010401F609 850101 890AE208E206E104E102C400 |
 
+<a name="table-680---get-response-example"></a>
 <a name="table-680---get-response-example"></a>
 Table 680 - Get Response Example
 
@@ -13258,12 +13909,14 @@ Table 680 - Get Response Example
 | AA00 81048205D101 820400000000 8482001ED101 81072B06010401F609 850101 890EE20CE20AE108E106C404C0A80177 |
 
 <a name="table-681---set-request-example"></a>
+<a name="table-681---set-request-example"></a>
 Table 681 - Set Request Example
 
 | Example (Hex)                                                                         |
 |---------------------------------------------------------------------------------------|
 | AA00 81040111D111 841ED111 81072B06010401F609 850101 890EE20CE20AE108E106C404C0A8016D |
 
+<a name="table-682---set-response-example"></a>
 <a name="table-682---set-response-example"></a>
 Table 682 - Set Response Example
 
@@ -13273,6 +13926,7 @@ Table 682 - Set Response Example
 
 #### Property 1.2.2.1.1.5 Use DHCP
 
+<a name="table-683---property-122115-use-dhcp"></a>
 <a name="table-683---property-122115-use-dhcp"></a>
 Table 683 - Property 1.2.2.1.1.5 Use DHCP
 
@@ -13289,12 +13943,14 @@ Table 683 - Property 1.2.2.1.1.5 Use DHCP
 | Default              | 0001                                                                                                                                                                          |
 
 <a name="table-684---get-request-example"></a>
+<a name="table-684---get-request-example"></a>
 Table 684 - Get Request Example
 
 | Example (Hex)                                                                 |
 |-------------------------------------------------------------------------------|
 | AA00 81040117D101 841AD101 81072B06010401F609 850101 890AE208E206E104E102C500 |
 
+<a name="table-685---get-response-example"></a>
 <a name="table-685---get-response-example"></a>
 Table 685 - Get Response Example
 
@@ -13303,12 +13959,14 @@ Table 685 - Get Response Example
 | AA00 81048217D101 820400000000 8482001ED101 81072B06010401F609 850101 890EE20CE20AE108E106C50400000001 |
 
 <a name="table-686---set-request-example"></a>
+<a name="table-686---set-request-example"></a>
 Table 686 - Set Request Example
 
 | Example (Hex)                                                                         |
 |---------------------------------------------------------------------------------------|
 | AA00 81040116D111 841ED111 81072B06010401F609 850101 890EE20CE20AE108E106C50400000001 |
 
+<a name="table-687---set-response-example"></a>
 <a name="table-687---set-response-example"></a>
 Table 687 - Set Response Example
 
@@ -13318,6 +13976,7 @@ Table 687 - Set Response Example
 
 #### Property 1.2.2.1.1.6 Static IP Netmask
 
+<a name="table-688---property-122116-static-ip-netmask"></a>
 <a name="table-688---property-122116-static-ip-netmask"></a>
 Table 688 - Property 1.2.2.1.1.6 Static IP Netmask
 
@@ -13334,12 +13993,14 @@ Table 688 - Property 1.2.2.1.1.6 Static IP Netmask
 | Default              | None                                                                  |
 
 <a name="table-689---get-request-example"></a>
+<a name="table-689---get-request-example"></a>
 Table 689 - Get Request Example
 
 | Example (Hex)                                                                 |
 |-------------------------------------------------------------------------------|
 | AA00 81040118D101 841AD101 81072B06010401F609 850101 890AE208E206E104E102C600 |
 
+<a name="table-690---get-response-example"></a>
 <a name="table-690---get-response-example"></a>
 Table 690 - Get Response Example
 
@@ -13348,12 +14009,14 @@ Table 690 - Get Response Example
 | AA00 81048218D101 820400000000 8482001ED101 81072B06010401F609 850101 890EE20CE20AE108E106C604FFFFFF00 |
 
 <a name="table-691---set-request-example"></a>
+<a name="table-691---set-request-example"></a>
 Table 691 - Set Request Example
 
 | Example (Hex)                                                                         |
 |---------------------------------------------------------------------------------------|
 | AA00 81040119D111 841ED111 81072B06010401F609 850101 890EE20CE20AE108E106C604FFFFFF00 |
 
+<a name="table-692---set-response-example"></a>
 <a name="table-692---set-response-example"></a>
 Table 692 - Set Response Example
 
@@ -13363,6 +14026,7 @@ Table 692 - Set Response Example
 
 #### Property 1.2.2.1.1.7 Static IP Gateway
 
+<a name="table-693---property-122117-static-ip-gateway"></a>
 <a name="table-693---property-122117-static-ip-gateway"></a>
 Table 693 - Property 1.2.2.1.1.7 Static IP Gateway
 
@@ -13379,12 +14043,14 @@ Table 693 - Property 1.2.2.1.1.7 Static IP Gateway
 | Default              | None                                                             |
 
 <a name="table-694---get-request-example"></a>
+<a name="table-694---get-request-example"></a>
 Table 694 - Get Request Example
 
 | Example (Hex)                                                                 |
 |-------------------------------------------------------------------------------|
 | AA00 8104011AD101 841AD101 81072B06010401F609 850101 890AE208E206E104E102C700 |
 
+<a name="table-695---get-response-example"></a>
 <a name="table-695---get-response-example"></a>
 Table 695 - Get Response Example
 
@@ -13393,12 +14059,14 @@ Table 695 - Get Response Example
 | AA00 8104821BD101 820400000000 8482001ED101 81072B06010401F609 850101 890EE20CE20AE108E106C704C0A801FE |
 
 <a name="table-696---set-request-example"></a>
+<a name="table-696---set-request-example"></a>
 Table 696 - Set Request Example
 
 | Example (Hex)                                                                         |
 |---------------------------------------------------------------------------------------|
 | AA00 8104011CD111 841ED111 81072B06010401F609 850101 890EE20CE20AE108E106C704C0A801FE |
 
+<a name="table-697---set-response-example"></a>
 <a name="table-697---set-response-example"></a>
 Table 697 - Set Response Example
 
@@ -13408,6 +14076,7 @@ Table 697 - Set Response Example
 
 #### Property 1.2.2.1.1.8 Device Name
 
+<a name="table-698---property-122118-device-name"></a>
 <a name="table-698---property-122118-device-name"></a>
 Table 698 - Property 1.2.2.1.1.8 Device Name
 
@@ -13424,12 +14093,14 @@ Table 698 - Property 1.2.2.1.1.8 Device Name
 | Default              | None                                                                                                                                                                                                                                                                                                                    |
 
 <a name="table-699---get-request-example"></a>
+<a name="table-699---get-request-example"></a>
 Table 699 - Get Request Example
 
 | Example (Hex)                                                                 |
 |-------------------------------------------------------------------------------|
 | AA00 81040128D101 841AD101 81072B06010401F609 850101 890AE208E206E104E102C800 |
 
+<a name="table-700---get-response-example"></a>
 <a name="table-700---get-response-example"></a>
 Table 700 - Get Response Example
 
@@ -13438,12 +14109,14 @@ Table 700 - Get Response Example
 | AA00 81048228D101 820400000000 8482005AD101 81072B06010401F609 850101 894AE248E246E144E142C84064662D78787878787878000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 |
 
 <a name="table-701---set-request-example"></a>
+<a name="table-701---set-request-example"></a>
 Table 701 - Set Request Example
 
 | Example (Hex)                                                                                                                                                                                                  |
 |----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | AA00 81040127D111 845AD111 81072B06010401F609 850101 894AE248E246E144E142C840 64662D78787878787878000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 |
 
+<a name="table-702---set-response-example"></a>
 <a name="table-702---set-response-example"></a>
 Table 702 - Set Response Example
 
@@ -13453,6 +14126,7 @@ Table 702 - Set Response Example
 
 #### Property 1.2.2.1.1.9 Wireless Heartbeat Time
 
+<a name="table-703---property-122119-wireless-heartbeat-time"></a>
 <a name="table-703---property-122119-wireless-heartbeat-time"></a>
 Table 703 - Property 1.2.2.1.1.9 Wireless Heartbeat Time
 
@@ -13469,12 +14143,14 @@ Table 703 - Property 1.2.2.1.1.9 Wireless Heartbeat Time
 | Default              | 0x00 (disabled)                                                                                                                                                    |
 
 <a name="table-704---get-request-example"></a>
+<a name="table-704---get-request-example"></a>
 Table 704 - Get Request Example
 
 | Example (Hex)                                                                 |
 |-------------------------------------------------------------------------------|
 | AA00 8104011AD101 841AD101 81072B06010401F609 850101 890AE208E206E104E102C900 |
 
+<a name="table-705---get-response-example"></a>
 <a name="table-705---get-response-example"></a>
 Table 705 - Get Response Example
 
@@ -13483,12 +14159,14 @@ Table 705 - Get Response Example
 | AA00 8104821AD101 820400000000 8482001BD101 81072B06010401F609 850101 890BE209E207E105E103C90100 |
 
 <a name="table-706---set-request-example"></a>
+<a name="table-706---set-request-example"></a>
 Table 706 - Set Request Example
 
 | Example (Hex)                                                                   |
 |---------------------------------------------------------------------------------|
 | AA00 8104011CD111 841BD111 81072B06010401F609 850101 890BE209E207E105E103C90120 |
 
+<a name="table-707---set-response-example"></a>
 <a name="table-707---set-response-example"></a>
 Table 707 - Set Response Example
 
@@ -13498,6 +14176,7 @@ Table 707 - Set Response Example
 
 #### Property 1.2.2.1.1.A Maximum Client Connections
 
+<a name="table-708---property-12211a-maximum-client-connections"></a>
 <a name="table-708---property-12211a-maximum-client-connections"></a>
 Table 708 - Property 1.2.2.1.1.A Maximum Client Connections
 
@@ -13514,12 +14193,14 @@ Table 708 - Property 1.2.2.1.1.A Maximum Client Connections
 | Default              | 0x01                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
 
 <a name="table-709---get-request-example"></a>
+<a name="table-709---get-request-example"></a>
 Table 709 - Get Request Example
 
 | Example (Hex)                                                |
 |--------------------------------------------------------------|
 | AA00 8104 0155D101 840F D101 8501 01 8704 02020101 8902 CA00 |
 
+<a name="table-710---get-response-example"></a>
 <a name="table-710---get-response-example"></a>
 Table 710 - Get Response Example
 
@@ -13528,12 +14209,14 @@ Table 710 - Get Response Example
 | AA0081048255D10182040000000084820010D1018501018704020201018903CA0101 |
 
 <a name="table-711---set-request-example"></a>
+<a name="table-711---set-request-example"></a>
 Table 711 - Set Request Example
 
 | Example (Hex)                                                |
 |--------------------------------------------------------------|
 | AA00 81040155D111 8410 D111 850101 8704 02020101 8903 CA0101 |
 
+<a name="table-712---set-response-example"></a>
 <a name="table-712---set-response-example"></a>
 Table 712 - Set Response Example
 
@@ -13543,6 +14226,7 @@ Table 712 - Set Response Example
 
 #### Property 1.2.2.1.1.B Certificate Expiring Soon Notification Threshold
 
+<a name="table-713---property-12211b-certificate-expiring-soon-notification"></a>
 <a name="table-713---property-12211b-certificate-expiring-soon-notification"></a>
 Table 713 - Property 1.2.2.1.1.B Certificate Expiring Soon Notification
 Threshold
@@ -13560,12 +14244,14 @@ Threshold
 | Default              | 0x1E (30 days)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
 
 <a name="table-714---get-request-example"></a>
+<a name="table-714---get-request-example"></a>
 Table 714 - Get Request Example
 
 | Example (Hex)                                                |
 |--------------------------------------------------------------|
 | AA00 8104 0155D101 840F D101 8501 01 8704 02020101 8902 CB00 |
 
+<a name="table-715---get-response-example"></a>
 <a name="table-715---get-response-example"></a>
 Table 715 - Get Response Example
 
@@ -13574,12 +14260,14 @@ Table 715 - Get Response Example
 | AA0081048255D10182040000000084820010D1018501018704020201018903CB011E |
 
 <a name="table-716---set-request-example"></a>
+<a name="table-716---set-request-example"></a>
 Table 716 - Set Request Example
 
 | Example (Hex)                                                |
 |--------------------------------------------------------------|
 | AA00 81040155D111 8410 D111 850101 8704 02020101 8903 CB011E |
 
+<a name="table-717---set-response-example"></a>
 <a name="table-717---set-response-example"></a>
 Table 717 - Set Response Example
 
@@ -13589,6 +14277,7 @@ Table 717 - Set Response Example
 
 #### Property 1.2.2.1.1.C Username
 
+<a name="table-718---property-12211c-username"></a>
 <a name="table-718---property-12211c-username"></a>
 Table 718 - Property 1.2.2.1.1.C Username
 
@@ -13605,12 +14294,14 @@ Table 718 - Property 1.2.2.1.1.C Username
 | Default              | None                                                                                                                                                                                          |
 
 <a name="table-719---get-request-example"></a>
+<a name="table-719---get-request-example"></a>
 Table 719 - Get Request Example
 
 | Example (Hex)                                                                 |
 |-------------------------------------------------------------------------------|
 | AA00 8104010DD101 841AD101 81072B06010401F609 850101 890AE208E206E104E102CC00 |
 
+<a name="table-720---get-response-example"></a>
 <a name="table-720---get-response-example"></a>
 Table 720 - Get Response Example
 
@@ -13619,12 +14310,14 @@ Table 720 - Get Response Example
 | AA00 8104820DD101 820400000000 8482003AD101 81072B06010401F609 850101  892AE228E226E124E122CC 206A6F65406D616774656B2E636F6D00000000000000 0000000000000000000000 |
 
 <a name="table-721---set-request-example"></a>
+<a name="table-721---set-request-example"></a>
 Table 721 - Set Request Example
 
 | Example (Hex)                                                                                                                |
 |------------------------------------------------------------------------------------------------------------------------------|
 | AA00 8104010ED111 843AD111 81072B06010401F609 850101 892AE228E226E124E122CC 206A6F65406D616774656B2E636F6D000000000000000000 |
 
+<a name="table-722---set-response-example"></a>
 <a name="table-722---set-response-example"></a>
 Table 722 - Set Response Example
 
@@ -13634,6 +14327,7 @@ Table 722 - Set Response Example
 
 #### Property 1.2.2.1.1.D SoftAP IP Address
 
+<a name="table-723---property-12211d-softap-ip-address"></a>
 <a name="table-723---property-12211d-softap-ip-address"></a>
 Table 723 - Property 1.2.2.1.1.D SoftAP IP Address
 
@@ -13650,12 +14344,14 @@ Table 723 - Property 1.2.2.1.1.D SoftAP IP Address
 | Default              | 192.168.0.1                                                                                                                                                                                               |
 
 <a name="table-724---get-request-example"></a>
+<a name="table-724---get-request-example"></a>
 Table 724 - Get Request Example
 
 | Example (Hex)                                                                 |
 |-------------------------------------------------------------------------------|
 | AA00 81040103D101 841AD101 81072B06010401F609 850101 890AE208E206E104E102CD00 |
 
+<a name="table-725---get-response-example"></a>
 <a name="table-725---get-response-example"></a>
 Table 725 - Get Response Example
 
@@ -13664,12 +14360,14 @@ Table 725 - Get Response Example
 | AA00 81048203D101 820400000000 8482001ED101 81072B06010401F609 850101 890EE20CE20AE108E106CD0400000000 |
 
 <a name="table-726---set-request-example"></a>
+<a name="table-726---set-request-example"></a>
 Table 726 - Set Request Example
 
 | Example (Hex)                                                                         |
 |---------------------------------------------------------------------------------------|
 | AA00 81040107D111 841ED111 81072B06010401F609 850101 890EE20CE20AE108E106CD04C0A80177 |
 
+<a name="table-727---set-response-example"></a>
 <a name="table-727---set-response-example"></a>
 Table 727 - Set Response Example
 
@@ -13679,6 +14377,7 @@ Table 727 - Set Response Example
 
 #### Property 1.2.2.1.1.E Web App Enabled (MAGTEK INTERNAL ONLY FOR NOW)
 
+<a name="table-728---property-12211e-web-app-enabled-magtek-internal-only-for-now"></a>
 <a name="table-728---property-12211e-web-app-enabled-magtek-internal-only-for-now"></a>
 Table 728 - Property 1.2.2.1.1.E Web App Enabled (MAGTEK INTERNAL ONLY FOR NOW)
 
@@ -13695,12 +14394,14 @@ Table 728 - Property 1.2.2.1.1.E Web App Enabled (MAGTEK INTERNAL ONLY FOR NOW)
 | Default              | 0x00 (not enabled)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
 
 <a name="table-729---get-request-example"></a>
+<a name="table-729---get-request-example"></a>
 Table 729 - Get Request Example
 
 | Example (Hex)                                                |
 |--------------------------------------------------------------|
 | AA00 8104 0155D101 840F D101 8501 01 8704 02020101 8902 CE00 |
 
+<a name="table-730---get-response-example"></a>
 <a name="table-730---get-response-example"></a>
 Table 730 - Get Response Example
 
@@ -13709,12 +14410,14 @@ Table 730 - Get Response Example
 | AA0081048255D10182040000000084820010D1018501018704020201018903CE0101 |
 
 <a name="table-731---set-request-example"></a>
+<a name="table-731---set-request-example"></a>
 Table 731 - Set Request Example
 
 | Example (Hex)                                                |
 |--------------------------------------------------------------|
 | AA00 81040155D111 8410 D111 850101 8704 02020101 8903 CE0101 |
 
+<a name="table-732---set-response-example"></a>
 <a name="table-732---set-response-example"></a>
 Table 732 - Set Response Example
 
@@ -13724,6 +14427,7 @@ Table 732 - Set Response Example
 
 #### Property 1.2.2.1.1.F Web App Port (MAGTEK INTERNAL ONLY FOR NOW)
 
+<a name="table-733---property-12211f-web-app-port-magtek-internal-only-for-now"></a>
 <a name="table-733---property-12211f-web-app-port-magtek-internal-only-for-now"></a>
 Table 733 - Property 1.2.2.1.1.F Web App Port (MAGTEK INTERNAL ONLY FOR NOW)
 
@@ -13740,12 +14444,14 @@ Table 733 - Property 1.2.2.1.1.F Web App Port (MAGTEK INTERNAL ONLY FOR NOW)
 | Default              | 0x00 0x1A (26)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
 
 <a name="table-734---get-request-example"></a>
+<a name="table-734---get-request-example"></a>
 Table 734 - Get Request Example
 
 | Example (Hex)                                                |
 |--------------------------------------------------------------|
 | AA00 8104 0155D101 840F D101 8501 01 8704 02020101 8902 CF00 |
 
+<a name="table-735---get-response-example"></a>
 <a name="table-735---get-response-example"></a>
 Table 735 - Get Response Example
 
@@ -13754,12 +14460,14 @@ Table 735 - Get Response Example
 | AA0081048255D10182040000000084820011D1018501018704020201018904CF02001A |
 
 <a name="table-736---set-request-example"></a>
+<a name="table-736---set-request-example"></a>
 Table 736 - Set Request Example
 
 | Example (Hex)                                                 |
 |---------------------------------------------------------------|
 | AA00 81040155D111 8411 D111 850101 870402020101 8904 CF02001A |
 
+<a name="table-737---set-response-example"></a>
 <a name="table-737---set-response-example"></a>
 Table 737 - Set Response Example
 
@@ -13785,6 +14493,7 @@ INTERNAL ONLY)
 | Default              | None                                                                                                                                                                                                          |
 
 <a name="table-738---get-request-example"></a>
+<a name="table-738---get-request-example"></a>
 Table 738 - Get Request Example
 
 | Example (Hex)                                          |
@@ -13792,12 +14501,14 @@ Table 738 - Get Request Example
 | AA00 81040155D101 840FD101 850101870402020101 8902D000 |
 
 <a name="table-739---get-response-example"></a>
+<a name="table-739---get-response-example"></a>
 Table 739 - Get Response Example
 
 | Example (Hex)                                                                                                                                              |
 |------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | AA0081048255D1018204000000008482003BD101850101870402020101892ED02C0000C000000F40000000002013160562C59F77F9EAC8EEA603BCC6C7E0DCED13B640C14BF550AB8520FAF758 |
 
+<a name="table-740---set-request-example"></a>
 <a name="table-740---set-request-example"></a>
 Table 740 - Set Request Example
 
@@ -13814,6 +14525,7 @@ Table 8.375 - Set Response Example
 #### Property 1.2.2.1.1.11 WLAN Protocol
 
 <a name="table-741---property-1221211-wlan-protocol"></a>
+<a name="table-741---property-1221211-wlan-protocol"></a>
 Table 741 - Property 1.2.2.1.2.11 WLAN Protocol
 
 | Property Description |                                                                                                          |
@@ -13829,12 +14541,14 @@ Table 741 - Property 1.2.2.1.2.11 WLAN Protocol
 | Default              | 0x02                                                                                                     |
 
 <a name="table-742---get-request-example"></a>
+<a name="table-742---get-request-example"></a>
 Table 742 - Get Request Example
 
 | Example (Hex)                                              |
 |------------------------------------------------------------|
 | AA00 8104 0155D101 840F D101 850101 870402020101 8902 D100 |
 
+<a name="table-743---get-response-example"></a>
 <a name="table-743---get-response-example"></a>
 Table 743 - Get Response Example
 
@@ -13843,12 +14557,14 @@ Table 743 - Get Response Example
 | AA0081048255D10182040000000084820010D1018501018704020201018903D10102 |
 
 <a name="table-744---set-request-example"></a>
+<a name="table-744---set-request-example"></a>
 Table 744 - Set Request Example
 
 | Example (Hex)                                                |
 |--------------------------------------------------------------|
 | AA00 81040155D111 8410 D111 850101 870402020101 8903 D101 02 |
 
+<a name="table-745---set-response-example"></a>
 <a name="table-745---set-response-example"></a>
 Table 745 -Set Response Example
 
@@ -13860,6 +14576,7 @@ Add MQTT Settings:
 
 #### Property 1.2.2.1.2.1 MQTT Broker Address
 
+<a name="table-746---property-122121-mqtt-broker-address"></a>
 <a name="table-746---property-122121-mqtt-broker-address"></a>
 Table 746 - Property 1.2.2.1.2.1 MQTT Broker Address
 
@@ -13876,12 +14593,14 @@ Table 746 - Property 1.2.2.1.2.1 MQTT Broker Address
 | Default              | test.mosquitto.org                                                                                  |
 
 <a name="table-747---get-request-example"></a>
+<a name="table-747---get-request-example"></a>
 Table 747 -Get Request Example
 
 | Example (Hex)                                               |
 |-------------------------------------------------------------|
 | AA00 8104 0155D101 840F D101 850101 8704 02020102 8902 C100 |
 
+<a name="table-748---get-response-example"></a>
 <a name="table-748---get-response-example"></a>
 Table 748 -Get Response Example
 
@@ -13890,12 +14609,14 @@ Table 748 -Get Response Example
 | AA0081048255D1018204000000008482004FD1018501018704020201028942C140 746573742E6D6F7371756974746F2E6F726700000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 |
 
 <a name="table-749---set-request-example"></a>
+<a name="table-749---set-request-example"></a>
 Table 749 -Set Request Example
 
 | Example (Hex)                                                                                                                                                                                 |
 |-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | AA00 81040155D111 844F D111 850101 870402020102 8942 C140 746573742E6D6F7371756974746F2E6F 72670000000000000000000000000000 00000000000000000000000000000000 00000000000000000000000000000000 |
 
+<a name="table-750---set-response-example"></a>
 <a name="table-750---set-response-example"></a>
 Table 750 -Set Response Example
 
@@ -13905,6 +14626,7 @@ Table 750 -Set Response Example
 
 #### Property 1.2.2.1.2.2 MQTT Port
 
+<a name="table-751---property-122122-mqtt-port"></a>
 <a name="table-751---property-122122-mqtt-port"></a>
 Table 751 -Property 1.2.2.1.2.2 MQTT Port
 
@@ -13921,12 +14643,14 @@ Table 751 -Property 1.2.2.1.2.2 MQTT Port
 | Default              | 8883                                                                                                                                                        |
 
 <a name="table-752---get-request-example"></a>
+<a name="table-752---get-request-example"></a>
 Table 752 -Get Request Example
 
 | Example (Hex)                                              |
 |------------------------------------------------------------|
 | AA00 8104 0155D101 840F D101 850101 870402020102 8902 C200 |
 
+<a name="table-753---get-response-example"></a>
 <a name="table-753---get-response-example"></a>
 Table 753 -Get Response Example
 
@@ -13935,12 +14659,14 @@ Table 753 -Get Response Example
 | AA0081048255D10182040000000084820011D1018501018704020201028904C20222B3 |
 
 <a name="table-754---set-request-example"></a>
+<a name="table-754---set-request-example"></a>
 Table 754 -Set Request Example
 
 | Example (Hex)                                                  |
 |----------------------------------------------------------------|
 | AA00 81040155D111 8411 D111 850101 870402020102 8904 C202 22B3 |
 
+<a name="table-755---set-response-example"></a>
 <a name="table-755---set-response-example"></a>
 Table 755 -Set Response Example
 
@@ -13950,6 +14676,7 @@ Table 755 -Set Response Example
 
 #### Property 1.2.2.1.2.3 MQTT QoS Quality of Service
 
+<a name="table-756---property-122123-mqtt-qos-quality-of-service"></a>
 <a name="table-756---property-122123-mqtt-qos-quality-of-service"></a>
 Table 756 -Property 1.2.2.1.2.3 MQTT QoS Quality of Service
 
@@ -13966,12 +14693,14 @@ Table 756 -Property 1.2.2.1.2.3 MQTT QoS Quality of Service
 | Default              | 0x00                                                                                                                           |
 
 <a name="table-757---get-request-example"></a>
+<a name="table-757---get-request-example"></a>
 Table 757 -Get Request Example
 
 | Example (Hex)                                              |
 |------------------------------------------------------------|
 | AA00 8104 0155D101 840F D101 850101 870402020102 8902 C300 |
 
+<a name="table-758---get-response-example"></a>
 <a name="table-758---get-response-example"></a>
 Table 758 -Get Response Example
 
@@ -13980,12 +14709,14 @@ Table 758 -Get Response Example
 | AA0081048255D10182040000000084820010D1018501018704020201028903C301 00 |
 
 <a name="table-759---set-request-example"></a>
+<a name="table-759---set-request-example"></a>
 Table 759 -Set Request Example
 
 | Example (Hex)                                               |
 |-------------------------------------------------------------|
 | AA00 81040155D111 8410 D111 850101 870402020102 8903C301 00 |
 
+<a name="table-760---set-response-example"></a>
 <a name="table-760---set-response-example"></a>
 Table 760 -Set Response Example
 
@@ -13995,6 +14726,7 @@ Table 760 -Set Response Example
 
 #### Property 1.2.2.1.2.4 MQTT Subscribe Topic
 
+<a name="table-761---property-122124-mqtt-subscribe-topic"></a>
 <a name="table-761---property-122124-mqtt-subscribe-topic"></a>
 Table 761 -Property 1.2.2.1.2.4 MQTT Subscribe Topic
 
@@ -14011,12 +14743,14 @@ Table 761 -Property 1.2.2.1.2.4 MQTT Subscribe Topic
 | Default              | MagTek/Device/[DevModelName]/[DevSN]  [DevModelName] = DynaFlexIIPED, Device Model Name with no spaces.  [DevSN] = Device Serial \# |
 
 <a name="table-762---get-request-example"></a>
+<a name="table-762---get-request-example"></a>
 Table 762 -Get Request Example
 
 | Example (Hex)                                               |
 |-------------------------------------------------------------|
 | AA00 8104 0155D101 840F D101 850101 8704 02020102 8902 C400 |
 
+<a name="table-763---get-response-example"></a>
 <a name="table-763---get-response-example"></a>
 Table 763 -Get Response Example
 
@@ -14025,12 +14759,14 @@ Table 763 -Get Response Example
 | AA0081048255D1018204000000008482004FD1018501018704020201028942C440 4D616754656B2F4465766963652F44796E61466C657849495045442F423632423343360000000000000000000000000000000000000000000000000000000000 |
 
 <a name="table-764---set-request-example"></a>
+<a name="table-764---set-request-example"></a>
 Table 764 -Set Request Example
 
 | Example (Hex)                                                                                                                                                                                 |
 |-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | AA00 81040155D111 844F D111 850101 870402020102 8942 C440 4D616754656B2F4465766963652F4479 6E61466C657849495045442F42363242 33433600000000000000000000000000 00000000000000000000000000000000 |
 
+<a name="table-765---set-response-example"></a>
 <a name="table-765---set-response-example"></a>
 Table 765 - Set Response Example
 
@@ -14040,6 +14776,7 @@ Table 765 - Set Response Example
 
 #### Property 1.2.2.1.2.5 MQTT Publish Topic
 
+<a name="table-766---property-122125-mqtt-publish-topic"></a>
 <a name="table-766---property-122125-mqtt-publish-topic"></a>
 Table 766 -Property 1.2.2.1.2.5 MQTT Publish Topic
 
@@ -14056,12 +14793,14 @@ Table 766 -Property 1.2.2.1.2.5 MQTT Publish Topic
 | Default              | MagTek/Server/[DevModelName]/[DevSN]  [DevModelName] = DynaFlexIIPED, Device Model Name with no spaces.  [DevSN] = Device Serial \#                                                                   |
 
 <a name="table-767---get-request-example"></a>
+<a name="table-767---get-request-example"></a>
 Table 767 -Get Request Example
 
 | Example (Hex)                                               |
 |-------------------------------------------------------------|
 | AA00 8104 0155D101 840F D101 850101 8704 02020102 8902 C500 |
 
+<a name="table-768---get-response-example"></a>
 <a name="table-768---get-response-example"></a>
 Table 768 -Get Response Example
 
@@ -14070,12 +14809,14 @@ Table 768 -Get Response Example
 | AA0081048255D1018204000000008482004FD1018501018704020201028942C540 4D616754656B2F5365727665722F44796E61466C657849495045442F423632423343360000000000000000000000000000000000000000000000000000000000 |
 
 <a name="table-769---set-request-example"></a>
+<a name="table-769---set-request-example"></a>
 Table 769 -Set Request Example
 
 | Example (Hex)                                                                                                                                                                                 |
 |-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | AA00 81040155D111 844F D111 850101 870402020102 8942 C540 4D616754656B2F5365727665722F4479 6E61466C657849495045442F42363242 33433600000000000000000000000000 00000000000000000000000000000000 |
 
+<a name="table-770---set-response-example"></a>
 <a name="table-770---set-response-example"></a>
 Table 770 -Set Response Example
 
@@ -14085,6 +14826,7 @@ Table 770 -Set Response Example
 
 #### Property 1.2.2.1.2.6 MQTT Client ID
 
+<a name="table-771---property-122126-mqtt-client-idclient-id"></a>
 <a name="table-771---property-122126-mqtt-client-idclient-id"></a>
 Table 771 -Property 1.2.2.1.2.6 MQTT Client IDClient ID
 
@@ -14101,12 +14843,14 @@ Table 771 -Property 1.2.2.1.2.6 MQTT Client IDClient ID
 | Default              | MagTek_Device-[DevSN]  [DevSN] = Device Serial \#        |
 
 <a name="table-772---get-request-example"></a>
+<a name="table-772---get-request-example"></a>
 Table 772 -Get Request Example
 
 | Example (Hex)                                               |
 |-------------------------------------------------------------|
 | AA00 8104 0155D101 840F D101 850101 8704 02020102 8902 C600 |
 
+<a name="table-773---get-response-example"></a>
 <a name="table-773---get-response-example"></a>
 Table 773 -Get Response Example
 
@@ -14115,12 +14859,14 @@ Table 773 -Get Response Example
 | AA0081048255D1018204000000008482002FD1018501018704020201028922C620 4D616754656B5F4465766963652D423632423343360000000000000000000000 |
 
 <a name="table-774---set-request-example"></a>
+<a name="table-774---set-request-example"></a>
 Table 774 -Set Request Example
 
 | Example (Hex)                                                                                                               |
 |-----------------------------------------------------------------------------------------------------------------------------|
 | AA00 81040155D111 842F D111 850101 870402020102 8922 C620 4D616754656B5F4465766963652D4236 32423343360000000000000000000000 |
 
+<a name="table-775---set-response-example"></a>
 <a name="table-775---set-response-example"></a>
 Table 775 - Set Response Example
 
@@ -14130,6 +14876,7 @@ Table 775 - Set Response Example
 
 #### Property 1.2.2.1.2.7 MQTT Username
 
+<a name="table-776---property-122127-mqtt-usernameusername"></a>
 <a name="table-776---property-122127-mqtt-usernameusername"></a>
 Table 776 - Property 1.2.2.1.2.7 MQTT UsernameUsername
 
@@ -14146,12 +14893,14 @@ Table 776 - Property 1.2.2.1.2.7 MQTT UsernameUsername
 | Default              |                                                         |
 
 <a name="table-777---get-request-example"></a>
+<a name="table-777---get-request-example"></a>
 Table 777 - Get Request Example
 
 | Example (Hex)                                               |
 |-------------------------------------------------------------|
 | AA00 8104 0155D101 840F D101 850101 8704 02020102 8902 C700 |
 
+<a name="table-778---get-response-example"></a>
 <a name="table-778---get-response-example"></a>
 Table 778 - Get Response Example
 
@@ -14160,12 +14909,14 @@ Table 778 - Get Response Example
 | AA0081048255D1018204000000008482002FD1018501018704020201028922C720 6D616774656B5F746573746F6E6C793100000000000000000000000000000000 |
 
 <a name="table-779---set-request-example"></a>
+<a name="table-779---set-request-example"></a>
 Table 779 - Set Request Example
 
 | Example (Hex)                                                                                                               |
 |-----------------------------------------------------------------------------------------------------------------------------|
 | AA00 81040155D111 842F D111 850101 870402020102 8922 C720 6D616774656B5F746573746F6E6C7931 00000000000000000000000000000000 |
 
+<a name="table-780---set-response-example"></a>
 <a name="table-780---set-response-example"></a>
 Table 780 - Set Response Example
 
@@ -14175,6 +14926,7 @@ Table 780 - Set Response Example
 
 #### Property 1.2.2.1.2.8 MQTT Password
 
+<a name="table-781---property-122128-mqtt-passwordpassword"></a>
 <a name="table-781---property-122128-mqtt-passwordpassword"></a>
 Table 781 - Property 1.2.2.1.2.8 MQTT PasswordPassword
 
@@ -14191,12 +14943,14 @@ Table 781 - Property 1.2.2.1.2.8 MQTT PasswordPassword
 | Default              |                                                         |
 
 <a name="table-782---get-request-example"></a>
+<a name="table-782---get-request-example"></a>
 Table 782 -Get Request Example
 
 | Example (Hex)                                               |
 |-------------------------------------------------------------|
 | AA00 8104 0155D101 840F D101 850101 8704 02020102 8902 C800 |
 
+<a name="table-783---get-response-example"></a>
 <a name="table-783---get-response-example"></a>
 Table 783 - Get Response Example
 
@@ -14205,12 +14959,14 @@ Table 783 - Get Response Example
 | AA0081048255D1018204000000008482002FD1018501018704020201028922C820 656D71782D745354312100000000000000000000000000000000000000000000 |
 
 <a name="table-784---set-request-example"></a>
+<a name="table-784---set-request-example"></a>
 Table 784 - Set Request Example
 
 | Example (Hex)                                                                                                               |
 |-----------------------------------------------------------------------------------------------------------------------------|
 | AA00 81040155D111 842F D111 850101 870402020102 8922 C820 656d71782d7453543121000000000000 00000000000000000000000000000000 |
 
+<a name="table-785---set-response-example"></a>
 <a name="table-785---set-response-example"></a>
 Table 785 -Set Response Example
 
@@ -14220,6 +14976,7 @@ Table 785 -Set Response Example
 
 #### Property 1.2.2.1.2.8 MQTT Peer Common Name
 
+<a name="table-786---property-122128-mqtt-peer-common-namepeer-common-name"></a>
 <a name="table-786---property-122128-mqtt-peer-common-namepeer-common-name"></a>
 Table 786 - Property 1.2.2.1.2.8 MQTT Peer Common NamePeer Common Name
 
@@ -14236,12 +14993,14 @@ Table 786 - Property 1.2.2.1.2.8 MQTT Peer Common NamePeer Common Name
 | Default              |                                                                                                                                      |
 
 <a name="table-787---get-request-example"></a>
+<a name="table-787---get-request-example"></a>
 Table 787 - Get Request Example
 
 | Example (Hex)                                               |
 |-------------------------------------------------------------|
 | AA00 8104 0155D101 840F D101 850101 8704 02020102 8902 C900 |
 
+<a name="table-788---get-response-example"></a>
 <a name="table-788---get-response-example"></a>
 Table 788 - Get Response Example
 
@@ -14250,12 +15009,14 @@ Table 788 - Get Response Example
 | AA0081048255D1018204000000008482004FD1018501018704020201028942C940 746573742E6D6F7371756974746F2E6F726700000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 |
 
 <a name="table-789---set-request-example"></a>
+<a name="table-789---set-request-example"></a>
 Table 789 - Set Request Example
 
 | Example (Hex)                                                                                                                                                                                 |
 |-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | AA00 81040155D111 844F D111 850101 870402020102 8942 C940 746573742E6D6F7371756974746F2E6F 72670000000000000000000000000000 00000000000000000000000000000000 00000000000000000000000000000000 |
 
+<a name="table-790---set-response-example"></a>
 <a name="table-790---set-response-example"></a>
 Table 790 - Set Response Example
 
@@ -14265,6 +15026,7 @@ Table 790 - Set Response Example
 
 #### Property 1.2.2.1.2.A MQTT Keep Alive
 
+<a name="table-791---property-12212a-mqtt-keep-alive"></a>
 <a name="table-791---property-12212a-mqtt-keep-alive"></a>
 Table 791 - Property 1.2.2.1.2.A MQTT Keep Alive
 
@@ -14281,12 +15043,14 @@ Table 791 - Property 1.2.2.1.2.A MQTT Keep Alive
 | Default              | 300 seconds                                                                                                                                                                                                        |
 
 <a name="table-792---get-request-example"></a>
+<a name="table-792---get-request-example"></a>
 Table 792 - Get Request Example
 
 | Example (Hex)                                              |
 |------------------------------------------------------------|
 | AA00 8104 0155D101 840F D101 850101 870402020102 8902 CA00 |
 
+<a name="table-793---get-response-example"></a>
 <a name="table-793---get-response-example"></a>
 Table 793 - Get Response Example
 
@@ -14295,12 +15059,14 @@ Table 793 - Get Response Example
 | AA0081048255D10182040000000084820011D1018501018704020201028904CA02012C |
 
 <a name="table-794---set-request-example"></a>
+<a name="table-794---set-request-example"></a>
 Table 794 - Set Request Example
 
 | Example (Hex)                                                  |
 |----------------------------------------------------------------|
 | AA00 81040155D111 8411 D111 850101 870402020102 8904 CA02 012C |
 
+<a name="table-795---set-response-example"></a>
 <a name="table-795---set-response-example"></a>
 Table 795 - Set Response Example
 
@@ -14312,6 +15078,7 @@ Table 795 - Set Response Example
 
 #### Property 1.2.2.2.1.1 Reduce Power During USB Suspend
 
+<a name="table-796---property-122211-reduce-power-during-usb-suspend"></a>
 <a name="table-796---property-122211-reduce-power-during-usb-suspend"></a>
 Table 796 - Property 1.2.2.2.1.1 Reduce Power During USB Suspend
 
@@ -14328,12 +15095,14 @@ Table 796 - Property 1.2.2.2.1.1 Reduce Power During USB Suspend
 | Default              | 0x01                                                                                                                                                                                                                                                                                                                                                                                                                    |
 
 <a name="table-797---get-request-example"></a>
+<a name="table-797---get-request-example"></a>
 Table 797 - Get Request Example
 
 | Example (Hex)                                                |
 |--------------------------------------------------------------|
 | AA00 8104 0155D101 840F D101 8501 01 8704 02020201 8902 C100 |
 
+<a name="table-798---get-response-example"></a>
 <a name="table-798---get-response-example"></a>
 Table 798 - Get Response Example
 
@@ -14342,12 +15111,14 @@ Table 798 - Get Response Example
 | AA0081048255D10182040000000084820010D1018501018704020202018903C10101 |
 
 <a name="table-799---set-request-example"></a>
+<a name="table-799---set-request-example"></a>
 Table 799 - Set Request Example
 
 | Example (Hex)                                                |
 |--------------------------------------------------------------|
 | AA00 81040155D111 8410 D111 850101 8704 02020201 8903 C10101 |
 
+<a name="table-800---set-response-example"></a>
 <a name="table-800---set-response-example"></a>
 Table 800 - Set Response Example
 
@@ -14357,6 +15128,7 @@ Table 800 - Set Response Example
 
 #### Property 1.2.2.2.1.2 USB Configuration Type
 
+<a name="table-801---property-122212-usb-configuration-type"></a>
 <a name="table-801---property-122212-usb-configuration-type"></a>
 Table 801 - Property 1.2.2.2.1.2 USB Configuration Type
 
@@ -14373,12 +15145,14 @@ Table 801 - Property 1.2.2.2.1.2 USB Configuration Type
 | Default              | 0x02                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
 
 <a name="table-802---get-request-example"></a>
+<a name="table-802---get-request-example"></a>
 Table 802 - Get Request Example
 
 | Example (Hex)                                                |
 |--------------------------------------------------------------|
 | AA00 8104 0155D101 840F D101 8501 01 8704 02020201 8902 C200 |
 
+<a name="table-803---get-response-example-hid-only"></a>
 <a name="table-803---get-response-example-hid-only"></a>
 Table 803 - Get Response Example (HID only)
 
@@ -14387,12 +15161,14 @@ Table 803 - Get Response Example (HID only)
 | AA0081048255D10182040000000084820010D1018501018704020202018903C20100 |
 
 <a name="table-804---set-request-example-hid-only"></a>
+<a name="table-804---set-request-example-hid-only"></a>
 Table 804 - Set Request Example (HID only)
 
 | Example (Hex)                                                |
 |--------------------------------------------------------------|
 | AA00 81040155D111 8410 D111 850101 8704 02020201 8903 C20100 |
 
+<a name="table-805---set-response-example-hid-only"></a>
 <a name="table-805---set-response-example-hid-only"></a>
 Table 805 - Set Response Example (HID only)
 
@@ -14401,12 +15177,14 @@ Table 805 - Set Response Example (HID only)
 | AA0081048255D11182040000000084820010D1118501018704020202018903C20100 |
 
 <a name="table-806---set-request-example-iap2-only"></a>
+<a name="table-806---set-request-example-iap2-only"></a>
 Table 806 - Set Request Example (iAP2 only)
 
 | Example (Hex)                                                |
 |--------------------------------------------------------------|
 | AA00 81040155D111 8410 D111 850101 8704 02020201 8903 C20101 |
 
+<a name="table-807---set-response-example-iap2-only"></a>
 <a name="table-807---set-response-example-iap2-only"></a>
 Table 807 - Set Response Example (iAP2 only)
 
@@ -14415,12 +15193,14 @@ Table 807 - Set Response Example (iAP2 only)
 | AA0081048255D11182040000000084820010D1118501018704020202018903C20101 |
 
 <a name="table-808---set-request-example-autodetect-iap2-with-hid-fallback"></a>
+<a name="table-808---set-request-example-autodetect-iap2-with-hid-fallback"></a>
 Table 808 - Set Request Example (autodetect (iAP2 with HID fallback))
 
 | Example (Hex)                                                |
 |--------------------------------------------------------------|
 | AA00 81040155D111 8410 D111 850101 8704 02020201 8903 C20102 |
 
+<a name="table-809---set-response-example-autodetect-iap2-with-hid-fallback"></a>
 <a name="table-809---set-response-example-autodetect-iap2-with-hid-fallback"></a>
 Table 809 - Set Response Example (autodetect (iAP2 with HID fallback))
 
@@ -14432,6 +15212,7 @@ Table 809 - Set Response Example (autodetect (iAP2 with HID fallback))
 
 #### Property 1.2.2.3.1.1 Bluetooth® LE Device Name
 
+<a name="table-810---property-122311-bluetooth-le-device-name"></a>
 <a name="table-810---property-122311-bluetooth-le-device-name"></a>
 Table 810 - Property 1.2.2.3.1.1 Bluetooth® LE Device Name
 
@@ -14448,12 +15229,14 @@ Table 810 - Property 1.2.2.3.1.1 Bluetooth® LE Device Name
 | Default              | A prefix, such as “DF II Go-“ for DynaFlex II Go, followed by the device’s serial number. For example, “DF II Go-B603226”.  Devices are always deployed with the serial number loaded, but prior to loading the serial number at MagTek, the prefix will be followed by the second to last and the last least significant bytes of the Bluetooth® device address converted to ASCII hex. For example, “DF II Go-97C2”.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
 
 <a name="table-811---get-request-example"></a>
+<a name="table-811---get-request-example"></a>
 Table 811 - Get Request Example
 
 | Example (Hex)                                                                 |
 |-------------------------------------------------------------------------------|
 | AA00 81040128D101 841AD101 81072B06010401F609 850101 890AE208E206E304E102C100 |
 
+<a name="table-812---get-response-example"></a>
 <a name="table-812---get-response-example"></a>
 Table 812 - Get Response Example
 
@@ -14462,12 +15245,14 @@ Table 812 - Get Response Example
 | AA008104825CD10182040000000084820020D10181072B06010401F6098501028910E10EE20CE70AE208C106943469B297A5 |
 
 <a name="table-813---set-request-example"></a>
+<a name="table-813---set-request-example"></a>
 Table 813 - Set Request Example
 
 | Example (Hex)                                                                                                    |
 |------------------------------------------------------------------------------------------------------------------|
 | AA0081040112D111842ED11181072B06010401F609850101891EE21CE21AE318E116C11444594E41464C4558000000000000000000000000 |
 
+<a name="table-814---set-response-example"></a>
 <a name="table-814---set-response-example"></a>
 Table 814 - Set Response Example
 
@@ -14477,6 +15262,7 @@ Table 814 - Set Response Example
 
 #### Property 1.2.2.3.1.2 Bluetooth® LE Desired Minimum Connection Interval
 
+<a name="table-815---property-122312-bluetooth-le-desired-minimum-connection"></a>
 <a name="table-815---property-122312-bluetooth-le-desired-minimum-connection"></a>
 Table 815 - Property 1.2.2.3.1.2 Bluetooth® LE Desired Minimum Connection
 Interval
@@ -14494,12 +15280,14 @@ Interval
 | Default              | 0x00 0x0C (15.0 milliseconds)                                                                                                                                                                                                                                                                                                                                                                               |
 
 <a name="table-816---get-request-example"></a>
+<a name="table-816---get-request-example"></a>
 Table 816 - Get Request Example
 
 | Example (Hex)                                                                 |
 |-------------------------------------------------------------------------------|
 | AA00 81040128D101 841AD101 81072B06010401F609 850101 890AE208E206E304E102C200 |
 
+<a name="table-817---get-response-example"></a>
 <a name="table-817---get-response-example"></a>
 Table 817 - Get Response Example
 
@@ -14508,12 +15296,14 @@ Table 817 - Get Response Example
 | AA0081048232D1018204000000008482001CD10181072B06010401F609850101890CE20AE208E306E104C202000C |
 
 <a name="table-818---set-request-example"></a>
+<a name="table-818---set-request-example"></a>
 Table 818 - Set Request Example
 
 | Example (Hex)                                                                |
 |------------------------------------------------------------------------------|
 | AA0081040112D111841CD11181072B06010401F609850101890CE20AE208E306E104C2020010 |
 
+<a name="table-819---set-response-example"></a>
 <a name="table-819---set-response-example"></a>
 Table 819 - Set Response Example
 
@@ -14523,6 +15313,7 @@ Table 819 - Set Response Example
 
 #### Property 1.2.2.3.1.3 Bluetooth® LE Desired Maximum Connection Interval
 
+<a name="table-820---property-122313-bluetooth-le-desired-maximum-connection"></a>
 <a name="table-820---property-122313-bluetooth-le-desired-maximum-connection"></a>
 Table 820 - Property 1.2.2.3.1.3 Bluetooth® LE Desired Maximum Connection
 Interval
@@ -14540,12 +15331,14 @@ Interval
 | Default              | 0x00 0x00C (15.0 milliseconds)                                                                                                                                                                                                                                                                                                                                                                                   |
 
 <a name="table-821---get-request-example"></a>
+<a name="table-821---get-request-example"></a>
 Table 821 - Get Request Example
 
 | Example (Hex)                                                                 |
 |-------------------------------------------------------------------------------|
 | AA00 81040128D101 841AD101 81072B06010401F609 850101 890AE208E206E304E102C300 |
 
+<a name="table-822---get-response-example"></a>
 <a name="table-822---get-response-example"></a>
 Table 822 - Get Response Example
 
@@ -14554,12 +15347,14 @@ Table 822 - Get Response Example
 | AA0081048232D1018204000000008482001CD10181072B06010401F609850101890CE20AE208E306E104C302000C |
 
 <a name="table-823---set-request-example"></a>
+<a name="table-823---set-request-example"></a>
 Table 823 - Set Request Example
 
 | Example (Hex)                                                                |
 |------------------------------------------------------------------------------|
 | AA0081040112D111841CD11181072B06010401F609850101890CE20AE208E306E104C3020010 |
 
+<a name="table-824---set-response-example"></a>
 <a name="table-824---set-response-example"></a>
 Table 824 - Set Response Example
 
@@ -14569,6 +15364,7 @@ Table 824 - Set Response Example
 
 #### Property 1.2.2.3.1.4 Bluetooth® LE Desired Slave Latency
 
+<a name="table-825---property-122314-bluetooth-le-desired-slave-latency"></a>
 <a name="table-825---property-122314-bluetooth-le-desired-slave-latency"></a>
 Table 825 - Property 1.2.2.3.1.4 Bluetooth® LE Desired Slave Latency
 
@@ -14585,12 +15381,14 @@ Table 825 - Property 1.2.2.3.1.4 Bluetooth® LE Desired Slave Latency
 | Default              | 0x00 0x00                                                                                                                                                                                                                                                                                                                                                                      |
 
 <a name="table-826---get-request-example"></a>
+<a name="table-826---get-request-example"></a>
 Table 826 - Get Request Example
 
 | Example (Hex)                                                                 |
 |-------------------------------------------------------------------------------|
 | AA00 81040128D101 841AD101 81072B06010401F609 850101 890AE208E206E304E102C400 |
 
+<a name="table-827---get-response-example"></a>
 <a name="table-827---get-response-example"></a>
 Table 827 - Get Response Example
 
@@ -14599,12 +15397,14 @@ Table 827 - Get Response Example
 | AA0081048232D1018204000000008482001CD10181072B06010401F609850101890CE20AE208E306E104C4020004 |
 
 <a name="table-828---set-request-example"></a>
+<a name="table-828---set-request-example"></a>
 Table 828 - Set Request Example
 
 | Example (Hex)                                                                |
 |------------------------------------------------------------------------------|
 | AA0081040112D111841CD11181072B06010401F609850101890CE20AE208E306E104C4020004 |
 
+<a name="table-829---set-response-example"></a>
 <a name="table-829---set-response-example"></a>
 Table 829 - Set Response Example
 
@@ -14614,6 +15414,7 @@ Table 829 - Set Response Example
 
 #### Property 1.2.2.3.1.5 Bluetooth® LE Desired Supervision Timeout
 
+<a name="table-830---property-122315-bluetooth-le-desired-supervision-timeout"></a>
 <a name="table-830---property-122315-bluetooth-le-desired-supervision-timeout"></a>
 Table 830 - Property 1.2.2.3.1.5 Bluetooth® LE Desired Supervision Timeout
 
@@ -14630,12 +15431,14 @@ Table 830 - Property 1.2.2.3.1.5 Bluetooth® LE Desired Supervision Timeout
 | Default              | 0x01 0xF4 (5000 milliseconds)                                                                                                                                                                                                                                                                                                                                                                                                |
 
 <a name="table-831---get-request-example"></a>
+<a name="table-831---get-request-example"></a>
 Table 831 - Get Request Example
 
 | Example (Hex)                                                                 |
 |-------------------------------------------------------------------------------|
 | AA00 81040128D101 841AD101 81072B06010401F609 850101 890AE208E206E304E102C500 |
 
+<a name="table-832---get-response-example"></a>
 <a name="table-832---get-response-example"></a>
 Table 832 - Get Response Example
 
@@ -14644,12 +15447,14 @@ Table 832 - Get Response Example
 | AA0081048232D1018204000000008482001CD10181072B06010401F609850101890CE20AE208E306E104C50201F4 |
 
 <a name="table-833---set-request-example"></a>
+<a name="table-833---set-request-example"></a>
 Table 833 - Set Request Example
 
 | Example (Hex)                                                                |
 |------------------------------------------------------------------------------|
 | AA0081040112D111841CD11181072B06010401F609850101890CE20AE208E306E104C50201F4 |
 
+<a name="table-834---set-response-example"></a>
 <a name="table-834---set-response-example"></a>
 Table 834 - Set Response Example
 
@@ -14659,6 +15464,7 @@ Table 834 - Set Response Example
 
 #### Property 1.2.2.3.1.6 Bluetooth® LE Connection Parameter Update Request Control
 
+<a name="table-835---property-122316-bluetooth-le-connection-parameter-update"></a>
 <a name="table-835---property-122316-bluetooth-le-connection-parameter-update"></a>
 Table 835 - Property 1.2.2.3.1.6 Bluetooth® LE Connection Parameter Update
 Request Control
@@ -14676,12 +15482,14 @@ Request Control
 | Default              | 0x01 (Enabled)                                                                                                                                                                                                                                                                                                                                    |
 
 <a name="table-836---get-request-example"></a>
+<a name="table-836---get-request-example"></a>
 Table 836 - Get Request Example
 
 | Example (Hex)                                                                 |
 |-------------------------------------------------------------------------------|
 | AA00 81040128D101 841AD101 81072B06010401F609 850101 890AE208E206E304E102C600 |
 
+<a name="table-837---get-response-example"></a>
 <a name="table-837---get-response-example"></a>
 Table 837 - Get Response Example
 
@@ -14690,12 +15498,14 @@ Table 837 - Get Response Example
 | AA0081048232D1018204000000008482001BD10181072B06010401F609850101890BE209E207E305E103C60100 |
 
 <a name="table-838---set-request-example"></a>
+<a name="table-838---set-request-example"></a>
 Table 838 - Set Request Example
 
 | Example (Hex)                                                              |
 |----------------------------------------------------------------------------|
 | AA0081040112D111841BD11181072B06010401F609850101890BE209E207E305E103C60100 |
 
+<a name="table-839---set-response-example"></a>
 <a name="table-839---set-response-example"></a>
 Table 839 - Set Response Example
 
@@ -14705,6 +15515,7 @@ Table 839 - Set Response Example
 
 #### Property 1.2.2.3.1.7 Bluetooth® LE Minimum Advertising Interval
 
+<a name="table-840---property-122317-bluetooth-le-minimum-advertising-interval"></a>
 <a name="table-840---property-122317-bluetooth-le-minimum-advertising-interval"></a>
 Table 840 - Property 1.2.2.3.1.7 Bluetooth® LE Minimum Advertising Interval
 
@@ -14721,12 +15532,14 @@ Table 840 - Property 1.2.2.3.1.7 Bluetooth® LE Minimum Advertising Interval
 | Default              | 0x00 0xA0 = 160 (100 milliseconds)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
 
 <a name="table-841---get-request-example"></a>
+<a name="table-841---get-request-example"></a>
 Table 841 - Get Request Example
 
 | Example (Hex)                                                                 |
 |-------------------------------------------------------------------------------|
 | AA00 81040128D101 841AD101 81072B06010401F609 850101 890AE208E206E304E102C700 |
 
+<a name="table-842---get-response-example"></a>
 <a name="table-842---get-response-example"></a>
 Table 842 - Get Response Example
 
@@ -14735,12 +15548,14 @@ Table 842 - Get Response Example
 | AA0081048232D1018204000000008482001CD10181072B06010401F609850101890CE20AE208E306E104C70200A0 |
 
 <a name="table-843---set-request-example"></a>
+<a name="table-843---set-request-example"></a>
 Table 843 - Set Request Example
 
 | Example (Hex)                                                                |
 |------------------------------------------------------------------------------|
 | AA0081040112D111841CD11181072B06010401F609850101890CE20AE208E306E104C70200B0 |
 
+<a name="table-844---set-response-example"></a>
 <a name="table-844---set-response-example"></a>
 Table 844 - Set Response Example
 
@@ -14750,6 +15565,7 @@ Table 844 - Set Response Example
 
 #### Property 1.2.2.3.1.8 Bluetooth® LE Maximum Advertising Interval
 
+<a name="table-845---property-122318-bluetooth-le-maximum-advertising-interval"></a>
 <a name="table-845---property-122318-bluetooth-le-maximum-advertising-interval"></a>
 Table 845 - Property 1.2.2.3.1.8 Bluetooth® LE Maximum Advertising Interval
 
@@ -14766,12 +15582,14 @@ Table 845 - Property 1.2.2.3.1.8 Bluetooth® LE Maximum Advertising Interval
 | Default              | 0x00 0xA0 = 160 (100 milliseconds)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
 
 <a name="table-846---get-request-example"></a>
+<a name="table-846---get-request-example"></a>
 Table 846 - Get Request Example
 
 | Example (Hex)                                                                 |
 |-------------------------------------------------------------------------------|
 | AA00 81040128D101 841AD101 81072B06010401F609 850101 890AE208E206E304E102C800 |
 
+<a name="table-847---get-response-example"></a>
 <a name="table-847---get-response-example"></a>
 Table 847 - Get Response Example
 
@@ -14780,12 +15598,14 @@ Table 847 - Get Response Example
 | AA0081048232D1018204000000008482001CD10181072B06010401F609850101890CE20AE208E306E104C80200A0 |
 
 <a name="table-848---set-request-example"></a>
+<a name="table-848---set-request-example"></a>
 Table 848 - Set Request Example
 
 | Example (Hex)                                                                |
 |------------------------------------------------------------------------------|
 | AA0081040112D111841CD11181072B06010401F609850101890CE20AE208E306E104C80200B0 |
 
+<a name="table-849---set-response-example"></a>
 <a name="table-849---set-response-example"></a>
 Table 849 - Set Response Example
 
@@ -14795,6 +15615,7 @@ Table 849 - Set Response Example
 
 #### Property 1.2.2.3.1.9 Bluetooth® LE Passkey
 
+<a name="table-850---property-122319-bluetooth-le-passkey"></a>
 <a name="table-850---property-122319-bluetooth-le-passkey"></a>
 Table 850 - Property 1.2.2.3.1.9 Bluetooth® LE Passkey
 
@@ -14811,12 +15632,14 @@ Table 850 - Property 1.2.2.3.1.9 Bluetooth® LE Passkey
 | Default              | '000000'                                                                                                                                                                                                                                                                                                                                                                                            |
 
 <a name="table-851---get-request-example"></a>
+<a name="table-851---get-request-example"></a>
 Table 851 - Get Request Example
 
 | Example (Hex)                                                                 |
 |-------------------------------------------------------------------------------|
 | AA00 81040128D101 841AD101 81072B06010401F609 850101 890AE208E206E304E102C900 |
 
+<a name="table-852---get-response-example"></a>
 <a name="table-852---get-response-example"></a>
 Table 852 - Get Response Example
 
@@ -14825,12 +15648,14 @@ Table 852 - Get Response Example
 | AA0081048232D1018204000000008482001AD10181072B06010401F609850101890AE208E206E304E102C900 |
 
 <a name="table-853---set-request-example"></a>
+<a name="table-853---set-request-example"></a>
 Table 853 - Set Request Example
 
 | Example (Hex)                                                                        |
 |--------------------------------------------------------------------------------------|
 | AA0081040112D1118420D11181072B06010401F6098501018910E20EE20CE30AE108C906303132333435 |
 
+<a name="table-854---set-response-example"></a>
 <a name="table-854---set-response-example"></a>
 Table 854 - Set Response Example
 
@@ -14840,6 +15665,7 @@ Table 854 - Set Response Example
 
 #### Property 1.2.2.3.1.A Bluetooth® LE Never Advertise
 
+<a name="table-855---property-12231a-bluetooth-le-never-advertise"></a>
 <a name="table-855---property-12231a-bluetooth-le-never-advertise"></a>
 Table 855 - Property 1.2.2.3.1.A Bluetooth® LE Never Advertise
 
@@ -14856,12 +15682,14 @@ Table 855 - Property 1.2.2.3.1.A Bluetooth® LE Never Advertise
 | Default              | 0x00 (Disabled)                                                                                                                                                                                                                                                                                                                                                        |
 
 <a name="table-856---get-request-example"></a>
+<a name="table-856---get-request-example"></a>
 Table 856 - Get Request Example
 
 | Example (Hex)                                                                 |
 |-------------------------------------------------------------------------------|
 | AA00 81040128D101 841AD101 81072B06010401F609 850101 890AE208E206E304E102CA00 |
 
+<a name="table-857---get-response-example"></a>
 <a name="table-857---get-response-example"></a>
 Table 857 - Get Response Example
 
@@ -14870,12 +15698,14 @@ Table 857 - Get Response Example
 | AA0081048232D1018204000000008482001BD10181072B06010401F609850101890BE209E207E305E103CA0100 |
 
 <a name="table-858---set-request-example"></a>
+<a name="table-858---set-request-example"></a>
 Table 858 - Set Request Example
 
 | Example (Hex)                                                              |
 |----------------------------------------------------------------------------|
 | AA0081040112D111841BD11181072B06010401F609850101890BE209E207E305E103CA0100 |
 
+<a name="table-859---set-response-example"></a>
 <a name="table-859---set-response-example"></a>
 Table 859 - Set Response Example
 
@@ -14885,6 +15715,7 @@ Table 859 - Set Response Example
 
 #### Property 1.2.2.3.1.B Bluetooth® LE FCC Test Control (MAGTEK INTERNAL ONLY)
 
+<a name="table-860---property-12231b-bluetooth-le-fcc-test-control-magtek-internal"></a>
 <a name="table-860---property-12231b-bluetooth-le-fcc-test-control-magtek-internal"></a>
 Table 860 - Property 1.2.2.3.1.B Bluetooth® LE FCC Test Control (MAGTEK INTERNAL
 ONLY)
@@ -14902,12 +15733,14 @@ ONLY)
 | Default              | 0xFF (FCC test disabled)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
 
 <a name="table-861---get-request-example"></a>
+<a name="table-861---get-request-example"></a>
 Table 861 - Get Request Example
 
 | Example (Hex)                                                |
 |--------------------------------------------------------------|
 | AA00 8104 0155D101 840F D101 8501 01 8704 02020301 8902 CB00 |
 
+<a name="table-862---get-response-example"></a>
 <a name="table-862---get-response-example"></a>
 Table 862 - Get Response Example
 
@@ -14916,12 +15749,14 @@ Table 862 - Get Response Example
 | AA0081048255D10182040000000084820010D1018501018704020203018903CB01FF |
 
 <a name="table-863---set-request-example"></a>
+<a name="table-863---set-request-example"></a>
 Table 863 - Set Request Example
 
 | Example (Hex)                                               |
 |-------------------------------------------------------------|
 | AA00 81040155D111 8410 D111 850101 870402020301 8903 CB01FF |
 
+<a name="table-864---set-response-example"></a>
 <a name="table-864---set-response-example"></a>
 Table 864 - Set Response Example
 
@@ -14931,6 +15766,7 @@ Table 864 - Set Response Example
 
 #### Property 1.2.2.3.1.C Bluetooth® LE Sleep Enabled
 
+<a name="table-865---property-12231c-bluetooth-le-sleep-enabled"></a>
 <a name="table-865---property-12231c-bluetooth-le-sleep-enabled"></a>
 Table 865 - Property 1.2.2.3.1.C Bluetooth® LE Sleep Enabled
 
@@ -14947,12 +15783,14 @@ Table 865 - Property 1.2.2.3.1.C Bluetooth® LE Sleep Enabled
 | Default              | 0x01 (Bluetooth® LE Sleep enabled)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
 
 <a name="table-866---get-request-example"></a>
+<a name="table-866---get-request-example"></a>
 Table 866 - Get Request Example
 
 | Example (Hex)                                                |
 |--------------------------------------------------------------|
 | AA00 8104 0155D101 840F D101 8501 01 8704 02020301 8902 CC00 |
 
+<a name="table-867---get-response-example"></a>
 <a name="table-867---get-response-example"></a>
 Table 867 - Get Response Example
 
@@ -14961,12 +15799,14 @@ Table 867 - Get Response Example
 | AA0081048255D10182040000000084820010D1018501018704020203018903CC0100 |
 
 <a name="table-868---set-request-example"></a>
+<a name="table-868---set-request-example"></a>
 Table 868 - Set Request Example
 
 | Example (Hex)                                               |
 |-------------------------------------------------------------|
 | AA00 81040155D111 8410 D111 850101 870402020301 8903 CC0100 |
 
+<a name="table-869---set-response-example"></a>
 <a name="table-869---set-response-example"></a>
 Table 869 - Set Response Example
 
@@ -14976,6 +15816,7 @@ Table 869 - Set Response Example
 
 #### Property 1.2.2.3.1.D Bluetooth® LE Debug Mode Enabled
 
+<a name="table-870---property-12231d-bluetooth-le-debug-mode-enabled"></a>
 <a name="table-870---property-12231d-bluetooth-le-debug-mode-enabled"></a>
 Table 870 - Property 1.2.2.3.1.D Bluetooth® LE Debug Mode Enabled
 
@@ -14992,12 +15833,14 @@ Table 870 - Property 1.2.2.3.1.D Bluetooth® LE Debug Mode Enabled
 | Default              | 0x00 (Bluetooth® LE Debug Mode disabled)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
 
 <a name="table-871---get-request-example"></a>
+<a name="table-871---get-request-example"></a>
 Table 871 - Get Request Example
 
 | Example (Hex)                                                |
 |--------------------------------------------------------------|
 | AA00 8104 0155D101 840F D101 8501 01 8704 02020301 8902 CD00 |
 
+<a name="table-872---get-response-example"></a>
 <a name="table-872---get-response-example"></a>
 Table 872 - Get Response Example
 
@@ -15006,12 +15849,14 @@ Table 872 - Get Response Example
 | AA0081048255D10182040000000084820010D1018501018704020203018903CD0100 |
 
 <a name="table-873---set-request-example"></a>
+<a name="table-873---set-request-example"></a>
 Table 873 - Set Request Example
 
 | Example (Hex)                                               |
 |-------------------------------------------------------------|
 | AA00 81040155D111 8410 D111 850101 870402020301 8903 CD0100 |
 
+<a name="table-874---set-response-example"></a>
 <a name="table-874---set-response-example"></a>
 Table 874 - Set Response Example
 
@@ -15023,6 +15868,7 @@ Table 874 - Set Response Example
 
 #### Property 1.2.3.1.1.1 Custom Idle Page Image (Display Only)
 
+<a name="table-875---property-123111-custom-idle-page-image-display-only"></a>
 <a name="table-875---property-123111-custom-idle-page-image-display-only"></a>
 Table 875- Property 1.2.3.1.1.1 Custom Idle Page Image (Display Only)
 
@@ -15039,12 +15885,14 @@ Table 875- Property 1.2.3.1.1.1 Custom Idle Page Image (Display Only)
 | Default              | 0x00                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
 
 <a name="table-876---get-request-example"></a>
+<a name="table-876---get-request-example"></a>
 Table 876 - Get Request Example
 
 | Example (Hex)                                                                                               |
 |-------------------------------------------------------------------------------------------------------------|
 | AA 00 81 04 01 5E D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0A E2 08 E3 06 E1 04 E1 02 C1 00 |
 
+<a name="table-877---get-response-example"></a>
 <a name="table-877---get-response-example"></a>
 Table 877 - Get Response Example
 
@@ -15053,12 +15901,14 @@ Table 877 - Get Response Example
 | AA 00 81 04 82 5E D1 01 82 04 00 00 00 00 84 82 00 1B D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0B E2 09 E3 07 E1 05 E1 03 C1 01 03 |
 
 <a name="table-878---set-request-example"></a>
+<a name="table-878---set-request-example"></a>
 Table 878 - Set Request Example
 
 | Example (Hex)                                                                                                  |
 |----------------------------------------------------------------------------------------------------------------|
 | AA 00 81 04 01 5D D1 11 84 1B D1 11 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0B E2 09 E3 07 E1 05 E1 03 C1 01 03 |
 
+<a name="table-879---set-response-example"></a>
 <a name="table-879---set-response-example"></a>
 Table 879 - Set Response Example
 
@@ -15068,6 +15918,7 @@ Table 879 - Set Response Example
 
 #### Property 1.2.3.1.1.2 Custom Idle Page Image Device Locked (Display Only)
 
+<a name="table-880---property-123112-custom-idle-page-image-device-locked-display"></a>
 <a name="table-880---property-123112-custom-idle-page-image-device-locked-display"></a>
 Table 880- Property 1.2.3.1.1.2 Custom Idle Page Image Device Locked (Display
 Only)
@@ -15085,12 +15936,14 @@ Only)
 | Default              | 0x00                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
 
 <a name="table-881---get-request-example"></a>
+<a name="table-881---get-request-example"></a>
 Table 881 - Get Request Example
 
 | Example (Hex)                                                |
 |--------------------------------------------------------------|
 | AA00 8104 0155D101 840F D101 8501 01 8704 02030101 8902 C200 |
 
+<a name="table-882---get-response-example"></a>
 <a name="table-882---get-response-example"></a>
 Table 882 - Get Response Example
 
@@ -15099,12 +15952,14 @@ Table 882 - Get Response Example
 | AA00 81 04 8255D101 82 04 00000000 84 820010 D101 85 01 01 87 04 02030101 89 03 C2 01 00 |
 
 <a name="table-883---set-request-example"></a>
+<a name="table-883---set-request-example"></a>
 Table 883 - Set Request Example
 
 | Example (Hex)                                                  |
 |----------------------------------------------------------------|
 | AA00 81040155D111 8410 D111 8501 01 8704 02030101 8903 C201 00 |
 
+<a name="table-884---set-response-example"></a>
 <a name="table-884---set-response-example"></a>
 Table 884 - Set Response Example
 
@@ -15114,6 +15969,7 @@ Table 884 - Set Response Example
 
 #### Property 1.2.3.1.2.1 Display Orientation (Display Only)
 
+<a name="table-885---property-123121-display-orientation-display-only"></a>
 <a name="table-885---property-123121-display-orientation-display-only"></a>
 Table 885- Property 1.2.3.1.2.1 Display Orientation (Display Only)
 
@@ -15130,12 +15986,14 @@ Table 885- Property 1.2.3.1.2.1 Display Orientation (Display Only)
 | Default              | 0x00                                                                                                                                                                                                                                                                                                                                                                                                                                  |
 
 <a name="table-886---get-request-example"></a>
+<a name="table-886---get-request-example"></a>
 Table 886 - Get Request Example
 
 | Example (Hex)                                                                                               |
 |-------------------------------------------------------------------------------------------------------------|
 | AA 00 81 04 01 5E D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0A E2 08 E3 06 E1 04 E2 02 C1 00 |
 
+<a name="table-887---get-response-example"></a>
 <a name="table-887---get-response-example"></a>
 Table 887 - Get Response Example
 
@@ -15144,12 +16002,14 @@ Table 887 - Get Response Example
 | AA 00 81 04 82 5E D1 01 82 04 00 00 00 00 84 82 00 1B D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0B E2 09 E3 07 E1 05 E2 03 C1 01 00 |
 
 <a name="table-888---set-request-example"></a>
+<a name="table-888---set-request-example"></a>
 Table 888 - Set Request Example
 
 | Example (Hex)                                                                                                  |
 |----------------------------------------------------------------------------------------------------------------|
 | AA 00 81 04 01 5D D1 11 84 1B D1 11 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0B E2 09 E3 07 E1 05 E2 03 C1 01 01 |
 
+<a name="table-889---set-response-example"></a>
 <a name="table-889---set-response-example"></a>
 Table 889 - Set Response Example
 
@@ -15159,6 +16019,7 @@ Table 889 - Set Response Example
 
 #### Property 1.2.3.1.3.1 Enable Card Logos Page at Startup
 
+<a name="table-890---property-123131-enable-card-logos-page-at-startup"></a>
 <a name="table-890---property-123131-enable-card-logos-page-at-startup"></a>
 Table 890- Property 1.2.3.1.3.1 Enable Card Logos Page at Startup
 
@@ -15175,12 +16036,14 @@ Table 890- Property 1.2.3.1.3.1 Enable Card Logos Page at Startup
 | Default              | 0x00                                                                        |
 
 <a name="table-891---get-request-example"></a>
+<a name="table-891---get-request-example"></a>
 Table 891 - Get Request Example
 
 | Example (Hex)                                                                                               |
 |-------------------------------------------------------------------------------------------------------------|
 | AA 00 81 04 01 5E D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0A E2 08 E3 06 E1 04 E3 02 C1 00 |
 
+<a name="table-892---get-response-example"></a>
 <a name="table-892---get-response-example"></a>
 Table 892 - Get Response Example
 
@@ -15189,12 +16052,14 @@ Table 892 - Get Response Example
 | AA 00 81 04 82 5E D1 01 82 04 00 00 00 00 84 82 00 1B D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0B E2 09 E3 07 E1 05 E3 03 C1 01 00 |
 
 <a name="table-893---set-request-example"></a>
+<a name="table-893---set-request-example"></a>
 Table 893 - Set Request Example
 
 | Example (Hex)                                                                                                  |
 |----------------------------------------------------------------------------------------------------------------|
 | AA 00 81 04 01 5D D1 11 84 1B D1 11 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0B E2 09 E3 07 E1 05 E3 03 C1 01 01 |
 
+<a name="table-894---set-response-example"></a>
 <a name="table-894---set-response-example"></a>
 Table 894 - Set Response Example
 
@@ -15204,6 +16069,7 @@ Table 894 - Set Response Example
 
 #### Property 1.2.3.1.3.2 Display Card Logo While Authorizing
 
+<a name="table-895---property-123132-display-card-logo-while-authorizing"></a>
 <a name="table-895---property-123132-display-card-logo-while-authorizing"></a>
 Table 895- Property 1.2.3.1.3.2 Display Card Logo While Authorizing
 
@@ -15220,12 +16086,14 @@ Table 895- Property 1.2.3.1.3.2 Display Card Logo While Authorizing
 | Default              | 0x00                                                      |
 
 <a name="table-896---get-request-example"></a>
+<a name="table-896---get-request-example"></a>
 Table 896 - Get Request Example
 
 | Example (Hex)                                                                                               |
 |-------------------------------------------------------------------------------------------------------------|
 | AA 00 81 04 01 5E D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0A E2 08 E3 06 E1 04 E3 02 C2 00 |
 
+<a name="table-897---get-response-example"></a>
 <a name="table-897---get-response-example"></a>
 Table 897 - Get Response Example
 
@@ -15234,12 +16102,14 @@ Table 897 - Get Response Example
 | AA 00 81 04 82 5E D1 01 82 04 00 00 00 00 84 82 00 1B D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0B E2 09 E3 07 E1 05 E3 03 C2 01 00 |
 
 <a name="table-898---set-request-example"></a>
+<a name="table-898---set-request-example"></a>
 Table 898 - Set Request Example
 
 | Example (Hex)                                                                                                  |
 |----------------------------------------------------------------------------------------------------------------|
 | AA 00 81 04 01 5D D1 11 84 1B D1 11 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0B E2 09 E3 07 E1 05 E3 03 C2 01 01 |
 
+<a name="table-899---set-response-example"></a>
 <a name="table-899---set-response-example"></a>
 Table 899 - Set Response Example
 
@@ -15249,6 +16119,7 @@ Table 899 - Set Response Example
 
 #### Property 1.2.3.1.2.2 Display Backlight Intensity (Display Only)
 
+<a name="table-900---property-123122-display-backlight-intensity-display-only"></a>
 <a name="table-900---property-123122-display-backlight-intensity-display-only"></a>
 Table 900- Property 1.2.3.1.2.2 Display Backlight Intensity (Display Only)
 
@@ -15265,12 +16136,14 @@ Table 900- Property 1.2.3.1.2.2 Display Backlight Intensity (Display Only)
 | Default              | 0x5A (90%)                                                                                                                                                                                                  |
 
 <a name="table-901---get-request-example"></a>
+<a name="table-901---get-request-example"></a>
 Table 901 - Get Request Example
 
 | Example (Hex)                                                              |
 |----------------------------------------------------------------------------|
 | AA 00 81 04 01 55 D1 01 84 0F D1 01 85 01 01 87 04 02 03 01 02 89 02 C2 00 |
 
+<a name="table-902---get-response-example"></a>
 <a name="table-902---get-response-example"></a>
 Table 902 - Get Response Example
 
@@ -15279,12 +16152,14 @@ Table 902 - Get Response Example
 | AA 00 81 04 82 55 D1 01 82 04 00 00 00 00 84 82 00 10 D1 01 85 01 01 87 04 02 03 01 02 89 03 C2 01 5A |
 
 <a name="table-903---set-request-example"></a>
+<a name="table-903---set-request-example"></a>
 Table 903 - Set Request Example
 
 | Example (Hex)                                                                |
 |------------------------------------------------------------------------------|
 | AA 00 81 04 01 55 D1 11 84 10 D1 11 85 01 01 87 04 02 03 01 02 89 03 C2 0164 |
 
+<a name="table-904---set-response-example"></a>
 <a name="table-904---set-response-example"></a>
 Table 904 - Set Response Example
 
@@ -15294,6 +16169,7 @@ Table 904 - Set Response Example
 
 #### Property 1.2.3.2.1.1 System Volume Control
 
+<a name="table-905---property-123211-system-volume-control"></a>
 <a name="table-905---property-123211-system-volume-control"></a>
 Table 905- Property 1.2.3.2.1.1 System Volume Control
 
@@ -15310,12 +16186,14 @@ Table 905- Property 1.2.3.2.1.1 System Volume Control
 | Default              | 0x32 (50%)                                                                                                                                                                                                                                                                                                                                                                                           |
 
 <a name="table-906---get-request-example"></a>
+<a name="table-906---get-request-example"></a>
 Table 906 - Get Request Example
 
 | Example (Hex)                                                                                               |
 |-------------------------------------------------------------------------------------------------------------|
 | AA 00 81 04 01 5E D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0A E2 08 E3 06 E2 04 E1 02 C1 00 |
 
+<a name="table-907---get-response-example"></a>
 <a name="table-907---get-response-example"></a>
 Table 907 - Get Response Example
 
@@ -15324,12 +16202,14 @@ Table 907 - Get Response Example
 | AA 00 81 04 82 5E D1 01 82 04 00 00 00 00 84 82 00 1B D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0B E2 09 E3 07 E2 05 E1 03 C1 01 32 |
 
 <a name="table-908---set-request-example"></a>
+<a name="table-908---set-request-example"></a>
 Table 908 - Set Request Example
 
 | Example (Hex)                                                                                                  |
 |----------------------------------------------------------------------------------------------------------------|
 | AA 00 81 04 01 5D D1 11 84 1B D1 11 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0B E2 09 E3 07 E2 05 E1 03 C1 01 01 |
 
+<a name="table-909---set-response-example"></a>
 <a name="table-909---set-response-example"></a>
 Table 909 - Set Response Example
 
@@ -15339,6 +16219,7 @@ Table 909 - Set Response Example
 
 #### Property 1.2.3.2.2.1 Touch Keypress Beep Enable
 
+<a name="table-910---property-123221-touch-keypress-beep-enable"></a>
 <a name="table-910---property-123221-touch-keypress-beep-enable"></a>
 Table 910 - Property 1.2.3.2.2.1 Touch Keypress Beep Enable
 
@@ -15355,12 +16236,14 @@ Table 910 - Property 1.2.3.2.2.1 Touch Keypress Beep Enable
 | Default              | 0x1                                                                    |
 
 <a name="table-911---get-request-example"></a>
+<a name="table-911---get-request-example"></a>
 Table 911 - Get Request Example
 
 | Example (Hex)                                                              |
 |----------------------------------------------------------------------------|
 | AA 00 81 04 01 55 D1 01 84 0F D1 01 85 01 01 87 04 02 03 02 02 89 02 C1 00 |
 
+<a name="table-912---get-response-example"></a>
 <a name="table-912---get-response-example"></a>
 Table 912 - Get Response Example
 
@@ -15375,6 +16258,7 @@ Table 913 – Set Request Example (enable)
 | AA 00 81 04 01 55 D1 11 84 10 D1 11 85 01 01 87 04 02 03 02 02 89 03 C1 01 01 |
 
 <a name="table-914---set-response-example-enable"></a>
+<a name="table-914---set-response-example-enable"></a>
 Table 914 - Set Response Example (enable)
 
 | Example (Hex)                                                                                         |
@@ -15382,12 +16266,14 @@ Table 914 - Set Response Example (enable)
 | AA 00 81 04 82 55 D1 11 82 04 00 00 00 00 84 82 00 10 D1 11 85 01 01 87 04 02 03 02 02 89 03 C1 01 01 |
 
 <a name="table-915---set-request-example-disable"></a>
+<a name="table-915---set-request-example-disable"></a>
 Table 915 - Set Request Example (disable)
 
 | Example (Hex)                                                                 |
 |-------------------------------------------------------------------------------|
 | AA 00 81 04 01 55 D1 11 84 10 D1 11 85 01 01 87 04 02 03 02 02 89 03 C1 01 00 |
 
+<a name="table-916---set-response-example-disable"></a>
 <a name="table-916---set-response-example-disable"></a>
 Table 916 - Set Response Example (disable)
 
@@ -15399,6 +16285,7 @@ Table 916 - Set Response Example (disable)
 
 #### Property 1.2.5.2.1.1 Device Lock State
 
+<a name="table-917---property-125211-device-lock-state"></a>
 <a name="table-917---property-125211-device-lock-state"></a>
 Table 917- Property 1.2.5.2.1.1 Device Lock State
 
@@ -15415,12 +16302,14 @@ Table 917- Property 1.2.5.2.1.1 Device Lock State
 | Default              | See **Property 1.2.5.2.1.2 Device Lock State After Reset.**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
 
 <a name="table-918---get-request-example"></a>
+<a name="table-918---get-request-example"></a>
 Table 918 - Get Request Example
 
 | Example (Hex)                                                |
 |--------------------------------------------------------------|
 | AA00 8104 0155D101 840F D101 8501 01 8704 02050201 8902 C100 |
 
+<a name="table-919---get-response-example"></a>
 <a name="table-919---get-response-example"></a>
 Table 919 - Get Response Example
 
@@ -15429,12 +16318,14 @@ Table 919 - Get Response Example
 | AA00 81048255D101 820400000000 84820010 D101 850101 870402050201 8903 C101 00 |
 
 <a name="table-920---set-request-example"></a>
+<a name="table-920---set-request-example"></a>
 Table 920 - Set Request Example
 
 | Example (Hex) |
 |---------------|
 | TBD           |
 
+<a name="table-921---set-response-example"></a>
 <a name="table-921---set-response-example"></a>
 Table 921 - Set Response Example
 
@@ -15444,6 +16335,7 @@ Table 921 - Set Response Example
 
 #### Property 1.2.5.2.1.2 Device Lock State After Reset
 
+<a name="table-922---property-125212-device-lock-state-after-reset"></a>
 <a name="table-922---property-125212-device-lock-state-after-reset"></a>
 Table 922- Property 1.2.5.2.1.2 Device Lock State After Reset
 
@@ -15460,12 +16352,14 @@ Table 922- Property 1.2.5.2.1.2 Device Lock State After Reset
 | Default              | 0x00                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
 
 <a name="table-923---get-request-example"></a>
+<a name="table-923---get-request-example"></a>
 Table 923 - Get Request Example
 
 | Example (Hex)                                                |
 |--------------------------------------------------------------|
 | AA00 8104 0155D101 840F D101 8501 01 8704 02050201 8902 C200 |
 
+<a name="table-924---get-response-example"></a>
 <a name="table-924---get-response-example"></a>
 Table 924 - Get Response Example
 
@@ -15474,12 +16368,14 @@ Table 924 - Get Response Example
 | AA00 81048255D101 820400000000 84820010 D101 850101 870402050201 8903 C201 00 |
 
 <a name="table-925---set-request-example"></a>
+<a name="table-925---set-request-example"></a>
 Table 925 - Set Request Example
 
 | Example (Hex)                                                  |
 |----------------------------------------------------------------|
 | AA00 81040155D111 8410 D111 8501 01 8704 02050201 8903 C201 00 |
 
+<a name="table-926---set-response-example"></a>
 <a name="table-926---set-response-example"></a>
 Table 926 - Set Response Example
 
@@ -15489,6 +16385,7 @@ Table 926 - Set Response Example
 
 #### Property 1.2.5.2.1.3 Device Lock Passcode
 
+<a name="table-927---property-125213-device-lock-passcode"></a>
 <a name="table-927---property-125213-device-lock-passcode"></a>
 Table 927- Property 1.2.5.2.1.3 Device Lock Passcode
 
@@ -15505,12 +16402,14 @@ Table 927- Property 1.2.5.2.1.3 Device Lock Passcode
 | Default              | 0x34 0x33 0x32 0x31 (“4321”)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
 
 <a name="table-928---get-request-example"></a>
+<a name="table-928---get-request-example"></a>
 Table 928 - Get Request Example
 
 | Example (Hex)                                                |
 |--------------------------------------------------------------|
 | AA00 8104 0155D101 840F D101 8501 01 8704 02050201 8902 C300 |
 
+<a name="table-929---get-response-example"></a>
 <a name="table-929---get-response-example"></a>
 Table 929 - Get Response Example
 
@@ -15519,12 +16418,14 @@ Table 929 - Get Response Example
 | AA00 81048255D101 820400000000 8482000F D101 850101 870402050201 8902 C300 |
 
 <a name="table-930---set-request-example"></a>
+<a name="table-930---set-request-example"></a>
 Table 930 - Set Request Example
 
 | Example (Hex) |
 |---------------|
 | TBD           |
 
+<a name="table-931---set-response-example"></a>
 <a name="table-931---set-response-example"></a>
 Table 931 - Set Response Example
 
@@ -15536,6 +16437,7 @@ Table 931 - Set Response Example
 
 #### Property 1.2.7.1.1.1 Device Reset Occurred Notification Control
 
+<a name="table-932---property-127111-device-reset-occurred-notification-control"></a>
 <a name="table-932---property-127111-device-reset-occurred-notification-control"></a>
 Table 932 - Property 1.2.7.1.1.1 Device Reset Occurred Notification Control
 
@@ -15552,12 +16454,14 @@ Table 932 - Property 1.2.7.1.1.1 Device Reset Occurred Notification Control
 | Default              | 0x00                                                                                                                                                                                                                                                                                      |
 
 <a name="table-933---get-request-example"></a>
+<a name="table-933---get-request-example"></a>
 Table 933 - Get Request Example
 
 | Example (Hex)                                                              |
 |----------------------------------------------------------------------------|
 | AA 00 81 04 01 55 D1 01 84 0F D1 01 85 01 01 87 04 02 07 01 01 89 02 C1 00 |
 
+<a name="table-934---get-response-example"></a>
 <a name="table-934---get-response-example"></a>
 Table 934 - Get Response Example
 
@@ -15566,12 +16470,14 @@ Table 934 - Get Response Example
 | AA 00 81 04 82 55 D1 01 82 04 00 00 00 00 84 82 00 10 D1 01 85 01 01 87 04 02 07 01 01 89 03 C1 01 00 |
 
 <a name="table-935---set-request-example"></a>
+<a name="table-935---set-request-example"></a>
 Table 935 - Set Request Example
 
 | Example (Hex)                                                                 |
 |-------------------------------------------------------------------------------|
 | AA 00 81 04 01 55 D1 11 84 10 D1 11 85 01 01 87 04 02 07 01 01 89 03 C1 01 05 |
 
+<a name="table-936---set-response-example"></a>
 <a name="table-936---set-response-example"></a>
 Table 936 - Set Response Example
 
@@ -15581,6 +16487,7 @@ Table 936 - Set Response Example
 
 #### Property 1.2.7.1.1.2 Device Reset Occurred Notification Acknowledged
 
+<a name="table-937---property-127112-device-reset-occurred-notification-acknowledged"></a>
 <a name="table-937---property-127112-device-reset-occurred-notification-acknowledged"></a>
 Table 937 - Property 1.2.7.1.1.2 Device Reset Occurred Notification Acknowledged
 
@@ -15597,12 +16504,14 @@ Table 937 - Property 1.2.7.1.1.2 Device Reset Occurred Notification Acknowledged
 | Default              | 0x00                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
 
 <a name="table-938---get-request-example"></a>
+<a name="table-938---get-request-example"></a>
 Table 938 - Get Request Example
 
 | Example (Hex)                                                |
 |--------------------------------------------------------------|
 | AA00 8104 0155D101 840F D101 8501 01 8704 02070101 8902 C200 |
 
+<a name="table-939---get-response-example"></a>
 <a name="table-939---get-response-example"></a>
 Table 939 - Get Response Example
 
@@ -15611,12 +16520,14 @@ Table 939 - Get Response Example
 | AA00 8104 8255D101 8204 00000000 84820010 D101 8501 01 8704 02070101 8903 C201 00 |
 
 <a name="table-940---set-request-example"></a>
+<a name="table-940---set-request-example"></a>
 Table 940 - Set Request Example
 
 | Example (Hex)                                                 |
 |---------------------------------------------------------------|
 | AA00 81040155D111 8410 D111 8501 01 8704 02070101 8903 C20101 |
 
+<a name="table-941---set-response-example"></a>
 <a name="table-941---set-response-example"></a>
 Table 941 - Set Response Example
 
@@ -15627,6 +16538,7 @@ Table 941 - Set Response Example
 #### Property 1.2.7.1.1.3 Device Reset Will Occur Soon Notification Control
 
 <a name="table-942---property-127113-device-reset-will-occur-soon-notification"></a>
+<a name="table-942---property-127113-device-reset-will-occur-soon-notification"></a>
 Table 942 - Property 1.2.7.1.1.3 Device Reset Will Occur Soon Notification
 Control
 
@@ -15634,7 +16546,7 @@ Control
 |----------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Property OID         | 1.2.7.1.1.3 / 0x010207010103                                                                                                                                                                                                                                                                                                   |
 | Name                 | Device Reset Will Occur Soon Notification Control                                                                                                                                                                                                                                                                              |
-| Description          | The host can use this property to control behavior of the **Device Reset Will Occur Soon** notification in **Notification 0x1001 - Device Information Update**.  See **24 Hour Automatic Reset PCI Requirement** for more information.  Changes to this property do not take effect until the device is power cycled or reset. |
+| Description          | The host can use this property to control behavior of the **Device Reset Will Occur Soon** notification in **Notification 0x1001 - Device Information Update**.  See [**24 Hour Automatic Reset PCI Requirement**](#24-hour-automatic-reset-pci-requirement) for more information.  Changes to this property do not take effect until the device is power cycled or reset. |
 | Securing Key         | None                                                                                                                                                                                                                                                                                                                           |
 | Min. Len (b)         | 1                                                                                                                                                                                                                                                                                                                              |
 | Max. Len (b)         | 1                                                                                                                                                                                                                                                                                                                              |
@@ -15643,12 +16555,14 @@ Control
 | Default              | 0x03                                                                                                                                                                                                                                                                                                                           |
 
 <a name="table-943---get-request-example"></a>
+<a name="table-943---get-request-example"></a>
 Table 943 - Get Request Example
 
 | Example (Hex)                                                              |
 |----------------------------------------------------------------------------|
 | AA 00 81 04 01 55 D1 01 84 0F D1 01 85 01 01 87 04 02 07 01 01 89 02 C3 00 |
 
+<a name="table-944---get-response-example"></a>
 <a name="table-944---get-response-example"></a>
 Table 944 - Get Response Example
 
@@ -15657,12 +16571,14 @@ Table 944 - Get Response Example
 | AA 00 81 04 82 55 D1 01 82 04 00 00 00 00 84 82 00 10 D1 01 85 01 01 87 04 02 07 01 01 89 03 C3 01 05 |
 
 <a name="table-945---set-request-example"></a>
+<a name="table-945---set-request-example"></a>
 Table 945 - Set Request Example
 
 | Example (Hex)                                                                 |
 |-------------------------------------------------------------------------------|
 | AA 00 81 04 01 55 D1 11 84 10 D1 11 85 01 01 87 04 02 07 01 01 89 03 C1 01 05 |
 
+<a name="table-8115---set-response-example"></a>
 <a name="table-8115---set-response-example"></a>
 Table 8115 - Set Response Example
 
@@ -15673,13 +16589,14 @@ Table 8115 - Set Response Example
 #### Property 1.2.7.1.1.4 Auto Reset Configuration
 
 <a name="table-946---property-127114-auto-reset-configuration"></a>
+<a name="table-946---property-127114-auto-reset-configuration"></a>
 Table 946 - Property 1.2.7.1.1.4 Auto Reset Configuration
 
 | Property Description |                                                                                                                                                                                                                                                                                                                                                                                                              |
 |----------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Property OID         | 1.2.7.1.1.4 / 0x010207010104                                                                                                                                                                                                                                                                                                                                                                                 |
 | Name                 | Auto Reset Configuration                                                                                                                                                                                                                                                                                                                                                                                     |
-| Description          | This property controls the device’s auto reset feature. The auto reset feature can be configured such that the device automatically resets 23 hours after booting up or at a specific time of day. The auto-reset feature cannot be disabled.  See **24 Hour Automatic Reset PCI Requirement** for more information.  Changes to this property do not take effect until the device is power cycled or reset. |
+| Description          | This property controls the device’s auto reset feature. The auto reset feature can be configured such that the device automatically resets 23 hours after booting up or at a specific time of day. The auto-reset feature cannot be disabled.  See [**24 Hour Automatic Reset PCI Requirement**](#24-hour-automatic-reset-pci-requirement) for more information.  Changes to this property do not take effect until the device is power cycled or reset. |
 | Securing Key         | None                                                                                                                                                                                                                                                                                                                                                                                                         |
 | Min. Len (b)         | 2                                                                                                                                                                                                                                                                                                                                                                                                            |
 | Max. Len (b)         | 2                                                                                                                                                                                                                                                                                                                                                                                                            |
@@ -15688,12 +16605,14 @@ Table 946 - Property 1.2.7.1.1.4 Auto Reset Configuration
 | Default              | 0xFF 0xFF                                                                                                                                                                                                                                                                                                                                                                                                    |
 
 <a name="table-947---get-request-example"></a>
+<a name="table-947---get-request-example"></a>
 Table 947 - Get Request Example
 
 | Example (Hex)                                                |
 |--------------------------------------------------------------|
 | AA00 8104 0155D101 840F D101 8501 01 8704 02070101 8902 C400 |
 
+<a name="table-948---get-response-example"></a>
 <a name="table-948---get-response-example"></a>
 Table 948 - Get Response Example
 
@@ -15702,12 +16621,14 @@ Table 948 - Get Response Example
 | AA0081048255D10182040000000084820011D1018501018704020701018904C402FFFF |
 
 <a name="table-949---set-request-example"></a>
+<a name="table-949---set-request-example"></a>
 Table 949 - Set Request Example
 
 | Example (Hex)                                                    |
 |------------------------------------------------------------------|
 | AA00 81040155D111 8411 D111 8501 01 8704 02070101 8904 C402 FFFF |
 
+<a name="table-950---set-response-example"></a>
 <a name="table-950---set-response-example"></a>
 Table 950 - Set Response Example
 
@@ -15717,6 +16638,7 @@ Table 950 - Set Response Example
 
 #### Property 1.2.7.1.2.1 User Event Notification Controls Enable
 
+<a name="table-951---property-127121-user-event-notification-controls-enable"></a>
 <a name="table-951---property-127121-user-event-notification-controls-enable"></a>
 Table 951 - Property 1.2.7.1.2.1 User Event Notification Controls Enable
 
@@ -15733,12 +16655,14 @@ Table 951 - Property 1.2.7.1.2.1 User Event Notification Controls Enable
 | Default                  | 0x00, 0x00, 0x00, 0x00 (all User Event notifications disabled)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
 
 <a name="table-952---get-request-example"></a>
+<a name="table-952---get-request-example"></a>
 Table 952 - Get Request Example
 
 | Example (Hex)                                                |
 |--------------------------------------------------------------|
 | AA00 8104 0155D101 840F D101 8501 01 8704 02070102 8902 C100 |
 
+<a name="table-953---get-response-example"></a>
 <a name="table-953---get-response-example"></a>
 Table 953 - Get Response Example
 
@@ -15747,12 +16671,14 @@ Table 953 - Get Response Example
 | AA00 8104 8255D101 8204 00000000 84820013 D101 8501 01 8704 02070102 8906 C1 04 00 00 00 00 |
 
 <a name="table-954---set-request-example"></a>
+<a name="table-954---set-request-example"></a>
 Table 954 - Set Request Example
 
 | Example (Hex)                                                             |
 |---------------------------------------------------------------------------|
 | AA00 8104 0155D111 8413 D111 8501 01 8704 02070102 8906 C1 04 03 00 00 00 |
 
+<a name="table-955---set-response-example"></a>
 <a name="table-955---set-response-example"></a>
 Table 955 - Set Response Example
 
@@ -15762,6 +16688,7 @@ Table 955 - Set Response Example
 
 #### Property 1.2.7.1.2.2 User Event Notification MSR Data Timeout (MSR Only)
 
+<a name="table-956---property-127122-user-event-notification-msr-data-timeout-msr"></a>
 <a name="table-956---property-127122-user-event-notification-msr-data-timeout-msr"></a>
 Table 956 - Property 1.2.7.1.2.2 User Event Notification MSR Data Timeout (MSR
 Only)
@@ -15779,12 +16706,14 @@ Only)
 | Default                  | 0x02 (2 seconds)                                                                                                                                                                                                                                                                                                                                                                                                                                     |
 
 <a name="table-957---get-request-example"></a>
+<a name="table-957---get-request-example"></a>
 Table 957 - Get Request Example
 
 | Example (Hex)                                                                      |
 |------------------------------------------------------------------------------------|
 | AA00 8104 010CD101 841A D101 8107 2B06010401F609 8501 01 890A E208E706E104E202C200 |
 
+<a name="table-958---get-response-example"></a>
 <a name="table-958---get-response-example"></a>
 Table 958 - Get Response Example
 
@@ -15793,12 +16722,14 @@ Table 958 - Get Response Example
 | AA00 8104 820CD101 8204 00000000 8482001B D101 8107 2B06010401F609 8501 01 890B E209E707E105E203C2 0102 |
 
 <a name="table-959---set-request-example"></a>
+<a name="table-959---set-request-example"></a>
 Table 959 - Set Request Example
 
 | Example (Hex)                                                                         |
 |---------------------------------------------------------------------------------------|
 | AA00 8104 010DD111 841B D111 8107 2B06010401F609 8501 01 890B E209E707E105E203C2 0102 |
 
+<a name="table-960---set-response-example"></a>
 <a name="table-960---set-response-example"></a>
 Table 960 - Set Response Example
 
@@ -15808,6 +16739,7 @@ Table 960 - Set Response Example
 
 #### Property 1.2.7.1.3.1 Maximum Battery Charge Level (Deprecated)
 
+<a name="table-961---property-127131-maximum-battery-charge-level-deprecated"></a>
 <a name="table-961---property-127131-maximum-battery-charge-level-deprecated"></a>
 Table 961 - Property 1.2.7.1.3.1 Maximum Battery Charge Level (Deprecated)
 
@@ -15824,6 +16756,7 @@ Table 961 - Property 1.2.7.1.3.1 Maximum Battery Charge Level (Deprecated)
 | Default              | 0x64 (100%) if WLAN device 0x50 (80%) for all other devices                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
 
 <a name="table-962---get-request-example"></a>
+<a name="table-962---get-request-example"></a>
 Table 962 - Get Request Example
 
 | Example (Hex)                                                |
@@ -15831,12 +16764,14 @@ Table 962 - Get Request Example
 | AA00 8104 0155D101 840F D101 8501 01 8704 02070103 8902 C100 |
 
 <a name="table-963---get-response-example"></a>
+<a name="table-963---get-response-example"></a>
 Table 963 - Get Response Example
 
 | Example (Hex)                                                                     |
 |-----------------------------------------------------------------------------------|
 | AA00 8104 8255D101 8204 00000000 84820010 D101 8501 01 8704 02070103 8903 C101 50 |
 
+<a name="table-964---set-request-example"></a>
 <a name="table-964---set-request-example"></a>
 Table 964 - Set Request Example
 
@@ -15852,6 +16787,7 @@ Table 8.3222 - Set Response Example
 
 #### Property 1.2.7.1.4.1 Device Low Temperature Notification Level
 
+<a name="table-965---property-127141-device-low-temperature-notification-level"></a>
 <a name="table-965---property-127141-device-low-temperature-notification-level"></a>
 Table 965 - Property 1.2.7.1.4.1 Device Low Temperature Notification Level
 
@@ -15869,6 +16805,7 @@ Table 965 - Property 1.2.7.1.4.1 Device Low Temperature Notification Level
 |                      |                                                                                                                                                                                                                                                            |
 
 <a name="table-966---get-request-example"></a>
+<a name="table-966---get-request-example"></a>
 Table 966 - Get Request Example
 
 | Example (Hex)                                                |
@@ -15876,12 +16813,14 @@ Table 966 - Get Request Example
 | AA00 8104 0155D101 840F D101 8501 01 8704 02070104 8902 C100 |
 
 <a name="table-967---get-response-example"></a>
+<a name="table-967---get-response-example"></a>
 Table 967 - Get Response Example
 
 | Example (Hex)                                                                     |
 |-----------------------------------------------------------------------------------|
 | AA00 8104 8255D101 8204 00000000 84820010 D101 8501 01 8704 02070104 8903 C101 00 |
 
+<a name="table-968---set-request-example"></a>
 <a name="table-968---set-request-example"></a>
 Table 968 - Set Request Example
 
@@ -15897,6 +16836,7 @@ Table 8.3227 - Set Response Example
 
 #### Property 1.2.7.1.4.2 Device High Temperature Notification Level
 
+<a name="table-969---property-127142-device-high-temperature-notification-level"></a>
 <a name="table-969---property-127142-device-high-temperature-notification-level"></a>
 Table 969 - Property 1.2.7.1.4.2 Device High Temperature Notification Level
 
@@ -15914,6 +16854,7 @@ Table 969 - Property 1.2.7.1.4.2 Device High Temperature Notification Level
 |                      |                                                                                                                                                                                                                                                              |
 
 <a name="table-970---get-request-example"></a>
+<a name="table-970---get-request-example"></a>
 Table 970 - Get Request Example
 
 | Example (Hex)                                                |
@@ -15926,6 +16867,7 @@ Table 8.3230 - Get Response Example
 |-----------------------------------------------------------------------------------|
 | AA00 8104 8255D101 8204 00000000 84820010 D101 8501 01 8704 02070104 8903 C201 2D |
 
+<a name="table-971---set-request-example"></a>
 <a name="table-971---set-request-example"></a>
 Table 971 - Set Request Example
 
@@ -15942,6 +16884,7 @@ Table 8.3232 - Set Response Example
 #### Property 1.2.7.1.4.3 Device Temperature Notification Repeat Interval
 
 <a name="table-972---property-127143-device-temperature-notification-repeat-interval"></a>
+<a name="table-972---property-127143-device-temperature-notification-repeat-interval"></a>
 Table 972 - Property 1.2.7.1.4.3 Device Temperature Notification Repeat Interval
 
 | Property Description |                                                                                                                                                                                                                                                                                                                                                                                                |
@@ -15957,6 +16900,7 @@ Table 972 - Property 1.2.7.1.4.3 Device Temperature Notification Repeat Interval
 | Default              | 0x1E (30 seconds)                                                                                                                                                                                                                                                                                                                                                                              |
 |                      |                                                                                                                                                                                                                                                                                                                                                                                                |
 
+<a name="table-973---get-request-example"></a>
 <a name="table-973---get-request-example"></a>
 Table 973 - Get Request Example
 
@@ -15989,6 +16933,7 @@ Table 8.3237 - Set Response Example
 #### 8.4.1.1 Property 2.1.1.1.1.1 API Feature Set
 
 <a name="table-974---8411-property-211111-api-feature-set"></a>
+<a name="table-974---8411-property-211111-api-feature-set"></a>
 Table 974 - 8.4.1.1 Property 2.1.1.1.1.1 API Feature Set
 
 | Property Description |                                                                                                               |
@@ -16004,12 +16949,14 @@ Table 974 - 8.4.1.1 Property 2.1.1.1.1.1 API Feature Set
 | Default              | 0x0000                                                                                                        |
 
 <a name="table-975---get-request-example"></a>
+<a name="table-975---get-request-example"></a>
 Table 975 - Get Request Example
 
 | Example (Hex)                                                                                               |
 |-------------------------------------------------------------------------------------------------------------|
 | AA 00 81 04 01 05 D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 0A E1 08 E1 06 E1 04 E1 02 C1 00 |
 
+<a name="table-976---get-response-example"></a>
 <a name="table-976---get-response-example"></a>
 Table 976 - Get Response Example
 
@@ -16023,6 +16970,7 @@ Table 976 - Get Response Example
 
 #### Property 2.1.2.1.1.2 Boot1 Firmware Version
 
+<a name="table-977---property-212112-boot1-firmware-version"></a>
 <a name="table-977---property-212112-boot1-firmware-version"></a>
 Table 977 - Property 2.1.2.1.1.2 Boot1 Firmware Version
 
@@ -16039,12 +16987,14 @@ Table 977 - Property 2.1.2.1.1.2 Boot1 Firmware Version
 | Default              |                                                                                                                                                                                 |
 
 <a name="table-978---get-request-example"></a>
+<a name="table-978---get-request-example"></a>
 Table 978 - Get Request Example
 
 | Example (Hex)                                                                                               |
 |-------------------------------------------------------------------------------------------------------------|
 | AA 00 81 04 01 05 D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 0A E1 08 E2 06 E1 04 E1 02 C2 00 |
 
+<a name="table-979---get-response-example"></a>
 <a name="table-979---get-response-example"></a>
 Table 979 - Get Response Example
 
@@ -16054,6 +17004,7 @@ Table 979 - Get Response Example
 
 #### Property 2.1.2.1.1.4 Boot1 Firmware Part Number
 
+<a name="table-980---property-212114-boot1-firmware-part-number"></a>
 <a name="table-980---property-212114-boot1-firmware-part-number"></a>
 Table 980 - Property 2.1.2.1.1.4 Boot1 Firmware Part Number
 
@@ -16070,12 +17021,14 @@ Table 980 - Property 2.1.2.1.1.4 Boot1 Firmware Part Number
 | Default              |                                                                                                                       |
 
 <a name="table-981---get-request-example"></a>
+<a name="table-981---get-request-example"></a>
 Table 981 - Get Request Example
 
 | Example (Hex)                                                                                               |
 |-------------------------------------------------------------------------------------------------------------|
 | AA 00 81 04 01 03 D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 0A E1 08 E2 06 E1 04 E1 02 C4 00 |
 
+<a name="table-982---get-response-example"></a>
 <a name="table-982---get-response-example"></a>
 Table 982 - Get Response Example
 
@@ -16085,6 +17038,7 @@ Table 982 - Get Response Example
 
 #### Property 2.1.2.1.2.2 Boot0 Firmware Version
 
+<a name="table-983---property-212122-boot0-firmware-version"></a>
 <a name="table-983---property-212122-boot0-firmware-version"></a>
 Table 983 - Property 2.1.2.1.2.2 Boot0 Firmware Version
 
@@ -16101,12 +17055,14 @@ Table 983 - Property 2.1.2.1.2.2 Boot0 Firmware Version
 | Default              |                                                                                                                                                                                 |
 
 <a name="table-984---get-request-example"></a>
+<a name="table-984---get-request-example"></a>
 Table 984 - Get Request Example
 
 | Example (Hex)                                                                                               |
 |-------------------------------------------------------------------------------------------------------------|
 | AA 00 81 04 01 05 D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 0A E1 08 E2 06 E1 04 E2 02 C2 00 |
 
+<a name="table-985---get-response-example"></a>
 <a name="table-985---get-response-example"></a>
 Table 985 - Get Response Example
 
@@ -16116,6 +17072,7 @@ Table 985 - Get Response Example
 
 #### Property 2.1.2.1.2.4 Boot0 Firmware Part Number
 
+<a name="table-986---property-212124-boot0-firmware-part-number"></a>
 <a name="table-986---property-212124-boot0-firmware-part-number"></a>
 Table 986 - Property 2.1.2.1.2.4 Boot0 Firmware Part Number
 
@@ -16132,12 +17089,14 @@ Table 986 - Property 2.1.2.1.2.4 Boot0 Firmware Part Number
 | Default              |                                                                                                                       |
 
 <a name="table-987---get-request-example"></a>
+<a name="table-987---get-request-example"></a>
 Table 987 - Get Request Example
 
 | Example (Hex)                                                                                               |
 |-------------------------------------------------------------------------------------------------------------|
 | AA 00 81 04 01 0A D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 0A E1 08 E2 06 E1 04 E2 02 C4 00 |
 
+<a name="table-988---get-response-example"></a>
 <a name="table-988---get-response-example"></a>
 Table 988 - Get Response Example
 
@@ -16149,6 +17108,7 @@ Table 988 - Get Response Example
 
 #### Property 2.1.2.2.2.1 Device Model Name
 
+<a name="table-989---property-212221-device-model-name"></a>
 <a name="table-989---property-212221-device-model-name"></a>
 Table 989 - Property 2.1.2.2.2.1 Device Model Name
 
@@ -16165,12 +17125,14 @@ Table 989 - Property 2.1.2.2.2.1 Device Model Name
 | Default              |                                                                                                |
 
 <a name="table-990---get-request-example"></a>
+<a name="table-990---get-request-example"></a>
 Table 990 - Get Request Example
 
 | Example (Hex)                                                                                               |
 |-------------------------------------------------------------------------------------------------------------|
 | AA 00 81 04 01 06 D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 0A E1 08 E2 06 E2 04 E2 02 C1 00 |
 
+<a name="table-991---get-response-example"></a>
 <a name="table-991---get-response-example"></a>
 Table 991 - Get Response Example
 
@@ -16180,6 +17142,7 @@ Table 991 - Get Response Example
 
 #### Property 2.1.2.2.2.2 Main Firmware Version
 
+<a name="table-992---property-212222-main-firmware-version"></a>
 <a name="table-992---property-212222-main-firmware-version"></a>
 Table 992 - Property 2.1.2.2.2.2 Main Firmware Version
 
@@ -16196,12 +17159,14 @@ Table 992 - Property 2.1.2.2.2.2 Main Firmware Version
 | Default              |                                                                                                                                                                           |
 
 <a name="table-993---get-request-example"></a>
+<a name="table-993---get-request-example"></a>
 Table 993 - Get Request Example
 
 | Example (Hex)                                                                                               |
 |-------------------------------------------------------------------------------------------------------------|
 | AA 00 81 04 01 08 D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 0A E1 08 E2 06 E2 04 E2 02 C2 00 |
 
+<a name="table-994---get-response-example"></a>
 <a name="table-994---get-response-example"></a>
 Table 994 - Get Response Example
 
@@ -16211,6 +17176,7 @@ Table 994 - Get Response Example
 
 #### Property 2.1.2.2.2.4 Main Firmware Part Number
 
+<a name="table-995---property-212224-main-firmware-part-number"></a>
 <a name="table-995---property-212224-main-firmware-part-number"></a>
 Table 995 - Property 2.1.2.2.2.4 Main Firmware Part Number
 
@@ -16227,12 +17193,14 @@ Table 995 - Property 2.1.2.2.2.4 Main Firmware Part Number
 | Default              |                                                                                                                 |
 
 <a name="table-996---get-request-example"></a>
+<a name="table-996---get-request-example"></a>
 Table 996 - Get Request Example
 
 | Example (Hex)                                                                                               |
 |-------------------------------------------------------------------------------------------------------------|
 | AA 00 81 04 01 0A D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 0A E1 08 E2 06 E2 04 E2 02 C4 00 |
 
+<a name="table-997---get-response-example"></a>
 <a name="table-997---get-response-example"></a>
 Table 997 - Get Response Example
 
@@ -16242,6 +17210,7 @@ Table 997 - Get Response Example
 
 #### Property 2.1.2.2.2.6 Key Type
 
+<a name="table-998---property-212226-key-type"></a>
 <a name="table-998---property-212226-key-type"></a>
 Table 998 - Property 2.1.2.2.2.6 Key Type
 
@@ -16258,12 +17227,14 @@ Table 998 - Property 2.1.2.2.2.6 Key Type
 | Default              |                                                                                                                                                                                                                                                                                                                                                                    |
 
 <a name="table-999---get-request-example"></a>
+<a name="table-999---get-request-example"></a>
 Table 999 - Get Request Example
 
 | Example (Hex)                                                                                               |
 |-------------------------------------------------------------------------------------------------------------|
 | AA 00 81 04 01 31 D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 0A E1 08 E2 06 E2 04 E2 02 C6 00 |
 
+<a name="table-1000---get-response-example"></a>
 <a name="table-1000---get-response-example"></a>
 Table 1000 - Get Response Example
 
@@ -16280,6 +17251,7 @@ Table 1000 - Get Response Example
 #### Property 2.1.2.3.2.1 EMV Contact L1 Kernel ID (Contact Only)
 
 <a name="table-1001---property-212321-emv-contact-l1-kernel-id-contact-only"></a>
+<a name="table-1001---property-212321-emv-contact-l1-kernel-id-contact-only"></a>
 Table 1001 - Property 2.1.2.3.2.1 EMV Contact L1 Kernel ID (Contact Only)
 
 | Property Description |                                                                                                                                         |
@@ -16295,12 +17267,14 @@ Table 1001 - Property 2.1.2.3.2.1 EMV Contact L1 Kernel ID (Contact Only)
 | Default              |                                                                                                                                         |
 
 <a name="table-1002---get-request-example"></a>
+<a name="table-1002---get-request-example"></a>
 Table 1002 - Get Request Example
 
 | Example (Hex)                                                                                               |
 |-------------------------------------------------------------------------------------------------------------|
 | AA 00 81 04 01 12 D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 0A E1 08 E2 06 E3 04 E2 02 C1 00 |
 
+<a name="table-1003---get-response-example"></a>
 <a name="table-1003---get-response-example"></a>
 Table 1003 - Get Response Example
 
@@ -16310,6 +17284,7 @@ Table 1003 - Get Response Example
 
 #### Property 2.1.2.3.2.2 EMV Contact L1 Kernel Firmware Part Number (Contact Only)
 
+<a name="table-1004---property-212322-emv-contact-l1-kernel-firmware-part-number"></a>
 <a name="table-1004---property-212322-emv-contact-l1-kernel-firmware-part-number"></a>
 Table 1004 - Property 2.1.2.3.2.2 EMV Contact L1 Kernel Firmware Part Number
 (Contact Only)
@@ -16327,12 +17302,14 @@ Table 1004 - Property 2.1.2.3.2.2 EMV Contact L1 Kernel Firmware Part Number
 | Default              |                                                                                                                                                  |
 
 <a name="table-1005---get-request-example"></a>
+<a name="table-1005---get-request-example"></a>
 Table 1005 - Get Request Example
 
 | Example (Hex)                                                                                               |
 |-------------------------------------------------------------------------------------------------------------|
 | AA 00 81 04 01 13 D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 0A E1 08 E2 06 E3 04 E2 02 C2 00 |
 
+<a name="table-1006---get-response-example"></a>
 <a name="table-1006---get-response-example"></a>
 Table 1006 - Get Response Example
 
@@ -16342,6 +17319,7 @@ Table 1006 - Get Response Example
 
 #### Property 2.1.2.3.3.1 EMV Contact L2 Kernel ID (Contact Only)
 
+<a name="table-1007---property-212331-emv-contact-l2-kernel-id-contact-only"></a>
 <a name="table-1007---property-212331-emv-contact-l2-kernel-id-contact-only"></a>
 Table 1007 - Property 2.1.2.3.3.1 EMV Contact L2 Kernel ID (Contact Only)
 
@@ -16358,12 +17336,14 @@ Table 1007 - Property 2.1.2.3.3.1 EMV Contact L2 Kernel ID (Contact Only)
 | Default              |                                                                                                                                   |
 
 <a name="table-1008---get-request-example"></a>
+<a name="table-1008---get-request-example"></a>
 Table 1008 - Get Request Example
 
 | Example (Hex)                                                                                               |
 |-------------------------------------------------------------------------------------------------------------|
 | AA 00 81 04 01 15 D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 0A E1 08 E2 06 E3 04 E3 02 C1 00 |
 
+<a name="table-1009---get-response-example"></a>
 <a name="table-1009---get-response-example"></a>
 Table 1009 - Get Response Example
 
@@ -16373,6 +17353,7 @@ Table 1009 - Get Response Example
 
 #### Property 2.1.2.3.3.2 EMV Contact L2 Kernel Firmware Part Number(Contact Only)
 
+<a name="table-1010---property-212332-emv-contact-l2-kernel-firmware-part"></a>
 <a name="table-1010---property-212332-emv-contact-l2-kernel-firmware-part"></a>
 Table 1010 - Property 2.1.2.3.3.2 EMV Contact L2 Kernel Firmware Part
 Number(Contact Only)
@@ -16390,12 +17371,14 @@ Number(Contact Only)
 | Default              |                                                                                                                                                                         |
 
 <a name="table-1011---get-request-example"></a>
+<a name="table-1011---get-request-example"></a>
 Table 1011 - Get Request Example
 
 | Example (Hex)                                                                                               |
 |-------------------------------------------------------------------------------------------------------------|
 | AA 00 81 04 01 1A D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 0A E1 08 E2 06 E3 04 E3 02 C2 00 |
 
+<a name="table-1012---get-response-example"></a>
 <a name="table-1012---get-response-example"></a>
 Table 1012 - Get Response Example
 
@@ -16405,6 +17388,7 @@ Table 1012 - Get Response Example
 
 #### Property 2.1.2.3.3.3 EMV Contact L2 Kernel Checksum (Contact Only)
 
+<a name="table-1013---property-212333-emv-contact-l2-kernel-checksum-contact-only"></a>
 <a name="table-1013---property-212333-emv-contact-l2-kernel-checksum-contact-only"></a>
 Table 1013 - Property 2.1.2.3.3.3 EMV Contact L2 Kernel Checksum (Contact Only)
 
@@ -16421,12 +17405,14 @@ Table 1013 - Property 2.1.2.3.3.3 EMV Contact L2 Kernel Checksum (Contact Only)
 | Default              |                                                                                                                                                                      |
 
 <a name="table-1014---get-request-example"></a>
+<a name="table-1014---get-request-example"></a>
 Table 1014 - Get Request Example
 
 | Example (Hex)                                                                                               |
 |-------------------------------------------------------------------------------------------------------------|
 | AA 00 81 04 01 1B D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 0A E1 08 E2 06 E3 04 E3 02 C3 00 |
 
+<a name="table-1015---get-response-example"></a>
 <a name="table-1015---get-response-example"></a>
 Table 1015 - Get Response Example
 
@@ -16436,6 +17422,7 @@ Table 1015 - Get Response Example
 
 #### Property 2.1.2.3.3.4 EMV Contact L2 Kernel Configuration Checksum (Contact Only)
 
+<a name="table-1016---property-212334-emv-contact-l2-kernel-configuration-checksum"></a>
 <a name="table-1016---property-212334-emv-contact-l2-kernel-configuration-checksum"></a>
 Table 1016 - Property 2.1.2.3.3.4 EMV Contact L2 Kernel Configuration Checksum
 (Contact Only)
@@ -16453,12 +17440,14 @@ Table 1016 - Property 2.1.2.3.3.4 EMV Contact L2 Kernel Configuration Checksum
 | Default              |                                                                                                                                    |
 
 <a name="table-1017---get-request-example"></a>
+<a name="table-1017---get-request-example"></a>
 Table 1017 - Get Request Example
 
 | Example (Hex)                                                                                               |
 |-------------------------------------------------------------------------------------------------------------|
 | AA 00 81 04 01 1F D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 0A E1 08 E2 06 E3 04 E3 02 C4 00 |
 
+<a name="table-1018---get-response-example"></a>
 <a name="table-1018---get-response-example"></a>
 Table 1018 - Get Response Example
 
@@ -16468,6 +17457,7 @@ Table 1018 - Get Response Example
 
 #### Property 2.1.2.3.4.1 EMV Contactless L1 Kernel ID (Contactless Only)
 
+<a name="table-1019---property-212341-emv-contactless-l1-kernel-id-contactless"></a>
 <a name="table-1019---property-212341-emv-contactless-l1-kernel-id-contactless"></a>
 Table 1019 - Property 2.1.2.3.4.1 EMV Contactless L1 Kernel ID (Contactless
 Only)
@@ -16485,12 +17475,14 @@ Only)
 | Default              |                                                                                                                                            |
 
 <a name="table-1020---get-request-example"></a>
+<a name="table-1020---get-request-example"></a>
 Table 1020 - Get Request Example
 
 | Example (Hex)                                                                                               |
 |-------------------------------------------------------------------------------------------------------------|
 | AA 00 81 04 01 21 D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 0A E1 08 E2 06 E3 04 E4 02 C1 00 |
 
+<a name="table-1021---get-response-example"></a>
 <a name="table-1021---get-response-example"></a>
 Table 1021 - Get Response Example
 
@@ -16500,6 +17492,7 @@ Table 1021 - Get Response Example
 
 #### Property 2.1.2.3.4.2 EMV Contactless L1 Kernel Firmware Part Number (Contactless Only)
 
+<a name="table-1022---property-212342-emv-contactless-l1-kernel-firmware-part-number"></a>
 <a name="table-1022---property-212342-emv-contactless-l1-kernel-firmware-part-number"></a>
 Table 1022 - Property 2.1.2.3.4.2 EMV Contactless L1 Kernel Firmware Part Number
 (Contactless Only)
@@ -16517,12 +17510,14 @@ Table 1022 - Property 2.1.2.3.4.2 EMV Contactless L1 Kernel Firmware Part Number
 | Default              |                                                                                                                                                      |
 
 <a name="table-1023---get-request-example"></a>
+<a name="table-1023---get-request-example"></a>
 Table 1023 - Get Request Example
 
 | Example (Hex)                                                                                               |
 |-------------------------------------------------------------------------------------------------------------|
 | AA 00 81 04 01 25 D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 0A E1 08 E2 06 E3 04 E4 02 C2 00 |
 
+<a name="table-1024---get-response-example"></a>
 <a name="table-1024---get-response-example"></a>
 Table 1024 - Get Response Example
 
@@ -16532,6 +17527,7 @@ Table 1024 - Get Response Example
 
 #### Property 2.1.2.3.4.3 EMV Contactless L1 Kernel Checksum (Contactless Only)
 
+<a name="table-1025---property-212343-emv-contactless-l1-kernel-checksum"></a>
 <a name="table-1025---property-212343-emv-contactless-l1-kernel-checksum"></a>
 Table 1025 - Property 2.1.2.3.4.3 EMV Contactless L1 Kernel Checksum
 (Contactless Only)
@@ -16549,12 +17545,14 @@ Table 1025 - Property 2.1.2.3.4.3 EMV Contactless L1 Kernel Checksum
 | Default              |                                                                                                                                                          |
 
 <a name="table-1026---get-request-example"></a>
+<a name="table-1026---get-request-example"></a>
 Table 1026 - Get Request Example
 
 | Example (Hex)                                                                                               |
 |-------------------------------------------------------------------------------------------------------------|
 | AA 00 81 04 01 26 D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 0A E1 08 E2 06 E3 04 E4 02 C3 00 |
 
+<a name="table-1027---get-response-example"></a>
 <a name="table-1027---get-response-example"></a>
 Table 1027 - Get Response Example
 
@@ -16564,6 +17562,7 @@ Table 1027 - Get Response Example
 
 #### Property 2.1.2.3.5.1 Mastercard MCL Kernel ID (Contactless Only)
 
+<a name="table-1028---property-212351-mastercard-mcl-kernel-id-contactless-only"></a>
 <a name="table-1028---property-212351-mastercard-mcl-kernel-id-contactless-only"></a>
 Table 1028 - Property 2.1.2.3.5.1 Mastercard MCL Kernel ID (Contactless Only)
 
@@ -16580,12 +17579,14 @@ Table 1028 - Property 2.1.2.3.5.1 Mastercard MCL Kernel ID (Contactless Only)
 | Default              |                                                                                                                                  |
 
 <a name="table-1029---get-request-example"></a>
+<a name="table-1029---get-request-example"></a>
 Table 1029 - Get Request Example
 
 | Example (Hex)                                                                                               |
 |-------------------------------------------------------------------------------------------------------------|
 | AA 00 81 04 01 28 D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 0A E1 08 E2 06 E3 04 E5 02 C1 00 |
 
+<a name="table-1030---get-response-example"></a>
 <a name="table-1030---get-response-example"></a>
 Table 1030 - Get Response Example
 
@@ -16595,6 +17596,7 @@ Table 1030 - Get Response Example
 
 #### Property 2.1.2.3.5.2 Mastercard MCL Kernel Firmware Part Number (Contactless Only)
 
+<a name="table-1031---property-212352-mastercard-mcl-kernel-firmware-part-number"></a>
 <a name="table-1031---property-212352-mastercard-mcl-kernel-firmware-part-number"></a>
 Table 1031 - Property 2.1.2.3.5.2 Mastercard MCL Kernel Firmware Part Number
 (Contactless Only)
@@ -16612,12 +17614,14 @@ Table 1031 - Property 2.1.2.3.5.2 Mastercard MCL Kernel Firmware Part Number
 | Default              |                                                                                                                                                   |
 
 <a name="table-1032---get-request-example"></a>
+<a name="table-1032---get-request-example"></a>
 Table 1032 - Get Request Example
 
 | Example (Hex)                                                                                               |
 |-------------------------------------------------------------------------------------------------------------|
 | AA 00 81 04 01 29 D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 0A E1 08 E2 06 E3 04 E5 02 C2 00 |
 
+<a name="table-1033---get-response-example"></a>
 <a name="table-1033---get-response-example"></a>
 Table 1033 - Get Response Example
 
@@ -16627,6 +17631,7 @@ Table 1033 - Get Response Example
 
 #### Property 2.1.2.3.5.3 Mastercard MCL Kernel Checksum (Contactless Only)
 
+<a name="table-1034---property-212353-mastercard-mcl-kernel-checksum-contactless"></a>
 <a name="table-1034---property-212353-mastercard-mcl-kernel-checksum-contactless"></a>
 Table 1034 - Property 2.1.2.3.5.3 Mastercard MCL Kernel Checksum (Contactless
 Only)
@@ -16644,12 +17649,14 @@ Only)
 | Default              |                                                                                                                                                                          |
 
 <a name="table-1035---get-request-example"></a>
+<a name="table-1035---get-request-example"></a>
 Table 1035 - Get Request Example
 
 | Example (Hex)                                                                                               |
 |-------------------------------------------------------------------------------------------------------------|
 | AA 00 81 04 01 2A D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 0A E1 08 E2 06 E3 04 E5 02 C3 00 |
 
+<a name="table-1036---get-response-example"></a>
 <a name="table-1036---get-response-example"></a>
 Table 1036 - Get Response Example
 
@@ -16659,6 +17666,7 @@ Table 1036 - Get Response Example
 
 #### Property 2.1.2.3.6.1 Visa payWave Kernel ID (Contactless Only)
 
+<a name="table-1037---property-212361-visa-paywave-kernel-id-contactless-only"></a>
 <a name="table-1037---property-212361-visa-paywave-kernel-id-contactless-only"></a>
 Table 1037 - Property 2.1.2.3.6.1 Visa payWave Kernel ID (Contactless Only)
 
@@ -16675,12 +17683,14 @@ Table 1037 - Property 2.1.2.3.6.1 Visa payWave Kernel ID (Contactless Only)
 | Default              |                                                                                                                                  |
 
 <a name="table-1038---get-request-example"></a>
+<a name="table-1038---get-request-example"></a>
 Table 1038 - Get Request Example
 
 | Example (Hex)                                                                                               |
 |-------------------------------------------------------------------------------------------------------------|
 | AA 00 81 04 01 03 D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 0A E1 08 E2 06 E3 04 E6 02 C1 00 |
 
+<a name="table-1039---get-response-example"></a>
 <a name="table-1039---get-response-example"></a>
 Table 1039 - Get Response Example
 
@@ -16690,6 +17700,7 @@ Table 1039 - Get Response Example
 
 #### Property 2.1.2.3.6.2 Visa payWave Kernel Firmware Part Number (Contactless Only)
 
+<a name="table-1040---property-212362-visa-paywave-kernel-firmware-part-number"></a>
 <a name="table-1040---property-212362-visa-paywave-kernel-firmware-part-number"></a>
 Table 1040 - Property 2.1.2.3.6.2 Visa payWave Kernel Firmware Part Number
 (Contactless Only)
@@ -16707,12 +17718,14 @@ Table 1040 - Property 2.1.2.3.6.2 Visa payWave Kernel Firmware Part Number
 | Default              |                                                                                                                                                 |
 
 <a name="table-1041---get-request-example"></a>
+<a name="table-1041---get-request-example"></a>
 Table 1041 - Get Request Example
 
 | Example (Hex)                                                                                               |
 |-------------------------------------------------------------------------------------------------------------|
 | AA 00 81 04 01 05 D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 0A E1 08 E2 06 E3 04 E6 02 C2 00 |
 
+<a name="table-1042---get-response-example"></a>
 <a name="table-1042---get-response-example"></a>
 Table 1042 - Get Response Example
 
@@ -16722,6 +17735,7 @@ Table 1042 - Get Response Example
 
 #### Property 2.1.2.3.6.3 Visa payWave Kernel Checksum (Contactless Only)
 
+<a name="table-1043---property-212363-visa-paywave-kernel-checksum-contactless"></a>
 <a name="table-1043---property-212363-visa-paywave-kernel-checksum-contactless"></a>
 Table 1043 - Property 2.1.2.3.6.3 Visa payWave Kernel Checksum (Contactless
 Only)
@@ -16739,12 +17753,14 @@ Only)
 | Default              |                                                                                                                                                                                     |
 
 <a name="table-1044---get-request-example"></a>
+<a name="table-1044---get-request-example"></a>
 Table 1044 - Get Request Example
 
 | Example (Hex)                                                                                               |
 |-------------------------------------------------------------------------------------------------------------|
 | AA 00 81 04 01 06 D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 0A E1 08 E2 06 E3 04 E6 02 C3 00 |
 
+<a name="table-1045---get-response-example"></a>
 <a name="table-1045---get-response-example"></a>
 Table 1045 - Get Response Example
 
@@ -16754,6 +17770,7 @@ Table 1045 - Get Response Example
 
 #### Property 2.1.2.3.6.5 Entry Point Checksum (Contactless Only)(Common Kernel Only)
 
+<a name="table-1046---property-212365-entry-point-checksum-contactless-onlycommon"></a>
 <a name="table-1046---property-212365-entry-point-checksum-contactless-onlycommon"></a>
 Table 1046 - Property 2.1.2.3.6.5 Entry Point Checksum (Contactless Only)(Common
 Kernel Only)(Common Kernel Only)
@@ -16771,12 +17788,14 @@ Kernel Only)(Common Kernel Only)
 | Default              |                                                                                                                                            |
 
 <a name="table-1047---get-request-example"></a>
+<a name="table-1047---get-request-example"></a>
 Table 1047 - Get Request Example
 
 | Example (Hex)                                                                                               |
 |-------------------------------------------------------------------------------------------------------------|
 | AA 00 81 04 01 06 D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 0A E1 08 E2 06 E3 04 E6 02 C5 00 |
 
+<a name="table-1048---get-response-example"></a>
 <a name="table-1048---get-response-example"></a>
 Table 1048 - Get Response Example
 
@@ -16786,6 +17805,7 @@ Table 1048 - Get Response Example
 
 #### Property 2.1.2.3.7.1 Discover D-PAS Kernel ID (Contactless Only)
 
+<a name="table-1049---property-212371-discover-d-pas-kernel-id-contactless-only"></a>
 <a name="table-1049---property-212371-discover-d-pas-kernel-id-contactless-only"></a>
 Table 1049 - Property 2.1.2.3.7.1 Discover D-PAS Kernel ID (Contactless Only)
 
@@ -16802,12 +17822,14 @@ Table 1049 - Property 2.1.2.3.7.1 Discover D-PAS Kernel ID (Contactless Only)
 | Default              |                                                                                                                                 |
 
 <a name="table-1050---get-request-example"></a>
+<a name="table-1050---get-request-example"></a>
 Table 1050 - Get Request Example
 
 | Example (Hex)                                                                                               |
 |-------------------------------------------------------------------------------------------------------------|
 | AA 00 81 04 01 07 D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 0A E1 08 E2 06 E3 04 E7 02 C1 00 |
 
+<a name="table-1051---get-response-example"></a>
 <a name="table-1051---get-response-example"></a>
 Table 1051 - Get Response Example
 
@@ -16833,12 +17855,14 @@ Table 1052 – Property 2.1.2.3.7.2 Discover D-PAS Kernel Firmware Part Number
 | Default              |                                                                                                                                                   |
 
 <a name="table-1053---get-request-example"></a>
+<a name="table-1053---get-request-example"></a>
 Table 1053 - Get Request Example
 
 | Example (Hex)                                                                                               |
 |-------------------------------------------------------------------------------------------------------------|
 | AA 00 81 04 01 09 D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 0A E1 08 E2 06 E3 04 E7 02 C2 00 |
 
+<a name="table-1054---get-response-example"></a>
 <a name="table-1054---get-response-example"></a>
 Table 1054 - Get Response Example
 
@@ -16848,6 +17872,7 @@ Table 1054 - Get Response Example
 
 #### Property 2.1.2.3.7.3 Discover D-PAS Kernel Checksum (Contactless Only)
 
+<a name="table-1055---property-212373-discover-d-pas-kernel-checksum-contactless"></a>
 <a name="table-1055---property-212373-discover-d-pas-kernel-checksum-contactless"></a>
 Table 1055 - Property 2.1.2.3.7.3 Discover D-PAS Kernel Checksum (Contactless
 Only)
@@ -16865,12 +17890,14 @@ Only)
 | Default              |                                                                                                                                                                                       |
 
 <a name="table-1056---get-request-example"></a>
+<a name="table-1056---get-request-example"></a>
 Table 1056 - Get Request Example
 
 | Example (Hex)                                                                                               |
 |-------------------------------------------------------------------------------------------------------------|
 | AA 00 81 04 01 0C D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 0A E1 08 E2 06 E3 04 E7 02 C3 00 |
 
+<a name="table-1057---get-response-example"></a>
 <a name="table-1057---get-response-example"></a>
 Table 1057 - Get Response Example
 
@@ -16880,6 +17907,7 @@ Table 1057 - Get Response Example
 
 #### Property 2.1.2.3.8.1 American Express Expresspay Kernel ID (Contactless Only)
 
+<a name="table-1058---property-212381-american-express-expresspay-kernel-id"></a>
 <a name="table-1058---property-212381-american-express-expresspay-kernel-id"></a>
 Table 1058 - Property 2.1.2.3.8.1 American Express Expresspay Kernel ID
 (Contactless Only)
@@ -16897,12 +17925,14 @@ Table 1058 - Property 2.1.2.3.8.1 American Express Expresspay Kernel ID
 | Default              |                                                                                                                                                |
 
 <a name="table-1059---get-request-example"></a>
+<a name="table-1059---get-request-example"></a>
 Table 1059 - Get Request Example
 
 | Example (Hex)                                                                                               |
 |-------------------------------------------------------------------------------------------------------------|
 | AA 00 81 04 01 0E D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 0A E1 08 E2 06 E3 04 E8 02 C1 00 |
 
+<a name="table-1060---get-response-example"></a>
 <a name="table-1060---get-response-example"></a>
 Table 1060 - Get Response Example
 
@@ -16928,12 +17958,14 @@ Part Number (Contactless Only)
 | Default              |                                                                                                                                                         |
 
 <a name="table-1062---get-request-example"></a>
+<a name="table-1062---get-request-example"></a>
 Table 1062 - Get Request Example
 
 | Example (Hex)                                                                                               |
 |-------------------------------------------------------------------------------------------------------------|
 | AA 00 81 04 01 0F D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 0A E1 08 E2 06 E3 04 E8 02 C2 00 |
 
+<a name="table-1063---get-response-example"></a>
 <a name="table-1063---get-response-example"></a>
 Table 1063 - Get Response Example
 
@@ -16943,6 +17975,7 @@ Table 1063 - Get Response Example
 
 #### Property 2.1.2.3.8.3 American Express Expresspay Kernel Checksum (Contactless Only)
 
+<a name="table-1064---property-212383-american-express-expresspay-kernel-checksum"></a>
 <a name="table-1064---property-212383-american-express-expresspay-kernel-checksum"></a>
 Table 1064 - Property 2.1.2.3.8.3 American Express Expresspay Kernel Checksum
 (Contactless Only)
@@ -16960,12 +17993,14 @@ Table 1064 - Property 2.1.2.3.8.3 American Express Expresspay Kernel Checksum
 | Default              |                                                                                                                                                                                       |
 
 <a name="table-1065---get-request-example"></a>
+<a name="table-1065---get-request-example"></a>
 Table 1065 - Get Request Example
 
 | Example (Hex)                                                                                               |
 |-------------------------------------------------------------------------------------------------------------|
 | AA 00 81 04 01 11 D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 0A E1 08 E2 06 E3 04 E8 02 C3 00 |
 
+<a name="table-1066---get-response-example"></a>
 <a name="table-1066---get-response-example"></a>
 Table 1066 - Get Response Example
 
@@ -16975,6 +18010,7 @@ Table 1066 - Get Response Example
 
 #### Property 2.1.2.3.9.1 Apple VAS Kernel ID
 
+<a name="table-1067---property-212391-apple-vas-kernel-id"></a>
 <a name="table-1067---property-212391-apple-vas-kernel-id"></a>
 Table 1067 - Property 2.1.2.3.9.1 Apple VAS Kernel ID
 
@@ -16991,12 +18027,14 @@ Table 1067 - Property 2.1.2.3.9.1 Apple VAS Kernel ID
 | Default              |                                                                                                                                     |
 
 <a name="table-1068---get-request-example"></a>
+<a name="table-1068---get-request-example"></a>
 Table 1068 - Get Request Example
 
 | Example (Hex)                                                                                               |
 |-------------------------------------------------------------------------------------------------------------|
 | AA 00 81 04 01 0E D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 0A E1 08 E2 06 E3 04 E9 02 C1 00 |
 
+<a name="table-1069---get-response-example"></a>
 <a name="table-1069---get-response-example"></a>
 Table 1069 - Get Response Example
 
@@ -17006,6 +18044,7 @@ Table 1069 - Get Response Example
 
 #### Property 2.1.2.3.A.1 JCB Kernel ID (Contactless Only) (Common Kernel Only)
 
+<a name="table-1070---property-2123a1-jcb-kernel-id-contactless-only-common"></a>
 <a name="table-1070---property-2123a1-jcb-kernel-id-contactless-only-common"></a>
 Table 1070 - Property 2.1.2.3.A.1 JCB Kernel ID (Contactless Only) (Common
 Kernel Only)
@@ -17023,12 +18062,14 @@ Kernel Only)
 | Default              |                                                                                                                     |
 
 <a name="table-1071---get-request-example"></a>
+<a name="table-1071---get-request-example"></a>
 Table 1071 - Get Request Example
 
 | Example (Hex)                                                                                               |
 |-------------------------------------------------------------------------------------------------------------|
 | AA 00 81 04 01 0E D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 0A E1 08 E2 06 E3 04 EA 02 C1 00 |
 
+<a name="table-1072---get-response-example"></a>
 <a name="table-1072---get-response-example"></a>
 Table 1072 - Get Response Example
 
@@ -17054,12 +18095,14 @@ Only) (Common Kernel Only)
 | Default              |                                                                                                                                 |
 
 <a name="table-1074---get-request-example"></a>
+<a name="table-1074---get-request-example"></a>
 Table 1074 - Get Request Example
 
 | Example (Hex)                                                                                               |
 |-------------------------------------------------------------------------------------------------------------|
 | AA 00 81 04 01 0F D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 0A E1 08 E2 06 E3 04 EA 02 C2 00 |
 
+<a name="table-1075---get-response-example"></a>
 <a name="table-1075---get-response-example"></a>
 Table 1075 - Get Response Example
 
@@ -17069,6 +18112,7 @@ Table 1075 - Get Response Example
 
 #### Property 2.1.2.3.A.3 JCB Kernel Checksum (Contactless Only) (Common Kernel Only)
 
+<a name="table-1076---property-2123a3-jcb-kernel-checksum-contactless-only-common"></a>
 <a name="table-1076---property-2123a3-jcb-kernel-checksum-contactless-only-common"></a>
 Table 1076 - Property 2.1.2.3.A.3 JCB Kernel Checksum (Contactless Only) (Common
 Kernel Only)
@@ -17086,12 +18130,14 @@ Kernel Only)
 | Default              |                                                                                                                                                                 |
 
 <a name="table-1077---get-request-example"></a>
+<a name="table-1077---get-request-example"></a>
 Table 1077 - Get Request Example
 
 | Example (Hex)                                                                                               |
 |-------------------------------------------------------------------------------------------------------------|
 | AA 00 81 04 01 11 D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 0A E1 08 E2 06 E3 04 EA 02 C3 00 |
 
+<a name="table-1078---get-response-example"></a>
 <a name="table-1078---get-response-example"></a>
 Table 1078 - Get Response Example
 
@@ -17101,6 +18147,7 @@ Table 1078 - Get Response Example
 
 #### Property 2.1.2.3.A.4 Reader Core Checksum (Contactless Only) (Common Kernel Only)
 
+<a name="table-1079---property-2123a4-reader-core-checksum-contactless-only"></a>
 <a name="table-1079---property-2123a4-reader-core-checksum-contactless-only"></a>
 Table 1079 - Property 2.1.2.3.A.4 Reader Core Checksum (Contactless Only)
 (Common Kernel Only)
@@ -17118,12 +18165,14 @@ Table 1079 - Property 2.1.2.3.A.4 Reader Core Checksum (Contactless Only)
 | Default              |                                                                                                                                            |
 
 <a name="table-1080---get-request-example"></a>
+<a name="table-1080---get-request-example"></a>
 Table 1080 - Get Request Example
 
 | Example (Hex)                                                                                               |
 |-------------------------------------------------------------------------------------------------------------|
 | AA 00 81 04 01 11 D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 0A E1 08 E2 06 E3 04 EA 02 C4 00 |
 
+<a name="table-1081---get-response-example"></a>
 <a name="table-1081---get-response-example"></a>
 Table 1081 - Get Response Example
 
@@ -17133,6 +18182,7 @@ Table 1081 - Get Response Example
 
 #### Property 2.1.2.3.A.5 Entry Point Checksum (Contactless Only) (Common Kernel Only)
 
+<a name="table-1082---property-2123a5-entry-point-checksum-contactless-only"></a>
 <a name="table-1082---property-2123a5-entry-point-checksum-contactless-only"></a>
 Table 1082 - Property 2.1.2.3.A.5 Entry Point Checksum (Contactless Only)
 (Common Kernel Only) (Common Kernel Only)
@@ -17150,12 +18200,14 @@ Table 1082 - Property 2.1.2.3.A.5 Entry Point Checksum (Contactless Only)
 | Default              |                                                                                                                                            |
 
 <a name="table-1083---get-request-example"></a>
+<a name="table-1083---get-request-example"></a>
 Table 1083 - Get Request Example
 
 | Example (Hex)                                                                                               |
 |-------------------------------------------------------------------------------------------------------------|
 | AA 00 81 04 01 06 D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 0A E1 08 E2 06 E3 04 EA 02 C5 00 |
 
+<a name="table-1084---get-response-example"></a>
 <a name="table-1084---get-response-example"></a>
 Table 1084 - Get Response Example
 
@@ -17165,6 +18217,7 @@ Table 1084 - Get Response Example
 
 #### Property 2.1.2.3.B.1 China Union Pay Kernel ID (Contactless Only) (Common Kernel Only)
 
+<a name="table-1085---property-2123b1-china-union-pay-kernel-id-contactless-only"></a>
 <a name="table-1085---property-2123b1-china-union-pay-kernel-id-contactless-only"></a>
 Table 1085 - Property 2.1.2.3.B.1 China Union Pay Kernel ID (Contactless Only)
 (Common Kernel Only)
@@ -17182,12 +18235,14 @@ Table 1085 - Property 2.1.2.3.B.1 China Union Pay Kernel ID (Contactless Only)
 | Default              |                                                                                                                                   |
 
 <a name="table-1086---get-request-example"></a>
+<a name="table-1086---get-request-example"></a>
 Table 1086 - Get Request Example
 
 | Example (Hex)                                                                                               |
 |-------------------------------------------------------------------------------------------------------------|
 | AA 00 81 04 01 0E D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 0A E1 08 E2 06 E3 04 EB 02 C1 00 |
 
+<a name="table-1087---get-response-example"></a>
 <a name="table-1087---get-response-example"></a>
 Table 1087 - Get Response Example
 
@@ -17213,12 +18268,14 @@ Table 1088 – Property 2.1.2.3.B.2 China Union Pay Kernel Firmware Part Number
 | Default              |                                                                                                                                              |
 
 <a name="table-1089---get-request-example"></a>
+<a name="table-1089---get-request-example"></a>
 Table 1089 - Get Request Example
 
 | Example (Hex)                                                                                               |
 |-------------------------------------------------------------------------------------------------------------|
 | AA 00 81 04 01 0F D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 0A E1 08 E2 06 E3 04 EB 02 C2 00 |
 
+<a name="table-1090---get-response-example"></a>
 <a name="table-1090---get-response-example"></a>
 Table 1090 - Get Response Example
 
@@ -17228,6 +18285,7 @@ Table 1090 - Get Response Example
 
 #### Property 2.1.2.3.B.3 China Union Pay Kernel Checksum (Contactless Only) (Common Kernel Only)
 
+<a name="table-1091---property-2123b3-china-union-pay-kernel-checksum-contactless"></a>
 <a name="table-1091---property-2123b3-china-union-pay-kernel-checksum-contactless"></a>
 Table 1091 - Property 2.1.2.3.B.3 China Union Pay Kernel Checksum (Contactless
 Only) (Common Kernel Only)
@@ -17245,12 +18303,14 @@ Only) (Common Kernel Only)
 | Default              |                                                                                                                                                                                |
 
 <a name="table-1092---get-request-example"></a>
+<a name="table-1092---get-request-example"></a>
 Table 1092 - Get Request Example
 
 | Example (Hex)                                                                                               |
 |-------------------------------------------------------------------------------------------------------------|
 | AA 00 81 04 01 11 D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 0A E1 08 E2 06 E3 04 EB 02 C3 00 |
 
+<a name="table-1093---get-response-example"></a>
 <a name="table-1093---get-response-example"></a>
 Table 1093 - Get Response Example
 
@@ -17260,6 +18320,7 @@ Table 1093 - Get Response Example
 
 #### Property 2.1.2.3.C.1 Interact Flash Kernel ID (Contactless Only) (Common Kernel Only)
 
+<a name="table-1094---property-2123c1-interact-flash-kernel-id-contactless-only"></a>
 <a name="table-1094---property-2123c1-interact-flash-kernel-id-contactless-only"></a>
 Table 1094 - Property 2.1.2.3.C.1 Interact Flash Kernel ID (Contactless Only)
 (Common Kernel Only)
@@ -17277,12 +18338,14 @@ Table 1094 - Property 2.1.2.3.C.1 Interact Flash Kernel ID (Contactless Only)
 | Default              |                                                                                                                                  |
 
 <a name="table-1095---get-request-example"></a>
+<a name="table-1095---get-request-example"></a>
 Table 1095 - Get Request Example
 
 | Example (Hex)                                                                                               |
 |-------------------------------------------------------------------------------------------------------------|
 | AA 00 81 04 01 0E D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 0A E1 08 E2 06 E3 04 EC 02 C1 00 |
 
+<a name="table-1096---get-response-example"></a>
 <a name="table-1096---get-response-example"></a>
 Table 1096 - Get Response Example
 
@@ -17308,12 +18371,14 @@ Table 1097 – Property 2.1.2.3.C.2 Interact Flash Kernel Firmware Part Number
 | Default              |                                                                                                                                             |
 
 <a name="table-1098---get-request-example"></a>
+<a name="table-1098---get-request-example"></a>
 Table 1098 - Get Request Example
 
 | Example (Hex)                                                                                               |
 |-------------------------------------------------------------------------------------------------------------|
 | AA 00 81 04 01 0F D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 0A E1 08 E2 06 E3 04 EC 02 C2 00 |
 
+<a name="table-1099---get-response-example"></a>
 <a name="table-1099---get-response-example"></a>
 Table 1099 - Get Response Example
 
@@ -17323,6 +18388,7 @@ Table 1099 - Get Response Example
 
 #### Property 2.1.2.3.C.3 Interact Flash Kernel Checksum (Contactless Only) (Common Kernel Only)
 
+<a name="table-1100---property-2123c3-interact-flash-kernel-checksum-contactless"></a>
 <a name="table-1100---property-2123c3-interact-flash-kernel-checksum-contactless"></a>
 Table 1100 - Property 2.1.2.3.C.3 Interact Flash Kernel Checksum (Contactless
 Only) (Common Kernel Only)
@@ -17340,12 +18406,14 @@ Only) (Common Kernel Only)
 | Default              |                                                                                                                                                                              |
 
 <a name="table-1101---get-request-example"></a>
+<a name="table-1101---get-request-example"></a>
 Table 1101 - Get Request Example
 
 | Example (Hex)                                                                                               |
 |-------------------------------------------------------------------------------------------------------------|
 | AA 00 81 04 01 11 D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 0A E1 08 E2 06 E3 04 EC 02 C3 00 |
 
+<a name="table-1102---get-response-example"></a>
 <a name="table-1102---get-response-example"></a>
 Table 1102 - Get Response Example
 
@@ -17359,6 +18427,7 @@ Table 1102 - Get Response Example
 
 #### Property 2.1.2.5.3.1 WLAN Firmware Version
 
+<a name="table-1103---property-212531-wlan-firmware-version"></a>
 <a name="table-1103---property-212531-wlan-firmware-version"></a>
 Table 1103 - Property 2.1.2.5.3.1 WLAN Firmware Version
 
@@ -17375,12 +18444,14 @@ Table 1103 - Property 2.1.2.5.3.1 WLAN Firmware Version
 | Default              | None                                                                                                                                                                      |
 
 <a name="table-1104---get-request-example"></a>
+<a name="table-1104---get-request-example"></a>
 Table 1104 - Get Request Example
 
 | Example (Hex)                                                            |
 |--------------------------------------------------------------------------|
 | AA0081040108D101841AD10181072B06010401F609850102890AE108E206E504E302C100 |
 
+<a name="table-1105---get-response-example"></a>
 <a name="table-1105---get-response-example"></a>
 Table 1105 - Get Response Example
 
@@ -17390,6 +18461,7 @@ Table 1105 - Get Response Example
 
 #### Property 2.1.2.5.3.2 WLAN WiFi Module Build Hash (MAGTEK INTERNAL ONLY)
 
+<a name="table-1106---property-212532-wlan-wifi-module-build-hash-magtek-internal"></a>
 <a name="table-1106---property-212532-wlan-wifi-module-build-hash-magtek-internal"></a>
 Table 1106 - Property 2.1.2.5.3.2 WLAN WiFi Module Build Hash (MAGTEK INTERNAL
 ONLY) (MAGTEL INTERNAL ONLY)
@@ -17407,12 +18479,14 @@ ONLY) (MAGTEL INTERNAL ONLY)
 | Default              | None                                                                |
 
 <a name="table-1107---get-request-example"></a>
+<a name="table-1107---get-request-example"></a>
 Table 1107 - Get Request Example
 
 | Example (Hex)                                                            |
 |--------------------------------------------------------------------------|
 | AA0081040108D101841AD10181072B06010401F609850102890AE108E206E504E302C200 |
 
+<a name="table-1108---get-response-example"></a>
 <a name="table-1108---get-response-example"></a>
 Table 1108 - Get Response Example
 
@@ -17452,6 +18526,7 @@ Table 8.593 - Get Response Example
 #### Property 2.1.2.5.6.1 WLAN WiFi Module MAC Address
 
 <a name="table-1109---property-212561-wlan-wifi-module-mac-addresswlan-wifi-module"></a>
+<a name="table-1109---property-212561-wlan-wifi-module-mac-addresswlan-wifi-module"></a>
 Table 1109 - Property 2.1.2.5.6.1 WLAN WiFi Module MAC AddressWLAN WiFi Module
 MAC Address
 
@@ -17468,12 +18543,14 @@ MAC Address
 | Default              | None                                                                 |
 
 <a name="table-1110---get-request-example"></a>
+<a name="table-1110---get-request-example"></a>
 Table 1110 - Get Request Example
 
 | Example (Hex)                                                                 |
 |-------------------------------------------------------------------------------|
 | AA00 8104010ED101 841AD101 81072B06010401F609 850102 890AE108E206E504E602C100 |
 
+<a name="table-1111---get-response-example"></a>
 <a name="table-1111---get-response-example"></a>
 Table 1111 - Get Response Example
 
@@ -17483,6 +18560,7 @@ Table 1111 - Get Response Example
 
 #### Property 2.1.2.5.6.2 WLAN WiFi RSSI
 
+<a name="table-1112---property-212562-wlan-wifi-rssiwlan-wifi-rssi"></a>
 <a name="table-1112---property-212562-wlan-wifi-rssiwlan-wifi-rssi"></a>
 Table 1112 - Property 2.1.2.5.6.2 WLAN WiFi RSSIWLAN WiFi RSSI
 
@@ -17499,12 +18577,14 @@ Table 1112 - Property 2.1.2.5.6.2 WLAN WiFi RSSIWLAN WiFi RSSI
 | Default              | None                                                   |
 
 <a name="table-1113---get-request-example"></a>
+<a name="table-1113---get-request-example"></a>
 Table 1113 - Get Request Example
 
 | Example (Hex)                                                                 |
 |-------------------------------------------------------------------------------|
 | AA00 8104010ED101 841AD101 81072B06010401F609 850102 890AE108E206E504E602C200 |
 
+<a name="table-1114---get-response-example"></a>
 <a name="table-1114---get-response-example"></a>
 Table 1114 - Get Response Example
 
@@ -17514,6 +18594,7 @@ Table 1114 - Get Response Example
 
 #### Property 2.1.2.5.6.3 WLAN Dynamic IP Address
 
+<a name="table-1115---property-212563-wlan-dynamic-ip-addresswlan-dynamic-ip-address"></a>
 <a name="table-1115---property-212563-wlan-dynamic-ip-addresswlan-dynamic-ip-address"></a>
 Table 1115 - Property 2.1.2.5.6.3 WLAN Dynamic IP AddressWLAN Dynamic IP Address
 
@@ -17530,12 +18611,14 @@ Table 1115 - Property 2.1.2.5.6.3 WLAN Dynamic IP AddressWLAN Dynamic IP Address
 | Default              | None                                                                 |
 
 <a name="table-1116---get-request-example"></a>
+<a name="table-1116---get-request-example"></a>
 Table 1116 - Get Request Example
 
 | Example (Hex)                                                                 |
 |-------------------------------------------------------------------------------|
 | AA00 8104010ED101 841AD101 81072B06010401F609 850102 890AE108E206E504E602C300 |
 
+<a name="table-1117---get-response-example"></a>
 <a name="table-1117---get-response-example"></a>
 Table 1117 - Get Response Example
 
@@ -17545,6 +18628,7 @@ Table 1117 - Get Response Example
 
 #### Property 2.1.2.5.6.4 Active Client Connections
 
+<a name="table-1118---property-212564-active-client-connections"></a>
 <a name="table-1118---property-212564-active-client-connections"></a>
 Table 1118 - Property 2.1.2.5.6.4 Active Client Connections
 
@@ -17561,12 +18645,14 @@ Table 1118 - Property 2.1.2.5.6.4 Active Client Connections
 | Default              | None                                                                                                                                              |
 
 <a name="table-1119---get-request-example"></a>
+<a name="table-1119---get-request-example"></a>
 Table 1119 - Get Request Example
 
 | Example (Hex)                                                |
 |--------------------------------------------------------------|
 | AA00 8104 0155D101 840F D101 8501 02 8704 01020506 8902 C400 |
 
+<a name="table-1120---get-response-example"></a>
 <a name="table-1120---get-response-example"></a>
 Table 1120 - Get Response Example
 
@@ -17576,6 +18662,7 @@ Table 1120 - Get Response Example
 
 #### Property 2.1.2.5.6.5 Server Certificate Chain Select
 
+<a name="table-1121---property-212565-server-certificate-chain-select"></a>
 <a name="table-1121---property-212565-server-certificate-chain-select"></a>
 Table 1121 - Property 2.1.2.5.6.5 Server Certificate Chain Select
 
@@ -17592,12 +18679,14 @@ Table 1121 - Property 2.1.2.5.6.5 Server Certificate Chain Select
 | Default              | None                                                                                                                                                                     |
 
 <a name="table-1122---get-request-example"></a>
+<a name="table-1122---get-request-example"></a>
 Table 1122 - Get Request Example
 
 | Example (Hex)                                                |
 |--------------------------------------------------------------|
 | AA00 8104 0155D101 840F D101 8501 02 8704 01020506 8902 C500 |
 
+<a name="table-1123---get-response-example"></a>
 <a name="table-1123---get-response-example"></a>
 Table 1123 - Get Response Example
 
@@ -17607,6 +18696,7 @@ Table 1123 - Get Response Example
 
 #### Property 2.1.2.5.6.6 Security Protocol
 
+<a name="table-1124---property-212566-security-protocol"></a>
 <a name="table-1124---property-212566-security-protocol"></a>
 Table 1124 - Property 2.1.2.5.6.6 Security Protocol
 
@@ -17623,12 +18713,14 @@ Table 1124 - Property 2.1.2.5.6.6 Security Protocol
 | Default              | None                                                                                                                            |
 
 <a name="table-1125---get-request-example"></a>
+<a name="table-1125---get-request-example"></a>
 Table 1125 - Get Request Example
 
 | Example (Hex)                                                |
 |--------------------------------------------------------------|
 | AA00 8104 0155D101 840F D101 8501 02 8704 01020506 8902 C600 |
 
+<a name="table-1126---get-response-example"></a>
 <a name="table-1126---get-response-example"></a>
 Table 1126 - Get Response Example
 
@@ -17638,6 +18730,7 @@ Table 1126 - Get Response Example
 
 #### Property 2.1.2.5.6.7 Available Access Points
 
+<a name="table-1127---property-212567-available-access-points"></a>
 <a name="table-1127---property-212567-available-access-points"></a>
 Table 1127 - Property 2.1.2.5.6.7 Available Access Points
 
@@ -17672,12 +18765,14 @@ Table 1128 – Access Point Payload Detail
 | /81 | var | Received Signal Strength Indicator (RSSI) | B   | R   |         |
 
 <a name="table-1129---get-request-example"></a>
+<a name="table-1129---get-request-example"></a>
 Table 1129 - Get Request Example
 
 | Example (Hex)                                                |
 |--------------------------------------------------------------|
 | AA00 8104 0155D101 840F D101 8501 02 8704 01020506 8902 C700 |
 
+<a name="table-1130---get-response-example"></a>
 <a name="table-1130---get-response-example"></a>
 Table 1130 - Get Response Example
 
@@ -17689,6 +18784,7 @@ Table 1130 - Get Response Example
 
 #### Property 2.1.2.6.1.1 Firmware Git and Build information (MAGTEK INTERNAL ONLY)
 
+<a name="table-1131---property-212611-firmware-git-and-build-information-magtek"></a>
 <a name="table-1131---property-212611-firmware-git-and-build-information-magtek"></a>
 Table 1131 - Property 2.1.2.6.1.1 Firmware Git and Build information (MAGTEK
 INTERNAL ONLY)
@@ -17706,12 +18802,14 @@ INTERNAL ONLY)
 | Default              | None                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
 
 <a name="table-1132---get-request-example"></a>
+<a name="table-1132---get-request-example"></a>
 Table 1132 - Get Request Example
 
 | Example (Hex)                                                |
 |--------------------------------------------------------------|
 | AA00 8104 0155D101 840F D101 8501 02 8704 01020601 8902 C100 |
 
+<a name="table-1133---get-response-example"></a>
 <a name="table-1133---get-response-example"></a>
 Table 1133 - Get Response Example
 
@@ -17723,6 +18821,7 @@ Table 1133 - Get Response Example
 
 #### Property 2.1.2.7.1.1 Bluetooth® LE Firmware Version
 
+<a name="table-1134---property-212711-bluetooth-le-firmware-version"></a>
 <a name="table-1134---property-212711-bluetooth-le-firmware-version"></a>
 Table 1134 - Property 2.1.2.7.1.1 Bluetooth® LE Firmware Version
 
@@ -17739,12 +18838,14 @@ Table 1134 - Property 2.1.2.7.1.1 Bluetooth® LE Firmware Version
 | Default              | None                                                                                                                                                                     |
 
 <a name="table-1135---get-request-example"></a>
+<a name="table-1135---get-request-example"></a>
 Table 1135 - Get Request Example
 
 | Example (Hex)                                                            |
 |--------------------------------------------------------------------------|
 | AA0081040108D101841AD10181072B06010401F609850102890AE108E206E704E102C100 |
 
+<a name="table-1136---get-response-example"></a>
 <a name="table-1136---get-response-example"></a>
 Table 1136 - Get Response Example
 
@@ -17754,6 +18855,7 @@ Table 1136 - Get Response Example
 
 #### Property 2.1.2.7.1.2 Bluetooth® LE Firmware Sequence Number
 
+<a name="table-1137---property-212712-bluetooth-le-firmware-sequence-number"></a>
 <a name="table-1137---property-212712-bluetooth-le-firmware-sequence-number"></a>
 Table 1137 - Property 2.1.2.7.1.2 Bluetooth® LE Firmware Sequence Number
 
@@ -17770,12 +18872,14 @@ Table 1137 - Property 2.1.2.7.1.2 Bluetooth® LE Firmware Sequence Number
 | Default              | None                                                                      |
 
 <a name="table-1138---get-request-example"></a>
+<a name="table-1138---get-request-example"></a>
 Table 1138 - Get Request Example
 
 | Example (Hex)                                                            |
 |--------------------------------------------------------------------------|
 | AA0081040106D101841AD10181072B06010401F609850102890AE108E206E704E102C200 |
 
+<a name="table-1139---get-response-example"></a>
 <a name="table-1139---get-response-example"></a>
 Table 1139 - Get Response Example
 
@@ -17800,12 +18904,14 @@ Table 1140 – Bluetooth® LE Device Address
 | Default              | None                                                                                                     |
 
 <a name="table-1141---get-request-example"></a>
+<a name="table-1141---get-request-example"></a>
 Table 1141 - Get Request Example
 
 | Example (Hex)                                                                 |
 |-------------------------------------------------------------------------------|
 | AA00 8104010ED101 841AD101 81072B06010401F609 850102 890AE108E206E704E202C100 |
 
+<a name="table-1142---get-response-example"></a>
 <a name="table-1142---get-response-example"></a>
 Table 1142 - Get Response Example
 
@@ -17830,12 +18936,14 @@ Table 1143 – Bluetooth® LE Connection Status
 | Default              | None                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
 
 <a name="table-1144---get-request-example"></a>
+<a name="table-1144---get-request-example"></a>
 Table 1144 - Get Request Example
 
 | Example (Hex)                                                |
 |--------------------------------------------------------------|
 | AA00 8104 0155D101 840F D101 8501 02 8704 01020702 8902 C200 |
 
+<a name="table-1145---get-response-example"></a>
 <a name="table-1145---get-response-example"></a>
 Table 1145 - Get Response Example
 
@@ -17860,12 +18968,14 @@ Table 1146 – Bluetooth® LE Number of Bondings
 | Default              | None                                                                                                                                                                                                                                        |
 
 <a name="table-1147---get-request-example"></a>
+<a name="table-1147---get-request-example"></a>
 Table 1147 - Get Request Example
 
 | Example (Hex)                                                |
 |--------------------------------------------------------------|
 | AA00 8104 0155D101 840F D101 8501 02 8704 01020702 8902 C300 |
 
+<a name="table-1148---get-response-example"></a>
 <a name="table-1148---get-response-example"></a>
 Table 1148 - Get Response Example
 
@@ -17890,12 +19000,14 @@ Table 1149 – Bluetooth® LE MTU Size
 | Default              | None                                                                                                                                                                                                                                                                                                                                                                       |
 
 <a name="table-1150---get-request-example"></a>
+<a name="table-1150---get-request-example"></a>
 Table 1150 - Get Request Example
 
 | Example (Hex)                                                |
 |--------------------------------------------------------------|
 | AA00 8104 0155D101 840F D101 8501 02 8704 01020702 8902 C400 |
 
+<a name="table-1151---get-response-example"></a>
 <a name="table-1151---get-response-example"></a>
 Table 1151 - Get Response Example
 
@@ -17907,6 +19019,7 @@ Table 1151 - Get Response Example
 
 #### Property 2.1.2.8.1.1 UI Configuration File
 
+<a name="table-1152---property-212811-ui-configuration-file"></a>
 <a name="table-1152---property-212811-ui-configuration-file"></a>
 Table 1152 - Property 2.1.2.8.1.1 UI Configuration File
 
@@ -17923,12 +19036,14 @@ Table 1152 - Property 2.1.2.8.1.1 UI Configuration File
 | Default              | None                                                                                |
 
 <a name="table-1153---get-request-example"></a>
+<a name="table-1153---get-request-example"></a>
 Table 1153 - Get Request Example
 
 | Example (Hex)                                                            |
 |--------------------------------------------------------------------------|
 | AA0081040106D101841AD10181072B06010401F609850102890AE108E206E804E102C100 |
 
+<a name="table-1154---get-response-example"></a>
 <a name="table-1154---get-response-example"></a>
 Table 1154 - Get Response Example
 
@@ -17942,6 +19057,7 @@ Table 1154 - Get Response Example
 
 #### Property 2.2.1.1.1.1 Serial Number
 
+<a name="table-1155---property-221111-serial-number"></a>
 <a name="table-1155---property-221111-serial-number"></a>
 Table 1155 - Property 2.2.1.1.1.1 Serial Number
 
@@ -17958,12 +19074,14 @@ Table 1155 - Property 2.2.1.1.1.1 Serial Number
 | Default              |                                                                                                                                                                                                                                        |
 
 <a name="table-1156---get-request-example"></a>
+<a name="table-1156---get-request-example"></a>
 Table 1156 - Get Request Example
 
 | Example (Hex)                                                                                         |
 |-------------------------------------------------------------------------------------------------------|
 | AA 00 81 04 01 B5 D1 01 84 18 D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 87 04 02 01 01 01 89 02 C1 00 |
 
+<a name="table-1157---get-response-example"></a>
 <a name="table-1157---get-response-example"></a>
 Table 1157 - Get Response Example
 
@@ -17973,6 +19091,7 @@ Table 1157 - Get Response Example
 
 #### Property 2.2.1.1.1.2 Device Capabilities Report (MAGTEK INTERNAL ONLY FOR NOW)
 
+<a name="table-1158---property-221112-device-capabilities-report-magtek-internal"></a>
 <a name="table-1158---property-221112-device-capabilities-report-magtek-internal"></a>
 Table 1158 - Property 2.2.1.1.1.2 Device Capabilities Report (MAGTEK INTERNAL
 ONLY FOR NOW)
@@ -17990,12 +19109,14 @@ ONLY FOR NOW)
 | Default              |                                                                                                                                                                                                                                                                                                                                                       |
 
 <a name="table-1159---get-request-example"></a>
+<a name="table-1159---get-request-example"></a>
 Table 1159 - Get Request Example
 
 | Example (Hex)                                                                                               |
 |-------------------------------------------------------------------------------------------------------------|
 | AA 00 81 04 01 E0 D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 0A E2 08 E1 06 E1 04 E1 02 C2 00 |
 
+<a name="table-1160---get-response-example"></a>
 <a name="table-1160---get-response-example"></a>
 Table 1160 - Get Response Example
 
@@ -18005,6 +19126,7 @@ Table 1160 - Get Response Example
 
 #### Property 2.2.1.1.1.3 PCI Hardware ID
 
+<a name="table-1161---property-221113-pci-hardware-id"></a>
 <a name="table-1161---property-221113-pci-hardware-id"></a>
 Table 1161 - Property 2.2.1.1.1.3 PCI Hardware ID
 
@@ -18021,12 +19143,14 @@ Table 1161 - Property 2.2.1.1.1.3 PCI Hardware ID
 | Default              |                                                                                                                                                                      |
 
 <a name="table-1162---get-request-example"></a>
+<a name="table-1162---get-request-example"></a>
 Table 1162 - Get Request Example
 
 | Example (Hex)                                                                                                |
 |--------------------------------------------------------------------------------------------------------------|
 | AA 00 81 04 01 E3 D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 0A E2 08 E1 06 E1 04 E1 02 C3 00  |
 
+<a name="table-1163---get-response-example"></a>
 <a name="table-1163---get-response-example"></a>
 Table 1163 - Get Response Example
 
@@ -18036,6 +19160,7 @@ Table 1163 - Get Response Example
 
 #### Property 2.2.1.1.1.4 Device Hardware Configuration (MAGTEK INTERNAL ONLY)
 
+<a name="table-1164---property-221114-device-hardware-configuration-magtek-internal"></a>
 <a name="table-1164---property-221114-device-hardware-configuration-magtek-internal"></a>
 Table 1164 - Property 2.2.1.1.1.4 Device Hardware Configuration (MAGTEK INTERNAL
 ONLY)
@@ -18053,12 +19178,14 @@ ONLY)
 | Default              |                                                                                                                                                                                                                      |
 
 <a name="table-1165---get-request-example"></a>
+<a name="table-1165---get-request-example"></a>
 Table 1165 - Get Request Example
 
 | Example (Hex)                                                                                               |
 |-------------------------------------------------------------------------------------------------------------|
 | AA 00 81 04 01 E3 D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 0A E2 08 E1 06 E1 04 E1 02 C4 00 |
 
+<a name="table-1166---get-response-example"></a>
 <a name="table-1166---get-response-example"></a>
 Table 1166 - Get Response Example
 
@@ -18072,6 +19199,7 @@ Table 1166 - Get Response Example
 
 #### Property 2.3.1.1.1.1 Device Key Status
 
+<a name="table-1167---property-231111-device-key-status"></a>
 <a name="table-1167---property-231111-device-key-status"></a>
 Table 1167 - Property 2.3.1.1.1.1 Device Key Status
 
@@ -18088,12 +19216,14 @@ Table 1167 - Property 2.3.1.1.1.1 Device Key Status
 | Default              | None                                                                                                                                                                                                                                                                       |
 
 <a name="table-1168---get-request-example"></a>
+<a name="table-1168---get-request-example"></a>
 Table 1168 - Get Request Example
 
 | Example (Hex)                                                                 |
 |-------------------------------------------------------------------------------|
 | AA00 8104010ED101 841AD101 81072B06010401F609 850102 890AE308E106E104E102C100 |
 
+<a name="table-1169---get-response-example"></a>
 <a name="table-1169---get-response-example"></a>
 Table 1169 - Get Response Example
 
@@ -18103,6 +19233,7 @@ Table 1169 - Get Response Example
 
 #### Property 2.3.1.1.1.2 Transaction Key Status
 
+<a name="table-1170---property-231112-transaction-key-status"></a>
 <a name="table-1170---property-231112-transaction-key-status"></a>
 Table 1170 - Property 2.3.1.1.1.2 Transaction Key Status
 
@@ -18119,12 +19250,14 @@ Table 1170 - Property 2.3.1.1.1.2 Transaction Key Status
 | Default              | None                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
 
 <a name="table-1171---get-request-example"></a>
+<a name="table-1171---get-request-example"></a>
 Table 1171 - Get Request Example
 
 | Example (Hex)                                                                 |
 |-------------------------------------------------------------------------------|
 | AA00 8104010FD101 841AD101 81072B06010401F609 850102 890AE308E106E104E102C200 |
 
+<a name="table-1172---get-response-example"></a>
 <a name="table-1172---get-response-example"></a>
 Table 1172 - Get Response Example
 
@@ -18136,6 +19269,7 @@ Table 1172 - Get Response Example
 
 #### Property 2.3.1.1.2.1 Real Time Clock Enabled
 
+<a name="table-1173---property-231121-real-time-clock-enabled"></a>
 <a name="table-1173---property-231121-real-time-clock-enabled"></a>
 Table 1173 - Property 2.3.1.1.2.1 Real Time Clock Enabled
 
@@ -18152,12 +19286,14 @@ Table 1173 - Property 2.3.1.1.2.1 Real Time Clock Enabled
 | Default              | None                                                                                                                                                                                                                                       |
 
 <a name="table-1174---get-request-example"></a>
+<a name="table-1174---get-request-example"></a>
 Table 1174 - Get Request Example
 
 | Example (Hex)                                                |
 |--------------------------------------------------------------|
 | AA00 8104 0155D101 840F D101 8501 02 8704 03010102 8902 C100 |
 
+<a name="table-1175---get-response-example"></a>
 <a name="table-1175---get-response-example"></a>
 Table 1175 - Get Response Example
 
@@ -18167,6 +19303,7 @@ Table 1175 - Get Response Example
 
 #### Property 2.3.1.1.2.2 Tamper Sensors Activated
 
+<a name="table-1176---property-231122-tamper-sensors-activated"></a>
 <a name="table-1176---property-231122-tamper-sensors-activated"></a>
 Table 1176 - Property 2.3.1.1.2.2 Tamper Sensors Activated
 
@@ -18183,12 +19320,14 @@ Table 1176 - Property 2.3.1.1.2.2 Tamper Sensors Activated
 | Default              | None                                                                                                                                                                                                                                                    |
 
 <a name="table-1177---get-request-example"></a>
+<a name="table-1177---get-request-example"></a>
 Table 1177 - Get Request Example
 
 | Example (Hex)                                                |
 |--------------------------------------------------------------|
 | AA00 8104 0155D101 840F D101 8501 02 8704 03010102 8902 C100 |
 
+<a name="table-1178---get-response-example"></a>
 <a name="table-1178---get-response-example"></a>
 Table 1178 - Get Response Example
 
@@ -18198,6 +19337,7 @@ Table 1178 - Get Response Example
 
 #### Property 2.3.1.1.2.3 Tamper Sensor Tampered
 
+<a name="table-1179---property-231123-tamper-sensor-tampered"></a>
 <a name="table-1179---property-231123-tamper-sensor-tampered"></a>
 Table 1179 - Property 2.3.1.1.2.3 Tamper Sensor Tampered
 
@@ -18214,12 +19354,14 @@ Table 1179 - Property 2.3.1.1.2.3 Tamper Sensor Tampered
 | Default              | None                                                                                                                                                                                                                                                                                                                                                                  |
 
 <a name="table-1180---get-request-example"></a>
+<a name="table-1180---get-request-example"></a>
 Table 1180 - Get Request Example
 
 | Example (Hex)                                                |
 |--------------------------------------------------------------|
 | AA00 8104 0155D101 840F D101 8501 02 8704 03010102 8902 C300 |
 
+<a name="table-1181---get-response-example"></a>
 <a name="table-1181---get-response-example"></a>
 Table 1181 - Get Response Example
 
@@ -18229,6 +19371,7 @@ Table 1181 - Get Response Example
 
 #### Property 2.3.1.1.2.4 Tamper Configuration Revision (MAGTEK INTERNAL ONLY)
 
+<a name="table-1182---property-231124-tamper-configuration-revision-magtek-internal"></a>
 <a name="table-1182---property-231124-tamper-configuration-revision-magtek-internal"></a>
 Table 1182 - Property 2.3.1.1.2.4 Tamper Configuration Revision (MAGTEK INTERNAL
 ONLY)
@@ -18246,12 +19389,14 @@ ONLY)
 | Default              | None                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
 
 <a name="table-1183---get-request-example"></a>
+<a name="table-1183---get-request-example"></a>
 Table 1183 - Get Request Example
 
 | Example (Hex)                                                |
 |--------------------------------------------------------------|
 | AA00 8104 0155D101 840F D101 8501 02 8704 03010102 8902 C400 |
 
+<a name="table-1184---get-response-example"></a>
 <a name="table-1184---get-response-example"></a>
 Table 1184 - Get Response Example
 
@@ -18263,6 +19408,7 @@ Table 1184 - Get Response Example
 
 #### Property 2.3.1.2.1.1 Device Operational Status
 
+<a name="table-1185---property-231211-device-operational-status"></a>
 <a name="table-1185---property-231211-device-operational-status"></a>
 Table 1185 - Property 2.3.1.2.1.1 Device Operational Status
 
@@ -18279,12 +19425,14 @@ Table 1185 - Property 2.3.1.2.1.1 Device Operational Status
 | Default              | None                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
 
 <a name="table-1186---get-request-example"></a>
+<a name="table-1186---get-request-example"></a>
 Table 1186 - Get Request Example
 
 | Example (Hex)                                                |
 |--------------------------------------------------------------|
 | AA00 8104 0155D101 840F D101 8501 02 8704 03010201 8902 C100 |
 
+<a name="table-1187---get-response-example"></a>
 <a name="table-1187---get-response-example"></a>
 Table 1187 - Get Response Example
 
@@ -18294,6 +19442,7 @@ Table 1187 - Get Response Example
 
 #### Property 2.3.1.2.1.2 Offline Status Detail
 
+<a name="table-1188---property-231212-offline-status-detail"></a>
 <a name="table-1188---property-231212-offline-status-detail"></a>
 Table 1188 - Property 2.3.1.2.1.2 Offline Status Detail
 
@@ -18310,12 +19459,14 @@ Table 1188 - Property 2.3.1.2.1.2 Offline Status Detail
 | Default              | None                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
 
 <a name="table-1189---get-request-example"></a>
+<a name="table-1189---get-request-example"></a>
 Table 1189 - Get Request Example
 
 | Example (Hex)                                                |
 |--------------------------------------------------------------|
 | AA00 8104 0155D101 840F D101 8501 02 8704 03010201 8902 C200 |
 
+<a name="table-1190---get-response-example"></a>
 <a name="table-1190---get-response-example"></a>
 Table 1190 - Get Response Example
 
@@ -18325,6 +19476,7 @@ Table 1190 - Get Response Example
 
 #### Property 2.3.1.2.1.3 External Power Supplied
 
+<a name="table-1191---property-231213-external-power-supplied"></a>
 <a name="table-1191---property-231213-external-power-supplied"></a>
 Table 1191 - Property 2.3.1.2.1.3 External Power Supplied
 
@@ -18341,12 +19493,14 @@ Table 1191 - Property 2.3.1.2.1.3 External Power Supplied
 | Default              | None                                                                  |
 
 <a name="table-1192---get-request-example"></a>
+<a name="table-1192---get-request-example"></a>
 Table 1192 - Get Request Example
 
 | Example (Hex)                                                |
 |--------------------------------------------------------------|
 | AA00 8104 0155D101 840F D101 8501 02 8704 03010201 8902 C300 |
 
+<a name="table-8200---get-response-example"></a>
 <a name="table-8200---get-response-example"></a>
 Table 8200 - Get Response Example
 
@@ -18356,6 +19510,7 @@ Table 8200 - Get Response Example
 
 #### Property 2.3.1.2.1.4 Battery State of Charge
 
+<a name="table-8201---property-231214-battery-state-of-charge"></a>
 <a name="table-8201---property-231214-battery-state-of-charge"></a>
 Table 8201 - Property 2.3.1.2.1.4 Battery State of Charge
 
@@ -18372,12 +19527,14 @@ Table 8201 - Property 2.3.1.2.1.4 Battery State of Charge
 | Default              | None                                                                                                                                             |
 
 <a name="table-8202---get-request-example"></a>
+<a name="table-8202---get-request-example"></a>
 Table 8202 - Get Request Example
 
 | Example (Hex)                                                |
 |--------------------------------------------------------------|
 | AA00 8104 0155D101 840F D101 8501 02 8704 03010201 8902 C400 |
 
+<a name="table-8203---get-response-example"></a>
 <a name="table-8203---get-response-example"></a>
 Table 8203 - Get Response Example
 
@@ -18387,6 +19544,7 @@ Table 8203 - Get Response Example
 
 #### Property 2.3.1.2.1.5 Battery Charger Status
 
+<a name="table-8204---property-231215-battery-charger-status"></a>
 <a name="table-8204---property-231215-battery-charger-status"></a>
 Table 8204 - Property 2.3.1.2.1.5 Battery Charger Status
 
@@ -18403,12 +19561,14 @@ Table 8204 - Property 2.3.1.2.1.5 Battery Charger Status
 | Default              | None                                                                                                                                                                       |
 
 <a name="table-8205---get-request-example"></a>
+<a name="table-8205---get-request-example"></a>
 Table 8205 - Get Request Example
 
 | Example (Hex)                                                |
 |--------------------------------------------------------------|
 | AA00 8104 0155D101 840F D101 8501 02 8704 03010201 8902 C500 |
 
+<a name="table-8206---get-response-example"></a>
 <a name="table-8206---get-response-example"></a>
 Table 8206 - Get Response Example
 
@@ -18418,6 +19578,7 @@ Table 8206 - Get Response Example
 
 #### Property 2.3.1.2.1.6 Device Temperature
 
+<a name="table-8207---property-231216-device-temperature"></a>
 <a name="table-8207---property-231216-device-temperature"></a>
 Table 8207 - Property 2.3.1.2.1.6 Device Temperature
 
@@ -18434,12 +19595,14 @@ Table 8207 - Property 2.3.1.2.1.6 Device Temperature
 | Default              | None                                                               |
 
 <a name="table-8208---get-request-example"></a>
+<a name="table-8208---get-request-example"></a>
 Table 8208 - Get Request Example
 
 | Example (Hex)                                                |
 |--------------------------------------------------------------|
 | AA00 8104 0155D101 840F D101 8501 02 8704 03010201 8902 C600 |
 
+<a name="table-8209---get-response-example"></a>
 <a name="table-8209---get-response-example"></a>
 Table 8209 - Get Response Example
 
@@ -18644,6 +19807,7 @@ To run the demo, execute the following steps:
     beeps, display a results text and light an LED. The following table shows
     the result of each type of read:
 
+<a name="table-1193---led-display"></a>
 <a name="table-1193---led-display"></a>
 Table 1193 - LED Display
 
@@ -18883,6 +20047,7 @@ the device beeps six times then releasing it causes the LEDs on the front of the
 device to display the current charge state of the battery. The LEDs will return
 to their previous state after three seconds.
 
+<a name="table-1214---battery-charged-example"></a>
 <a name="table-1214---battery-charged-example"></a>
 Table 1214 - Battery Charged Example
 
