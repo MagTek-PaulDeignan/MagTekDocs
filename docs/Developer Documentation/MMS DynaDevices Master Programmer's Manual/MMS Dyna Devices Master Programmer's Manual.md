@@ -41,12 +41,15 @@ const toggleDarkMode = document.querySelector('.js-toggle-dark-mode');
  });
  </script>
 
-| [MMS Dyna Devices Master Programmer's Manual] 
+# MMS Dyna Devices Master Programmer's Manual 
 
-| ![](Images/82ccd15a8da072922d00916f26c92df5.jpeg)![
-    
-](Images/e5843d90d1276684a1d962214cbd3140.jpeg) ![](Images/c78ef97c2221cbe76e7b653fbb5afcd0.jpeg)![](Images/c0010811ff3eb68a963cda9d7e24ad32.jpeg)                                                                                                                                                                                         
-Confidential This document contains the proprietary information of MagTek. Its receipt or possession does not convey any rights to reproduce or disclose its contents or to manufacture, use or sell anything it may describe. Reproduction, disclosure or use without specific written authorization of MagTek is strictly forbidden.  Unpublished – All Rights Reserved |  June 2025  Document Number: D100005000-102  REGISTERED TO ISO 9001:2015 
+![](Images/82ccd15a8da072922d00916f26c92df5.jpeg)
+![](Images/e5843d90d1276684a1d962214cbd3140.jpeg)
+![](Images/c78ef97c2221cbe76e7b653fbb5afcd0.jpeg)
+![](Images/c0010811ff3eb68a963cda9d7e24ad32.jpeg)
+
+
+Confidential This document contains the proprietary information of MagTek. Its receipt or possession does not convey any rights to reproduce or disclose its contents or to manufacture, use or sell anything it may describe. Reproduction, disclosure or use without specific written authorization of MagTek is strictly forbidden.  Unpublished – All Rights Reserved June 2025  Document Number: D100005000-102  REGISTERED TO ISO 9001:2015 
 
 Copyright © 2006 - 2025 MagTek, Inc.
 
