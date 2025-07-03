@@ -589,7 +589,6 @@ owners.
       <li><a href="#property-231216-device-temperature">Property 2.3.1.2.1.6 Device Temperature</a></li>
   </ul>
 </div>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
 
 # Introduction
 
