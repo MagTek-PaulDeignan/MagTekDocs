@@ -4,7 +4,40 @@ layout: home
 parent: Reader Management System
 nav_order: 1
 ---
+<style>
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
 
+th, td {
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+
+th {
+  background-color: black;
+  color: white;
+}
+</style>
+
+<button class="btn js-toggle-dark-mode">Preview dark color scheme</button>
+
+<script>
+const toggleDarkMode = document.querySelector('.js-toggle-dark-mode');
+
+ jtd.addEvent(toggleDarkMode, 'click', function(){
+   if (jtd.getTheme() === 'dark') {
+     jtd.setTheme('light');
+     toggleDarkMode.textContent = 'Preview dark color scheme';
+   } else {
+     jtd.setTheme('dark');
+     toggleDarkMode.textContent = 'Return to the light side';
+   }
+ });
+ </script>
 
 
 
