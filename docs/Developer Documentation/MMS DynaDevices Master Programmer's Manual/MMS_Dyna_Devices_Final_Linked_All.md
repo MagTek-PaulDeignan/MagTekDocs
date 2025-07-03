@@ -41,7 +41,7 @@ const toggleDarkMode = document.querySelector('.js-toggle-dark-mode');
  });
  </script>
 
-| [Dyna Devices] [Master Programmer's Manual]                                                                                                                                                                                                                                                                                                                      |                                                                          |
+| [MMS Dyna Devices Master Programmer's Manual] 
 |---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------|
 | ![](Images/82ccd15a8da072922d00916f26c92df5.jpeg)![](Images/e5843d90d1276684a1d962214cbd3140.jpeg) ![](Images/c78ef97c2221cbe76e7b653fbb5afcd0.jpeg)![](Images/c0010811ff3eb68a963cda9d7e24ad32.jpeg)                                                                                                                                                                     |                                                                          |
 | Confidential This document contains the proprietary information of MagTek. Its receipt or possession does not convey any rights to reproduce or disclose its contents or to manufacture, use or sell anything it may describe. Reproduction, disclosure or use without specific written authorization of MagTek is strictly forbidden.  Unpublished – All Rights Reserved |  June 2025  Document Number: D100005000-102  REGISTERED TO ISO 9001:2015 |
@@ -132,485 +132,11 @@ Table 1 - Revisions
 | 63         | May 16, 2023       | Added definition of 00 03 00 00 in **7.4.1 Notification 0x1001 - Device Information Update** ; Added NFC UID support in **4.17 NFC UID Type (EMV Contactless Only) , Table 308 - Notification Detail Codes** , **Table 309 - Notification Payload for Data Update, ARQC Update (Quick Chip), Data Attached** **, Table 322 - Notification Detail Codes;** add detection and removal user event notification in **7.4.1 Notification 0x1001 - Device Information Update** [; Add **Property 2.3.1.2.1.5 Battery Charger Status**](#property-231215-battery-charger-status)  Update tables for FW Update, Table 202 - Request Data for Command 0xD801 - Load Firmware File. Table 227 - Request Data for Command 0xD901 - Commit Firmware from File; Updated Message Length from 60 to 61 in **Table 6 - Multi-Packet Middle Format** ; Clarified Message size in **Table 5 - Multi-Packet Head Format** ; Add DynaFlex II Go USB PID and Get/Set Property command, Device Family ID, Product ID; Updated notification code for Battery Charge complete to 00 02 02 00 in **Table 331 - Notification Detail Codes** ; updated **Table 331 - Notification Detail Codes** to distinguish 1K or 4K MIFARE Classic cards; Add DynaFlex II Go on page 1; Add NFC pass through flow description in **Command 0x1001 - Start Transaction**; Add BCR encryption bit to [**8.3.6.4 Property 1.2.7.1.2.1 User Event Notification Controls Enable**](#property-127121-user-event-notification-controls-enable)**;** Updated NFC Removal Code from -x50 to 0x05 in **Table 322 - Notification Detail Codes** , **Table 90 - Request Example (Get Version)**, **Table 91 - Response Example (Get Version**), **Table 331 - Notification Detail Codes**, Add **Table 343 - Notification Payload for UID**, **Table** **344 – Notification Payload for UID Example**; Misc. clarifications and corrections;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
 | 64         | September 28, 2023 | Update **Table 84 - Request Data for** ; Add tags 82 and 9F6E in the clear text portion of the ARQC Message - **EMV ARQC (DynaPro Format) Type** ; Removed Tag 84 on these payloads message to match firmware **Table 346, Table 348, Table 349** ; Add **24 Hour Automatic Reset PCI Requirement** and **Property 1.2.7.1.1.4 Auto Reset Configuration**; Misc. clarifications and corrections.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
 | 65         | October 5, 2023    | Add Extended AID Selection Feature - **7.5.2 Notification 0x1803 - User Interface Host Action Request and 8.3.1.2 Property 1.2.1.1.1.2 Application Selection Behavior**;  Add support for MIFARE Classic 1K and 4K - **6.2.2 Command 0x1101 – Pass Through Command for MIFARE Classic** ; Add Tip Feature **6.1.1 Command 0x1001 - Start Transaction** ; Update Key Injection Sequence in **Command 0xEF01 - Load Key Using TR-31** added **Table 243 - Device Key ID / Slot**; Add PED Only description to **1.2 About This Document**, Added reference to Device Features Table to **1.3 About Terminology**, Remove Bluetooth® LE sections tagged as TBD, Update **Table 59 - SRED Data IDs and OIDs** and **Table 63 - Allowed Key Mapping Table with PED ONLY tags for** PIN-TDES and PIN-AES and MSR ONLY for Magneprint, Add Display Only Tag to **6.5 Command Group 0x20nn - Banking Functions (Touch/Display Only)**, Add Touch Only tags to **Property** **1.1.2.4.1.1 Key Mapping of PIN-TDES (Touch Only)**and **Property 1.1.2.4.1.7 Key Mapping of PIN-AES (Touch Only),** add MSR Only Tag **to Property 1.1.2.4.1.4 Key Mapping of Magneprint (MSR Only)**, add Contactless Only tag to **Property 1.2.1.1.1.2 Application Selection Behavior (Contactless Only), Property 2.1.2.3.5.1 Mastercard MCL Kernel ID (Contactless Only),Property 2.1.2.3.5.2 Mastercard MCL Kernel Firmware Part Number (Contactless Only), Property 2.1.2.3.6.1 Visa payWave Kernel ID (Contactless Only), Property 2.1.2.3.6.2 Visa payWave Kernel Firmware Part Number (Contactless Only), Property 2.1.2.3.6.3 Visa payWave Kernel Checksum (Contactless Only), Property 2.1.2.3.7.2 Discover D-PAS Kernel Firmware Part Number (Contactless Only), Property 2.1.2.3.7.3 Discover D-PAS Kernel Checksum (Contactless Only), Property 2.1.2.3.8.1 American Express Expresspay Kernel ID (Contactless Only), Property 2.1.2.3.8.2 American Express Expresspay Kernel Firmware Part Number (Contactless Only), Property 2.1.2.3.8.3 American Express Expresspay Kernel Checksum (Contactless Only),** Misc. clarifications and corrections                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
-| 66         | October 31, 2023   | Add Section **8.5.1.4 Property 2.1.2.1.2.4 Boot0 Firmware Part** Number; Update section **4.3 Display Strings** to include missing strings. Add reference to **Command 0xE001 - Get Challenge** to **Command 0xEF01 - Load Key Using TR-31,** Update Table 58 - Key Slot IDs, change ID from 200x to 0x2000 to 0x201F , Update **0 DUKPT Slot IDs** with TR31 Module support from 16 to 32 and Slot IDs to 0x2000 to 0x201F, Update **Table 1170 - Property 2.3.1.1.1.2 Transaction Key Status** with updated Valid Values, Add [**Property 2.3.1.2.1.6 Device Temperature**](#property-231216-device-temperature). Add [**Property 1.2.7.1.4.1 Device Low Temperature Notification Level**](#property-127142-device-high-temperature-notification-level). Add [**Property 1.2.7.1.4.2 Device High Temperature Notification Level**](#_Property_1.2.7.1.4.2_Device). Add [**Property 1.2.7.1.4.3 Device Temperature Notification Repeat Interval**](#property-127143-device-temperature-notification-repeat-interval). Add **Section 6.2.3 Command 0x1102 – Pass Through Command for MIFARE DESFire, Type 4**, Update section **7.1.1 Notification 0x0101 - Transaction Information Update** to include MIFARE DESfire info, Update section **7.4.1 Notification 0x1001 - Device Information Update** to include MIFARE DESFire info, Add [**Property 1.1.1.1.1.10 Google Smart Tap Collector ID Slot 1**](#property-1111110-google-smart-tap-collector-id-slot-1) through [**Property 1.1.1.1.1.15 Google Smart Tap Collector ID Slot 6**](#property-1111115-google-smart-tap-collector-id-slot-6). Add Capabilities. Add Google Smart Tap to [**Notification 0x0101 – Transaction Information Update**](#notification-0x0101---transaction-information-update). Add Google Smart Tap data to [**EMV ARQC Type**](#emv-arqc-type) and [**EMV Batch Data Type**](#emv-batch-data-type). Add **Property** 1.2.2.2.1.2 USB Configuration Type; Changed **Property 1.2.2.3.1.1 Bluetooth® LE Device Name** default value; Add **Property 1.1.1.1.1.D Apple iAP2 AppBundleID** Add **Command 0xF014 - Read Log (MAGTEK INTERNAL ONLY);** Add **Property 1.2.2.3.1.D Bluetooth® LE Debug Mode Enabled** ; Update **Table 300 - Request Data for Command 0xF016 - Activate Device Security (MAGTEK INTERNAL ONLY)** by adding an additional option for buttons type; Revised **5.1.1 MACs for EMV Data** to add AES method and simplified TDES MACing spec by referencing ANSI x9.24; Add **Command 0x1805 - Buzzer** and update **Notification 0x1805 - User Interface Operation Complete** to include Buzzer result info, add **Property 1.2.1.1.3.1 Contactless Low Power Card Detect (Contactless Only),** Clarified max number of leading unmasked characters **Property 1.1.2.2.1.3 PAN Number of Leading Unmasked Characters** ; Added [**Appendix G - Physical Button (DynaFlex Only)**](#physical-button-dynaflex-only)**;** Added low battery error to Table 3.2-4 in [**Response Message**](#response-message); Added event notifications are disabled when battery is 5% or less in [**Property 1.2.7.1.2.1 User Event Notification Controls Enable**](#property-127121-user-event-notification-controls-enable); Changed **Property 1.2.2.3.1.C Bluetooth® LE Sleep Enabled** default to enabled, made it customer facing and added more related documentation; Added note that firmware can not be updated when the batter charge is less than or equal to 5 percent in [**Command 0xD801 - Load Firmware File**](#command-0xd801---load-firmware-file); Add definition of Tag DF29 in **Table 20 - EMV ARQC (DynaPro Format) DFDF59 Decrypted Contents** and **Table 28 – EMV Batch Data (DynaPro Format) DFDF59 Decrypted Contents** ; Misc. clarifications and corrections; Added buzzing in progress error to Table 3.2-4 in [**Response Message**](#response-message); add **Property 2.1.2.7.1.2 Bluetooth® LE Firmware Sequence Number, Update 6.10.5 Command 0xEF03 – Generate CSR (WLAN Only)**Remove default setting: -mt.test from CN (Subject) and DNS (Subject Alternate Names), Update Table 201 - File Types Add: Request file from MagTek services Set: No, Removed “The Device must have a WLAN interface” from **Command 0x1001 - Start Transaction,** Update **Property 1.2.2.1.1.3 Security Mode** to indicate which properties must be set, Add [**Property 2.1.2.3.A.1 JCB Kernel ID (Contactless Only)**](#property-2123a1-jcb-kernel-id-contactless-only-common-kernel-only), Add [**Property 2.1.2.3.A.2 JCB Kernel Firmware Part Number (Contactless Only)**](#property-2123a2-jcb-kernel-firmware-part-number-contactless-only-common-kernel-only), Add [**Property 2.1.2.3.A.3 JCB Kernel Checksum (Contactless Only)**](#property-2123a3-jcb-kernel-checksum-contactless-only-common-kernel-only), Add [**Property 2.1.2.3.A.4 Reader Core Checksum (Contactless Only)**](#property-2123a4-reader-core-checksum-contactless-only-common-kernel-only), Add [**Property 2.1.2.3.B.1 China Union Pay Kernel ID (Contactless Only)**](#property-2123a5-entry-point-checksum-contactless-only-common-kernel-only), Add [**Property 2.1.2.3.B.2 China Union Pay Kernel Firmware Part Number (Contactless Only)**](#property-2123b2-china-union-pay-kernel-firmware-part-number-contactless-only-common-kernel-only), Add [**Property 2.1.2.3.B.3 China Union Pay Kernel Checksum (Contactless Only)**](#property-2123b3-china-union-pay-kernel-checksum-contactless-only-common-kernel-only), Add [**Property 2.1.2.3.C.1 Interact Flash Kernel ID (Contactless Only)**](#property-2123c1-interact-flash-kernel-id-contactless-only-common-kernel-only), Add [**Property 2.1.2.3.C.2 Interact Flash Kernel Firmware Part Number (Contactless Only)**](#property-2123c2-interact-flash-kernel-firmware-part-number-contactless-only-common-kernel-only), Add [**Property 2.1.2.3.C.3 Interact Flash Kernel Checksum (Contactless Only)**](#property-2123c3-interact-flash-kernel-checksum-contactless-only-common-kernel-only),  |
-| 100        | June 17, 2024      | Add Apple VAS and GWST in **Table 3 - Device Features**; Add bit definitions to enable Apple / Google VAS in **Command 0x1001 - Start Transaction**; Add tag /83 to **Table 70 - Request Data for Command 0x1001 - Start Transaction**; Add  **Table 354 – Default User Interface String IDs and Strings**; Update Table 201 - File Types with UI configuration description; Add **Property 1.1.1.1.4.1 EMV Configuration Filename**; Add **Property 1.1.1.1.4.2 CA Public Key Configuration Filename**; Add **Property Subgroup 2.1.2.8.nn Custom** UI**;**;6.3.9.1 UI Page Option 0x00 Layout; 6.3.9.2 UI Page Option 0x01 and 0x02 Layout; 6.3.9.3 UI Page Option 0x03 Layout Add NFC Tag Support Flow and Audio Transducer Beep Flow to **6.1.1 Command 0x1001 - Start Transaction;** Update references for Tag 81 in Table **84 - Request Data for Command 0x1100 – Pass Through Command For NTag/MIFARE Ultralight, Type 2.**; Update table caption to “NTag Commands” in **Table 85 – NTag** **Commands**; Add **Table 86 – MIFARE Ultralight EV1 Commands** and **Table 87 – MIFARE Ultralight C Commands**, Add **6.2.1.1 Encrypted Data Format** and **6.2.2.1 Encrypted Data Format** and **6.2.3.1 Encrypted Data Format**; Add **8.3.1.7 Property 1.2.1.1.4.1 MIFARE Ultralight C 2keys3DES**; Update Notification detail codes to include Ntag/MIFARE Ultralight in **Table 308 - Notification Detail Codes** and **Table 331 - Notification Detail Codes**, add **Table 72 - Response Example for Command 0x1001 – Start Transaction Command not executed due to Battery Charge State**, Update **Table 12 - Response Message Format** with **Table 204 - Response Example for Command 0xD801 Battery Charge State** battery Charge Status content, Update [**Table 14 - Notification Message Format**](#table-14---notification-message-format) with battery charge status content, add **G.1Battery Charge Status** ; added **4.17** **NFC UID Type (EMV Contactless Only)** , add notification for GPO Response in **7.1.1Notification 0x0101 - Transaction Information Update**, add additional note on Tag 85 regarding GPO Response = 6985 on **Table 346 - Notification Payload for Display Message Request Notifications (No Display Only):** Add **Table 87 – MIFARE Ultralight C Commands, Table 86 – MIFARE Ultralight EV1 Commands, Table 88 – MIFARE Ultralight AES Commands,** Add **Property 1.2.1.1.4.2 MIFARE Ultralight AES DataProtKey. Property 1.2.1.1.4.3 MIFARE Ultralight AES UIDRetrKey. Property 1.2.1.1.4.4 MIFARE Ultralight AES OriginalityKey.** Add note for random ID. Add **6.7.7 Command 0xD831 – Delete File from Device.** Add **8.2.2.17 Property 1.1.2.6.1.1 Selectable Card Data Encryption Enable (MAGTEK INTERNAL ONLY)**,Add **Command 0xD112 - Set Property (Secured)**, Add **2.7 How to Use Apple iAP2 Connections (iAP2 Only);** update **Table 19 - EMV ARQC (DynaPro Format) Type** with encrypted card data content; Add **Table 21 - EMV ARQC (DynaPro Format) DFDFDF37 Decrypted Contents**; Update Table 2 - Device Connection Types / Data Formats to include iAP2; add **2.7 How to Use Apple iAP2 Connections (iAP2 Only);** Add MIFARE Mini to **6.2.2 Command 0x1101 – Pass Through Command for MIFARE Classic/MINI®/Plus SL1** (Security Level 1), Type 2 **Update** Table 573 - Property 1.1.2.6.1.1 Selectable Card Data Encryption Enable (MAGTEK INTERNAL ONLY) **Update** Table 21 - EMV ARQC (DynaPro Format) DFDFDF37 Decrypted Contents **Add a new OID, Update the MCE description in** Command 0x1001 - Start Transaction**.** Update the MCE description in **Table 70 - Request Data for Command 0x1001 - Start Transaction**, Corrected MSR notification code from 128 to 80 in **Table 322 - Notification Detail Codes**.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| 66         | October 31, 2023   | Add Section **8.5.1.4 Property 2.1.2.1.2.4 Boot0 Firmware Part** Number; Update section **4.3 Display Strings** to include missing strings. Add reference to **Command 0xE001 - Get Challenge** to **Command 0xEF01 - Load Key Using TR-31,** Update Table 58 - Key Slot IDs, change ID from 200x to 0x2000 to 0x201F , Update [**0 DUKPT Slot IDs**](#dukpt-slot-ids) with TR31 Module support from 16 to 32 and Slot IDs to 0x2000 to 0x201F, Update **Table 1170 - Property 2.3.1.1.1.2 Transaction Key Status** with updated Valid Values, Add [**Property 2.3.1.2.1.6 Device Temperature**](#property-231216-device-temperature). Add [**Property 1.2.7.1.4.1 Device Low Temperature Notification Level**](#property-127142-device-high-temperature-notification-level). Add [**Property 1.2.7.1.4.2 Device High Temperature Notification Level**](#_Property_1.2.7.1.4.2_Device). Add [**Property 1.2.7.1.4.3 Device Temperature Notification Repeat Interval**](#property-127143-device-temperature-notification-repeat-interval). Add **Section 6.2.3 Command 0x1102 – Pass Through Command for MIFARE DESFire, Type 4**, Update section **7.1.1 Notification 0x0101 - Transaction Information Update** to include MIFARE DESfire info, Update section **7.4.1 Notification 0x1001 - Device Information Update** to include MIFARE DESFire info, Add [**Property 1.1.1.1.1.10 Google Smart Tap Collector ID Slot 1**](#property-1111110-google-smart-tap-collector-id-slot-1) through [**Property 1.1.1.1.1.15 Google Smart Tap Collector ID Slot 6**](#property-1111115-google-smart-tap-collector-id-slot-6). Add Capabilities. Add Google Smart Tap to [**Notification 0x0101 – Transaction Information Update**](#notification-0x0101---transaction-information-update). Add Google Smart Tap data to [**EMV ARQC Type**](#emv-arqc-type) and [**EMV Batch Data Type**](#emv-batch-data-type). Add **Property** 1.2.2.2.1.2 USB Configuration Type; Changed **Property 1.2.2.3.1.1 Bluetooth® LE Device Name** default value; Add **Property 1.1.1.1.1.D Apple iAP2 AppBundleID** Add **Command 0xF014 - Read Log (MAGTEK INTERNAL ONLY);** Add **Property 1.2.2.3.1.D Bluetooth® LE Debug Mode Enabled** ; Update **Table 300 - Request Data for Command 0xF016 - Activate Device Security (MAGTEK INTERNAL ONLY)** by adding an additional option for buttons type; Revised **5.1.1 MACs for EMV Data** to add AES method and simplified TDES MACing spec by referencing ANSI x9.24; Add **Command 0x1805 - Buzzer** and update **Notification 0x1805 - User Interface Operation Complete** to include Buzzer result info, add **Property 1.2.1.1.3.1 Contactless Low Power Card Detect (Contactless Only),** Clarified max number of leading unmasked characters **Property 1.1.2.2.1.3 PAN Number of Leading Unmasked Characters** ; Added [**Appendix G - Physical Button (DynaFlex Only)**](#physical-button-dynaflex-only)**;** Added low battery error to Table 3.2-4 in [**Response Message**](#response-message); Added event notifications are disabled when battery is 5% or less in [**Property 1.2.7.1.2.1 User Event Notification Controls Enable**](#property-127121-user-event-notification-controls-enable); Changed **Property 1.2.2.3.1.C Bluetooth® LE Sleep Enabled** default to enabled, made it customer facing and added more related documentation; Added note that firmware can not be updated when the batter charge is less than or equal to 5 percent in [**Command 0xD801 - Load Firmware File**](#command-0xd801---load-firmware-file); Add definition of Tag DF29 in **Table 20 - EMV ARQC (DynaPro Format) DFDF59 Decrypted Contents** and **Table 28 – EMV Batch Data (DynaPro Format) DFDF59 Decrypted Contents** ; Misc. clarifications and corrections; Added buzzing in progress error to Table 3.2-4 in [**Response Message**](#response-message); add **Property 2.1.2.7.1.2 Bluetooth® LE Firmware Sequence Number, Update 6.10.5 Command 0xEF03 – Generate CSR (WLAN Only)**Remove default setting: -mt.test from CN (Subject) and DNS (Subject Alternate Names), Update Table 201 - File Types Add: Request file from MagTek services Set: No, Removed “The Device must have a WLAN interface” from **Command 0x1001 - Start Transaction,** Update **Property 1.2.2.1.1.3 Security Mode** to indicate which properties must be set, Add [**Property 2.1.2.3.A.1 JCB Kernel ID (Contactless Only)**](#property-2123a1-jcb-kernel-id-contactless-only-common-kernel-only), Add [**Property 2.1.2.3.A.2 JCB Kernel Firmware Part Number (Contactless Only)**](#property-2123a2-jcb-kernel-firmware-part-number-contactless-only-common-kernel-only), Add [**Property 2.1.2.3.A.3 JCB Kernel Checksum (Contactless Only)**](#property-2123a3-jcb-kernel-checksum-contactless-only-common-kernel-only), Add [**Property 2.1.2.3.A.4 Reader Core Checksum (Contactless Only)**](#property-2123a4-reader-core-checksum-contactless-only-common-kernel-only), Add [**Property 2.1.2.3.B.1 China Union Pay Kernel ID (Contactless Only)**](#property-2123a5-entry-point-checksum-contactless-only-common-kernel-only), Add [**Property 2.1.2.3.B.2 China Union Pay Kernel Firmware Part Number (Contactless Only)**](#property-2123b2-china-union-pay-kernel-firmware-part-number-contactless-only-common-kernel-only), Add [**Property 2.1.2.3.B.3 China Union Pay Kernel Checksum (Contactless Only)**](#property-2123b3-china-union-pay-kernel-checksum-contactless-only-common-kernel-only), Add [**Property 2.1.2.3.C.1 Interact Flash Kernel ID (Contactless Only)**](#property-2123c1-interact-flash-kernel-id-contactless-only-common-kernel-only), Add [**Property 2.1.2.3.C.2 Interact Flash Kernel Firmware Part Number (Contactless Only)**](#property-2123c2-interact-flash-kernel-firmware-part-number-contactless-only-common-kernel-only), Add [**Property 2.1.2.3.C.3 Interact Flash Kernel Checksum (Contactless Only)**](#property-2123c3-interact-flash-kernel-checksum-contactless-only-common-kernel-only),  |
+| 100        | June 17, 2024      | Add Apple VAS and GWST in **Table 3 - Device Features**; Add bit definitions to enable Apple / Google VAS in **Command 0x1001 - Start Transaction**; Add tag /83 to **Table 70 - Request Data for Command 0x1001 - Start Transaction**; Add  **Table 354 – Default User Interface String IDs and Strings**; Update Table 201 - File Types with UI configuration description; Add **Property 1.1.1.1.4.1 EMV Configuration Filename**; Add **Property 1.1.1.1.4.2 CA Public Key Configuration Filename**; Add **Property Subgroup 2.1.2.8.nn Custom** UI**;**;6.3.9.1 UI Page Option 0x00 Layout; 6.3.9.2 UI Page Option 0x01 and 0x02 Layout; 6.3.9.3 UI Page Option 0x03 Layout Add NFC Tag Support Flow and Audio Transducer Beep Flow to **6.1.1 Command 0x1001 - Start Transaction;** Update references for Tag 81 in Table **84 - Request Data for Command 0x1100 – Pass Through Command For NTag/MIFARE Ultralight, Type 2.**; Update table caption to “NTag Commands” in **Table 85 – NTag** **Commands**; Add **Table 86 – MIFARE Ultralight EV1 Commands** and **Table 87 – MIFARE Ultralight C Commands**, Add **6.2.1.1 Encrypted Data Format** and **6.2.2.1 Encrypted Data Format** and **6.2.3.1 Encrypted Data Format**; Add **8.3.1.7 Property 1.2.1.1.4.1 MIFARE Ultralight C 2keys3DES**; Update Notification detail codes to include Ntag/MIFARE Ultralight in **Table 308 - Notification Detail Codes** and **Table 331 - Notification Detail Codes**, add **Table 72 - Response Example for Command 0x1001 – Start Transaction Command not executed due to Battery Charge State**, Update **Table 12 - Response Message Format** with **Table 204 - Response Example for Command 0xD801 Battery Charge State** battery Charge Status content, Update **Table 14 - Notification Message Format** with battery charge status content, add **G.1Battery Charge Status** ; added **4.17** **NFC UID Type (EMV Contactless Only)** , add notification for GPO Response in **7.1.1Notification 0x0101 - Transaction Information Update**, add additional note on Tag 85 regarding GPO Response = 6985 on **Table 346 - Notification Payload for Display Message Request Notifications (No Display Only):** Add **Table 87 – MIFARE Ultralight C Commands, Table 86 – MIFARE Ultralight EV1 Commands, Table 88 – MIFARE Ultralight AES Commands,** Add **Property 1.2.1.1.4.2 MIFARE Ultralight AES DataProtKey. Property 1.2.1.1.4.3 MIFARE Ultralight AES UIDRetrKey. Property 1.2.1.1.4.4 MIFARE Ultralight AES OriginalityKey.** Add note for random ID. Add **6.7.7 Command 0xD831 – Delete File from Device.** Add **8.2.2.17 Property 1.1.2.6.1.1 Selectable Card Data Encryption Enable (MAGTEK INTERNAL ONLY)**,Add **Command 0xD112 - Set Property (Secured)**, Add **2.7 How to Use Apple iAP2 Connections (iAP2 Only);** update **Table 19 - EMV ARQC (DynaPro Format) Type** with encrypted card data content; Add **Table 21 - EMV ARQC (DynaPro Format) DFDFDF37 Decrypted Contents**; Update Table 2 - Device Connection Types / Data Formats to include iAP2; add **2.7 How to Use Apple iAP2 Connections (iAP2 Only);** Add MIFARE Mini to **6.2.2 Command 0x1101 – Pass Through Command for MIFARE Classic/MINI®/Plus SL1** (Security Level 1), Type 2 **Update** Table 573 - Property 1.1.2.6.1.1 Selectable Card Data Encryption Enable (MAGTEK INTERNAL ONLY) **Update** Table 21 - EMV ARQC (DynaPro Format) DFDFDF37 Decrypted Contents **Add a new OID, Update the MCE description in** Command 0x1001 - Start Transaction**.** Update the MCE description in **Table 70 - Request Data for Command 0x1001 - Start Transaction**, Corrected MSR notification code from 128 to 80 in **Table 322 - Notification Detail Codes**.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
 | 101        | January 24, 2025   | Updated HW configuration values for USB/iAP2. Add [**Property 2.1.2.5.6.7 Available Access Points**](#property-212567-available-access-points) ; Add support for CUP, JCB and Interac in - **EMV Processing Configuration File Type** and **EMV Entry Point Configuration File Type** ;  Misc. clarifications and corrections; Add **Command 0x1103 – Pass Through Command for MIFARE Plus, Type 2**; updated **Notification 0x0101 - Transaction Information Update** and **Notification 0x1001 - Device Information Update** to support MIFARE Plus. Add tags to [**ARQC**](#emv-arqc-dynapro-format-type) (cleartext):  0xDF2A – Tip Mode Sale Amount Entered 0xDF2B – Tip Mode Total Amount Add tag to [**OID property 1.1.1.1.3.4 – Other TLV**](#property-111134-other-tlv-touch-only): 0x9F02 – Default Amount for Quickchip Add to CA revocation list, exception file list and DPAS data storage to **Table 201 - File Types**; Delete **Command 0xD112 - Set Property (Secured)** request data, response data and example; Add [**Property 2.1.2.3.6.5 Entry Point Checksum**](#property-212365-entry-point-checksum-contactless-onlycommon-kernel-only) and [**Property 2.1.2.3.A.5 Entry Point Checksum**](#property-2123a5-entry-point-checksum-contactless-only-common-kernel-only)**.** Added [**Table 4.5 9 – Fleet Data Container Payload**](#Fleet)**.;** Removed Enhanced ARQC section; Removed Enhanced Batch Data Section; Add “common kernel only” tag to Fleet, JCB, CUP and Interac OIDs. ; Add **Device Lock Feature ;** Add **Command 0xEF04 – Load LTPK Protection Key (MAGTEK INTERNAL ONLY FOR NOW)**and **Command 0xEF05 – Load Encrypted LTPK and Version (MAGTEK INTERNAL ONLY FOR NOW)**, replaced radar mode with updated terminology changed to Proximity Detection Mode; Add **Command 0xEF08 – Reset Device Lock Passcode (MAGTEK INTERNAL ONLY FOR NOW)** and **Property 1.2.3.1.1.2 Custom Idle Page Image Device Locked (Display Only);** Update Notification Detail codes in **Notification 0x0905 - Firmware Update Successful, Notification 0x0906 - Firmware Update Failed, Notification 0x0907 - Firmware is Up to Date.** Add error code 0x12 (Pass-through command not Activated). Update **7.5.2Notification 0x1803 - User Interface Host Action Request** to include Enhanced Application Select Message for Contact; Update **Command 0xD801 - Load Firmware File** with updated step 5 sequence; Update **Table 202 - Request Data for Command 0xD801 - Load Firmware File** with Tag 88, replaced content for **4.21 Firmware File Type (MAGTEK INTERNAL ONLY)** with reference to D100006342.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
 | 102        | February 20, 2025  | Make **Device Lock Feature** customer facing; Add **Property 1.1.1.1.2.6 Tip Mode Enable Submit on Amount Button Press**; Add response codes to group 2 subgroup 3: **Attempt to display Flexible UI page while touchscreen UI notifications enabled** and Request is invalid while card emulation is in progress to in **Table 13 - Operation Status Detail Codes;** Updated **Property 1.2.3.2.1.1 System Volume Control** to allow value of 0 (no sound); Added Apollo client cert support; Fix **Property 2.1.2.5.6.5 Server Certificate Chain Select** description; Add Card Emulation to **Table 3 - Device Features**; Add **Card Emulation**; add **Command 0x1840 – Card Emulation,** add Module 0x06 Card Emulation to **Table 350 - Notification Detail Codes**. Update **Command 0x1821 - Show Image (Display Only)** and **Command 0x1823 - Show Bitmap Image (Display Only)** to include display options to cover/uncover the top status bar; Update **Command 0x1102 – Pass Through Command for MIFARE DESFire, Type 4** to include MIFARE DESFire EV1/EV2/EV3; Update **Command 0x1102 – Pass Through Command for MIFARE DESFire, Type 4** to include MIFARE Plus EV1/EV2/SE/X SL1 (Security Level 1) commands; Update **Command 0x1103 – Pass Through Command for MIFARE Plus, Type 2** to include MIFARE Plus EV1/EV2/SE/X SL3 (Security Level 3) commands; Update **Notification 0x0101 - Transaction Information Update** and **Notification 0x1001 - Device Information Update** to include MIFARE DESFire EV1/EV2/EV3; Add **Property 1.2.1.1.4.5 MIFARE Plus AES_Key1. Property 1.2.1.1.4.6 MIFARE Plus AES_Key2.** **Property 1.2.1.1.4.7 MIFARE Plus AES_Key3. Property 1.2.1.1.4.8 MIFARE Plus AES_Key4. Property 1.2.1.1.4.9 MIFARE Plus AES_Key5. Property 1.2.1.1.4.A MIFARE Plus AES_Key6.** Update **Command 0x1100 – Pass Through Command For NTag/MIFARE Ultralight, Type 2** to include an option for READ command to do a fast read, Add MQTT and Websocket content to **Table 201 - File Types**, Add **Property 1.2.2.1.1.11 WLAN Protocol**, **Property 1.2.2.1.2.1 MQTT Broker Address**, **Property 1.2.2.1.2.2 MQTT Port**, **Property 1.2.2.1.2.3 MQTT QoS Quality of Service**, **Property 1.2.2.1.2.4 MQTT Subscribe Topic**, **Property 1.2.2.1.2.5 MQTT Publish Topic**, **Property 1.2.2.1.2.6 MQTT Client ID**, **Property 1.2.2.1.2.7 MQTT Username**, **Property 1.2.2.1.2.8 MQTT Password**, **Property 1.2.2.1.2.8 MQTT Peer Common Name,** **Property 1.2.2.1.2.A MQTT Keep Alive;**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
 | 103        | TBD                | Fix **Property 2.3.1.2.1.5 Battery Charger Status** No external power supplied value; Updated MIFARE Plus EV1/EV2 at SL3, after the 1st Read/Write/Value operation, the Device will not auto detect an error from the MIFARE Tag that has been removed to end the pass-through session. Add **Property 1.1.1.1.1.1B Interac Contact Card Terminal Capability ONLINE PIN Support Disable**; added new file ID to Table 201 - File Types; Add **Command 0xEF09 – Encrypt User Data;** Add **Table 46 - Encrypted Signature Capture File Type** and **Table 47 - Encrypted Signature Capture File Type (after decryption)**; Update **Table 116 - Request Data for Command 0x1801 - Request Cardholder Signature (Touch Only)** with encrypted user tags**,** Add Flexible UI Gen. 2 sections to [**Command 0x1830 - Display Flexible UI Pages (Display Only)**](#_Command_0x1830_-), Add **Property 1.2.3.2.2.1 Touch Keypress Beep Enable**; add note “Enable NFC only when non-payment tags are to be detected.” in parameter /83 Contactless Reader Mode of **Command 0x1001 - Start Transaction**; updated link in byte 2 of parameter /84 Manual Card Entry of **Command 0x1001 - Start Transaction** . Add documentation for Flexible UI Gen. 2 to [**Command 0x1830 - Display Flexible UI Pages (Display Only)**](#_Command_0x1830_-) Add Magtek signed image file to **Table 201 - File Types.** Add documentation for Report All Available Tags Feature: **Property 1.1.1.1.5.1 Report All Available Tags Enable**, **Property 1.1.1.1.5.2 Encrypted Sensitive Tag List**, and **Property 1.1.1.1.5.3 MSR Cleartext Tag List**. Update the tables in **Command 0xEF09 – Encrypt User Dat**a. Update the tables in **Table 45 - Signature Capture File Type**, **Table 46 - Encrypted Signature Capture File Type,** **Table 47 - Encrypted Signature Capture File Type** (after decryption).                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
-
-<style>
-.toc-float {
-  position: fixed;
-  top: 100px;
-  right: 20px;
-  width: 280px;
-  max-height: 80vh;
-  overflow-y: auto;
-  padding: 1em;
-  background: #f9f9f9;
-  border: 1px solid #ccc;
-  font-size: 0.9em;
-  box-shadow: 0 0 6px rgba(0,0,0,0.1);
-  z-index: 1000;
-}
-</style>
-
-<div class="toc-float">
-  <strong>On This Page</strong>
-  <ul>
-    <li><a href="#introduction">Introduction</a></li>
-  <li><a href="#about-this-document">About This Document</a></li>
-  <li><a href="#about-terminology">About Terminology</a></li>
-  <li><a href="#about-sdks-and-sample-code">About SDKs and Sample Code</a></li>
-  <li><a href="#about-connections-and-data-formats">About Connections and Data Formats</a></li>
-  <li><a href="#about-device-features">About Device Features</a></li>
-<li><a href="#connection-types">Connection Types</a></li>
-  <li><a href="#how-to-use-usb-connections-usb-only">How to Use USB Connections (USB Only)</a></li>
-    <li><a href="#about-usb-reports-usages-usage-pages-and-usage-ids">About USB Reports, Usages, Usage Pages, and Usage IDs</a></li>
-    <li><a href="#how-to-connect-to-a-device-using-the-usb-connection">How to Connect to a Device Using the USB Connection</a></li>
-    <li><a href="#how-to-send-command-requests-using-the-usb-connection">How to Send Command Requests Using the USB Connection</a></li>
-    <li><a href="#how-to-receive-data-using-the-usb-connection-hid-only">How to Receive Data Using the USB Connection (HID Only)</a></li>
-  <li><a href="#how-to-use-wireless-lan-wlan-connections-wlan-only">How to Use Wireless LAN (WLAN) Connections (WLAN Only)</a></li>
-    <li><a href="#about-wireless-lan-wlan-connections">About Wireless LAN (WLAN) Connections</a></li>
-    <li><a href="#how-to-connect-to-a-device-using-the-wireless-lan-wlan-connection">How to Connect to a Device Using the Wireless LAN (WLAN) Connection</a></li>
-    <li><a href="#how-to-send-commands-using-the-wireless-lan-wlan-connection">How to Send Commands Using the Wireless LAN (WLAN) Connection</a></li>
-    <li><a href="#how-to-receive-data-using-the-wireless-lan-wlan-connection">How to Receive Data Using the Wireless LAN (WLAN) Connection</a></li>
-  <li><a href="#how-to-use-ethernet-connections-ethernet-only-magtek-internal-only-for-now">How to Use Ethernet Connections (Ethernet Only, MAGTEK INTERNAL ONLY FOR NOW)</a></li>
-    <li><a href="#about-ethernet-connections">About Ethernet Connections</a></li>
-    <li><a href="#how-to-connect-to-a-device-using-the-ethernet-connection">How to Connect to a Device Using the Ethernet Connection</a></li>
-    <li><a href="#how-to-send-commands-using-the-ethernet-connection">How to Send Commands Using the Ethernet Connection</a></li>
-    <li><a href="#how-to-receive-data-using-the-ethernet-connection">How to Receive Data Using the Ethernet Connection</a></li>
-  <li><a href="#how-to-use-bluetooth-le-connections-bluetooth-le-only">How to Use Bluetooth® LE Connections (Bluetooth® LE Only)</a></li>
-    <li><a href="#about-gatt-characteristics">About GATT Characteristics</a></li>
-    <li><a href="#dynaflex-bluetooth-le-protocol">DynaFlex Bluetooth® LE protocol</a></li>
-  <li><a href="#how-to-use-rs-232uart-connections-slip-only">How to Use RS-232/UART Connections (SLIP Only)</a></li>
-  <li><a href="#how-to-use-slip-format-slip-only">How to Use SLIP Format (SLIP Only)</a></li>
-  <li><a href="#how-to-use-apple-iap2-connections-iap2-only">How to Use Apple iAP2 Connections (iAP2 Only)</a></li>
-<li><a href="#messages-requests-responses-notifications-and-files">Messages (Requests, Responses, Notifications, and Files)</a></li>
-  <li><a href="#about-messages">About Messages</a></li>
-  <li><a href="#message-format">Message Format</a></li>
-    <li><a href="#tag-length-value-tlv-encoding">Tag-Length-Value (TLV) Encoding</a></li>
-      <li><a href="#about-tlv-encoding">About TLV Encoding</a></li>
-      <li><a href="#tlv-example">TLV Example</a></li>
-      <li><a href="#how-to-read-tlv-tables">How to Read TLV Tables</a></li>
-    <li><a href="#message-structure">Message Structure</a></li>
-      <li><a href="#request-message">Request Message</a></li>
-      <li><a href="#response-message">Response Message</a></li>
-      <li><a href="#notification-message">Notification Message</a></li>
-      <li><a href="#data-file-message">Data File Message</a></li>
-<li><a href="#data-types-and-shared-tlv-data-objects">Data Types and Shared TLV Data Objects</a></li>
-  <li><a href="#primitive-data-types">Primitive Data Types</a></li>
-  <li><a href="#about-track-data">About Track Data</a></li>
-  <li><a href="#display-strings">Display Strings</a></li>
-  <li><a href="#encryption-type">Encryption Type</a></li>
-  <li><a href="#emv-arqc-type">EMV ARQC Type</a></li>
-    <li><a href="#emv-arqc-dynapro-format-type">EMV ARQC (DynaPro Format) Type</a></li>
-  <li><a href="#emv-arpc-type">EMV ARPC Type</a></li>
-  <li><a href="#emv-batch-data-type">EMV Batch Data Type</a></li>
-    <li><a href="#emv-batch-data-dynapro-format-type">EMV Batch Data (DynaPro Format) Type</a></li>
-    <li><a href="#merchant-data-container">Merchant Data Container</a></li>
-  <li><a href="#emv-terminal-configuration-file-type">EMV Terminal Configuration File Type</a></li>
-  <li><a href="#emv-processing-configuration-file-type">EMV Processing Configuration File Type</a></li>
-  <li><a href="#emv-entry-point-configuration-file-type">EMV Entry Point Configuration File Type</a></li>
-    <li><a href="#4101-mastercard-mcl-entry-point-table">4.10.1 Mastercard MCL Entry Point Table</a></li>
-    <li><a href="#4102-visa-paywave-entry-point-table">4.10.2 Visa payWave Entry Point Table</a></li>
-    <li><a href="#4103-american-express-expresspay-entry-point-table">4.10.3 American Express Expresspay Entry Point Table</a></li>
-    <li><a href="#4104-discover-d-pas-entry-point-table">4.10.4 Discover D-PAS Entry Point Table</a></li>
-    <li><a href="#4105-china-unionpay-entry-point-table-common-kernel-only">4.10.5 China Unionpay Entry Point Table (Common Kernel Only)</a></li>
-    <li><a href="#4106-jcb-entry-point-table-common-kernel-only">4.10.6 JCB Entry Point Table (Common Kernel Only)</a></li>
-    <li><a href="#4107-interac-flash-entry-point-table-common-kernel-only">4.10.7 Interac Flash Entry Point Table (Common Kernel Only)</a></li>
-  <li><a href="#emv-configuration-ca-public-keys-file-type">EMV Configuration CA Public Keys File Type</a></li>
-  <li><a href="#emv-american-express-drl-configuration-file-type-not-supported-on-expresspay-4x">EMV American Express DRL Configuration File Type (Not Supported on Expresspay 4.x)</a></li>
-  <li><a href="#signature-capture-file-type-touch-only">Signature Capture File Type (Touch Only)</a></li>
-  <li><a href="#security-operation-type">Security Operation Type</a></li>
-  <li><a href="#security-parameters-type">Security Parameters Type</a></li>
-  <li><a href="#key-information-type">Key Information Type</a></li>
-  <li><a href="#nfc-uid-type-emv-contactless-only">NFC UID Type (EMV Contactless Only)</a></li>
-  <li><a href="#gpo-response-type-emv-contactless-only">GPO Response Type (EMV Contactless Only)</a></li>
-  <li><a href="#tr-31-key-block-type">TR-31 Key Block Type</a></li>
-    <li><a href="#dukpt-key-mapping">DUKPT Key Mapping</a></li>
-      <li><a href="#terms-and-definitions">Terms and Definitions</a></li>
-    <li><a href="#restrictions-of-a-dukpt-slot-id">Restrictions of a DUKPT Slot ID</a></li>
-    <li><a href="#the-rules-of-key-mapping">The Rules of Key Mapping</a></li>
-    <li><a href="#the-settings-of-dukpt-slot-ids-injected-through-tr31">The settings of DUKPT Slot IDs injected through TR31</a></li>
-    <li><a href="#the-allowed-key-mapping-table">The Allowed Key Mapping Table</a></li>
-      <li><a href="#examples-of-key-mapping">Examples of Key Mapping</a></li>
-  <li><a href="#miniature-certificate-type-magtek-internal-only">Miniature Certificate Type (MAGTEK INTERNAL ONLY)</a></li>
-  <li><a href="#firmware-file-type-magtek-internal-only">Firmware File Type (MAGTEK INTERNAL ONLY)</a></li>
-  <li><a href="#tracktype-type-magtek-internal-only-for-now">TrackType Type (MAGTEK INTERNAL ONLY FOR NOW)</a></li>
-  <li><a href="#carddata-type-magtek-internal-only-for-now">CardData Type (MAGTEK INTERNAL ONLY FOR NOW)</a></li>
-  <li><a href="#tagstype-type-magtek-internal-only-for-now">TagsType Type (MAGTEK INTERNAL ONLY FOR NOW)</a></li>
-  <li><a href="#tlvtype-type-magtek-internal-only-for-now">TLVType Type (MAGTEK INTERNAL ONLY FOR NOW)</a></li>
-  <li><a href="#common-file-structure">Common File Structure</a></li>
-  <li><a href="#certificate-file-types">Certificate File Types</a></li>
-  <li><a href="#certificate-signing-request-csr-file-types">Certificate Signing Request (CSR) File Types</a></li>
-  <li><a href="#ui-configuration-file-type-magtek-internal-only-touch-only">UI Configuration File Type (MAGTEK INTERNAL ONLY, TOUCH ONLY)</a></li>
-    <li><a href="#process-ui-configuration-file">Process UI Configuration File</a></li>
-      <li><a href="#step-1-convert-text-file-into-a-binary-file">Step 1: Convert Text File Into a Binary File</a></li>
-      <li><a href="#step-2-sign-the-binary-output-file">Step 2: Sign the Binary Output File</a></li>
-      <li><a href="#step-3-send-the-signed-ui-configuration-file-to-the-device-with-0xd812-command">Step 3: Send the Signed UI Configuration File to the Device with 0xd812 Command</a></li>
-    <li><a href="#authenticate-and-save-the-signed-ui-configuration-file">Authenticate and Save the signed UI configuration file</a></li>
-    <li><a href="#self-authenticate-the-saved-ui-configuration-file">Self-Authenticate the Saved UI Configuration File</a></li>
-  <li><a href="#card-emulation">Card Emulation</a></li>
-    <li><a href="#card-emulation-overview">Card Emulation Overview</a></li>
-    <li><a href="#device-compatibility">Device Compatibility</a></li>
-<li><a href="#security">Security</a></li>
-  <li><a href="#about-message-authentication-codes-mac">About Message Authentication Codes (MAC)</a></li>
-    <li><a href="#macs-for-emv-data">MACs for EMV Data</a></li>
-  <li><a href="#about-key-serial-numbers-ksns">About Key Serial Numbers (KSNs)</a></li>
-  <li><a href="#about-encryption-and-decryption">About Encryption and Decryption</a></li>
-  <li><a href="#how-to-determine-the-key">How to Determine the Key</a></li>
-  <li><a href="#how-to-decrypt-data">How to Decrypt Data</a></li>
-  <li><a href="#24-hour-automatic-reset-pci-requirement">24 Hour Automatic Reset PCI Requirement</a></li>
-  <li><a href="#device-lock-feature">Device Lock Feature</a></li>
-<li><a href="#commands">Commands</a></li>
-  <li><a href="#command-group-0x10nn---transactions">Command Group 0x10nn - Transactions</a></li>
-    <li><a href="#command-0x1001---start-transaction">Command 0x1001 - Start Transaction</a></li>
-    <li><a href="#command-0x1002---continue-transaction-magtek-internal-only-for-now">Command 0x1002 - Continue Transaction (MAGTEK INTERNAL ONLY FOR NOW)</a></li>
-    <li><a href="#command-0x1003---finalize-magtek-internal-only-for-now">Command 0x1003 - Finalize (MAGTEK INTERNAL ONLY FOR NOW)</a></li>
-    <li><a href="#command-0x1004---resume-transaction">Command 0x1004 - Resume Transaction</a></li>
-    <li><a href="#command-0x1008---cancel-transaction">Command 0x1008 - Cancel Transaction</a></li>
-    <li><a href="#command-0x1009---close--clear-transaction-magtek-internal-only-for-now">Command 0x1009 - Close / Clear Transaction (MAGTEK INTERNAL ONLY FOR NOW)</a></li>
-    <li><a href="#command-0x1014---get-transaction-status-magtek-internal-only-for-now">Command 0x1014 - Get Transaction Status (MAGTEK INTERNAL ONLY FOR NOW)</a></li>
-    <li><a href="#command-0x1041---set-payment-parameters-magtek-internal-only-for-now">Command 0x1041 - Set Payment Parameters (MAGTEK INTERNAL ONLY FOR NOW)</a></li>
-    <li><a href="#command-0x1042---get-payment-parameters-magtek-internal-only-for-now">Command 0x1042 - Get Payment Parameters (MAGTEK INTERNAL ONLY FOR NOW)</a></li>
-  <li><a href="#command-group-0x11nn---nfcmifare-pass-through-commands-contactless-only">Command Group 0x11nn - NFC/MIFARE Pass Through Commands (Contactless Only)</a></li>
-    <li><a href="#command-0x1100--pass-through-command-for-ntagmifare-ultralight-type-2">Command 0x1100 – Pass Through Command For NTag/MIFARE Ultralight, Type 2</a></li>
-      <li><a href="#encrypted-data-format">Encrypted Data Format</a></li>
-    <li><a href="#command-0x1101--pass-through-command-for-mifare-classicminiplus-sl1-security-level-1-type-2">Command 0x1101 – Pass Through Command for MIFARE Classic/MINI®/Plus SL1 (Security Level 1), Type 2</a></li>
-      <li><a href="#encrypted-data-format">Encrypted Data Format</a></li>
-    <li><a href="#command-0x1102--pass-through-command-for-mifare-desfire-type-4">Command 0x1102 – Pass Through Command for MIFARE DESFire, Type 4</a></li>
-      <li><a href="#encrypted-data-format">Encrypted Data Format</a></li>
-    <li><a href="#command-0x1103--pass-through-command-for-mifare-plus-type-2">Command 0x1103 – Pass Through Command for MIFARE Plus, Type 2</a></li>
-      <li><a href="#encrypted-data-format">Encrypted Data Format</a></li>
-  <li><a href="#command-group-0x18nn---user-interface">Command Group 0x18nn - User Interface</a></li>
-    <li><a href="#command-0x1801---request-cardholder-signature-touch-only">Command 0x1801 - Request Cardholder Signature (Touch Only)</a></li>
-    <li><a href="#command-0x1802---report-cardholder-selection">Command 0x1802 - Report Cardholder Selection</a></li>
-    <li><a href="#command-0x1803---display-message-display-only">Command 0x1803 - Display Message (Display Only)</a></li>
-    <li><a href="#command-0x1804---read-barcode-bcr-only">Command 0x1804 - Read Barcode (BCR Only)</a></li>
-    <li><a href="#command-0x1805---buzzer">Command 0x1805 - Buzzer</a></li>
-    <li><a href="#command-0x1821---show-image-display-only">Command 0x1821 - Show Image (Display Only)</a></li>
-    <li><a href="#command-0x1822---show-qr-code-display-only">Command 0x1822 - Show QR Code (Display Only)</a></li>
-    <li><a href="#command-0x1823---show-bitmap-image-display-only">Command 0x1823 - Show Bitmap Image (Display Only)</a></li>
-    <li><a href="#command-0x1830---display-flexible-ui-pages-display-only">Command 0x1830 - Display Flexible UI Pages (Display Only)</a></li>
-      <li><a href="#ui-page-option-0x00-layout">UI Page Option 0x00 Layout</a></li>
-      <li><a href="#ui-page-option-0x01-and-0x02-layout">UI Page Option 0x01 and 0x02 Layout</a></li>
-      <li><a href="#ui-page-option-0x03-layout">UI Page Option 0x03 Layout</a></li>
-    <li><a href="#command-0x1840--card-emulation">Command 0x1840 – Card Emulation</a></li>
-  <li><a href="#command-group-0x1fnn---device-control">Command Group 0x1Fnn - Device Control</a></li>
-    <li><a href="#command-0x1f01---reset-device">Command 0x1F01 - Reset Device</a></li>
-    <li><a href="#command-0x1f02---set-notification-subscriptions">Command 0x1F02 - Set Notification Subscriptions</a></li>
-    <li><a href="#command-0x1f03---extend-session-session-management-only">Command 0x1F03 - Extend Session (Session Management Only)</a></li>
-    <li><a href="#command-0x1f04--terminate-bluetooth-le-connection-bluetooth-le-only">Command 0x1F04 – Terminate Bluetooth® LE Connection (Bluetooth® LE Only)</a></li>
-    <li><a href="#command-0x1f05--erase-all-bluetooth-le-bonds-bluetooth-le-only">Command 0x1F05 – Erase All Bluetooth® LE Bonds (Bluetooth® LE Only)</a></li>
-  <li><a href="#command-group-0x20nn---banking-functions-touchdisplay-only">Command Group 0x20nn - Banking Functions (Touch/Display Only)</a></li>
-    <li><a href="#command-0x2001---request-pin-with-host-supplied-account-data-banking-functions-only">Command 0x2001 - Request PIN with Host Supplied Account Data (Banking Functions Only)</a></li>
-    <li><a href="#command-0x2002---request-pin-with-card-supplied-account-data-banking-functions-only">Command 0x2002 - Request PIN with Card Supplied Account Data (Banking Functions Only)</a></li>
-  <li><a href="#command-group-0xd1nn---settings-and-information">Command Group 0xD1nn - Settings and Information</a></li>
-    <li><a href="#command-0xd101---get-property">Command 0xD101 - Get Property</a></li>
-    <li><a href="#command-0xd111---set-property-unsecured">Command 0xD111 - Set Property (Unsecured)</a></li>
-    <li><a href="#command-0xd112---set-property-secured">Command 0xD112 - Set Property (Secured)</a></li>
-    <li><a href="#command-0xd201---reset-properties-to-defaults-magtek-internal-only-for-now">Command 0xD201 - Reset Properties to Defaults (MAGTEK INTERNAL ONLY FOR NOW)</a></li>
-  <li><a href="#command-group-0xd8nn---file-operations">Command Group 0xD8nn - File Operations</a></li>
-    <li><a href="#about-files">About Files</a></li>
-    <li><a href="#command-0xd801---load-firmware-file">Command 0xD801 - Load Firmware File</a></li>
-    <li><a href="#command-0xd811---start-send-file-to-device-secured">Command 0xD811 - Start Send File to Device (Secured)</a></li>
-    <li><a href="#command-0xd812---start-send-file-to-device-unsecured">Command 0xD812 - Start Send File to Device (Unsecured)</a></li>
-    <li><a href="#command-0xd821---start-get-file-from-device">Command 0xD821 - Start Get File from Device</a></li>
-    <li><a href="#command-0xd825---get-file-info-from-device">Command 0xD825 - Get File Info from Device</a></li>
-    <li><a href="#command-0xd831--delete-file-from-device">Command 0xD831 – Delete File from Device</a></li>
-  <li><a href="#command-group-0xd9nn---process-files">Command Group 0xD9nn - Process Files</a></li>
-    <li><a href="#command-0xd901---commit-firmware-from-file">Command 0xD901 - Commit Firmware from File</a></li>
-  <li><a href="#command-group-0xdfnn---diagnostics-and-utilities">Command Group 0xDFnn - Diagnostics and Utilities</a></li>
-    <li><a href="#command-0xdf01---echo">Command 0xDF01 - Echo</a></li>
-    <li><a href="#command-0xdf02---convert-binary-tag-data-to-text-magtek-internal-only-for-now">Command 0xDF02 - Convert Binary Tag Data to Text (MAGTEK INTERNAL ONLY FOR NOW)</a></li>
-  <li><a href="#command-group-0xennn---security">Command Group 0xEnnn - Security</a></li>
-    <li><a href="#command-0xe001---get-challenge">Command 0xE001 - Get Challenge</a></li>
-    <li><a href="#command-0xeeee---send-secured-command-to-device">Command 0xEEEE - Send Secured Command to Device</a></li>
-    <li><a href="#command-0xef01---load-key-using-tr-31">Command 0xEF01 - Load Key Using TR-31</a></li>
-    <li><a href="#command-0xef02--generate-csr-keys-wlan-only">Command 0xEF02 – Generate CSR keys (WLAN Only)</a></li>
-    <li><a href="#command-0xef03--generate-csr-wlan-only">Command 0xEF03 – Generate CSR (WLAN Only)</a></li>
-    <li><a href="#command-0xef04--load-ltpk-protection-key-magtek-internal-only-for-now">Command 0xEF04 – Load LTPK Protection Key (MAGTEK INTERNAL ONLY FOR NOW)</a></li>
-    <li><a href="#command-0xef05--load-encrypted-ltpk-and-version-magtek-internal-only-for-now">Command 0xEF05 – Load Encrypted LTPK and Version (MAGTEK INTERNAL ONLY FOR NOW)</a></li>
-    <li><a href="#command-0xef06--change-device-lock-state">Command 0xEF06 – Change Device Lock State</a></li>
-    <li><a href="#command-0xef07--change-device-lock-passcode">Command 0xEF07 – Change Device Lock Passcode</a></li>
-    <li><a href="#command-0xef08--reset-device-lock-passcode-magtek-internal-only-for-now">Command 0xEF08 – Reset Device Lock Passcode (MAGTEK INTERNAL ONLY FOR NOW)</a></li>
-    <li><a href="#command-0xef09--encrypt-user-data">Command 0xEF09 – Encrypt User Data</a></li>
-    <li><a href="#command-0xef11---get-key-info">Command 0xEF11 - Get Key Info</a></li>
-  <li><a href="#command-group-0xfnnn---manufacturing">Command Group 0xFnnn - Manufacturing</a></li>
-    <li><a href="#command-0xf012---force-tamper-magtek-internal-only">Command 0xF012 - Force Tamper (MAGTEK INTERNAL ONLY)</a></li>
-    <li><a href="#command-0xf014---read-log-magtek-internal-only">Command 0xF014 - Read Log (MAGTEK INTERNAL ONLY)</a></li>
-    <li><a href="#command-0xf015---read-log--clear-tamper-magtek-internal-only">Command 0xF015 - Read Log & Clear Tamper (MAGTEK INTERNAL ONLY)</a></li>
-    <li><a href="#command-0xf016---activate-device-security-magtek-internal-only">Command 0xF016 - Activate Device Security (MAGTEK INTERNAL ONLY)</a></li>
-    <li><a href="#command-0xf017---establish-ephemeral-kbpk">Command 0xF017 - Establish Ephemeral KBPK</a></li>
-  <li><a href="#notifications"># Notifications</a></li>
-  <li><a href="#notification-source-0x01nn---notifications-from-transactions">Notification Source 0x01nn - Notifications from Transactions</a></li>
-    <li><a href="#notification-0x0101---transaction-information-update">Notification 0x0101 - Transaction Information Update</a></li>
-    <li><a href="#notification-0x0103---transaction-host-action-request-magtek-internal-only-for-now">Notification 0x0103 - Transaction Host Action Request (MAGTEK INTERNAL ONLY FOR NOW)</a></li>
-    <li><a href="#notification-0x0104---transaction-callback-magtek-internal-only-for-now">Notification 0x0104 - Transaction Callback (MAGTEK INTERNAL ONLY FOR NOW)</a></li>
-    <li><a href="#notification-0x0105---transaction-operation-complete">Notification 0x0105 - Transaction Operation Complete</a></li>
-  <li><a href="#notification-source-0x02nn---notifications-from-banking-functions-banking-functions-only">Notification Source 0x02nn - Notifications from Banking Functions (Banking Functions Only)</a></li>
-    <li><a href="#notification-0x0201---banking-functions-information-update">Notification 0x0201 - Banking Functions Information Update</a></li>
-    <li><a href="#notification-0x0203---banking-functions-host-action-requestmagtek-internal-only-for-now">Notification 0x0203 - Banking Functions Host Action Request(MAGTEK INTERNAL ONLY FOR NOW)</a></li>
-    <li><a href="#notification-0x0205---banking-functions-operation-complete">Notification 0x0205 - Banking Functions Operation Complete</a></li>
-  <li><a href="#notification-source-0x09nn---notifications-from-firmware-updates">Notification Source 0x09nn - Notifications from Firmware Updates</a></li>
-    <li><a href="#notification-0x0905---firmware-update-successful">Notification 0x0905 - Firmware Update Successful</a></li>
-    <li><a href="#notification-0x0906---firmware-update-failed">Notification 0x0906 - Firmware Update Failed</a></li>
-    <li><a href="#notification-0x0907---firmware-is-up-to-date">Notification 0x0907 - Firmware is Up to Date</a></li>
-  <li><a href="#notification-source-0x10nn---notifications-from-device">Notification Source 0x10nn - Notifications from Device</a></li>
-    <li><a href="#notification-0x1001---device-information-update">Notification 0x1001 - Device Information Update</a></li>
-      <li><a href="#notification-0x1001--low-battery-warning">Notification 0x1001 – Low Battery Warning</a></li>
-      <li><a href="#notification-0x1001---low-battery-shutdown">Notification 0x1001 - Low Battery Shutdown</a></li>
-      <li><a href="#notification-0x1001---battery-charged">Notification 0x1001 - Battery Charged</a></li>
-  <li><a href="#notification-source-0x18nn---notifications-from-user-interface">Notification Source 0x18nn - Notifications from User Interface</a></li>
-    <li><a href="#notification-0x1801---user-interface-information-update-magtek-internal-only-for-now">Notification 0x1801 - User Interface Information Update (MAGTEK INTERNAL ONLY FOR NOW)</a></li>
-    <li><a href="#notification-0x1803---user-interface-host-action-request">Notification 0x1803 - User Interface Host Action Request</a></li>
-    <li><a href="#notification-0x1805---user-interface-operation-complete">Notification 0x1805 - User Interface Operation Complete</a></li>
-<li><a href="#configuration">Configuration</a></li>
-  <li><a href="#about-configuration">About Configuration</a></li>
-  <li><a href="#property-group-11nnnn-financial-settings">Property Group 1.1.nnnn Financial Settings</a></li>
-    <li><a href="#property-subgroup-111nnn-emv-settings">Property Subgroup 1.1.1.nnn EMV Settings</a></li>
-      <li><a href="#property-111111-emv-terminal-identification">Property 1.1.1.1.1.1 EMV Terminal Identification</a></li>
-      <li><a href="#property-111112-emv-arqc-message-tag-list">Property 1.1.1.1.1.2 EMV ARQC Message Tag List</a></li>
-      <li><a href="#property-111113-emv-batch-data-tag-list">Property 1.1.1.1.1.3 EMV Batch Data Tag List</a></li>
-      <li><a href="#property-111114-emv-reversal-data-tag-list-emv-contact-only">Property 1.1.1.1.1.4 EMV Reversal Data Tag List (EMV Contact Only)</a></li>
-      <li><a href="#property-111115-arpc-receive-timeout">Property 1.1.1.1.1.5 ARPC Receive Timeout</a></li>
-      <li><a href="#property-111116-arpc-retry-attempts">Property 1.1.1.1.1.6 ARPC Retry Attempts</a></li>
-      <li><a href="#property-111117-apple-vas-merchant-id-and-url-slot-1">Property 1.1.1.1.1.7 Apple VAS Merchant ID and URL Slot 1</a></li>
-      <li><a href="#property-111118-apple-vas-merchant-id-and-url-slot-2">Property 1.1.1.1.1.8 Apple VAS Merchant ID and URL Slot 2</a></li>
-      <li><a href="#property-111119-apple-vas-merchant-id-and-url-slot-3">Property 1.1.1.1.1.9 Apple VAS Merchant ID and URL Slot 3</a></li>
-      <li><a href="#property-11111a-apple-vas-merchant-id-and-url-slot-4">Property 1.1.1.1.1.A Apple VAS Merchant ID and URL Slot 4</a></li>
-      <li><a href="#property-11111b-apple-vas-merchant-id-and-url-slot-5">Property 1.1.1.1.1.B Apple VAS Merchant ID and URL Slot 5</a></li>
-      <li><a href="#property-11111c-apple-vas-merchant-id-and-url-slot-6">Property 1.1.1.1.1.C Apple VAS Merchant ID and URL Slot 6</a></li>
-      <li><a href="#property-11111d-apple-iap2-appbundleid">Property 1.1.1.1.1.D Apple iAP2 AppBundleID</a></li>
-      <li><a href="#property-1111110-google-smart-tap-collector-id-slot-1">Property 1.1.1.1.1.10 Google Smart Tap Collector ID Slot 1</a></li>
-      <li><a href="#property-1111111-google-smart-tap-collector-id-slot-2">Property 1.1.1.1.1.11 Google Smart Tap Collector ID Slot 2</a></li>
-      <li><a href="#property-1111112-google-smart-tap-collector-id-slot-3">Property 1.1.1.1.1.12 Google Smart Tap Collector ID Slot 3</a></li>
-      <li><a href="#property-1111113-google-smart-tap-collector-id-slot-4">Property 1.1.1.1.1.13 Google Smart Tap Collector ID Slot 4</a></li>
-      <li><a href="#property-1111114-google-smart-tap-collector-id-slot-5">Property 1.1.1.1.1.14 Google Smart Tap Collector ID Slot 5</a></li>
-      <li><a href="#property-1111115-google-smart-tap-collector-id-slot-6">Property 1.1.1.1.1.15 Google Smart Tap Collector ID Slot 6</a></li>
-      <li><a href="#property-111111a-google-smart-tap-pos-capabilities">Property 1.1.1.1.1.1A Google Smart Tap POS Capabilities</a></li>
-      <li><a href="#property-111111b-interac-contact-card-terminal-capability-online-pin-support-disable">Property 1.1.1.1.1.1B Interac Contact Card Terminal Capability ONLINE PIN Support Disable</a></li>
-      <li><a href="#property-111121-start-transaction-on-touchscreen-event-controltouch-only">Property 1.1.1.1.2.1 Start Transaction on Touchscreen Event Control(Touch Only)</a></li>
-      <li><a href="#property-111122-tip-modetouch-only">Property 1.1.1.1.2.2 Tip Mode(Touch Only)</a></li>
-      <li><a href="#property-111123-tax-rate-touch-only">Property 1.1.1.1.2.3 Tax Rate (Touch Only)</a></li>
-      <li><a href="#property-111124-display-tax-or-surcharge-touch-only">Property 1.1.1.1.2.4 Display Tax or Surcharge (Touch Only)</a></li>
-      <li><a href="#property-111125-disabled-tip-button-display-mode-touch-only">Property 1.1.1.1.2.5 Disabled Tip Button Display Mode (Touch Only)</a></li>
-      <li><a href="#property-111126-tip-mode-enable-submit-on-amount-button-press">Property 1.1.1.1.2.6 Tip Mode Enable Submit on Amount Button Press</a></li>
-      <li><a href="#property-111131-timeout-touch-only">Property 1.1.1.1.3.1 Timeout (Touch Only)</a></li>
-      <li><a href="#property-111132-reader-options-touch-only">Property 1.1.1.1.3.2 Reader Options (Touch Only)</a></li>
-      <li><a href="#property-111133-transaction-options-touch-only">Property 1.1.1.1.3.3 Transaction Options (Touch Only)</a></li>
-      <li><a href="#property-111134-other-tlv-touch-only">Property 1.1.1.1.3.4 Other TLV (Touch Only)</a></li>
-      <li><a href="#property-111141-emv-configuration-filename">Property 1.1.1.1.4.1 EMV Configuration Filename</a></li>
-      <li><a href="#property-111142-ca-public-key-configuration-filename">Property 1.1.1.1.4.2 CA Public Key Configuration Filename</a></li>
-      <li><a href="#property-111151-report-all-available-tags-enable">Property 1.1.1.1.5.1 Report All Available Tags Enable</a></li>
-      <li><a href="#property-111152-encrypted-sensitive-tag-list">Property 1.1.1.1.5.2 Encrypted Sensitive Tag List</a></li>
-      <li><a href="#property-111153-msr-cleartext-tag-list">Property 1.1.1.1.5.3 MSR Cleartext Tag List</a></li>
-    <li><a href="#property-subgroup-112nnn-sred-settings">Property Subgroup 1.1.2.nnn SRED Settings</a></li>
-      <li><a href="#property-112212-isoaba-masking-character">Property 1.1.2.2.1.2 ISO/ABA Masking Character</a></li>
-      <li><a href="#property-112213-pan-number-of-leading-unmasked-characters">Property 1.1.2.2.1.3 PAN Number of Leading Unmasked Characters</a></li>
-      <li><a href="#property-112214-pan-number-of-trailing-unmasked-characters">Property 1.1.2.2.1.4 PAN Number of Trailing Unmasked Characters</a></li>
-      <li><a href="#property-112215-pan-mod-10-check-digit-correction">Property 1.1.2.2.1.5 PAN MOD 10 Check Digit Correction</a></li>
-      <li><a href="#property-112216-pan-mod-10-check-digit-validation-mce-only">Property 1.1.2.2.1.6 PAN MOD 10 Check Digit Validation (MCE Only)</a></li>
-      <li><a href="#property-112411-key-mapping-of-pin-tdes-touch-only">Property 1.1.2.4.1.1 Key Mapping of PIN-TDES (Touch Only)</a></li>
-      <li><a href="#property-112412-key-mapping-of-account-data">Property 1.1.2.4.1.2 Key Mapping of Account Data</a></li>
-      <li><a href="#property-112413-key-mapping-of-mac">Property 1.1.2.4.1.3 Key Mapping of MAC</a></li>
-      <li><a href="#property-112414-key-mapping-of-magneprint-msr-only">Property 1.1.2.4.1.4 Key Mapping of Magneprint (MSR Only)</a></li>
-      <li><a href="#property-112415-key-mapping-of-magtek-token">Property 1.1.2.4.1.5 Key Mapping of MagTek Token</a></li>
-      <li><a href="#property-112416-key-mapping-of-user-data-1">Property 1.1.2.4.1.6 Key Mapping of User Data 1</a></li>
-      <li><a href="#property-112417-key-mapping-of-pin-aes-touch-only">Property 1.1.2.4.1.7 Key Mapping of PIN-AES (Touch Only)</a></li>
-      <li><a href="#property-112511-aamva-allowed-msr-only">Property 1.1.2.5.1.1 AAMVA Allowed (MSR Only)</a></li>
-      <li><a href="#property-112512-track-1-enable-msr-only">Property 1.1.2.5.1.2 Track 1 Enable (MSR Only)</a></li>
-      <li><a href="#property-112513-track-2-enable-msr-only">Property 1.1.2.5.1.3 Track 2 Enable (MSR Only)</a></li>
-      <li><a href="#property-112514-track-3-enable-msr-only">Property 1.1.2.5.1.4 Track 3 Enable (MSR Only)</a></li>
-      <li><a href="#property-112611-selectable-card-data-encryption-enable-magtek-internal-only">Property 1.1.2.6.1.1 Selectable Card Data Encryption Enable (MAGTEK INTERNAL ONLY)</a></li>
-  <li><a href="#property-group-12nnnn-device-settings">Property Group 1.2.nnnn Device Settings</a></li>
-    <li><a href="#property-subgroup-121nnn-transaction-settings">Property Subgroup 1.2.1.nnn Transaction Settings</a></li>
-      <li><a href="#property-121111-device-driven-fallback-behavior-msr-only">Property 1.2.1.1.1.1 Device-Driven Fallback Behavior (MSR Only)</a></li>
-      <li><a href="#property-121112-application-selection-behavior-contactless-only">Property 1.2.1.1.1.2 Application Selection Behavior (Contactless Only)</a></li>
-      <li><a href="#property-121121-signature-capture-control">Property 1.2.1.1.2.1 Signature Capture Control</a></li>
-      <li><a href="#property-121122-include-signature-data-in-emv-batch-data-touch-only">Property 1.2.1.1.2.2 Include Signature Data in EMV Batch Data (Touch Only)</a></li>
-      <li><a href="#property-121123-signature-timing-window-touch-only">Property 1.2.1.1.2.3 Signature Timing Window (Touch Only)</a></li>
-      <li><a href="#property-121131-contactless-low-power-card-detect-contactless-only">Property 1.2.1.1.3.1 Contactless Low Power Card Detect (Contactless Only)</a></li>
-      <li><a href="#property-121141-mifare-ultralight-c-2keys3des">Property 1.2.1.1.4.1 MIFARE Ultralight C 2keys3DES</a></li>
-      <li><a href="#property-121142-mifare-ultralight-aes-dataprotkey">Property 1.2.1.1.4.2 MIFARE Ultralight AES DataProtKey.</a></li>
-      <li><a href="#property-121143-mifare-ultralight-aes-uidretrkey">Property 1.2.1.1.4.3 MIFARE Ultralight AES UIDRetrKey.</a></li>
-      <li><a href="#property-121144-mifare-ultralight-aes-originalitykey">Property 1.2.1.1.4.4 MIFARE Ultralight AES OriginalityKey.</a></li>
-      <li><a href="#property-121145-mifare-plus-aes_key1">Property 1.2.1.1.4.5 MIFARE Plus AES_Key1.</a></li>
-      <li><a href="#property-121146-mifare-plus-aes_key2">Property 1.2.1.1.4.6 MIFARE Plus AES_Key2.</a></li>
-      <li><a href="#property-121147-mifare-plus-aes_key3">Property 1.2.1.1.4.7 MIFARE Plus AES_Key3.</a></li>
-      <li><a href="#property-121148-mifare-plus-aes_key4">Property 1.2.1.1.4.8 MIFARE Plus AES_Key4.</a></li>
-      <li><a href="#property-121149-mifare-plus-aes_key5">Property 1.2.1.1.4.9 MIFARE Plus AES_Key5.</a></li>
-      <li><a href="#property-12114a-mifare-plus-aes_key6">Property 1.2.1.1.4.A MIFARE Plus AES_Key6.</a></li>
-      <li><a href="#property-121151-mce-mode-setting">Property 1.2.1.1.5.1 MCE Mode Setting</a></li>
-    <li><a href="#property-subgroup-1221nn-wlan-settings-wlan-only">Property Subgroup 1.2.2.1.nn WLAN Settings (WLAN Only)</a></li>
-      <li><a href="#property-122111-ssid">Property 1.2.2.1.1.1 SSID</a></li>
-      <li><a href="#property-122112-password">Property 1.2.2.1.1.2 Password</a></li>
-      <li><a href="#property-122113-security-mode">Property 1.2.2.1.1.3 Security Mode</a></li>
-      <li><a href="#property-122114-static-ip-address">Property 1.2.2.1.1.4 Static IP Address</a></li>
-      <li><a href="#property-122115-use-dhcp">Property 1.2.2.1.1.5 Use DHCP</a></li>
-      <li><a href="#property-122116-static-ip-netmask">Property 1.2.2.1.1.6 Static IP Netmask</a></li>
-      <li><a href="#property-122117-static-ip-gateway">Property 1.2.2.1.1.7 Static IP Gateway</a></li>
-      <li><a href="#property-122118-device-name">Property 1.2.2.1.1.8 Device Name</a></li>
-      <li><a href="#property-122119-wireless-heartbeat-time">Property 1.2.2.1.1.9 Wireless Heartbeat Time</a></li>
-      <li><a href="#property-12211a-maximum-client-connections">Property 1.2.2.1.1.A Maximum Client Connections</a></li>
-      <li><a href="#property-12211b-certificate-expiring-soon-notification-threshold">Property 1.2.2.1.1.B Certificate Expiring Soon Notification Threshold</a></li>
-      <li><a href="#property-12211c-username">Property 1.2.2.1.1.C Username</a></li>
-      <li><a href="#property-12211d-softap-ip-address">Property 1.2.2.1.1.D SoftAP IP Address</a></li>
-      <li><a href="#property-12211e-web-app-enabled-magtek-internal-only-for-now">Property 1.2.2.1.1.E Web App Enabled (MAGTEK INTERNAL ONLY FOR NOW)</a></li>
-      <li><a href="#property-12211f-web-app-port-magtek-internal-only-for-now">Property 1.2.2.1.1.F Web App Port (MAGTEK INTERNAL ONLY FOR NOW)</a></li>
-      <li><a href="#property-1221110-firmware-authentication-hash-magtek-internal-only">Property 1.2.2.1.1.10 Firmware Authentication Hash (MAGTEK INTERNAL ONLY)</a></li>
-      <li><a href="#property-1221111-wlan-protocol">Property 1.2.2.1.1.11 WLAN Protocol</a></li>
-      <li><a href="#property-122121-mqtt-broker-address">Property 1.2.2.1.2.1 MQTT Broker Address</a></li>
-      <li><a href="#property-122122-mqtt-port">Property 1.2.2.1.2.2 MQTT Port</a></li>
-      <li><a href="#property-122123-mqtt-qos-quality-of-service">Property 1.2.2.1.2.3 MQTT QoS Quality of Service</a></li>
-      <li><a href="#property-122124-mqtt-subscribe-topic">Property 1.2.2.1.2.4 MQTT Subscribe Topic</a></li>
-      <li><a href="#property-122125-mqtt-publish-topic">Property 1.2.2.1.2.5 MQTT Publish Topic</a></li>
-      <li><a href="#property-122126-mqtt-client-id">Property 1.2.2.1.2.6 MQTT Client ID</a></li>
-      <li><a href="#property-122127-mqtt-username">Property 1.2.2.1.2.7 MQTT Username</a></li>
-      <li><a href="#property-122128-mqtt-password">Property 1.2.2.1.2.8 MQTT Password</a></li>
-      <li><a href="#property-122128-mqtt-peer-common-name">Property 1.2.2.1.2.8 MQTT Peer Common Name</a></li>
-      <li><a href="#property-12212a-mqtt-keep-alive">Property 1.2.2.1.2.A MQTT Keep Alive</a></li>
-    <li><a href="#property-subgroup-1222nn-usb-settings-usb-only">Property Subgroup 1.2.2.2.nn USB Settings (USB Only)</a></li>
-      <li><a href="#property-122211-reduce-power-during-usb-suspend">Property 1.2.2.2.1.1 Reduce Power During USB Suspend</a></li>
-      <li><a href="#property-122212-usb-configuration-type">Property 1.2.2.2.1.2 USB Configuration Type</a></li>
-    <li><a href="#property-subgroup-1223nn-bluetooth-le-settings-bluetooth-le-only">Property Subgroup 1.2.2.3.nn Bluetooth® LE Settings (Bluetooth® LE Only)</a></li>
-      <li><a href="#property-122311-bluetooth-le-device-name">Property 1.2.2.3.1.1 Bluetooth® LE Device Name</a></li>
-      <li><a href="#property-122312-bluetooth-le-desired-minimum-connection-interval">Property 1.2.2.3.1.2 Bluetooth® LE Desired Minimum Connection Interval</a></li>
-      <li><a href="#property-122313-bluetooth-le-desired-maximum-connection-interval">Property 1.2.2.3.1.3 Bluetooth® LE Desired Maximum Connection Interval</a></li>
-      <li><a href="#property-122314-bluetooth-le-desired-slave-latency">Property 1.2.2.3.1.4 Bluetooth® LE Desired Slave Latency</a></li>
-      <li><a href="#property-122315-bluetooth-le-desired-supervision-timeout">Property 1.2.2.3.1.5 Bluetooth® LE Desired Supervision Timeout</a></li>
-      <li><a href="#property-122316-bluetooth-le-connection-parameter-update-request-control">Property 1.2.2.3.1.6 Bluetooth® LE Connection Parameter Update Request Control</a></li>
-      <li><a href="#property-122317-bluetooth-le-minimum-advertising-interval">Property 1.2.2.3.1.7 Bluetooth® LE Minimum Advertising Interval</a></li>
-      <li><a href="#property-122318-bluetooth-le-maximum-advertising-interval">Property 1.2.2.3.1.8 Bluetooth® LE Maximum Advertising Interval</a></li>
-      <li><a href="#property-122319-bluetooth-le-passkey">Property 1.2.2.3.1.9 Bluetooth® LE Passkey</a></li>
-      <li><a href="#property-12231a-bluetooth-le-never-advertise">Property 1.2.2.3.1.A Bluetooth® LE Never Advertise</a></li>
-      <li><a href="#property-12231b-bluetooth-le-fcc-test-control-magtek-internal-only">Property 1.2.2.3.1.B Bluetooth® LE FCC Test Control (MAGTEK INTERNAL ONLY)</a></li>
-      <li><a href="#property-12231c-bluetooth-le-sleep-enabled">Property 1.2.2.3.1.C Bluetooth® LE Sleep Enabled</a></li>
-      <li><a href="#property-12231d-bluetooth-le-debug-mode-enabled">Property 1.2.2.3.1.D Bluetooth® LE Debug Mode Enabled</a></li>
-    <li><a href="#property-subgroup-123nnn-user-interface-settings">Property Subgroup 1.2.3.nnn User Interface Settings</a></li>
-      <li><a href="#property-123111-custom-idle-page-image-display-only">Property 1.2.3.1.1.1 Custom Idle Page Image (Display Only)</a></li>
-      <li><a href="#property-123112-custom-idle-page-image-device-locked-display-only">Property 1.2.3.1.1.2 Custom Idle Page Image Device Locked (Display Only)</a></li>
-      <li><a href="#property-123121-display-orientation-display-only">Property 1.2.3.1.2.1 Display Orientation (Display Only)</a></li>
-      <li><a href="#property-123131-enable-card-logos-page-at-startup">Property 1.2.3.1.3.1 Enable Card Logos Page at Startup</a></li>
-      <li><a href="#property-123132-display-card-logo-while-authorizing">Property 1.2.3.1.3.2 Display Card Logo While Authorizing</a></li>
-      <li><a href="#property-123122-display-backlight-intensity-display-only">Property 1.2.3.1.2.2 Display Backlight Intensity (Display Only)</a></li>
-      <li><a href="#property-123211-system-volume-control">Property 1.2.3.2.1.1 System Volume Control</a></li>
-      <li><a href="#property-123221-touch-keypress-beep-enable">Property 1.2.3.2.2.1 Touch Keypress Beep Enable</a></li>
-    <li><a href="#property-subgroup-125nnn-security-settings">Property Subgroup 1.2.5.nnn Security Settings</a></li>
-      <li><a href="#property-125211-device-lock-state">Property 1.2.5.2.1.1 Device Lock State</a></li>
-      <li><a href="#property-125212-device-lock-state-after-reset">Property 1.2.5.2.1.2 Device Lock State After Reset</a></li>
-      <li><a href="#property-125213-device-lock-passcode">Property 1.2.5.2.1.3 Device Lock Passcode</a></li>
-    <li><a href="#property-subgroup-127nnn-system-settings">Property Subgroup 1.2.7.nnn System Settings</a></li>
-      <li><a href="#property-127111-device-reset-occurred-notification-control">Property 1.2.7.1.1.1 Device Reset Occurred Notification Control</a></li>
-      <li><a href="#property-127112-device-reset-occurred-notification-acknowledged">Property 1.2.7.1.1.2 Device Reset Occurred Notification Acknowledged</a></li>
-      <li><a href="#property-127113-device-reset-will-occur-soon-notification-control">Property 1.2.7.1.1.3 Device Reset Will Occur Soon Notification Control</a></li>
-      <li><a href="#property-127114-auto-reset-configuration">Property 1.2.7.1.1.4 Auto Reset Configuration</a></li>
-      <li><a href="#property-127121-user-event-notification-controls-enable">Property 1.2.7.1.2.1 User Event Notification Controls Enable</a></li>
-      <li><a href="#property-127122-user-event-notification-msr-data-timeout-msr-only">Property 1.2.7.1.2.2 User Event Notification MSR Data Timeout (MSR Only)</a></li>
-      <li><a href="#property-127131-maximum-battery-charge-level-deprecated">Property 1.2.7.1.3.1 Maximum Battery Charge Level (Deprecated)</a></li>
-      <li><a href="#property-127141-device-low-temperature-notification-level">Property 1.2.7.1.4.1 Device Low Temperature Notification Level</a></li>
-      <li><a href="#property-127142-device-high-temperature-notification-level">Property 1.2.7.1.4.2 Device High Temperature Notification Level</a></li>
-      <li><a href="#property-127143-device-temperature-notification-repeat-interval">Property 1.2.7.1.4.3 Device Temperature Notification Repeat Interval</a></li>
-  <li><a href="#property-group-211nnn-device-firmware-feature-information-magtek-internal-only-for-now">Property Group 2.1.1.nnn Device Firmware Feature Information (MAGTEK INTERNAL ONLY FOR NOW)</a></li>
-    <li><a href="#841-property-subgroup-2111nn-mainapp-firmware-information">8.4.1 Property Subgroup 2.1.1.1.nn MainApp Firmware Information</a></li>
-      <li><a href="#8411-property-211111-api-feature-set">8.4.1.1 Property 2.1.1.1.1.1 API Feature Set</a></li>
-  <li><a href="#property-group-212nnn-device-firmware-identification-information">Property Group 2.1.2.nnn Device Firmware Identification Information</a></li>
-    <li><a href="#property-subgroup-2121nn-boot-firmware-information">Property Subgroup 2.1.2.1.nn Boot Firmware Information</a></li>
-      <li><a href="#property-212112-boot1-firmware-version">Property 2.1.2.1.1.2 Boot1 Firmware Version</a></li>
-      <li><a href="#property-212114-boot1-firmware-part-number">Property 2.1.2.1.1.4 Boot1 Firmware Part Number</a></li>
-      <li><a href="#property-212122-boot0-firmware-version">Property 2.1.2.1.2.2 Boot0 Firmware Version</a></li>
-      <li><a href="#property-212124-boot0-firmware-part-number">Property 2.1.2.1.2.4 Boot0 Firmware Part Number</a></li>
-    <li><a href="#property-subgroup-2122nn-core-firmware-information">Property Subgroup 2.1.2.2.nn Core Firmware Information</a></li>
-      <li><a href="#property-212221-device-model-name">Property 2.1.2.2.2.1 Device Model Name</a></li>
-      <li><a href="#property-212222-main-firmware-version">Property 2.1.2.2.2.2 Main Firmware Version</a></li>
-      <li><a href="#property-212224-main-firmware-part-number">Property 2.1.2.2.2.4 Main Firmware Part Number</a></li>
-      <li><a href="#property-212226-key-type">Property 2.1.2.2.2.6 Key Type</a></li>
-    <li><a href="#property-subgroup-2123nn-emv-firmware-information">Property Subgroup 2.1.2.3.nn EMV Firmware Information</a></li>
-      <li><a href="#property-212311-encryption-id-magtek-internal-only-for-now">Property 2.1.2.3.1.1 Encryption ID (MAGTEK INTERNAL ONLY FOR NOW)</a></li>
-      <li><a href="#property-212312-encryption-checksum-magtek-internal-only-for-now">Property 2.1.2.3.1.2 Encryption Checksum (MAGTEK INTERNAL ONLY FOR NOW)</a></li>
-      <li><a href="#property-212321-emv-contact-l1-kernel-id-contact-only">Property 2.1.2.3.2.1 EMV Contact L1 Kernel ID (Contact Only)</a></li>
-      <li><a href="#property-212322-emv-contact-l1-kernel-firmware-part-number-contact-only">Property 2.1.2.3.2.2 EMV Contact L1 Kernel Firmware Part Number (Contact Only)</a></li>
-      <li><a href="#property-212331-emv-contact-l2-kernel-id-contact-only">Property 2.1.2.3.3.1 EMV Contact L2 Kernel ID (Contact Only)</a></li>
-      <li><a href="#property-212332-emv-contact-l2-kernel-firmware-part-numbercontact-only">Property 2.1.2.3.3.2 EMV Contact L2 Kernel Firmware Part Number(Contact Only)</a></li>
-      <li><a href="#property-212333-emv-contact-l2-kernel-checksum-contact-only">Property 2.1.2.3.3.3 EMV Contact L2 Kernel Checksum (Contact Only)</a></li>
-      <li><a href="#property-212334-emv-contact-l2-kernel-configuration-checksum-contact-only">Property 2.1.2.3.3.4 EMV Contact L2 Kernel Configuration Checksum (Contact Only)</a></li>
-      <li><a href="#property-212341-emv-contactless-l1-kernel-id-contactless-only">Property 2.1.2.3.4.1 EMV Contactless L1 Kernel ID (Contactless Only)</a></li>
-      <li><a href="#property-212342-emv-contactless-l1-kernel-firmware-part-number-contactless-only">Property 2.1.2.3.4.2 EMV Contactless L1 Kernel Firmware Part Number (Contactless Only)</a></li>
-      <li><a href="#property-212343-emv-contactless-l1-kernel-checksum-contactless-only">Property 2.1.2.3.4.3 EMV Contactless L1 Kernel Checksum (Contactless Only)</a></li>
-      <li><a href="#property-212351-mastercard-mcl-kernel-id-contactless-only">Property 2.1.2.3.5.1 Mastercard MCL Kernel ID (Contactless Only)</a></li>
-      <li><a href="#property-212352-mastercard-mcl-kernel-firmware-part-number-contactless-only">Property 2.1.2.3.5.2 Mastercard MCL Kernel Firmware Part Number (Contactless Only)</a></li>
-      <li><a href="#property-212353-mastercard-mcl-kernel-checksum-contactless-only">Property 2.1.2.3.5.3 Mastercard MCL Kernel Checksum (Contactless Only)</a></li>
-      <li><a href="#property-212361-visa-paywave-kernel-id-contactless-only">Property 2.1.2.3.6.1 Visa payWave Kernel ID (Contactless Only)</a></li>
-      <li><a href="#property-212362-visa-paywave-kernel-firmware-part-number-contactless-only">Property 2.1.2.3.6.2 Visa payWave Kernel Firmware Part Number (Contactless Only)</a></li>
-      <li><a href="#property-212363-visa-paywave-kernel-checksum-contactless-only">Property 2.1.2.3.6.3 Visa payWave Kernel Checksum (Contactless Only)</a></li>
-      <li><a href="#property-212365-entry-point-checksum-contactless-onlycommon-kernel-only">Property 2.1.2.3.6.5 Entry Point Checksum (Contactless Only)(Common Kernel Only)</a></li>
-      <li><a href="#property-212371-discover-d-pas-kernel-id-contactless-only">Property 2.1.2.3.7.1 Discover D-PAS Kernel ID (Contactless Only)</a></li>
-      <li><a href="#property-212372-discover-d-pas-kernel-firmware-part-number-contactless-only">Property 2.1.2.3.7.2 Discover D-PAS Kernel Firmware Part Number (Contactless Only)</a></li>
-      <li><a href="#property-212373-discover-d-pas-kernel-checksum-contactless-only">Property 2.1.2.3.7.3 Discover D-PAS Kernel Checksum (Contactless Only)</a></li>
-      <li><a href="#property-212381-american-express-expresspay-kernel-id-contactless-only">Property 2.1.2.3.8.1 American Express Expresspay Kernel ID (Contactless Only)</a></li>
-      <li><a href="#property-212382-american-express-expresspay-kernel-firmware-part-number-contactless-only">Property 2.1.2.3.8.2 American Express Expresspay Kernel Firmware Part Number (Contactless Only)</a></li>
-      <li><a href="#property-212383-american-express-expresspay-kernel-checksum-contactless-only">Property 2.1.2.3.8.3 American Express Expresspay Kernel Checksum (Contactless Only)</a></li>
-      <li><a href="#property-212391-apple-vas-kernel-id">Property 2.1.2.3.9.1 Apple VAS Kernel ID</a></li>
-      <li><a href="#property-2123a1-jcb-kernel-id-contactless-only-common-kernel-only">Property 2.1.2.3.A.1 JCB Kernel ID (Contactless Only) (Common Kernel Only)</a></li>
-      <li><a href="#property-2123a2-jcb-kernel-firmware-part-number-contactless-only-common-kernel-only">Property 2.1.2.3.A.2 JCB Kernel Firmware Part Number (Contactless Only) (Common Kernel Only)</a></li>
-      <li><a href="#property-2123a3-jcb-kernel-checksum-contactless-only-common-kernel-only">Property 2.1.2.3.A.3 JCB Kernel Checksum (Contactless Only) (Common Kernel Only)</a></li>
-      <li><a href="#property-2123a4-reader-core-checksum-contactless-only-common-kernel-only">Property 2.1.2.3.A.4 Reader Core Checksum (Contactless Only) (Common Kernel Only)</a></li>
-      <li><a href="#property-2123a5-entry-point-checksum-contactless-only-common-kernel-only">Property 2.1.2.3.A.5 Entry Point Checksum (Contactless Only) (Common Kernel Only)</a></li>
-      <li><a href="#property-2123b1-china-union-pay-kernel-id-contactless-only-common-kernel-only">Property 2.1.2.3.B.1 China Union Pay Kernel ID (Contactless Only) (Common Kernel Only)</a></li>
-      <li><a href="#property-2123b2-china-union-pay-kernel-firmware-part-number-contactless-only-common-kernel-only">Property 2.1.2.3.B.2 China Union Pay Kernel Firmware Part Number (Contactless Only) (Common Kernel Only)</a></li>
-      <li><a href="#property-2123b3-china-union-pay-kernel-checksum-contactless-only-common-kernel-only">Property 2.1.2.3.B.3 China Union Pay Kernel Checksum (Contactless Only) (Common Kernel Only)</a></li>
-      <li><a href="#property-2123c1-interact-flash-kernel-id-contactless-only-common-kernel-only">Property 2.1.2.3.C.1 Interact Flash Kernel ID (Contactless Only) (Common Kernel Only)</a></li>
-      <li><a href="#property-2123c2-interact-flash-kernel-firmware-part-number-contactless-only-common-kernel-only">Property 2.1.2.3.C.2 Interact Flash Kernel Firmware Part Number (Contactless Only) (Common Kernel Only)</a></li>
-      <li><a href="#property-2123c3-interact-flash-kernel-checksum-contactless-only-common-kernel-only">Property 2.1.2.3.C.3 Interact Flash Kernel Checksum (Contactless Only) (Common Kernel Only)</a></li>
-    <li><a href="#property-subgroup-2124nn-main-application-firmware-information-magtek-internal-only-for-now">Property Subgroup 2.1.2.4.nn Main Application Firmware Information (MAGTEK INTERNAL ONLY FOR NOW)</a></li>
-    <li><a href="#property-subgroup-2125nn-wlan-information-wlan-only">Property Subgroup 2.1.2.5.nn WLAN Information (WLAN Only)</a></li>
-      <li><a href="#property-212531-wlan-firmware-version">Property 2.1.2.5.3.1 WLAN Firmware Version</a></li>
-      <li><a href="#property-212532-wlan-wifi-module-build-hash-magtek-internal-only">Property 2.1.2.5.3.2 WLAN WiFi Module Build Hash (MAGTEK INTERNAL ONLY)</a></li>
-      <li><a href="#property-212533-wlan-firmware-sequence-number-magtek-internal-only">Property 2.1.2.5.3.3 WLAN Firmware Sequence Number (MAGTEK INTERNAL ONLY)</a></li>
-      <li><a href="#property-212561-wlan-wifi-module-mac-address">Property 2.1.2.5.6.1 WLAN WiFi Module MAC Address</a></li>
-      <li><a href="#property-212562-wlan-wifi-rssi">Property 2.1.2.5.6.2 WLAN WiFi RSSI</a></li>
-      <li><a href="#property-212563-wlan-dynamic-ip-address">Property 2.1.2.5.6.3 WLAN Dynamic IP Address</a></li>
-      <li><a href="#property-212564-active-client-connections">Property 2.1.2.5.6.4 Active Client Connections</a></li>
-      <li><a href="#property-212565-server-certificate-chain-select">Property 2.1.2.5.6.5 Server Certificate Chain Select</a></li>
-      <li><a href="#property-212566-security-protocol">Property 2.1.2.5.6.6 Security Protocol</a></li>
-      <li><a href="#property-212567-available-access-points">Property 2.1.2.5.6.7 Available Access Points</a></li>
-    <li><a href="#property-subgroup-2126nn-general-firmware-information-magtek-internal-only">Property Subgroup 2.1.2.6.nn General Firmware Information (MAGTEK INTERNAL ONLY)</a></li>
-      <li><a href="#property-212611-firmware-git-and-build-information-magtek-internal-only">Property 2.1.2.6.1.1 Firmware Git and Build information (MAGTEK INTERNAL ONLY)</a></li>
-    <li><a href="#property-subgroup-2127nn-bluetooth-le-information-bluetooth-le-only-magtek-internal-only-for-now">Property Subgroup 2.1.2.7.nn Bluetooth® LE Information (Bluetooth® LE Only, MAGTEK INTERNAL ONLY FOR NOW)</a></li>
-      <li><a href="#property-212711-bluetooth-le-firmware-version">Property 2.1.2.7.1.1 Bluetooth® LE Firmware Version</a></li>
-      <li><a href="#property-212712-bluetooth-le-firmware-sequence-number">Property 2.1.2.7.1.2 Bluetooth® LE Firmware Sequence Number</a></li>
-      <li><a href="#property-212721-bluetooth-le-device-address">Property 2.1.2.7.2.1 Bluetooth® LE Device Address</a></li>
-      <li><a href="#property-212722-bluetooth-le-connection-status">Property 2.1.2.7.2.2 Bluetooth® LE Connection Status</a></li>
-      <li><a href="#property-212723-bluetooth-le-number-of-bondings">Property 2.1.2.7.2.3 Bluetooth® LE Number of Bondings</a></li>
-      <li><a href="#property-212724-bluetooth-le-mtu-size">Property 2.1.2.7.2.4 Bluetooth® LE MTU Size</a></li>
-    <li><a href="#property-subgroup-2128nn-custom-ui">Property Subgroup 2.1.2.8.nn Custom UI</a></li>
-      <li><a href="#property-212811-ui-configuration-file">Property 2.1.2.8.1.1 UI Configuration File</a></li>
-  <li><a href="#property-group-221nnn-device-hardware-information">Property Group 2.2.1.nnn Device Hardware Information</a></li>
-    <li><a href="#property-subgroup-22111n-device-common-configuration-information">Property Subgroup 2.2.1.1.1.n Device Common Configuration Information</a></li>
-      <li><a href="#property-221111-serial-number">Property 2.2.1.1.1.1 Serial Number</a></li>
-      <li><a href="#property-221112-device-capabilities-report-magtek-internal-only-for-now">Property 2.2.1.1.1.2 Device Capabilities Report (MAGTEK INTERNAL ONLY FOR NOW)</a></li>
-      <li><a href="#property-221113-pci-hardware-id">Property 2.2.1.1.1.3 PCI Hardware ID</a></li>
-      <li><a href="#property-221114-device-hardware-configuration-magtek-internal-only">Property 2.2.1.1.1.4 Device Hardware Configuration (MAGTEK INTERNAL ONLY)</a></li>
-  <li><a href="#property-group-231nnn-system-status-information">Property Group 2.3.1.nnn System Status Information</a></li>
-    <li><a href="#property-subgroup-23111n-system-status-injected-key-information">Property Subgroup 2.3.1.1.1.n System Status Injected Key Information</a></li>
-      <li><a href="#property-231111-device-key-status">Property 2.3.1.1.1.1 Device Key Status</a></li>
-      <li><a href="#property-231112-transaction-key-status">Property 2.3.1.1.1.2 Transaction Key Status</a></li>
-    <li><a href="#property-subgroup-23112n-system-status-security-protection-information">Property Subgroup 2.3.1.1.2.n System Status Security Protection Information</a></li>
-      <li><a href="#property-231121-real-time-clock-enabled">Property 2.3.1.1.2.1 Real Time Clock Enabled</a></li>
-      <li><a href="#property-231122-tamper-sensors-activated">Property 2.3.1.1.2.2 Tamper Sensors Activated</a></li>
-      <li><a href="#property-231123-tamper-sensor-tampered">Property 2.3.1.1.2.3 Tamper Sensor Tampered</a></li>
-      <li><a href="#property-231124-tamper-configuration-revision-magtek-internal-only">Property 2.3.1.1.2.4 Tamper Configuration Revision (MAGTEK INTERNAL ONLY)</a></li>
-    <li><a href="#property-subgroup-23121n-system-status-device-state-information">Property Subgroup 2.3.1.2.1.n System Status Device State Information</a></li>
-      <li><a href="#property-231211-device-operational-status">Property 2.3.1.2.1.1 Device Operational Status</a></li>
-      <li><a href="#property-231212-offline-status-detail">Property 2.3.1.2.1.2 Offline Status Detail</a></li>
-      <li><a href="#property-231213-external-power-supplied">Property 2.3.1.2.1.3 External Power Supplied</a></li>
-      <li><a href="#property-231214-battery-state-of-charge">Property 2.3.1.2.1.4 Battery State of Charge</a></li>
-      <li><a href="#property-231215-battery-charger-status">Property 2.3.1.2.1.5 Battery Charger Status</a></li>
-      <li><a href="#property-231216-device-temperature">Property 2.3.1.2.1.6 Device Temperature</a></li>
-  </ul>
-</div>
-
 
 # Introduction
 
@@ -743,10 +269,10 @@ of physical connection layers, which can include universal serial bus (USB)
 acting as a vendor-defined HID device (“USB HID”), wireless LAN (WLAN),
 Bluetooth®, Bluetooth® Low Energy (“Bluetooth® LE”), RS-232, Apple Lightning,
 and so on. The set of available physical connection types and the data formats
-available on each connection type is device dependent. [[**Table 2**](#table-2---device-connection-types--data-formats)](#table-2) shows the
+available on each connection type is device dependent. [**Table 2**](#table-2---device-connection-types--data-formats) shows the
 physical connection types available on each product, and the data formats
 supported on each connection type for that device. Details about connection
-types and formats can be found in section **2 Connection Types**. Section
+types and formats can be found in section [**2 Connection Types**](#connection-types). Section
 headings in this document include tags that indicate which connection types
 and/or data formats they apply to.
 
@@ -808,7 +334,7 @@ Table 3 - Device Features
 
 # Connection Types
 
-[[**Table 2**](#table-2---device-connection-types--data-formats)](#table-2) on page **36** includes a list of connection types available for
+[**Table 2**](#table-2---device-connection-types--data-formats) on page **36** includes a list of connection types available for
 each device. The following subsections provide details developers will need to
 communicate with the device using each connection type.
 
@@ -900,7 +426,7 @@ host must use when it composes Output Reports to send commands, and when it
 decomposes Input Reports to receive responses. The host should follow this
 general sequence to send a request and receive a response:
 
-1.  Choose the command to invoke from section **6 Commands**.
+1.  Choose the command to invoke from section [**6 Commands**](#commands).
 2.  Construct the command request message using the **Request** table in the
     command documentation. For a deeper explanation of the contents of request
     tables, see section **2.7**.
@@ -916,9 +442,9 @@ general sequence to send a request and receive a response:
         wrap the message in the format of a single **Multi-Packet Head**,
         followed by zero or more **Multi-Packet Middles** as necessary, followed
         by one **Multi-Packet Tail**, as shown in [**Table 5**](#table-5---multi-packet-head-format), [**Table 6**](#table-6---multi-packet-middle-format), and
-        [[**Table 7**](#table-7---multi-packet-tail-format)](#table-7). If necessary, the host can cancel in the middle of a
+        [**Table 7**](#table-7---multi-packet-tail-format). If necessary, the host can cancel in the middle of a
         Multi-Packet message using the **Multi-Packet Cancel** packet shown in
-        [[**Table 8**](#table-8---multi-packet-cancel-format)](#table-8).
+        [**Table 8**](#table-8---multi-packet-cancel-format).
 6.  For each packet, send an Output Report to the device, and wait for the
     device to ACK the output report USB packet. Upon ACK, either send the next
     packet in the sequence (if any), or begin listening for an Input Report
@@ -1007,7 +533,7 @@ accordance with the USB HID specification.
 Some response and notification messages defined in section **2.7** may exceed
 the maximum packet length allowed by USB HID. If the message can’t fit into one
 packet, the device sends multiple packets, each containing partial message data
-using the same message packet structures described in section **2.1.3**, [**Table 4**](#table-4---single-packet-format), [**Table 5**](#table-5---multi-packet-head-format), [**Table 6**](#table-6---multi-packet-middle-format), [[**Table 7**](#table-7---multi-packet-tail-format)](#table-7), [[**Table 8**](#table-8---multi-packet-cancel-format)](#table-8).
+using the same message packet structures described in section **2.1.3**, [**Table 4**](#table-4---single-packet-format), [**Table 5**](#table-5---multi-packet-head-format), [**Table 6**](#table-6---multi-packet-middle-format), [**Table 7**](#table-7---multi-packet-tail-format), [**Table 8**](#table-8---multi-packet-cancel-format).
 
 Upon receiving an input report, the host can determine the size of message
 packet Input Reports by looking at the HID report descriptor. The host can
@@ -1119,7 +645,7 @@ To send a command to the device using the WLAN connection:
 
 1.  Make sure there is an open WebSocket connection. See section **2.2.2 How to
     Connect to a Device Using the Wireless LAN (**WLAN) Connection for details.
-2.  Choose the command to invoke from section **6 Commands**.
+2.  Choose the command to invoke from section [**6 Commands**](#commands).
 3.  Construct the command request message using the **Request** table in the
     command documentation. For a deeper explanation of the contents of request
     tables, see section **2.7**.
@@ -1363,7 +889,7 @@ Delimiter**.
 
 For general information about messages, see section **2.7**.
 
-For specific messages, see sections **6 Commands** and **7 Notifications**.
+For specific messages, see sections [**6 Commands**](#commands) and **7 Notifications**.
 
 <a name="table-9---mms-slip-wrapper"></a>
 Table 9 - MMS SLIP Wrapper
@@ -1409,7 +935,7 @@ This section describes the general format of messages exchanged between hosts
 and devices that are using the common MMS message framework.
 
 Documentation about the specific messages supported by a given device is
-provided in section **6 Commands**.
+provided in section [**6 Commands**](#commands).
 
 ## About Messages
 
@@ -1492,7 +1018,7 @@ rules:
         meaning different messages reuse the same tags, and the tags represent
         sequentially numbered parameters passed in any message. The contents of
         each context-specific tag (parameter) are described for each message in
-        section **6 Commands**.
+        section [**6 Commands**](#commands).
     -   Bit 6 specifies whether the tag is **primitive** (bit 6=**0**), meaning
         it contains its values directly, or **constructed** (bit 6=**1**),
         meaning the TLV data object contains more TLV data objects.
@@ -1642,9 +1168,9 @@ Table 11 - Request Message Format
 | 81                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 | var   | Message Information                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                | B   | R   |         |
 | /null                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              | (1)   | Message Type & Direction 0x01 = Request from host to device 0x81 = Request from device to host (Reserved)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          | B   | R   |         |
 | /null                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              | (1)   | Message Reference Number The host can use any value in this byte to help match responses with their corresponding requests. The device includes the same number in the corresponding response(s). MagTek recommends using a simple incrementing counter per request the host sends during a session.                                                                                                                                                                                                                                                                                                                                                               | B   | R   |         |
-| /null                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              | (2)   | Command ID The fully qualified Command number as defined in section **6 Commands**. The first byte is the Command Group number, which groups functionally related requests, and the second byte is the Command number within that group. If the **Request Payload** in the message contains wrappers, the host should specify the command it is invoking at the core of the request after all wrappers have been removed. This value is included primarily for performance and key conservation; the device simply uses it to make sure it is in a mode where it is capable of processing the desired command before it begins processing the **Request Payload**. | B   | R   |         |
+| /null                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              | (2)   | Command ID The fully qualified Command number as defined in section [**6 Commands**](#commands). The first byte is the Command Group number, which groups functionally related requests, and the second byte is the Command number within that group. If the **Request Payload** in the message contains wrappers, the host should specify the command it is invoking at the core of the request after all wrappers have been removed. This value is included primarily for performance and key conservation; the device simply uses it to make sure it is in a mode where it is capable of processing the desired command before it begins processing the **Request Payload**. | B   | R   |         |
 | /null                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              | (var) | Reserved                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |     | O   |         |
-| 84                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 | var   | Request Payload As documented in the message’s Request table in section **6 Commands**.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            | B   | R   |         |
+| 84                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 | var   | Request Payload As documented in the message’s Request table in section [**6 Commands**](#commands).                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            | B   | R   |         |
 | 9E                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 | var   | Reserved                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           | B   | O   |         |
 
 #### Response Message
@@ -1666,8 +1192,8 @@ Table 12 - Response Message Format
 | /null                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              | (1)   | Operation Status Detail (Group) Operation Status Detail **Group**, **Subgroup**, and **Status Code** combine to provide a more detailed report than the Operation Status Summary. See **Table 13 - Operation Status Detail Codes** on page **58**. 0x02 = Security / Permission Problems | B   | R   |         |
 | /null                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              | (1)   | Operation Status Detail (Subgroup) Operation Status Detail **Group**, **Subgroup**, and **Status Code** combine to provide a more detailed report than the Operation Status Summary. See **Table 13 - Operation Status Detail Codes** on page **58**. 0x03 = Device State Issue          | B   | R   |         |
 | /null                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              | (1)   | Operation Status Detail (Status Code) Operation Status Detail **Group**, **Subgroup**, and **Status Code** combine to provide a more detailed report than the Operation Status Summary. See **Table 13 - Operation Status Detail Codes** on page **58**. 0x16 = Low Battery (5% or less) | B   | R   |         |
-| 83                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 | var   | Additional Details If provided, use this value to help isolate the problem such as the specific parameter number or EMV tag. See the Command definition in section **6 Commands** for command-specific Additional Details.                                                               |     | O   |         |
-| 84                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 | var   | Response Payload As documented in the message’s Response table in section **6 Commands**.                                                                                                                                                                                                | B   | O   |         |
+| 83                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 | var   | Additional Details If provided, use this value to help isolate the problem such as the specific parameter number or EMV tag. See the Command definition in section [**6 Commands**](#commands) for command-specific Additional Details.                                                               |     | O   |         |
+| 84                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 | var   | Response Payload As documented in the message’s Response table in section [**6 Commands**](#commands).                                                                                                                                                                                                | B   | O   |         |
 | 9E                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 | var   | Reserved                                                                                                                                                                                                                                                                                 | B   | O   |         |
 
 <a name="table-13---operation-status-detail-codes"></a>
@@ -1868,7 +1394,7 @@ same underlying standards. Describing all possible formats is beyond the scope
 of this document, but this section describes how to parse data from tracks 1, 2,
 and 3 in a generic ISO/ABA compliant format as an example.
 
-[[**Table 17**](#table-17---example-generic-isoaba-track-data-format)](#table-17) shows an example of ISO/ABA track data the device sends to the
+[**Table 17**](#table-17---example-generic-isoaba-track-data-format) shows an example of ISO/ABA track data the device sends to the
 host, using unmasked placeholder numbers to make it easier to see the relative
 positions of the values embedded in the track data. It is important to note that
 some cards do not include Track 3 data. Manually entered data does not include
@@ -1883,7 +1409,7 @@ Table 17 - Example Generic ISO/ABA Track Data Format
 | Track 2 Data                      | ;5555555555555555=33338880004444006?                        |
 | Track 3 Data                      | ;5555555555555555=333388800044440000006?                    |
 
-The example track data in [[**Table 17**](#table-17---example-generic-isoaba-track-data-format)](#table-17) can be interpreted as follows:
+The example track data in [**Table 17**](#table-17---example-generic-isoaba-track-data-format) can be interpreted as follows:
 
 -   The **%**, **?**, and **;** are Sentinels / delimiters, and are taken
     directly from the data on the card.
@@ -2046,7 +1572,7 @@ Table 19 - EMV ARQC (DynaPro Format) Type
 | ///DF5D                                                                                                                                                                                                                                             | 06  | Tip Amount                                                                                                                                                                                                                                                                                                                                                                                                                          | B   | O   |         |
 | ///DF5E                                                                                                                                                                                                                                             | 06  | Tax Amount                                                                                                                                                                                                                                                                                                                                                                                                                          | B   | O   |         |
 | ///F8                                                                                                                                                                                                                                               | var | Container for Encrypted Data                                                                                                                                                                                                                                                                                                                                                                                                        | T   | R   |         |
-| ////DFDF59                                                                                                                                                                                                                                          | var | Encrypted Data Primitive Decrypt the value of this TLV data object using the algorithm and variant specified in the **Encrypted Transaction Data KSN** parameter and the **Encrypted Transaction Data Encryption Type** parameter to read its contents. See [[**Table 20**](#table-20---emv-arqc-dynapro-format-dfdf59-decrypted-contents)](#table-20) on page **71** for the data structure as it should appear after decryption.                                                                                | B   | R   |         |
+| ////DFDF59                                                                                                                                                                                                                                          | var | Encrypted Data Primitive Decrypt the value of this TLV data object using the algorithm and variant specified in the **Encrypted Transaction Data KSN** parameter and the **Encrypted Transaction Data Encryption Type** parameter to read its contents. See [**Table 20**](#table-20---emv-arqc-dynapro-format-dfdf59-decrypted-contents) on page **71** for the data structure as it should appear after decryption.                                                                                | B   | R   |         |
 | ////DFDF56                                                                                                                                                                                                                                          | var | Encrypted Transaction Data KSN                                                                                                                                                                                                                                                                                                                                                                                                      | B   | R   |         |
 | ////DFDF57                                                                                                                                                                                                                                          | 01  | Encrypted Transaction Data Encryption Type See section **4.4 Encryption Type** for a list of valid values.                                                                                                                                                                                                                                                                                                                          | B   | R   |         |
 | ////DFDF58                                                                                                                                                                                                                                          | 01  | Number of Padding Bytes Number of bytes added to DFDF59 value to force its length to a multiple of 8 bytes for TDES, or 16 bytes for AES.                                                                                                                                                                                                                                                                                           | B   | R   |         |
@@ -2062,7 +1588,7 @@ configuration. As a requirement for using DUKPT encryption algorithms, the
 device pads it so the length of its value is a multiple of 8 bytes for TDES, or
 16 bytes for AES. The device uses container DFDF58 to report how many bytes of
 data object DFDF59 are padding. Data object DFDF59 itself is formatted like
-[[**Table 20**](#table-20---emv-arqc-dynapro-format-dfdf59-decrypted-contents)](#table-20) after the host decrypts it.
+[**Table 20**](#table-20---emv-arqc-dynapro-format-dfdf59-decrypted-contents) after the host decrypts it.
 
 <a name="table-20---emv-arqc-dynapro-format-dfdf59-decrypted-contents"></a>
 Table 20 - EMV ARQC (DynaPro Format) DFDF59 Decrypted Contents
@@ -2094,7 +1620,6 @@ Table 20 - EMV ARQC (DynaPro Format) DFDF59 Decrypted Contents
 | //DFDF42                                                         | 01  | PIN Encryption Type (Touch Only) See section **4.4 Encryption Type** for a list of valid values.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           | B   | O   |         |
 | Padding to force DFDF59 plus padding to be a multiple of 8 bytes |     |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |     |     |         |
 
-<a name="table-21---emv-arqc-dynapro-format-dfdfdf37-decrypted-contents"></a>
 **Table 21 - EMV ARQC (DynaPro Format) DFDFDF37 Decrypted Contents**
 
 | Tag                                                                                     | Len    | Value / Description                                                                                                                                                                                                                                                                                        | Typ    | Req | Default |
@@ -2235,7 +1760,7 @@ Table 26 – EMV ARPC Data
 ## EMV Batch Data Type
 
 The device formats EMV batch data, such as merchant data and pre-defined EMV
-batch data tags, using the format shown in [**Table 27**](#table-270---request-example). The default is an EMV
+batch data tags, using the format shown in **Table 27**. The default is an EMV
 standard list of batch data message tags. The host may also customize the
 contents of batch data messages by setting **Property 1.1.1.1.1.3 EMV Batch Data
 Tag List**.
@@ -2269,7 +1794,7 @@ Table 27 – EMV Batch Data (DynaPro Format) Type
 | ////DFDF1A                                                                                                                                                                                                                                          | 01  | Transaction Status 0x00 = Accept 0x01 = Decline 0x02 = Error                                                                                                                                                                                                                                                                                                                                                                                                                                             | B   | R   |         |
 | ////DFDF1B                                                                                                                                                                                                                                          | 01  | Additional Transaction Information 0x00  (MAGTEK INTERNAL ONLY FOR NOW) 0x00 = No additional information 0x31 = EMV Application not selected  0x32 = Error transaction in progress 0x33 = Error invalid PSE format  0x34 = EMV Terminal application list is empty 0x35 = Candidate list is empty  0x36 = No transaction 0x37 = No common EMV applications 0x38 = Transaction canceled 0x39 = Aid parse error  0x3A = Code table index not found 0x3B = Error no more record 0x3C = EMV e overflow [sic.] | B   | R   |         |
 | ///F8                                                                                                                                                                                                                                               | var | Container for Encrypted Data                                                                                                                                                                                                                                                                                                                                                                                                                                                                             | T   | R   |         |
-| ////DFDF59                                                                                                                                                                                                                                          | var | Encrypted Data Primitive Decrypt the value of this TLV data object according to the **Encrypted Transaction Data KSN** parameter and the **Encrypted Transaction Data Encryption Type** parameter to read its contents. See [**Table 28**](#table-281---response-example) on page **82** for the data structure as it should appear after decryption.  Use the data variant of the current MSR DUKPT working key used in the relevant transaction.                                                                                        | B   | R   |         |
+| ////DFDF59                                                                                                                                                                                                                                          | var | Encrypted Data Primitive Decrypt the value of this TLV data object according to the **Encrypted Transaction Data KSN** parameter and the **Encrypted Transaction Data Encryption Type** parameter to read its contents. See **Table 28** on page **82** for the data structure as it should appear after decryption.  Use the data variant of the current MSR DUKPT working key used in the relevant transaction.                                                                                        | B   | R   |         |
 | ////DFDF56                                                                                                                                                                                                                                          | var | Encrypted Transaction Data KSN                                                                                                                                                                                                                                                                                                                                                                                                                                                                           | B   | R   |         |
 | ////DFDF57                                                                                                                                                                                                                                          | 01  | Encrypted Transaction Data Encryption Type See section **4.4 Encryption Type** for a list of valid values.                                                                                                                                                                                                                                                                                                                                                                                               | B   | R   |         |
 | ////DFDF58                                                                                                                                                                                                                                          | 01  | Number of padding bytes added to DFDF59 value to force length to a multiple of 8 bytes                                                                                                                                                                                                                                                                                                                                                                                                                   | B   | R   |         |
@@ -2718,7 +2243,7 @@ MagTek provides tools that allow these settings to be loaded using a Microsoft
 Excel spreadsheet in xlsx format for more convenient authoring, review, and
 change tracking. For a reference sample spreadsheet, contact MagTek Support
 Services. The MagTek tools expect the spreadsheet to be formatted as shown in
-[[**Table 43**](#table-43---emv-configuration-american-express-drl-set-file-type)](#table-43). Each DRL to be supported is defined in a tab of the Excel file.
+[**Table 43**](#table-43---emv-configuration-american-express-drl-set-file-type). Each DRL to be supported is defined in a tab of the Excel file.
 
 <a name="table-43---emv-configuration-american-express-drl-set-file-type"></a>
 Table 43 - EMV Configuration American Express DRL Set File Type
@@ -2730,7 +2255,7 @@ Table 43 - EMV Configuration American Express DRL Set File Type
 | DF26 | 06  | Reader CVM Required Limit            | B   | R   | 00 00 00 00 10 00 |
 
 The MagTek tool converts the spreadsheet data into the raw format shown in
-[[**Table 44**](#table-44---raw-emv-configuration-american-express-drl-set-file-type)](#table-44):
+[**Table 44**](#table-44---raw-emv-configuration-american-express-drl-set-file-type):
 
 <a name="table-44---raw-emv-configuration-american-express-drl-set-file-type"></a>
 Table 44 -Raw EMV Configuration American Express DRL Set File Type
@@ -3345,7 +2870,7 @@ Table 67 - Common File Structure
 |-------------------------------------|-----|--------------------------------------------------------------------------------------------------------|-----|-----|---------|
 | **MGTKAP10** = Start Of File Marker |     |                                                                                                        |     |     |         |
 | C1                                  | 4   | File Type See Table 201                                                                                | B   | R   | N/A     |
-| CE                                  | var | File Payload See the “File Type” subsections of section **4 Data Types and Shared TLV Data Objects**.  | B   | R   | N/A     |
+| CE                                  | var | File Payload See the “File Type” subsections of section [**4 Data Types and Shared TLV Data Objects**](#data-types-and-shared-tlv-data-objects).  | B   | R   | N/A     |
 
 ## Certificate File Types
 
@@ -6217,7 +5742,7 @@ The usual sequence is as follows:
     or **Wait Time** timeout), the device sends **Notification 0x0205 - Banking
     Functions Operation Complete** to report **Touchscreen** / **PIN Entry**. If
     PIN entry is successful, the report also contains a payload as shown in
-    [[**Table 326**](#table-326---notification-payload-for-touchscreen-pin-entry-success-data)](#table-326). The EPB format the device uses depends on the parameters the
+    [**Table 326**](#table-326---notification-payload-for-touchscreen-pin-entry-success-data). The EPB format the device uses depends on the parameters the
     host specified in the command:
     1.  If the host provided the **Account Number** data in the command, the
         device creates the EPB using the **PIN Block Format** the host specified
@@ -6532,7 +6057,7 @@ describes one possible way that does not require detailed knowledge of the
 To get a property, the sequence of events is as follows:
 
 1.  The host determines which property or tree branch of properties it wants to
-    get from the device (see section **8 Configuration**).
+    get from the device (see section [**8 Configuration**](#configuration)).
 2.  The host composes the command request in the format below, and sends it to
     the device.
 3.  The device sends a response. If the request succeeded, the response includes
@@ -6548,8 +6073,8 @@ Table 185 - Request Data for Command 0xD101 - Get Property
 | D101 = **Command 0xD101 - Get Property**                                                 |     |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |     |     |                      |
 | 81                                                                                       | var | Company ID This value is the root of the “long form” of the Property OID, and is the same for all MagTek devices. Leave this parameter empty and use the default.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    | B   | O   | 2B 06 01 04 01 F6 09 |
 | 82                                                                                       | 03  | Device Family ID This value is the second portion of the “long form” of the Property OID, and is the same for all similar MagTek devices within the same product family. Unless you have a specific use case that uses this parameter, leave this parameter empty and use the default otherwise your software may not work with multiple products.  Byte 1 Platform 0x02 = Apollo Platform  Byte 2 Product 0x01 = DynaFlex, 0x02 = DynaProx, 0x03 = DynaFlex II PED, 0x04 = DynaFlex II, 0x05 = DynaFlex II Go  Byte 3 Device Variant 0x00 = Standard                                                                                                                                                                | B   | O   | Product dependent    |
-| 85                                                                                       | 01  | Property Type This parameter contains the first number of the Property OID as documented in section **8 Configuration**. 0x01 = Device Settings 0x02 = Device Information                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            | B   | R   |                      |
-| 87                                                                                       | var | Property OID Tree Prefix This optional parameter contains subsequent numbers of the Property’s OID as documented in section **8 Configuration**, but can not include the final number.  This can also be populated with fewer numbers from the OID, in which case the remaining numbers of the OID of the Property or set of Properties you wish to retrieve must be included in the **Property OID Remainder**.  For simplicity, populate this with the 2nd through the second-to-last number in the property’s OID.                                                                                                                                                                                                | B   | O   | Null                 |
+| 85                                                                                       | 01  | Property Type This parameter contains the first number of the Property OID as documented in section [**8 Configuration**](#configuration). 0x01 = Device Settings 0x02 = Device Information                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            | B   | R   |                      |
+| 87                                                                                       | var | Property OID Tree Prefix This optional parameter contains subsequent numbers of the Property’s OID as documented in section [**8 Configuration**](#configuration), but can not include the final number.  This can also be populated with fewer numbers from the OID, in which case the remaining numbers of the OID of the Property or set of Properties you wish to retrieve must be included in the **Property OID Remainder**.  For simplicity, populate this with the 2nd through the second-to-last number in the property’s OID.                                                                                                                                                                                                | B   | O   | Null                 |
 | 89                                                                                       | var | Property OID Remainder This contains the remaining numbers of the Property’s OID, BER TLV encoded per **X.660** section **8 Basic encoding rules**. For details about TLV encoding an OID. To request a set of properties in a branch of the Property OID structure, the host should pass a partial Property OID, and the device returns the value of all properties from the specified tree level downward.  For simplicity, include all numbers except the final number of the property’s OID in **Property Type** and **Property OID Tree Prefix**, and include the final number of the OID OR 0xC0 here, then append constant byte 0x00. These two bytes represent a single empty BER TLV primitive data object. | B   | R   |                      |
 | End of any wrappers, at minimum including **Request Message** found on page **55**       |     |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |     |     |                      |
 
@@ -6638,7 +6163,7 @@ describes one possible way that does not require detailed knowledge of the
 To set a property, the sequence of events is as follows:
 
 1.  The host determines which property it wants to set and the value it wants to
-    set in the device (see section **8 Configuration**).
+    set in the device (see section [**8 Configuration**](#configuration)).
 2.  The host composes a command request in the format below, and sends it to the
     device.
 3.  The device sends a response in the format below. If the request succeeded,
@@ -6655,8 +6180,8 @@ Table 193 - Request Data for Command 0xD111 - Set Property (Unsecured)
 | D111 = **Command 0xD111 - Set Property (Unsecured)**                                     |     |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |     |     |                      |
 | 81                                                                                       | var | Company ID This value is the root of the “long form” of the Property OID, and is the same for all MagTek devices. Leave this parameter empty and use the default.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     | B   | O   | 2B 06 01 04 01 F6 09 |
 | 82                                                                                       | 03  | Device Family ID This value is the second portion of the “long form” of the Property OID, and is the same for all similar MagTek devices within the same product family. Unless you have a specific use case that uses this parameter, leave this parameter empty and use the default otherwise your software may not work with multiple products. Byte 1 Platform 0x02 = Apollo Platform Byte 2 Product 0x01 = DynaFlex, 0x02 = DynaProx, 0x03 = DynaFlex II PED, 0x04 = DynaFlex II, 0x05 = DynaFlex II Go  Byte 3 Device Variant 0x00 = Standard                                                                                                                                                                                                                   | B   | O   | Product dependent    |
-| 85                                                                                       | 01  | Property Type This parameter contains the first number of the Property OID as documented in section **8 Configuration**. 0x01 = Device Settings 0x02 = Device Information                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             | B   | R   |                      |
-| 87                                                                                       | var | Property OID Tree Prefix This optional parameter contains subsequent numbers of the Property’s OID as documented in section **8 Configuration**, but can not include the final number. For simplicity, populate this with the 2nd through the second-to-last number in the property’s OID.  This can also be populated with fewer numbers from the OID, in which case the remaining numbers of the OID must be included in the **Property OID Remainder**.                                                                                                                                                                                                                                                                                                            | B   | O   | Null                 |
+| 85                                                                                       | 01  | Property Type This parameter contains the first number of the Property OID as documented in section [**8 Configuration**](#configuration). 0x01 = Device Settings 0x02 = Device Information                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             | B   | R   |                      |
+| 87                                                                                       | var | Property OID Tree Prefix This optional parameter contains subsequent numbers of the Property’s OID as documented in section [**8 Configuration**](#configuration), but can not include the final number. For simplicity, populate this with the 2nd through the second-to-last number in the property’s OID.  This can also be populated with fewer numbers from the OID, in which case the remaining numbers of the OID must be included in the **Property OID Remainder**.                                                                                                                                                                                                                                                                                                            | B   | O   | Null                 |
 | 89                                                                                       | var | Property OID Remainder This contains the remaining numbers of the Property’s OID, BER TLV encoded per **X.660** section **8 Basic encoding rules**. For details about TLV encoding an OID.  For simplicity, include all numbers except the final number of the property’s OID in **Property Type** and **Property OID Tree Prefix**, and include the final number of the OID OR 0xC0 here, then append a length corresponding one of the following, then append the value to set the property to: If the length of the value you are setting is 0x7F or shorter, include one byte equal to the length of the value. If the length of the value you are setting is greater than 0x7F but less than 0xFFFF, append 82, then two bytes equal to the length of the value. | B   | R   |                      |
 | End of any wrappers, at minimum including **Request Message** found on page **55**       |     |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |     |     |                      |
 
@@ -6839,7 +6364,7 @@ the device as the first step in updating firmware. The host also uses this
 command to send a firmware image file, signed by MagTek, to the device as the
 first step in updating firmware. If the battery charge is five percent or less,
 a response is returned indicating that the command has not been executed. See
-[**Table 204 - Response Example for Command 0xD801**](#table-204---response-example-for-command-0xd801).
+**Table 204 - Response Example for Command 0xD801**.
 
 The sequence of events is as follows:
 
@@ -7506,8 +7031,8 @@ command being wrapped, and are specified in the documentation for that command.
 
 The sequence of events is as follows:
 
-1.  The host determines what command it wants to call from section **6
-    Commands**, determines the command must be secured, and uses the Request
+1.  The host determines what command it wants to call from section [**6
+    Commands**](#commands), determines the command must be secured, and uses the Request
     Data table for that command to compose **Message Payload**.
 2.  The host uses **Command 0xE001 - Get Challenge** to retrieve a **Challenge
     Token** and unlock the device for receiving the desired command for a
@@ -8034,8 +7559,7 @@ The sequence of events is as follows:
 3.  If the command is invalid or encryption fails, then a response of failure
     will be sent to the host.
 
-<a name="table-277---request-data-for-command-0xef09---encrypt-user-data"></a>
-[**Table 277 - Request Data for Command 0xEF09 - Encrypt User Data**](#table-277---request-data-for-command-0xef09---encrypt-user-data)
+**Table 277 - Request Data for Command 0xEF09 - Encrypt User Data**
 
 |  Tag                                                                                     | Len | Value / Description                                                                               | Typ | Req | Default |
 |------------------------------------------------------------------------------------------|-----|---------------------------------------------------------------------------------------------------|-----|-----|---------|
@@ -8048,7 +7572,6 @@ The sequence of events is as follows:
 | /84                                                                                      | var | User data Item \#3, optional                                                                      | B   | O   |         |
 | End of any wrappers, at minimum including **Request Message** found on page **55**       |     |                                                                                                   |     |     |         |
 
-<a name="table-278---response-data-for-command-0xef09--encrypt-user-data"></a>
 **Table 278 - Response Data for Command 0xEF09 – Encrypt User Data**
 
 | Tag                                                                                       | Len | Value / Description                                                                                                                                                                                                                       | Typ | Req | Default |
@@ -8083,8 +7606,7 @@ decryption)**
 | /DFDF57                                                                                   | 01  | Encrypted Data Encryption Type See section 4.4 Encryption Type for a list of valid values.                             | B   | R   |         |
 | End of any wrappers, at minimum including Response Message found on page **55**           |     |                                                                                                                        |     |     |         |
 
-<a name="table-280---request-example"></a>
-[**Table 280 - Request Example**](#table-280---request-example)
+**Table 280 - Request Example**
 
 | Example (Hex)                                                                                                                                                                                                                                                                                                                                                                                                                                           |
 |---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -9347,7 +8869,7 @@ Table 325 - Notification Detail Codes
 | UI                                                                                                                                                                                                          | Rsn | Det | Ext | Meaning                                                                                                                                                                                                                        |
 |-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----|-----|-----|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Module **0x01 Touchscreen** contains UI notification detail codes that are specific to the touchscreen module (Touch Only) Reason 0x01 = Signature Capture Reason 0x02 = PIN Entry (Banking Functions Only) |     |     |     |                                                                                                                                                                                                                                |
-| 01                                                                                                                                                                                                          | 02  | 01  | 01  | (Banking Functions Only) Touchscreen, PIN Entry, Success, Data Attached In this case, the device includes additional data defined in [[**Table 326**](#table-326---notification-payload-for-touchscreen-pin-entry-success-data)](#table-326), or in [**Table 327**](#table-327---notification-payload-for-touchscreen-pin-entry-success-data) if the device is including account data with PIN data. |
+| 01                                                                                                                                                                                                          | 02  | 01  | 01  | (Banking Functions Only) Touchscreen, PIN Entry, Success, Data Attached In this case, the device includes additional data defined in [**Table 326**](#table-326---notification-payload-for-touchscreen-pin-entry-success-data), or in [**Table 327**](#table-327---notification-payload-for-touchscreen-pin-entry-success-data) if the device is including account data with PIN data. |
 | 01                                                                                                                                                                                                          | 02  | 02  | 01  | (Banking Functions Only) Touchscreen, PIN Entry, Operation Failed, Timeout                                                                                                                                                     |
 | 01                                                                                                                                                                                                          | 02  | 02  | 02  | (Banking Functions Only) Touchscreen, PIN Entry, Operation Failed, Hardware Not Available                                                                                                                                      |
 | 01                                                                                                                                                                                                          | 02  | 02  | 03  | (Banking Functions Only) Touchscreen, PIN Entry, Operation Failed, Canceled                                                                                                                                                    |
@@ -9546,11 +9068,10 @@ Table 332 Low Battery Notification Example
 The device sends this notification one minute before it automatically powers
 down the device. This occurs when the battery charge has reached 0 percent.
 Shutdown can be prevented by connecting the device to a USB power source. See
-[**Table 14 - Notification Message Format**](#table-14---notification-message-format) and **Table 333 Low Battery Shutdown
+**Table 14 - Notification Message Format** and **Table 333 Low Battery Shutdown
 Response Example**.
 
-<a name="table-333-low-battery-shutdown-response-example"></a>
-[**Table 333 Low Battery Shutdown Response Example**](#table-333-low-battery-shutdown-response-example)
+**Table 333 Low Battery Shutdown Response Example**
 
 | Example (Hex)                          |
 |----------------------------------------|
@@ -9560,7 +9081,7 @@ Response Example**.
 
 The device sends this notification when the battery charger detects that the
 battery is fully charged. This only occurs when the device is powered by a USB
-power source. See [**Table 14 - Notification Message Format**](#table-14---notification-message-format) and **Table 334 -
+power source. See **Table 14 - Notification Message Format** and **Table 334 -
 Battery Charged Notification Example**.
 
 <a name="table-334---battery-charged-notification-example"></a>
@@ -9852,7 +9373,6 @@ Success (Unencrypted Data)
 | FC    | var | Barcode Data Container | T   | R   |         |
 | /DF74 | var | Barcode Data           | B   | O   |         |
 
-<a name="table-354--default-user-interface-string-ids-and-strings"></a>
 **Table 354 – Default User Interface String IDs and Strings**
 
 | Display String ID | Display String               |
@@ -11679,7 +11199,7 @@ For chip card transactions, masked track 2 data is contained in TLV data object
 DFDF4D. For magnetic stripe transactions, masked track 1, 2 and 3 data is
 contained in TLV data objects DFDF31, DFDF33 and DFDF35, respectively.
 
-[[**Table 506**](#table-506---sample-isoaba-track-data-clear-text--decrypted)](#table-506) **below** provides an example of data from tracks 1, 2, and 3 of
+[**Table 506**](#table-506---sample-isoaba-track-data-clear-text--decrypted) **below** provides an example of data from tracks 1, 2, and 3 of
 an ISO/ABA card after it has been decrypted or if the device has sent it in the
 clear. [**Table 507**](#table-507---sample-isoaba-track-data-masked) shows the same data as it might appear with a specific set
 of masking rules applied.
@@ -18740,29 +18260,25 @@ Table D8.71 – Barcode Reader Supported Symbologies
 1.  Load CAPK with AID: 0000000000 to erase all current CAPK keys with this CAPK
     key:
 
-<a name="table-1194---get-request-example"></a>
-[**Table 1194 - Get Request Example**](#table-1194---get-request-example)
+**Table 1194 - Get Request Example**
 
 | Example (Hex)                                                                                                                                                |
 |--------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | AA00810401CED8128444D812810400000300A22B81040000008D8201048320B9C1F228E41A1F0B6173E00423C5B58A952DE1111E0CC5E33C3044A5D3FD2FCAA30A81083030303030333030870101 |
 
-<a name="table-1195---get-response-example"></a>
-[**Table 1195 - Get Response Example**](#table-1195---get-response-example)
+**Table 1195 - Get Response Example**
 
 | Example (Hex)                |
 |------------------------------|
 | AA00810482CED812820400000000 |
 
-<a name="table-1196---get-request-example"></a>
-[**Table 1196 - Get Request Example**](#table-1196---get-request-example)
+**Table 1196 - Get Request Example**
 
 | Example (Hex)                                                                                                                                                                                                                                                                                                            |
 |--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | AA0081080400D8120000030084818D4D47544B41503130C10400000300CE7D000000000000016000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000583F99A8DF1A414B11A1607402AE67722C4F59B9 |
 
-<a name="table-1197---get-response-example"></a>
-[**Table 1197 - Get Response Example**](#table-1197---get-response-example)
+**Table 1197 - Get Response Example**
 
 | Example (Hex)                |
 |------------------------------|
@@ -18770,29 +18286,25 @@ Table D8.71 – Barcode Reader Supported Symbologies
 
 1.  Empty Amex DRL: Load AMEX DRL file with “EMPTY” content
 
-<a name="table-1198---get-request-example"></a>
-[**Table 1198 - Get Request Example**](#table-1198---get-request-example)
+**Table 1198 - Get Request Example**
 
 | Example (Hex)                                                                                                                                                |
 |--------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | AA008104018DD8128444D812810400000500A22B81040000001182010483205E39BD3937CF6B80DECC2B6FD0ABED138D5CC69A6CE55C8790BBA58254B66ED5A30A81083030303030353030870101 |
 
-<a name="table-1199---get-response-example"></a>
-[**Table 1199 - Get Response Example**](#table-1199---get-response-example)
+**Table 1199 - Get Response Example**
 
 | Example (Hex)                |
 |------------------------------|
 | AA008104828DD812820400000000 |
 
-<a name="table-1200---get-request-example"></a>
-[**Table 1200 - Get Request Example**](#table-1200---get-request-example)
+**Table 1200 - Get Request Example**
 
 | Example (Hex)                                                  |
 |----------------------------------------------------------------|
 | AA0081080400D8120000050084114D47544B41503130C10400000500CE01AA |
 
-<a name="table-1201---get-response-example"></a>
-[**Table 1201 - Get Response Example**](#table-1201---get-response-example)
+**Table 1201 - Get Response Example**
 
 | Example (Hex)                |
 |------------------------------|
@@ -18800,29 +18312,25 @@ Table D8.71 – Barcode Reader Supported Symbologies
 
 1.  Empty Terminal: Load Terminal file with “EMPTY” content
 
-<a name="table-1202---get-request-example"></a>
-[**Table 1202 - Get Request Example**](#table-1202---get-request-example)
+**Table 1202 - Get Request Example**
 
 | Example (Hex)                                                                                                                                                |
 |--------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | AA0081040114D8128444D812810400000000A22B8104000000118201048320543666037C01700B9215F365346E7C883290F201E0D844D9F32B0D05A098B519A30A81083030303030303030870101 |
 
-<a name="table-1203---get-response-example"></a>
-[**Table 1203 - Get Response Example**](#table-1203---get-response-example)
+**Table 1203 - Get Response Example**
 
 | Example (Hex)                |
 |------------------------------|
 | AA0081048214D812820400000000 |
 
-<a name="table-1204---get-request-example"></a>
-[**Table 1204 - Get Request Example**](#table-1204---get-request-example)
+**Table 1204 - Get Request Example**
 
 | Example (Hex)                                                  |
 |----------------------------------------------------------------|
 | AA0081080400D8120000000084114D47544B41503130C10400000000CE01AA |
 
-<a name="table-1205---get-response-example"></a>
-[**Table 1205 - Get Response Example**](#table-1205---get-response-example)
+**Table 1205 - Get Response Example**
 
 | Example (Hex)                |
 |------------------------------|
@@ -18831,29 +18339,25 @@ Table D8.71 – Barcode Reader Supported Symbologies
 1.  Empty Processing: Load Processing file with “EMPTY” content and 1 delimiter
     (FF33)
 
-<a name="table-1206---get-request-example"></a>
-[**Table 1206 - Get Request Example**](#table-1206---get-request-example)
+**Table 1206 - Get Request Example**
 
 | Example (Hex)                                                                                                                                                |
 |--------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | AA008104011BD8128444D812810400000100A22B8104000000288201048320B25A77AD6582338898AA0498D1C15512AC9AE7C1B021884238813A28423B20E9A30A81083030303030313030870101 |
 
-<a name="table-1207---get-response-example"></a>
-[**Table 1207 - Get Response Example**](#table-1207---get-response-example)
+**Table 1207 - Get Response Example**
 
 | Example (Hex)                |
 |------------------------------|
 | AA008104821BD812820400000000 |
 
-<a name="table-1208---get-request-example"></a>
-[**Table 1208 - Get Request Example**](#table-1208---get-request-example)
+**Table 1208 - Get Request Example**
 
 | Example (Hex)                                                                                                |
 |--------------------------------------------------------------------------------------------------------------|
 | AA0081080400D8120000010084284D47544B41503130C10400000100CE18AA9A6CCE52123D2315BF3759D466BC0F7C4572A754FF3300 |
 
-<a name="table-1209---get-response-example"></a>
-[**Table 1209 - Get Response Example**](#table-1209---get-response-example)
+**Table 1209 - Get Response Example**
 
 | Example (Hex)                |
 |------------------------------|
@@ -18862,29 +18366,25 @@ Table D8.71 – Barcode Reader Supported Symbologies
 1.  Empty Entry Point: Load Entry file with “EMPTY” content and 1 delimiter
     (FF35)
 
-<a name="table-1210---get-request-example"></a>
-[**Table 1210 - Get Request Example**](#table-1210---get-request-example)
+**Table 1210 - Get Request Example**
 
 | Example (Hex)                                                                                                                                                |
 |--------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | AA0081040135D8128444D812810400000200A22B8104000000288201048320d747a07102af345bbe0f41669ebd63aac8770aef5fa37ca00a2eaaf4112b8a2cA30A81083030303030323030870101 |
 
-<a name="table-1211---get-response-example"></a>
-[**Table 1211 - Get Response Example**](#table-1211---get-response-example)
+**Table 1211 - Get Response Example**
 
 | Example (Hex)                |
 |------------------------------|
 | AA0081048235D812820400000000 |
 
-<a name="table-1212---get-request-example"></a>
-[**Table 1212 - Get Request Example**](#table-1212---get-request-example)
+**Table 1212 - Get Request Example**
 
 | Example (Hex)                                                                                                |
 |--------------------------------------------------------------------------------------------------------------|
 | AA0081080400D8120000020084284D47544B41503130C10400000200CE18AA3dcfbc51fcdfd06ada36181f1cd3aee3f8f879bcFF3500 |
 
-<a name="table-1213---get-response-example"></a>
-[**Table 1213 - Get Response Example**](#table-1213---get-response-example)
+**Table 1213 - Get Response Example**
 
 | Example (Hex)                |
 |------------------------------|
