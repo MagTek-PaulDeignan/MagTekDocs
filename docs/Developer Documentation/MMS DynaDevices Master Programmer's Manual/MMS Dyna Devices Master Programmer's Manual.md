@@ -1,4 +1,47 @@
-| [Product Name] [Product Description] [Document Title]                                                                                                                                                                                                                                                                                                                     |                                                                          |
+---
+title: Dyna Devices Master Programmer's Manual
+layout: home
+parent: Developer Documentation
+nav_order: 1
+---
+
+
+<style>
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+
+th {
+  background-color: black;
+  color: white;
+}
+</style>
+
+<button class="btn js-toggle-dark-mode">Preview dark color scheme</button>
+
+<script>
+const toggleDarkMode = document.querySelector('.js-toggle-dark-mode');
+
+ jtd.addEvent(toggleDarkMode, 'click', function(){
+   if (jtd.getTheme() === 'dark') {
+     jtd.setTheme('light');
+     toggleDarkMode.textContent = 'Preview dark color scheme';
+   } else {
+     jtd.setTheme('dark');
+     toggleDarkMode.textContent = 'Return to the light side';
+   }
+ });
+ </script>
+
+| [Dyna Devices] [Master Programmer's Manual]                                                                                                                                                                                                                                                                                                                      |                                                                          |
 |---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------|
 | ![](Images/82ccd15a8da072922d00916f26c92df5.jpeg)![](Images/e5843d90d1276684a1d962214cbd3140.jpeg) ![](Images/c78ef97c2221cbe76e7b653fbb5afcd0.jpeg)![](Images/c0010811ff3eb68a963cda9d7e24ad32.jpeg)                                                                                                                                                                     |                                                                          |
 | Confidential This document contains the proprietary information of MagTek. Its receipt or possession does not convey any rights to reproduce or disclose its contents or to manufacture, use or sell anything it may describe. Reproduction, disclosure or use without specific written authorization of MagTek is strictly forbidden.  Unpublished – All Rights Reserved |  June 2025  Document Number: D100005000-102  REGISTERED TO ISO 9001:2015 |
