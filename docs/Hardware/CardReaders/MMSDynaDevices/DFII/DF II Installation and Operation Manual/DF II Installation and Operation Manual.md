@@ -2,7 +2,7 @@
 title: Installation and Operation Manual
 layout: home
 parent: DynaFlex II
-nav_order: 2
+nav_order: 
 ---
 <style>
 table {
