@@ -5,7 +5,6 @@ parent: Developer Documentation
 nav_order: 1
 ---
 
-
 <style>
 table {
   border-collapse: collapse;
