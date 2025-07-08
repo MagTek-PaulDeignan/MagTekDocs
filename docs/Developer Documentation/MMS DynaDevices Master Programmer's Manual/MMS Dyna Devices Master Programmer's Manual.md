@@ -17443,45 +17443,45 @@ The DynaFlex II Go has only green LEDs. Instead of lighting the first LED in
 amber, it will slowly flash the first LED. Instead of Red, the first LED will
 flash quickly.
 
-<table>
-  <thead>
+<table style="width:100%; border-collapse:collapse; font-family:sans-serif; font-size:14px;">
+  <thead style="background-color:#000; color:#fff;">
     <tr>
-      <th>Tag</th>
-      <th>Len</th>
-      <th>Value / Description</th>
-      <th>Typ</th>
-      <th>Req</th>
-      <th>Default</th>
+      <th style="padding:8px; text-align:left;">Tag</th>
+      <th style="padding:8px; text-align:left;">Len</th>
+      <th style="padding:8px; text-align:left;">Value / Description</th>
+      <th style="padding:8px; text-align:left;">Typ</th>
+      <th style="padding:8px; text-align:left;">Req</th>
+      <th style="padding:8px; text-align:left;">Default</th>
     </tr>
   </thead>
   <tbody>
-    <tr>
+    <tr style="background-color:#1e1e1e; color:#f0f0f0;">
       <td></td>
       <td></td>
-      <td>Beginning of any wrappers, at minimum including <strong>Response Message</strong> found on page <strong>56</strong></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td rowspan="2">EF05</td>
-      <td></td>
-      <td><strong>Command 0xEF05 – Load Encrypted LTPK and Version (MAGTEK INTERNAL ONLY FOR NOW)</strong></td>
+      <td style="padding:8px;">Beginning of any wrappers, at minimum including <strong>Response Message</strong> found on page <strong>56</strong></td>
       <td></td>
       <td></td>
       <td></td>
     </tr>
-    <tr>
-      <td>4</td>
-      <td>LTPK Key Version</td>
-      <td>B</td>
-      <td>R</td>
+    <tr style="background-color:#f4f4f4; color:#555;">
+      <td rowspan="2" style="padding:8px; color:#555;">EF05</td>
+      <td></td>
+      <td style="padding:8px;"><strong>Command 0xEF05 – Load Encrypted LTPK and Version (MAGTEK INTERNAL ONLY FOR NOW)</strong></td>
+      <td></td>
+      <td></td>
       <td></td>
     </tr>
-    <tr>
+    <tr style="background-color:#222; color:#fff;">
+      <td style="padding:8px;">4</td>
+      <td style="padding:8px;">LTPK Key Version</td>
+      <td style="padding:8px;">B</td>
+      <td style="padding:8px;">R</td>
+      <td style="padding:8px;"></td>
+    </tr>
+    <tr style="background-color:#1e1e1e; color:#f0f0f0;">
       <td></td>
       <td></td>
-      <td>End of any wrappers, at minimum including <strong>Response Message</strong> found on page <strong>56</strong></td>
+      <td style="padding:8px;">End of any wrappers, at minimum including <strong>Response Message</strong> found on page <strong>56</strong></td>
       <td></td>
       <td></td>
       <td></td>
