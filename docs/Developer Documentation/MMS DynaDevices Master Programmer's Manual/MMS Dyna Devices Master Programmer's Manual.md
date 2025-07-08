@@ -1478,7 +1478,7 @@ Table 16 - Data File Message Example
 
 | Example (Hex)                                                                                                                                                                                                                             |
 |-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| AA 00 81 08 84 08 D8 21 00 00 00 01 84 40 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F 10 11 12 13 14 15 16 17 18 19 1A 1B 1C 1D 1E 1F 20 21 22 23 24 25 26 27 28 29 2A 2B 2C 2D 2E 2F 30 31 32 33 34 35 36 37 38 39 3A 3B 3C 3D 3E 3F |
+| AA 00 81 08 84 08 D8 21 00 00 00 01 84 40 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F 10 11 12 13 14 15 16 17 18 19 1A 1B 1C 1D 1E 1F 20 21 22 23 24 25 26 27 28 29 2A 2B 2C 2D 2E 2F 30 31 32 33 34 35 36 37 38 39 3A 3B 3C 3D 3E 3F 
 
 # Data Types and Shared TLV Data Objects
 
@@ -2321,14 +2321,14 @@ Table 42 - CA Keys Raw Format
 
 | CA Keys Raw Format                                                 |
 |--------------------------------------------------------------------|
-| RID (5 Bytes) As defined by the payment brand.                     |
-| Index (1 Byte) As defined by the payment brand.                    |
-| Exponent Length (1 Byte) 0x01 0x03                                 |
-| Key Length (1 Byte), Max of 248 bytes per EMVCo specifications     |
-| Exponent (1 or 3 Bytes) 0x03 0x010001                              |
-| Modulus As defined by the payment brand.                           |
-| Additional CA Keys, repeating from RID through Modulus, as needed. |
-| SHA-1 hash of all data in the file                                 |
+| RID (5 Bytes) As defined by the payment brand. 
+| Index (1 Byte) As defined by the payment brand. 
+| Exponent Length (1 Byte) 0x01 0x03 
+| Key Length (1 Byte), Max of 248 bytes per EMVCo specifications 
+| Exponent (1 or 3 Bytes) 0x03 0x010001 
+| Modulus As defined by the payment brand. 
+| Additional CA Keys, repeating from RID through Modulus, as needed. 
+| SHA-1 hash of all data in the file 
 
 ## EMV American Express DRL Configuration File Type (Not Supported on Expresspay 4.x)
 
@@ -3982,7 +3982,7 @@ executed due to Battery Charge State
 
 | Example (Hex)                             |
 |-------------------------------------------|
-| AA 00 81 04 82 01 10 01 82 04 80 02 03 16 |
+| AA 00 81 04 82 01 10 01 82 04 80 02 03 16 
 
 If the request started successfully, the Request Status in the message wrapper
 is **OK, Started / Running, All good / requested operation was successful**.
@@ -3991,19 +3991,19 @@ Table 73 - Request Example (MSR, Contact, and Contactless Only)
 
 | Example (Hex)                                                                                                                                                                                                        |
 |----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 01 00 10 01 84 3D 10 01 82 01 3C A3 09 81 01 01 82 01 01 83 01 01 84 02 00 03 86 27 9C 01 00 9F 02 06 00 00 00 00 01 00 9F 03 06 00 00 00 00 00 00 5F 2A 02 08 40 5F 36 01 02 9F 15 02 00 00 9F 53 01 00 |
+| AA 00 81 04 01 00 10 01 84 3D 10 01 82 01 3C A3 09 81 01 01 82 01 01 83 01 01 84 02 00 03 86 27 9C 01 00 9F 02 06 00 00 00 00 01 00 9F 03 06 00 00 00 00 00 00 5F 2A 02 08 40 5F 36 01 02 9F 15 02 00 00 9F 53 01 00 
 
 Table 74 - Request Example (Contactless Only)
 
 | Example (Hex)                                                                                                                                                                                                        |
 |----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 01 00 10 01 84 3D 10 01 82 01 3C A3 09 81 01 00 82 01 00 83 01 01 84 02 00 03 86 27 9C 01 00 9F 02 06 00 00 00 00 01 00 9F 03 06 00 00 00 00 00 00 5F 2A 02 08 40 5F 36 01 02 9F 15 02 00 00 9F 53 01 00 |
+| AA 00 81 04 01 00 10 01 84 3D 10 01 82 01 3C A3 09 81 01 00 82 01 00 83 01 01 84 02 00 03 86 27 9C 01 00 9F 02 06 00 00 00 00 01 00 9F 03 06 00 00 00 00 00 00 5F 2A 02 08 40 5F 36 01 02 9F 15 02 00 00 9F 53 01 00 
 
 Table 75 - Response Example
 
 | Example (Hex)                             |
 |-------------------------------------------|
-| AA 00 81 04 82 01 10 01 82 04 01 00 00 00 |
+| AA 00 81 04 82 01 10 01 82 04 01 00 00 00 
 
 ### Command 0x1002 - Continue Transaction (MAGTEK INTERNAL ONLY FOR NOW)
 
@@ -4046,13 +4046,13 @@ Table 78 - Request Example
 
 | Example (Hex)                                                                                                                    |
 |----------------------------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 01 00 10 04 84 21 10 04 81 01 00 82 01 78 84 17 FF 74 14 DF DF 25 08 99 26 90 E1 16 12 07 10 FA 06 70 04 8A 02 30 30 |
+| AA 00 81 04 01 00 10 04 84 21 10 04 81 01 00 82 01 78 84 17 FF 74 14 DF DF 25 08 99 26 90 E1 16 12 07 10 FA 06 70 04 8A 02 30 30 
 
 Table 79 - Response Example
 
 | Example (Hex)                                         |
 |-------------------------------------------------------|
-| AA 00 81 04 82 06 10 04 82 04 00 00 00 00 84 02 10 04 |
+| AA 00 81 04 82 06 10 04 82 04 00 00 00 00 84 02 10 04 
 
 ### Command 0x1008 - Cancel Transaction
 
@@ -4099,13 +4099,13 @@ Table 82 - Request Example
 
 | Example (Hex)                       |
 |-------------------------------------|
-| AA 00 81 04 01 13 10 08 84 02 10 08 |
+| AA 00 81 04 01 13 10 08 84 02 10 08 
 
 Table 83 - Response Example
 
 | Example (Hex)                             |
 |-------------------------------------------|
-| AA 00 81 04 82 13 10 08 82 04 00 00 00 00 |
+| AA 00 81 04 82 13 10 08 82 04 00 00 00 00 
 
 ### Command 0x1009 - Close / Clear Transaction (MAGTEK INTERNAL ONLY FOR NOW)
 
@@ -4216,13 +4216,13 @@ Table 90 - Request Example (Get Version)
 
 | Example (Hex)                                                  |
 |----------------------------------------------------------------|
-| AA 00 81 04 01 39 11 00 84 0B 11 00 81 01 60 82 01 00 83 01 00 |
+| AA 00 81 04 01 39 11 00 84 0B 11 00 81 01 60 82 01 00 83 01 00 
 
 Table 91 - Response Example (Get Version)
 
 | Example (Hex)                                                                                               |
 |-------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 82 39 11 00 82 04 01 00 00 00 84 14 11 00 81 01 00 82 0D FC 0B DF 7A 08 01 02 03 04 05 06 07 08 |
+| AA 00 81 04 82 39 11 00 82 04 01 00 00 00 84 14 11 00 81 01 00 82 0D FC 0B DF 7A 08 01 02 03 04 05 06 07 08 
 
 #### Encrypted Data Format
 
@@ -4312,14 +4312,14 @@ A, Key = FFFFFFFFFFFF)
 
 | Example (Hex)                                                                                |
 |----------------------------------------------------------------------------------------------|
-| AA 00 81 04 01 19 11 01 84 15 11 01 81 0B 30 00 00 00 00 FF FF FF FF FF FF 82 01 00 83 01 00 |
+| AA 00 81 04 01 19 11 01 84 15 11 01 81 0B 30 00 00 00 00 FF FF FF FF FF FF 82 01 00 83 01 00 
 
 Table 99 - Response Example (Read Sector 0, Block Number Start 0 - End 0,
 KeyType A, Key = FFFFFFFFFFFF)
 
 | Example (Hex)                                                                                                                       |
 |-------------------------------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 82 19 11 01 82 04 01 00 00 00 84 1C 11 01 81 01 00 82 15 FC 13 DF 7A 10 A4 FB 0D 3E 6C 08 04 00 03 0D C0 90 EE BF BB 1D |
+| AA 00 81 04 82 19 11 01 82 04 01 00 00 00 84 1C 11 01 81 01 00 82 15 FC 13 DF 7A 10 A4 FB 0D 3E 6C 08 04 00 03 0D C0 90 EE BF BB 1D 
 
 #### Encrypted Data Format
 
@@ -4377,13 +4377,13 @@ Table 104 - Request Example (Get Version Part 1)
 
 | Example (Hex)                                                              |
 |----------------------------------------------------------------------------|
-| AA 00 81 04 01 13 11 02 84 0F 11 02 81 05 90 60 00 00 00 82 01 00 83 01 00 |
+| AA 00 81 04 01 13 11 02 84 0F 11 02 81 05 90 60 00 00 00 82 01 00 83 01 00 
 
 Table 105 - Response Example (Get Version Part 1)
 
 | Example (Hex)                                                                                               |
 |-------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 82 13 11 02 82 04 01 00 00 00 84 14 11 02 81 02 91 AF 82 0C FC 0A DF 7A 07 04 08 01 30 00 13 05 |
+| AA 00 81 04 82 13 11 02 82 04 01 00 00 00 84 14 11 02 81 02 91 AF 82 0C FC 0A DF 7A 07 04 08 01 30 00 13 05 
 
 #### Encrypted Data Format
 
@@ -4506,13 +4506,13 @@ Table 112 - Request Example (Get Version)
 
 | Example (Hex)                                                  |
 |----------------------------------------------------------------|
-| AA 00 81 04 01 DA 11 03 84 0B 11 03 81 01 60 82 01 00 83 01 00 |
+| AA 00 81 04 01 DA 11 03 84 0B 11 03 81 01 60 82 01 00 83 01 00 
 
 Table 113 - Response Example (Get Version)
 
 | Example (Hex)                                                                                                                                                           |
 |-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 82 DA 11 03 82 04 01 00 00 00 84 28 11 03 81 01 00 82 21 FC 1F DF 7A 1C 04 02 01 11 00 16 04 04 02 01 01 01 16 04 04 4D 59 5A 3E 18 90 CF 8D 15 61 51 21 23 |
+| AA 00 81 04 82 DA 11 03 82 04 01 00 00 00 84 28 11 03 81 01 00 82 21 FC 1F DF 7A 1C 04 02 01 11 00 16 04 04 02 01 01 01 16 04 04 4D 59 5A 3E 18 90 CF 8D 15 61 51 21 23 
 
 #### Encrypted Data Format
 
@@ -4594,13 +4594,13 @@ Table 118 - Request Example
 
 | Example (Hex)                                |
 |----------------------------------------------|
-| AA 00 81 04 01 00 18 01 84 05 18 01 81 01 1E |
+| AA 00 81 04 01 00 18 01 84 05 18 01 81 01 1E 
 
 Table 119 - Response Example
 
 | Example (Hex)                             |
 |-------------------------------------------|
-| AA 00 81 04 82 00 18 01 82 04 01 00 00 00 |
+| AA 00 81 04 82 00 18 01 82 04 01 00 00 00 
 
 ### Command 0x1802 - Report Cardholder Selection
 
@@ -4649,13 +4649,13 @@ Table 122 - Request Example
 
 | Example (Hex)                                         |
 |-------------------------------------------------------|
-| AA 00 81 04 01 00 18 02 84 08 18 02 81 01 00 82 01 00 |
+| AA 00 81 04 01 00 18 02 84 08 18 02 81 01 00 82 01 00 
 
 Table 123 - Response Example
 
 | Example (Hex)                             |
 |-------------------------------------------|
-| AA 00 81 04 82 00 18 02 82 04 01 00 00 00 |
+| AA 00 81 04 82 00 18 02 82 04 01 00 00 00 
 
 ### Command 0x1803 - Display Message (Display Only)
 
@@ -4710,13 +4710,13 @@ Table 126 - Request Example
 
 | Example (Hex)                             |
 |-------------------------------------------|
-| AA00 810401551803 8408 1803 810102 820116 |
+| AA00 810401551803 8408 1803 810102 820116 
 
 Table 127 - Response Example
 
 | Example (Hex)                           |
 |-----------------------------------------|
-| AA00 810482551803 820401000000 84021803 |
+| AA00 810482551803 820401000000 84021803 
 
 ### Command 0x1804 - Read Barcode (BCR Only)
 
@@ -4778,13 +4778,13 @@ Table 130 - Request Example
 
 | Example (Hex)                                    |
 |--------------------------------------------------|
-| AA00 810401031804 840B 1804 810101 82010F 830101 |
+| AA00 810401031804 840B 1804 810101 82010F 830101 
 
 Table 131 - Response Example
 
 | Example (Hex)                  |
 |--------------------------------|
-| AA00 810482031804 820401000000 |
+| AA00 810482031804 820401000000 
 
 ### Command 0x1805 - Buzzer
 
@@ -4831,13 +4831,13 @@ Table 134 - Request Example for a sequence of 5 tones
 
 | Example (Hex)                                                                      |
 |------------------------------------------------------------------------------------|
-| AA00 810401031805 8418 1805 8114 00C8 01F4 0190 01F4 0258 01F4 0190 01F4 00C8 01F4 |
+| AA00 810401031805 8418 1805 8114 00C8 01F4 0190 01F4 0258 01F4 0190 01F4 00C8 01F4 
 
 Table 135 - Response Example
 
 | Example (Hex)                  |
 |--------------------------------|
-| AA00 810482031805 820401000000 |
+| AA00 810482031805 820401000000 
 
 ### Command 0x1821 - Show Image (Display Only)
 
@@ -4890,13 +4890,13 @@ Table 138 - Request Example
 
 | Example (Hex)                                         |
 |-------------------------------------------------------|
-| AA 00 81 04 01 2C 18 21 84 08 18 21 81 01 03 83 01 00 |
+| AA 00 81 04 01 2C 18 21 84 08 18 21 81 01 03 83 01 00 
 
 Table 139 - Response Example
 
 | Example (Hex)                             |
 |-------------------------------------------|
-| AA 00 81 04 82 2C 18 21 82 04 00 00 00 00 |
+| AA 00 81 04 82 2C 18 21 82 04 00 00 00 00 
 
 ### Command 0x1822 - Show QR Code (Display Only)
 
@@ -4962,19 +4962,19 @@ Table 142 - Request Example
 
 | Example (Hex)                                                                                                                                                                                                                    |
 |----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 01 05 18 22 84 41 18 22 81 01 3C 82 0F 54 68 69 73 20 69 73 20 61 20 74 65 73 74 21 83 01 00 84 01 FF 85 01 01 86 01 28 87 03 00 00 00 88 03 FF FF FF 89 13 50 6c 65 61 73 65 20 73 63 61 6e 20 51 52 20 63 6f 64 65 |
+| AA 00 81 04 01 05 18 22 84 41 18 22 81 01 3C 82 0F 54 68 69 73 20 69 73 20 61 20 74 65 73 74 21 83 01 00 84 01 FF 85 01 01 86 01 28 87 03 00 00 00 88 03 FF FF FF 89 13 50 6c 65 61 73 65 20 73 63 61 6e 20 51 52 20 63 6f 64 65 
 
 Table 629 - Response Example
 
 | Example (Hex)                             |
 |-------------------------------------------|
-| AA 00 81 04 82 2C 18 22 82 04 00 00 00 00 |
+| AA 00 81 04 82 2C 18 22 82 04 00 00 00 00 
 
 Table 630 - Notification Example
 
 | Example (Hex)                             |
 |-------------------------------------------|
-| AA 00 81 04 83 00 18 05 82 04 02 01 00 00 |
+| AA 00 81 04 83 00 18 05 82 04 02 01 00 00 
 
 ### Command 0x1823 - Show Bitmap Image (Display Only)
 
@@ -5049,19 +5049,19 @@ Table 145 - Request Example
 
 | Example (Hex)                                                                                                                                                                                                                    |
 |----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 01 05 18 22 84 41 18 22 81 01 3C 82 0F 54 68 69 73 20 69 73 20 61 20 74 65 73 74 21 83 01 00 84 01 FF 85 01 01 86 01 28 87 03 00 00 00 88 03 FF FF FF 89 13 50 6c 65 61 73 65 20 73 63 61 6e 20 51 52 20 63 6f 64 65 |
+| AA 00 81 04 01 05 18 22 84 41 18 22 81 01 3C 82 0F 54 68 69 73 20 69 73 20 61 20 74 65 73 74 21 83 01 00 84 01 FF 85 01 01 86 01 28 87 03 00 00 00 88 03 FF FF FF 89 13 50 6c 65 61 73 65 20 73 63 61 6e 20 51 52 20 63 6f 64 65 
 
 Table 629 - Response Example
 
 | Example (Hex)                             |
 |-------------------------------------------|
-| AA 00 81 04 82 2C 18 22 82 04 00 00 00 00 |
+| AA 00 81 04 82 2C 18 22 82 04 00 00 00 00 
 
 Table 630 - Notification Example
 
 | Example (Hex)                             |
 |-------------------------------------------|
-| AA 00 81 04 83 00 18 05 82 04 02 01 00 00 |
+| AA 00 81 04 83 00 18 05 82 04 02 01 00 00 
 
 ### Command 0x1830 - Display Flexible UI Pages (Display Only)
 
@@ -5085,13 +5085,13 @@ Table 147 - Request Example – (Display Enter Sale Amount Page)
 
 | Example (Hex)                                         |
 |-------------------------------------------------------|
-| AA 00 81 04 01 2C 18 31 84 08 18 31 81 01 00 82 01 00 |
+| AA 00 81 04 01 2C 18 31 84 08 18 31 81 01 00 82 01 00 
 
 Table 148 - Response Example
 
 | Example (Hex)                             |
 |-------------------------------------------|
-| AA 00 81 04 82 2C 18 31 82 04 00 00 00 00 |
+| AA 00 81 04 82 2C 18 31 82 04 00 00 00 00 
 
 ![A diagram of a device Description automatically
 generated](Images/def4ebbb357938168ddd5610cc932dfe.png)
@@ -5350,13 +5350,13 @@ Table 151 - Request Example
 
 | Example (Hex)                                                                                               |
 |-------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 01 2C 18 30 84 1A 18 30 81 01 00 82 01 00 83 02 00 05 A1 0C 83 0A 54 48 41 4E 4B 20 59 4F 55 00 |
+| AA 00 81 04 01 2C 18 30 84 1A 18 30 81 01 00 82 01 00 83 02 00 05 A1 0C 83 0A 54 48 41 4E 4B 20 59 4F 55 00 
 
 Table 152 - Response Example
 
 | Example (Hex)                |
 |------------------------------|
-| AA008104822C1830820400000000 |
+| AA008104822C1830820400000000 
 
 ### Command 0x1840 – Card Emulation
 
@@ -5395,19 +5395,19 @@ Table 154 - Request Example
 
 | Example (Hex)                                                                                                                    |
 |----------------------------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 01 01 18 40 84 21 18 40 81 01 01 82 01 00 83 17 68 74 74 70 73 3A 2F 2F 77 77 77 2E 6D 61 67 74 65 6B 2E 63 6F 6D 2F |
+| AA 00 81 04 01 01 18 40 84 21 18 40 81 01 01 82 01 00 83 17 68 74 74 70 73 3A 2F 2F 77 77 77 2E 6D 61 67 74 65 6B 2E 63 6F 6D 2F 
 
 Table 155 - Response Example
 
 | Example (Hex)                             |
 |-------------------------------------------|
-| AA 00 81 04 82 01 18 40 82 04 01 00 00 00 |
+| AA 00 81 04 82 01 18 40 82 04 01 00 00 00 
 
 Table 156 - Example of 0x1840 Cancel Command
 
 | Example (Hex)                                |
 |----------------------------------------------|
-| AA 00 81 04 01 01 18 40 84 05 18 40 81 01 00 |
+| AA 00 81 04 01 01 18 40 84 05 18 40 81 01 00 
 
 ## Command Group 0x1Fnn - Device Control
 
@@ -5445,13 +5445,13 @@ Table 159 - Request Example
 
 | Example (Hex)                       |
 |-------------------------------------|
-| AA 00 81 04 01 12 1F 01 84 02 1F 01 |
+| AA 00 81 04 01 12 1F 01 84 02 1F 01 
 
 Table 160 - Response Example
 
 | Example (Hex)                             |
 |-------------------------------------------|
-| AA 00 81 04 82 12 1F 01 82 04 00 00 00 00 |
+| AA 00 81 04 82 12 1F 01 82 04 00 00 00 00 
 
 ### Command 0x1F02 - Set Notification Subscriptions
 
@@ -5498,13 +5498,13 @@ Table 163 - Request Example
 
 | Example (Hex)               |
 |-----------------------------|
-| AA00 810401551F02 8402 1F02 |
+| AA00 810401551F02 8402 1F02 
 
 Table 164 - Response Example
 
 | Example (Hex)                            |
 |------------------------------------------|
-| AA00 810482551F02 820400000000 8402 1F02 |
+| AA00 810482551F02 820400000000 8402 1F02 
 
 ### Command 0x1F03 - Extend Session (Session Management Only)
 
@@ -5568,13 +5568,13 @@ Table 167 - Request Example
 
 | Example (Hex)               |
 |-----------------------------|
-| AA00 810401551F03 8402 1F03 |
+| AA00 810401551F03 8402 1F03 
 
 Table 168 - Response Example
 
 | Example (Hex)                            |
 |------------------------------------------|
-| AA00 810482551F03 820400000000 8402 1F03 |
+| AA00 810482551F03 820400000000 8402 1F03 
 
 ### Command 0x1F04 – Terminate Bluetooth® LE Connection (Bluetooth® LE Only)
 
@@ -5612,13 +5612,13 @@ Table 171 - Request Example
 
 | Example (Hex)                       |
 |-------------------------------------|
-| AA 00 81 04 01 55 1F 04 84 02 1F 04 |
+| AA 00 81 04 01 55 1F 04 84 02 1F 04 
 
 Table 172 - Response Example
 
 | Example (Hex)                                         |
 |-------------------------------------------------------|
-| AA 00 81 04 82 55 1F 04 82 04 00 00 00 00 84 02 1F 04 |
+| AA 00 81 04 82 55 1F 04 82 04 00 00 00 00 84 02 1F 04 
 
 ### Command 0x1F05 – Erase All Bluetooth® LE Bonds (Bluetooth® LE Only)
 
@@ -5656,13 +5656,13 @@ Table 175 - Request Example
 
 | Example (Hex)                       |
 |-------------------------------------|
-| AA 00 81 04 01 55 1F 05 84 02 1F 05 |
+| AA 00 81 04 01 55 1F 05 84 02 1F 05 
 
 Table 176 - Response Example
 
 | Example (Hex)                                         |
 |-------------------------------------------------------|
-| AA 00 81 04 82 55 1F 05 82 04 00 00 00 00 84 02 1F 05 |
+| AA 00 81 04 82 55 1F 05 82 04 00 00 00 00 84 02 1F 05 
 
 ## Command Group 0x20nn - Banking Functions (Touch/Display Only)
 
@@ -5818,14 +5818,14 @@ Account Data (Banking Functions Only)
 
 | Example (Hex)                                                                                                     |
 |-------------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 01 09 20 01 84 1C 20 01 81 01 3C 82 01 00 83 02 08 04 85 01 00 A1 0B 81 01 0C 82 06 12 34 56 78 90 12 |
+| AA 00 81 04 01 09 20 01 84 1C 20 01 81 01 3C 82 01 00 83 02 08 04 85 01 00 A1 0B 81 01 0C 82 06 12 34 56 78 90 12 
 
 Table 180 - Response Example Command 0x2001 - Request PIN with Host Supplied
 Account Data (Banking Functions Only)
 
 | Example (Hex)                             |
 |-------------------------------------------|
-| AA 00 81 04 82 09 20 01 82 04 01 00 00 00 |
+| AA 00 81 04 82 09 20 01 82 04 01 00 00 00 
 
 ### Command 0x2002 - Request PIN with Card Supplied Account Data (Banking Functions Only)
 
@@ -5993,14 +5993,14 @@ Account Data (Banking Functions Only)
 
 | Example (Hex)                                                                                                     |
 |-------------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 01 0C 20 02 84 1C 20 02 81 01 3C A3 09 81 01 01 82 01 01 83 01 01 A4 0A 82 01 01 83 02 08 04 85 01 00 |
+| AA 00 81 04 01 0C 20 02 84 1C 20 02 81 01 3C A3 09 81 01 01 82 01 01 83 01 01 A4 0A 82 01 01 83 02 08 04 85 01 00 
 
 Table 184 - Response Example Command 0x2002 - Request PIN with Card Supplied
 Account Data (Banking Functions Only)
 
 | Example (Hex)                             |
 |-------------------------------------------|
-| AA 00 81 04 82 0C 20 02 82 04 01 00 00 00 |
+| AA 00 81 04 82 0C 20 02 82 04 01 00 00 00 
 
 ## Command Group 0xD1nn - Settings and Information
 
@@ -6065,43 +6065,43 @@ Table 187 - Request Example
 
 | Example (Hex)                                                                                                                                              |
 |------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Get [**Property 1.2.7.1.1.1 Device Reset Occurred Notification Control**](#property-127111-device-reset-occurred-notification-control) using “simple” form:  AA00 8104 0155D101 840F D101 8501 01 8704 02070101 8902 C100 |
+| Get [**Property 1.2.7.1.1.1 Device Reset Occurred Notification Control**](#property-127111-device-reset-occurred-notification-control) using “simple” form:  AA00 8104 0155D101 840F D101 8501 01 8704 02070101 8902 C100 
 
 Table 188 - Response Example
 
 | Example (Hex)                                                                                                                                                                   |
 |---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Get [**Property 1.2.7.1.1.1 Device Reset Occurred Notification Control**](#property-127111-device-reset-occurred-notification-control) using “simple” form:  AA00 8104 8255D101 8204 00000000 84820010 D101 8501 01 8704 02070101 8903 C101 00 |
+| Get [**Property 1.2.7.1.1.1 Device Reset Occurred Notification Control**](#property-127111-device-reset-occurred-notification-control) using “simple” form:  AA00 8104 8255D101 8204 00000000 84820010 D101 8501 01 8704 02070101 8903 C101 00 
 
 Table 189 - Request Example
 
 | Example (Hex)                                                                                                                                                                    |
 |----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Get [**Property 1.2.7.1.1.1 Device Reset Occurred Notification Control**](#property-127111-device-reset-occurred-notification-control) using longer Property OID Remainder:  AA00 8104 0155D101 8411 D101 8501 01 890A E208 E706 E104 E102 C100 |
+| Get [**Property 1.2.7.1.1.1 Device Reset Occurred Notification Control**](#property-127111-device-reset-occurred-notification-control) using longer Property OID Remainder:  AA00 8104 0155D101 8411 D101 8501 01 890A E208 E706 E104 E102 C100 
 
 Table 190 - Response Example
 
 | Example (Hex)                                                                                                                                                                                         |
 |-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Get [**Property 1.2.7.1.1.1 Device Reset Occurred Notification Control**](#property-127111-device-reset-occurred-notification-control) using longer Property OID Remainder:  AA00 8104 8255D101 8204 00000000 84820012 D101 8501 01 890B E209 E707 E105 E103 C101 00 |
+| Get [**Property 1.2.7.1.1.1 Device Reset Occurred Notification Control**](#property-127111-device-reset-occurred-notification-control) using longer Property OID Remainder:  AA00 8104 8255D101 8204 00000000 84820012 D101 8501 01 890B E209 E707 E105 E103 C101 00 
 
 Table 191 - Request Example
 
 | Example (Hex)                                                                                                                                 |
 |-----------------------------------------------------------------------------------------------------------------------------------------------|
-| Get [**Property Subgroup 2.1.2.2.nn Core Firmware Information**](#property-subgroup-2122nn-core-firmware-information) using “simple” form:  AA00 8104 0155D101 840D D101 8501 02 8702 0102 8902 C200 |
+| Get [**Property Subgroup 2.1.2.2.nn Core Firmware Information**](#property-subgroup-2122nn-core-firmware-information) using “simple” form:  AA00 8104 0155D101 840D D101 8501 02 8702 0102 8902 C200 
 
 Table 192 - Response Example
 
 | Example (Hex)                                                                                                                                                                                                                                                                                                                                    |
 |--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Get [**Property Subgroup 2.1.2.2.nn Core Firmware Information**](#property-subgroup-2122nn-core-firmware-information) using “simple” form:  AA00 81 04 8255D101 82 04 00000000 84 820056 D101 85 01 02 87 02 0102 89 820049 E2 820045 E1 820004 C1 00 C2 00 E2 820039 C1 0D 44796E61466C65782050726F00 C2 13 313030303030373138332D41352D5043490000 C3 00 C4 0B 3130303030303731383300 C5 00 C6 02 FF00 |
+| Get [**Property Subgroup 2.1.2.2.nn Core Firmware Information**](#property-subgroup-2122nn-core-firmware-information) using “simple” form:  AA00 81 04 8255D101 82 04 00000000 84 820056 D101 85 01 02 87 02 0102 89 820049 E2 820045 E1 820004 C1 00 C2 00 E2 820039 C1 0D 44796E61466C65782050726F00 C2 13 313030303030373138332D41352D5043490000 C3 00 C4 0B 3130303030303731383300 C5 00 C6 02 FF00 
 
 ### Command 0xD111 - Set Property (Unsecured)
 
 | ![](Images/03555afcb3177a7ebf5f264c12d86851.png)                                                                                                                                                                                             |
 |----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Properties are stored in flash memory, which inherently has a limited number of read-write cycles before it begins to wear. For this reason, MagTek recommends setting properties as few times as possible over the lifecycle of the device. |
+| Properties are stored in flash memory, which inherently has a limited number of read-write cycles before it begins to wear. For this reason, MagTek recommends setting properties as few times as possible over the lifecycle of the device. 
 
 The host uses this command to set device configuration / settings that do not
 require security. For setting properties that require security see **Command
@@ -6161,19 +6161,19 @@ Table 195 - Request Example
 
 | Example (Hex)                                                                                                                                         |
 |-------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Set [**Property 1.2.7.1.1.1 Device Reset Occurred Notification Control**](#property-127111-device-reset-occurred-notification-control) AA 00 81 04 01 55 D1 11 84 10 D1 11 85 01 01 87 04 02 07 01 01 89 03 C1 01 00 |
+| Set [**Property 1.2.7.1.1.1 Device Reset Occurred Notification Control**](#property-127111-device-reset-occurred-notification-control) AA 00 81 04 01 55 D1 11 84 10 D1 11 85 01 01 87 04 02 07 01 01 89 03 C1 01 00 
 
 Table 196 - Response Example
 
 | Example (Hex)                                                                                                                                                                 |
 |-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Set [**Property 1.2.7.1.1.1 Device Reset Occurred Notification Control**](#property-127111-device-reset-occurred-notification-control) AA 00 81 04 82 55 D1 11 82 04 00 00 00 00 84 82 00 10 D1 11 85 01 01 87 04 02 07 01 01 89 03 C1 01 00 |
+| Set [**Property 1.2.7.1.1.1 Device Reset Occurred Notification Control**](#property-127111-device-reset-occurred-notification-control) AA 00 81 04 82 55 D1 11 82 04 00 00 00 00 84 82 00 10 D1 11 85 01 01 87 04 02 07 01 01 89 03 C1 01 00 
 
 ### Command 0xD112 - Set Property (Secured)
 
 | ![A black and white sign with letters Description automatically generated](Images/03555afcb3177a7ebf5f264c12d86851.png)                                                                                                                      |
 |----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Properties are stored in flash memory, which inherently has a limited number of read-write cycles before it begins to wear. For this reason, MagTek recommends setting properties as few times as possible over the lifecycle of the device. |
+| Properties are stored in flash memory, which inherently has a limited number of read-write cycles before it begins to wear. For this reason, MagTek recommends setting properties as few times as possible over the lifecycle of the device. 
 
 The host uses this command to set device configuration / settings securely.
 Properties that require security should specify that they do in their
@@ -6225,13 +6225,13 @@ Table 199 - Request Example
 
 | Example (Hex)                      |
 |------------------------------------|
-| AA00 81040101D201 8405 D201 810101 |
+| AA00 81040101D201 8405 D201 810101 
 
 Table 200 - Response Example
 
 | Example (Hex)                  |
 |--------------------------------|
-| AA00 81048201D201 820400000000 |
+| AA00 81048201D201 820400000000 
 
 ## Command Group 0xD8nn - File Operations
 
@@ -6365,7 +6365,7 @@ Table 204 - Response Example for Command 0xD801 Battery Charge State
 
 | Example (Hex)                             |
 |-------------------------------------------|
-| AA 00 81 04 82 01 D8 01 82 04 80 02 03 16 |
+| AA 00 81 04 82 01 D8 01 82 04 80 02 03 16 
 
 If the request started successfully, the Request Status in the message wrapper
 is **OK, Started / Running, All good / requested operation was successful**.
@@ -6374,13 +6374,13 @@ Table 205 - Request Example
 
 | Example (Hex)                                                                                                                                                                                                                                             |
 |-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 01 01 D8 01 84 83 0C 76 58 D8 01 81 01 03 85 02 00 01 86 20 DF C7 1E 09 A3 CE 8E 86 B0 F5 B6 75 BE B7 7A 0E 82 33 BF F1 8A CD 8F 38 34 B0 DB 20 D9 40 4B 28 87 83 0C 76 28  Plus 0C7628 bytes of firmware Payload, excluded here for brevity. |
+| AA 00 81 04 01 01 D8 01 84 83 0C 76 58 D8 01 81 01 03 85 02 00 01 86 20 DF C7 1E 09 A3 CE 8E 86 B0 F5 B6 75 BE B7 7A 0E 82 33 BF F1 8A CD 8F 38 34 B0 DB 20 D9 40 4B 28 87 83 0C 76 28  Plus 0C7628 bytes of firmware Payload, excluded here for brevity. 
 
 Table 206 - Response Example
 
 | Example (Hex)                             |
 |-------------------------------------------|
-| AA 00 81 04 82 01 D8 01 82 04 00 00 00 00 |
+| AA 00 81 04 82 01 D8 01 82 04 00 00 00 00 
 
 ### Command 0xD811 - Start Send File to Device (Secured)
 
@@ -6471,13 +6471,13 @@ Table 209 - Request Example
 
 | Example (Hex)                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 |-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 01 04 D8 11 84 81 8F EE EE A1 19 81 05 03 03 06 02 08 84 00 85 00 A8 0A 81 02 11 02 82 00 86 00 88 00 A9 00 82 04 FF FF FF F0 83 08 C9 65 45 F2 97 69 85 B1 84 4E D8 11 81 04 00 00 03 00 A2 2B 81 04 00 00 02 99 82 01 04 83 20 87 A4 B3 54 61 C5 CB D3 1D DC BA 9D 65 25 5A D4 6A 22 FA 51 5E FD 65 87 AF AC A8 8C 4F AF 80 9B A3 14 38 31 30 38 33 30 33 30 33 30 33 30 33 30 33 33 33 30 33 30 87 01 01 9E 10 7D E4 27 C8 A0 70 72 08 19 0A 1E 0A 3F 48 BB F1 |
+| AA 00 81 04 01 04 D8 11 84 81 8F EE EE A1 19 81 05 03 03 06 02 08 84 00 85 00 A8 0A 81 02 11 02 82 00 86 00 88 00 A9 00 82 04 FF FF FF F0 83 08 C9 65 45 F2 97 69 85 B1 84 4E D8 11 81 04 00 00 03 00 A2 2B 81 04 00 00 02 99 82 01 04 83 20 87 A4 B3 54 61 C5 CB D3 1D DC BA 9D 65 25 5A D4 6A 22 FA 51 5E FD 65 87 AF AC A8 8C 4F AF 80 9B A3 14 38 31 30 38 33 30 33 30 33 30 33 30 33 30 33 33 33 30 33 30 87 01 01 9E 10 7D E4 27 C8 A0 70 72 08 19 0A 1E 0A 3F 48 BB F1 
 
 Table 210 - Response Example
 
 | Example (Hex)                             |
 |-------------------------------------------|
-| AA 00 81 04 82 0C D8 11 82 04 00 00 00 00 |
+| AA 00 81 04 82 0C D8 11 82 04 00 00 00 00 
 
 ### Command 0xD812 - Start Send File to Device (Unsecured)
 
@@ -6561,13 +6561,13 @@ Table 213 - Request Example
 
 | Example (Hex)                                                                                                                                                                                                                               |
 |---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 01 07 D8 12  84 44 D8 12 81 04 02 00 00 00 A2 2B  81 04 00 02 58 38 82 01 04 83 20 D5 B8 BF 2F 3A 15 D9 EE 1D 0D E5 8E DD 68 37 73 18 51 C7 3C 3D 79 58 2B A6 07 90 5C 2B 86 3C E5 A3 0A 81 08 30 32 30 30 30 30 30 30 87 01 01 |
+| AA 00 81 04 01 07 D8 12  84 44 D8 12 81 04 02 00 00 00 A2 2B  81 04 00 02 58 38 82 01 04 83 20 D5 B8 BF 2F 3A 15 D9 EE 1D 0D E5 8E DD 68 37 73 18 51 C7 3C 3D 79 58 2B A6 07 90 5C 2B 86 3C E5 A3 0A 81 08 30 32 30 30 30 30 30 30 87 01 01 
 
 Table 214 - Response Example
 
 | Example (Hex)                             |
 |-------------------------------------------|
-| AA 00 81 04 82 07 D8 12 82 04 00 00 00 00 |
+| AA 00 81 04 82 07 D8 12 82 04 00 00 00 00 
 
 ### Command 0xD821 - Start Get File from Device
 
@@ -6631,13 +6631,13 @@ Table 217 - Request Example
 
 | Example (Hex)                                                  |
 |----------------------------------------------------------------|
-| AA 00 81 04 01 08 D8 21 84 0B D8 21 81 04 00 00 00 01 87 01 01 |
+| AA 00 81 04 01 08 D8 21 84 0B D8 21 81 04 00 00 00 01 87 01 01 
 
 Table 218 - Response Example
 
 | Example (Hex)                                                                                                                                                                                                                                                                                               |
 |-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 82 08 D8 21 82 04 00 00 00 00 84 54 D8 21 81 04 00 00 00 01 A2 2B 81 04 00 00 00 40 82 01 04 83 20 FD EA B9 AC F3 71 03 62 BD 26 58 CD C9 A2 9E 8F 9C 75 7F CF 98 11 60 3A 8C 44 7C D1 D9 15 11 08 A3 1D 81 0B 54 45 53 54 5F 31 4B 2E 62 69 6E 82 05 4C 61 62 65 6C 83 07 31 2E 30 2E 30 2E 31 |
+| AA 00 81 04 82 08 D8 21 82 04 00 00 00 00 84 54 D8 21 81 04 00 00 00 01 A2 2B 81 04 00 00 00 40 82 01 04 83 20 FD EA B9 AC F3 71 03 62 BD 26 58 CD C9 A2 9E 8F 9C 75 7F CF 98 11 60 3A 8C 44 7C D1 D9 15 11 08 A3 1D 81 0B 54 45 53 54 5F 31 4B 2E 62 69 6E 82 05 4C 61 62 65 6C 83 07 31 2E 30 2E 30 2E 31 
 
 **Note: For additional support, please contact MagTek Support.**
 
@@ -6698,13 +6698,13 @@ Table 221 - Request Example
 
 | Example (Hex)                                         |
 |-------------------------------------------------------|
-| AA 00 81 04 01 08 D8 21 84 08 D8 25 81 04 00 00 00 01 |
+| AA 00 81 04 01 08 D8 21 84 08 D8 25 81 04 00 00 00 01 
 
 Table 222 - Response Example
 
 | Example (Hex)                                                                                                                                                                                                                                                                                               |
 |-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 82 08 D8 25 82 04 00 00 00 00 84 54 D8 25 81 04 00 00 00 01 A2 2B 81 04 00 00 00 40 82 01 04 83 20 FD EA B9 AC F3 71 03 62 BD 26 58 CD C9 A2 9E 8F 9C 75 7F CF 98 11 60 3A 8C 44 7C D1 D9 15 11 08 A3 1D 81 0B 54 45 53 54 5F 31 4B 2E 62 69 6E 82 05 4C 61 62 65 6C 83 07 31 2E 30 2E 30 2E 31 |
+| AA 00 81 04 82 08 D8 25 82 04 00 00 00 00 84 54 D8 25 81 04 00 00 00 01 A2 2B 81 04 00 00 00 40 82 01 04 83 20 FD EA B9 AC F3 71 03 62 BD 26 58 CD C9 A2 9E 8F 9C 75 7F CF 98 11 60 3A 8C 44 7C D1 D9 15 11 08 A3 1D 81 0B 54 45 53 54 5F 31 4B 2E 62 69 6E 82 05 4C 61 62 65 6C 83 07 31 2E 30 2E 30 2E 31 
 
 **Note: For additional support, please contact MagTek Support.**
 
@@ -6748,13 +6748,13 @@ Table 225 - Request Example
 
 | Example (Hex)                                         |
 |-------------------------------------------------------|
-| AA 00 81 04 01 05 D8 31 84 08 D8 31 81 04 02 00 00 00 |
+| AA 00 81 04 01 05 D8 31 84 08 D8 31 81 04 02 00 00 00 
 
 Table 226 - Response Example
 
 | Example (Hex)                             |
 |-------------------------------------------|
-| AA 00 81 04 82 05 D8 31 82 04 00 00 00 00 |
+| AA 00 81 04 82 05 D8 31 82 04 00 00 00 00 
 
 ## Command Group 0xD9nn - Process Files
 
@@ -6803,19 +6803,19 @@ Table 229 - Request Example
 
 | Example (Hex)                                                                                                                                                           |
 |-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 01 02 D9 01 84 2E D9 01 81 01 03 82 01 00 85 02 00 01 86 20 DF C7 1E 09 A3 CE 8E 86 B0 F5 B6 75 BE B7 7A 0E 82 33 BF F1 8A CD 8F 38 34 B0 DB 20 D9 40 4B 28 |
+| AA 00 81 04 01 02 D9 01 84 2E D9 01 81 01 03 82 01 00 85 02 00 01 86 20 DF C7 1E 09 A3 CE 8E 86 B0 F5 B6 75 BE B7 7A 0E 82 33 BF F1 8A CD 8F 38 34 B0 DB 20 D9 40 4B 28 
 
 Table 230 - Response Example
 
 | Example (Hex)                             |
 |-------------------------------------------|
-| AA 00 81 04 82 02 D9 01 82 04 00 00 00 00 |
+| AA 00 81 04 82 02 D9 01 82 04 00 00 00 00 
 
 Table 231 - Notification Example
 
 | Example (Hex)                             |
 |-------------------------------------------|
-| AA 00 81 04 83 00 09 05 82 04 08 01 0A 03 |
+| AA 00 81 04 83 00 09 05 82 04 08 01 0A 03 
 
 **Note: For additional support, please contact MagTek Support.**
 
@@ -6860,13 +6860,13 @@ Table 234 - Request Example
 
 | Example (Hex)                                      |
 |----------------------------------------------------|
-| AA 00 81 04 01 01 DF 01 84 07 DF 01 81 03 01 02 03 |
+| AA 00 81 04 01 01 DF 01 84 07 DF 01 81 03 01 02 03 
 
 Table 235 - Response Example
 
 | Example (Hex)                                                        |
 |----------------------------------------------------------------------|
-| AA 00 81 04 82 01 DF 01 82 04 00 00 00 00 84 07 DF 01 81 03 01 02 03 |
+| AA 00 81 04 82 01 DF 01 82 04 00 00 00 00 84 07 DF 01 81 03 01 02 03 
 
 ### Command 0xDF02 - Convert Binary Tag Data to Text (MAGTEK INTERNAL ONLY FOR NOW)
 
@@ -6923,13 +6923,13 @@ Table 238 - Request Example
 
 | Example (Hex)                                   |
 |-------------------------------------------------|
-| AA 00 81 04 01 13 E0 01 84 06 E0 01 81 02 F0 12 |
+| AA 00 81 04 01 13 E0 01 84 06 E0 01 81 02 F0 12 
 
 Table 239 - Response Example
 
 | Example (Hex)                                                                                                     |
 |-------------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 82 13 E0 01 82 04 00 00 00 00 84 16 A2 14 81 02 E0 01 82 04 B5 03 3D A0 83 08 3B 4F A0 62 69 BB 73 38 |
+| AA 00 81 04 82 13 E0 01 82 04 00 00 00 00 84 16 A2 14 81 02 E0 01 82 04 B5 03 3D A0 83 08 3B 4F A0 62 69 BB 73 38 
 
 ### Command 0xEEEE - Send Secured Command to Device
 
@@ -6985,13 +6985,13 @@ Table 241 - Request Example Using MAC
 
 | Example (Hex)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
 |-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| This example wraps [**Command 0xD811 - Start Send File to Device (Secured)**](#command-0xd811---start-send-file-to-device-secured).  AA 00 81 04 01 04 D8 11 84 81 8F EE EE A1 19 81 05 03 03 06 02 08 84 00 85 00 A8 0A 81 02 11 02 82 00 86 00 88 00 A9 00 82 04 FF FF FF F0 83 08 C9 65 45 F2 97 69 85 B1 84 4E D8 11 81 04 00 00 03 00 A2 2B 81 04 00 00 02 99 82 01 04 83 20 87 A4 B3 54 61 C5 CB D3 1D DC BA 9D 65 25 5A D4 6A 22 FA 51 5E FD 65 87 AF AC A8 8C 4F AF 80 9B A3 14 38 31 30 38 33 30 33 30 33 30 33 30 33 30 33 33 33 30 33 30 87 01 01 9E 10 7D E4 27 C8 A0 70 72 08 19 0A 1E 0A 3F 48 BB F1 |
+| This example wraps [**Command 0xD811 - Start Send File to Device (Secured)**](#command-0xd811---start-send-file-to-device-secured).  AA 00 81 04 01 04 D8 11 84 81 8F EE EE A1 19 81 05 03 03 06 02 08 84 00 85 00 A8 0A 81 02 11 02 82 00 86 00 88 00 A9 00 82 04 FF FF FF F0 83 08 C9 65 45 F2 97 69 85 B1 84 4E D8 11 81 04 00 00 03 00 A2 2B 81 04 00 00 02 99 82 01 04 83 20 87 A4 B3 54 61 C5 CB D3 1D DC BA 9D 65 25 5A D4 6A 22 FA 51 5E FD 65 87 AF AC A8 8C 4F AF 80 9B A3 14 38 31 30 38 33 30 33 30 33 30 33 30 33 30 33 33 33 30 33 30 87 01 01 9E 10 7D E4 27 C8 A0 70 72 08 19 0A 1E 0A 3F 48 BB F1 
 
 Table 242 - Request Example Using ECDSA
 
 | Example (Hex)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| This example wraps [**Command 0xF015 - Read Log & Clear Tamper (MAGTEK INTERNAL ONLY)**](#command-0xf015---read-log--clear-tamper-magtek-internal-only):  AA 00 // Marker 81 04 01 0F F0 15 // Message Information 84 81 C8 // Request Payload EE EE // 0xEEEE, Secure Wrapper A1 24 // P4-A1, Security Parameters 81 04 02 01 04 05 // 02=Cmd Auth-sign, 01=ECDSA, 04=SHA-256, 05=P-521 84 00 // Data (for IV, nonce, as needed)  85 00 // Extra data item (reserved for future use) A8 16 // Key Info 81 02 00 00 // Key Slot ID 82 07 45 43 43 53 49 47 4E // Key Label, “ECCSIGN” 86 05 45 43 44 53 41 // KSN or derive info, ECDSA 88 00 // Added Info A9 00 // 2nd Key Info (reserved for future use)  82 04 B5 03 3D A0 // P4-P2, Device Serial Number  83 08 5B 6B 45 4B 00 5B CE 31 // P4-P3, Challenge Token  84 02 F0 15 // P4-P4, Payload Command 0xF015  9E 81 89 // P4-P30, Signature for Secure Wrapper 30 81 86  02 41 // Sig-\>R 52 5B 04 9A C7 CC 56 DE 5A EA 89 62 47 BB B8 0D 93 80 CE C8 AD 6E 16 F7 6E DA 08 42 0B 9C 69 77  61 B0 99 FC 05 7D AE AF 75 79 9C 7B B3 81 72 5C 4E 5B 92 DC F3 B6 85 5E B3 A2 71 0D 1D 93 B5 0D 0C 02 41 // Sig-\>S 46 47 0A EF 6F D5 97 ED 4F 41 E8 3C FD 20 A1 CE  7D E5 CA D3 E8 22 3B ED BC 2A 8A A0 BF 73 72 81  35 4F CB 52 B6 A9 07 6F 36 7F 5D 35 D5 29 3D 5D 78 17 0E B2 D6 AA A5 0D B3 4D B9 04 2C 03 6A AC A5 |
+| This example wraps [**Command 0xF015 - Read Log & Clear Tamper (MAGTEK INTERNAL ONLY)**](#command-0xf015---read-log--clear-tamper-magtek-internal-only):  AA 00 // Marker 81 04 01 0F F0 15 // Message Information 84 81 C8 // Request Payload EE EE // 0xEEEE, Secure Wrapper A1 24 // P4-A1, Security Parameters 81 04 02 01 04 05 // 02=Cmd Auth-sign, 01=ECDSA, 04=SHA-256, 05=P-521 84 00 // Data (for IV, nonce, as needed)  85 00 // Extra data item (reserved for future use) A8 16 // Key Info 81 02 00 00 // Key Slot ID 82 07 45 43 43 53 49 47 4E // Key Label, “ECCSIGN” 86 05 45 43 44 53 41 // KSN or derive info, ECDSA 88 00 // Added Info A9 00 // 2nd Key Info (reserved for future use)  82 04 B5 03 3D A0 // P4-P2, Device Serial Number  83 08 5B 6B 45 4B 00 5B CE 31 // P4-P3, Challenge Token  84 02 F0 15 // P4-P4, Payload Command 0xF015  9E 81 89 // P4-P30, Signature for Secure Wrapper 30 81 86  02 41 // Sig-\>R 52 5B 04 9A C7 CC 56 DE 5A EA 89 62 47 BB B8 0D 93 80 CE C8 AD 6E 16 F7 6E DA 08 42 0B 9C 69 77  61 B0 99 FC 05 7D AE AF 75 79 9C 7B B3 81 72 5C 4E 5B 92 DC F3 B6 85 5E B3 A2 71 0D 1D 93 B5 0D 0C 02 41 // Sig-\>S 46 47 0A EF 6F D5 97 ED 4F 41 E8 3C FD 20 A1 CE  7D E5 CA D3 E8 22 3B ED BC 2A 8A A0 BF 73 72 81  35 4F CB 52 B6 A9 07 6F 36 7F 5D 35 D5 29 3D 5D 78 17 0E B2 D6 AA A5 0D B3 4D B9 04 2C 03 6A AC A5 
 
 **Note: For additional support, please contact MagTek Support.**
 
@@ -7056,13 +7056,13 @@ Table 246 - Request Example
 
 | Example (Hex)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
 |-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 01 1A EF 01 84 82 01 36 EF 01 84 82 01 30 44 30 33 30 34 42 31 54 58 30 30 4E 30 36 30 30 49 4B 31 38 46 46 46 46 39 38 37 36 35 34 33 32 31 30 33 30 30 30 30 30 32 31 35 38 4D 47 54 4B 31 30 30 31 54 31 31 30 34 32 30 30 37 31 32 30 34 31 30 38 31 32 31 30 34 30 30 33 46 33 31 30 37 42 35 30 41 46 44 32 33 32 31 30 43 39 33 36 31 39 44 44 41 41 32 31 33 36 43 37 33 33 31 30 32 30 32 30 31 32 30 34 54 31 37 31 36 33 30 5A 4B 50 30 45 30 31 39 33 36 46 41 33 32 45 4B 43 30 41 30 30 34 35 30 30 54 53 31 34 32 30 32 30 30 39 30 32 54 31 35 35 38 30 32 5A 50 42 30 34 35 37 32 31 37 46 33 34 37 31 34 43 32 42 38 38 46 33 39 35 35 32 32 32 46 46 35 39 41 41 30 35 37 44 39 39 41 46 38 32 41 37 35 37 32 46 39 33 38 46 38 33 38 42 43 36 35 45 45 35 34 46 39 34 37 46 35 39 41 30 36 43 44 34 35 35 31 39 32 32 37 41 32 35 35 43 37 44 35 44 37 43 38 36 37 34 35 30 33 46 41 43 36 46 41 37 31 33 32 43 38 46 41 39 39 36 42 34 45 42 36 41 41 31 31 34 46 45 |
+| AA 00 81 04 01 1A EF 01 84 82 01 36 EF 01 84 82 01 30 44 30 33 30 34 42 31 54 58 30 30 4E 30 36 30 30 49 4B 31 38 46 46 46 46 39 38 37 36 35 34 33 32 31 30 33 30 30 30 30 30 32 31 35 38 4D 47 54 4B 31 30 30 31 54 31 31 30 34 32 30 30 37 31 32 30 34 31 30 38 31 32 31 30 34 30 30 33 46 33 31 30 37 42 35 30 41 46 44 32 33 32 31 30 43 39 33 36 31 39 44 44 41 41 32 31 33 36 43 37 33 33 31 30 32 30 32 30 31 32 30 34 54 31 37 31 36 33 30 5A 4B 50 30 45 30 31 39 33 36 46 41 33 32 45 4B 43 30 41 30 30 34 35 30 30 54 53 31 34 32 30 32 30 30 39 30 32 54 31 35 35 38 30 32 5A 50 42 30 34 35 37 32 31 37 46 33 34 37 31 34 43 32 42 38 38 46 33 39 35 35 32 32 32 46 46 35 39 41 41 30 35 37 44 39 39 41 46 38 32 41 37 35 37 32 46 39 33 38 46 38 33 38 42 43 36 35 45 45 35 34 46 39 34 37 46 35 39 41 30 36 43 44 34 35 35 31 39 32 32 37 41 32 35 35 43 37 44 35 44 37 43 38 36 37 34 35 30 33 46 41 43 36 46 41 37 31 33 32 43 38 46 41 39 39 36 42 34 45 42 36 41 41 31 31 34 46 45 
 
 Table 247 - Response Example
 
 | Example (Hex)                             |
 |-------------------------------------------|
-| AA 00 81 04 82 1A EF 01 82 04 00 00 00 00 |
+| AA 00 81 04 82 1A EF 01 82 04 00 00 00 00 
 
 **Note: For additional support, please contact MagTek Support.**
 
@@ -7118,13 +7118,13 @@ Table 250 - Request Example
 
 | Example (Hex)                  |
 |--------------------------------|
-| AA00 81 04 0155EF02 84 02 EF02 |
+| AA00 81 04 0155EF02 84 02 EF02 
 
 Table 251 - Response Example
 
 | Example (Hex)                                 |
 |-----------------------------------------------|
-| AA00 81 04 8205EF02 82 04 01000000 84 02 EF02 |
+| AA00 81 04 8205EF02 82 04 01000000 84 02 EF02 
 
 ### Command 0xEF03 – Generate CSR (WLAN Only)
 
@@ -7172,13 +7172,13 @@ Table 254 - Request Example
 
 | Example (Hex)                  |
 |--------------------------------|
-| AA00 81 04 0155EF03 84 02 EF03 |
+| AA00 81 04 0155EF03 84 02 EF03 
 
 Table 255 - Response Example
 
 | Example (Hex)                                 |
 |-----------------------------------------------|
-| AA00 81 04 8255EF03 82 04 00000000 84 02 EF03 |
+| AA00 81 04 8255EF03 82 04 00000000 84 02 EF03 
 
 ### Command 0xEF04 – Load LTPK Protection Key (MAGTEK INTERNAL ONLY FOR NOW)
 
@@ -7224,13 +7224,13 @@ Table 258 - Request Example
 
 | Example (Hex)                                                                                                                                                  |
 |----------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 01 06 EF 04 84 2B EF 04 81 01 01 82 20 22 F0 66 59 0B DA 04 F7 B9 99 B6 B4 B4 BC 2E 0D 95 92 C2 7A B1 55 98 2A 31 D3 06 CC E6 6B CF 85 83 02 84 99 |
+| AA 00 81 04 01 06 EF 04 84 2B EF 04 81 01 01 82 20 22 F0 66 59 0B DA 04 F7 B9 99 B6 B4 B4 BC 2E 0D 95 92 C2 7A B1 55 98 2A 31 D3 06 CC E6 6B CF 85 83 02 84 99 
 
 Table 259 - Response Example
 
 | Example (Hex)                             |
 |-------------------------------------------|
-| AA 00 81 04 82 06 EF 04 82 04 00 00 00 00 |
+| AA 00 81 04 82 06 EF 04 82 04 00 00 00 00 
 
 ### Command 0xEF05 – Load Encrypted LTPK and Version (MAGTEK INTERNAL ONLY FOR NOW)
 
@@ -7284,13 +7284,13 @@ Table 262 - Request Example
 
 | Example (Hex)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
 |----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 01 07 EF 05 84 81 96 EF 05 81 01 01 82 04 00 00 00 02 83 02 00 79 85 81 80 A1 9A 2D F7 B9 99 57 9B 89 5E 58 1B AD 26 52 77 EB B8 AC 6F 6A BE A8 21 D6 38 0D 54 0B 24 65 F4 EC D4 1D 73 E1 5A BE 9F 13 6B 85 DD 96 60 FD 33 6C 23 15 14 0B 53 AC FF EF 1C 1B 22 BD 56 D7 86 6D 82 D4 E0 E6 0B F5 07 E6 5D A5 EF C2 89 A1 33 28 E1 C7 D2 00 7C 8C B8 C5 D5 F9 5B D7 4F ED BB 40 9F 10 1D 43 08 97 5B 4A 1F D4 50 EB 2B 73 82 C9 C9 6C 4C 9C BC 05 F0 74 11 3E 7E 9C 60 02 DC 86 02 69 DF |
+| AA 00 81 04 01 07 EF 05 84 81 96 EF 05 81 01 01 82 04 00 00 00 02 83 02 00 79 85 81 80 A1 9A 2D F7 B9 99 57 9B 89 5E 58 1B AD 26 52 77 EB B8 AC 6F 6A BE A8 21 D6 38 0D 54 0B 24 65 F4 EC D4 1D 73 E1 5A BE 9F 13 6B 85 DD 96 60 FD 33 6C 23 15 14 0B 53 AC FF EF 1C 1B 22 BD 56 D7 86 6D 82 D4 E0 E6 0B F5 07 E6 5D A5 EF C2 89 A1 33 28 E1 C7 D2 00 7C 8C B8 C5 D5 F9 5B D7 4F ED BB 40 9F 10 1D 43 08 97 5B 4A 1F D4 50 EB 2B 73 82 C9 C9 6C 4C 9C BC 05 F0 74 11 3E 7E 9C 60 02 DC 86 02 69 DF 
 
 Table 263 - Response Example
 
 | Example (Hex)                                                           |
 |-------------------------------------------------------------------------|
-| AA 00 81 04 82 07 EF 05 82 04 00 00 00 00 84 08 EF 05 81 04 00 00 00 02 |
+| AA 00 81 04 82 07 EF 05 82 04 00 00 00 00 84 08 EF 05 81 04 00 00 00 02 
 
 ### Command 0xEF06 – Change Device Lock State
 
@@ -7324,13 +7324,13 @@ Table 266 - Request Example
 
 | Example (Hex)                                              |
 |------------------------------------------------------------|
-| AA00 81 04 0155EF06 84 0E EF06 810100 820100 8304 34333231 |
+| AA00 81 04 0155EF06 84 0E EF06 810100 820100 8304 34333231 
 
 Table 267 - Response Example
 
 | Example (Hex)                           |
 |-----------------------------------------|
-| AA00 81048255EF06 820400000000 8402EF06 |
+| AA00 81048255EF06 820400000000 8402EF06 
 
 ### Command 0xEF07 – Change Device Lock Passcode
 
@@ -7364,13 +7364,13 @@ Table 270 - Request Example
 
 | Example (Hex)                                            |
 |----------------------------------------------------------|
-| AA00 81 04 0155EF07 84 0E EF07 810434333231 820434333231 |
+| AA00 81 04 0155EF07 84 0E EF07 810434333231 820434333231 
 
 Table 271 - Response Example
 
 | Example (Hex)                           |
 |-----------------------------------------|
-| AA00 81048255EF07 820400000000 8402EF07 |
+| AA00 81048255EF07 820400000000 8402EF07 
 
 ### Command 0xEF08 – Reset Device Lock Passcode (MAGTEK INTERNAL ONLY FOR NOW)
 
@@ -7405,7 +7405,7 @@ Table 274 - Request Example
 
 | Example (Hex)                                 |
 |-----------------------------------------------|
-| AA00 81 04 0155EF08 84 08 EF08 81 04 BE001BB0 |
+| AA00 81 04 0155EF08 84 08 EF08 81 04 BE001BB0 
 
 Table 275 -
 
@@ -7415,7 +7415,7 @@ Table 276 - Response Example
 
 | Example (Hex)                                 |
 |-----------------------------------------------|
-| AA00 81 04 8255EF08 82 04 00000000 84 02 EF08 |
+| AA00 81 04 8255EF08 82 04 00000000 84 02 EF08 
 
 ### Command 0xEF09 – Encrypt User Data
 
@@ -7491,13 +7491,13 @@ decryption)**
 
 | Example (Hex)                                                                                                                                                                                                                                                                                                                                                                                                                                           |
 |---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| AA-00 81-04-01-03-EF-09 // P1, Message Info, 0xEF09 Command 84-3E-EF-09 // P4, Request Payload A3-3A // User data parameters, total 58 bytes 81-20 // User data item \#0, 32 bytes 00-01-02-03-04-05-06-07-08-09-0A-0B-0C-0D-0E-0F 10-11-12-13-14-15-16-17-18-19-1A-1B-1C-1D-1E-1F 82-06 // User data item \#1, 6 bytes 00-01-02-03-04-05 83-06 // User data item \#2, 6 bytes 06-07-08-09-0A-0B 84-06 // User data item \#3, 6 bytes 0C-0D-0E-0F-10-11 |
+| AA-00 81-04-01-03-EF-09 // P1, Message Info, 0xEF09 Command 84-3E-EF-09 // P4, Request Payload A3-3A // User data parameters, total 58 bytes 81-20 // User data item \#0, 32 bytes 00-01-02-03-04-05-06-07-08-09-0A-0B-0C-0D-0E-0F 10-11-12-13-14-15-16-17-18-19-1A-1B-1C-1D-1E-1F 82-06 // User data item \#1, 6 bytes 00-01-02-03-04-05 83-06 // User data item \#2, 6 bytes 06-07-08-09-0A-0B 84-06 // User data item \#3, 6 bytes 0C-0D-0E-0F-10-11 
 
 Table 281 - Response Example
 
 | Example (Hex)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
 |-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| AA-00 81-04-82-03-EF-09 // P1, Message Info, 0xEF09 Response 82-04-00-00-00-00 // P2, Response Status 84-82-00-6F-EF-09 // P4, Response payload F8-82-00-69 // Encrypted Data Container DF-DF-59-82-00-50 // Encrypted Data Primitive 31-4D-0E-4B-52-EB-96-33-FD-D4-D6-9D-C9-D8-12-56 2C-09-CF-2A-E6-09-34-F9-55-AF-57-42-EB-AE-F4-B3 7B-2D-94-DF-E5-35-6F-4F-9D-36-5F-D1-F7-9F-40-F2 B6-1D-B6-97-C8-0E-2F-E2-1B-04-62-E8-3D-0A-EF-87 77-06-F6-07-0F-8C-9C-0A-51-76-E8-D3-78-05-AF-13 DF-DF-56-0A // Encryption KSN FF-FF-98-76-54-32-10-20-00-02 DF-DF-57-01 // Encryption Type 80 |
+| AA-00 81-04-82-03-EF-09 // P1, Message Info, 0xEF09 Response 82-04-00-00-00-00 // P2, Response Status 84-82-00-6F-EF-09 // P4, Response payload F8-82-00-69 // Encrypted Data Container DF-DF-59-82-00-50 // Encrypted Data Primitive 31-4D-0E-4B-52-EB-96-33-FD-D4-D6-9D-C9-D8-12-56 2C-09-CF-2A-E6-09-34-F9-55-AF-57-42-EB-AE-F4-B3 7B-2D-94-DF-E5-35-6F-4F-9D-36-5F-D1-F7-9F-40-F2 B6-1D-B6-97-C8-0E-2F-E2-1B-04-62-E8-3D-0A-EF-87 77-06-F6-07-0F-8C-9C-0A-51-76-E8-D3-78-05-AF-13 DF-DF-56-0A // Encryption KSN FF-FF-98-76-54-32-10-20-00-02 DF-DF-57-01 // Encryption Type 80 
 
 ### Command 0xEF11 - Get Key Info
 
@@ -7547,13 +7547,13 @@ Table 284 - Request Example
 
 | Example (Hex)                                   |
 |-------------------------------------------------|
-| AA 00 81 04 01 21 EF 11 84 06 EF 11 81 02 20 07 |
+| AA 00 81 04 01 21 EF 11 84 06 EF 11 81 02 20 07 
 
 Table 285 - Response Example
 
 | Example (Hex)                                                                                                                                                                                               |
 |-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 82 21 EF 11 82 04 00 00 00 00 84 34 A2 32 81 04 02 20 10 81 82 06 54 42 31 54 58 03 84 0A FF FF 98 76 54 32 10 30 00 00 A6 04 81 02 00 3F 89 10 32 30 32 30 30 39 30 32 54 31 35 35 38 30 32 5A |
+| AA 00 81 04 82 21 EF 11 82 04 00 00 00 00 84 34 A2 32 81 04 02 20 10 81 82 06 54 42 31 54 58 03 84 0A FF FF 98 76 54 32 10 30 00 00 A6 04 81 02 00 3F 89 10 32 30 32 30 30 39 30 32 54 31 35 35 38 30 32 5A 
 
 **Note: For additional support, please contact MagTek Support.**
 
@@ -7655,13 +7655,13 @@ Table 288 - Request Example
 
 | Example (Hex)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
 |----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 01 14 F0 12 84 81 CA EE EE A1 24 81 04 02 01 04 05 84 00 85 00 A8 16 81 02 00 00 82 07 45 43 43 53 49 47 4E 86 05 45 43 44 53 41 88 00 A9 00 82 04 B5 03 3D A0 83 08 3B 4F A0 62 69 BB 73 38 84 02 F0 12 9E 81 8B 30 81 88 02 42 01 F7 60 F4 89 8A 81 6D E2 4E 6C 5D D1 66 41 A4 34 54 E7 32 93 48 3D E5 7D 2C C6 16 F6 E8 CC 98 C6 5D 26 A6 20 60 B7 D1 EF 78 DB 85 32 82 72 67 23 8B 04 00 93 98 14 4E 2C 47 1A 3B F6 B6 B8 93 D2 EA 02 42 01 84 B4 A4 5C 9F D8 EC AD E2 29 F8 AD 8B DD AF 4C 4E 85 F9 B9 E2 AC 7E 7D 3B AE DB 83 47 AD 1B 95 91 32 C4 AA 0F 31 B0 8C 1B 2D AD C0 76 4C A1 AB D2 9F 3B 25 6A 87 36 AC 40 67 B9 33 5B 20 36 50 30 |
+| AA 00 81 04 01 14 F0 12 84 81 CA EE EE A1 24 81 04 02 01 04 05 84 00 85 00 A8 16 81 02 00 00 82 07 45 43 43 53 49 47 4E 86 05 45 43 44 53 41 88 00 A9 00 82 04 B5 03 3D A0 83 08 3B 4F A0 62 69 BB 73 38 84 02 F0 12 9E 81 8B 30 81 88 02 42 01 F7 60 F4 89 8A 81 6D E2 4E 6C 5D D1 66 41 A4 34 54 E7 32 93 48 3D E5 7D 2C C6 16 F6 E8 CC 98 C6 5D 26 A6 20 60 B7 D1 EF 78 DB 85 32 82 72 67 23 8B 04 00 93 98 14 4E 2C 47 1A 3B F6 B6 B8 93 D2 EA 02 42 01 84 B4 A4 5C 9F D8 EC AD E2 29 F8 AD 8B DD AF 4C 4E 85 F9 B9 E2 AC 7E 7D 3B AE DB 83 47 AD 1B 95 91 32 C4 AA 0F 31 B0 8C 1B 2D AD C0 76 4C A1 AB D2 9F 3B 25 6A 87 36 AC 40 67 B9 33 5B 20 36 50 30 
 
 Table 289 - Response Example
 
 | Example (Hex)                                                                        |
 |--------------------------------------------------------------------------------------|
-| Response only occurs in the failure case.  AA 00 81 04 82 0F F0 12 82 04 81 00 00 00 |
+| Response only occurs in the failure case.  AA 00 81 04 82 0F F0 12 82 04 81 00 00 00 
 
 ### Command 0xF014 - Read Log (MAGTEK INTERNAL ONLY)
 
@@ -7804,13 +7804,13 @@ Table 293 - Request Example
 
 | Example (Hex)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
 |----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 01 32 F0 14 84 81 CA EE EE A1 24 81 04 02 01 04 05 84 00 85 00 A8 16 81 02 00 00 82 07 45 43 43 53 49 47 4E 86 05 45 43 44 53 41 88 00 A9 00 82 04 BE 00 06 80 83 08 88 D3 F5 28 2B CF 07 ED 84 02 F0 14 9E 81 8B 30 81 88 02 42 00 99 F6 96 30 7D 27 CB 59 B8 A9 F1 C1 7A C5 A8 D1 62 C2 8A 5A 9A F2 82 25 DD AF A7 C6 62 D3 57 70 DB 52 E6 EC 77 7F 20 2D CE DB F0 5E 84 77 B4 7B EA 8F 42 FB 6B 49 41 6F 78 33 08 DB 31 94 D0 2A 18 02 42 00 93 06 2A CF 5C 29 4E D5 FE 7B 1D 00 3E 68 C9 DA 4D 94 16 DA F9 86 CC BB 18 54 2E C4 44 28 B8 1C 62 CF 9E 47 46 20 7C 20 EF DF 71 05 49 B7 F9 F7 A0 0B 4D 7C 6C 77 EB 93 AF D3 40 ED 3A 28 10 A9 B4 |
+| AA 00 81 04 01 32 F0 14 84 81 CA EE EE A1 24 81 04 02 01 04 05 84 00 85 00 A8 16 81 02 00 00 82 07 45 43 43 53 49 47 4E 86 05 45 43 44 53 41 88 00 A9 00 82 04 BE 00 06 80 83 08 88 D3 F5 28 2B CF 07 ED 84 02 F0 14 9E 81 8B 30 81 88 02 42 00 99 F6 96 30 7D 27 CB 59 B8 A9 F1 C1 7A C5 A8 D1 62 C2 8A 5A 9A F2 82 25 DD AF A7 C6 62 D3 57 70 DB 52 E6 EC 77 7F 20 2D CE DB F0 5E 84 77 B4 7B EA 8F 42 FB 6B 49 41 6F 78 33 08 DB 31 94 D0 2A 18 02 42 00 93 06 2A CF 5C 29 4E D5 FE 7B 1D 00 3E 68 C9 DA 4D 94 16 DA F9 86 CC BB 18 54 2E C4 44 28 B8 1C 62 CF 9E 47 46 20 7C 20 EF DF 71 05 49 B7 F9 F7 A0 0B 4D 7C 6C 77 EB 93 AF D3 40 ED 3A 28 10 A9 B4 
 
 Table 294 - Response Example
 
 | Example (Hex)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
 |-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 82 32 F0 14 82 04 00 00 00 00 83 82 03 4C 00 02 00 54 32 30 32 33 2D 31 32 2D 30 38 20 30 32 3A 35 37 20 20 20 20 40 49 44 3A 30 2C 20 73 65 6E 73 6F 72 5F 73 74 61 74 75 73 3D 30 78 31 2C 20 61 63 74 69 76 65 5F 73 65 6E 73 6F 72 73 3D 30 78 61 61 30 33 37 34 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 32 30 32 33 2D 31 32 2D 30 38 20 30 32 3A 35 37 20 20 20 20 40 49 44 3A 30 2C 20 74 61 6D 70 65 72 5F 74 69 6D 65 5F 69 6E 5F 73 65 63 6F 6E 64 73 3D 31 37 30 32 30 30 34 32 32 38 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 |
+| AA 00 81 04 82 32 F0 14 82 04 00 00 00 00 83 82 03 4C 00 02 00 54 32 30 32 33 2D 31 32 2D 30 38 20 30 32 3A 35 37 20 20 20 20 40 49 44 3A 30 2C 20 73 65 6E 73 6F 72 5F 73 74 61 74 75 73 3D 30 78 31 2C 20 61 63 74 69 76 65 5F 73 65 6E 73 6F 72 73 3D 30 78 61 61 30 33 37 34 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 32 30 32 33 2D 31 32 2D 30 38 20 30 32 3A 35 37 20 20 20 20 40 49 44 3A 30 2C 20 74 61 6D 70 65 72 5F 74 69 6D 65 5F 69 6E 5F 73 65 63 6F 6E 64 73 3D 31 37 30 32 30 30 34 32 32 38 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 
 
 ### Command 0xF015 - Read Log & Clear Tamper (MAGTEK INTERNAL ONLY)
 
@@ -7963,13 +7963,13 @@ Table 298 - Request Example
 
 | Example (Hex)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
 |----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 01 0F F0 15 84 81 C8 EE EE A1 24 81 04 02 01 06 05 84 00 85 00 A8 16 81 02 00 00 82 07 45 43 43 53 49 47 4E 86 05 45 43 44 53 41 88 00 A9 00 82 04 B5 03 3D A0 83 08 5B 6B 45 4B 00 5B CE 31 84 02 F0 15 9E 81 89 30 81 86 02 41 52 5B 04 9A C7 CC 56 DE 5A EA 89 62 47 BB B8 0D 93 80 CE C8 AD 6E 16 F7 6E DA 08 42 0B 9C 69 77 61 B0 99 FC 05 7D AE AF 75 79 9C 7B B3 81 72 5C 4E 5B 92 DC F3 B6 85 5E B3 A2 71 0D 1D 93 B5 0D 0C 02 41 46 47 0A EF 6F D5 97 ED 4F 41 E8 3C FD 20 A1 CE 7D E5 CA D3 E8 22 3B ED BC 2A 8A A0 BF 73 72 81 35 4F CB 52 B6 A9 07 6F 36 7F 5D 35 D5 29 3D 5D 78 17 0E B2 D6 AA A5 0D B3 4D B9 04 2C 03 6A AC A5 |
+| AA 00 81 04 01 0F F0 15 84 81 C8 EE EE A1 24 81 04 02 01 06 05 84 00 85 00 A8 16 81 02 00 00 82 07 45 43 43 53 49 47 4E 86 05 45 43 44 53 41 88 00 A9 00 82 04 B5 03 3D A0 83 08 5B 6B 45 4B 00 5B CE 31 84 02 F0 15 9E 81 89 30 81 86 02 41 52 5B 04 9A C7 CC 56 DE 5A EA 89 62 47 BB B8 0D 93 80 CE C8 AD 6E 16 F7 6E DA 08 42 0B 9C 69 77 61 B0 99 FC 05 7D AE AF 75 79 9C 7B B3 81 72 5C 4E 5B 92 DC F3 B6 85 5E B3 A2 71 0D 1D 93 B5 0D 0C 02 41 46 47 0A EF 6F D5 97 ED 4F 41 E8 3C FD 20 A1 CE 7D E5 CA D3 E8 22 3B ED BC 2A 8A A0 BF 73 72 81 35 4F CB 52 B6 A9 07 6F 36 7F 5D 35 D5 29 3D 5D 78 17 0E B2 D6 AA A5 0D B3 4D B9 04 2C 03 6A AC A5 
 
 Table 299 - Response Example
 
 | Example (Hex)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
 |---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 82 0F F0 15 // Message Info  82 04 00 00 00 00 // Status is OK  83 82 03 50 // Payload, System Event LOG 00 02 // 2 events in the LOG 00 54 // 0x54 (84) bytes per event  32 30 32 30 2D 30 38 2D 32 36 2D 31 34 3A 30 30 // Event \#1: 2020-08-26-14:00 @ID:0,  20 20 20 20 40 49 44 3A 30 2C 20 73 65 6E 73 6F // sensor_status=0x1, active_sensors=0xaa0374 72 5F 73 74 61 74 75 73 3D 30 78 31 2C 20 61 63  74 69 76 65 5F 73 65 6E 73 6F 72 73 3D 30 78 61  61 30 33 37 34 20 20 20 20 20 20 20 20 20 20 20  20 20 20 20  32 30 32 30 2D 30 38 2D 32 36 2D 31 34 3A 30 30 // Event \#2: 2020-08-26-14:00 @ID:0,  20 20 20 20 40 49 44 3A 30 2C 20 74 61 6D 70 65 // tamper_time_in_seconds=1598450397 72 5F 74 69 6D 65 5F 69 6E 5F 73 65 63 6F 6E 64  73 3D 31 35 39 38 34 35 30 33 39 37 20 20 20 20  20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20  20 20 20 20 |
+| AA 00 81 04 82 0F F0 15 // Message Info  82 04 00 00 00 00 // Status is OK  83 82 03 50 // Payload, System Event LOG 00 02 // 2 events in the LOG 00 54 // 0x54 (84) bytes per event  32 30 32 30 2D 30 38 2D 32 36 2D 31 34 3A 30 30 // Event \#1: 2020-08-26-14:00 @ID:0,  20 20 20 20 40 49 44 3A 30 2C 20 73 65 6E 73 6F // sensor_status=0x1, active_sensors=0xaa0374 72 5F 73 74 61 74 75 73 3D 30 78 31 2C 20 61 63  74 69 76 65 5F 73 65 6E 73 6F 72 73 3D 30 78 61  61 30 33 37 34 20 20 20 20 20 20 20 20 20 20 20  20 20 20 20  32 30 32 30 2D 30 38 2D 32 36 2D 31 34 3A 30 30 // Event \#2: 2020-08-26-14:00 @ID:0,  20 20 20 20 40 49 44 3A 30 2C 20 74 61 6D 70 65 // tamper_time_in_seconds=1598450397 72 5F 74 69 6D 65 5F 69 6E 5F 73 65 63 6F 6E 64  73 3D 31 35 39 38 34 35 30 33 39 37 20 20 20 20  20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20  20 20 20 20 
 
 ### Command 0xF016 - Activate Device Security (MAGTEK INTERNAL ONLY)
 
@@ -8120,13 +8120,13 @@ Table 302 - Request Example
 
 | Example (Hex)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
 |----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 01 0F F0 16 84 81 EA EE EE A1 24 81 04 02 01 06 05 84 00 85 00 A8 16 81 02 00 00 82 07 45 43 43 53 49 47 4E 86 05 45 43 44 53 41 88 00 A9 00 82 04 B5 03 3D A0 83 08 BE A5 45 81 90 C9 28 0C 84 22 F0 16 81 07 08 1A 0E 16 28 04 0C 85 0B 44 65 76 65 6C 6F 70 6D 65 6E 74 86 08 31 32 33 34 35 36 37 38 9E 81 8B 30 81 88 02 42 00 CD C1 EC 9E D1 30 A6 19 0A 8D 27 F6 65 26 4A 97 3C 79 94 60 BA 57 4D 64 4A 47 FC 72 6B 83 1F 1F DB 05 40 E3 70 16 17 DB 5E A6 93 77 1D 40 F5 DE 0A 9E 01 7A B3 6D DA 8A 73 94 46 1A 68 99 B6 8C 9F 02 42 01 5E 40 4E 4C F9 BF 1B 10 4D BE 7C F6 F9 FE F8 77 1E D0 1A FE AA FC 8B BD 06 BB 8A E5 A5 B3 0E 2E B4 CC DE 60 48 96 2A 84 38 E0 41 45 CD A2 4B F9 36 DA 61 BE 06 A6 CA F2 2F 17 EC DA 0D 59 D0 01 EC |
+| AA 00 81 04 01 0F F0 16 84 81 EA EE EE A1 24 81 04 02 01 06 05 84 00 85 00 A8 16 81 02 00 00 82 07 45 43 43 53 49 47 4E 86 05 45 43 44 53 41 88 00 A9 00 82 04 B5 03 3D A0 83 08 BE A5 45 81 90 C9 28 0C 84 22 F0 16 81 07 08 1A 0E 16 28 04 0C 85 0B 44 65 76 65 6C 6F 70 6D 65 6E 74 86 08 31 32 33 34 35 36 37 38 9E 81 8B 30 81 88 02 42 00 CD C1 EC 9E D1 30 A6 19 0A 8D 27 F6 65 26 4A 97 3C 79 94 60 BA 57 4D 64 4A 47 FC 72 6B 83 1F 1F DB 05 40 E3 70 16 17 DB 5E A6 93 77 1D 40 F5 DE 0A 9E 01 7A B3 6D DA 8A 73 94 46 1A 68 99 B6 8C 9F 02 42 01 5E 40 4E 4C F9 BF 1B 10 4D BE 7C F6 F9 FE F8 77 1E D0 1A FE AA FC 8B BD 06 BB 8A E5 A5 B3 0E 2E B4 CC DE 60 48 96 2A 84 38 E0 41 45 CD A2 4B F9 36 DA 61 BE 06 A6 CA F2 2F 17 EC DA 0D 59 D0 01 EC 
 
 Table 303 - Response Example
 
 | Example (Hex)                             |
 |-------------------------------------------|
-| AA 00 81 04 82 0F F0 16 82 04 00 00 00 00 |
+| AA 00 81 04 82 0F F0 16 82 04 00 00 00 00 
 
 ### Command 0xF017 - Establish Ephemeral KBPK
 
@@ -8240,13 +8240,13 @@ Table 306 - Request Example
 
 | Example (Hex)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
 |-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| AA 00  81 04 01 10 F0 17  84 82 01 8C  EE EE // Secure Wrapper A1 24  81 04 02 01 04 05 84 00 85 00 A8 16  81 02 00 00 82 07 45 43 43 53 49 47 4E  86 05 45 43 44 53 41  88 00 A9 00 82 04 B5 03 3D A0 83 08 ED B0 79 E6 E3 F1 83 AE 84 81 C3 // payload is 0xF017 command body F0 17  A1 14 // Security parameters 81 04 01 01 05 01 84 00 A8 0A 81 02 00 00 82 00  86 00 88 00 83 81 9E // TL of PKCS8 public key 30 81 9B // V of PKCS8 public key 30 10 06 07 2A 86 48 CE 3D 02 01  06 05 2B 81 04 00 23  03 81 86  00 04 01 64 1C DA 45 C5 56 B3 8B 31 29 8C 94 A1 E7 95  C9 D3 85 C0 4D F3 15 13 D9 91 43 84 58 15 CD 45  6B 67 F6 AC 7C 56 DF F8 0C 65 A7 CF 81 F1 13 2F  AA E5 22 10 78 23 C9 4F 1D CD 24 42 EC 1A 3F A4  75 58 00 97 59 96 9E 01 D0 62 47 B7 EF 5F 0B D0 8B E6  CA 12 F0 3C 13 43 AF 15 21 92 3D 6B FE 47 74 68  38 3F DD 1E 90 2B FD 0F D6 DA 7A A1 E9 A1 98 85  3A DA 93 6D EE 05 61 87 8B 81 BF 6A 78 2F 40 A5  E8 66  84 08 BD E3 77 88 83 0C F6 37 // TLV of 8-byte random \# for TEMP-KBPK  // end of 0xF017 command body 9E 81 8B 30 81 88  02 42  00 C4 13 1D C2 13 7A F6 FD F0 F1 BB BD 14 C2 4A  FE D7 6F BC 80 91 84 26 43 85 40 B6 5D BE 1D 9C  74 90 77 B6 41 62 69 52 04 72 93 C0 9C 59 2A DB  03 31 0F 8A 28 C0 DB 1A B7 1B 51 B3 E6 BD FF 50  77 CA  02 42 01 EE D8 2D 9F A3 D1 98 4E 74 C8 85 11 52 93 15  FF 9D 7D 5A 03 FD 84 B8 B9 09 20 8B 15 98 7A 5E  56 A5 61 71 9A 0A B9 D1 DA 1C 96 1D 0C EF F0 D2 E3 A4 22 84 60 E2 AA 8C AA 2B 8B AE 02 50 D8 B3 CF 84 |
+| AA 00  81 04 01 10 F0 17  84 82 01 8C  EE EE // Secure Wrapper A1 24  81 04 02 01 04 05 84 00 85 00 A8 16  81 02 00 00 82 07 45 43 43 53 49 47 4E  86 05 45 43 44 53 41  88 00 A9 00 82 04 B5 03 3D A0 83 08 ED B0 79 E6 E3 F1 83 AE 84 81 C3 // payload is 0xF017 command body F0 17  A1 14 // Security parameters 81 04 01 01 05 01 84 00 A8 0A 81 02 00 00 82 00  86 00 88 00 83 81 9E // TL of PKCS8 public key 30 81 9B // V of PKCS8 public key 30 10 06 07 2A 86 48 CE 3D 02 01  06 05 2B 81 04 00 23  03 81 86  00 04 01 64 1C DA 45 C5 56 B3 8B 31 29 8C 94 A1 E7 95  C9 D3 85 C0 4D F3 15 13 D9 91 43 84 58 15 CD 45  6B 67 F6 AC 7C 56 DF F8 0C 65 A7 CF 81 F1 13 2F  AA E5 22 10 78 23 C9 4F 1D CD 24 42 EC 1A 3F A4  75 58 00 97 59 96 9E 01 D0 62 47 B7 EF 5F 0B D0 8B E6  CA 12 F0 3C 13 43 AF 15 21 92 3D 6B FE 47 74 68  38 3F DD 1E 90 2B FD 0F D6 DA 7A A1 E9 A1 98 85  3A DA 93 6D EE 05 61 87 8B 81 BF 6A 78 2F 40 A5  E8 66  84 08 BD E3 77 88 83 0C F6 37 // TLV of 8-byte random \# for TEMP-KBPK  // end of 0xF017 command body 9E 81 8B 30 81 88  02 42  00 C4 13 1D C2 13 7A F6 FD F0 F1 BB BD 14 C2 4A  FE D7 6F BC 80 91 84 26 43 85 40 B6 5D BE 1D 9C  74 90 77 B6 41 62 69 52 04 72 93 C0 9C 59 2A DB  03 31 0F 8A 28 C0 DB 1A B7 1B 51 B3 E6 BD FF 50  77 CA  02 42 01 EE D8 2D 9F A3 D1 98 4E 74 C8 85 11 52 93 15  FF 9D 7D 5A 03 FD 84 B8 B9 09 20 8B 15 98 7A 5E  56 A5 61 71 9A 0A B9 D1 DA 1C 96 1D 0C EF F0 D2 E3 A4 22 84 60 E2 AA 8C AA 2B 8B AE 02 50 D8 B3 CF 84 
 
 Table 307 - Response Example
 
 | Example (Hex)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
 |---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 82 10 F0 17  82 04 00 00 00 00  84 81 B5 // Response Payload F0 17 A1 06 81 01 00  82 01 00  83 81 9E // TL of PKCS8 public key 30 81 9B // V of PKCS8 public key  30 10  06 07 2A 86 48 CE 3D 02 01  06 05 2B 81 04 00 23  03 81 86 00  04  01 77 CD 91 56 96 34 2B C6 5A 6C EC 5D 74 96 41  B3 F9 2B 12 85 19 90 F8 73 BF FF 3C 10 44 E3 CB  21 4E CA F6 CE FC F8 C8 80 52 44 13 FA B1 97 A1  8C 44 FE 95 A2 0A F3 3D A4 3A 8F 2E 39 41 23 22 B1 AB  01 29 26 4F CC 0E 86 11 16 92 FF BC E1 BF DA FC 21 BA B1 5A C4 DE 7B C1 6F A9 17 F8 4B 1E B2 1F  5F 21 7D 54 00 15 41 C3 21 75 0D 21 DC 95 13 A7 2C 8C 11 77 96 38 87 51 08 7A 1F 63 EC A8 8F C4 AB B3  84 08 4C 4A EC 0B 47 E4 53 EB // TLV of 8-byte random \# for TEMP-KBPK |
+| AA 00 81 04 82 10 F0 17  82 04 00 00 00 00  84 81 B5 // Response Payload F0 17 A1 06 81 01 00  82 01 00  83 81 9E // TL of PKCS8 public key 30 81 9B // V of PKCS8 public key  30 10  06 07 2A 86 48 CE 3D 02 01  06 05 2B 81 04 00 23  03 81 86 00  04  01 77 CD 91 56 96 34 2B C6 5A 6C EC 5D 74 96 41  B3 F9 2B 12 85 19 90 F8 73 BF FF 3C 10 44 E3 CB  21 4E CA F6 CE FC F8 C8 80 52 44 13 FA B1 97 A1  8C 44 FE 95 A2 0A F3 3D A4 3A 8F 2E 39 41 23 22 B1 AB  01 29 26 4F CC 0E 86 11 16 92 FF BC E1 BF DA FC 21 BA B1 5A C4 DE 7B C1 6F A9 17 F8 4B 1E B2 1F  5F 21 7D 54 00 15 41 C3 21 75 0D 21 DC 95 13 A7 2C 8C 11 77 96 38 87 51 08 7A 1F 63 EC A8 8F C4 AB B3  84 08 4C 4A EC 0B 47 E4 53 EB // TLV of 8-byte random \# for TEMP-KBPK 
 
 **Note: For additional support, please contact MagTek Support.**
 
@@ -8389,7 +8389,7 @@ Table 313 - Notification Example
 
 | Example (Hex)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 |-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 83 00 01 01 82 04 10 08 02 02 84 82 01 F8 01 01 84 82 01 F2 01 E9 F9 82 01 E5 DF DF 54 0A 00 00 00 00 00 00 00 00 00 00 DF DF 55 01 82 DF DF 25 0F 42 34 44 42 38 31 37 31 31 31 39 31 39 41 41 FA 82 01 BB 70 82 01 B7 DF DF 53 01 00 5F 20 12 47 55 53 54 49 4E 2F 53 54 45 50 48 41 4E 49 45 20 4D 5F 30 02 02 01 DF DF 4D 25 3B 35 33 32 32 30 30 30 30 36 30 30 30 31 36 37 34 3D 31 38 30 39 32 30 31 30 30 30 30 30 30 30 30 30 30 30 3F DF DF 52 01 05 F8 82 01 66 DF DF 59 82 01 48 36 69 98 57 4C 81 08 66 28 B6 1F DD 69 B1 C3 43 F7 BA 98 B2 5A 92 53 5F DA 63 6D DA 44 95 F1 15 2D 01 07 9A 4C EB 28 0B 30 5C 21 B2 39 ED E7 EE B6 1A 79 43 56 2E 26 1E C9 87 86 19 68 FA EB 4A 2B BD F5 5D 54 6F C4 67 97 FF 42 2C D6 CF 36 03 48 58 A4 23 9B 51 03 5C 32 0B DC 5E 4E E5 95 1B B5 C5 18 E7 33 0B D2 FE 8D E8 5C 47 4D 3C 16 79 42 48 1D CD 83 D5 58 64 48 23 17 F3 29 A7 F1 F1 75 F4 B9 C6 45 F3 02 28 1C 90 C7 83 B9 49 AF 56 BD 76 73 E7 45 7D 25 C5 77 3F C7 9A 1B ED 52 0A 05 54 15 B7 9A 2A 59 C1 67 6D E2 8C 02 8B 97 64 96 5D 4C F8 31 A2 20 75 12 8D 99 C1 A2 DF AB 55 0A 62 24 79 CF A8 51 3D AE 84 91 A5 80 19 9F BC 75 B0 F9 56 5E BA 57 A3 B1 61 AA 84 43 F0 D8 E6 44 C1 FA 51 0E 0A B0 F7 F2 61 57 5B 86 7E AB DC 49 00 87 A0 3B 69 5F C1 45 C4 10 9A A8 5F B6 30 59 2C 25 FA 15 A5 44 83 24 96 3D 5A 03 50 36 02 EC 6B 15 7C 8D CC 66 BF B7 F4 CF 4C 6D 67 75 87 B9 4E D4 08 76 25 F8 B8 EF BF A8 A0 72 F9 81 AB FF 49 84 E7 BC 8F C5 DD A0 86 B2 74 DD 59 8A B2 83 5D DD CC 0C 30 01 96 DF DF 56 0A 90 10 01 0B 4D B8 17 00 00 03 DF DF 57 01 80 DF DF 58 01 05 00 00 00 00 00 00 00 |
+| AA 00 81 04 83 00 01 01 82 04 10 08 02 02 84 82 01 F8 01 01 84 82 01 F2 01 E9 F9 82 01 E5 DF DF 54 0A 00 00 00 00 00 00 00 00 00 00 DF DF 55 01 82 DF DF 25 0F 42 34 44 42 38 31 37 31 31 31 39 31 39 41 41 FA 82 01 BB 70 82 01 B7 DF DF 53 01 00 5F 20 12 47 55 53 54 49 4E 2F 53 54 45 50 48 41 4E 49 45 20 4D 5F 30 02 02 01 DF DF 4D 25 3B 35 33 32 32 30 30 30 30 36 30 30 30 31 36 37 34 3D 31 38 30 39 32 30 31 30 30 30 30 30 30 30 30 30 30 30 3F DF DF 52 01 05 F8 82 01 66 DF DF 59 82 01 48 36 69 98 57 4C 81 08 66 28 B6 1F DD 69 B1 C3 43 F7 BA 98 B2 5A 92 53 5F DA 63 6D DA 44 95 F1 15 2D 01 07 9A 4C EB 28 0B 30 5C 21 B2 39 ED E7 EE B6 1A 79 43 56 2E 26 1E C9 87 86 19 68 FA EB 4A 2B BD F5 5D 54 6F C4 67 97 FF 42 2C D6 CF 36 03 48 58 A4 23 9B 51 03 5C 32 0B DC 5E 4E E5 95 1B B5 C5 18 E7 33 0B D2 FE 8D E8 5C 47 4D 3C 16 79 42 48 1D CD 83 D5 58 64 48 23 17 F3 29 A7 F1 F1 75 F4 B9 C6 45 F3 02 28 1C 90 C7 83 B9 49 AF 56 BD 76 73 E7 45 7D 25 C5 77 3F C7 9A 1B ED 52 0A 05 54 15 B7 9A 2A 59 C1 67 6D E2 8C 02 8B 97 64 96 5D 4C F8 31 A2 20 75 12 8D 99 C1 A2 DF AB 55 0A 62 24 79 CF A8 51 3D AE 84 91 A5 80 19 9F BC 75 B0 F9 56 5E BA 57 A3 B1 61 AA 84 43 F0 D8 E6 44 C1 FA 51 0E 0A B0 F7 F2 61 57 5B 86 7E AB DC 49 00 87 A0 3B 69 5F C1 45 C4 10 9A A8 5F B6 30 59 2C 25 FA 15 A5 44 83 24 96 3D 5A 03 50 36 02 EC 6B 15 7C 8D CC 66 BF B7 F4 CF 4C 6D 67 75 87 B9 4E D4 08 76 25 F8 B8 EF BF A8 A0 72 F9 81 AB FF 49 84 E7 BC 8F C5 DD A0 86 B2 74 DD 59 8A B2 83 5D DD CC 0C 30 01 96 DF DF 56 0A 90 10 01 0B 4D B8 17 00 00 03 DF DF 57 01 80 DF DF 58 01 05 00 00 00 00 00 00 00 
 
 ### Notification 0x0103 - Transaction Host Action Request (MAGTEK INTERNAL ONLY FOR NOW)
 
@@ -8432,21 +8432,21 @@ Display Only)
 
 | Example (Hex)                                                                                                                                                                                                                                                                                                                                                                                                         |
 |-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Display Message Request to show PROCESSING AA 00 81 04 83 00 01 03 // Notification source/type = 0x0103 82 04  00  01 // 0x01=Display Message Request 01 // 0x01=Data Attached  00  84 82 00 12 // Payload, 18 bytes (using two-byte Length) 81 01 01 // Clear Screen is enabled 82 82 00 0B // Messages, 11 bytes (using two-byte Length) 50 52 4F 43 45 53 53 49 4E 47 00 // “PROCESSING” (line terminator is 0x00) |
+| Display Message Request to show PROCESSING AA 00 81 04 83 00 01 03 // Notification source/type = 0x0103 82 04  00  01 // 0x01=Display Message Request 01 // 0x01=Data Attached  00  84 82 00 12 // Payload, 18 bytes (using two-byte Length) 81 01 01 // Clear Screen is enabled 82 82 00 0B // Messages, 11 bytes (using two-byte Length) 50 52 4F 43 45 53 53 49 4E 47 00 // “PROCESSING” (line terminator is 0x00) 
 
 Table 317 - Notification Example for Cardholder Selection Request (No Display
 Only)
 
 | Example (Hex)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
 |-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Cardholder Selection Request to show: APPLICATION SELECT 1 - VISA CREDIT 2 - VISA DEBIT 3 - VISA ELECTRON  AA 00 81 04 83 00 01 03 // Notification source/type = 0x0103 82 04 00  02 // 0x02=Cardholder Selection Request 00  00 // Timeout, TT=0x00 84 82 00 4B // Payload, 75 bytes (using two-byte Length)  81 01 01 // Clear Display 82 82 00 44 // Messages, 68 bytes (using two-byte Length)  41 50 50 4C 49 43 41 54 49 4F 4E 20 53 45 4C 45 43 54 0A 31 20 2D 20 56 49 53 41 20 43 52 45 44 49 54 0A 32 20 2D 20 56 49 53 41 20 44 45 42 49 54 0A 33 20 2D 20 56 49 53 41 20 45 4C 45 43 54 52 4F 4E 00 |
+| Cardholder Selection Request to show: APPLICATION SELECT 1 - VISA CREDIT 2 - VISA DEBIT 3 - VISA ELECTRON  AA 00 81 04 83 00 01 03 // Notification source/type = 0x0103 82 04 00  02 // 0x02=Cardholder Selection Request 00  00 // Timeout, TT=0x00 84 82 00 4B // Payload, 75 bytes (using two-byte Length)  81 01 01 // Clear Display 82 82 00 44 // Messages, 68 bytes (using two-byte Length)  41 50 50 4C 49 43 41 54 49 4F 4E 20 53 45 4C 45 43 54 0A 31 20 2D 20 56 49 53 41 20 43 52 45 44 49 54 0A 32 20 2D 20 56 49 53 41 20 44 45 42 49 54 0A 33 20 2D 20 56 49 53 41 20 45 4C 45 43 54 52 4F 4E 00 
 
 Table 318 - Notification Example for Online PIN Request (MAGTEK INTERNAL ONLY
 FOR NOW, No Display Only)
 
 | Example (Hex)                                                                                                                                                                                   |
 |-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| (MAGTEK INTERNAL ONLY FOR NOW) Online PIN Request to show: VISA DEBIT 100.00  AA 00 81 04 83 00 01 05 82 04 00 03 00 00 84 16 9F 12 0A 56 49 53 41 20 44 45 42 49 54 9F 02 06 00 00 00 01 00 00 |
+| (MAGTEK INTERNAL ONLY FOR NOW) Online PIN Request to show: VISA DEBIT 100.00  AA 00 81 04 83 00 01 05 82 04 00 03 00 00 84 16 9F 12 0A 56 49 53 41 20 44 45 42 49 54 9F 02 06 00 00 00 01 00 00 
 
 ### Notification 0x0104 - Transaction Callback (MAGTEK INTERNAL ONLY FOR NOW)
 
@@ -8497,7 +8497,7 @@ Table 321 - Notification Example
 
 | Example (Hex)                             |
 |-------------------------------------------|
-| AA 00 81 04 83 00 01 05 82 04 20 00 00 00 |
+| AA 00 81 04 83 00 01 05 82 04 20 00 00 00 
 
 ### Notification 0x0105 - Transaction Operation Complete
 
@@ -8625,7 +8625,7 @@ Table 323 - Notification Example
 
 | Example (Hex)                             |
 |-------------------------------------------|
-| AA 00 81 04 83 00 01 05 82 04 20 00 00 00 |
+| AA 00 81 04 83 00 01 05 82 04 20 00 00 00 
 
 ## Notification Source 0x02nn - Notifications from Banking Functions (Banking Functions Only)
 
@@ -8888,7 +8888,7 @@ Table 332 Low Battery Notification Example
 
 | Example (Hex)                          |
 |----------------------------------------|
-| AA 00 81 04 83 00 10 01 82 00 02 00 0D |
+| AA 00 81 04 83 00 10 01 82 00 02 00 0D 
 
 #### Notification 0x1001 - Low Battery Shutdown
 
@@ -8903,7 +8903,7 @@ Response Example**.
 
 | Example (Hex)                          |
 |----------------------------------------|
-| AA 00 81 04 83 00 10 01 82 00 02 01 00 |
+| AA 00 81 04 83 00 10 01 82 00 02 01 00 
 
 #### Notification 0x1001 - Battery Charged
 
@@ -8916,7 +8916,7 @@ Table 334 - Battery Charged Notification Example
 
 | Example (Hex)                          |
 |----------------------------------------|
-| AA 00 81 04 83 00 10 01 82 00 02 02 00 |
+| AA 00 81 04 83 00 10 01 82 00 02 02 00 
 
 Table 335 - Notification Payload for Device Reset Occurred
 
@@ -8933,7 +8933,7 @@ Table 336 - Notification Example for Device Reset Occurred
 
 | Example (Hex)                                                   |
 |-----------------------------------------------------------------|
-| AA00 81 04 83001001 82 04 00000000 84 08 1001 81 01 02 82 01 00 |
+| AA00 81 04 83001001 82 04 00000000 84 08 1001 81 01 02 82 01 00 
 
 Table 337 - Notification Payload for Touch Sensor Press or Release On Display
 (Touch Only)
@@ -8950,7 +8950,7 @@ Table 338 - Notification Example for Touch Sensor Press or Release On Display
 
 | Example (Hex)                                                   |
 |-----------------------------------------------------------------|
-| AA00 81 04 83001001 82 04 00000000 84 08 1001 81 04 00 80 00 80 |
+| AA00 81 04 83001001 82 04 00000000 84 08 1001 81 04 00 80 00 80 
 
 Table 339 - Notification Payload for Session Expiring Soon (Session Management
 Only)
@@ -8970,7 +8970,7 @@ Only)
 
 | Example (Hex)                                                            |
 |--------------------------------------------------------------------------|
-| AA00 81 04 83001001 82 04 00000000 84 0B 1001 81 01 00 82 01 00 83 01 05 |
+| AA00 81 04 83001001 82 04 00000000 84 0B 1001 81 01 00 82 01 00 83 01 05 
 
 Table 341 - Notification Payload for Key management, Certificate Expiring Soon
 (Session Management Only)
@@ -8989,7 +8989,7 @@ Table 342 - Notification Example for Key management, Certificate Expiring Soon
 
 | Example (Hex)                                                   |
 |-----------------------------------------------------------------|
-| AA00 81 04 83001001 82 04 00000000 84 08 1001 81 01 02 82 01 00 |
+| AA00 81 04 83001001 82 04 00000000 84 08 1001 81 01 02 82 01 00 
 
 Table 343 - Notification Payload for UID
 
@@ -9005,7 +9005,7 @@ Table 344 – Notification Payload for UID Example
 
 | Example (Hex)                                                                             |
 |-------------------------------------------------------------------------------------------|
-| AA 00 81 04 83 00 10 01 82 04 01 00 01 00 84 0E 10 01 84 0A DF 79 07 04 37 1F 71 BF 61 80 |
+| AA 00 81 04 83 00 10 01 82 04 01 00 01 00 84 0E 10 01 84 0A DF 79 07 04 37 1F 71 BF 61 80 
 
 ## Notification Source 0x18nn - Notifications from User Interface
 
@@ -9367,25 +9367,25 @@ Table 356 - Get Request Example
 
 | Example (Hex)                                                                                               |
 |-------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 01 04 D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0A E1 08 E1 06 E1 04 E1 02 C1 00 |
+| AA 00 81 04 01 04 D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0A E1 08 E1 06 E1 04 E1 02 C1 00 
 
 Table 357 - Get Response Example
 
 | Example (Hex)                                                                                                                                               |
 |-------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 82 04 D1 01 82 04 00 00 00 00 84 82 00 22 D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 12 E1 10 E1 0E E1 0C E1 0A C1 08 30 30 30 30 30 30 30 30 |
+| AA 00 81 04 82 04 D1 01 82 04 00 00 00 00 84 82 00 22 D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 12 E1 10 E1 0E E1 0C E1 0A C1 08 30 30 30 30 30 30 30 30 
 
 Table 358 - Set Request Example
 
 | Example (Hex)                                                                                                                       |
 |-------------------------------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 01 3E D1 11 84 22 D1 11 81 07 2B 06 01 04 01 F6 09 85 01 01 89 12 E1 10 E1 0E E1 0C E1 0A C1 08 31 31 31 31 31 31 31 31 |
+| AA 00 81 04 01 3E D1 11 84 22 D1 11 81 07 2B 06 01 04 01 F6 09 85 01 01 89 12 E1 10 E1 0E E1 0C E1 0A C1 08 31 31 31 31 31 31 31 31 
 
 Table 359 - Set Response Example
 
 | Example (Hex)                                                                                                                                               |
 |-------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 82 3E D1 11 82 04 00 00 00 00 84 82 00 22 D1 11 81 07 2B 06 01 04 01 F6 09 85 01 01 89 12 E1 10 E1 0E E1 0C E1 0A C1 08 31 31 31 31 31 31 31 31 |
+| AA 00 81 04 82 3E D1 11 82 04 00 00 00 00 84 82 00 22 D1 11 81 07 2B 06 01 04 01 F6 09 85 01 01 89 12 E1 10 E1 0E E1 0C E1 0A C1 08 31 31 31 31 31 31 31 31 
 
 #### Property 1.1.1.1.1.2 EMV ARQC Message Tag List
 
@@ -9407,25 +9407,25 @@ Table 361 - Get Request Example
 
 | Example (Hex)                                                                                               |
 |-------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 01 08 D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0A E1 08 E1 06 E1 04 E1 02 C2 00 |
+| AA 00 81 04 01 08 D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0A E1 08 E1 06 E1 04 E1 02 C2 00 
 
 Table 362 - Get Response Example
 
 | Example (Hex)                                                                                                                                                                                                                                                                                                                                                     |
 |-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 82 08 D1 01 82 04 00 00 00 00 84 82 00 64 D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 54 E1 52 E1 50 E1 4E E1 4C C2 4A 50 5A 57 82 84 95 9A 9B 9C F4 5F 1A 5F 20 5F 24 5F 2A 5F 30 5F 34 9F 02 9F 03 9F 06 9F 09 9F 10 9F 15 9F 1A 9F 1D 9F 1E 9F 24 9F 26 9F 27 9F 33 9F 34 9F 35 9F 36 9F 37 9F 39 9F 41 9F 45 9F 4C 9F 4E 9F 5D 9F 66 9F 6E 9F 7C |
+| AA 00 81 04 82 08 D1 01 82 04 00 00 00 00 84 82 00 64 D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 54 E1 52 E1 50 E1 4E E1 4C C2 4A 50 5A 57 82 84 95 9A 9B 9C F4 5F 1A 5F 20 5F 24 5F 2A 5F 30 5F 34 9F 02 9F 03 9F 06 9F 09 9F 10 9F 15 9F 1A 9F 1D 9F 1E 9F 24 9F 26 9F 27 9F 33 9F 34 9F 35 9F 36 9F 37 9F 39 9F 41 9F 45 9F 4C 9F 4E 9F 5D 9F 66 9F 6E 9F 7C 
 
 Table 363 - Set Request Example
 
 | Example (Hex)                                                                                                                                                                                                                                                                                                                             |
 |-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 01 09 D1 11 84 64 D1 11 81 07 2B 06 01 04 01 F6 09 85 01 01 89 54 E1 52 E1 50 E1 4E E1 4C C2 4A 50 5A 57 82 84 95 9A 9B 9C F4 5F 1A 5F 20 5F 24 5F 2A 5F 30 5F 34 9F 02 9F 03 9F 06 9F 09 9F 10 9F 15 9F 1A 9F 1D 9F 1E 9F 24 9F 26 9F 27 9F 33 9F 34 9F 35 9F 36 9F 37 9F 39 9F 41 9F 45 9F 4C 9F 4E 9F 5D 9F 66 9F 6E 9F 7C |
+| AA 00 81 04 01 09 D1 11 84 64 D1 11 81 07 2B 06 01 04 01 F6 09 85 01 01 89 54 E1 52 E1 50 E1 4E E1 4C C2 4A 50 5A 57 82 84 95 9A 9B 9C F4 5F 1A 5F 20 5F 24 5F 2A 5F 30 5F 34 9F 02 9F 03 9F 06 9F 09 9F 10 9F 15 9F 1A 9F 1D 9F 1E 9F 24 9F 26 9F 27 9F 33 9F 34 9F 35 9F 36 9F 37 9F 39 9F 41 9F 45 9F 4C 9F 4E 9F 5D 9F 66 9F 6E 9F 7C 
 
 Table 364 - Set Response Example
 
 | Example (Hex)                                                                                                                                                                                                                                                                                                                                                     |
 |-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 82 09 D1 11 82 04 00 00 00 00 84 82 00 64 D1 11 81 07 2B 06 01 04 01 F6 09 85 01 01 89 54 E1 52 E1 50 E1 4E E1 4C C2 4A 50 5A 57 82 84 95 9A 9B 9C F4 5F 1A 5F 20 5F 24 5F 2A 5F 30 5F 34 9F 02 9F 03 9F 06 9F 09 9F 10 9F 15 9F 1A 9F 1D 9F 1E 9F 24 9F 26 9F 27 9F 33 9F 34 9F 35 9F 36 9F 37 9F 39 9F 41 9F 45 9F 4C 9F 4E 9F 5D 9F 66 9F 6E 9F 7C |
+| AA 00 81 04 82 09 D1 11 82 04 00 00 00 00 84 82 00 64 D1 11 81 07 2B 06 01 04 01 F6 09 85 01 01 89 54 E1 52 E1 50 E1 4E E1 4C C2 4A 50 5A 57 82 84 95 9A 9B 9C F4 5F 1A 5F 20 5F 24 5F 2A 5F 30 5F 34 9F 02 9F 03 9F 06 9F 09 9F 10 9F 15 9F 1A 9F 1D 9F 1E 9F 24 9F 26 9F 27 9F 33 9F 34 9F 35 9F 36 9F 37 9F 39 9F 41 9F 45 9F 4C 9F 4E 9F 5D 9F 66 9F 6E 9F 7C 
 
 #### Property 1.1.1.1.1.3 EMV Batch Data Tag List
 
@@ -9447,25 +9447,25 @@ Table 366 - Get Request Example
 
 | Example (Hex)                                                                                               |
 |-------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 01 15 D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0A E1 08 E1 06 E1 04 E1 02 C3 00 |
+| AA 00 81 04 01 15 D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0A E1 08 E1 06 E1 04 E1 02 C3 00 
 
 Table 367 - Get Response Example
 
 | Example (Hex)                                                                                                                                                                                                                                                                                                                                                           |
 |-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 82 15 D1 01 82 04 00 00 00 00 84 82 00 66 D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 56 E1 54 E1 52 E1 50 E1 4E C3 4C 50 57 5A 82 84 8E 95 9A 9C 5F 20 5F 24 5F 25 5F 28 5F 2A 5F 2D 5F 34 9F 02 9F 03 9F 07 9F 09 9F 0B 9F 0D 9F 0E 9F 0F 9F 10 9F 11 9F 12 9F 15 9F 16 9F 1A 9F 1C 9F 1E 9F 21 9F 24 9F 26 9F 27 9F 33 9F 34 9F 35 9F 36 9F 37 DF DF 25 |
+| AA 00 81 04 82 15 D1 01 82 04 00 00 00 00 84 82 00 66 D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 56 E1 54 E1 52 E1 50 E1 4E C3 4C 50 57 5A 82 84 8E 95 9A 9C 5F 20 5F 24 5F 25 5F 28 5F 2A 5F 2D 5F 34 9F 02 9F 03 9F 07 9F 09 9F 0B 9F 0D 9F 0E 9F 0F 9F 10 9F 11 9F 12 9F 15 9F 16 9F 1A 9F 1C 9F 1E 9F 21 9F 24 9F 26 9F 27 9F 33 9F 34 9F 35 9F 36 9F 37 DF DF 25 
 
 Table 368 - Set Request Example
 
 | Example (Hex)                                                                                                                                                                                                                                                                                                                                   |
 |-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 01 0B D1 11 84 66 D1 11 81 07 2B 06 01 04 01 F6 09 85 01 01 89 56 E1 54 E1 52 E1 50 E1 4E C3 4C 50 57 5A 82 84 8E 95 9A 9C 5F 20 5F 24 5F 25 5F 28 5F 2A 5F 2D 5F 34 9F 02 9F 03 9F 07 9F 09 9F 0B 9F 0D 9F 0E 9F 0F 9F 10 9F 11 9F 12 9F 15 9F 16 9F 1A 9F 1C 9F 1E 9F 21 9F 24 9F 26 9F 27 9F 33 9F 34 9F 35 9F 36 9F 37 DF DF 25 |
+| AA 00 81 04 01 0B D1 11 84 66 D1 11 81 07 2B 06 01 04 01 F6 09 85 01 01 89 56 E1 54 E1 52 E1 50 E1 4E C3 4C 50 57 5A 82 84 8E 95 9A 9C 5F 20 5F 24 5F 25 5F 28 5F 2A 5F 2D 5F 34 9F 02 9F 03 9F 07 9F 09 9F 0B 9F 0D 9F 0E 9F 0F 9F 10 9F 11 9F 12 9F 15 9F 16 9F 1A 9F 1C 9F 1E 9F 21 9F 24 9F 26 9F 27 9F 33 9F 34 9F 35 9F 36 9F 37 DF DF 25 
 
 Table 369 - Set Response Example
 
 | Example (Hex)                                                                                                                                                                                                                                                                                                                                                           |
 |-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 82 0B D1 11 82 04 00 00 00 00 84 82 00 66 D1 11 81 07 2B 06 01 04 01 F6 09 85 01 01 89 56 E1 54 E1 52 E1 50 E1 4E C3 4C 50 57 5A 82 84 8E 95 9A 9C 5F 20 5F 24 5F 25 5F 28 5F 2A 5F 2D 5F 34 9F 02 9F 03 9F 07 9F 09 9F 0B 9F 0D 9F 0E 9F 0F 9F 10 9F 11 9F 12 9F 15 9F 16 9F 1A 9F 1C 9F 1E 9F 21 9F 24 9F 26 9F 27 9F 33 9F 34 9F 35 9F 36 9F 37 DF DF 25 |
+| AA 00 81 04 82 0B D1 11 82 04 00 00 00 00 84 82 00 66 D1 11 81 07 2B 06 01 04 01 F6 09 85 01 01 89 56 E1 54 E1 52 E1 50 E1 4E C3 4C 50 57 5A 82 84 8E 95 9A 9C 5F 20 5F 24 5F 25 5F 28 5F 2A 5F 2D 5F 34 9F 02 9F 03 9F 07 9F 09 9F 0B 9F 0D 9F 0E 9F 0F 9F 10 9F 11 9F 12 9F 15 9F 16 9F 1A 9F 1C 9F 1E 9F 21 9F 24 9F 26 9F 27 9F 33 9F 34 9F 35 9F 36 9F 37 DF DF 25 
 
 #### Property 1.1.1.1.1.4 EMV Reversal Data Tag List (EMV Contact Only)
 
@@ -9487,25 +9487,25 @@ Table 371 - Get Request Example
 
 | Example (Hex)                                                                                               |
 |-------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 01 16 D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0A E1 08 E1 06 E1 04 E1 02 C4 00 |
+| AA 00 81 04 01 16 D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0A E1 08 E1 06 E1 04 E1 02 C4 00 
 
 Table 372 - Get Response Example
 
 | Example (Hex)                                                                                                                                                                                                                                                     |
 |-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 82 16 D1 01 82 04 00 00 00 00 84 82 00 44 D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 34 E1 32 E1 30 E1 2E E1 2C C4 2A 57 5A 82 8A 95 9A 9C 5F 24 5F 2A 5F 34 9F 01 9F 02 9F 10 9F 15 9F 16 9F 1A 9F 1C 9F 21 9F 33 9F 35 9F 36 9F 39 9F 5B DF DF 25 |
+| AA 00 81 04 82 16 D1 01 82 04 00 00 00 00 84 82 00 44 D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 34 E1 32 E1 30 E1 2E E1 2C C4 2A 57 5A 82 8A 95 9A 9C 5F 24 5F 2A 5F 34 9F 01 9F 02 9F 10 9F 15 9F 16 9F 1A 9F 1C 9F 21 9F 33 9F 35 9F 36 9F 39 9F 5B DF DF 25 
 
 Table 373 - Set Request Example
 
 | Example (Hex)                                                                                                                                                                                                                             |
 |-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 01 0D D1 11 84 44 D1 11 81 07 2B 06 01 04 01 F6 09 85 01 01 89 34 E1 32 E1 30 E1 2E E1 2C C4 2A 57 5A 82 8A 95 9A 9C 5F 24 5F 2A 5F 34 9F 01 9F 02 9F 10 9F 15 9F 16 9F 1A 9F 1C 9F 21 9F 33 9F 35 9F 36 9F 39 9F 5B DF DF 25 |
+| AA 00 81 04 01 0D D1 11 84 44 D1 11 81 07 2B 06 01 04 01 F6 09 85 01 01 89 34 E1 32 E1 30 E1 2E E1 2C C4 2A 57 5A 82 8A 95 9A 9C 5F 24 5F 2A 5F 34 9F 01 9F 02 9F 10 9F 15 9F 16 9F 1A 9F 1C 9F 21 9F 33 9F 35 9F 36 9F 39 9F 5B DF DF 25 
 
 Table 374 - Set Response Example
 
 | Example (Hex)                                                                                                                                                                                                                                                     |
 |-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 82 0D D1 11 82 04 00 00 00 00 84 82 00 44 D1 11 81 07 2B 06 01 04 01 F6 09 85 01 01 89 34 E1 32 E1 30 E1 2E E1 2C C4 2A 57 5A 82 8A 95 9A 9C 5F 24 5F 2A 5F 34 9F 01 9F 02 9F 10 9F 15 9F 16 9F 1A 9F 1C 9F 21 9F 33 9F 35 9F 36 9F 39 9F 5B DF DF 25 |
+| AA 00 81 04 82 0D D1 11 82 04 00 00 00 00 84 82 00 44 D1 11 81 07 2B 06 01 04 01 F6 09 85 01 01 89 34 E1 32 E1 30 E1 2E E1 2C C4 2A 57 5A 82 8A 95 9A 9C 5F 24 5F 2A 5F 34 9F 01 9F 02 9F 10 9F 15 9F 16 9F 1A 9F 1C 9F 21 9F 33 9F 35 9F 36 9F 39 9F 5B DF DF 25 
 
 #### Property 1.1.1.1.1.5 ARPC Receive Timeout
 
@@ -9527,25 +9527,25 @@ Table 376 - Get Request Example
 
 | Example (Hex)                                                |
 |--------------------------------------------------------------|
-| AA00 8104 0155D101 840F D101 8501 01 8704 01010101 8902 C500 |
+| AA00 8104 0155D101 840F D101 8501 01 8704 01010101 8902 C500 
 
 Table 377 - Get Response Example
 
 | Example (Hex)                                                                                         |
 |-------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 82 55 D1 01 82 04 00 00 00 00 84 82 00 10 D1 01 85 01 01 87 04 01 01 01 01 89 03 C5 01 FF |
+| AA 00 81 04 82 55 D1 01 82 04 00 00 00 00 84 82 00 10 D1 01 85 01 01 87 04 01 01 01 01 89 03 C5 01 FF 
 
 Table 378 - Set Request Example
 
 | Example (Hex)                                               |
 |-------------------------------------------------------------|
-| AA00 81040155D111 8410 D111 850101 870401010101 8903 C501FF |
+| AA00 81040155D111 8410 D111 850101 870401010101 8903 C501FF 
 
 Table 379 - Set Response Example
 
 | Example (Hex)                                                                                         |
 |-------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 82 55 D1 11 82 04 00 00 00 00 84 82 00 10 D1 11 85 01 01 87 04 01 01 01 01 89 03 C5 01 FF |
+| AA 00 81 04 82 55 D1 11 82 04 00 00 00 00 84 82 00 10 D1 11 85 01 01 87 04 01 01 01 01 89 03 C5 01 FF 
 
 #### Property 1.1.1.1.1.6 ARPC Retry Attempts
 
@@ -9567,25 +9567,25 @@ Table 381 - Get Request Example
 
 | Example (Hex)                                                |
 |--------------------------------------------------------------|
-| AA00 8104 0155D101 840F D101 8501 01 8704 01010101 8902 C600 |
+| AA00 8104 0155D101 840F D101 8501 01 8704 01010101 8902 C600 
 
 Table 382 - Get Response Example
 
 | Example (Hex)                                                                                         |
 |-------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 82 55 D1 01 82 04 00 00 00 00 84 82 00 10 D1 01 85 01 01 87 04 01 01 01 01 89 03 C6 01 00 |
+| AA 00 81 04 82 55 D1 01 82 04 00 00 00 00 84 82 00 10 D1 01 85 01 01 87 04 01 01 01 01 89 03 C6 01 00 
 
 Table 383 - Set Request Example
 
 | Example (Hex)                                               |
 |-------------------------------------------------------------|
-| AA00 81040155D111 8410 D111 850101 870401010101 8903 C60100 |
+| AA00 81040155D111 8410 D111 850101 870401010101 8903 C60100 
 
 Table 384 - Set Response Example
 
 | Example (Hex)                                                                                         |
 |-------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 82 55 D1 11 82 04 00 00 00 00 84 82 00 10 D1 11 85 01 01 87 04 01 01 01 01 89 03 C6 01 00 |
+| AA 00 81 04 82 55 D1 11 82 04 00 00 00 00 84 82 00 10 D1 11 85 01 01 87 04 01 01 01 01 89 03 C6 01 00 
 
 #### Property 1.1.1.1.1.7 Apple VAS Merchant ID and URL Slot 1
 
@@ -9614,25 +9614,25 @@ Table 387 - Get Request Example
 
 | Example (Hex)                                                |
 |--------------------------------------------------------------|
-| AA00 8104 0155D101 840F D101 8501 01 8704 01010101 8902 C700 |
+| AA00 8104 0155D101 840F D101 8501 01 8704 01010101 8902 C700 
 
 Table 388 - Get Response Example
 
 | Example (Hex)                                                                                                                                                                                                                                                                 |
 |-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 82 55 D1 01 82 04 00 00 00 00 84 82 00 49 D1 01 85 01 01 87 04 01 01 01 01 89 3C C7 3A 9F 25 20 3E 22 54 3A AF 0A C5 E4 AC FC 25 67 1A 6E BF 6E DE 5A C1 96 74 6C 55 F3 D4 37 08 19 FF F9 22 C3 9F 29 14 77 77 77 2E 65 78 61 6D 70 6C 65 2D 75 72 6C 2E 63 6F 6D |
+| AA 00 81 04 82 55 D1 01 82 04 00 00 00 00 84 82 00 49 D1 01 85 01 01 87 04 01 01 01 01 89 3C C7 3A 9F 25 20 3E 22 54 3A AF 0A C5 E4 AC FC 25 67 1A 6E BF 6E DE 5A C1 96 74 6C 55 F3 D4 37 08 19 FF F9 22 C3 9F 29 14 77 77 77 2E 65 78 61 6D 70 6C 65 2D 75 72 6C 2E 63 6F 6D 
 
 Table 389 - Set Request Example
 
 | Example (Hex)                                               |
 |-------------------------------------------------------------|
-| AA00 81040155D111 8410 D111 850101 870401010101 8903 C70100 |
+| AA00 81040155D111 8410 D111 850101 870401010101 8903 C70100 
 
 Table 390 - Set Response Example
 
 | Example (Hex)                                                                                         |
 |-------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 82 55 D1 11 82 04 00 00 00 00 84 82 00 10 D1 11 85 01 01 87 04 01 01 01 01 89 03 C7 01 00 |
+| AA 00 81 04 82 55 D1 11 82 04 00 00 00 00 84 82 00 10 D1 11 85 01 01 87 04 01 01 01 01 89 03 C7 01 00 
 
 #### Property 1.1.1.1.1.8 Apple VAS Merchant ID and URL Slot 2
 
@@ -9654,25 +9654,25 @@ Table 392 - Get Request Example
 
 | Example (Hex)                                                |
 |--------------------------------------------------------------|
-| AA00 8104 0155D101 840F D101 8501 01 8704 01010101 8902 C800 |
+| AA00 8104 0155D101 840F D101 8501 01 8704 01010101 8902 C800 
 
 Table 393 - Get Response Example
 
 | Example (Hex)                                                                                                                                                                                                                                                                 |
 |-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 82 55 D1 01 82 04 00 00 00 00 84 82 00 49 D1 01 85 01 01 87 04 01 01 01 01 89 3C C8 3A 9F 25 20 3E 22 54 3A AF 0A C5 E4 AC FC 25 67 1A 6E BF 6E DE 5A C1 96 74 6C 55 F3 D4 37 08 19 FF F9 22 C3 9F 29 14 77 77 77 2E 65 78 61 6D 70 6C 65 2D 75 72 6C 2E 63 6F 6D |
+| AA 00 81 04 82 55 D1 01 82 04 00 00 00 00 84 82 00 49 D1 01 85 01 01 87 04 01 01 01 01 89 3C C8 3A 9F 25 20 3E 22 54 3A AF 0A C5 E4 AC FC 25 67 1A 6E BF 6E DE 5A C1 96 74 6C 55 F3 D4 37 08 19 FF F9 22 C3 9F 29 14 77 77 77 2E 65 78 61 6D 70 6C 65 2D 75 72 6C 2E 63 6F 6D 
 
 Table 394 - Set Request Example
 
 | Example (Hex)                                               |
 |-------------------------------------------------------------|
-| AA00 81040155D111 8410 D111 850101 870401010101 8903 C80100 |
+| AA00 81040155D111 8410 D111 850101 870401010101 8903 C80100 
 
 Table 395 - Set Response Example
 
 | Example (Hex)                                                                                         |
 |-------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 82 55 D1 11 82 04 00 00 00 00 84 82 00 10 D1 11 85 01 01 87 04 01 01 01 01 89 03 C8 01 00 |
+| AA 00 81 04 82 55 D1 11 82 04 00 00 00 00 84 82 00 10 D1 11 85 01 01 87 04 01 01 01 01 89 03 C8 01 00 
 
 #### Property 1.1.1.1.1.9 Apple VAS Merchant ID and URL Slot 3
 
@@ -9694,25 +9694,25 @@ Table 397 - Get Request Example
 
 | Example (Hex)                                                |
 |--------------------------------------------------------------|
-| AA00 8104 0155D101 840F D101 8501 01 8704 01010101 8902 C900 |
+| AA00 8104 0155D101 840F D101 8501 01 8704 01010101 8902 C900 
 
 Table 398 - Get Response Example
 
 | Example (Hex)                                                                                                                                                                                                                                                                 |
 |-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 82 55 D1 01 82 04 00 00 00 00 84 82 00 49 D1 01 85 01 01 87 04 01 01 01 01 89 3C C9 3A 9F 25 20 3E 22 54 3A AF 0A C5 E4 AC FC 25 67 1A 6E BF 6E DE 5A C1 96 74 6C 55 F3 D4 37 08 19 FF F9 22 C3 9F 29 14 77 77 77 2E 65 78 61 6D 70 6C 65 2D 75 72 6C 2E 63 6F 6D |
+| AA 00 81 04 82 55 D1 01 82 04 00 00 00 00 84 82 00 49 D1 01 85 01 01 87 04 01 01 01 01 89 3C C9 3A 9F 25 20 3E 22 54 3A AF 0A C5 E4 AC FC 25 67 1A 6E BF 6E DE 5A C1 96 74 6C 55 F3 D4 37 08 19 FF F9 22 C3 9F 29 14 77 77 77 2E 65 78 61 6D 70 6C 65 2D 75 72 6C 2E 63 6F 6D 
 
 Table 399 - Set Request Example
 
 | Example (Hex)                                               |
 |-------------------------------------------------------------|
-| AA00 81040155D111 8410 D111 850101 870401010101 8903 C90100 |
+| AA00 81040155D111 8410 D111 850101 870401010101 8903 C90100 
 
 Table 400 - Set Response Example
 
 | Example (Hex)                                                                                         |
 |-------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 82 55 D1 11 82 04 00 00 00 00 84 82 00 10 D1 11 85 01 01 87 04 01 01 01 01 89 03 C9 01 00 |
+| AA 00 81 04 82 55 D1 11 82 04 00 00 00 00 84 82 00 10 D1 11 85 01 01 87 04 01 01 01 01 89 03 C9 01 00 
 
 #### Property 1.1.1.1.1.A Apple VAS Merchant ID and URL Slot 4
 
@@ -9734,25 +9734,25 @@ Table 402 - Get Request Example
 
 | Example (Hex)                                                |
 |--------------------------------------------------------------|
-| AA00 8104 0155D101 840F D101 8501 01 8704 01010101 8902 CA00 |
+| AA00 8104 0155D101 840F D101 8501 01 8704 01010101 8902 CA00 
 
 Table 403 - Get Response Example
 
 | Example (Hex)                                                                                                                                                                                                                                                                 |
 |-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 82 55 D1 01 82 04 00 00 00 00 84 82 00 49 D1 01 85 01 01 87 04 01 01 01 01 89 3C CA 3A 9F 25 20 3E 22 54 3A AF 0A C5 E4 AC FC 25 67 1A 6E BF 6E DE 5A C1 96 74 6C 55 F3 D4 37 08 19 FF F9 22 C3 9F 29 14 77 77 77 2E 65 78 61 6D 70 6C 65 2D 75 72 6C 2E 63 6F 6D |
+| AA 00 81 04 82 55 D1 01 82 04 00 00 00 00 84 82 00 49 D1 01 85 01 01 87 04 01 01 01 01 89 3C CA 3A 9F 25 20 3E 22 54 3A AF 0A C5 E4 AC FC 25 67 1A 6E BF 6E DE 5A C1 96 74 6C 55 F3 D4 37 08 19 FF F9 22 C3 9F 29 14 77 77 77 2E 65 78 61 6D 70 6C 65 2D 75 72 6C 2E 63 6F 6D 
 
 Table 404 - Set Request Example
 
 | Example (Hex)                                               |
 |-------------------------------------------------------------|
-| AA00 81040155D111 8410 D111 850101 870401010101 8903 CA0100 |
+| AA00 81040155D111 8410 D111 850101 870401010101 8903 CA0100 
 
 Table 405 - Set Response Example
 
 | Example (Hex)                                                                                         |
 |-------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 82 55 D1 11 82 04 00 00 00 00 84 82 00 10 D1 11 85 01 01 87 04 01 01 01 01 89 03 CA 01 00 |
+| AA 00 81 04 82 55 D1 11 82 04 00 00 00 00 84 82 00 10 D1 11 85 01 01 87 04 01 01 01 01 89 03 CA 01 00 
 
 #### Property 1.1.1.1.1.B Apple VAS Merchant ID and URL Slot 5
 
@@ -9774,25 +9774,25 @@ Table 407 - Get Request Example
 
 | Example (Hex)                                                |
 |--------------------------------------------------------------|
-| AA00 8104 0155D101 840F D101 8501 01 8704 01010101 8902 CB00 |
+| AA00 8104 0155D101 840F D101 8501 01 8704 01010101 8902 CB00 
 
 Table 408 - Get Response Example
 
 | Example (Hex)                                                                                                                                                                                                                                                                 |
 |-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 82 55 D1 01 82 04 00 00 00 00 84 82 00 49 D1 01 85 01 01 87 04 01 01 01 01 89 3C CB 3A 9F 25 20 3E 22 54 3A AF 0A C5 E4 AC FC 25 67 1A 6E BF 6E DE 5A C1 96 74 6C 55 F3 D4 37 08 19 FF F9 22 C3 9F 29 14 77 77 77 2E 65 78 61 6D 70 6C 65 2D 75 72 6C 2E 63 6F 6D |
+| AA 00 81 04 82 55 D1 01 82 04 00 00 00 00 84 82 00 49 D1 01 85 01 01 87 04 01 01 01 01 89 3C CB 3A 9F 25 20 3E 22 54 3A AF 0A C5 E4 AC FC 25 67 1A 6E BF 6E DE 5A C1 96 74 6C 55 F3 D4 37 08 19 FF F9 22 C3 9F 29 14 77 77 77 2E 65 78 61 6D 70 6C 65 2D 75 72 6C 2E 63 6F 6D 
 
 Table 409 - Set Request Example
 
 | Example (Hex)                                               |
 |-------------------------------------------------------------|
-| AA00 81040155D111 8410 D111 850101 870401010101 8903 CB0100 |
+| AA00 81040155D111 8410 D111 850101 870401010101 8903 CB0100 
 
 Table 410 - Set Response Example
 
 | Example (Hex)                                                                                         |
 |-------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 82 55 D1 11 82 04 00 00 00 00 84 82 00 10 D1 11 85 01 01 87 04 01 01 01 01 89 03 CB 01 00 |
+| AA 00 81 04 82 55 D1 11 82 04 00 00 00 00 84 82 00 10 D1 11 85 01 01 87 04 01 01 01 01 89 03 CB 01 00 
 
 #### Property 1.1.1.1.1.C Apple VAS Merchant ID and URL Slot 6
 
@@ -9814,25 +9814,25 @@ Table 412 - Get Request Example
 
 | Example (Hex)                                                |
 |--------------------------------------------------------------|
-| AA00 8104 0155D101 840F D101 8501 01 8704 01010101 8902 CC00 |
+| AA00 8104 0155D101 840F D101 8501 01 8704 01010101 8902 CC00 
 
 Table 413 - Get Response Example
 
 | Example (Hex)                                                                                                                                                                                                                                                                 |
 |-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 82 55 D1 01 82 04 00 00 00 00 84 82 00 49 D1 01 85 01 01 87 04 01 01 01 01 89 3C CC 3A 9F 25 20 3E 22 54 3A AF 0A C5 E4 AC FC 25 67 1A 6E BF 6E DE 5A C1 96 74 6C 55 F3 D4 37 08 19 FF F9 22 C3 9F 29 14 77 77 77 2E 65 78 61 6D 70 6C 65 2D 75 72 6C 2E 63 6F 6D |
+| AA 00 81 04 82 55 D1 01 82 04 00 00 00 00 84 82 00 49 D1 01 85 01 01 87 04 01 01 01 01 89 3C CC 3A 9F 25 20 3E 22 54 3A AF 0A C5 E4 AC FC 25 67 1A 6E BF 6E DE 5A C1 96 74 6C 55 F3 D4 37 08 19 FF F9 22 C3 9F 29 14 77 77 77 2E 65 78 61 6D 70 6C 65 2D 75 72 6C 2E 63 6F 6D 
 
 Table 414 - Set Request Example
 
 | Example (Hex)                                               |
 |-------------------------------------------------------------|
-| AA00 81040155D111 8410 D111 850101 870401010101 8903 CC0100 |
+| AA00 81040155D111 8410 D111 850101 870401010101 8903 CC0100 
 
 Table 415 - Set Response Example
 
 | Example (Hex)                                                                                         |
 |-------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 82 55 D1 11 82 04 00 00 00 00 84 82 00 10 D1 11 85 01 01 87 04 01 01 01 01 89 03 CC 01 00 |
+| AA 00 81 04 82 55 D1 11 82 04 00 00 00 00 84 82 00 10 D1 11 85 01 01 87 04 01 01 01 01 89 03 CC 01 00 
 
 #### Property 1.1.1.1.1.D Apple iAP2 AppBundleID
 
@@ -9854,25 +9854,25 @@ Table 417 - Get Request Example
 
 | Example (Hex)                                                                                               |
 |-------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 01 06 D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0A E1 08 E1 06 E1 04 E1 02 CD 00 |
+| AA 00 81 04 01 06 D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0A E1 08 E1 06 E1 04 E1 02 CD 00 
 
 Table 418 - Get Response Example
 
 | Example (Hex)                                                                                                                                                                                                                                                                             |
 |-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 82 06 D1 01 82 04 00 00 00 00 84 82 00 4C D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 3C E1 3A E1 38 E1 36 E1 34 CD 32 63 6F 6D 2E 6D 61 67 74 65 6B 2E 64 79 6E 61 66 6C 65 78 32 67 6F 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 |
+| AA 00 81 04 82 06 D1 01 82 04 00 00 00 00 84 82 00 4C D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 3C E1 3A E1 38 E1 36 E1 34 CD 32 63 6F 6D 2E 6D 61 67 74 65 6B 2E 64 79 6E 61 66 6C 65 78 32 67 6F 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
 
 Table 419 - Set Request Example
 
 | Example (Hex)                                                                                                                                                                                                                                                     |
 |-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 01 07 D1 11 84 4C D1 11 81 07 2B 06 01 04 01 F6 09 85 01 01 89 3C E1 3A E1 38 E1 36 E1 34 CD 32 63 6F 6D 2E 6D 61 67 74 65 6B 2E 64 79 6E 61 66 6C 65 78 32 67 6F 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 |
+| AA 00 81 04 01 07 D1 11 84 4C D1 11 81 07 2B 06 01 04 01 F6 09 85 01 01 89 3C E1 3A E1 38 E1 36 E1 34 CD 32 63 6F 6D 2E 6D 61 67 74 65 6B 2E 64 79 6E 61 66 6C 65 78 32 67 6F 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
 
 Table 420 - Set Response Example
 
 | Example (Hex)                                                                                                                                                                                                                                                                             |
 |-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 82 07 D1 11 82 04 00 00 00 00 84 82 00 4C D1 11 81 07 2B 06 01 04 01 F6 09 85 01 01 89 3C E1 3A E1 38 E1 36 E1 34 CD 32 63 6F 6D 2E 6D 61 67 74 65 6B 2E 64 79 6E 61 66 6C 65 78 32 67 6F 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 |
+| AA 00 81 04 82 07 D1 11 82 04 00 00 00 00 84 82 00 4C D1 11 81 07 2B 06 01 04 01 F6 09 85 01 01 89 3C E1 3A E1 38 E1 36 E1 34 CD 32 63 6F 6D 2E 6D 61 67 74 65 6B 2E 64 79 6E 61 66 6C 65 78 32 67 6F 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
 
 #### Property 1.1.1.1.1.10 Google Smart Tap Collector ID Slot 1
 
@@ -9901,25 +9901,25 @@ Table 8.264 - Get Request Example
 
 | Example (Hex)                                                |
 |--------------------------------------------------------------|
-| AA00 8104 0155D101 840F D101 8501 01 8704 01010101 8902 D000 |
+| AA00 8104 0155D101 840F D101 8501 01 8704 01010101 8902 D000 
 
 Table 8.26421 - Get Response Example
 
 | Example (Hex)                                                                                                                                   |
 |-------------------------------------------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 82 55 D1 01 82 04 00 00 00 00 84 82 00 1E D1 01 85 01 01 87 04 01 01 01 01 89 11 D0 0F DF 7C 08 32 30 31 38 30 36 30 38 DF 7D 01 00 |
+| AA 00 81 04 82 55 D1 01 82 04 00 00 00 00 84 82 00 1E D1 01 85 01 01 87 04 01 01 01 01 89 11 D0 0F DF 7C 08 32 30 31 38 30 36 30 38 DF 7D 01 00 
 
 Table 4226 - Set Request Example
 
 | Example (Hex)                                                                                                  |
 |----------------------------------------------------------------------------------------------------------------|
-| AA00 81048255D111 8427 D111 8107 2B06010401F609 8501 01 8704 01010101 8911 D00F DF7C083230313830363038DF7D0100 |
+| AA00 81048255D111 8427 D111 8107 2B06010401F609 8501 01 8704 01010101 8911 D00F DF7C083230313830363038DF7D0100 
 
 Table 423 - Set Response Example
 
 | Example (Hex)                                                                                                                                                               |
 |-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 82 55 D1 11 82 04 00 00 00 00 84 82 00 2 7D 11 18 10 7 2B 06 01 04 01 F6 09 85 01 01 87 04 01 01 01 01 89 11 D0 0F DF 7C 08 32 30 31 38 30 36 30 38 DF 7D 01 00 |
+| AA 00 81 04 82 55 D1 11 82 04 00 00 00 00 84 82 00 2 7D 11 18 10 7 2B 06 01 04 01 F6 09 85 01 01 87 04 01 01 01 01 89 11 D0 0F DF 7C 08 32 30 31 38 30 36 30 38 DF 7D 01 00 
 
 #### Property 1.1.1.1.1.11 Google Smart Tap Collector ID Slot 2
 
@@ -9941,25 +9941,25 @@ Table 8.269 - Get Request Example
 
 | Example (Hex)                                                |
 |--------------------------------------------------------------|
-| AA00 8104 0155D101 840F D101 8501 01 8704 01010101 8902 D100 |
+| AA00 8104 0155D101 840F D101 8501 01 8704 01010101 8902 D100 
 
 Table 8.270 - Get Response Example
 
 | Example (Hex)                                                                                                                                   |
 |-------------------------------------------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 82 55 D1 01 82 04 00 00 00 00 84 82 00 1E D1 01 85 01 01 87 04 01 01 01 01 89 11 D1 0F DF 7C 08 32 30 31 38 30 36 30 38 DF 7D 01 00 |
+| AA 00 81 04 82 55 D1 01 82 04 00 00 00 00 84 82 00 1E D1 01 85 01 01 87 04 01 01 01 01 89 11 D1 0F DF 7C 08 32 30 31 38 30 36 30 38 DF 7D 01 00 
 
 Table 8.271 - Set Request Example
 
 | Example (Hex)                                                                                                  |
 |----------------------------------------------------------------------------------------------------------------|
-| AA00 81048255D111 8427 D111 8107 2B06010401F609 8501 01 8704 01010101 8911 D10F DF7C083230313830363038DF7D0100 |
+| AA00 81048255D111 8427 D111 8107 2B06010401F609 8501 01 8704 01010101 8911 D10F DF7C083230313830363038DF7D0100 
 
 Table 4242 - Set Response Example
 
 | Example (Hex)                                                                                                                                                               |
 |-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 82 55 D1 11 82 04 00 00 00 00 84 82 00 2 7D 11 18 10 7 2B 06 01 04 01 F6 09 85 01 01 87 04 01 01 01 01 89 11 D1 0F DF 7C 08 32 30 31 38 30 36 30 38 DF 7D 01 00 |
+| AA 00 81 04 82 55 D1 11 82 04 00 00 00 00 84 82 00 2 7D 11 18 10 7 2B 06 01 04 01 F6 09 85 01 01 87 04 01 01 01 01 89 11 D1 0F DF 7C 08 32 30 31 38 30 36 30 38 DF 7D 01 00 
 
 #### Property 1.1.1.1.1.12 Google Smart Tap Collector ID Slot 3
 
@@ -9981,25 +9981,25 @@ Table 8.274 - Get Request Example
 
 | Example (Hex)                                                |
 |--------------------------------------------------------------|
-| AA00 8104 0155D101 840F D101 8501 01 8704 01010101 8902 D200 |
+| AA00 8104 0155D101 840F D101 8501 01 8704 01010101 8902 D200 
 
 Table 8.275 - Get Response Example
 
 | Example (Hex)                                                                                                                                   |
 |-------------------------------------------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 82 55 D1 01 82 04 00 00 00 00 84 82 00 1E D1 01 85 01 01 87 04 01 01 01 01 89 11 D2 0F DF 7C 08 32 30 31 38 30 36 30 38 DF 7D 01 00 |
+| AA 00 81 04 82 55 D1 01 82 04 00 00 00 00 84 82 00 1E D1 01 85 01 01 87 04 01 01 01 01 89 11 D2 0F DF 7C 08 32 30 31 38 30 36 30 38 DF 7D 01 00 
 
 Table 8.276 - Set Request Example
 
 | Example (Hex)                                                                                                  |
 |----------------------------------------------------------------------------------------------------------------|
-| AA00 81048255D111 8427 D111 8107 2B06010401F609 8501 01 8704 01010101 8911 D20F DF7C083230313830363038DF7D0100 |
+| AA00 81048255D111 8427 D111 8107 2B06010401F609 8501 01 8704 01010101 8911 D20F DF7C083230313830363038DF7D0100 
 
 Table 4257 - Set Response Example
 
 | Example (Hex)                                                                                                                                                               |
 |-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 82 55 D1 11 82 04 00 00 00 00 84 82 00 2 7D 11 18 10 7 2B 06 01 04 01 F6 09 85 01 01 87 04 01 01 01 01 89 11 D2 0F DF 7C 08 32 30 31 38 30 36 30 38 DF 7D 01 00 |
+| AA 00 81 04 82 55 D1 11 82 04 00 00 00 00 84 82 00 2 7D 11 18 10 7 2B 06 01 04 01 F6 09 85 01 01 87 04 01 01 01 01 89 11 D2 0F DF 7C 08 32 30 31 38 30 36 30 38 DF 7D 01 00 
 
 #### Property 1.1.1.1.1.13 Google Smart Tap Collector ID Slot 4
 
@@ -10021,25 +10021,25 @@ Table 8.279 - Get Request Example
 
 | Example (Hex)                                                |
 |--------------------------------------------------------------|
-| AA00 8104 0155D101 840F D101 8501 01 8704 01010101 8902 D300 |
+| AA00 8104 0155D101 840F D101 8501 01 8704 01010101 8902 D300 
 
 Table 8.280 - Get Response Example
 
 | Example (Hex)                                                                                                                                   |
 |-------------------------------------------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 82 55 D1 01 82 04 00 00 00 00 84 82 00 1E D1 01 85 01 01 87 04 01 01 01 01 89 11 D3 0F DF 7C 08 32 30 31 38 30 36 30 38 DF 7D 01 00 |
+| AA 00 81 04 82 55 D1 01 82 04 00 00 00 00 84 82 00 1E D1 01 85 01 01 87 04 01 01 01 01 89 11 D3 0F DF 7C 08 32 30 31 38 30 36 30 38 DF 7D 01 00 
 
 Table 8.281 - Set Request Example
 
 | Example (Hex)                                                                                                  |
 |----------------------------------------------------------------------------------------------------------------|
-| AA00 81048255D111 8427 D111 8107 2B06010401F609 8501 01 8704 01010101 8911 D30F DF7C083230313830363038DF7D0100 |
+| AA00 81048255D111 8427 D111 8107 2B06010401F609 8501 01 8704 01010101 8911 D30F DF7C083230313830363038DF7D0100 
 
 Table 8.282 - Set Response Example
 
 | Example (Hex)                                                                                                                                                               |
 |-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 82 55 D1 11 82 04 00 00 00 00 84 82 00 2 7D 11 18 10 7 2B 06 01 04 01 F6 09 85 01 01 87 04 01 01 01 01 89 11 D3 0F DF 7C 08 32 30 31 38 30 36 30 38 DF 7D 01 00 |
+| AA 00 81 04 82 55 D1 11 82 04 00 00 00 00 84 82 00 2 7D 11 18 10 7 2B 06 01 04 01 F6 09 85 01 01 87 04 01 01 01 01 89 11 D3 0F DF 7C 08 32 30 31 38 30 36 30 38 DF 7D 01 00 
 
 #### Property 1.1.1.1.1.14 Google Smart Tap Collector ID Slot 5
 
@@ -10061,25 +10061,25 @@ Table 8.284 - Get Request Example
 
 | Example (Hex)                                                |
 |--------------------------------------------------------------|
-| AA00 8104 0155D101 840F D101 8501 01 8704 01010101 8902 D400 |
+| AA00 8104 0155D101 840F D101 8501 01 8704 01010101 8902 D400 
 
 Table 8.285 - Get Response Example
 
 | Example (Hex)                                                                                                                                   |
 |-------------------------------------------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 82 55 D1 01 82 04 00 00 00 00 84 82 00 1E D1 01 85 01 01 87 04 01 01 01 01 89 11 D4 0F DF 7C 08 32 30 31 38 30 36 30 38 DF 7D 01 00 |
+| AA 00 81 04 82 55 D1 01 82 04 00 00 00 00 84 82 00 1E D1 01 85 01 01 87 04 01 01 01 01 89 11 D4 0F DF 7C 08 32 30 31 38 30 36 30 38 DF 7D 01 00 
 
 Table 8.286 - Set Request Example
 
 | Example (Hex)                                                                                                  |
 |----------------------------------------------------------------------------------------------------------------|
-| AA00 81048255D111 8427 D111 8107 2B06010401F609 8501 01 8704 01010101 8911 D40F DF7C083230313830363038DF7D0100 |
+| AA00 81048255D111 8427 D111 8107 2B06010401F609 8501 01 8704 01010101 8911 D40F DF7C083230313830363038DF7D0100 
 
 Table 8.287 - Set Response Example
 
 | Example (Hex)                                                                                                                                                               |
 |-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 82 55 D1 11 82 04 00 00 00 00 84 82 00 2 7D 11 18 10 7 2B 06 01 04 01 F6 09 85 01 01 87 04 01 01 01 01 89 11 D4 0F DF 7C 08 32 30 31 38 30 36 30 38 DF 7D 01 00 |
+| AA 00 81 04 82 55 D1 11 82 04 00 00 00 00 84 82 00 2 7D 11 18 10 7 2B 06 01 04 01 F6 09 85 01 01 87 04 01 01 01 01 89 11 D4 0F DF 7C 08 32 30 31 38 30 36 30 38 DF 7D 01 00 
 
 #### Property 1.1.1.1.1.15 Google Smart Tap Collector ID Slot 6
 
@@ -10101,25 +10101,25 @@ Table 8.289 - Get Request Example
 
 | Example (Hex)                                                |
 |--------------------------------------------------------------|
-| AA00 8104 0155D101 840F D101 8501 01 8704 01010101 8902 D500 |
+| AA00 8104 0155D101 840F D101 8501 01 8704 01010101 8902 D500 
 
 Table 8.290 - Get Response Example
 
 | Example (Hex)                                                                                                                                   |
 |-------------------------------------------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 82 55 D1 01 82 04 00 00 00 00 84 82 00 1E D1 01 85 01 01 87 04 01 01 01 01 89 11 D5 0F DF 7C 08 32 30 31 38 30 36 30 38 DF 7D 01 00 |
+| AA 00 81 04 82 55 D1 01 82 04 00 00 00 00 84 82 00 1E D1 01 85 01 01 87 04 01 01 01 01 89 11 D5 0F DF 7C 08 32 30 31 38 30 36 30 38 DF 7D 01 00 
 
 Table 8.291 - Set Request Example
 
 | Example (Hex)                                                                                                  |
 |----------------------------------------------------------------------------------------------------------------|
-| AA00 81048255D111 8427 D111 8107 2B06010401F609 8501 01 8704 01010101 8911 D50F DF7C083230313830363038DF7D0100 |
+| AA00 81048255D111 8427 D111 8107 2B06010401F609 8501 01 8704 01010101 8911 D50F DF7C083230313830363038DF7D0100 
 
 Table 8.292 - Set Response Example
 
 | Example (Hex)                                                                                                                                                               |
 |-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 82 55 D1 11 82 04 00 00 00 00 84 82 00 2 7D 11 18 10 7 2B 06 01 04 01 F6 09 85 01 01 87 04 01 01 01 01 89 11 D5 0F DF 7C 08 32 30 31 38 30 36 30 38 DF 7D 01 00 |
+| AA 00 81 04 82 55 D1 11 82 04 00 00 00 00 84 82 00 2 7D 11 18 10 7 2B 06 01 04 01 F6 09 85 01 01 87 04 01 01 01 01 89 11 D5 0F DF 7C 08 32 30 31 38 30 36 30 38 DF 7D 01 00 
 
 #### Property 1.1.1.1.1.1A Google Smart Tap POS Capabilities
 
@@ -10142,25 +10142,25 @@ Table 8.284 - Get Request Example
 
 | Example (Hex)                                                |
 |--------------------------------------------------------------|
-| AA00 8104 0155D101 840F D101 8501 01 8704 01010101 8902 D400 |
+| AA00 8104 0155D101 840F D101 8501 01 8704 01010101 8902 D400 
 
 Table 8.285 - Get Response Example
 
 | Example (Hex)                                                                                                                                   |
 |-------------------------------------------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 82 55 D1 01 82 04 00 00 00 00 84 82 00 1E D1 01 85 01 01 87 04 01 01 01 01 89 11 D4 0F DF 7C 08 32 30 31 38 30 36 30 38 DF 7D 01 00 |
+| AA 00 81 04 82 55 D1 01 82 04 00 00 00 00 84 82 00 1E D1 01 85 01 01 87 04 01 01 01 01 89 11 D4 0F DF 7C 08 32 30 31 38 30 36 30 38 DF 7D 01 00 
 
 Table 8.286 - Set Request Example
 
 | Example (Hex)                                                                                                  |
 |----------------------------------------------------------------------------------------------------------------|
-| AA00 81048255D111 8427 D111 8107 2B06010401F609 8501 01 8704 01010101 8911 D40F DF7C083230313830363038DF7D0100 |
+| AA00 81048255D111 8427 D111 8107 2B06010401F609 8501 01 8704 01010101 8911 D40F DF7C083230313830363038DF7D0100 
 
 Table 8.287 - Set Response Example
 
 | Example (Hex)                                                                                                                                                               |
 |-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 82 55 D1 11 82 04 00 00 00 00 84 82 00 2 7D 11 18 10 7 2B 06 01 04 01 F6 09 85 01 01 87 04 01 01 01 01 89 11 D4 0F DF 7C 08 32 30 31 38 30 36 30 38 DF 7D 01 00 |
+| AA 00 81 04 82 55 D1 11 82 04 00 00 00 00 84 82 00 2 7D 11 18 10 7 2B 06 01 04 01 F6 09 85 01 01 87 04 01 01 01 01 89 11 D4 0F DF 7C 08 32 30 31 38 30 36 30 38 DF 7D 01 00 
 
 #### Property 1.1.1.1.1.1B Interac Contact Card Terminal Capability ONLINE PIN Support Disable
 
@@ -10183,25 +10183,25 @@ Table 8.284 - Get Request Example
 
 | Example (Hex)                                                |
 |--------------------------------------------------------------|
-| AA00 8104 0155D101 840F D101 8501 01 8704 01010101 8902 DB00 |
+| AA00 8104 0155D101 840F D101 8501 01 8704 01010101 8902 DB00 
 
 Table 8.285 - Get Response Example
 
 | Example (Hex)                                                                                         |
 |-------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 82 55 D1 01 82 04 00 00 00 00 84 82 00 10 D1 01 85 01 01 87 04 01 01 01 01 89 03 DB 01 00 |
+| AA 00 81 04 82 55 D1 01 82 04 00 00 00 00 84 82 00 10 D1 01 85 01 01 87 04 01 01 01 01 89 03 DB 01 00 
 
 Table 8.286 - Set Request Example
 
 | Example (Hex)                                                                 |
 |-------------------------------------------------------------------------------|
-| AA 00 81 04 01 55 D1 11 84 10 D1 11 85 01 01 87 04 01 01 01 01 89 03 DB 01 01 |
+| AA 00 81 04 01 55 D1 11 84 10 D1 11 85 01 01 87 04 01 01 01 01 89 03 DB 01 01 
 
 Table 8.287 - Set Response Example
 
 | Example (Hex)                                                                                         |
 |-------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 82 55 D1 11 82 04 00 00 00 00 84 82 00 10 D1 11 85 01 01 87 04 01 01 01 01 89 03 DB 01 01 |
+| AA 00 81 04 82 55 D1 11 82 04 00 00 00 00 84 82 00 10 D1 11 85 01 01 87 04 01 01 01 01 89 03 DB 01 01 
 
 #### Property 1.1.1.1.2.1 Start Transaction on Touchscreen Event Control(Touch Only)
 
@@ -10224,25 +10224,25 @@ Table 427 - Get Request Example
 
 | Example (Hex)                                      |
 |----------------------------------------------------|
-| AA0081040155D101840FD1018501018704010101028902C100 |
+| AA0081040155D101840FD1018501018704010101028902C100 
 
 Table 428 - Get Response Example
 
 | Example (Hex)                                                        |
 |----------------------------------------------------------------------|
-| AA0081048255D10182040000000084820010D1018501018704010101028903C10100 |
+| AA0081048255D10182040000000084820010D1018501018704010101028903C10100 
 
 Table 429 - Set Request Example
 
 | Example (Hex)                                        |
 |------------------------------------------------------|
-| AA0081040155D1118410D1118501018704010101028903C10100 |
+| AA0081040155D1118410D1118501018704010101028903C10100 
 
 Table 430 - Set Response Example
 
 | Example (Hex)                                                        |
 |----------------------------------------------------------------------|
-| AA0081048255D11182040000000084820010D1118501018704010101028903C10100 |
+| AA0081048255D11182040000000084820010D1118501018704010101028903C10100 
 
 #### Property 1.1.1.1.2.2 Tip Mode(Touch Only)
 
@@ -10264,25 +10264,25 @@ Table 432 - Get Request Example
 
 | Example (Hex)                                                |
 |--------------------------------------------------------------|
-| AA00 8104 0155D101 840F D101 8501 01 8704 01010102 8902 C200 |
+| AA00 8104 0155D101 840F D101 8501 01 8704 01010102 8902 C200 
 
 Table 433 - Get Response Example
 
 | Example (Hex)                                                                                                                     |
 |-----------------------------------------------------------------------------------------------------------------------------------|
-| AA0081048255D1018204000000008482002ED1018501018704010101028921C21F00000000001500000000200000000025020000000001000000000300000000  |
+| AA0081048255D1018204000000008482002ED1018501018704010101028921C21F00000000001500000000200000000025020000000001000000000300000000 
 
 Table 434 - Set Request Example
 
 | Example (Hex)                                                                                                    |
 |------------------------------------------------------------------------------------------------------------------|
-| AA0081040155D111842ED1118501018704010101028921C21F00000000001500000000200000000025020000000001000000000300000000 |
+| AA0081040155D111842ED1118501018704010101028921C21F00000000001500000000200000000025020000000001000000000300000000 
 
 Table 435 - Set Response Example
 
 | Example (Hex)                                                                                                                     |
 |-----------------------------------------------------------------------------------------------------------------------------------|
-| AA0081048255D1118204000000008482002ED1118501018704010101028921C21F00000000001500000000200000000025020000000001000000000300000000  |
+| AA0081048255D1118204000000008482002ED1118501018704010101028921C21F00000000001500000000200000000025020000000001000000000300000000 
 
 #### Property 1.1.1.1.2.3 Tax Rate (Touch Only)
 
@@ -10304,25 +10304,25 @@ Table 437 - Get Request Example
 
 | Example (Hex)                                      |
 |----------------------------------------------------|
-| AA0081040155D101840FD1018501018704010101028902C300 |
+| AA0081040155D101840FD1018501018704010101028902C300 
 
 Table 438 - Get Response Example
 
 | Example (Hex)                                                            |
 |--------------------------------------------------------------------------|
-| AA0081048255D10182040000000084820012D1018501018704010101028905C303000000 |
+| AA0081048255D10182040000000084820012D1018501018704010101028905C303000000 
 
 Table 439 - Set Request Example
 
 | Example (Hex)                                            |
 |----------------------------------------------------------|
-| AA0081040155D1118412D1118501018704010101028905C303108725 |
+| AA0081040155D1118412D1118501018704010101028905C303108725 
 
 Table 440 - Set Response Example
 
 | Example (Hex)                                                            |
 |--------------------------------------------------------------------------|
-| AA0081048255D11182040000000084820012D1118501018704010101028905C303108725 |
+| AA0081048255D11182040000000084820012D1118501018704010101028905C303108725 
 
 #### Property 1.1.1.1.2.4 Display Tax or Surcharge (Touch Only)
 
@@ -10344,25 +10344,25 @@ Table 442 - Get Request Example
 
 | Example (Hex)                                      |
 |----------------------------------------------------|
-| AA0081040155D101840FD1018501018704010101028902C400 |
+| AA0081040155D101840FD1018501018704010101028902C400 
 
 Table 443 - Get Response Example
 
 | Example (Hex)                                                        |
 |----------------------------------------------------------------------|
-| AA0081048255D10182040000000084820010D1018501018704010101028903C40100 |
+| AA0081048255D10182040000000084820010D1018501018704010101028903C40100 
 
 Table 444 - Set Request Example
 
 | Example (Hex)                                        |
 |------------------------------------------------------|
-| AA0081040155D1118410D1118501018704010101028903C40100 |
+| AA0081040155D1118410D1118501018704010101028903C40100 
 
 Table 445 - Set Response Example
 
 | Example (Hex)                                                        |
 |----------------------------------------------------------------------|
-| AA0081048255D11182040000000084820010D1118501018704010101028903C40100 |
+| AA0081048255D11182040000000084820010D1118501018704010101028903C40100 
 
 #### Property 1.1.1.1.2.5 Disabled Tip Button Display Mode (Touch Only)
 
@@ -10384,25 +10384,25 @@ Table 447 - Get Request Example
 
 | Example (Hex)                                      |
 |----------------------------------------------------|
-| AA0081040155D101840FD1018501018704010101028902C500 |
+| AA0081040155D101840FD1018501018704010101028902C500 
 
 Table 448 - Get Response Example
 
 | Example (Hex)                                                        |
 |----------------------------------------------------------------------|
-| AA0081048255D10182040000000084820010D1018501018704010101028903C50100 |
+| AA0081048255D10182040000000084820010D1018501018704010101028903C50100 
 
 Table 449 - Set Request Example
 
 | Example (Hex)                                        |
 |------------------------------------------------------|
-| AA0081040155D1118410D1118501018704010101028903C50100 |
+| AA0081040155D1118410D1118501018704010101028903C50100 
 
 Table 450 - Set Response Example
 
 | Example (Hex)                                                        |
 |----------------------------------------------------------------------|
-| AA0081048255D11182040000000084820010D1118501018704010101028903C50100 |
+| AA0081048255D11182040000000084820010D1118501018704010101028903C50100 
 
 #### Property 1.1.1.1.2.6 Tip Mode Enable Submit on Amount Button Press
 
@@ -10424,25 +10424,25 @@ Table 452 - Get Request Example
 
 | Example (Hex)                                      |
 |----------------------------------------------------|
-| AA0081040155D101840FD1018501018704010101028902C600 |
+| AA0081040155D101840FD1018501018704010101028902C600 
 
 Table 453 - Get Response Example
 
 | Example (Hex)                                                        |
 |----------------------------------------------------------------------|
-| AA0081048255D10182040000000084820010D1018501018704010101028903C60101 |
+| AA0081048255D10182040000000084820010D1018501018704010101028903C60101 
 
 Table 454 - Set Request Example
 
 | Example (Hex)                                        |
 |------------------------------------------------------|
-| AA0081040155D1118410D1118501018704010101028903C60101 |
+| AA0081040155D1118410D1118501018704010101028903C60101 
 
 Table 455 - Set Response Example
 
 | Example (Hex)                                                        |
 |----------------------------------------------------------------------|
-| AA0081048255D11182040000000084820010D1118501018704010101028903C60101 |
+| AA0081048255D11182040000000084820010D1118501018704010101028903C60101 
 
 #### Property 1.1.1.1.3.1 Timeout (Touch Only)
 
@@ -10464,25 +10464,25 @@ Table 457 - Get Request Example
 
 | Example (Hex)                                      |
 |----------------------------------------------------|
-| AA0081040155D101840FD1018501018704010101038902C100 |
+| AA0081040155D101840FD1018501018704010101038902C100 
 
 Table 458 - Get Response Example
 
 | Example (Hex)                                                        |
 |----------------------------------------------------------------------|
-| AA0081048255D10182040000000084820010D1018501018704010101038903C10178 |
+| AA0081048255D10182040000000084820010D1018501018704010101038903C10178 
 
 Table 459 - Set Request Example
 
 | Example (Hex)                                        |
 |------------------------------------------------------|
-| AA0081040155D1118410D1118501018704010101038903C10150 |
+| AA0081040155D1118410D1118501018704010101038903C10150 
 
 Table 460 - Set Response Example
 
 | Example (Hex)                                                        |
 |----------------------------------------------------------------------|
-| AA0081048255D11182040000000084820010D1118501018704010101038903C10150 |
+| AA0081048255D11182040000000084820010D1118501018704010101038903C10150 
 
 #### Property 1.1.1.1.3.2 Reader Options (Touch Only)
 
@@ -10504,25 +10504,25 @@ Table 462 - Get Request Example
 
 | Example (Hex)                                      |
 |----------------------------------------------------|
-| AA0081040155D101840FD1018501018704010101038902C200 |
+| AA0081040155D101840FD1018501018704010101038902C200 
 
 Table 463 - Get Response Example
 
 | Example (Hex)                                                                                              |
 |------------------------------------------------------------------------------------------------------------|
-| AA0081048255D10182040000000084820023D1018501018704010101038916C2148101018201018301018400000085020101860100 |
+| AA0081048255D10182040000000084820023D1018501018704010101038916C2148101018201018301018400000085020101860100 
 
 Table 464 - Set Request Example
 
 | Example (Hex)                                                                      |
 |------------------------------------------------------------------------------------|
-| AA0081040155D111841FD1118501018704010101038912C21081010182010183010185020101860100 |
+| AA0081040155D111841FD1118501018704010101038912C21081010182010183010185020101860100 
 
 Table 465 - Set Response Example
 
 | Example (Hex)                                                                                      |
 |----------------------------------------------------------------------------------------------------|
-| AA0081048255D1118204000000008482001FD1118501018704010101038912C21081010182010183010185020101860100 |
+| AA0081048255D1118204000000008482001FD1118501018704010101038912C21081010182010183010185020101860100 
 
 #### Property 1.1.1.1.3.3 Transaction Options (Touch Only)
 
@@ -10544,25 +10544,25 @@ Table 467 - Get Request Example
 
 | Example (Hex)                                      |
 |----------------------------------------------------|
-| AA0081040155D101840FD1018501018704010101038902C300 |
+| AA0081040155D101840FD1018501018704010101038902C300 
 
 Table 468 - Get Response Example
 
 | Example (Hex)                                                                                              |
 |------------------------------------------------------------------------------------------------------------|
-| AA0081048255D10182040000000084820023D1018501018704010101038916C3148402000700000000000000000000000000000000 |
+| AA0081048255D10182040000000084820023D1018501018704010101038916C3148402000700000000000000000000000000000000 
 
 Table 469 - Set Request Example
 
 | Example (Hex)                                              |
 |------------------------------------------------------------|
-| AA0081040155D1118413D1118501018704010101038906C30484020007 |
+| AA0081040155D1118413D1118501018704010101038906C30484020007 
 
 Table 470 - Set Response Example
 
 | Example (Hex)                                                              |
 |----------------------------------------------------------------------------|
-| AA0081048255D11182040000000084820013D1118501018704010101038906C30484020007 |
+| AA0081048255D11182040000000084820013D1118501018704010101038906C30484020007 
 
 #### Property 1.1.1.1.3.4 Other TLV (Touch Only)
 
@@ -10584,25 +10584,25 @@ Table 472 - Get Request Example
 
 | Example (Hex)                                      |
 |----------------------------------------------------|
-| AA0081040155D101840FD1018501018704010101038902C400 |
+| AA0081040155D101840FD1018501018704010101038902C400 
 
 Table 473 - Get Response Example
 
 | Example (Hex)                                                                                                                  |
 |--------------------------------------------------------------------------------------------------------------------------------|
-| AA0081048255D1018204000000008482002DD1018501018704010101038920C41E9C01009F02060000000001009F03060000000000005F2A0208405F360102 |
+| AA0081048255D1018204000000008482002DD1018501018704010101038920C41E9C01009F02060000000001009F03060000000000005F2A0208405F360102 
 
 Table 474 - Set Request Example
 
 | Example (Hex)                                                                                                  |
 |----------------------------------------------------------------------------------------------------------------|
-| AA0081040155D111842DD1118501018704010101038920C41E9C01009F02060000000001009F03060000000000005F2A0208405F360102 |
+| AA0081040155D111842DD1118501018704010101038920C41E9C01009F02060000000001009F03060000000000005F2A0208405F360102 
 
 Table 475 - Set Response Example
 
 | Example (Hex)                                                                                                                  |
 |--------------------------------------------------------------------------------------------------------------------------------|
-| AA0081048255D1118204000000008482002DD1118501018704010101038920C41E9C01009F02060000000001009F03060000000000005F2A0208405F360102 |
+| AA0081048255D1118204000000008482002DD1118501018704010101038920C41E9C01009F02060000000001009F03060000000000005F2A0208405F360102 
 
 #### Property 1.1.1.1.4.1 EMV Configuration Filename
 
@@ -10624,25 +10624,25 @@ Table 477 - Get Request Example
 
 | Example (Hex)                                                            |
 |--------------------------------------------------------------------------|
-| AA0081040106D101841AD10181072B06010401F609850101890AE108E106E104E402C100 |
+| AA0081040106D101841AD10181072B06010401F609850101890AE108E106E104E402C100 
 
 Table 478 - Get Response Example
 
 | Example (Hex)                                                                                                         |
 |-----------------------------------------------------------------------------------------------------------------------|
-| AA0081048206D10182040000000084820028D10181072B06010401F609850101 8918E116E114E112E410C10E434647303030363831322D323030 |
+| AA0081048206D10182040000000084820028D10181072B06010401F609850101 8918E116E114E112E410C10E434647303030363831322D323030 
 
 Table 479 - Set Request Example
 
 | Example (Hex)                                                                                         |
 |-------------------------------------------------------------------------------------------------------|
-| AA0081040106D1118428D11181072B06010401F6098501018918E116E114E112E410C10E 434647303030363831322D323030 |
+| AA0081040106D1118428D11181072B06010401F6098501018918E116E114E112E410C10E 434647303030363831322D323030 
 
 Table 480 - Set Response Example
 
 | Example (Hex)                                                                                                         |
 |-----------------------------------------------------------------------------------------------------------------------|
-| AA0081048206D11182040000000084820028D11181072B06010401F609850101 8918E116E114E112E410C10E434647303030363831322D323030 |
+| AA0081048206D11182040000000084820028D11181072B06010401F609850101 8918E116E114E112E410C10E434647303030363831322D323030 
 
 #### Property 1.1.1.1.4.2 CA Public Key Configuration Filename
 
@@ -10664,25 +10664,25 @@ Table 482 - Get Request Example
 
 | Example (Hex)                                                            |
 |--------------------------------------------------------------------------|
-| AA0081040106D101841AD10181072B06010401F609850101890AE108E106E104E402C200 |
+| AA0081040106D101841AD10181072B06010401F609850101890AE108E106E104E402C200 
 
 Table 483 - Get Response Example
 
 | Example (Hex)                                                                                                         |
 |-----------------------------------------------------------------------------------------------------------------------|
-| AA0081048206D10182040000000084820028D10181072B06010401F609850101 8918E116E114E112E410C20E434647303030363831322D323030 |
+| AA0081048206D10182040000000084820028D10181072B06010401F609850101 8918E116E114E112E410C20E434647303030363831322D323030 
 
 Table 484 - Set Request Example
 
 | Example (Hex)                                                                                         |
 |-------------------------------------------------------------------------------------------------------|
-| AA0081040106D1118428D11181072B06010401F6098501018918E116E114E112E410C20E 434647303030363831322D323030 |
+| AA0081040106D1118428D11181072B06010401F6098501018918E116E114E112E410C20E 434647303030363831322D323030 
 
 Table 485 - Set Response Example
 
 | Example (Hex)                                                                                                         |
 |-----------------------------------------------------------------------------------------------------------------------|
-| AA0081048206D11182040000000084820028D11181072B06010401F609850101 8918E116E114E112E410C20E434647303030363831322D323030 |
+| AA0081048206D11182040000000084820028D11181072B06010401F609850101 8918E116E114E112E410C20E434647303030363831322D323030 
 
 #### Property 1.1.1.1.5.1 Report All Available Tags Enable
 
@@ -10704,25 +10704,25 @@ Table 487 - Get Request Example
 
 | Example (Hex)                                      |
 |----------------------------------------------------|
-| AA0081040155D101840FD1018501018704010101058902C100 |
+| AA0081040155D101840FD1018501018704010101058902C100 
 
 Table 488 - Get Response Example
 
 | Example (Hex)                                                        |
 |----------------------------------------------------------------------|
-| AA0081048255D10182040000000084820010D1018501018704010101058903C10100 |
+| AA0081048255D10182040000000084820010D1018501018704010101058903C10100 
 
 Table 489 - Set Request Example (enable - 0x01)
 
 | Example (Hex)                                        |
 |------------------------------------------------------|
-| AA0081040155D1118410D1118501018704010101058903C10101 |
+| AA0081040155D1118410D1118501018704010101058903C10101 
 
 Table 490 - Set Response Example
 
 | Example (Hex)                                                        |
 |----------------------------------------------------------------------|
-| AA0081048255D11182040000000084820010D1118501018704010101058903C10101 |
+| AA0081048255D11182040000000084820010D1118501018704010101058903C10101 
 
 #### Property 1.1.1.1.5.2 Encrypted Sensitive Tag List
 
@@ -10744,25 +10744,25 @@ Table 492 - Get Request Example
 
 | Example (Hex)                                      |
 |----------------------------------------------------|
-| AA0081040155D101840FD1018501018704010101058902C200 |
+| AA0081040155D101840FD1018501018704010101058902C200 
 
 Table 493 - Get Response Example
 
 | Example (Hex)                                                                                  |
 |------------------------------------------------------------------------------------------------|
-| AA0081048255D1018204000000008482001DD1018501018704010101058910C20E5A575F265F245F309F369F37F4F5 |
+| AA0081048255D1018204000000008482001DD1018501018704010101058910C20E5A575F265F245F309F369F37F4F5 
 
 Table 494 - Set Request Example
 
 | Example (Hex)                                                                  |
 |--------------------------------------------------------------------------------|
-| AA0081040155D111841DD1118501018704010101058910C20E5A575F265F245F309F369F37F4F5 |
+| AA0081040155D111841DD1118501018704010101058910C20E5A575F265F245F309F369F37F4F5 
 
 Table 495 - Set Response Example
 
 | Example (Hex)                                                                                  |
 |------------------------------------------------------------------------------------------------|
-| AA0081048255D1118204000000008482001DD1118501018704010101058910C20E5A575F265F245F309F369F37F4F5 |
+| AA0081048255D1118204000000008482001DD1118501018704010101058910C20E5A575F265F245F309F369F37F4F5 
 
 #### Property 1.1.1.1.5.3 MSR Cleartext Tag List
 
@@ -10784,25 +10784,25 @@ Table 497 - Get Request Example
 
 | Example (Hex)                                      |
 |----------------------------------------------------|
-| AA0081040155D101840FD1018501018704010101058902C300 |
+| AA0081040155D101840FD1018501018704010101058902C300 
 
 Table 498 - Get Response Example
 
 | Example (Hex)                                                                                              |
 |------------------------------------------------------------------------------------------------------------|
-| AA0081048255D10182040000000084820023D1018501018704010101058916C3149A9C5F2A9F029F039F159F1E9F359F399F419F4E |
+| AA0081048255D10182040000000084820023D1018501018704010101058916C3149A9C5F2A9F029F039F159F1E9F359F399F419F4E 
 
 Table 499 - Set Request Example
 
 | Example (Hex)                                                                              |
 |--------------------------------------------------------------------------------------------|
-| AA0081040155D1118423D1118501018704010101058916C3149A9C5F2A9F029F039F159F1E9F359F399F419F4E |
+| AA0081040155D1118423D1118501018704010101058916C3149A9C5F2A9F029F039F159F1E9F359F399F419F4E 
 
 Table 500 - Set Response Example
 
 | Example (Hex)                                                                                              |
 |------------------------------------------------------------------------------------------------------------|
-| AA0081048255D11182040000000084820023D1118501018704010101058916C3149A9C5F2A9F029F039F159F1E9F359F399F419F4E |
+| AA0081048255D11182040000000084820023D1118501018704010101058916C3149A9C5F2A9F029F039F159F1E9F359F399F419F4E 
 
 ### Property Subgroup 1.1.2.nnn SRED Settings
 
@@ -10826,25 +10826,25 @@ Table 502 - Get Request Example
 
 | Example (Hex)                                                                                               |
 |-------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 01 17 D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0A E1 08 E2 06 E2 04 E1 02 C2 00 |
+| AA 00 81 04 01 17 D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0A E1 08 E2 06 E2 04 E1 02 C2 00 
 
 Table 503 - Get Response Example
 
 | Example (Hex)                                                                                                                          |
 |----------------------------------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 82 17 D1 01 82 04 00 00 00 00 84 82 00 1B D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0B E1 09 E2 07 E2 05 E1 03 C2 01 2A |
+| AA 00 81 04 82 17 D1 01 82 04 00 00 00 00 84 82 00 1B D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0B E1 09 E2 07 E2 05 E1 03 C2 01 2A 
 
 Table 504 - Set Request Example
 
 | Example (Hex)                                                                                                  |
 |----------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 01 0F D1 11 84 1B D1 11 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0B E1 09 E2 07 E2 05 E1 03 C2 01 30 |
+| AA 00 81 04 01 0F D1 11 84 1B D1 11 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0B E1 09 E2 07 E2 05 E1 03 C2 01 30 
 
 Table 505 - Set Response Example
 
 | Example (Hex)                                                                                                                          |
 |----------------------------------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 82 0F D1 11 82 04 00 00 00 00 84 82 00 1B D1 11 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0B E1 09 E2 07 E2 05 E1 03 C2 01 30 |
+| AA 00 81 04 82 0F D1 11 82 04 00 00 00 00 84 82 00 1B D1 11 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0B E1 09 E2 07 E2 05 E1 03 C2 01 30 
 
 When the device sends masked track data, it replaces some characters in the
 track data with a specified mask character. The specific characters the device
@@ -10902,25 +10902,25 @@ Table 509 - Get Request Example
 
 | Example (Hex)                                                                                               |
 |-------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 01 18 D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0A E1 08 E2 06 E2 04 E1 02 C3 00 |
+| AA 00 81 04 01 18 D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0A E1 08 E2 06 E2 04 E1 02 C3 00 
 
 Table 510 - Get Response Example
 
 | Example (Hex)                                                                                                                          |
 |----------------------------------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 82 18 D1 01 82 04 00 00 00 00 84 82 00 1B D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0B E1 09 E2 07 E2 05 E1 03 C3 01 04 |
+| AA 00 81 04 82 18 D1 01 82 04 00 00 00 00 84 82 00 1B D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0B E1 09 E2 07 E2 05 E1 03 C3 01 04 
 
 Table 511 - Set Request Example
 
 | Example (Hex)                                                                                                  |
 |----------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 01 10 D1 11 84 1B D1 11 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0B E1 09 E2 07 E2 05 E1 03 C3 01 04 |
+| AA 00 81 04 01 10 D1 11 84 1B D1 11 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0B E1 09 E2 07 E2 05 E1 03 C3 01 04 
 
 Table 512 - Set Response Example
 
 | Example (Hex)                                                                                                                          |
 |----------------------------------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 82 10 D1 11 82 04 00 00 00 00 84 82 00 1B D1 11 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0B E1 09 E2 07 E2 05 E1 03 C3 01 04 |
+| AA 00 81 04 82 10 D1 11 82 04 00 00 00 00 84 82 00 1B D1 11 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0B E1 09 E2 07 E2 05 E1 03 C3 01 04 
 
 #### Property 1.1.2.2.1.4 PAN Number of Trailing Unmasked Characters
 
@@ -10942,25 +10942,25 @@ Table 514 - Get Request Example
 
 | Example (Hex)                                                                                               |
 |-------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 01 19 D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0A E1 08 E2 06 E2 04 E1 02 C4 00 |
+| AA 00 81 04 01 19 D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0A E1 08 E2 06 E2 04 E1 02 C4 00 
 
 Table 515 - Get Response Example
 
 | Example (Hex)                                                                                                                          |
 |----------------------------------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 82 19 D1 01 82 04 00 00 00 00 84 82 00 1B D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0B E1 09 E2 07 E2 05 E1 03 C4 01 04 |
+| AA 00 81 04 82 19 D1 01 82 04 00 00 00 00 84 82 00 1B D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0B E1 09 E2 07 E2 05 E1 03 C4 01 04 
 
 Table 516 - Set Request Example
 
 | Example (Hex)                                                                                                  |
 |----------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 01 11 D1 11 84 1B D1 11 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0B E1 09 E2 07 E2 05 E1 03 C4 01 04 |
+| AA 00 81 04 01 11 D1 11 84 1B D1 11 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0B E1 09 E2 07 E2 05 E1 03 C4 01 04 
 
 Table 517 - Set Response Example
 
 | Example (Hex)                                                                                                                          |
 |----------------------------------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 82 11 D1 11 82 04 00 00 00 00 84 82 00 1B D1 11 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0B E1 09 E2 07 E2 05 E1 03 C4 01 04 |
+| AA 00 81 04 82 11 D1 11 82 04 00 00 00 00 84 82 00 1B D1 11 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0B E1 09 E2 07 E2 05 E1 03 C4 01 04 
 
 #### Property 1.1.2.2.1.5 PAN MOD 10 Check Digit Correction
 
@@ -10982,25 +10982,25 @@ Table 519 - Get Request Example
 
 | Example (Hex)                                                                                               |
 |-------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 01 1A D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0A E1 08 E2 06 E2 04 E1 02 C5 00 |
+| AA 00 81 04 01 1A D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0A E1 08 E2 06 E2 04 E1 02 C5 00 
 
 Table 520 - Get Response Example
 
 | Example (Hex)                                                                                                                          |
 |----------------------------------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 82 1A D1 01 82 04 00 00 00 00 84 82 00 1B D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0B E1 09 E2 07 E2 05 E1 03 C5 01 01 |
+| AA 00 81 04 82 1A D1 01 82 04 00 00 00 00 84 82 00 1B D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0B E1 09 E2 07 E2 05 E1 03 C5 01 01 
 
 Table 521 - Set Request Example
 
 | Example (Hex)                                                                                                  |
 |----------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 01 12 D1 11 84 1B D1 11 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0B E1 09 E2 07 E2 05 E1 03 C5 01 01 |
+| AA 00 81 04 01 12 D1 11 84 1B D1 11 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0B E1 09 E2 07 E2 05 E1 03 C5 01 01 
 
 Table 522 - Set Response Example
 
 | Example (Hex)                                                                                                                          |
 |----------------------------------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 82 12 D1 11 82 04 00 00 00 00 84 82 00 1B D1 11 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0B E1 09 E2 07 E2 05 E1 03 C5 01 01 |
+| AA 00 81 04 82 12 D1 11 82 04 00 00 00 00 84 82 00 1B D1 11 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0B E1 09 E2 07 E2 05 E1 03 C5 01 01 
 
 #### Property 1.1.2.2.1.6 PAN MOD 10 Check Digit Validation (MCE Only)
 
@@ -11022,25 +11022,25 @@ Table 524 - Get Request Example
 
 | Example (Hex)                                                                                               |
 |-------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 01 1A D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0A E1 08 E2 06 E2 04 E1 02 C6 00 |
+| AA 00 81 04 01 1A D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0A E1 08 E2 06 E2 04 E1 02 C6 00 
 
 Table 525 - Get Response Example
 
 | Example (Hex)                                                                                                                          |
 |----------------------------------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 82 1A D1 01 82 04 00 00 00 00 84 82 00 1B D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0B E1 09 E2 07 E2 05 E1 03 C6 01 00 |
+| AA 00 81 04 82 1A D1 01 82 04 00 00 00 00 84 82 00 1B D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0B E1 09 E2 07 E2 05 E1 03 C6 01 00 
 
 Table 526 - Set Request Example
 
 | Example (Hex)                                                                                                  |
 |----------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 01 12 D1 11 84 1B D1 11 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0B E1 09 E2 07 E2 05 E1 03 C6 01 01 |
+| AA 00 81 04 01 12 D1 11 84 1B D1 11 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0B E1 09 E2 07 E2 05 E1 03 C6 01 01 
 
 Table 527 - Set Response Example
 
 | Example (Hex)                                                                                                                          |
 |----------------------------------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 82 12 D1 11 82 04 00 00 00 00 84 82 00 1B D1 11 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0B E1 09 E2 07 E2 05 E1 03 C6 01 01 |
+| AA 00 81 04 82 12 D1 11 82 04 00 00 00 00 84 82 00 1B D1 11 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0B E1 09 E2 07 E2 05 E1 03 C6 01 01 
 
 #### Property 1.1.2.4.1.1 Key Mapping of PIN-TDES (Touch Only)
 
@@ -11063,25 +11063,25 @@ Table 529 - Get Request Example
 
 | Example (Hex)                                                                 |
 |-------------------------------------------------------------------------------|
-| AA00 81040159D101 841AD101 81072B06010401F609 850101 890AE108E206E404E102C100 |
+| AA00 81040159D101 841AD101 81072B06010401F609 850101 890AE108E206E404E102C100 
 
 Table 530 - Get Response Example
 
 | Example (Hex)                                                                                          |
 |--------------------------------------------------------------------------------------------------------|
-| AA00 81048259D101 820400000000 8482001DD101 81072B06010401F609 850101  890DE10BE209E407E105C1 03200701 |
+| AA00 81048259D101 820400000000 8482001DD101 81072B06010401F609 850101  890DE10BE209E407E105C1 03200701 
 
 Table 531 - Set Request Example
 
 | Example (Hex)                                                                        |
 |--------------------------------------------------------------------------------------|
-| AA00 8104015AD111 841DD111 81072B06010401F609 850101 890DE10BE209E407E105C1 03200701 |
+| AA00 8104015AD111 841DD111 81072B06010401F609 850101 890DE10BE209E407E105C1 03200701 
 
 Table 532 - Set Response Example
 
 | Example (Hex)                                                                                          |
 |--------------------------------------------------------------------------------------------------------|
-| AA00 8104825AD111 820400000000 8482001DD111 81072B06010401F609 850101  890DE10BE209E407E105C1 03200701 |
+| AA00 8104825AD111 820400000000 8482001DD111 81072B06010401F609 850101  890DE10BE209E407E105C1 03200701 
 
 #### Property 1.1.2.4.1.2 Key Mapping of Account Data
 
@@ -11104,25 +11104,25 @@ Table 534 - Get Request Example
 
 | Example (Hex)                                                                 |
 |-------------------------------------------------------------------------------|
-| AA00 81040159D101 841AD101 81072B06010401F609 850101 890AE108E206E404E102C200 |
+| AA00 81040159D101 841AD101 81072B06010401F609 850101 890AE108E206E404E102C200 
 
 Table 535 - Get Response Example
 
 | Example (Hex)                                                                                          |
 |--------------------------------------------------------------------------------------------------------|
-| AA00 81048259D101 820400000000 8482001DD101 81072B06010401F609 850101  890DE10BE209E407E105C2 03200704 |
+| AA00 81048259D101 820400000000 8482001DD101 81072B06010401F609 850101  890DE10BE209E407E105C2 03200704 
 
 Table 536 - Set Request Example
 
 | Example (Hex)                                                                        |
 |--------------------------------------------------------------------------------------|
-| AA00 8104015AD111 841DD111 81072B06010401F609 850101 890DE10BE209E407E105C2 03200704 |
+| AA00 8104015AD111 841DD111 81072B06010401F609 850101 890DE10BE209E407E105C2 03200704 
 
 Table 537 - Set Response Example
 
 | Example (Hex)                                                                                          |
 |--------------------------------------------------------------------------------------------------------|
-| AA00 8104825AD111 820400000000 8482001DD111 81072B06010401F609 850101  890DE10BE209E407E105C2 03200704 |
+| AA00 8104825AD111 820400000000 8482001DD111 81072B06010401F609 850101  890DE10BE209E407E105C2 03200704 
 
 #### Property 1.1.2.4.1.3 Key Mapping of MAC
 
@@ -11144,25 +11144,25 @@ Table 539 - Get Request Example
 
 | Example (Hex)                                                                 |
 |-------------------------------------------------------------------------------|
-| AA00 81040159D101 841AD101 81072B06010401F609 850101 890AE108E206E404E102C300 |
+| AA00 81040159D101 841AD101 81072B06010401F609 850101 890AE108E206E404E102C300 
 
 Table 540 - Get Response Example
 
 | Example (Hex)                                                                                          |
 |--------------------------------------------------------------------------------------------------------|
-| AA00 81048259D101 820400000000 8482001DD101 81072B06010401F609 850101  890DE10BE209E407E105C3 03200702 |
+| AA00 81048259D101 820400000000 8482001DD101 81072B06010401F609 850101  890DE10BE209E407E105C3 03200702 
 
 Table 541 - Set Request Example
 
 | Example (Hex)                                                                        |
 |--------------------------------------------------------------------------------------|
-| AA00 8104015AD111 841DD111 81072B06010401F609 850101 890DE10BE209E407E105C3 03200702 |
+| AA00 8104015AD111 841DD111 81072B06010401F609 850101 890DE10BE209E407E105C3 03200702 
 
 Table 542 - Set Response Example
 
 | Example (Hex)                                                                                          |
 |--------------------------------------------------------------------------------------------------------|
-| AA00 8104825AD111 820400000000 8482001DD111 81072B06010401F609 850101  890DE10BE209E407E105C3 03200702 |
+| AA00 8104825AD111 820400000000 8482001DD111 81072B06010401F609 850101  890DE10BE209E407E105C3 03200702 
 
 #### Property 1.1.2.4.1.4 Key Mapping of Magneprint (MSR Only)
 
@@ -11185,25 +11185,25 @@ Table 544 - Get Request Example
 
 | Example (Hex)                                                                 |
 |-------------------------------------------------------------------------------|
-| AA00 81040159D101 841AD101 81072B06010401F609 850101 890AE108E206E404E102C400 |
+| AA00 81040159D101 841AD101 81072B06010401F609 850101 890AE108E206E404E102C400 
 
 Table 545 - Get Response Example
 
 | Example (Hex)                                                                                          |
 |--------------------------------------------------------------------------------------------------------|
-| AA00 81048259D101 820400000000 8482001DD101 81072B06010401F609 850101  890DE10BE209E407E105C4 03200704 |
+| AA00 81048259D101 820400000000 8482001DD101 81072B06010401F609 850101  890DE10BE209E407E105C4 03200704 
 
 Table 546 - Set Request Example
 
 | Example (Hex)                                                                        |
 |--------------------------------------------------------------------------------------|
-| AA00 8104015AD111 841DD111 81072B06010401F609 850101 890DE10BE209E407E105C4 03200704 |
+| AA00 8104015AD111 841DD111 81072B06010401F609 850101 890DE10BE209E407E105C4 03200704 
 
 Table 547 - Set Response Example
 
 | Example (Hex)                                                                                          |
 |--------------------------------------------------------------------------------------------------------|
-| AA00 8104825AD111 820400000000 8482001DD111 81072B06010401F609 850101  890DE10BE209E407E105C4 03200704 |
+| AA00 8104825AD111 820400000000 8482001DD111 81072B06010401F609 850101  890DE10BE209E407E105C4 03200704 
 
 #### Property 1.1.2.4.1.5 Key Mapping of MagTek Token
 
@@ -11234,25 +11234,25 @@ Table 549 - Get Request Example
 
 | Example (Hex)                                                                 |
 |-------------------------------------------------------------------------------|
-| AA00 81040159D101 841AD101 81072B06010401F609 850101 890AE108E206E404E102C700 |
+| AA00 81040159D101 841AD101 81072B06010401F609 850101 890AE108E206E404E102C700 
 
 Table 550 - Get Response Example
 
 | Example (Hex)                                                                                          |
 |--------------------------------------------------------------------------------------------------------|
-| AA00 81048259D101 820400000000 8482001DD101 81072B06010401F609 850101  890DE10BE209E407E105C7 03200207 |
+| AA00 81048259D101 820400000000 8482001DD101 81072B06010401F609 850101  890DE10BE209E407E105C7 03200207 
 
 Table 551 - Set Request Example
 
 | Example (Hex)                                                                        |
 |--------------------------------------------------------------------------------------|
-| AA00 8104015AD111 841DD111 81072B06010401F609 850101 890DE10BE209E407E105C7 03200207 |
+| AA00 8104015AD111 841DD111 81072B06010401F609 850101 890DE10BE209E407E105C7 03200207 
 
 Table 552 - Set Response Example
 
 | Example (Hex)                                                                                          |
 |--------------------------------------------------------------------------------------------------------|
-| AA00 8104825AD111 820400000000 8482001DD111 81072B06010401F609 850101  890DE10BE209E407E105C7 03200207 |
+| AA00 8104825AD111 820400000000 8482001DD111 81072B06010401F609 850101  890DE10BE209E407E105C7 03200207 
 
 #### Property 1.1.2.5.1.1 AAMVA Allowed (MSR Only)
 
@@ -11274,25 +11274,25 @@ Table 554 - Get Request Example
 
 | Example (Hex)                                                                                               |
 |-------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 01 1B D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0A E1 08 E2 06 E5 04 E1 02 C1 00 |
+| AA 00 81 04 01 1B D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0A E1 08 E2 06 E5 04 E1 02 C1 00 
 
 Table 555 - Get Response Example
 
 | Example (Hex)                                                                                                                          |
 |----------------------------------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 82 1B D1 01 82 04 00 00 00 00 84 82 00 1B D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0B E1 09 E2 07 E5 05 E1 03 C1 01 01 |
+| AA 00 81 04 82 1B D1 01 82 04 00 00 00 00 84 82 00 1B D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0B E1 09 E2 07 E5 05 E1 03 C1 01 01 
 
 Table 556 - Set Request Example
 
 | Example (Hex)                                                                                                  |
 |----------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 01 14 D1 11 84 1B D1 11 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0B E1 09 E2 07 E5 05 E1 03 C1 01 01 |
+| AA 00 81 04 01 14 D1 11 84 1B D1 11 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0B E1 09 E2 07 E5 05 E1 03 C1 01 01 
 
 Table 557 - Set Response Example
 
 | Example (Hex)                                                                                                                           |
 |-----------------------------------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 82 14 D1 11 82 04 00 00 00 00 84 82 00 1B D1 11 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0B E1 09 E2 07 E5 05 E1 03 C1 01 01s |
+| AA 00 81 04 82 14 D1 11 82 04 00 00 00 00 84 82 00 1B D1 11 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0B E1 09 E2 07 E5 05 E1 03 C1 01 01s 
 
 #### Property 1.1.2.5.1.2 Track 1 Enable (MSR Only)
 
@@ -11314,25 +11314,25 @@ Table 559 - Get Request Example
 
 | Example (Hex)                                                                                               |
 |-------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 01 1C D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0A E1 08 E2 06 E5 04 E1 02 C2 00 |
+| AA 00 81 04 01 1C D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0A E1 08 E2 06 E5 04 E1 02 C2 00 
 
 Table 560 - Get Response Example
 
 | Example (Hex)                                                                                                                          |
 |----------------------------------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 82 1C D1 01 82 04 00 00 00 00 84 82 00 1B D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0B E1 09 E2 07 E5 05 E1 03 C2 01 01 |
+| AA 00 81 04 82 1C D1 01 82 04 00 00 00 00 84 82 00 1B D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0B E1 09 E2 07 E5 05 E1 03 C2 01 01 
 
 Table 561 - Set Request Example
 
 | Example (Hex)                                                                                                  |
 |----------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 01 17 D1 11 84 1B D1 11 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0B E1 09 E2 07 E5 05 E1 03 C2 01 01 |
+| AA 00 81 04 01 17 D1 11 84 1B D1 11 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0B E1 09 E2 07 E5 05 E1 03 C2 01 01 
 
 Table 562 - Set Response Example
 
 | Example (Hex)                                                                                                                          |
 |----------------------------------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 82 17 D1 11 82 04 00 00 00 00 84 82 00 1B D1 11 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0B E1 09 E2 07 E5 05 E1 03 C2 01 01 |
+| AA 00 81 04 82 17 D1 11 82 04 00 00 00 00 84 82 00 1B D1 11 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0B E1 09 E2 07 E5 05 E1 03 C2 01 01 
 
 #### Property 1.1.2.5.1.3 Track 2 Enable (MSR Only)
 
@@ -11354,25 +11354,25 @@ Table 564 - Get Request Example
 
 | Example (Hex)                                                                                               |
 |-------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 01 1D D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0A E1 08 E2 06 E5 04 E1 02 C3 00 |
+| AA 00 81 04 01 1D D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0A E1 08 E2 06 E5 04 E1 02 C3 00 
 
 Table 565 - Get Response Example
 
 | Example (Hex)                                                                                                                          |
 |----------------------------------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 82 1D D1 01 82 04 00 00 00 00 84 82 00 1B D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0B E1 09 E2 07 E5 05 E1 03 C3 01 01 |
+| AA 00 81 04 82 1D D1 01 82 04 00 00 00 00 84 82 00 1B D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0B E1 09 E2 07 E5 05 E1 03 C3 01 01 
 
 Table 566 - Set Request Example
 
 | Example (Hex)                                                                                                  |
 |----------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 01 09 D1 11 84 1B D1 11 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0B E1 09 E2 07 E5 05 E1 03 C3 01 01 |
+| AA 00 81 04 01 09 D1 11 84 1B D1 11 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0B E1 09 E2 07 E5 05 E1 03 C3 01 01 
 
 Table 567 - Set Response Example
 
 | Example (Hex)                                                                                                                          |
 |----------------------------------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 82 09 D1 11 82 04 00 00 00 00 84 82 00 1B D1 11 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0B E1 09 E2 07 E5 05 E1 03 C3 01 01 |
+| AA 00 81 04 82 09 D1 11 82 04 00 00 00 00 84 82 00 1B D1 11 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0B E1 09 E2 07 E5 05 E1 03 C3 01 01 
 
 #### Property 1.1.2.5.1.4 Track 3 Enable (MSR Only)
 
@@ -11394,25 +11394,25 @@ Table 569 - Get Request Example
 
 | Example (Hex)                                                                                               |
 |-------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 01 02 D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0A E1 08 E2 06 E5 04 E1 02 C4 00 |
+| AA 00 81 04 01 02 D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0A E1 08 E2 06 E5 04 E1 02 C4 00 
 
 Table 570 - Get Response Example
 
 | Example (Hex)                                                                                                                          |
 |----------------------------------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 82 02 D1 01 82 04 00 00 00 00 84 82 00 1B D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0B E1 09 E2 07 E5 05 E1 03 C4 01 01 |
+| AA 00 81 04 82 02 D1 01 82 04 00 00 00 00 84 82 00 1B D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0B E1 09 E2 07 E5 05 E1 03 C4 01 01 
 
 Table 571 - Set Request Example
 
 | Example (Hex)                                                                                                  |
 |----------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 01 0A D1 11 84 1B D1 11 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0B E1 09 E2 07 E5 05 E1 03 C4 01 01 |
+| AA 00 81 04 01 0A D1 11 84 1B D1 11 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0B E1 09 E2 07 E5 05 E1 03 C4 01 01 
 
 Table 572 - Set Response Example
 
 | Example (Hex)                                                                                                                          |
 |----------------------------------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 82 0A D1 11 82 04 00 00 00 00 84 82 00 1B D1 11 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0B E1 09 E2 07 E5 05 E1 03 C4 01 01 |
+| AA 00 81 04 82 0A D1 11 82 04 00 00 00 00 84 82 00 1B D1 11 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0B E1 09 E2 07 E5 05 E1 03 C4 01 01 
 
 #### Property 1.1.2.6.1.1 Selectable Card Data Encryption Enable (MAGTEK INTERNAL ONLY)
 
@@ -11435,25 +11435,25 @@ Table 574 - Get Request Example
 
 | Example (Hex)                                                                                               |
 |-------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 01 06 D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0A E1 08 E2 06 E6 04 E1 02 C1 00 |
+| AA 00 81 04 01 06 D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0A E1 08 E2 06 E6 04 E1 02 C1 00 
 
 Table 575 - Get Response Example
 
 | Example (Hex)                                                                                                                             |
 |-------------------------------------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 82 06 D1 01 82 04 00 00 00 00 84 82 00 1C D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0C E1 0A E2 08 E6 06 E1 04 C1 02 3F 00 |
+| AA 00 81 04 82 06 D1 01 82 04 00 00 00 00 84 82 00 1C D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0C E1 0A E2 08 E6 06 E1 04 C1 02 3F 00 
 
 Table 576 - Set Request Example
 
 | Example (Hex)                                                                                                                                                                                                                                                                                                        |
 |----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 01 0B D1 12 84 5D EE EE A1 19 81 05 03 03 06 02 08 84 00 85 00 A8 0A 81 02 11 11 82 00 86 00 88 00 A9 00 82 04 BE 00 11 D0 83 08 E7 9F B1 FE 99 9F 8D A2 84 1C D1 12 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0C E1 0A E2 08 E6 06 E1 04 C1 02 3F 00 9E 10 D9 38 F1 6E 7F 8C CE 87 02 35 0F DF 8C C2 75 64 |
+| AA 00 81 04 01 0B D1 12 84 5D EE EE A1 19 81 05 03 03 06 02 08 84 00 85 00 A8 0A 81 02 11 11 82 00 86 00 88 00 A9 00 82 04 BE 00 11 D0 83 08 E7 9F B1 FE 99 9F 8D A2 84 1C D1 12 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0C E1 0A E2 08 E6 06 E1 04 C1 02 3F 00 9E 10 D9 38 F1 6E 7F 8C CE 87 02 35 0F DF 8C C2 75 64 
 
 Table 577 - Set Response Example
 
 | Example (Hex)                                                                                                                             |
 |-------------------------------------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 82 0B D1 12 82 04 00 00 00 00 84 82 00 1C D1 12 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0C E1 0A E2 08 E6 06 E1 04 C1 02 3F 00 |
+| AA 00 81 04 82 0B D1 12 82 04 00 00 00 00 84 82 00 1C D1 12 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0C E1 0A E2 08 E6 06 E1 04 C1 02 3F 00 
 
 ## Property Group 1.2.nnnn Device Settings
 
@@ -11479,25 +11479,25 @@ Table 579 - Get Request Example
 
 | Example (Hex)                                                                                               |
 |-------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 01 04 D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0A E2 08 E1 06 E1 04 E1 02 C1 00 |
+| AA 00 81 04 01 04 D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0A E2 08 E1 06 E1 04 E1 02 C1 00 
 
 Table 580 - Get Response Example
 
 | Example (Hex)                                                                                                                          |
 |----------------------------------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 82 04 D1 01 82 04 00 00 00 00 84 82 00 1B D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0B E2 09 E1 07 E1 05 E1 03 C1 01 01 |
+| AA 00 81 04 82 04 D1 01 82 04 00 00 00 00 84 82 00 1B D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0B E2 09 E1 07 E1 05 E1 03 C1 01 01 
 
 Table 581 - Set Request Example
 
 | Example (Hex)                                                                                                  |
 |----------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 01 02 D1 11 84 1B D1 11 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0B E2 09 E1 07 E1 05 E1 03 C1 01 01 |
+| AA 00 81 04 01 02 D1 11 84 1B D1 11 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0B E2 09 E1 07 E1 05 E1 03 C1 01 01 
 
 Table 582 - Set Response Example
 
 | Example (Hex)                                                                                                                          |
 |----------------------------------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 82 02 D1 11 82 04 00 00 00 00 84 82 00 1B D1 11 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0B E2 09 E1 07 E1 05 E1 03 C1 01 01 |
+| AA 00 81 04 82 02 D1 11 82 04 00 00 00 00 84 82 00 1B D1 11 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0B E2 09 E1 07 E1 05 E1 03 C1 01 01 
 
 #### Property 1.2.1.1.1.2 Application Selection Behavior (Contactless Only)
 
@@ -11520,25 +11520,25 @@ Table 584 - Get Request Example
 
 | Example (Hex)                                                |
 |--------------------------------------------------------------|
-| AA00 8104 0155D101 840F D101 8501 01 8704 02010101 8902 C200 |
+| AA00 8104 0155D101 840F D101 8501 01 8704 02010101 8902 C200 
 
 Table 585 - Get Response Example
 
 | Example (Hex)                                                                                         |
 |-------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 82 55 D1 01 82 04 00 00 00 00 84 82 00 10 D1 01 85 01 01 87 04 02 01 01 01 89 03 C2 01 00 |
+| AA 00 81 04 82 55 D1 01 82 04 00 00 00 00 84 82 00 10 D1 01 85 01 01 87 04 02 01 01 01 89 03 C2 01 00 
 
 Table 586 - Set Request Example
 
 | Example (Hex)                                               |
 |-------------------------------------------------------------|
-| AA00 81040155D111 8410 D111 850101 870402010101 8903 C20103 |
+| AA00 81040155D111 8410 D111 850101 870402010101 8903 C20103 
 
 Table 587 - Set Response Example
 
 | Example (Hex)                                                                                         |
 |-------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 82 55 D1 11 82 04 00 00 00 00 84 82 00 10 D1 11 85 01 01 87 04 02 01 01 01 89 03 C2 01 03 |
+| AA 00 81 04 82 55 D1 11 82 04 00 00 00 00 84 82 00 10 D1 11 85 01 01 87 04 02 01 01 01 89 03 C2 01 03 
 
 #### Property 1.2.1.1.2.1 Signature Capture Control
 
@@ -11560,25 +11560,25 @@ Table 589 - Get Request Example
 
 | Example (Hex)                                                                                               |
 |-------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 01 04 D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0A E2 08 E1 06 E1 04 E2 02 C1 00 |
+| AA 00 81 04 01 04 D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0A E2 08 E1 06 E1 04 E2 02 C1 00 
 
 Table 590 - Get Response Example
 
 | Example (Hex)                                                                                                                          |
 |----------------------------------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 82 04 D1 01 82 04 00 00 00 00 84 82 00 1B D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0B E2 09 E1 07 E1 05 E2 03 C1 01 01 |
+| AA 00 81 04 82 04 D1 01 82 04 00 00 00 00 84 82 00 1B D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0B E2 09 E1 07 E1 05 E2 03 C1 01 01 
 
 Table 591 - Set Request Example
 
 | Example (Hex)                                                                                                  |
 |----------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 01 02 D1 11 84 1B D1 11 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0B E2 09 E1 07 E1 05 E2 03 C1 01 01 |
+| AA 00 81 04 01 02 D1 11 84 1B D1 11 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0B E2 09 E1 07 E1 05 E2 03 C1 01 01 
 
 Table 592 - Set Response Example
 
 | Example (Hex)                                                                                                                          |
 |----------------------------------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 82 02 D1 11 82 04 00 00 00 00 84 82 00 1B D1 11 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0B E2 09 E1 07 E1 05 E2 03 C1 01 01 |
+| AA 00 81 04 82 02 D1 11 82 04 00 00 00 00 84 82 00 1B D1 11 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0B E2 09 E1 07 E1 05 E2 03 C1 01 01 
 
 #### Property 1.2.1.1.2.2 Include Signature Data in EMV Batch Data (Touch Only)
 
@@ -11601,25 +11601,25 @@ Table 594 - Get Request Example
 
 | Example (Hex)                                                                                               |
 |-------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 01 04 D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0A E2 08 E1 06 E1 04 E2 02 C2 00 |
+| AA 00 81 04 01 04 D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0A E2 08 E1 06 E1 04 E2 02 C2 00 
 
 Table 595 - Get Response Example
 
 | Example (Hex)                                                                                                                          |
 |----------------------------------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 82 04 D1 01 82 04 00 00 00 00 84 82 00 1B D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0B E2 09 E1 07 E1 05 E2 03 C2 01 01 |
+| AA 00 81 04 82 04 D1 01 82 04 00 00 00 00 84 82 00 1B D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0B E2 09 E1 07 E1 05 E2 03 C2 01 01 
 
 Table 596 - Set Request Example
 
 | Example (Hex)                                                                                                  |
 |----------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 01 02 D1 11 84 1B D1 11 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0B E2 09 E1 07 E1 05 E2 03 C2 01 01 |
+| AA 00 81 04 01 02 D1 11 84 1B D1 11 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0B E2 09 E1 07 E1 05 E2 03 C2 01 01 
 
 Table 597 - Set Response Example
 
 | Example (Hex)                                                                                                                          |
 |----------------------------------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 82 02 D1 11 82 04 00 00 00 00 84 82 00 1B D1 11 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0B E2 09 E1 07 E1 05 E2 03 C2 01 01 |
+| AA 00 81 04 82 02 D1 11 82 04 00 00 00 00 84 82 00 1B D1 11 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0B E2 09 E1 07 E1 05 E2 03 C2 01 01 
 
 #### Property 1.2.1.1.2.3 Signature Timing Window (Touch Only)
 
@@ -11641,25 +11641,25 @@ Table 599 - Get Request Example
 
 | Example (Hex)                                                                                               |
 |-------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 01 04 D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0A E2 08 E1 06 E1 04 E2 02 C3 00 |
+| AA 00 81 04 01 04 D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0A E2 08 E1 06 E1 04 E2 02 C3 00 
 
 Table 600 - Get Response Example
 
 | Example (Hex)                                                                                                                          |
 |----------------------------------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 82 04 D1 01 82 04 00 00 00 00 84 82 00 1B D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0B E2 09 E1 07 E1 05 E2 03 C3 01 03 |
+| AA 00 81 04 82 04 D1 01 82 04 00 00 00 00 84 82 00 1B D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0B E2 09 E1 07 E1 05 E2 03 C3 01 03 
 
 Table 601 - Set Request Example
 
 | Example (Hex)                                                                                                  |
 |----------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 01 02 D1 11 84 1B D1 11 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0B E2 09 E1 07 E1 05 E2 03 C3 01 01 |
+| AA 00 81 04 01 02 D1 11 84 1B D1 11 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0B E2 09 E1 07 E1 05 E2 03 C3 01 01 
 
 Table 602 - Set Response Example
 
 | Example (Hex)                                                                                                                          |
 |----------------------------------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 82 02 D1 11 82 04 00 00 00 00 84 82 00 1B D1 11 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0B E2 09 E1 07 E1 05 E2 03 C3 01 01 |
+| AA 00 81 04 82 02 D1 11 82 04 00 00 00 00 84 82 00 1B D1 11 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0B E2 09 E1 07 E1 05 E2 03 C3 01 01 
 
 #### Property 1.2.1.1.3.1 Contactless Low Power Card Detect (Contactless Only)
 
@@ -11682,25 +11682,25 @@ Table 604 - Get Request Example
 
 | Example (Hex)                                                              |
 |----------------------------------------------------------------------------|
-| AA 00 81 04 01 55 D1 01 84 0F D1 01 85 01 01 87 04 02 01 01 03 89 02 C1 00 |
+| AA 00 81 04 01 55 D1 01 84 0F D1 01 85 01 01 87 04 02 01 01 03 89 02 C1 00 
 
 Table 605 - Get Response Example
 
 | Example (Hex)                                                                                         |
 |-------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 82 55 D1 01 82 04 00 00 00 00 84 82 00 10 D1 01 85 01 01 87 04 02 01 01 03 89 03 C1 01 00 |
+| AA 00 81 04 82 55 D1 01 82 04 00 00 00 00 84 82 00 10 D1 01 85 01 01 87 04 02 01 01 03 89 03 C1 01 00 
 
 Table 606 - Set Request Example
 
 | Example (Hex)                                                                 |
 |-------------------------------------------------------------------------------|
-| AA 00 81 04 01 55 D1 11 84 10 D1 11 85 01 01 87 04 02 01 01 03 89 03 C1 01 00 |
+| AA 00 81 04 01 55 D1 11 84 10 D1 11 85 01 01 87 04 02 01 01 03 89 03 C1 01 00 
 
 Table 607 - Set Response Example
 
 | Example (Hex)                                                                                         |
 |-------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 82 55 D1 11 82 04 00 00 00 00 84 82 00 10 D1 11 85 01 01 87 04 02 01 01 03 89 03 C1 01 00 |
+| AA 00 81 04 82 55 D1 11 82 04 00 00 00 00 84 82 00 10 D1 11 85 01 01 87 04 02 01 01 03 89 03 C1 01 00 
 
 #### Property 1.2.1.1.4.1 MIFARE Ultralight C 2keys3DES
 
@@ -11722,25 +11722,25 @@ Table 609 - Get Request Example
 
 | Example (Hex)                                                                                               |
 |-------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 01 06 D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0A E2 08 E1 06 E1 04 E4 02 C1 00 |
+| AA 00 81 04 01 06 D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0A E2 08 E1 06 E1 04 E4 02 C1 00 
 
 Table 610 - Get Response Example
 
 | Example (Hex)                                                                                                                                |
 |----------------------------------------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 82 06 D1 01 82 04 00 00 00 00 84 82 00 1D D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0D E2 0B E1 09 E1 07 E4 05 C1 03 29 07 96 |
+| AA 00 81 04 82 06 D1 01 82 04 00 00 00 00 84 82 00 1D D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0D E2 0B E1 09 E1 07 E4 05 C1 03 29 07 96 
 
 Table 611 - Set Request Example
 
 | Example (Hex)                                                                                                              |
 |----------------------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 01 55 D1 11 84 1F D1 11 85 01 01 87 04 02 01 01 04 89 12 C1 10 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F |
+| AA 00 81 04 01 55 D1 11 84 1F D1 11 85 01 01 87 04 02 01 01 04 89 12 C1 10 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F 
 
 Table 612 - Set Response Example
 
 | Example (Hex)                                                                                                                                      |
 |----------------------------------------------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 82 55 D1 11 82 04 00 00 00 00 84 82 00 1F D1 11 85 01 01 87 04 02 01 01 04 89 12 C1 10 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F |
+| AA 00 81 04 82 55 D1 11 82 04 00 00 00 00 84 82 00 1F D1 11 85 01 01 87 04 02 01 01 04 89 12 C1 10 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F 
 
 #### Property 1.2.1.1.4.2 MIFARE Ultralight AES DataProtKey.
 
@@ -11762,25 +11762,25 @@ Table 614 - Get Request Example
 
 | Example (Hex)                                                                                               |
 |-------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 01 06 D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0A E2 08 E1 06 E1 04 E4 02 C2 00 |
+| AA 00 81 04 01 06 D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0A E2 08 E1 06 E1 04 E4 02 C2 00 
 
 Table 615 - Get Response Example
 
 | Example (Hex)                                                                                    |
 |--------------------------------------------------------------------------------------------------|
-| AA00810482D3D1018204000000008482001ED10181072B06010401F609850101890EE20CE10AE108E406C204763CBCDE |
+| AA00810482D3D1018204000000008482001ED10181072B06010401F609850101890EE20CE10AE108E406C204763CBCDE 
 
 Table 616 - Set Request Example
 
 | Example (Hex)                                                                                                              |
 |----------------------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 01 55 D1 11 84 1F D1 11 85 01 01 87 04 02 01 01 04 89 12 C2 10 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F |
+| AA 00 81 04 01 55 D1 11 84 1F D1 11 85 01 01 87 04 02 01 01 04 89 12 C2 10 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F 
 
 Table 617 - Set Response Example
 
 | Example (Hex)                                                                                                            |
 |--------------------------------------------------------------------------------------------------------------------------|
-| AA00810482E5D1118204000000008482002AD11181072B06010401F609850101891AE218E116E114E412C210000102030405060708090A0B0C0D0E0F |
+| AA00810482E5D1118204000000008482002AD11181072B06010401F609850101891AE218E116E114E412C210000102030405060708090A0B0C0D0E0F 
 
 #### Property 1.2.1.1.4.3 MIFARE Ultralight AES UIDRetrKey.
 
@@ -11802,25 +11802,25 @@ Table 619 - Get Request Example
 
 | Example (Hex)                                                                                               |
 |-------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 01 06 D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0A E2 08 E1 06 E1 04 E4 02 C3 00 |
+| AA 00 81 04 01 06 D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0A E2 08 E1 06 E1 04 E4 02 C3 00 
 
 Table 620 - Get Response Example
 
 | Example (Hex)                                                                                    |
 |--------------------------------------------------------------------------------------------------|
-| AA00810482D3D1018204000000008482001ED10181072B06010401F609850101890EE20CE10AE108E406C304B548CFB4 |
+| AA00810482D3D1018204000000008482001ED10181072B06010401F609850101890EE20CE10AE108E406C304B548CFB4 
 
 Table 621 - Set Request Example
 
 | Example (Hex)                                                                                                              |
 |----------------------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 01 55 D1 11 84 1F D1 11 85 01 01 87 04 02 01 01 04 89 12 C3 10 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F |
+| AA 00 81 04 01 55 D1 11 84 1F D1 11 85 01 01 87 04 02 01 01 04 89 12 C3 10 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F 
 
 Table 622 - Set Response Example
 
 | Example (Hex)                                                                                                            |
 |--------------------------------------------------------------------------------------------------------------------------|
-| AA00810482E5D1118204000000008482002AD11181072B06010401F609850101891AE218E116E114E412C310000102030405060708090A0B0C0D0E0F |
+| AA00810482E5D1118204000000008482002AD11181072B06010401F609850101891AE218E116E114E412C310000102030405060708090A0B0C0D0E0F 
 
 #### Property 1.2.1.1.4.4 MIFARE Ultralight AES OriginalityKey.
 
@@ -11842,25 +11842,25 @@ Table 624 - Get Request Example
 
 | Example (Hex)                                                                                               |
 |-------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 01 06 D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0A E2 08 E1 06 E1 04 E4 02 C4 00 |
+| AA 00 81 04 01 06 D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0A E2 08 E1 06 E1 04 E4 02 C4 00 
 
 Table 625 - Get Response Example
 
 | Example (Hex)                                                                                    |
 |--------------------------------------------------------------------------------------------------|
-| AA00810482D3D1018204000000008482001ED10181072B06010401F609850101890EE20CE10AE108E406C404763CBCDE |
+| AA00810482D3D1018204000000008482001ED10181072B06010401F609850101890EE20CE10AE108E406C404763CBCDE 
 
 Table 626 - Set Request Example
 
 | Example (Hex)                                                                                                              |
 |----------------------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 01 55 D1 11 84 1F D1 11 85 01 01 87 04 02 01 01 04 89 12 C4 10 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F |
+| AA 00 81 04 01 55 D1 11 84 1F D1 11 85 01 01 87 04 02 01 01 04 89 12 C4 10 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F 
 
 Table 627 - Set Response Example
 
 | Example (Hex)                                                                                                            |
 |--------------------------------------------------------------------------------------------------------------------------|
-| AA00810482E5D1118204000000008482002AD11181072B06010401F609850101891AE218E116E114E412C410000102030405060708090A0B0C0D0E0F |
+| AA00810482E5D1118204000000008482002AD11181072B06010401F609850101891AE218E116E114E412C410000102030405060708090A0B0C0D0E0F 
 
 #### Property 1.2.1.1.4.5 MIFARE Plus AES_Key1.
 
@@ -11882,25 +11882,25 @@ Table 629 - Get Request Example
 
 | Example (Hex)                                                                                               |
 |-------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 01 06 D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0A E2 08 E1 06 E1 04 E4 02 C5 00 |
+| AA 00 81 04 01 06 D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0A E2 08 E1 06 E1 04 E4 02 C5 00 
 
 Table 630 - Get Response Example
 
 | Example (Hex)                                                                                    |
 |--------------------------------------------------------------------------------------------------|
-| AA00810482D3D1018204000000008482001ED10181072B06010401F609850101890EE20CE10AE108E406C504763CBCDE |
+| AA00810482D3D1018204000000008482001ED10181072B06010401F609850101890EE20CE10AE108E406C504763CBCDE 
 
 Table 631 - Set Request Example
 
 | Example (Hex)                                                                                                              |
 |----------------------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 01 55 D1 11 84 1F D1 11 85 01 01 87 04 02 01 01 04 89 12 C5 10 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F |
+| AA 00 81 04 01 55 D1 11 84 1F D1 11 85 01 01 87 04 02 01 01 04 89 12 C5 10 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F 
 
 Table 632 - Set Response Example
 
 | Example (Hex)                                                                                                            |
 |--------------------------------------------------------------------------------------------------------------------------|
-| AA00810482E5D1118204000000008482002AD11181072B06010401F609850101891AE218E116E114E412C510000102030405060708090A0B0C0D0E0F |
+| AA00810482E5D1118204000000008482002AD11181072B06010401F609850101891AE218E116E114E412C510000102030405060708090A0B0C0D0E0F 
 
 #### Property 1.2.1.1.4.6 MIFARE Plus AES_Key2.
 
@@ -11922,25 +11922,25 @@ Table 634 - Get Request Example
 
 | Example (Hex)                                                                                               |
 |-------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 01 06 D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0A E2 08 E1 06 E1 04 E4 02 C6 00 |
+| AA 00 81 04 01 06 D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0A E2 08 E1 06 E1 04 E4 02 C6 00 
 
 Table 635 - Get Response Example
 
 | Example (Hex)                                                                                    |
 |--------------------------------------------------------------------------------------------------|
-| AA00810482D3D1018204000000008482001ED10181072B06010401F609850101890EE20CE10AE108E406C604763CBCDE |
+| AA00810482D3D1018204000000008482001ED10181072B06010401F609850101890EE20CE10AE108E406C604763CBCDE 
 
 Table 636 - Set Request Example
 
 | Example (Hex)                                                                                                              |
 |----------------------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 01 55 D1 11 84 1F D1 11 85 01 01 87 04 02 01 01 04 89 12 C6 10 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F |
+| AA 00 81 04 01 55 D1 11 84 1F D1 11 85 01 01 87 04 02 01 01 04 89 12 C6 10 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F 
 
 Table 637 - Set Response Example
 
 | Example (Hex)                                                                                                            |
 |--------------------------------------------------------------------------------------------------------------------------|
-| AA00810482E5D1118204000000008482002AD11181072B06010401F609850101891AE218E116E114E412C610000102030405060708090A0B0C0D0E0F |
+| AA00810482E5D1118204000000008482002AD11181072B06010401F609850101891AE218E116E114E412C610000102030405060708090A0B0C0D0E0F 
 
 #### Property 1.2.1.1.4.7 MIFARE Plus AES_Key3.
 
@@ -11962,25 +11962,25 @@ Table 639 - Get Request Example
 
 | Example (Hex)                                                                                               |
 |-------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 01 06 D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0A E2 08 E1 06 E1 04 E4 02 C7 00 |
+| AA 00 81 04 01 06 D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0A E2 08 E1 06 E1 04 E4 02 C7 00 
 
 Table 640 - Get Response Example
 
 | Example (Hex)                                                                                    |
 |--------------------------------------------------------------------------------------------------|
-| AA00810482D3D1018204000000008482001ED10181072B06010401F609850101890EE20CE10AE108E406C704763CBCDE |
+| AA00810482D3D1018204000000008482001ED10181072B06010401F609850101890EE20CE10AE108E406C704763CBCDE 
 
 Table 641 - Set Request Example
 
 | Example (Hex)                                                                                                              |
 |----------------------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 01 55 D1 11 84 1F D1 11 85 01 01 87 04 02 01 01 04 89 12 C7 10 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F |
+| AA 00 81 04 01 55 D1 11 84 1F D1 11 85 01 01 87 04 02 01 01 04 89 12 C7 10 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F 
 
 Table 642 - Set Response Example
 
 | Example (Hex)                                                                                                            |
 |--------------------------------------------------------------------------------------------------------------------------|
-| AA00810482E5D1118204000000008482002AD11181072B06010401F609850101891AE218E116E114E412C710000102030405060708090A0B0C0D0E0F |
+| AA00810482E5D1118204000000008482002AD11181072B06010401F609850101891AE218E116E114E412C710000102030405060708090A0B0C0D0E0F 
 
 #### Property 1.2.1.1.4.8 MIFARE Plus AES_Key4.
 
@@ -12002,25 +12002,25 @@ Table 644 - Get Request Example
 
 | Example (Hex)                                                                                               |
 |-------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 01 06 D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0A E2 08 E1 06 E1 04 E4 02 C8 00 |
+| AA 00 81 04 01 06 D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0A E2 08 E1 06 E1 04 E4 02 C8 00 
 
 Table 645 - Get Response Example
 
 | Example (Hex)                                                                                    |
 |--------------------------------------------------------------------------------------------------|
-| AA00810482D3D1018204000000008482001ED10181072B06010401F609850101890EE20CE10AE108E406C804763CBCDE |
+| AA00810482D3D1018204000000008482001ED10181072B06010401F609850101890EE20CE10AE108E406C804763CBCDE 
 
 Table 646 - Set Request Example
 
 | Example (Hex)                                                                                                              |
 |----------------------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 01 55 D1 11 84 1F D1 11 85 01 01 87 04 02 01 01 04 89 12 C8 10 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F |
+| AA 00 81 04 01 55 D1 11 84 1F D1 11 85 01 01 87 04 02 01 01 04 89 12 C8 10 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F 
 
 Table 647 - Set Response Example
 
 | Example (Hex)                                                                                                            |
 |--------------------------------------------------------------------------------------------------------------------------|
-| AA00810482E5D1118204000000008482002AD11181072B06010401F609850101891AE218E116E114E412C810000102030405060708090A0B0C0D0E0F |
+| AA00810482E5D1118204000000008482002AD11181072B06010401F609850101891AE218E116E114E412C810000102030405060708090A0B0C0D0E0F 
 
 #### Property 1.2.1.1.4.9 MIFARE Plus AES_Key5.
 
@@ -12042,25 +12042,25 @@ Table 649 - Get Request Example
 
 | Example (Hex)                                                                                               |
 |-------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 01 06 D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0A E2 08 E1 06 E1 04 E4 02 C9 00 |
+| AA 00 81 04 01 06 D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0A E2 08 E1 06 E1 04 E4 02 C9 00 
 
 Table 650 - Get Response Example
 
 | Example (Hex)                                                                                    |
 |--------------------------------------------------------------------------------------------------|
-| AA00810482D3D1018204000000008482001ED10181072B06010401F609850101890EE20CE10AE108E406C904763CBCDE |
+| AA00810482D3D1018204000000008482001ED10181072B06010401F609850101890EE20CE10AE108E406C904763CBCDE 
 
 Table 651 - Set Request Example
 
 | Example (Hex)                                                                                                              |
 |----------------------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 01 55 D1 11 84 1F D1 11 85 01 01 87 04 02 01 01 04 89 12 C9 10 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F |
+| AA 00 81 04 01 55 D1 11 84 1F D1 11 85 01 01 87 04 02 01 01 04 89 12 C9 10 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F 
 
 Table 652 - Set Response Example
 
 | Example (Hex)                                                                                                            |
 |--------------------------------------------------------------------------------------------------------------------------|
-| AA00810482E5D1118204000000008482002AD11181072B06010401F609850101891AE218E116E114E412C910000102030405060708090A0B0C0D0E0F |
+| AA00810482E5D1118204000000008482002AD11181072B06010401F609850101891AE218E116E114E412C910000102030405060708090A0B0C0D0E0F 
 
 #### Property 1.2.1.1.4.A MIFARE Plus AES_Key6.
 
@@ -12082,25 +12082,25 @@ Table 654 - Get Request Example
 
 | Example (Hex)                                                                                               |
 |-------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 01 06 D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0A E2 08 E1 06 E1 04 E4 02 CA 00 |
+| AA 00 81 04 01 06 D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0A E2 08 E1 06 E1 04 E4 02 CA 00 
 
 Table 655 - Get Response Example
 
 | Example (Hex)                                                                                    |
 |--------------------------------------------------------------------------------------------------|
-| AA00810482D3D1018204000000008482001ED10181072B06010401F609850101890EE20CE10AE108E406CA04763CBCDE |
+| AA00810482D3D1018204000000008482001ED10181072B06010401F609850101890EE20CE10AE108E406CA04763CBCDE 
 
 Table 656 - Set Request Example
 
 | Example (Hex)                                                                                                              |
 |----------------------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 01 55 D1 11 84 1F D1 11 85 01 01 87 04 02 01 01 04 89 12 CA 10 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F |
+| AA 00 81 04 01 55 D1 11 84 1F D1 11 85 01 01 87 04 02 01 01 04 89 12 CA 10 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F 
 
 Table 657 - Set Response Example
 
 | Example (Hex)                                                                                                            |
 |--------------------------------------------------------------------------------------------------------------------------|
-| AA00810482E5D1118204000000008482002AD11181072B06010401F609850101891AE218E116E114E412CA10000102030405060708090A0B0C0D0E0F |
+| AA00810482E5D1118204000000008482002AD11181072B06010401F609850101891AE218E116E114E412CA10000102030405060708090A0B0C0D0E0F 
 
 #### Property 1.2.1.1.5.1 MCE Mode Setting
 
@@ -12122,25 +12122,25 @@ Table 659 - Get Request Example
 
 | Example (Hex)                                                                                               |
 |-------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 01 06 D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0A E2 08 E1 06 E1 04 E5 02 C1 00 |
+| AA 00 81 04 01 06 D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0A E2 08 E1 06 E1 04 E5 02 C1 00 
 
 Table 660 - Get Response Example
 
 | Example (Hex)                                                                                                                          |
 |----------------------------------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 82 06 D1 01 82 04 00 00 00 00 84 82 00 1B D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0B E2 09 E1 07 E1 05 E5 03 C1 01 03 |
+| AA 00 81 04 82 06 D1 01 82 04 00 00 00 00 84 82 00 1B D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0B E2 09 E1 07 E1 05 E5 03 C1 01 03 
 
 Table 661 - Set Request Example
 
 | Example (Hex)                                                                                                  |
 |----------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 01 06 D1 11 84 1B D1 11 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0B E2 09 E1 07 E1 05 E5 03 C1 01 03 |
+| AA 00 81 04 01 06 D1 11 84 1B D1 11 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0B E2 09 E1 07 E1 05 E5 03 C1 01 03 
 
 Table 662 - Set Response Example
 
 | Example (Hex)                                                                                                                          |
 |----------------------------------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 82 06 D1 11 82 04 00 00 00 00 84 82 00 1B D1 11 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0B E2 09 E1 07 E1 05 E5 03 C1 01 03 |
+| AA 00 81 04 82 06 D1 11 82 04 00 00 00 00 84 82 00 1B D1 11 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0B E2 09 E1 07 E1 05 E5 03 C1 01 03 
 
 ### Property Subgroup 1.2.2.1.nn WLAN Settings (WLAN Only)
 
@@ -12164,25 +12164,25 @@ Table 664 - Get Request Example
 
 | Example (Hex)                                                                 |
 |-------------------------------------------------------------------------------|
-| AA00 81040122D101 841AD101 81072B06010401F609 850101 890AE208E206E104E102C100 |
+| AA00 81040122D101 841AD101 81072B06010401F609 850101 890AE208E206E104E102C100 
 
 Table 665 - Get Response Example
 
 | Example (Hex)                                                                                                                                                  |
 |----------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| AA00 81048222D101 820400000000 8482003AD101 81072B06010401F609 850101 892AE228E226E124E122C1204D79535349440000000000000000000000000000000000000000000000000000 |
+| AA00 81048222D101 820400000000 8482003AD101 81072B06010401F609 850101 892AE228E226E124E122C1204D79535349440000000000000000000000000000000000000000000000000000 
 
 Table 666 - Set Request Example
 
 | Example (Hex)                                                                                                                                  |
 |------------------------------------------------------------------------------------------------------------------------------------------------|
-| AA00 81040121D111 843AD111 81072B06010401F609 850101 892AE228E226E124E122C120 4D79535349440000000000000000000000000000000000000000000000000000 |
+| AA00 81040121D111 843AD111 81072B06010401F609 850101 892AE228E226E124E122C120 4D79535349440000000000000000000000000000000000000000000000000000 
 
 Table 667 - Set Response Example
 
 | Example (Hex)                                                                                                                                                  |
 |----------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| AA00 81048221D111 820400000000 8482003AD111 81072B06010401F609 850101 892AE228E226E124E122C1204D79535349440000000000000000000000000000000000000000000000000000 |
+| AA00 81048221D111 820400000000 8482003AD111 81072B06010401F609 850101 892AE228E226E124E122C1204D79535349440000000000000000000000000000000000000000000000000000 
 
 #### Property 1.2.2.1.1.2 Password
 
@@ -12204,25 +12204,25 @@ Table 669 - Get Request Example
 
 | Example (Hex)                                                                 |
 |-------------------------------------------------------------------------------|
-| AA00 81040110D101 841AD101 81072B06010401F609 850101 890AE208E206E104E102C200 |
+| AA00 81040110D101 841AD101 81072B06010401F609 850101 890AE208E206E104E102C200 
 
 Table 670 - Get Response Example
 
 | Example (Hex)                                                                                          |
 |--------------------------------------------------------------------------------------------------------|
-| AA00 8104820CD101 820400000000 84820059D101 81072B06010401F609 850101 8949E247E245E143E141C23F00000000 |
+| AA00 8104820CD101 820400000000 84820059D101 81072B06010401F609 850101 8949E247E245E143E141C23F00000000 
 
 Table 671 - Set Request Example
 
 | Example (Hex)                                                                                 |
 |-----------------------------------------------------------------------------------------------|
-| AA00 81040112D111 8459D111 81072B06010401F609 850101 8949E247E245E143E141C23F546F744031386342 |
+| AA00 81040112D111 8459D111 81072B06010401F609 850101 8949E247E245E143E141C23F546F744031386342 
 
 Table 672 - Set Response Example
 
 | Example (Hex)                                                                                                  |
 |----------------------------------------------------------------------------------------------------------------|
-| AA00 81048212D111 820400000000 84820059D111 81072B06010401F609 850101 8949E247E245E143E141C23F546F744031386342 |
+| AA00 81048212D111 820400000000 84820059D111 81072B06010401F609 850101 8949E247E245E143E141C23F546F744031386342 
 
 #### Property 1.2.2.1.1.3 Security Mode
 
@@ -12244,25 +12244,25 @@ Table 674 - Get Request Example
 
 | Example (Hex)                                                                 |
 |-------------------------------------------------------------------------------|
-| AA00 81040103D101 841AD101 81072B06010401F609 850101 890AE208E206E104E102C300 |
+| AA00 81040103D101 841AD101 81072B06010401F609 850101 890AE208E206E104E102C300 
 
 Table 675 - Get Response Example
 
 | Example (Hex)                                                                                    |
 |--------------------------------------------------------------------------------------------------|
-| AA00 81048203D101 820400000000 8482001BD101 81072B06010401F609 850101 890BE209E207E105E103C30100 |
+| AA00 81048203D101 820400000000 8482001BD101 81072B06010401F609 850101 890BE209E207E105E103C30100 
 
 Table 676 - Set Request Example
 
 | Example (Hex)                                                                   |
 |---------------------------------------------------------------------------------|
-| AA00 81040104D111 841BD111 81072B06010401F609 850101 890BE209E207E105E103C30101 |
+| AA00 81040104D111 841BD111 81072B06010401F609 850101 890BE209E207E105E103C30101 
 
 Table 677 - Set Response Example
 
 | Example (Hex)                                                                                    |
 |--------------------------------------------------------------------------------------------------|
-| AA00 81048204D111 820400000000 8482001BD111 81072B06010401F609 850101 890BE209E207E105E103C30101 |
+| AA00 81048204D111 820400000000 8482001BD111 81072B06010401F609 850101 890BE209E207E105E103C30101 
 
 #### Property 1.2.2.1.1.4 Static IP Address
 
@@ -12284,25 +12284,25 @@ Table 679 - Get Request Example
 
 | Example (Hex)                                                                 |
 |-------------------------------------------------------------------------------|
-| AA00 81040105D101 841AD101 81072B06010401F609 850101 890AE208E206E104E102C400 |
+| AA00 81040105D101 841AD101 81072B06010401F609 850101 890AE208E206E104E102C400 
 
 Table 680 - Get Response Example
 
 | Example (Hex)                                                                                          |
 |--------------------------------------------------------------------------------------------------------|
-| AA00 81048205D101 820400000000 8482001ED101 81072B06010401F609 850101 890EE20CE20AE108E106C404C0A80177 |
+| AA00 81048205D101 820400000000 8482001ED101 81072B06010401F609 850101 890EE20CE20AE108E106C404C0A80177 
 
 Table 681 - Set Request Example
 
 | Example (Hex)                                                                         |
 |---------------------------------------------------------------------------------------|
-| AA00 81040111D111 841ED111 81072B06010401F609 850101 890EE20CE20AE108E106C404C0A8016D |
+| AA00 81040111D111 841ED111 81072B06010401F609 850101 890EE20CE20AE108E106C404C0A8016D 
 
 Table 682 - Set Response Example
 
 | Example (Hex)                                                                                          |
 |--------------------------------------------------------------------------------------------------------|
-| AA00 81048211D111 820400000000 8482001ED111 81072B06010401F609 850101 890EE20CE20AE108E106C404C0A8016D |
+| AA00 81048211D111 820400000000 8482001ED111 81072B06010401F609 850101 890EE20CE20AE108E106C404C0A8016D 
 
 #### Property 1.2.2.1.1.5 Use DHCP
 
@@ -12324,25 +12324,25 @@ Table 684 - Get Request Example
 
 | Example (Hex)                                                                 |
 |-------------------------------------------------------------------------------|
-| AA00 81040117D101 841AD101 81072B06010401F609 850101 890AE208E206E104E102C500 |
+| AA00 81040117D101 841AD101 81072B06010401F609 850101 890AE208E206E104E102C500 
 
 Table 685 - Get Response Example
 
 | Example (Hex)                                                                                          |
 |--------------------------------------------------------------------------------------------------------|
-| AA00 81048217D101 820400000000 8482001ED101 81072B06010401F609 850101 890EE20CE20AE108E106C50400000001 |
+| AA00 81048217D101 820400000000 8482001ED101 81072B06010401F609 850101 890EE20CE20AE108E106C50400000001 
 
 Table 686 - Set Request Example
 
 | Example (Hex)                                                                         |
 |---------------------------------------------------------------------------------------|
-| AA00 81040116D111 841ED111 81072B06010401F609 850101 890EE20CE20AE108E106C50400000001 |
+| AA00 81040116D111 841ED111 81072B06010401F609 850101 890EE20CE20AE108E106C50400000001 
 
 Table 687 - Set Response Example
 
 | Example (Hex)                                                                                          |
 |--------------------------------------------------------------------------------------------------------|
-| AA00 81048216D111 820400000000 8482001ED111 81072B06010401F609 850101 890EE20CE20AE108E106C50400000001 |
+| AA00 81048216D111 820400000000 8482001ED111 81072B06010401F609 850101 890EE20CE20AE108E106C50400000001 
 
 #### Property 1.2.2.1.1.6 Static IP Netmask
 
@@ -12364,25 +12364,25 @@ Table 689 - Get Request Example
 
 | Example (Hex)                                                                 |
 |-------------------------------------------------------------------------------|
-| AA00 81040118D101 841AD101 81072B06010401F609 850101 890AE208E206E104E102C600 |
+| AA00 81040118D101 841AD101 81072B06010401F609 850101 890AE208E206E104E102C600 
 
 Table 690 - Get Response Example
 
 | Example (Hex)                                                                                          |
 |--------------------------------------------------------------------------------------------------------|
-| AA00 81048218D101 820400000000 8482001ED101 81072B06010401F609 850101 890EE20CE20AE108E106C604FFFFFF00 |
+| AA00 81048218D101 820400000000 8482001ED101 81072B06010401F609 850101 890EE20CE20AE108E106C604FFFFFF00 
 
 Table 691 - Set Request Example
 
 | Example (Hex)                                                                         |
 |---------------------------------------------------------------------------------------|
-| AA00 81040119D111 841ED111 81072B06010401F609 850101 890EE20CE20AE108E106C604FFFFFF00 |
+| AA00 81040119D111 841ED111 81072B06010401F609 850101 890EE20CE20AE108E106C604FFFFFF00 
 
 Table 692 - Set Response Example
 
 | Example (Hex)                                                                                          |
 |--------------------------------------------------------------------------------------------------------|
-| AA00 81048219D111 820400000000 8482001ED111 81072B06010401F609 850101 890EE20CE20AE108E106C604FFFFFF00 |
+| AA00 81048219D111 820400000000 8482001ED111 81072B06010401F609 850101 890EE20CE20AE108E106C604FFFFFF00 
 
 #### Property 1.2.2.1.1.7 Static IP Gateway
 
@@ -12404,25 +12404,25 @@ Table 694 - Get Request Example
 
 | Example (Hex)                                                                 |
 |-------------------------------------------------------------------------------|
-| AA00 8104011AD101 841AD101 81072B06010401F609 850101 890AE208E206E104E102C700 |
+| AA00 8104011AD101 841AD101 81072B06010401F609 850101 890AE208E206E104E102C700 
 
 Table 695 - Get Response Example
 
 | Example (Hex)                                                                                          |
 |--------------------------------------------------------------------------------------------------------|
-| AA00 8104821BD101 820400000000 8482001ED101 81072B06010401F609 850101 890EE20CE20AE108E106C704C0A801FE |
+| AA00 8104821BD101 820400000000 8482001ED101 81072B06010401F609 850101 890EE20CE20AE108E106C704C0A801FE 
 
 Table 696 - Set Request Example
 
 | Example (Hex)                                                                         |
 |---------------------------------------------------------------------------------------|
-| AA00 8104011CD111 841ED111 81072B06010401F609 850101 890EE20CE20AE108E106C704C0A801FE |
+| AA00 8104011CD111 841ED111 81072B06010401F609 850101 890EE20CE20AE108E106C704C0A801FE 
 
 Table 697 - Set Response Example
 
 | Example (Hex)                                                                                          |
 |--------------------------------------------------------------------------------------------------------|
-| AA00 8104821CD111 820400000000 8482001ED111 81072B06010401F609 850101 890EE20CE20AE108E106C704C0A801FE |
+| AA00 8104821CD111 820400000000 8482001ED111 81072B06010401F609 850101 890EE20CE20AE108E106C704C0A801FE 
 
 #### Property 1.2.2.1.1.8 Device Name
 
@@ -12444,25 +12444,25 @@ Table 699 - Get Request Example
 
 | Example (Hex)                                                                 |
 |-------------------------------------------------------------------------------|
-| AA00 81040128D101 841AD101 81072B06010401F609 850101 890AE208E206E104E102C800 |
+| AA00 81040128D101 841AD101 81072B06010401F609 850101 890AE208E206E104E102C800 
 
 Table 700 - Get Response Example
 
 | Example (Hex)                                                                                                                                                                                                                  |
 |--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| AA00 81048228D101 820400000000 8482005AD101 81072B06010401F609 850101 894AE248E246E144E142C84064662D78787878787878000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 |
+| AA00 81048228D101 820400000000 8482005AD101 81072B06010401F609 850101 894AE248E246E144E142C84064662D78787878787878000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
 
 Table 701 - Set Request Example
 
 | Example (Hex)                                                                                                                                                                                                  |
 |----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| AA00 81040127D111 845AD111 81072B06010401F609 850101 894AE248E246E144E142C840 64662D78787878787878000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 |
+| AA00 81040127D111 845AD111 81072B06010401F609 850101 894AE248E246E144E142C840 64662D78787878787878000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
 
 Table 702 - Set Response Example
 
 | Example (Hex)                                                                                                                                                                                                                  |
 |--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| AA00 81048227D111 820400000000 8482005AD111 81072B06010401F609 850101 894AE248E246E144E142C84064662D78787878787878000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 |
+| AA00 81048227D111 820400000000 8482005AD111 81072B06010401F609 850101 894AE248E246E144E142C84064662D78787878787878000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
 
 #### Property 1.2.2.1.1.9 Wireless Heartbeat Time
 
@@ -12484,25 +12484,25 @@ Table 704 - Get Request Example
 
 | Example (Hex)                                                                 |
 |-------------------------------------------------------------------------------|
-| AA00 8104011AD101 841AD101 81072B06010401F609 850101 890AE208E206E104E102C900 |
+| AA00 8104011AD101 841AD101 81072B06010401F609 850101 890AE208E206E104E102C900 
 
 Table 705 - Get Response Example
 
 | Example (Hex)                                                                                    |
 |--------------------------------------------------------------------------------------------------|
-| AA00 8104821AD101 820400000000 8482001BD101 81072B06010401F609 850101 890BE209E207E105E103C90100 |
+| AA00 8104821AD101 820400000000 8482001BD101 81072B06010401F609 850101 890BE209E207E105E103C90100 
 
 Table 706 - Set Request Example
 
 | Example (Hex)                                                                   |
 |---------------------------------------------------------------------------------|
-| AA00 8104011CD111 841BD111 81072B06010401F609 850101 890BE209E207E105E103C90120 |
+| AA00 8104011CD111 841BD111 81072B06010401F609 850101 890BE209E207E105E103C90120 
 
 Table 707 - Set Response Example
 
 | Example (Hex)                                                                                    |
 |--------------------------------------------------------------------------------------------------|
-| AA00 8104821CD111 820400000000 8482001BD111 81072B06010401F609 850101 890BE209E207E105E103C90120 |
+| AA00 8104821CD111 820400000000 8482001BD111 81072B06010401F609 850101 890BE209E207E105E103C90120 
 
 #### Property 1.2.2.1.1.A Maximum Client Connections
 
@@ -12524,25 +12524,25 @@ Table 709 - Get Request Example
 
 | Example (Hex)                                                |
 |--------------------------------------------------------------|
-| AA00 8104 0155D101 840F D101 8501 01 8704 02020101 8902 CA00 |
+| AA00 8104 0155D101 840F D101 8501 01 8704 02020101 8902 CA00 
 
 Table 710 - Get Response Example
 
 | Example (Hex)                                                        |
 |----------------------------------------------------------------------|
-| AA0081048255D10182040000000084820010D1018501018704020201018903CA0101 |
+| AA0081048255D10182040000000084820010D1018501018704020201018903CA0101 
 
 Table 711 - Set Request Example
 
 | Example (Hex)                                                |
 |--------------------------------------------------------------|
-| AA00 81040155D111 8410 D111 850101 8704 02020101 8903 CA0101 |
+| AA00 81040155D111 8410 D111 850101 8704 02020101 8903 CA0101 
 
 Table 712 - Set Response Example
 
 | Example (Hex)                                                        |
 |----------------------------------------------------------------------|
-| AA0081048255D11182040000000084820010D1118501018704020201018903CA0101 |
+| AA0081048255D11182040000000084820010D1118501018704020201018903CA0101 
 
 #### Property 1.2.2.1.1.B Certificate Expiring Soon Notification Threshold
 
@@ -12565,25 +12565,25 @@ Table 714 - Get Request Example
 
 | Example (Hex)                                                |
 |--------------------------------------------------------------|
-| AA00 8104 0155D101 840F D101 8501 01 8704 02020101 8902 CB00 |
+| AA00 8104 0155D101 840F D101 8501 01 8704 02020101 8902 CB00 
 
 Table 715 - Get Response Example
 
 | Example (Hex)                                                        |
 |----------------------------------------------------------------------|
-| AA0081048255D10182040000000084820010D1018501018704020201018903CB011E |
+| AA0081048255D10182040000000084820010D1018501018704020201018903CB011E 
 
 Table 716 - Set Request Example
 
 | Example (Hex)                                                |
 |--------------------------------------------------------------|
-| AA00 81040155D111 8410 D111 850101 8704 02020101 8903 CB011E |
+| AA00 81040155D111 8410 D111 850101 8704 02020101 8903 CB011E 
 
 Table 717 - Set Response Example
 
 | Example (Hex)                                                        |
 |----------------------------------------------------------------------|
-| AA0081048255D11182040000000084820010D1118501018704020201018903CB011E |
+| AA0081048255D11182040000000084820010D1118501018704020201018903CB011E 
 
 #### Property 1.2.2.1.1.C Username
 
@@ -12605,25 +12605,25 @@ Table 719 - Get Request Example
 
 | Example (Hex)                                                                 |
 |-------------------------------------------------------------------------------|
-| AA00 8104010DD101 841AD101 81072B06010401F609 850101 890AE208E206E104E102CC00 |
+| AA00 8104010DD101 841AD101 81072B06010401F609 850101 890AE208E206E104E102CC00 
 
 Table 720 - Get Response Example
 
 | Example (Hex)                                                                                                                                                     |
 |-------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| AA00 8104820DD101 820400000000 8482003AD101 81072B06010401F609 850101  892AE228E226E124E122CC 206A6F65406D616774656B2E636F6D00000000000000 0000000000000000000000 |
+| AA00 8104820DD101 820400000000 8482003AD101 81072B06010401F609 850101  892AE228E226E124E122CC 206A6F65406D616774656B2E636F6D00000000000000 0000000000000000000000 
 
 Table 721 - Set Request Example
 
 | Example (Hex)                                                                                                                |
 |------------------------------------------------------------------------------------------------------------------------------|
-| AA00 8104010ED111 843AD111 81072B06010401F609 850101 892AE228E226E124E122CC 206A6F65406D616774656B2E636F6D000000000000000000 |
+| AA00 8104010ED111 843AD111 81072B06010401F609 850101 892AE228E226E124E122CC 206A6F65406D616774656B2E636F6D000000000000000000 
 
 Table 722 - Set Response Example
 
 | Example (Hex)                                                                                                                                                    |
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| AA00 8104820ED111 820400000000 8482003AD111 81072B06010401F609 850101 892AE228E226E124E122CC 206A6F65406D616774656B2E636F6D 000000000000000000000000000000000000 |
+| AA00 8104820ED111 820400000000 8482003AD111 81072B06010401F609 850101 892AE228E226E124E122CC 206A6F65406D616774656B2E636F6D 000000000000000000000000000000000000 
 
 #### Property 1.2.2.1.1.D SoftAP IP Address
 
@@ -12645,25 +12645,25 @@ Table 724 - Get Request Example
 
 | Example (Hex)                                                                 |
 |-------------------------------------------------------------------------------|
-| AA00 81040103D101 841AD101 81072B06010401F609 850101 890AE208E206E104E102CD00 |
+| AA00 81040103D101 841AD101 81072B06010401F609 850101 890AE208E206E104E102CD00 
 
 Table 725 - Get Response Example
 
 | Example (Hex)                                                                                          |
 |--------------------------------------------------------------------------------------------------------|
-| AA00 81048203D101 820400000000 8482001ED101 81072B06010401F609 850101 890EE20CE20AE108E106CD0400000000 |
+| AA00 81048203D101 820400000000 8482001ED101 81072B06010401F609 850101 890EE20CE20AE108E106CD0400000000 
 
 Table 726 - Set Request Example
 
 | Example (Hex)                                                                         |
 |---------------------------------------------------------------------------------------|
-| AA00 81040107D111 841ED111 81072B06010401F609 850101 890EE20CE20AE108E106CD04C0A80177 |
+| AA00 81040107D111 841ED111 81072B06010401F609 850101 890EE20CE20AE108E106CD04C0A80177 
 
 Table 727 - Set Response Example
 
 | Example (Hex)                                                                                          |
 |--------------------------------------------------------------------------------------------------------|
-| AA00 81048207D111 820400000000 8482001ED111 81072B06010401F609 850101 890EE20CE20AE108E106CD04C0A80177 |
+| AA00 81048207D111 820400000000 8482001ED111 81072B06010401F609 850101 890EE20CE20AE108E106CD04C0A80177 
 
 #### Property 1.2.2.1.1.E Web App Enabled (MAGTEK INTERNAL ONLY FOR NOW)
 
@@ -12685,25 +12685,25 @@ Table 729 - Get Request Example
 
 | Example (Hex)                                                |
 |--------------------------------------------------------------|
-| AA00 8104 0155D101 840F D101 8501 01 8704 02020101 8902 CE00 |
+| AA00 8104 0155D101 840F D101 8501 01 8704 02020101 8902 CE00 
 
 Table 730 - Get Response Example
 
 | Example (Hex)                                                        |
 |----------------------------------------------------------------------|
-| AA0081048255D10182040000000084820010D1018501018704020201018903CE0101 |
+| AA0081048255D10182040000000084820010D1018501018704020201018903CE0101 
 
 Table 731 - Set Request Example
 
 | Example (Hex)                                                |
 |--------------------------------------------------------------|
-| AA00 81040155D111 8410 D111 850101 8704 02020101 8903 CE0101 |
+| AA00 81040155D111 8410 D111 850101 8704 02020101 8903 CE0101 
 
 Table 732 - Set Response Example
 
 | Example (Hex)                                                        |
 |----------------------------------------------------------------------|
-| AA0081048255D11182040000000084820010D1118501018704020201018903CE0101 |
+| AA0081048255D11182040000000084820010D1118501018704020201018903CE0101 
 
 #### Property 1.2.2.1.1.F Web App Port (MAGTEK INTERNAL ONLY FOR NOW)
 
@@ -12725,25 +12725,25 @@ Table 734 - Get Request Example
 
 | Example (Hex)                                                |
 |--------------------------------------------------------------|
-| AA00 8104 0155D101 840F D101 8501 01 8704 02020101 8902 CF00 |
+| AA00 8104 0155D101 840F D101 8501 01 8704 02020101 8902 CF00 
 
 Table 735 - Get Response Example
 
 | Example (Hex)                                                          |
 |------------------------------------------------------------------------|
-| AA0081048255D10182040000000084820011D1018501018704020201018904CF02001A |
+| AA0081048255D10182040000000084820011D1018501018704020201018904CF02001A 
 
 Table 736 - Set Request Example
 
 | Example (Hex)                                                 |
 |---------------------------------------------------------------|
-| AA00 81040155D111 8411 D111 850101 870402020101 8904 CF02001A |
+| AA00 81040155D111 8411 D111 850101 870402020101 8904 CF02001A 
 
 Table 737 - Set Response Example
 
 | Example (Hex)                                                          |
 |------------------------------------------------------------------------|
-| AA0081048255D11182040000000084820011D1118501018704020201018904CF02001A |
+| AA0081048255D11182040000000084820011D1118501018704020201018904CF02001A 
 
 #### Property 1.2.2.1.1.10 Firmware Authentication Hash (MAGTEK INTERNAL ONLY)
 
@@ -12766,25 +12766,25 @@ Table 738 - Get Request Example
 
 | Example (Hex)                                          |
 |--------------------------------------------------------|
-| AA00 81040155D101 840FD101 850101870402020101 8902D000 |
+| AA00 81040155D101 840FD101 850101870402020101 8902D000 
 
 Table 739 - Get Response Example
 
 | Example (Hex)                                                                                                                                              |
 |------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| AA0081048255D1018204000000008482003BD101850101870402020101892ED02C0000C000000F40000000002013160562C59F77F9EAC8EEA603BCC6C7E0DCED13B640C14BF550AB8520FAF758 |
+| AA0081048255D1018204000000008482003BD101850101870402020101892ED02C0000C000000F40000000002013160562C59F77F9EAC8EEA603BCC6C7E0DCED13B640C14BF550AB8520FAF758 
 
 Table 740 - Set Request Example
 
 | Example (Hex)                                                                                                                              |
 |--------------------------------------------------------------------------------------------------------------------------------------------|
-| AA0081040155D111843BD111850101870402020101892ED02C0000C000000F4000000000201F1E1D1C1B1A191817161514131211100F0E0D0C0B0A09080706050403020100 |
+| AA0081040155D111843BD111850101870402020101892ED02C0000C000000F4000000000201F1E1D1C1B1A191817161514131211100F0E0D0C0B0A09080706050403020100 
 
 Table 8.375 - Set Response Example
 
 | Example (Hex)                                                                                                                                              |
 |------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| AA0081048255D1118204000000008482003BD111850101870402020101892ED02C0000C000000F4000000000201F1E1D1C1B1A191817161514131211100F0E0D0C0B0A09080706050403020100 |
+| AA0081048255D1118204000000008482003BD111850101870402020101892ED02C0000C000000F4000000000201F1E1D1C1B1A191817161514131211100F0E0D0C0B0A09080706050403020100 
 
 #### Property 1.2.2.1.1.11 WLAN Protocol
 
@@ -12806,25 +12806,25 @@ Table 742 - Get Request Example
 
 | Example (Hex)                                              |
 |------------------------------------------------------------|
-| AA00 8104 0155D101 840F D101 850101 870402020101 8902 D100 |
+| AA00 8104 0155D101 840F D101 850101 870402020101 8902 D100 
 
 Table 743 - Get Response Example
 
 | Example (Hex)                                                        |
 |----------------------------------------------------------------------|
-| AA0081048255D10182040000000084820010D1018501018704020201018903D10102 |
+| AA0081048255D10182040000000084820010D1018501018704020201018903D10102 
 
 Table 744 - Set Request Example
 
 | Example (Hex)                                                |
 |--------------------------------------------------------------|
-| AA00 81040155D111 8410 D111 850101 870402020101 8903 D101 02 |
+| AA00 81040155D111 8410 D111 850101 870402020101 8903 D101 02 
 
 Table 745 -Set Response Example
 
 | Example (Hex)                                                        |
 |----------------------------------------------------------------------|
-| AA0081048255D11182040000000084820010D1118501018704020201018903D10102 |
+| AA0081048255D11182040000000084820010D1118501018704020201018903D10102 
 
 Add MQTT Settings:
 
@@ -12848,25 +12848,25 @@ Table 747 -Get Request Example
 
 | Example (Hex)                                               |
 |-------------------------------------------------------------|
-| AA00 8104 0155D101 840F D101 850101 8704 02020102 8902 C100 |
+| AA00 8104 0155D101 840F D101 850101 8704 02020102 8902 C100 
 
 Table 748 -Get Response Example
 
 | Example (Hex)                                                                                                                                                                                       |
 |-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| AA0081048255D1018204000000008482004FD1018501018704020201028942C140 746573742E6D6F7371756974746F2E6F726700000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 |
+| AA0081048255D1018204000000008482004FD1018501018704020201028942C140 746573742E6D6F7371756974746F2E6F726700000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
 
 Table 749 -Set Request Example
 
 | Example (Hex)                                                                                                                                                                                 |
 |-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| AA00 81040155D111 844F D111 850101 870402020102 8942 C140 746573742E6D6F7371756974746F2E6F 72670000000000000000000000000000 00000000000000000000000000000000 00000000000000000000000000000000 |
+| AA00 81040155D111 844F D111 850101 870402020102 8942 C140 746573742E6D6F7371756974746F2E6F 72670000000000000000000000000000 00000000000000000000000000000000 00000000000000000000000000000000 
 
 Table 750 -Set Response Example
 
 | Example (Hex)                                                                                                                                                                                       |
 |-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| AA0081048255D1118204000000008482004FD1118501018704020201028942C140 746573742E6D6F7371756974746F2E6F726700000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 |
+| AA0081048255D1118204000000008482004FD1118501018704020201028942C140 746573742E6D6F7371756974746F2E6F726700000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
 
 #### Property 1.2.2.1.2.2 MQTT Port
 
@@ -12888,25 +12888,25 @@ Table 752 -Get Request Example
 
 | Example (Hex)                                              |
 |------------------------------------------------------------|
-| AA00 8104 0155D101 840F D101 850101 870402020102 8902 C200 |
+| AA00 8104 0155D101 840F D101 850101 870402020102 8902 C200 
 
 Table 753 -Get Response Example
 
 | Example (Hex)                                                          |
 |------------------------------------------------------------------------|
-| AA0081048255D10182040000000084820011D1018501018704020201028904C20222B3 |
+| AA0081048255D10182040000000084820011D1018501018704020201028904C20222B3 
 
 Table 754 -Set Request Example
 
 | Example (Hex)                                                  |
 |----------------------------------------------------------------|
-| AA00 81040155D111 8411 D111 850101 870402020102 8904 C202 22B3 |
+| AA00 81040155D111 8411 D111 850101 870402020102 8904 C202 22B3 
 
 Table 755 -Set Response Example
 
 | Example (Hex)                                                           |
 |-------------------------------------------------------------------------|
-| AA0081048255D11182040000000084820011D1118501018704020201028904C202 22B3 |
+| AA0081048255D11182040000000084820011D1118501018704020201028904C202 22B3 
 
 #### Property 1.2.2.1.2.3 MQTT QoS Quality of Service
 
@@ -12928,25 +12928,25 @@ Table 757 -Get Request Example
 
 | Example (Hex)                                              |
 |------------------------------------------------------------|
-| AA00 8104 0155D101 840F D101 850101 870402020102 8902 C300 |
+| AA00 8104 0155D101 840F D101 850101 870402020102 8902 C300 
 
 Table 758 -Get Response Example
 
 | Example (Hex)                                                         |
 |-----------------------------------------------------------------------|
-| AA0081048255D10182040000000084820010D1018501018704020201028903C301 00 |
+| AA0081048255D10182040000000084820010D1018501018704020201028903C301 00 
 
 Table 759 -Set Request Example
 
 | Example (Hex)                                               |
 |-------------------------------------------------------------|
-| AA00 81040155D111 8410 D111 850101 870402020102 8903C301 00 |
+| AA00 81040155D111 8410 D111 850101 870402020102 8903C301 00 
 
 Table 760 -Set Response Example
 
 | Example (Hex)                                                        |
 |----------------------------------------------------------------------|
-| AA0081048255D11182040000000084820010D1118501018704020201028903C30100 |
+| AA0081048255D11182040000000084820010D1118501018704020201028903C30100 
 
 #### Property 1.2.2.1.2.4 MQTT Subscribe Topic
 
@@ -12968,25 +12968,25 @@ Table 762 -Get Request Example
 
 | Example (Hex)                                               |
 |-------------------------------------------------------------|
-| AA00 8104 0155D101 840F D101 850101 8704 02020102 8902 C400 |
+| AA00 8104 0155D101 840F D101 850101 8704 02020102 8902 C400 
 
 Table 763 -Get Response Example
 
 | Example (Hex)                                                                                                                                                                                       |
 |-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| AA0081048255D1018204000000008482004FD1018501018704020201028942C440 4D616754656B2F4465766963652F44796E61466C657849495045442F423632423343360000000000000000000000000000000000000000000000000000000000 |
+| AA0081048255D1018204000000008482004FD1018501018704020201028942C440 4D616754656B2F4465766963652F44796E61466C657849495045442F423632423343360000000000000000000000000000000000000000000000000000000000 
 
 Table 764 -Set Request Example
 
 | Example (Hex)                                                                                                                                                                                 |
 |-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| AA00 81040155D111 844F D111 850101 870402020102 8942 C440 4D616754656B2F4465766963652F4479 6E61466C657849495045442F42363242 33433600000000000000000000000000 00000000000000000000000000000000 |
+| AA00 81040155D111 844F D111 850101 870402020102 8942 C440 4D616754656B2F4465766963652F4479 6E61466C657849495045442F42363242 33433600000000000000000000000000 00000000000000000000000000000000 
 
 Table 765 - Set Response Example
 
 | Example (Hex)                                                                                                                                                                                       |
 |-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| AA0081048255D1118204000000008482004FD1118501018704020201028942C440 4D616754656B2F4465766963652F44796E61466C657849495045442F423632423343360000000000000000000000000000000000000000000000000000000000 |
+| AA0081048255D1118204000000008482004FD1118501018704020201028942C440 4D616754656B2F4465766963652F44796E61466C657849495045442F423632423343360000000000000000000000000000000000000000000000000000000000 
 
 #### Property 1.2.2.1.2.5 MQTT Publish Topic
 
@@ -13008,25 +13008,25 @@ Table 767 -Get Request Example
 
 | Example (Hex)                                               |
 |-------------------------------------------------------------|
-| AA00 8104 0155D101 840F D101 850101 8704 02020102 8902 C500 |
+| AA00 8104 0155D101 840F D101 850101 8704 02020102 8902 C500 
 
 Table 768 -Get Response Example
 
 | Example (Hex)                                                                                                                                                                                       |
 |-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| AA0081048255D1018204000000008482004FD1018501018704020201028942C540 4D616754656B2F5365727665722F44796E61466C657849495045442F423632423343360000000000000000000000000000000000000000000000000000000000 |
+| AA0081048255D1018204000000008482004FD1018501018704020201028942C540 4D616754656B2F5365727665722F44796E61466C657849495045442F423632423343360000000000000000000000000000000000000000000000000000000000 
 
 Table 769 -Set Request Example
 
 | Example (Hex)                                                                                                                                                                                 |
 |-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| AA00 81040155D111 844F D111 850101 870402020102 8942 C540 4D616754656B2F5365727665722F4479 6E61466C657849495045442F42363242 33433600000000000000000000000000 00000000000000000000000000000000 |
+| AA00 81040155D111 844F D111 850101 870402020102 8942 C540 4D616754656B2F5365727665722F4479 6E61466C657849495045442F42363242 33433600000000000000000000000000 00000000000000000000000000000000 
 
 Table 770 -Set Response Example
 
 | Example (Hex)                                                                                                                                                                                       |
 |-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| AA0081048255D1118204000000008482004FD1118501018704020201028942C540 4D616754656B2F5365727665722F44796E61466C657849495045442F423632423343360000000000000000000000000000000000000000000000000000000000 |
+| AA0081048255D1118204000000008482004FD1118501018704020201028942C540 4D616754656B2F5365727665722F44796E61466C657849495045442F423632423343360000000000000000000000000000000000000000000000000000000000 
 
 #### Property 1.2.2.1.2.6 MQTT Client ID
 
@@ -13048,25 +13048,25 @@ Table 772 -Get Request Example
 
 | Example (Hex)                                               |
 |-------------------------------------------------------------|
-| AA00 8104 0155D101 840F D101 850101 8704 02020102 8902 C600 |
+| AA00 8104 0155D101 840F D101 850101 8704 02020102 8902 C600 
 
 Table 773 -Get Response Example
 
 | Example (Hex)                                                                                                                       |
 |-------------------------------------------------------------------------------------------------------------------------------------|
-| AA0081048255D1018204000000008482002FD1018501018704020201028922C620 4D616754656B5F4465766963652D423632423343360000000000000000000000 |
+| AA0081048255D1018204000000008482002FD1018501018704020201028922C620 4D616754656B5F4465766963652D423632423343360000000000000000000000 
 
 Table 774 -Set Request Example
 
 | Example (Hex)                                                                                                               |
 |-----------------------------------------------------------------------------------------------------------------------------|
-| AA00 81040155D111 842F D111 850101 870402020102 8922 C620 4D616754656B5F4465766963652D4236 32423343360000000000000000000000 |
+| AA00 81040155D111 842F D111 850101 870402020102 8922 C620 4D616754656B5F4465766963652D4236 32423343360000000000000000000000 
 
 Table 775 - Set Response Example
 
 | Example (Hex)                                                                                                                       |
 |-------------------------------------------------------------------------------------------------------------------------------------|
-| AA0081048255D1118204000000008482002FD1118501018704020201028922C620 4D616754656B5F4465766963652D423632423343360000000000000000000000 |
+| AA0081048255D1118204000000008482002FD1118501018704020201028922C620 4D616754656B5F4465766963652D423632423343360000000000000000000000 
 
 #### Property 1.2.2.1.2.7 MQTT Username
 
@@ -13088,25 +13088,25 @@ Table 777 - Get Request Example
 
 | Example (Hex)                                               |
 |-------------------------------------------------------------|
-| AA00 8104 0155D101 840F D101 850101 8704 02020102 8902 C700 |
+| AA00 8104 0155D101 840F D101 850101 8704 02020102 8902 C700 
 
 Table 778 - Get Response Example
 
 | Example (Hex)                                                                                                                       |
 |-------------------------------------------------------------------------------------------------------------------------------------|
-| AA0081048255D1018204000000008482002FD1018501018704020201028922C720 6D616774656B5F746573746F6E6C793100000000000000000000000000000000 |
+| AA0081048255D1018204000000008482002FD1018501018704020201028922C720 6D616774656B5F746573746F6E6C793100000000000000000000000000000000 
 
 Table 779 - Set Request Example
 
 | Example (Hex)                                                                                                               |
 |-----------------------------------------------------------------------------------------------------------------------------|
-| AA00 81040155D111 842F D111 850101 870402020102 8922 C720 6D616774656B5F746573746F6E6C7931 00000000000000000000000000000000 |
+| AA00 81040155D111 842F D111 850101 870402020102 8922 C720 6D616774656B5F746573746F6E6C7931 00000000000000000000000000000000 
 
 Table 780 - Set Response Example
 
 | Example (Hex)                                                                                                                       |
 |-------------------------------------------------------------------------------------------------------------------------------------|
-| AA0081048255D1118204000000008482002FD1118501018704020201028922C720 6D616774656B5F746573746F6E6C793100000000000000000000000000000000 |
+| AA0081048255D1118204000000008482002FD1118501018704020201028922C720 6D616774656B5F746573746F6E6C793100000000000000000000000000000000 
 
 #### Property 1.2.2.1.2.8 MQTT Password
 
@@ -13128,25 +13128,25 @@ Table 782 -Get Request Example
 
 | Example (Hex)                                               |
 |-------------------------------------------------------------|
-| AA00 8104 0155D101 840F D101 850101 8704 02020102 8902 C800 |
+| AA00 8104 0155D101 840F D101 850101 8704 02020102 8902 C800 
 
 Table 783 - Get Response Example
 
 | Example (Hex)                                                                                                                       |
 |-------------------------------------------------------------------------------------------------------------------------------------|
-| AA0081048255D1018204000000008482002FD1018501018704020201028922C820 656D71782D745354312100000000000000000000000000000000000000000000 |
+| AA0081048255D1018204000000008482002FD1018501018704020201028922C820 656D71782D745354312100000000000000000000000000000000000000000000 
 
 Table 784 - Set Request Example
 
 | Example (Hex)                                                                                                               |
 |-----------------------------------------------------------------------------------------------------------------------------|
-| AA00 81040155D111 842F D111 850101 870402020102 8922 C820 656d71782d7453543121000000000000 00000000000000000000000000000000 |
+| AA00 81040155D111 842F D111 850101 870402020102 8922 C820 656d71782d7453543121000000000000 00000000000000000000000000000000 
 
 Table 785 -Set Response Example
 
 | Example (Hex)                                                                                                                       |
 |-------------------------------------------------------------------------------------------------------------------------------------|
-| AA0081048255D1118204000000008482002FD1118501018704020201028922C820 656D71782D745354312100000000000000000000000000000000000000000000 |
+| AA0081048255D1118204000000008482002FD1118501018704020201028922C820 656D71782D745354312100000000000000000000000000000000000000000000 
 
 #### Property 1.2.2.1.2.8 MQTT Peer Common Name
 
@@ -13168,25 +13168,25 @@ Table 787 - Get Request Example
 
 | Example (Hex)                                               |
 |-------------------------------------------------------------|
-| AA00 8104 0155D101 840F D101 850101 8704 02020102 8902 C900 |
+| AA00 8104 0155D101 840F D101 850101 8704 02020102 8902 C900 
 
 Table 788 - Get Response Example
 
 | Example (Hex)                                                                                                                                                                                       |
 |-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| AA0081048255D1018204000000008482004FD1018501018704020201028942C940 746573742E6D6F7371756974746F2E6F726700000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 |
+| AA0081048255D1018204000000008482004FD1018501018704020201028942C940 746573742E6D6F7371756974746F2E6F726700000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
 
 Table 789 - Set Request Example
 
 | Example (Hex)                                                                                                                                                                                 |
 |-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| AA00 81040155D111 844F D111 850101 870402020102 8942 C940 746573742E6D6F7371756974746F2E6F 72670000000000000000000000000000 00000000000000000000000000000000 00000000000000000000000000000000 |
+| AA00 81040155D111 844F D111 850101 870402020102 8942 C940 746573742E6D6F7371756974746F2E6F 72670000000000000000000000000000 00000000000000000000000000000000 00000000000000000000000000000000 
 
 Table 790 - Set Response Example
 
 | Example (Hex)                                                                                                                                                                                      |
 |----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| AA0081048255D1118204000000008482004FD1118501018704020201028942C940746573742E6D6F7371756974746F2E6F726700000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 |
+| AA0081048255D1118204000000008482004FD1118501018704020201028942C940746573742E6D6F7371756974746F2E6F726700000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
 
 #### Property 1.2.2.1.2.A MQTT Keep Alive
 
@@ -13208,25 +13208,25 @@ Table 792 - Get Request Example
 
 | Example (Hex)                                              |
 |------------------------------------------------------------|
-| AA00 8104 0155D101 840F D101 850101 870402020102 8902 CA00 |
+| AA00 8104 0155D101 840F D101 850101 870402020102 8902 CA00 
 
 Table 793 - Get Response Example
 
 | Example (Hex)                                                          |
 |------------------------------------------------------------------------|
-| AA0081048255D10182040000000084820011D1018501018704020201028904CA02012C |
+| AA0081048255D10182040000000084820011D1018501018704020201028904CA02012C 
 
 Table 794 - Set Request Example
 
 | Example (Hex)                                                  |
 |----------------------------------------------------------------|
-| AA00 81040155D111 8411 D111 850101 870402020102 8904 CA02 012C |
+| AA00 81040155D111 8411 D111 850101 870402020102 8904 CA02 012C 
 
 Table 795 - Set Response Example
 
 | Example (Hex)                                                          |
 |------------------------------------------------------------------------|
-| AA0081048255D11182040000000084820011D1118501018704020201028904CA02012C |
+| AA0081048255D11182040000000084820011D1118501018704020201028904CA02012C 
 
 ### Property Subgroup 1.2.2.2.nn USB Settings (USB Only)
 
@@ -13250,25 +13250,25 @@ Table 797 - Get Request Example
 
 | Example (Hex)                                                |
 |--------------------------------------------------------------|
-| AA00 8104 0155D101 840F D101 8501 01 8704 02020201 8902 C100 |
+| AA00 8104 0155D101 840F D101 8501 01 8704 02020201 8902 C100 
 
 Table 798 - Get Response Example
 
 | Example (Hex)                                                        |
 |----------------------------------------------------------------------|
-| AA0081048255D10182040000000084820010D1018501018704020202018903C10101 |
+| AA0081048255D10182040000000084820010D1018501018704020202018903C10101 
 
 Table 799 - Set Request Example
 
 | Example (Hex)                                                |
 |--------------------------------------------------------------|
-| AA00 81040155D111 8410 D111 850101 8704 02020201 8903 C10101 |
+| AA00 81040155D111 8410 D111 850101 8704 02020201 8903 C10101 
 
 Table 800 - Set Response Example
 
 | Example (Hex)                                                        |
 |----------------------------------------------------------------------|
-| AA0081048255D11182040000000084820010D1118501018704020202018903C10101 |
+| AA0081048255D11182040000000084820010D1118501018704020202018903C10101 
 
 #### Property 1.2.2.2.1.2 USB Configuration Type
 
@@ -13290,49 +13290,49 @@ Table 802 - Get Request Example
 
 | Example (Hex)                                                |
 |--------------------------------------------------------------|
-| AA00 8104 0155D101 840F D101 8501 01 8704 02020201 8902 C200 |
+| AA00 8104 0155D101 840F D101 8501 01 8704 02020201 8902 C200 
 
 Table 803 - Get Response Example (HID only)
 
 | Example (Hex)                                                        |
 |----------------------------------------------------------------------|
-| AA0081048255D10182040000000084820010D1018501018704020202018903C20100 |
+| AA0081048255D10182040000000084820010D1018501018704020202018903C20100 
 
 Table 804 - Set Request Example (HID only)
 
 | Example (Hex)                                                |
 |--------------------------------------------------------------|
-| AA00 81040155D111 8410 D111 850101 8704 02020201 8903 C20100 |
+| AA00 81040155D111 8410 D111 850101 8704 02020201 8903 C20100 
 
 Table 805 - Set Response Example (HID only)
 
 | Example (Hex)                                                        |
 |----------------------------------------------------------------------|
-| AA0081048255D11182040000000084820010D1118501018704020202018903C20100 |
+| AA0081048255D11182040000000084820010D1118501018704020202018903C20100 
 
 Table 806 - Set Request Example (iAP2 only)
 
 | Example (Hex)                                                |
 |--------------------------------------------------------------|
-| AA00 81040155D111 8410 D111 850101 8704 02020201 8903 C20101 |
+| AA00 81040155D111 8410 D111 850101 8704 02020201 8903 C20101 
 
 Table 807 - Set Response Example (iAP2 only)
 
 | Example (Hex)                                                        |
 |----------------------------------------------------------------------|
-| AA0081048255D11182040000000084820010D1118501018704020202018903C20101 |
+| AA0081048255D11182040000000084820010D1118501018704020202018903C20101 
 
 Table 808 - Set Request Example (autodetect (iAP2 with HID fallback))
 
 | Example (Hex)                                                |
 |--------------------------------------------------------------|
-| AA00 81040155D111 8410 D111 850101 8704 02020201 8903 C20102 |
+| AA00 81040155D111 8410 D111 850101 8704 02020201 8903 C20102 
 
 Table 809 - Set Response Example (autodetect (iAP2 with HID fallback))
 
 | Example (Hex)                                                        |
 |----------------------------------------------------------------------|
-| AA0081048255D11182040000000084820010D1118501018704020202018903C20102 |
+| AA0081048255D11182040000000084820010D1118501018704020202018903C20102 
 
 ### Property Subgroup 1.2.2.3.nn Bluetooth® LE Settings (Bluetooth® LE Only)
 
@@ -13356,25 +13356,25 @@ Table 811 - Get Request Example
 
 | Example (Hex)                                                                 |
 |-------------------------------------------------------------------------------|
-| AA00 81040128D101 841AD101 81072B06010401F609 850101 890AE208E206E304E102C100 |
+| AA00 81040128D101 841AD101 81072B06010401F609 850101 890AE208E206E304E102C100 
 
 Table 812 - Get Response Example
 
 | Example (Hex)                                                                                        |
 |------------------------------------------------------------------------------------------------------|
-| AA008104825CD10182040000000084820020D10181072B06010401F6098501028910E10EE20CE70AE208C106943469B297A5 |
+| AA008104825CD10182040000000084820020D10181072B06010401F6098501028910E10EE20CE70AE208C106943469B297A5 
 
 Table 813 - Set Request Example
 
 | Example (Hex)                                                                                                    |
 |------------------------------------------------------------------------------------------------------------------|
-| AA0081040112D111842ED11181072B06010401F609850101891EE21CE21AE318E116C11444594E41464C4558000000000000000000000000 |
+| AA0081040112D111842ED11181072B06010401F609850101891EE21CE21AE318E116C11444594E41464C4558000000000000000000000000 
 
 Table 814 - Set Response Example
 
 | Example (Hex)                                                                                                                    |
 |----------------------------------------------------------------------------------------------------------------------------------|
-| AA0081048212D1118204000000008482002ED11181072B06010401F609850101891EE21CE21AE318E116C11444594E41464C4558000000000000000000000000 |
+| AA0081048212D1118204000000008482002ED11181072B06010401F609850101891EE21CE21AE318E116C11444594E41464C4558000000000000000000000000 
 
 #### Property 1.2.2.3.1.2 Bluetooth® LE Desired Minimum Connection Interval
 
@@ -13397,25 +13397,25 @@ Table 816 - Get Request Example
 
 | Example (Hex)                                                                 |
 |-------------------------------------------------------------------------------|
-| AA00 81040128D101 841AD101 81072B06010401F609 850101 890AE208E206E304E102C200 |
+| AA00 81040128D101 841AD101 81072B06010401F609 850101 890AE208E206E304E102C200 
 
 Table 817 - Get Response Example
 
 | Example (Hex)                                                                                |
 |----------------------------------------------------------------------------------------------|
-| AA0081048232D1018204000000008482001CD10181072B06010401F609850101890CE20AE208E306E104C202000C |
+| AA0081048232D1018204000000008482001CD10181072B06010401F609850101890CE20AE208E306E104C202000C 
 
 Table 818 - Set Request Example
 
 | Example (Hex)                                                                |
 |------------------------------------------------------------------------------|
-| AA0081040112D111841CD11181072B06010401F609850101890CE20AE208E306E104C2020010 |
+| AA0081040112D111841CD11181072B06010401F609850101890CE20AE208E306E104C2020010 
 
 Table 819 - Set Response Example
 
 | Example (Hex)                                                                                |
 |----------------------------------------------------------------------------------------------|
-| AA0081048212D1118204000000008482001CD11181072B06010401F609850101890CE20AE208E306E104C2020010 |
+| AA0081048212D1118204000000008482001CD11181072B06010401F609850101890CE20AE208E306E104C2020010 
 
 #### Property 1.2.2.3.1.3 Bluetooth® LE Desired Maximum Connection Interval
 
@@ -13438,25 +13438,25 @@ Table 821 - Get Request Example
 
 | Example (Hex)                                                                 |
 |-------------------------------------------------------------------------------|
-| AA00 81040128D101 841AD101 81072B06010401F609 850101 890AE208E206E304E102C300 |
+| AA00 81040128D101 841AD101 81072B06010401F609 850101 890AE208E206E304E102C300 
 
 Table 822 - Get Response Example
 
 | Example (Hex)                                                                                |
 |----------------------------------------------------------------------------------------------|
-| AA0081048232D1018204000000008482001CD10181072B06010401F609850101890CE20AE208E306E104C302000C |
+| AA0081048232D1018204000000008482001CD10181072B06010401F609850101890CE20AE208E306E104C302000C 
 
 Table 823 - Set Request Example
 
 | Example (Hex)                                                                |
 |------------------------------------------------------------------------------|
-| AA0081040112D111841CD11181072B06010401F609850101890CE20AE208E306E104C3020010 |
+| AA0081040112D111841CD11181072B06010401F609850101890CE20AE208E306E104C3020010 
 
 Table 824 - Set Response Example
 
 | Example (Hex)                                                                                |
 |----------------------------------------------------------------------------------------------|
-| AA0081048212D1118204000000008482001CD11181072B06010401F609850101890CE20AE208E306E104C3020010 |
+| AA0081048212D1118204000000008482001CD11181072B06010401F609850101890CE20AE208E306E104C3020010 
 
 #### Property 1.2.2.3.1.4 Bluetooth® LE Desired Slave Latency
 
@@ -13478,25 +13478,25 @@ Table 826 - Get Request Example
 
 | Example (Hex)                                                                 |
 |-------------------------------------------------------------------------------|
-| AA00 81040128D101 841AD101 81072B06010401F609 850101 890AE208E206E304E102C400 |
+| AA00 81040128D101 841AD101 81072B06010401F609 850101 890AE208E206E304E102C400 
 
 Table 827 - Get Response Example
 
 | Example (Hex)                                                                                |
 |----------------------------------------------------------------------------------------------|
-| AA0081048232D1018204000000008482001CD10181072B06010401F609850101890CE20AE208E306E104C4020004 |
+| AA0081048232D1018204000000008482001CD10181072B06010401F609850101890CE20AE208E306E104C4020004 
 
 Table 828 - Set Request Example
 
 | Example (Hex)                                                                |
 |------------------------------------------------------------------------------|
-| AA0081040112D111841CD11181072B06010401F609850101890CE20AE208E306E104C4020004 |
+| AA0081040112D111841CD11181072B06010401F609850101890CE20AE208E306E104C4020004 
 
 Table 829 - Set Response Example
 
 | Example (Hex)                                                                                |
 |----------------------------------------------------------------------------------------------|
-| AA0081048212D1118204000000008482001CD11181072B06010401F609850101890CE20AE208E306E104C4020004 |
+| AA0081048212D1118204000000008482001CD11181072B06010401F609850101890CE20AE208E306E104C4020004 
 
 #### Property 1.2.2.3.1.5 Bluetooth® LE Desired Supervision Timeout
 
@@ -13518,25 +13518,25 @@ Table 831 - Get Request Example
 
 | Example (Hex)                                                                 |
 |-------------------------------------------------------------------------------|
-| AA00 81040128D101 841AD101 81072B06010401F609 850101 890AE208E206E304E102C500 |
+| AA00 81040128D101 841AD101 81072B06010401F609 850101 890AE208E206E304E102C500 
 
 Table 832 - Get Response Example
 
 | Example (Hex)                                                                                |
 |----------------------------------------------------------------------------------------------|
-| AA0081048232D1018204000000008482001CD10181072B06010401F609850101890CE20AE208E306E104C50201F4 |
+| AA0081048232D1018204000000008482001CD10181072B06010401F609850101890CE20AE208E306E104C50201F4 
 
 Table 833 - Set Request Example
 
 | Example (Hex)                                                                |
 |------------------------------------------------------------------------------|
-| AA0081040112D111841CD11181072B06010401F609850101890CE20AE208E306E104C50201F4 |
+| AA0081040112D111841CD11181072B06010401F609850101890CE20AE208E306E104C50201F4 
 
 Table 834 - Set Response Example
 
 | Example (Hex)                                                                                |
 |----------------------------------------------------------------------------------------------|
-| AA0081048212D1118204000000008482001CD11181072B06010401F609850101890CE20AE208E306E104C50201F4 |
+| AA0081048212D1118204000000008482001CD11181072B06010401F609850101890CE20AE208E306E104C50201F4 
 
 #### Property 1.2.2.3.1.6 Bluetooth® LE Connection Parameter Update Request Control
 
@@ -13559,25 +13559,25 @@ Table 836 - Get Request Example
 
 | Example (Hex)                                                                 |
 |-------------------------------------------------------------------------------|
-| AA00 81040128D101 841AD101 81072B06010401F609 850101 890AE208E206E304E102C600 |
+| AA00 81040128D101 841AD101 81072B06010401F609 850101 890AE208E206E304E102C600 
 
 Table 837 - Get Response Example
 
 | Example (Hex)                                                                              |
 |--------------------------------------------------------------------------------------------|
-| AA0081048232D1018204000000008482001BD10181072B06010401F609850101890BE209E207E305E103C60100 |
+| AA0081048232D1018204000000008482001BD10181072B06010401F609850101890BE209E207E305E103C60100 
 
 Table 838 - Set Request Example
 
 | Example (Hex)                                                              |
 |----------------------------------------------------------------------------|
-| AA0081040112D111841BD11181072B06010401F609850101890BE209E207E305E103C60100 |
+| AA0081040112D111841BD11181072B06010401F609850101890BE209E207E305E103C60100 
 
 Table 839 - Set Response Example
 
 | Example (Hex)                                                                              |
 |--------------------------------------------------------------------------------------------|
-| AA0081048212D1118204000000008482001BD11181072B06010401F609850101890BE209E207E305E103C60100 |
+| AA0081048212D1118204000000008482001BD11181072B06010401F609850101890BE209E207E305E103C60100 
 
 #### Property 1.2.2.3.1.7 Bluetooth® LE Minimum Advertising Interval
 
@@ -13599,25 +13599,25 @@ Table 841 - Get Request Example
 
 | Example (Hex)                                                                 |
 |-------------------------------------------------------------------------------|
-| AA00 81040128D101 841AD101 81072B06010401F609 850101 890AE208E206E304E102C700 |
+| AA00 81040128D101 841AD101 81072B06010401F609 850101 890AE208E206E304E102C700 
 
 Table 842 - Get Response Example
 
 | Example (Hex)                                                                                |
 |----------------------------------------------------------------------------------------------|
-| AA0081048232D1018204000000008482001CD10181072B06010401F609850101890CE20AE208E306E104C70200A0 |
+| AA0081048232D1018204000000008482001CD10181072B06010401F609850101890CE20AE208E306E104C70200A0 
 
 Table 843 - Set Request Example
 
 | Example (Hex)                                                                |
 |------------------------------------------------------------------------------|
-| AA0081040112D111841CD11181072B06010401F609850101890CE20AE208E306E104C70200B0 |
+| AA0081040112D111841CD11181072B06010401F609850101890CE20AE208E306E104C70200B0 
 
 Table 844 - Set Response Example
 
 | Example (Hex)                                                                                |
 |----------------------------------------------------------------------------------------------|
-| AA0081048212D1118204000000008482001CD11181072B06010401F609850101890CE20AE208E306E104C70200B0 |
+| AA0081048212D1118204000000008482001CD11181072B06010401F609850101890CE20AE208E306E104C70200B0 
 
 #### Property 1.2.2.3.1.8 Bluetooth® LE Maximum Advertising Interval
 
@@ -13639,25 +13639,25 @@ Table 846 - Get Request Example
 
 | Example (Hex)                                                                 |
 |-------------------------------------------------------------------------------|
-| AA00 81040128D101 841AD101 81072B06010401F609 850101 890AE208E206E304E102C800 |
+| AA00 81040128D101 841AD101 81072B06010401F609 850101 890AE208E206E304E102C800 
 
 Table 847 - Get Response Example
 
 | Example (Hex)                                                                                |
 |----------------------------------------------------------------------------------------------|
-| AA0081048232D1018204000000008482001CD10181072B06010401F609850101890CE20AE208E306E104C80200A0 |
+| AA0081048232D1018204000000008482001CD10181072B06010401F609850101890CE20AE208E306E104C80200A0 
 
 Table 848 - Set Request Example
 
 | Example (Hex)                                                                |
 |------------------------------------------------------------------------------|
-| AA0081040112D111841CD11181072B06010401F609850101890CE20AE208E306E104C80200B0 |
+| AA0081040112D111841CD11181072B06010401F609850101890CE20AE208E306E104C80200B0 
 
 Table 849 - Set Response Example
 
 | Example (Hex)                                                                                |
 |----------------------------------------------------------------------------------------------|
-| AA0081048212D1118204000000008482001CD11181072B06010401F609850101890CE20AE208E306E104C80200B0 |
+| AA0081048212D1118204000000008482001CD11181072B06010401F609850101890CE20AE208E306E104C80200B0 
 
 #### Property 1.2.2.3.1.9 Bluetooth® LE Passkey
 
@@ -13679,25 +13679,25 @@ Table 851 - Get Request Example
 
 | Example (Hex)                                                                 |
 |-------------------------------------------------------------------------------|
-| AA00 81040128D101 841AD101 81072B06010401F609 850101 890AE208E206E304E102C900 |
+| AA00 81040128D101 841AD101 81072B06010401F609 850101 890AE208E206E304E102C900 
 
 Table 852 - Get Response Example
 
 | Example (Hex)                                                                            |
 |------------------------------------------------------------------------------------------|
-| AA0081048232D1018204000000008482001AD10181072B06010401F609850101890AE208E206E304E102C900 |
+| AA0081048232D1018204000000008482001AD10181072B06010401F609850101890AE208E206E304E102C900 
 
 Table 853 - Set Request Example
 
 | Example (Hex)                                                                        |
 |--------------------------------------------------------------------------------------|
-| AA0081040112D1118420D11181072B06010401F6098501018910E20EE20CE30AE108C906303132333435 |
+| AA0081040112D1118420D11181072B06010401F6098501018910E20EE20CE30AE108C906303132333435 
 
 Table 854 - Set Response Example
 
 | Example (Hex)                                                                                        |
 |------------------------------------------------------------------------------------------------------|
-| AA0081048212D11182040000000084820020D11181072B06010401F6098501018910E20EE20CE30AE108C906303132333435 |
+| AA0081048212D11182040000000084820020D11181072B06010401F6098501018910E20EE20CE30AE108C906303132333435 
 
 #### Property 1.2.2.3.1.A Bluetooth® LE Never Advertise
 
@@ -13719,25 +13719,25 @@ Table 856 - Get Request Example
 
 | Example (Hex)                                                                 |
 |-------------------------------------------------------------------------------|
-| AA00 81040128D101 841AD101 81072B06010401F609 850101 890AE208E206E304E102CA00 |
+| AA00 81040128D101 841AD101 81072B06010401F609 850101 890AE208E206E304E102CA00 
 
 Table 857 - Get Response Example
 
 | Example (Hex)                                                                              |
 |--------------------------------------------------------------------------------------------|
-| AA0081048232D1018204000000008482001BD10181072B06010401F609850101890BE209E207E305E103CA0100 |
+| AA0081048232D1018204000000008482001BD10181072B06010401F609850101890BE209E207E305E103CA0100 
 
 Table 858 - Set Request Example
 
 | Example (Hex)                                                              |
 |----------------------------------------------------------------------------|
-| AA0081040112D111841BD11181072B06010401F609850101890BE209E207E305E103CA0100 |
+| AA0081040112D111841BD11181072B06010401F609850101890BE209E207E305E103CA0100 
 
 Table 859 - Set Response Example
 
 | Example (Hex)                                                                              |
 |--------------------------------------------------------------------------------------------|
-| AA0081048212D1118204000000008482001BD11181072B06010401F609850101890BE209E207E305E103CA0100 |
+| AA0081048212D1118204000000008482001BD11181072B06010401F609850101890BE209E207E305E103CA0100 
 
 #### Property 1.2.2.3.1.B Bluetooth® LE FCC Test Control (MAGTEK INTERNAL ONLY)
 
@@ -13760,25 +13760,25 @@ Table 861 - Get Request Example
 
 | Example (Hex)                                                |
 |--------------------------------------------------------------|
-| AA00 8104 0155D101 840F D101 8501 01 8704 02020301 8902 CB00 |
+| AA00 8104 0155D101 840F D101 8501 01 8704 02020301 8902 CB00 
 
 Table 862 - Get Response Example
 
 | Example (Hex)                                                        |
 |----------------------------------------------------------------------|
-| AA0081048255D10182040000000084820010D1018501018704020203018903CB01FF |
+| AA0081048255D10182040000000084820010D1018501018704020203018903CB01FF 
 
 Table 863 - Set Request Example
 
 | Example (Hex)                                               |
 |-------------------------------------------------------------|
-| AA00 81040155D111 8410 D111 850101 870402020301 8903 CB01FF |
+| AA00 81040155D111 8410 D111 850101 870402020301 8903 CB01FF 
 
 Table 864 - Set Response Example
 
 | Example (Hex)                                                        |
 |----------------------------------------------------------------------|
-| AA0081048255D11182040000000084820010D1118501018704020203018903CB01FF |
+| AA0081048255D11182040000000084820010D1118501018704020203018903CB01FF 
 
 #### Property 1.2.2.3.1.C Bluetooth® LE Sleep Enabled
 
@@ -13800,25 +13800,25 @@ Table 866 - Get Request Example
 
 | Example (Hex)                                                |
 |--------------------------------------------------------------|
-| AA00 8104 0155D101 840F D101 8501 01 8704 02020301 8902 CC00 |
+| AA00 8104 0155D101 840F D101 8501 01 8704 02020301 8902 CC00 
 
 Table 867 - Get Response Example
 
 | Example (Hex)                                                        |
 |----------------------------------------------------------------------|
-| AA0081048255D10182040000000084820010D1018501018704020203018903CC0100 |
+| AA0081048255D10182040000000084820010D1018501018704020203018903CC0100 
 
 Table 868 - Set Request Example
 
 | Example (Hex)                                               |
 |-------------------------------------------------------------|
-| AA00 81040155D111 8410 D111 850101 870402020301 8903 CC0100 |
+| AA00 81040155D111 8410 D111 850101 870402020301 8903 CC0100 
 
 Table 869 - Set Response Example
 
 | Example (Hex)                                                        |
 |----------------------------------------------------------------------|
-| AA0081048255D11182040000000084820010D1118501018704020203018903CC0100 |
+| AA0081048255D11182040000000084820010D1118501018704020203018903CC0100 
 
 #### Property 1.2.2.3.1.D Bluetooth® LE Debug Mode Enabled
 
@@ -13840,25 +13840,25 @@ Table 871 - Get Request Example
 
 | Example (Hex)                                                |
 |--------------------------------------------------------------|
-| AA00 8104 0155D101 840F D101 8501 01 8704 02020301 8902 CD00 |
+| AA00 8104 0155D101 840F D101 8501 01 8704 02020301 8902 CD00 
 
 Table 872 - Get Response Example
 
 | Example (Hex)                                                        |
 |----------------------------------------------------------------------|
-| AA0081048255D10182040000000084820010D1018501018704020203018903CD0100 |
+| AA0081048255D10182040000000084820010D1018501018704020203018903CD0100 
 
 Table 873 - Set Request Example
 
 | Example (Hex)                                               |
 |-------------------------------------------------------------|
-| AA00 81040155D111 8410 D111 850101 870402020301 8903 CD0100 |
+| AA00 81040155D111 8410 D111 850101 870402020301 8903 CD0100 
 
 Table 874 - Set Response Example
 
 | Example (Hex)                                                        |
 |----------------------------------------------------------------------|
-| AA0081048255D11182040000000084820010D1118501018704020203018903CD0100 |
+| AA0081048255D11182040000000084820010D1118501018704020203018903CD0100 
 
 ### Property Subgroup 1.2.3.nnn User Interface Settings
 
@@ -13882,25 +13882,25 @@ Table 876 - Get Request Example
 
 | Example (Hex)                                                                                               |
 |-------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 01 5E D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0A E2 08 E3 06 E1 04 E1 02 C1 00 |
+| AA 00 81 04 01 5E D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0A E2 08 E3 06 E1 04 E1 02 C1 00 
 
 Table 877 - Get Response Example
 
 | Example (Hex)                                                                                                                          |
 |----------------------------------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 82 5E D1 01 82 04 00 00 00 00 84 82 00 1B D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0B E2 09 E3 07 E1 05 E1 03 C1 01 03 |
+| AA 00 81 04 82 5E D1 01 82 04 00 00 00 00 84 82 00 1B D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0B E2 09 E3 07 E1 05 E1 03 C1 01 03 
 
 Table 878 - Set Request Example
 
 | Example (Hex)                                                                                                  |
 |----------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 01 5D D1 11 84 1B D1 11 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0B E2 09 E3 07 E1 05 E1 03 C1 01 03 |
+| AA 00 81 04 01 5D D1 11 84 1B D1 11 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0B E2 09 E3 07 E1 05 E1 03 C1 01 03 
 
 Table 879 - Set Response Example
 
 | Example (Hex)                                                                                                                          |
 |----------------------------------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 82 5D D1 11 82 04 00 00 00 00 84 82 00 1B D1 11 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0B E2 09 E3 07 E1 05 E1 03 C1 01 03 |
+| AA 00 81 04 82 5D D1 11 82 04 00 00 00 00 84 82 00 1B D1 11 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0B E2 09 E3 07 E1 05 E1 03 C1 01 03 
 
 #### Property 1.2.3.1.1.2 Custom Idle Page Image Device Locked (Display Only)
 
@@ -13923,25 +13923,25 @@ Table 881 - Get Request Example
 
 | Example (Hex)                                                |
 |--------------------------------------------------------------|
-| AA00 8104 0155D101 840F D101 8501 01 8704 02030101 8902 C200 |
+| AA00 8104 0155D101 840F D101 8501 01 8704 02030101 8902 C200 
 
 Table 882 - Get Response Example
 
 | Example (Hex)                                                                            |
 |------------------------------------------------------------------------------------------|
-| AA00 81 04 8255D101 82 04 00000000 84 820010 D101 85 01 01 87 04 02030101 89 03 C2 01 00 |
+| AA00 81 04 8255D101 82 04 00000000 84 820010 D101 85 01 01 87 04 02030101 89 03 C2 01 00 
 
 Table 883 - Set Request Example
 
 | Example (Hex)                                                  |
 |----------------------------------------------------------------|
-| AA00 81040155D111 8410 D111 8501 01 8704 02030101 8903 C201 00 |
+| AA00 81040155D111 8410 D111 8501 01 8704 02030101 8903 C201 00 
 
 Table 884 - Set Response Example
 
 | Example (Hex)                                                                            |
 |------------------------------------------------------------------------------------------|
-| AA00 81 04 8255D111 82 04 00000000 84 820010 D111 85 01 01 87 04 02030101 89 03 C2 01 00 |
+| AA00 81 04 8255D111 82 04 00000000 84 820010 D111 85 01 01 87 04 02030101 89 03 C2 01 00 
 
 #### Property 1.2.3.1.2.1 Display Orientation (Display Only)
 
@@ -13963,25 +13963,25 @@ Table 886 - Get Request Example
 
 | Example (Hex)                                                                                               |
 |-------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 01 5E D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0A E2 08 E3 06 E1 04 E2 02 C1 00 |
+| AA 00 81 04 01 5E D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0A E2 08 E3 06 E1 04 E2 02 C1 00 
 
 Table 887 - Get Response Example
 
 | Example (Hex)                                                                                                                          |
 |----------------------------------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 82 5E D1 01 82 04 00 00 00 00 84 82 00 1B D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0B E2 09 E3 07 E1 05 E2 03 C1 01 00 |
+| AA 00 81 04 82 5E D1 01 82 04 00 00 00 00 84 82 00 1B D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0B E2 09 E3 07 E1 05 E2 03 C1 01 00 
 
 Table 888 - Set Request Example
 
 | Example (Hex)                                                                                                  |
 |----------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 01 5D D1 11 84 1B D1 11 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0B E2 09 E3 07 E1 05 E2 03 C1 01 01 |
+| AA 00 81 04 01 5D D1 11 84 1B D1 11 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0B E2 09 E3 07 E1 05 E2 03 C1 01 01 
 
 Table 889 - Set Response Example
 
 | Example (Hex)                                                                                                                          |
 |----------------------------------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 82 5D D1 11 82 04 00 00 00 00 84 82 00 1B D1 11 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0B E2 09 E3 07 E1 05 E2 03 C1 01 01 |
+| AA 00 81 04 82 5D D1 11 82 04 00 00 00 00 84 82 00 1B D1 11 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0B E2 09 E3 07 E1 05 E2 03 C1 01 01 
 
 #### Property 1.2.3.1.3.1 Enable Card Logos Page at Startup
 
@@ -14003,25 +14003,25 @@ Table 891 - Get Request Example
 
 | Example (Hex)                                                                                               |
 |-------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 01 5E D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0A E2 08 E3 06 E1 04 E3 02 C1 00 |
+| AA 00 81 04 01 5E D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0A E2 08 E3 06 E1 04 E3 02 C1 00 
 
 Table 892 - Get Response Example
 
 | Example (Hex)                                                                                                                          |
 |----------------------------------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 82 5E D1 01 82 04 00 00 00 00 84 82 00 1B D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0B E2 09 E3 07 E1 05 E3 03 C1 01 00 |
+| AA 00 81 04 82 5E D1 01 82 04 00 00 00 00 84 82 00 1B D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0B E2 09 E3 07 E1 05 E3 03 C1 01 00 
 
 Table 893 - Set Request Example
 
 | Example (Hex)                                                                                                  |
 |----------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 01 5D D1 11 84 1B D1 11 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0B E2 09 E3 07 E1 05 E3 03 C1 01 01 |
+| AA 00 81 04 01 5D D1 11 84 1B D1 11 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0B E2 09 E3 07 E1 05 E3 03 C1 01 01 
 
 Table 894 - Set Response Example
 
 | Example (Hex)                                                                                                                          |
 |----------------------------------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 82 5D D1 11 82 04 00 00 00 00 84 82 00 1B D1 11 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0B E2 09 E3 07 E1 05 E3 03 C1 01 01 |
+| AA 00 81 04 82 5D D1 11 82 04 00 00 00 00 84 82 00 1B D1 11 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0B E2 09 E3 07 E1 05 E3 03 C1 01 01 
 
 #### Property 1.2.3.1.3.2 Display Card Logo While Authorizing
 
@@ -14043,25 +14043,25 @@ Table 896 - Get Request Example
 
 | Example (Hex)                                                                                               |
 |-------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 01 5E D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0A E2 08 E3 06 E1 04 E3 02 C2 00 |
+| AA 00 81 04 01 5E D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0A E2 08 E3 06 E1 04 E3 02 C2 00 
 
 Table 897 - Get Response Example
 
 | Example (Hex)                                                                                                                          |
 |----------------------------------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 82 5E D1 01 82 04 00 00 00 00 84 82 00 1B D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0B E2 09 E3 07 E1 05 E3 03 C2 01 00 |
+| AA 00 81 04 82 5E D1 01 82 04 00 00 00 00 84 82 00 1B D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0B E2 09 E3 07 E1 05 E3 03 C2 01 00 
 
 Table 898 - Set Request Example
 
 | Example (Hex)                                                                                                  |
 |----------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 01 5D D1 11 84 1B D1 11 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0B E2 09 E3 07 E1 05 E3 03 C2 01 01 |
+| AA 00 81 04 01 5D D1 11 84 1B D1 11 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0B E2 09 E3 07 E1 05 E3 03 C2 01 01 
 
 Table 899 - Set Response Example
 
 | Example (Hex)                                                                                                                          |
 |----------------------------------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 82 5D D1 11 82 04 00 00 00 00 84 82 00 1B D1 11 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0B E2 09 E3 07 E1 05 E3 03 C2 01 01 |
+| AA 00 81 04 82 5D D1 11 82 04 00 00 00 00 84 82 00 1B D1 11 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0B E2 09 E3 07 E1 05 E3 03 C2 01 01 
 
 #### Property 1.2.3.1.2.2 Display Backlight Intensity (Display Only)
 
@@ -14083,25 +14083,25 @@ Table 901 - Get Request Example
 
 | Example (Hex)                                                              |
 |----------------------------------------------------------------------------|
-| AA 00 81 04 01 55 D1 01 84 0F D1 01 85 01 01 87 04 02 03 01 02 89 02 C2 00 |
+| AA 00 81 04 01 55 D1 01 84 0F D1 01 85 01 01 87 04 02 03 01 02 89 02 C2 00 
 
 Table 902 - Get Response Example
 
 | Example (Hex)                                                                                         |
 |-------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 82 55 D1 01 82 04 00 00 00 00 84 82 00 10 D1 01 85 01 01 87 04 02 03 01 02 89 03 C2 01 5A |
+| AA 00 81 04 82 55 D1 01 82 04 00 00 00 00 84 82 00 10 D1 01 85 01 01 87 04 02 03 01 02 89 03 C2 01 5A 
 
 Table 903 - Set Request Example
 
 | Example (Hex)                                                                |
 |------------------------------------------------------------------------------|
-| AA 00 81 04 01 55 D1 11 84 10 D1 11 85 01 01 87 04 02 03 01 02 89 03 C2 0164 |
+| AA 00 81 04 01 55 D1 11 84 10 D1 11 85 01 01 87 04 02 03 01 02 89 03 C2 0164 
 
 Table 904 - Set Response Example
 
 | Example (Hex)                                                                                         |
 |-------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 82 55 D1 11 82 04 00 00 00 00 84 82 00 10 D1 11 85 01 01 87 04 02 03 01 02 89 03 C2 01 64 |
+| AA 00 81 04 82 55 D1 11 82 04 00 00 00 00 84 82 00 10 D1 11 85 01 01 87 04 02 03 01 02 89 03 C2 01 64 
 
 #### Property 1.2.3.2.1.1 System Volume Control
 
@@ -14123,25 +14123,25 @@ Table 906 - Get Request Example
 
 | Example (Hex)                                                                                               |
 |-------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 01 5E D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0A E2 08 E3 06 E2 04 E1 02 C1 00 |
+| AA 00 81 04 01 5E D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0A E2 08 E3 06 E2 04 E1 02 C1 00 
 
 Table 907 - Get Response Example
 
 | Example (Hex)                                                                                                                          |
 |----------------------------------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 82 5E D1 01 82 04 00 00 00 00 84 82 00 1B D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0B E2 09 E3 07 E2 05 E1 03 C1 01 32 |
+| AA 00 81 04 82 5E D1 01 82 04 00 00 00 00 84 82 00 1B D1 01 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0B E2 09 E3 07 E2 05 E1 03 C1 01 32 
 
 Table 908 - Set Request Example
 
 | Example (Hex)                                                                                                  |
 |----------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 01 5D D1 11 84 1B D1 11 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0B E2 09 E3 07 E2 05 E1 03 C1 01 01 |
+| AA 00 81 04 01 5D D1 11 84 1B D1 11 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0B E2 09 E3 07 E2 05 E1 03 C1 01 01 
 
 Table 909 - Set Response Example
 
 | Example (Hex)                                                                                                                          |
 |----------------------------------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 82 5D D1 11 82 04 00 00 00 00 84 82 00 1B D1 11 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0B E2 09 E3 07 E2 05 E1 03 C1 01 01 |
+| AA 00 81 04 82 5D D1 11 82 04 00 00 00 00 84 82 00 1B D1 11 81 07 2B 06 01 04 01 F6 09 85 01 01 89 0B E2 09 E3 07 E2 05 E1 03 C1 01 01 
 
 #### Property 1.2.3.2.2.1 Touch Keypress Beep Enable
 
@@ -14163,37 +14163,37 @@ Table 911 - Get Request Example
 
 | Example (Hex)                                                              |
 |----------------------------------------------------------------------------|
-| AA 00 81 04 01 55 D1 01 84 0F D1 01 85 01 01 87 04 02 03 02 02 89 02 C1 00 |
+| AA 00 81 04 01 55 D1 01 84 0F D1 01 85 01 01 87 04 02 03 02 02 89 02 C1 00 
 
 Table 912 - Get Response Example
 
 | Example (Hex)                                                                                         |
 |-------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 82 55 D1 01 82 04 00 00 00 00 84 82 00 10 D1 01 85 01 01 87 04 02 03 02 02 89 03 C1 01 01 |
+| AA 00 81 04 82 55 D1 01 82 04 00 00 00 00 84 82 00 10 D1 01 85 01 01 87 04 02 03 02 02 89 03 C1 01 01 
 
 Table 913 – Set Request Example (enable)
 
 |  Example (Hex)                                                                |
 |-------------------------------------------------------------------------------|
-| AA 00 81 04 01 55 D1 11 84 10 D1 11 85 01 01 87 04 02 03 02 02 89 03 C1 01 01 |
+| AA 00 81 04 01 55 D1 11 84 10 D1 11 85 01 01 87 04 02 03 02 02 89 03 C1 01 01 
 
 Table 914 - Set Response Example (enable)
 
 | Example (Hex)                                                                                         |
 |-------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 82 55 D1 11 82 04 00 00 00 00 84 82 00 10 D1 11 85 01 01 87 04 02 03 02 02 89 03 C1 01 01 |
+| AA 00 81 04 82 55 D1 11 82 04 00 00 00 00 84 82 00 10 D1 11 85 01 01 87 04 02 03 02 02 89 03 C1 01 01 
 
 Table 915 - Set Request Example (disable)
 
 | Example (Hex)                                                                 |
 |-------------------------------------------------------------------------------|
-| AA 00 81 04 01 55 D1 11 84 10 D1 11 85 01 01 87 04 02 03 02 02 89 03 C1 01 00 |
+| AA 00 81 04 01 55 D1 11 84 10 D1 11 85 01 01 87 04 02 03 02 02 89 03 C1 01 00 
 
 Table 916 - Set Response Example (disable)
 
 | Example (Hex)                                                                                         |
 |-------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 82 55 D1 11 82 04 00 00 00 00 84 82 00 10 D1 11 85 01 01 87 04 02 03 02 02 89 03 C1 01 00 |
+| AA 00 81 04 82 55 D1 11 82 04 00 00 00 00 84 82 00 10 D1 11 85 01 01 87 04 02 03 02 02 89 03 C1 01 00 
 
 ### Property Subgroup 1.2.5.nnn Security Settings
 
@@ -14217,25 +14217,25 @@ Table 918 - Get Request Example
 
 | Example (Hex)                                                |
 |--------------------------------------------------------------|
-| AA00 8104 0155D101 840F D101 8501 01 8704 02050201 8902 C100 |
+| AA00 8104 0155D101 840F D101 8501 01 8704 02050201 8902 C100 
 
 Table 919 - Get Response Example
 
 | Example (Hex)                                                                 |
 |-------------------------------------------------------------------------------|
-| AA00 81048255D101 820400000000 84820010 D101 850101 870402050201 8903 C101 00 |
+| AA00 81048255D101 820400000000 84820010 D101 850101 870402050201 8903 C101 00 
 
 Table 920 - Set Request Example
 
 | Example (Hex) |
 |---------------|
-| TBD           |
+| TBD 
 
 Table 921 - Set Response Example
 
 | Example (Hex) |
 |---------------|
-| TBD           |
+| TBD 
 
 #### Property 1.2.5.2.1.2 Device Lock State After Reset
 
@@ -14257,25 +14257,25 @@ Table 923 - Get Request Example
 
 | Example (Hex)                                                |
 |--------------------------------------------------------------|
-| AA00 8104 0155D101 840F D101 8501 01 8704 02050201 8902 C200 |
+| AA00 8104 0155D101 840F D101 8501 01 8704 02050201 8902 C200 
 
 Table 924 - Get Response Example
 
 | Example (Hex)                                                                 |
 |-------------------------------------------------------------------------------|
-| AA00 81048255D101 820400000000 84820010 D101 850101 870402050201 8903 C201 00 |
+| AA00 81048255D101 820400000000 84820010 D101 850101 870402050201 8903 C201 00 
 
 Table 925 - Set Request Example
 
 | Example (Hex)                                                  |
 |----------------------------------------------------------------|
-| AA00 81040155D111 8410 D111 8501 01 8704 02050201 8903 C201 00 |
+| AA00 81040155D111 8410 D111 8501 01 8704 02050201 8903 C201 00 
 
 Table 926 - Set Response Example
 
 | Example (Hex)                                                                 |
 |-------------------------------------------------------------------------------|
-| AA00 81048255D111 820400000000 84820010 D111 850101 870402050201 8903 C201 00 |
+| AA00 81048255D111 820400000000 84820010 D111 850101 870402050201 8903 C201 00 
 
 #### Property 1.2.5.2.1.3 Device Lock Passcode
 
@@ -14297,25 +14297,25 @@ Table 928 - Get Request Example
 
 | Example (Hex)                                                |
 |--------------------------------------------------------------|
-| AA00 8104 0155D101 840F D101 8501 01 8704 02050201 8902 C300 |
+| AA00 8104 0155D101 840F D101 8501 01 8704 02050201 8902 C300 
 
 Table 929 - Get Response Example
 
 | Example (Hex)                                                              |
 |----------------------------------------------------------------------------|
-| AA00 81048255D101 820400000000 8482000F D101 850101 870402050201 8902 C300 |
+| AA00 81048255D101 820400000000 8482000F D101 850101 870402050201 8902 C300 
 
 Table 930 - Set Request Example
 
 | Example (Hex) |
 |---------------|
-| TBD           |
+| TBD 
 
 Table 931 - Set Response Example
 
 | Example (Hex) |
 |---------------|
-| TBD           |
+| TBD 
 
 ### Property Subgroup 1.2.7.nnn System Settings
 
@@ -14339,25 +14339,25 @@ Table 933 - Get Request Example
 
 | Example (Hex)                                                              |
 |----------------------------------------------------------------------------|
-| AA 00 81 04 01 55 D1 01 84 0F D1 01 85 01 01 87 04 02 07 01 01 89 02 C1 00 |
+| AA 00 81 04 01 55 D1 01 84 0F D1 01 85 01 01 87 04 02 07 01 01 89 02 C1 00 
 
 Table 934 - Get Response Example
 
 | Example (Hex)                                                                                         |
 |-------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 82 55 D1 01 82 04 00 00 00 00 84 82 00 10 D1 01 85 01 01 87 04 02 07 01 01 89 03 C1 01 00 |
+| AA 00 81 04 82 55 D1 01 82 04 00 00 00 00 84 82 00 10 D1 01 85 01 01 87 04 02 07 01 01 89 03 C1 01 00 
 
 Table 935 - Set Request Example
 
 | Example (Hex)                                                                 |
 |-------------------------------------------------------------------------------|
-| AA 00 81 04 01 55 D1 11 84 10 D1 11 85 01 01 87 04 02 07 01 01 89 03 C1 01 05 |
+| AA 00 81 04 01 55 D1 11 84 10 D1 11 85 01 01 87 04 02 07 01 01 89 03 C1 01 05 
 
 Table 936 - Set Response Example
 
 | Example (Hex)                                                                                         |
 |-------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 82 55 D1 11 82 04 00 00 00 00 84 82 00 10 D1 11 85 01 01 87 04 02 07 01 01 89 03 C1 01 05 |
+| AA 00 81 04 82 55 D1 11 82 04 00 00 00 00 84 82 00 10 D1 11 85 01 01 87 04 02 07 01 01 89 03 C1 01 05 
 
 #### Property 1.2.7.1.1.2 Device Reset Occurred Notification Acknowledged
 
@@ -14379,25 +14379,25 @@ Table 938 - Get Request Example
 
 | Example (Hex)                                                |
 |--------------------------------------------------------------|
-| AA00 8104 0155D101 840F D101 8501 01 8704 02070101 8902 C200 |
+| AA00 8104 0155D101 840F D101 8501 01 8704 02070101 8902 C200 
 
 Table 939 - Get Response Example
 
 | Example (Hex)                                                                     |
 |-----------------------------------------------------------------------------------|
-| AA00 8104 8255D101 8204 00000000 84820010 D101 8501 01 8704 02070101 8903 C201 00 |
+| AA00 8104 8255D101 8204 00000000 84820010 D101 8501 01 8704 02070101 8903 C201 00 
 
 Table 940 - Set Request Example
 
 | Example (Hex)                                                 |
 |---------------------------------------------------------------|
-| AA00 81040155D111 8410 D111 8501 01 8704 02070101 8903 C20101 |
+| AA00 81040155D111 8410 D111 8501 01 8704 02070101 8903 C20101 
 
 Table 941 - Set Response Example
 
 | Example (Hex)                                                                      |
 |------------------------------------------------------------------------------------|
-| AA00 8104 8255D111 8204 00000000 84820010 D111 8501 01 8704 02070101 8903 C201 01  |
+| AA00 8104 8255D111 8204 00000000 84820010 D111 8501 01 8704 02070101 8903 C201 01 
 
 #### Property 1.2.7.1.1.3 Device Reset Will Occur Soon Notification Control
 
@@ -14420,25 +14420,25 @@ Table 943 - Get Request Example
 
 | Example (Hex)                                                              |
 |----------------------------------------------------------------------------|
-| AA 00 81 04 01 55 D1 01 84 0F D1 01 85 01 01 87 04 02 07 01 01 89 02 C3 00 |
+| AA 00 81 04 01 55 D1 01 84 0F D1 01 85 01 01 87 04 02 07 01 01 89 02 C3 00 
 
 Table 944 - Get Response Example
 
 | Example (Hex)                                                                                         |
 |-------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 82 55 D1 01 82 04 00 00 00 00 84 82 00 10 D1 01 85 01 01 87 04 02 07 01 01 89 03 C3 01 05 |
+| AA 00 81 04 82 55 D1 01 82 04 00 00 00 00 84 82 00 10 D1 01 85 01 01 87 04 02 07 01 01 89 03 C3 01 05 
 
 Table 945 - Set Request Example
 
 | Example (Hex)                                                                 |
 |-------------------------------------------------------------------------------|
-| AA 00 81 04 01 55 D1 11 84 10 D1 11 85 01 01 87 04 02 07 01 01 89 03 C1 01 05 |
+| AA 00 81 04 01 55 D1 11 84 10 D1 11 85 01 01 87 04 02 07 01 01 89 03 C1 01 05 
 
 Table 8115 - Set Response Example
 
 | Example (Hex)                                                                                         |
 |-------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 82 55 D1 11 82 04 00 00 00 00 84 82 00 10 D1 11 85 01 01 87 04 02 07 01 01 89 03 C1 01 05 |
+| AA 00 81 04 82 55 D1 11 82 04 00 00 00 00 84 82 00 10 D1 11 85 01 01 87 04 02 07 01 01 89 03 C1 01 05 
 
 #### Property 1.2.7.1.1.4 Auto Reset Configuration
 
@@ -14460,25 +14460,25 @@ Table 947 - Get Request Example
 
 | Example (Hex)                                                |
 |--------------------------------------------------------------|
-| AA00 8104 0155D101 840F D101 8501 01 8704 02070101 8902 C400 |
+| AA00 8104 0155D101 840F D101 8501 01 8704 02070101 8902 C400 
 
 Table 948 - Get Response Example
 
 | Example (Hex)                                                          |
 |------------------------------------------------------------------------|
-| AA0081048255D10182040000000084820011D1018501018704020701018904C402FFFF |
+| AA0081048255D10182040000000084820011D1018501018704020701018904C402FFFF 
 
 Table 949 - Set Request Example
 
 | Example (Hex)                                                    |
 |------------------------------------------------------------------|
-| AA00 81040155D111 8411 D111 8501 01 8704 02070101 8904 C402 FFFF |
+| AA00 81040155D111 8411 D111 8501 01 8704 02070101 8904 C402 FFFF 
 
 Table 950 - Set Response Example
 
 | Example (Hex)                                                          |
 |------------------------------------------------------------------------|
-| AA0081048255D11182040000000084820011D1118501018704020701018904C402FFFF |
+| AA0081048255D11182040000000084820011D1118501018704020701018904C402FFFF 
 
 #### Property 1.2.7.1.2.1 User Event Notification Controls Enable
 
@@ -14500,25 +14500,25 @@ Table 952 - Get Request Example
 
 | Example (Hex)                                                |
 |--------------------------------------------------------------|
-| AA00 8104 0155D101 840F D101 8501 01 8704 02070102 8902 C100 |
+| AA00 8104 0155D101 840F D101 8501 01 8704 02070102 8902 C100 
 
 Table 953 - Get Response Example
 
 | Example (Hex)                                                                               |
 |---------------------------------------------------------------------------------------------|
-| AA00 8104 8255D101 8204 00000000 84820013 D101 8501 01 8704 02070102 8906 C1 04 00 00 00 00 |
+| AA00 8104 8255D101 8204 00000000 84820013 D101 8501 01 8704 02070102 8906 C1 04 00 00 00 00 
 
 Table 954 - Set Request Example
 
 | Example (Hex)                                                             |
 |---------------------------------------------------------------------------|
-| AA00 8104 0155D111 8413 D111 8501 01 8704 02070102 8906 C1 04 03 00 00 00 |
+| AA00 8104 0155D111 8413 D111 8501 01 8704 02070102 8906 C1 04 03 00 00 00 
 
 Table 955 - Set Response Example
 
 | Example (Hex)                                                                               |
 |---------------------------------------------------------------------------------------------|
-| AA00 8104 8255D111 8204 00000000 84820013 D111 8501 01 8704 02070102 8906 C1 04 03 00 00 00 |
+| AA00 8104 8255D111 8204 00000000 84820013 D111 8501 01 8704 02070102 8906 C1 04 03 00 00 00 
 
 #### Property 1.2.7.1.2.2 User Event Notification MSR Data Timeout (MSR Only)
 
@@ -14541,25 +14541,25 @@ Table 957 - Get Request Example
 
 | Example (Hex)                                                                      |
 |------------------------------------------------------------------------------------|
-| AA00 8104 010CD101 841A D101 8107 2B06010401F609 8501 01 890A E208E706E104E202C200 |
+| AA00 8104 010CD101 841A D101 8107 2B06010401F609 8501 01 890A E208E706E104E202C200 
 
 Table 958 - Get Response Example
 
 | Example (Hex)                                                                                           |
 |---------------------------------------------------------------------------------------------------------|
-| AA00 8104 820CD101 8204 00000000 8482001B D101 8107 2B06010401F609 8501 01 890B E209E707E105E203C2 0102 |
+| AA00 8104 820CD101 8204 00000000 8482001B D101 8107 2B06010401F609 8501 01 890B E209E707E105E203C2 0102 
 
 Table 959 - Set Request Example
 
 | Example (Hex)                                                                         |
 |---------------------------------------------------------------------------------------|
-| AA00 8104 010DD111 841B D111 8107 2B06010401F609 8501 01 890B E209E707E105E203C2 0102 |
+| AA00 8104 010DD111 841B D111 8107 2B06010401F609 8501 01 890B E209E707E105E203C2 0102 
 
 Table 960 - Set Response Example
 
 | Example (Hex)                                                                                           |
 |---------------------------------------------------------------------------------------------------------|
-| AA00 8104 820DD111 8204 00000000 8482001B D111 8107 2B06010401F609 8501 01 890B E209E707E105E203C2 0102 |
+| AA00 8104 820DD111 8204 00000000 8482001B D111 8107 2B06010401F609 8501 01 890B E209E707E105E203C2 0102 
 
 #### Property 1.2.7.1.3.1 Maximum Battery Charge Level (Deprecated)
 
@@ -14581,25 +14581,25 @@ Table 962 - Get Request Example
 
 | Example (Hex)                                                |
 |--------------------------------------------------------------|
-| AA00 8104 0155D101 840F D101 8501 01 8704 02070103 8902 C100 |
+| AA00 8104 0155D101 840F D101 8501 01 8704 02070103 8902 C100 
 
 Table 963 - Get Response Example
 
 | Example (Hex)                                                                     |
 |-----------------------------------------------------------------------------------|
-| AA00 8104 8255D101 8204 00000000 84820010 D101 8501 01 8704 02070103 8903 C101 50 |
+| AA00 8104 8255D101 8204 00000000 84820010 D101 8501 01 8704 02070103 8903 C101 50 
 
 Table 964 - Set Request Example
 
 | Example (Hex)                                                  |
 |----------------------------------------------------------------|
-| AA00 81040155D111 8410 D111 8501 01 8704 02070103 8903 C101 50 |
+| AA00 81040155D111 8410 D111 8501 01 8704 02070103 8903 C101 50 
 
 Table 8.3222 - Set Response Example
 
 | Example (Hex)                                                                     |
 |-----------------------------------------------------------------------------------|
-| AA00 8104 8255D111 8204 00000000 84820010 D111 8501 01 8704 02070103 8903 C101 50 |
+| AA00 8104 8255D111 8204 00000000 84820010 D111 8501 01 8704 02070103 8903 C101 50 
 
 #### Property 1.2.7.1.4.1 Device Low Temperature Notification Level
 
@@ -14622,25 +14622,25 @@ Table 966 - Get Request Example
 
 | Example (Hex)                                                |
 |--------------------------------------------------------------|
-| AA00 8104 0155D101 840F D101 8501 01 8704 02070104 8902 C100 |
+| AA00 8104 0155D101 840F D101 8501 01 8704 02070104 8902 C100 
 
 Table 967 - Get Response Example
 
 | Example (Hex)                                                                     |
 |-----------------------------------------------------------------------------------|
-| AA00 8104 8255D101 8204 00000000 84820010 D101 8501 01 8704 02070104 8903 C101 00 |
+| AA00 8104 8255D101 8204 00000000 84820010 D101 8501 01 8704 02070104 8903 C101 00 
 
 Table 968 - Set Request Example
 
 | Example (Hex)                                                  |
 |----------------------------------------------------------------|
-| AA00 81040155D111 8410 D111 8501 01 8704 02070104 8903 C101 05 |
+| AA00 81040155D111 8410 D111 8501 01 8704 02070104 8903 C101 05 
 
 Table 8.3227 - Set Response Example
 
 | Example (Hex)                                                                    |
 |----------------------------------------------------------------------------------|
-| AA00 8104 8255D111 8204 00000000 84820010 D111 8501 01 870402070104 8903 C101 05 |
+| AA00 8104 8255D111 8204 00000000 84820010 D111 8501 01 870402070104 8903 C101 05 
 
 #### Property 1.2.7.1.4.2 Device High Temperature Notification Level
 
@@ -14663,25 +14663,25 @@ Table 970 - Get Request Example
 
 | Example (Hex)                                                |
 |--------------------------------------------------------------|
-| AA00 8104 0155D101 840F D101 8501 01 8704 02070104 8902 C200 |
+| AA00 8104 0155D101 840F D101 8501 01 8704 02070104 8902 C200 
 
 Table 8.3230 - Get Response Example
 
 | Example (Hex)                                                                     |
 |-----------------------------------------------------------------------------------|
-| AA00 8104 8255D101 8204 00000000 84820010 D101 8501 01 8704 02070104 8903 C201 2D |
+| AA00 8104 8255D101 8204 00000000 84820010 D101 8501 01 8704 02070104 8903 C201 2D 
 
 Table 971 - Set Request Example
 
 | Example (Hex)                                                  |
 |----------------------------------------------------------------|
-| AA00 81040155D111 8410 D111 8501 01 8704 02070104 8903 C201 2D |
+| AA00 81040155D111 8410 D111 8501 01 8704 02070104 8903 C201 2D 
 
 Table 8.3232 - Set Response Example
 
 | Example (Hex)                                                                    |
 |----------------------------------------------------------------------------------|
-| AA00 8104 8255D111 8204 00000000 84820010 D111 8501 01 870402070104 8903 C201 2D |
+| AA00 8104 8255D111 8204 00000000 84820010 D111 8501 01 870402070104 8903 C201 2D 
 
 #### Property 1.2.7.1.4.3 Device Temperature Notification Repeat Interval
 
@@ -14704,25 +14704,25 @@ Table 973 - Get Request Example
 
 | Example (Hex)                                                |
 |--------------------------------------------------------------|
-| AA00 8104 0155D101 840F D101 8501 01 8704 02070104 8902 C300 |
+| AA00 8104 0155D101 840F D101 8501 01 8704 02070104 8902 C300 
 
 Table 8.3235 - Get Response Example
 
 | Example (Hex)                                                                     |
 |-----------------------------------------------------------------------------------|
-| AA00 8104 8255D101 8204 00000000 84820010 D101 8501 01 8704 02070104 8903 C301 1E |
+| AA00 8104 8255D101 8204 00000000 84820010 D101 8501 01 8704 02070104 8903 C301 1E 
 
 Table 8.36 - Set Request Example
 
 | Example (Hex)                                                  |
 |----------------------------------------------------------------|
-| AA00 81040155D111 8410 D111 8501 01 8704 02070104 8903 C301 1E |
+| AA00 81040155D111 8410 D111 8501 01 8704 02070104 8903 C301 1E 
 
 Table 8.3237 - Set Response Example
 
 | Example (Hex)                                                                    |
 |----------------------------------------------------------------------------------|
-| AA00 8104 8255D111 8204 00000000 84820010 D111 8501 01 870402070104 8903 C301 1E |
+| AA00 8104 8255D111 8204 00000000 84820010 D111 8501 01 870402070104 8903 C301 1E 
 
 ## Property Group 2.1.1.nnn Device Firmware Feature Information (MAGTEK INTERNAL ONLY FOR NOW)
 
@@ -14748,13 +14748,13 @@ Table 975 - Get Request Example
 
 | Example (Hex)                                                                                               |
 |-------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 01 05 D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 0A E1 08 E1 06 E1 04 E1 02 C1 00 |
+| AA 00 81 04 01 05 D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 0A E1 08 E1 06 E1 04 E1 02 C1 00 
 
 Table 976 - Get Response Example
 
 | Example (Hex)                                                                                                                             |
 |-------------------------------------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 82 05 D1 01 82 04 00 00 00 00 84 82 00 1C D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 0C E1 0A E1 08 E1 06 E1 04 C1 02 01 00 |
+| AA 00 81 04 82 05 D1 01 82 04 00 00 00 00 84 82 00 1C D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 0C E1 0A E1 08 E1 06 E1 04 C1 02 01 00 
 
 ## Property Group 2.1.2.nnn Device Firmware Identification Information
 
@@ -14780,13 +14780,13 @@ Table 978 - Get Request Example
 
 | Example (Hex)                                                                                               |
 |-------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 01 05 D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 0A E1 08 E2 06 E1 04 E1 02 C2 00 |
+| AA 00 81 04 01 05 D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 0A E1 08 E2 06 E1 04 E1 02 C2 00 
 
 Table 979 - Get Response Example
 
 | Example (Hex)                                                                                                                                                                                |
 |----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 82 05 D1 01 82 04 00 00 00 00 84 82 00 2D D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 1D E1 1B E2 19 E1 17 E1 15 C2 13 31 30 30 30 30 30 37 35 33 36 2D 41 30 2D 50 43 49 00 00 |
+| AA 00 81 04 82 05 D1 01 82 04 00 00 00 00 84 82 00 2D D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 1D E1 1B E2 19 E1 17 E1 15 C2 13 31 30 30 30 30 30 37 35 33 36 2D 41 30 2D 50 43 49 00 00 
 
 #### Property 2.1.2.1.1.4 Boot1 Firmware Part Number
 
@@ -14808,13 +14808,13 @@ Table 981 - Get Request Example
 
 | Example (Hex)                                                                                               |
 |-------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 01 03 D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 0A E1 08 E2 06 E1 04 E1 02 C4 00 |
+| AA 00 81 04 01 03 D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 0A E1 08 E2 06 E1 04 E1 02 C4 00 
 
 Table 982 - Get Response Example
 
 | Example (Hex)                                                                                                                                                        |
 |----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 82 03 D1 01 82 04 00 00 00 00 84 82 00 25 D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 15 E1 13 E2 11 E1 0F E1 0D C4 0B 31 30 30 30 30 30 37 35 33 36 00 |
+| AA 00 81 04 82 03 D1 01 82 04 00 00 00 00 84 82 00 25 D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 15 E1 13 E2 11 E1 0F E1 0D C4 0B 31 30 30 30 30 30 37 35 33 36 00 
 
 #### Property 2.1.2.1.2.2 Boot0 Firmware Version
 
@@ -14836,13 +14836,13 @@ Table 984 - Get Request Example
 
 | Example (Hex)                                                                                               |
 |-------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 01 05 D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 0A E1 08 E2 06 E1 04 E2 02 C2 00 |
+| AA 00 81 04 01 05 D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 0A E1 08 E2 06 E1 04 E2 02 C2 00 
 
 Table 985 - Get Response Example
 
 | Example (Hex)                                                                                                                                                                                |
 |----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 82 05 D1 01 82 04 00 00 00 00 84 82 00 2D D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 1D E1 1B E2 19 E1 17 E1 15 C2 13 31 30 30 30 30 30 37 35 33 35 2D 41 30 2D 50 43 49 00 00 |
+| AA 00 81 04 82 05 D1 01 82 04 00 00 00 00 84 82 00 2D D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 1D E1 1B E2 19 E1 17 E1 15 C2 13 31 30 30 30 30 30 37 35 33 35 2D 41 30 2D 50 43 49 00 00 
 
 #### Property 2.1.2.1.2.4 Boot0 Firmware Part Number
 
@@ -14864,13 +14864,13 @@ Table 987 - Get Request Example
 
 | Example (Hex)                                                                                               |
 |-------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 01 0A D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 0A E1 08 E2 06 E1 04 E2 02 C4 00 |
+| AA 00 81 04 01 0A D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 0A E1 08 E2 06 E1 04 E2 02 C4 00 
 
 Table 988 - Get Response Example
 
 | Example (Hex)                                                                                                                                                        |
 |----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 82 0A D1 01 82 04 00 00 00 00 84 82 00 25 D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 15 E1 13 E2 11 E1 0F E2 0D C4 0B 31 30 30 30 30 30 37 35 33 35 00 |
+| AA 00 81 04 82 0A D1 01 82 04 00 00 00 00 84 82 00 25 D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 15 E1 13 E2 11 E1 0F E2 0D C4 0B 31 30 30 30 30 30 37 35 33 35 00 
 
 ### Property Subgroup 2.1.2.2.nn Core Firmware Information
 
@@ -14894,13 +14894,13 @@ Table 990 - Get Request Example
 
 | Example (Hex)                                                                                               |
 |-------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 01 06 D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 0A E1 08 E2 06 E2 04 E2 02 C1 00 |
+| AA 00 81 04 01 06 D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 0A E1 08 E2 06 E2 04 E2 02 C1 00 
 
 Table 991 - Get Response Example
 
 | Example (Hex)                                                                                                                                                              |
 |----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 82 06 D1 01 82 04 00 00 00 00 84 82 00 27 D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 17 E1 15 E2 13 E2 11 E2 0F C1 0D 44 79 6E 61 46 6C 65 78 20 50 72 6F 00 |
+| AA 00 81 04 82 06 D1 01 82 04 00 00 00 00 84 82 00 27 D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 17 E1 15 E2 13 E2 11 E2 0F C1 0D 44 79 6E 61 46 6C 65 78 20 50 72 6F 00 
 
 #### Property 2.1.2.2.2.2 Main Firmware Version
 
@@ -14922,13 +14922,13 @@ Table 993 - Get Request Example
 
 | Example (Hex)                                                                                               |
 |-------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 01 08 D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 0A E1 08 E2 06 E2 04 E2 02 C2 00 |
+| AA 00 81 04 01 08 D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 0A E1 08 E2 06 E2 04 E2 02 C2 00 
 
 Table 994 - Get Response Example
 
 | Example (Hex)                                                                                                                                                                                |
 |----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 82 08 D1 01 82 04 00 00 00 00 84 82 00 2D D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 1D E1 1B E2 19 E2 17 E2 15 C2 13 31 30 30 30 30 30 37 31 38 33 2D 41 31 2D 50 43 49 00 00 |
+| AA 00 81 04 82 08 D1 01 82 04 00 00 00 00 84 82 00 2D D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 1D E1 1B E2 19 E2 17 E2 15 C2 13 31 30 30 30 30 30 37 31 38 33 2D 41 31 2D 50 43 49 00 00 
 
 #### Property 2.1.2.2.2.4 Main Firmware Part Number
 
@@ -14950,13 +14950,13 @@ Table 996 - Get Request Example
 
 | Example (Hex)                                                                                               |
 |-------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 01 0A D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 0A E1 08 E2 06 E2 04 E2 02 C4 00 |
+| AA 00 81 04 01 0A D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 0A E1 08 E2 06 E2 04 E2 02 C4 00 
 
 Table 997 - Get Response Example
 
 | Example (Hex)                                                                                                                                                        |
 |----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 82 0A D1 01 82 04 00 00 00 00 84 82 00 25 D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 15 E1 13 E2 11 E2 0F E2 0D C4 0B 31 30 30 30 30 30 37 31 38 33 00 |
+| AA 00 81 04 82 0A D1 01 82 04 00 00 00 00 84 82 00 25 D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 15 E1 13 E2 11 E2 0F E2 0D C4 0B 31 30 30 30 30 30 37 31 38 33 00 
 
 #### Property 2.1.2.2.2.6 Key Type
 
@@ -14978,13 +14978,13 @@ Table 999 - Get Request Example
 
 | Example (Hex)                                                                                               |
 |-------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 01 31 D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 0A E1 08 E2 06 E2 04 E2 02 C6 00 |
+| AA 00 81 04 01 31 D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 0A E1 08 E2 06 E2 04 E2 02 C6 00 
 
 Table 1000 - Get Response Example
 
 | Example (Hex)                                                                                                                             |
 |-------------------------------------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 82 31 D1 01 82 04 00 00 00 00 84 82 00 1C D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 0C E1 0A E2 08 E2 06 E2 04 C6 02 FF 00 |
+| AA 00 81 04 82 31 D1 01 82 04 00 00 00 00 84 82 00 1C D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 0C E1 0A E2 08 E2 06 E2 04 C6 02 FF 00 
 
 ### Property Subgroup 2.1.2.3.nn EMV Firmware Information
 
@@ -15012,13 +15012,13 @@ Table 1002 - Get Request Example
 
 | Example (Hex)                                                                                               |
 |-------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 01 12 D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 0A E1 08 E2 06 E3 04 E2 02 C1 00 |
+| AA 00 81 04 01 12 D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 0A E1 08 E2 06 E3 04 E2 02 C1 00 
 
 Table 1003 - Get Response Example
 
 | Example (Hex)                                                                                                                                                                          |
 |----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 82 12 D1 01 82 04 00 00 00 00 84 82 00 2B D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 1B E1 19 E2 17 E3 15 E2 13 C1 11 43 54 20 4C 31 20 45 4D 56 43 4F 20 34 2E 33 43 00 |
+| AA 00 81 04 82 12 D1 01 82 04 00 00 00 00 84 82 00 2B D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 1B E1 19 E2 17 E3 15 E2 13 C1 11 43 54 20 4C 31 20 45 4D 56 43 4F 20 34 2E 33 43 00 
 
 #### Property 2.1.2.3.2.2 EMV Contact L1 Kernel Firmware Part Number (Contact Only)
 
@@ -15041,13 +15041,13 @@ Table 1005 - Get Request Example
 
 | Example (Hex)                                                                                               |
 |-------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 01 13 D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 0A E1 08 E2 06 E3 04 E2 02 C2 00 |
+| AA 00 81 04 01 13 D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 0A E1 08 E2 06 E3 04 E2 02 C2 00 
 
 Table 1006 - Get Response Example
 
 | Example (Hex)                                                                                                                                                                          |
 |----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 82 13 D1 01 82 04 00 00 00 00 84 82 00 2B D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 1B E1 19 E2 17 E3 15 E2 13 C2 11 31 30 30 30 30 30 37 31 37 36 20 56 65 72 20 41 00 |
+| AA 00 81 04 82 13 D1 01 82 04 00 00 00 00 84 82 00 2B D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 1B E1 19 E2 17 E3 15 E2 13 C2 11 31 30 30 30 30 30 37 31 37 36 20 56 65 72 20 41 00 
 
 #### Property 2.1.2.3.3.1 EMV Contact L2 Kernel ID (Contact Only)
 
@@ -15069,13 +15069,13 @@ Table 1008 - Get Request Example
 
 | Example (Hex)                                                                                               |
 |-------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 01 15 D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 0A E1 08 E2 06 E3 04 E3 02 C1 00 |
+| AA 00 81 04 01 15 D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 0A E1 08 E2 06 E3 04 E3 02 C1 00 
 
 Table 1009 - Get Response Example
 
 | Example (Hex)                                                                                                                                                        |
 |----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 82 16 D1 01 82 04 00 00 00 00 84 82 00 25 D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 15 E1 13 E2 11 E3 0F E3 0D C1 0B 43 54 20 4C 32 20 34 2E 33 4B 00 |
+| AA 00 81 04 82 16 D1 01 82 04 00 00 00 00 84 82 00 25 D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 15 E1 13 E2 11 E3 0F E3 0D C1 0B 43 54 20 4C 32 20 34 2E 33 4B 00 
 
 #### Property 2.1.2.3.3.2 EMV Contact L2 Kernel Firmware Part Number(Contact Only)
 
@@ -15098,13 +15098,13 @@ Table 1011 - Get Request Example
 
 | Example (Hex)                                                                                               |
 |-------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 01 1A D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 0A E1 08 E2 06 E3 04 E3 02 C2 00 |
+| AA 00 81 04 01 1A D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 0A E1 08 E2 06 E3 04 E3 02 C2 00 
 
 Table 1012 - Get Response Example
 
 | Example (Hex)                                                                                                                                                                                                                                               |
 |-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 82 1A D1 01 82 04 00 00 00 00 84 82 00 42 D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 32 E1 30 E2 2E E3 2C E3 2A C2 28 31 30 30 30 30 30 38 38 37 38 20 56 65 72 20 41 20 44 79 6E 61 46 6C 65 78 20 50 45 44 20 4C 32 20 4B 65 72 6E 65 6C 00 |
+| AA 00 81 04 82 1A D1 01 82 04 00 00 00 00 84 82 00 42 D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 32 E1 30 E2 2E E3 2C E3 2A C2 28 31 30 30 30 30 30 38 38 37 38 20 56 65 72 20 41 20 44 79 6E 61 46 6C 65 78 20 50 45 44 20 4C 32 20 4B 65 72 6E 65 6C 00 
 
 #### Property 2.1.2.3.3.3 EMV Contact L2 Kernel Checksum (Contact Only)
 
@@ -15126,13 +15126,13 @@ Table 1014 - Get Request Example
 
 | Example (Hex)                                                                                               |
 |-------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 01 1B D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 0A E1 08 E2 06 E3 04 E3 02 C3 00 |
+| AA 00 81 04 01 1B D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 0A E1 08 E2 06 E3 04 E3 02 C3 00 
 
 Table 1015 - Get Response Example
 
 | Example (Hex)                                                                                                                                                                                                                                                                                               |
 |-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 82 1B D1 01 82 04 00 00 00 00 84 82 00 52 D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 42 E1 40 E2 3E E3 3C E3 3A C3 38 76 78 78 43 41 41 67 6E 6F 73 33 33 5F 31 37 20 62 35 34 66 33 31 62 63 62 36 31 61 32 36 66 63 38 32 33 62 63 65 39 61 62 38 39 38 39 62 33 31 61 62 39 30 66 39 61 34 |
+| AA 00 81 04 82 1B D1 01 82 04 00 00 00 00 84 82 00 52 D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 42 E1 40 E2 3E E3 3C E3 3A C3 38 76 78 78 43 41 41 67 6E 6F 73 33 33 5F 31 37 20 62 35 34 66 33 31 62 63 62 36 31 61 32 36 66 63 38 32 33 62 63 65 39 61 62 38 39 38 39 62 33 31 61 62 39 30 66 39 61 34 
 
 #### Property 2.1.2.3.3.4 EMV Contact L2 Kernel Configuration Checksum (Contact Only)
 
@@ -15155,13 +15155,13 @@ Table 1017 - Get Request Example
 
 | Example (Hex)                                                                                               |
 |-------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 01 1F D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 0A E1 08 E2 06 E3 04 E3 02 C4 00 |
+| AA 00 81 04 01 1F D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 0A E1 08 E2 06 E3 04 E3 02 C4 00 
 
 Table 1018 - Get Response Example
 
 | Example (Hex)                                                                                                                                   |
 |-------------------------------------------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 82 1F D1 01 82 04 00 00 00 00 84 82 00 1E D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 0E E1 0C E2 0A E3 08 E3 06 C4 04 17 AC 3C 4A |
+| AA 00 81 04 82 1F D1 01 82 04 00 00 00 00 84 82 00 1E D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 0E E1 0C E2 0A E3 08 E3 06 C4 04 17 AC 3C 4A 
 
 #### Property 2.1.2.3.4.1 EMV Contactless L1 Kernel ID (Contactless Only)
 
@@ -15184,13 +15184,13 @@ Table 1020 - Get Request Example
 
 | Example (Hex)                                                                                               |
 |-------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 01 21 D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 0A E1 08 E2 06 E3 04 E4 02 C1 00 |
+| AA 00 81 04 01 21 D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 0A E1 08 E2 06 E3 04 E4 02 C1 00 
 
 Table 1021 - Get Response Example
 
 | Example (Hex)                                                                                                                                                                       |
 |-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 82 21 D1 01 82 04 00 00 00 00 84 82 00 2A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 1A E1 18 E2 16 E3 14 E4 12 C1 10 43 4C 20 4C 31 20 45 4D 56 43 4F 20 33 2E 30 00 |
+| AA 00 81 04 82 21 D1 01 82 04 00 00 00 00 84 82 00 2A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 1A E1 18 E2 16 E3 14 E4 12 C1 10 43 4C 20 4C 31 20 45 4D 56 43 4F 20 33 2E 30 00 
 
 #### Property 2.1.2.3.4.2 EMV Contactless L1 Kernel Firmware Part Number (Contactless Only)
 
@@ -15213,13 +15213,13 @@ Table 1023 - Get Request Example
 
 | Example (Hex)                                                                                               |
 |-------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 01 25 D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 0A E1 08 E2 06 E3 04 E4 02 C2 00 |
+| AA 00 81 04 01 25 D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 0A E1 08 E2 06 E3 04 E4 02 C2 00 
 
 Table 1024 - Get Response Example
 
 | Example (Hex)                                                                                                                                                                          |
 |----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 82 25 D1 01 82 04 00 00 00 00 84 82 00 2B D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 1B E1 19 E2 17 E3 15 E4 13 C2 11 31 30 30 30 30 30 37 31 37 37 20 56 65 72 20 41 00 |
+| AA 00 81 04 82 25 D1 01 82 04 00 00 00 00 84 82 00 2B D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 1B E1 19 E2 17 E3 15 E4 13 C2 11 31 30 30 30 30 30 37 31 37 37 20 56 65 72 20 41 00 
 
 #### Property 2.1.2.3.4.3 EMV Contactless L1 Kernel Checksum (Contactless Only)
 
@@ -15242,13 +15242,13 @@ Table 1026 - Get Request Example
 
 | Example (Hex)                                                                                               |
 |-------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 01 26 D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 0A E1 08 E2 06 E3 04 E4 02 C3 00 |
+| AA 00 81 04 01 26 D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 0A E1 08 E2 06 E3 04 E4 02 C3 00 
 
 Table 1027 - Get Response Example
 
 | Example (Hex)                                                                                                                                                                                                                                               |
 |-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 82 26 D1 01 82 04 00 00 00 00 84 82 00 42 D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 32 E1 30 E2 2E E3 2C E4 2A C3 28 64 33 63 35 64 34 31 33 33 33 34 31 37 38 64 31 64 35 39 32 39 61 37 35 32 62 38 64 32 39 61 64 63 31 65 35 38 32 39 63 |
+| AA 00 81 04 82 26 D1 01 82 04 00 00 00 00 84 82 00 42 D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 32 E1 30 E2 2E E3 2C E4 2A C3 28 64 33 63 35 64 34 31 33 33 33 34 31 37 38 64 31 64 35 39 32 39 61 37 35 32 62 38 64 32 39 61 64 63 31 65 35 38 32 39 63 
 
 #### Property 2.1.2.3.5.1 Mastercard MCL Kernel ID (Contactless Only)
 
@@ -15270,13 +15270,13 @@ Table 1029 - Get Request Example
 
 | Example (Hex)                                                                                               |
 |-------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 01 28 D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 0A E1 08 E2 06 E3 04 E5 02 C1 00 |
+| AA 00 81 04 01 28 D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 0A E1 08 E2 06 E3 04 E5 02 C1 00 
 
 Table 1030 - Get Response Example
 
 | Example (Hex)                                                                                                                                                     |
 |-------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 82 28 D1 01 82 04 00 00 00 00 84 82 00 24 D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 14 E1 12 E2 10 E3 0E E5 0C C1 0A 4D 43 4C 20 33 2E 31 2E 33 00 |
+| AA 00 81 04 82 28 D1 01 82 04 00 00 00 00 84 82 00 24 D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 14 E1 12 E2 10 E3 0E E5 0C C1 0A 4D 43 4C 20 33 2E 31 2E 33 00 
 
 #### Property 2.1.2.3.5.2 Mastercard MCL Kernel Firmware Part Number (Contactless Only)
 
@@ -15299,13 +15299,13 @@ Table 1032 - Get Request Example
 
 | Example (Hex)                                                                                               |
 |-------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 01 29 D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 0A E1 08 E2 06 E3 04 E5 02 C2 00 |
+| AA 00 81 04 01 29 D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 0A E1 08 E2 06 E3 04 E5 02 C2 00 
 
 Table 1033 - Get Response Example
 
 | Example (Hex)                                                                                                                                                                             |
 |-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 82 29 D1 01 82 04 00 00 00 00 84 82 00 2C D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 1C E1 1A E2 18 E3 16 E5 14 C2 12 31 30 30 30 30 30 37 31 37 39 20 56 65 72 20 41 30 00 |
+| AA 00 81 04 82 29 D1 01 82 04 00 00 00 00 84 82 00 2C D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 1C E1 1A E2 18 E3 16 E5 14 C2 12 31 30 30 30 30 30 37 31 37 39 20 56 65 72 20 41 30 00 
 
 #### Property 2.1.2.3.5.3 Mastercard MCL Kernel Checksum (Contactless Only)
 
@@ -15328,13 +15328,13 @@ Table 1035 - Get Request Example
 
 | Example (Hex)                                                                                               |
 |-------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 01 2A D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 0A E1 08 E2 06 E3 04 E5 02 C3 00 |
+| AA 00 81 04 01 2A D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 0A E1 08 E2 06 E3 04 E5 02 C3 00 
 
 Table 1036 - Get Response Example
 
 | Example (Hex)                                                                                                                                                                                                                                                                                                        |
 |----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 82 2A D1 01 82 04 00 00 00 00 84 82 00 55 D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 45 E1 43 E2 41 E3 3F E5 3D C3 3B 43 32 2E 32 2E 38 20 2D 3E 20 76 31 2E 30 2E 32 20 5B 61 64 65 39 34 63 31 33 62 30 63 36 61 33 31 66 31 62 65 36 38 32 62 31 32 35 33 36 35 32 38 32 36 34 62 31 65 66 63 30 5D |
+| AA 00 81 04 82 2A D1 01 82 04 00 00 00 00 84 82 00 55 D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 45 E1 43 E2 41 E3 3F E5 3D C3 3B 43 32 2E 32 2E 38 20 2D 3E 20 76 31 2E 30 2E 32 20 5B 61 64 65 39 34 63 31 33 62 30 63 36 61 33 31 66 31 62 65 36 38 32 62 31 32 35 33 36 35 32 38 32 36 34 62 31 65 66 63 30 5D 
 
 #### Property 2.1.2.3.6.1 Visa payWave Kernel ID (Contactless Only)
 
@@ -15356,13 +15356,13 @@ Table 1038 - Get Request Example
 
 | Example (Hex)                                                                                               |
 |-------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 01 03 D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 0A E1 08 E2 06 E3 04 E6 02 C1 00 |
+| AA 00 81 04 01 03 D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 0A E1 08 E2 06 E3 04 E6 02 C1 00 
 
 Table 1039 - Get Response Example
 
 | Example (Hex)                                                                                                                                                           |
 |-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 82 03 D1 01 82 04 00 00 00 00 84 82 00 26 D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 16 E1 14 E2 12 E3 10 E6 0E C1 0C 50 61 79 57 61 76 65 20 32 2E 32 00 |
+| AA 00 81 04 82 03 D1 01 82 04 00 00 00 00 84 82 00 26 D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 16 E1 14 E2 12 E3 10 E6 0E C1 0C 50 61 79 57 61 76 65 20 32 2E 32 00 
 
 #### Property 2.1.2.3.6.2 Visa payWave Kernel Firmware Part Number (Contactless Only)
 
@@ -15385,13 +15385,13 @@ Table 1041 - Get Request Example
 
 | Example (Hex)                                                                                               |
 |-------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 01 05 D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 0A E1 08 E2 06 E3 04 E6 02 C2 00 |
+| AA 00 81 04 01 05 D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 0A E1 08 E2 06 E3 04 E6 02 C2 00 
 
 Table 1042 - Get Response Example
 
 | Example (Hex)                                                                                                                                                                             |
 |-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 82 05 D1 01 82 04 00 00 00 00 84 82 00 2C D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 1C E1 1A E2 18 E3 16 E6 14 C2 12 31 30 30 30 30 30 37 31 38 30 20 56 65 72 20 41 31 00 |
+| AA 00 81 04 82 05 D1 01 82 04 00 00 00 00 84 82 00 2C D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 1C E1 1A E2 18 E3 16 E6 14 C2 12 31 30 30 30 30 30 37 31 38 30 20 56 65 72 20 41 31 00 
 
 #### Property 2.1.2.3.6.3 Visa payWave Kernel Checksum (Contactless Only)
 
@@ -15414,13 +15414,13 @@ Table 1044 - Get Request Example
 
 | Example (Hex)                                                                                               |
 |-------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 01 06 D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 0A E1 08 E2 06 E3 04 E6 02 C3 00 |
+| AA 00 81 04 01 06 D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 0A E1 08 E2 06 E3 04 E6 02 C3 00 
 
 Table 1045 - Get Response Example
 
 | Example (Hex)                                                                                                                                                                                                                                                                                                                                               |
 |-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 82 06 D1 01 82 04 00 00 00 00 84 82 00 62 D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 52 E1 50 E2 4E E3 4C E6 4A C3 48 56 43 50 53 20 32 2E 32 78 20 5B 30 30 30 30 30 30 30 30 5D 2D 3E 20 76 31 2E 35 2E 36 20 5B 46 31 43 42 42 38 41 32 33 45 30 30 39 38 34 45 39 45 37 35 33 45 46 34 38 38 34 43 33 33 45 41 33 36 38 45 35 37 30 43 5D |
+| AA 00 81 04 82 06 D1 01 82 04 00 00 00 00 84 82 00 62 D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 52 E1 50 E2 4E E3 4C E6 4A C3 48 56 43 50 53 20 32 2E 32 78 20 5B 30 30 30 30 30 30 30 30 5D 2D 3E 20 76 31 2E 35 2E 36 20 5B 46 31 43 42 42 38 41 32 33 45 30 30 39 38 34 45 39 45 37 35 33 45 46 34 38 38 34 43 33 33 45 41 33 36 38 45 35 37 30 43 5D 
 
 #### Property 2.1.2.3.6.5 Entry Point Checksum (Contactless Only)(Common Kernel Only)
 
@@ -15443,13 +15443,13 @@ Table 1047 - Get Request Example
 
 | Example (Hex)                                                                                               |
 |-------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 01 06 D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 0A E1 08 E2 06 E3 04 E6 02 C5 00 |
+| AA 00 81 04 01 06 D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 0A E1 08 E2 06 E3 04 E6 02 C5 00 
 
 Table 1048 - Get Response Example
 
 | Example (Hex)                                                                                                                                                                                                                                               |
 |-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 82 06 D1 01 82 04 00 00 00 00 84 82 00 42 D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 32 E1 30 E2 2E E3 2C E6 2A C5 28 31 42 33 37 32 35 41 37 44 42 43 32 32 30 38 30 35 44 46 33 36 39 45 30 33 35 45 39 33 35 45 46 34 30 34 43 34 42 37 31 |
+| AA 00 81 04 82 06 D1 01 82 04 00 00 00 00 84 82 00 42 D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 32 E1 30 E2 2E E3 2C E6 2A C5 28 31 42 33 37 32 35 41 37 44 42 43 32 32 30 38 30 35 44 46 33 36 39 45 30 33 35 45 39 33 35 45 46 34 30 34 43 34 42 37 31 
 
 #### Property 2.1.2.3.7.1 Discover D-PAS Kernel ID (Contactless Only)
 
@@ -15471,13 +15471,13 @@ Table 1050 - Get Request Example
 
 | Example (Hex)                                                                                               |
 |-------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 01 07 D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 0A E1 08 E2 06 E3 04 E7 02 C1 00 |
+| AA 00 81 04 01 07 D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 0A E1 08 E2 06 E3 04 E7 02 C1 00 
 
 Table 1051 - Get Response Example
 
 | Example (Hex)                                                                                                                                                  |
 |----------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 82 07 D1 01 82 04 00 00 00 00 84 82 00 23 D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 13 E1 11 E2 0F E3 0D E7 0B C1 09 44 50 41 53 20 31 2E 30 00 |
+| AA 00 81 04 82 07 D1 01 82 04 00 00 00 00 84 82 00 23 D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 13 E1 11 E2 0F E3 0D E7 0B C1 09 44 50 41 53 20 31 2E 30 00 
 
 #### Property 2.1.2.3.7.2 Discover D-PAS Kernel Firmware Part Number (Contactless Only)
 
@@ -15500,13 +15500,13 @@ Table 1053 - Get Request Example
 
 | Example (Hex)                                                                                               |
 |-------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 01 09 D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 0A E1 08 E2 06 E3 04 E7 02 C2 00 |
+| AA 00 81 04 01 09 D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 0A E1 08 E2 06 E3 04 E7 02 C2 00 
 
 Table 1054 - Get Response Example
 
 | Example (Hex)                                                                                                                                                                             |
 |-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 82 09 D1 01 82 04 00 00 00 00 84 82 00 2C D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 1C E1 1A E2 18 E3 16 E7 14 C2 12 31 30 30 30 30 30 37 31 38 31 20 56 65 72 20 41 30 00 |
+| AA 00 81 04 82 09 D1 01 82 04 00 00 00 00 84 82 00 2C D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 1C E1 1A E2 18 E3 16 E7 14 C2 12 31 30 30 30 30 30 37 31 38 31 20 56 65 72 20 41 30 00 
 
 #### Property 2.1.2.3.7.3 Discover D-PAS Kernel Checksum (Contactless Only)
 
@@ -15529,13 +15529,13 @@ Table 1056 - Get Request Example
 
 | Example (Hex)                                                                                               |
 |-------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 01 0C D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 0A E1 08 E2 06 E3 04 E7 02 C3 00 |
+| AA 00 81 04 01 0C D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 0A E1 08 E2 06 E3 04 E7 02 C3 00 
 
 Table 1057 - Get Response Example
 
 | Example (Hex)                                                                                                                                                                                                                                                                                                                                               |
 |-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 82 0C D1 01 82 04 00 00 00 00 84 82 00 62 D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 52 E1 50 E2 4E E3 4C E7 4A C3 48 44 50 41 53 20 31 2E 30 20 2B 20 54 41 53 20 30 30 78 20 2D 3E 20 76 31 2E 33 2E 34 32 20 5B 65 32 38 62 66 30 35 33 64 65 39 34 37 63 66 36 61 64 34 35 36 61 32 61 37 63 37 31 30 35 39 61 32 63 35 61 63 36 31 65 5D |
+| AA 00 81 04 82 0C D1 01 82 04 00 00 00 00 84 82 00 62 D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 52 E1 50 E2 4E E3 4C E7 4A C3 48 44 50 41 53 20 31 2E 30 20 2B 20 54 41 53 20 30 30 78 20 2D 3E 20 76 31 2E 33 2E 34 32 20 5B 65 32 38 62 66 30 35 33 64 65 39 34 37 63 66 36 61 64 34 35 36 61 32 61 37 63 37 31 30 35 39 61 32 63 35 61 63 36 31 65 5D 
 
 #### Property 2.1.2.3.8.1 American Express Expresspay Kernel ID (Contactless Only)
 
@@ -15558,13 +15558,13 @@ Table 1059 - Get Request Example
 
 | Example (Hex)                                                                                               |
 |-------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 01 0E D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 0A E1 08 E2 06 E3 04 E8 02 C1 00 |
+| AA 00 81 04 01 0E D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 0A E1 08 E2 06 E3 04 E8 02 C1 00 
 
 Table 1060 - Get Response Example
 
 | Example (Hex)                                                                                                                                                        |
 |----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 82 0E D1 01 82 04 00 00 00 00 84 82 00 25 D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 15 E1 13 E2 11 E3 0F E8 0D C1 0B 41 4D 45 58 20 34 2E 30 2E 32 00 |
+| AA 00 81 04 82 0E D1 01 82 04 00 00 00 00 84 82 00 25 D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 15 E1 13 E2 11 E3 0F E8 0D C1 0B 41 4D 45 58 20 34 2E 30 2E 32 00 
 
 #### Property 2.1.2.3.8.2 American Express Expresspay Kernel Firmware Part Number (Contactless Only)
 
@@ -15587,13 +15587,13 @@ Table 1062 - Get Request Example
 
 | Example (Hex)                                                                                               |
 |-------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 01 0F D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 0A E1 08 E2 06 E3 04 E8 02 C2 00 |
+| AA 00 81 04 01 0F D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 0A E1 08 E2 06 E3 04 E8 02 C2 00 
 
 Table 1063 - Get Response Example
 
 | Example (Hex)                                                                                                                                                                             |
 |-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 82 0F D1 01 82 04 00 00 00 00 84 82 00 2C D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 1C E1 1A E2 18 E3 16 E8 14 C2 12 31 30 30 30 30 30 37 31 38 32 20 56 65 72 20 41 30 00 |
+| AA 00 81 04 82 0F D1 01 82 04 00 00 00 00 84 82 00 2C D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 1C E1 1A E2 18 E3 16 E8 14 C2 12 31 30 30 30 30 30 37 31 38 32 20 56 65 72 20 41 30 00 
 
 #### Property 2.1.2.3.8.3 American Express Expresspay Kernel Checksum (Contactless Only)
 
@@ -15616,13 +15616,13 @@ Table 1065 - Get Request Example
 
 | Example (Hex)                                                                                               |
 |-------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 01 11 D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 0A E1 08 E2 06 E3 04 E8 02 C3 00 |
+| AA 00 81 04 01 11 D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 0A E1 08 E2 06 E3 04 E8 02 C3 00 
 
 Table 1066 - Get Response Example
 
 | Example (Hex)                                                                                                                                                                                                                                                                                                        |
 |----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 82 11 D1 01 82 04 00 00 00 00 84 82 00 55 D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 45 E1 43 E2 41 E3 3F E8 3D C3 3B 43 34 2E 32 2E 37 20 2D 3E 20 76 31 2E 30 2E 36 20 5B 35 44 35 43 43 33 30 37 33 46 36 34 46 45 37 46 31 34 46 35 34 35 34 44 36 32 30 32 36 45 44 42 39 45 32 30 32 39 33 30 5D |
+| AA 00 81 04 82 11 D1 01 82 04 00 00 00 00 84 82 00 55 D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 45 E1 43 E2 41 E3 3F E8 3D C3 3B 43 34 2E 32 2E 37 20 2D 3E 20 76 31 2E 30 2E 36 20 5B 35 44 35 43 43 33 30 37 33 46 36 34 46 45 37 46 31 34 46 35 34 35 34 44 36 32 30 32 36 45 44 42 39 45 32 30 32 39 33 30 5D 
 
 #### Property 2.1.2.3.9.1 Apple VAS Kernel ID
 
@@ -15644,13 +15644,13 @@ Table 1068 - Get Request Example
 
 | Example (Hex)                                                                                               |
 |-------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 01 0E D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 0A E1 08 E2 06 E3 04 E9 02 C1 00 |
+| AA 00 81 04 01 0E D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 0A E1 08 E2 06 E3 04 E9 02 C1 00 
 
 Table 1069 - Get Response Example
 
 | Example (Hex)                                                                                                            |
 |--------------------------------------------------------------------------------------------------------------------------|
-| AA008104820ED1018204000000008482002AD10181072B06010401F609850102891AE118E216E314E912C1104150504C452056415320312E302E3000 |
+| AA008104820ED1018204000000008482002AD10181072B06010401F609850102891AE118E216E314E912C1104150504C452056415320312E302E3000 
 
 #### Property 2.1.2.3.A.1 JCB Kernel ID (Contactless Only) (Common Kernel Only)
 
@@ -15673,13 +15673,13 @@ Table 1071 - Get Request Example
 
 | Example (Hex)                                                                                               |
 |-------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 01 0E D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 0A E1 08 E2 06 E3 04 EA 02 C1 00 |
+| AA 00 81 04 01 0E D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 0A E1 08 E2 06 E3 04 EA 02 C1 00 
 
 Table 1072 - Get Response Example
 
 | Example (Hex)                                                                                                                                               |
 |-------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 82 06 D1 01 82 04 00 00 00 00 84 82 00 22 D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 12 E1 10 E2 0E E3 0C EA 0A C1 08 4A 43 42 20 31 2E 36 00 |
+| AA 00 81 04 82 06 D1 01 82 04 00 00 00 00 84 82 00 22 D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 12 E1 10 E2 0E E3 0C EA 0A C1 08 4A 43 42 20 31 2E 36 00 
 
 #### Property 2.1.2.3.A.2 JCB Kernel Firmware Part Number (Contactless Only) (Common Kernel Only)
 
@@ -15702,13 +15702,13 @@ Table 1074 - Get Request Example
 
 | Example (Hex)                                                                                               |
 |-------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 01 0F D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 0A E1 08 E2 06 E3 04 EA 02 C2 00 |
+| AA 00 81 04 01 0F D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 0A E1 08 E2 06 E3 04 EA 02 C2 00 
 
 Table 1075 - Get Response Example
 
 | Example (Hex)                                                                                                                                                                                |
 |----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 82 06 D1 01 82 04 00 00 00 00 84 82 00 2D D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 1D E1 1B E2 19 E3 17 EA 15 C2 13 31 30 30 30 30 30 39 36 35 30 20 56 65 72 20 41 41 30 00 |
+| AA 00 81 04 82 06 D1 01 82 04 00 00 00 00 84 82 00 2D D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 1D E1 1B E2 19 E3 17 EA 15 C2 13 31 30 30 30 30 30 39 36 35 30 20 56 65 72 20 41 41 30 00 
 
 #### Property 2.1.2.3.A.3 JCB Kernel Checksum (Contactless Only) (Common Kernel Only)
 
@@ -15731,13 +15731,13 @@ Table 1077 - Get Request Example
 
 | Example (Hex)                                                                                               |
 |-------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 01 11 D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 0A E1 08 E2 06 E3 04 EA 02 C3 00 |
+| AA 00 81 04 01 11 D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 0A E1 08 E2 06 E3 04 EA 02 C3 00 
 
 Table 1078 - Get Response Example
 
 | Example (Hex)                                                                                                                                                                                                                                                                                                              |
 |----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 82 06 D1 01 82 04 00 00 00 00 84 82 00 57 D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 47 E1 45 E2 43 E3 41 EA 3F C3 3D 4A 43 42 20 31 2E 36 20 2D 3E 20 76 31 2E 30 2E 32 39 20 5B 63 61 34 34 61 39 30 63 64 34 32 64 33 37 39 30 38 38 66 63 62 38 63 61 38 64 31 66 61 62 31 39 35 35 34 36 62 32 37 38 5D |
+| AA 00 81 04 82 06 D1 01 82 04 00 00 00 00 84 82 00 57 D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 47 E1 45 E2 43 E3 41 EA 3F C3 3D 4A 43 42 20 31 2E 36 20 2D 3E 20 76 31 2E 30 2E 32 39 20 5B 63 61 34 34 61 39 30 63 64 34 32 64 33 37 39 30 38 38 66 63 62 38 63 61 38 64 31 66 61 62 31 39 35 35 34 36 62 32 37 38 5D 
 
 #### Property 2.1.2.3.A.4 Reader Core Checksum (Contactless Only) (Common Kernel Only)
 
@@ -15760,13 +15760,13 @@ Table 1080 - Get Request Example
 
 | Example (Hex)                                                                                               |
 |-------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 01 11 D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 0A E1 08 E2 06 E3 04 EA 02 C4 00 |
+| AA 00 81 04 01 11 D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 0A E1 08 E2 06 E3 04 EA 02 C4 00 
 
 Table 1081 - Get Response Example
 
 | Example (Hex)                                                                                                                                                                                                                                               |
 |-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 82 06 D1 01 82 04 00 00 00 00 84 82 00 42 D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 32 E1 30 E2 2E E3 2C EA 2A C4 28 33 37 31 38 33 35 63 65 64 63 64 37 66 38 61 33 65 34 63 66 38 62 33 32 63 63 30 33 38 30 33 64 66 64 63 31 66 35 30 37 |
+| AA 00 81 04 82 06 D1 01 82 04 00 00 00 00 84 82 00 42 D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 32 E1 30 E2 2E E3 2C EA 2A C4 28 33 37 31 38 33 35 63 65 64 63 64 37 66 38 61 33 65 34 63 66 38 62 33 32 63 63 30 33 38 30 33 64 66 64 63 31 66 35 30 37 
 
 #### Property 2.1.2.3.A.5 Entry Point Checksum (Contactless Only) (Common Kernel Only)
 
@@ -15789,13 +15789,13 @@ Table 1083 - Get Request Example
 
 | Example (Hex)                                                                                               |
 |-------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 01 06 D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 0A E1 08 E2 06 E3 04 EA 02 C5 00 |
+| AA 00 81 04 01 06 D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 0A E1 08 E2 06 E3 04 EA 02 C5 00 
 
 Table 1084 - Get Response Example
 
 | Example (Hex)                                                                                                                                                                                                                                               |
 |-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 82 06 D1 01 82 04 00 00 00 00 84 82 00 42 D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 32 E1 30 E2 2E E3 2C EA 2A C5 28 31 42 33 37 32 35 41 37 44 42 43 32 32 30 38 30 35 44 46 33 36 39 45 30 33 35 45 39 33 35 45 46 34 30 34 43 34 42 37 31 |
+| AA 00 81 04 82 06 D1 01 82 04 00 00 00 00 84 82 00 42 D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 32 E1 30 E2 2E E3 2C EA 2A C5 28 31 42 33 37 32 35 41 37 44 42 43 32 32 30 38 30 35 44 46 33 36 39 45 30 33 35 45 39 33 35 45 46 34 30 34 43 34 42 37 31 
 
 #### Property 2.1.2.3.B.1 China Union Pay Kernel ID (Contactless Only) (Common Kernel Only)
 
@@ -15818,13 +15818,13 @@ Table 1086 - Get Request Example
 
 | Example (Hex)                                                                                               |
 |-------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 01 0E D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 0A E1 08 E2 06 E3 04 EB 02 C1 00 |
+| AA 00 81 04 01 0E D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 0A E1 08 E2 06 E3 04 EB 02 C1 00 
 
 Table 1087 - Get Response Example
 
 | Example (Hex)                                                                                                                                                     |
 |-------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 82 06 D1 01 82 04 00 00 00 00 84 82 00 24 D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 14 E1 12 E2 10 E3 0E EB 0C C1 0A 43 55 50 20 31 2E 30 2E 32 00 |
+| AA 00 81 04 82 06 D1 01 82 04 00 00 00 00 84 82 00 24 D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 14 E1 12 E2 10 E3 0E EB 0C C1 0A 43 55 50 20 31 2E 30 2E 32 00 
 
 #### Property 2.1.2.3.B.2 China Union Pay Kernel Firmware Part Number (Contactless Only) (Common Kernel Only)
 
@@ -15847,13 +15847,13 @@ Table 1089 - Get Request Example
 
 | Example (Hex)                                                                                               |
 |-------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 01 0F D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 0A E1 08 E2 06 E3 04 EB 02 C2 00 |
+| AA 00 81 04 01 0F D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 0A E1 08 E2 06 E3 04 EB 02 C2 00 
 
 Table 1090 - Get Response Example
 
 | Example (Hex)                                                                                                                                                                                |
 |----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 82 06 D1 01 82 04 00 00 00 00 84 82 00 2D D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 1D E1 1B E2 19 E3 17 EB 15 C2 13 31 30 30 30 30 30 39 36 35 31 20 56 65 72 20 41 41 30 00 |
+| AA 00 81 04 82 06 D1 01 82 04 00 00 00 00 84 82 00 2D D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 1D E1 1B E2 19 E3 17 EB 15 C2 13 31 30 30 30 30 30 39 36 35 31 20 56 65 72 20 41 41 30 00 
 
 #### Property 2.1.2.3.B.3 China Union Pay Kernel Checksum (Contactless Only) (Common Kernel Only)
 
@@ -15876,13 +15876,13 @@ Table 1092 - Get Request Example
 
 | Example (Hex)                                                                                               |
 |-------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 01 11 D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 0A E1 08 E2 06 E3 04 EB 02 C3 00 |
+| AA 00 81 04 01 11 D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 0A E1 08 E2 06 E3 04 EB 02 C3 00 
 
 Table 1093 - Get Response Example
 
 | Example (Hex)                                                                                                                                                                                                                                                                                                                       |
 |-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 82 06 D1 01 82 04 00 00 00 00 84 82 00 5A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 4A E1 48 E2 46 E3 44 EB 42 C3 40 43 55 50 20 76 31 2E 30 2E 32 20 2D 3E 20 76 31 2E 33 2E 34 30 20 5B 32 33 65 39 62 63 38 32 62 34 65 63 62 66 34 32 32 63 32 30 35 34 63 39 31 39 31 34 38 34 38 30 31 37 65 30 65 64 30 66 5D |
+| AA 00 81 04 82 06 D1 01 82 04 00 00 00 00 84 82 00 5A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 4A E1 48 E2 46 E3 44 EB 42 C3 40 43 55 50 20 76 31 2E 30 2E 32 20 2D 3E 20 76 31 2E 33 2E 34 30 20 5B 32 33 65 39 62 63 38 32 62 34 65 63 62 66 34 32 32 63 32 30 35 34 63 39 31 39 31 34 38 34 38 30 31 37 65 30 65 64 30 66 5D 
 
 #### Property 2.1.2.3.C.1 Interact Flash Kernel ID (Contactless Only) (Common Kernel Only)
 
@@ -15905,13 +15905,13 @@ Table 1095 - Get Request Example
 
 | Example (Hex)                                                                                               |
 |-------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 01 0E D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 0A E1 08 E2 06 E3 04 EC 02 C1 00 |
+| AA 00 81 04 01 0E D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 0A E1 08 E2 06 E3 04 EC 02 C1 00 
 
 Table 1096 - Get Response Example
 
 | Example (Hex)                                                                                                                                                     |
 |-------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 82 06 D1 01 82 04 00 00 00 00 84 82 00 24 D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 14 E1 12 E2 10 E3 0E EC 0C C1 0A 46 4C 41 53 48 20 31 2E 39 00 |
+| AA 00 81 04 82 06 D1 01 82 04 00 00 00 00 84 82 00 24 D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 14 E1 12 E2 10 E3 0E EC 0C C1 0A 46 4C 41 53 48 20 31 2E 39 00 
 
 #### Property 2.1.2.3.C.2 Interact Flash Kernel Firmware Part Number (Contactless Only) (Common Kernel Only)
 
@@ -15934,13 +15934,13 @@ Table 1098 - Get Request Example
 
 | Example (Hex)                                                                                               |
 |-------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 01 0F D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 0A E1 08 E2 06 E3 04 EC 02 C2 00 |
+| AA 00 81 04 01 0F D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 0A E1 08 E2 06 E3 04 EC 02 C2 00 
 
 Table 1099 - Get Response Example
 
 | Example (Hex)                                                                                                                                                                                |
 |----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 82 06 D1 01 82 04 00 00 00 00 84 82 00 2D D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 1D E1 1B E2 19 E3 17 EC 15 C2 13 31 30 30 30 30 30 39 36 35 32 20 56 65 72 20 41 41 30 00 |
+| AA 00 81 04 82 06 D1 01 82 04 00 00 00 00 84 82 00 2D D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 1D E1 1B E2 19 E3 17 EC 15 C2 13 31 30 30 30 30 30 39 36 35 32 20 56 65 72 20 41 41 30 00 
 
 #### Property 2.1.2.3.C.3 Interact Flash Kernel Checksum (Contactless Only) (Common Kernel Only)
 
@@ -15963,13 +15963,13 @@ Table 1101 - Get Request Example
 
 | Example (Hex)                                                                                               |
 |-------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 01 11 D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 0A E1 08 E2 06 E3 04 EC 02 C3 00 |
+| AA 00 81 04 01 11 D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 0A E1 08 E2 06 E3 04 EC 02 C3 00 
 
 Table 1102 - Get Response Example
 
 | Example (Hex)                                                                                                                                                                                                                                                                                                                    |
 |----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 82 06 D1 01 82 04 00 00 00 00 84 82 00 59 D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 49 E1 47 E2 45 E3 43 EC 41 C3 3F 46 6C 61 73 68 20 31 2E 39 20 2D 3E 20 76 31 2E 33 2E 34 31 20 5B 33 39 34 65 34 35 61 65 64 38 36 35 65 32 37 36 65 34 66 36 37 33 37 64 65 32 36 61 61 38 34 63 36 65 62 31 62 31 37 34 5D |
+| AA 00 81 04 82 06 D1 01 82 04 00 00 00 00 84 82 00 59 D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 49 E1 47 E2 45 E3 43 EC 41 C3 3F 46 6C 61 73 68 20 31 2E 39 20 2D 3E 20 76 31 2E 33 2E 34 31 20 5B 33 39 34 65 34 35 61 65 64 38 36 35 65 32 37 36 65 34 66 36 37 33 37 64 65 32 36 61 61 38 34 63 36 65 62 31 62 31 37 34 5D 
 
 ### Property Subgroup 2.1.2.4.nn Main Application Firmware Information (MAGTEK INTERNAL ONLY FOR NOW)
 
@@ -15995,13 +15995,13 @@ Table 1104 - Get Request Example
 
 | Example (Hex)                                                            |
 |--------------------------------------------------------------------------|
-| AA0081040108D101841AD10181072B06010401F609850102890AE108E206E504E302C100 |
+| AA0081040108D101841AD10181072B06010401F609850102890AE108E206E504E302C100 
 
 Table 1105 - Get Response Example
 
 | Example (Hex)                                                                                                                |
 |------------------------------------------------------------------------------------------------------------------------------|
-| AA0081048208D1018204000000008482002CD10181072B06010401F609850102891CE11AE218E516E314C112313030303030383633352D31302D44455600 |
+| AA0081048208D1018204000000008482002CD10181072B06010401F609850102891CE11AE218E516E314C112313030303030383633352D31302D44455600 
 
 #### Property 2.1.2.5.3.2 WLAN WiFi Module Build Hash (MAGTEK INTERNAL ONLY)
 
@@ -16024,13 +16024,13 @@ Table 1107 - Get Request Example
 
 | Example (Hex)                                                            |
 |--------------------------------------------------------------------------|
-| AA0081040108D101841AD10181072B06010401F609850102890AE108E206E504E302C200 |
+| AA0081040108D101841AD10181072B06010401F609850102890AE108E206E504E302C200 
 
 Table 1108 - Get Response Example
 
 | Example (Hex)                                                                                                                |
 |------------------------------------------------------------------------------------------------------------------------------|
-| AA0081048208D1018204000000008482002CD10181072B06010401F609850102891CE11AE218E516E314C212623233626639333900000000000000000000 |
+| AA0081048208D1018204000000008482002CD10181072B06010401F609850102891CE11AE218E516E314C212623233626639333900000000000000000000 
 
 #### Property 2.1.2.5.3.3 WLAN Firmware Sequence Number (MAGTEK INTERNAL ONLY)
 
@@ -16053,13 +16053,13 @@ Table 8.592 - Get Request Example
 
 | Example (Hex)                                      |
 |----------------------------------------------------|
-| AA0081040155D101840FD1018501028704010205038902C300 |
+| AA0081040155D101840FD1018501028704010205038902C300 
 
 Table 8.593 - Get Response Example
 
 | Example (Hex)                                                              |
 |----------------------------------------------------------------------------|
-| AA0081048255D10182040000000084820013D1018501028704010205038906C3040000001D |
+| AA0081048255D10182040000000084820013D1018501028704010205038906C3040000001D 
 
 #### Property 2.1.2.5.6.1 WLAN WiFi Module MAC Address
 
@@ -16082,13 +16082,13 @@ Table 1110 - Get Request Example
 
 | Example (Hex)                                                                 |
 |-------------------------------------------------------------------------------|
-| AA00 8104010ED101 841AD101 81072B06010401F609 850102 890AE108E206E504E602C100 |
+| AA00 8104010ED101 841AD101 81072B06010401F609 850102 890AE108E206E504E602C100 
 
 Table 1111 - Get Response Example
 
 | Example (Hex)                                                                                               |
 |-------------------------------------------------------------------------------------------------------------|
-| AA00 8104820ED101 820400000000 84820020D101 81072B06010401F609 850102 8910E10EE20CE50AE608C1 06C47F51A41701 |
+| AA00 8104820ED101 820400000000 84820020D101 81072B06010401F609 850102 8910E10EE20CE50AE608C1 06C47F51A41701 
 
 #### Property 2.1.2.5.6.2 WLAN WiFi RSSI
 
@@ -16110,13 +16110,13 @@ Table 1113 - Get Request Example
 
 | Example (Hex)                                                                 |
 |-------------------------------------------------------------------------------|
-| AA00 8104010ED101 841AD101 81072B06010401F609 850102 890AE108E206E504E602C200 |
+| AA00 8104010ED101 841AD101 81072B06010401F609 850102 890AE108E206E504E602C200 
 
 Table 1114 - Get Response Example
 
 | Example (Hex)                                                                                     |
 |---------------------------------------------------------------------------------------------------|
-| AA00 8104820ED101 820400000000 8482001BD101 81072B06010401F609 850102 890BE109E207E505E603C2 01BE |
+| AA00 8104820ED101 820400000000 8482001BD101 81072B06010401F609 850102 890BE109E207E505E603C2 01BE 
 
 #### Property 2.1.2.5.6.3 WLAN Dynamic IP Address
 
@@ -16138,13 +16138,13 @@ Table 1116 - Get Request Example
 
 | Example (Hex)                                                                 |
 |-------------------------------------------------------------------------------|
-| AA00 8104010ED101 841AD101 81072B06010401F609 850102 890AE108E206E504E602C300 |
+| AA00 8104010ED101 841AD101 81072B06010401F609 850102 890AE108E206E504E602C300 
 
 Table 1117 - Get Response Example
 
 | Example (Hex)                                                                                           |
 |---------------------------------------------------------------------------------------------------------|
-| AA00 8104820ED101 820400000000 8482001ED101 81072B06010401F609 850102 890EE10CE20AE508E606C3 04C0A8017D |
+| AA00 8104820ED101 820400000000 8482001ED101 81072B06010401F609 850102 890EE10CE20AE508E606C3 04C0A8017D 
 
 #### Property 2.1.2.5.6.4 Active Client Connections
 
@@ -16166,13 +16166,13 @@ Table 1119 - Get Request Example
 
 | Example (Hex)                                                |
 |--------------------------------------------------------------|
-| AA00 8104 0155D101 840F D101 8501 02 8704 01020506 8902 C400 |
+| AA00 8104 0155D101 840F D101 8501 02 8704 01020506 8902 C400 
 
 Table 1120 - Get Response Example
 
 | Example (Hex)                                                                 |
 |-------------------------------------------------------------------------------|
-| AA00 81048255D101 820400000000 84820010 D101 850102 870401020506 8903 C401 01 |
+| AA00 81048255D101 820400000000 84820010 D101 850102 870401020506 8903 C401 01 
 
 #### Property 2.1.2.5.6.5 Server Certificate Chain Select
 
@@ -16194,13 +16194,13 @@ Table 1122 - Get Request Example
 
 | Example (Hex)                                                |
 |--------------------------------------------------------------|
-| AA00 8104 0155D101 840F D101 8501 02 8704 01020506 8902 C500 |
+| AA00 8104 0155D101 840F D101 8501 02 8704 01020506 8902 C500 
 
 Table 1123 - Get Response Example
 
 | Example (Hex)                                                                 |
 |-------------------------------------------------------------------------------|
-| AA00 81048255D101 820400000000 84820010 D101 850102 870401020506 8903 C501 00 |
+| AA00 81048255D101 820400000000 84820010 D101 850102 870401020506 8903 C501 00 
 
 #### Property 2.1.2.5.6.6 Security Protocol
 
@@ -16222,13 +16222,13 @@ Table 1125 - Get Request Example
 
 | Example (Hex)                                                |
 |--------------------------------------------------------------|
-| AA00 8104 0155D101 840F D101 8501 02 8704 01020506 8902 C600 |
+| AA00 8104 0155D101 840F D101 8501 02 8704 01020506 8902 C600 
 
 Table 1126 - Get Response Example
 
 | Example (Hex)                                                                 |
 |-------------------------------------------------------------------------------|
-| AA00 81048255D101 820400000000 84820010 D101 850102 870401020506 8903 C601 00 |
+| AA00 81048255D101 820400000000 84820010 D101 850102 870401020506 8903 C601 00 
 
 #### Property 2.1.2.5.6.7 Available Access Points
 
@@ -16268,13 +16268,13 @@ Table 1129 - Get Request Example
 
 | Example (Hex)                                                |
 |--------------------------------------------------------------|
-| AA00 8104 0155D101 840F D101 8501 02 8704 01020506 8902 C700 |
+| AA00 8104 0155D101 840F D101 8501 02 8704 01020506 8902 C700 
 
 Table 1130 - Get Response Example
 
 | Example (Hex)                                                                                                                                                                                                                                            |
 |----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| AA00 81048206D101 820400000000 84820065 D101 81072B06010401F609 850102 8955E153E251E54FE64DC74B A00E80094D79416363657373318102FFC7 A10F800A4D7957694669535349448102FFA9 A22580204449524543542D46442D4850204465736B4A65742033363330207365726965738102FFA6 |
+| AA00 81048206D101 820400000000 84820065 D101 81072B06010401F609 850102 8955E153E251E54FE64DC74B A00E80094D79416363657373318102FFC7 A10F800A4D7957694669535349448102FFA9 A22580204449524543542D46442D4850204465736B4A65742033363330207365726965738102FFA6 
 
 ### Property Subgroup 2.1.2.6.nn General Firmware Information (MAGTEK INTERNAL ONLY)
 
@@ -16299,13 +16299,13 @@ Table 1132 - Get Request Example
 
 | Example (Hex)                                                |
 |--------------------------------------------------------------|
-| AA00 8104 0155D101 840F D101 8501 02 8704 01020601 8902 C100 |
+| AA00 8104 0155D101 840F D101 8501 02 8704 01020601 8902 C100 
 
 Table 1133 - Get Response Example
 
 | Example (Hex)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
 |---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| AA00 8104 8255D101 8204 00000000 848200C4 D101 8501 02 8704 01020601 898200B5 C18200B1 4D41494E5B5043492D41332D32303230303932392D36312D67343665666131612D64697274795D5F53444B5B5043492D41322D4E4F2D4C43442D32303230303933302D322D67366236396437665D5F4558545B5043492D41332D32303230303932392D31342D67333730633766305D5F414D414449535B5043492D41322D4E4F2D4C43442D32303230303933302D342D67353935376662365D5F5B323032302D31312D31375D5B31343A34383A30335D00  Text value: MAIN[PCI-A3-20200929-61-g46efa1a-dirty]_SDK[PCI-A2-NO-LCD-20200930-2-g6b69d7f]_EXT[PCI-A3-20200929-14-g370c7f0]_AMADIS[PCI-A2-NO-LCD-20200930-4-g5957fb6]_[2020-11-17][14:48:03] |
+| AA00 8104 8255D101 8204 00000000 848200C4 D101 8501 02 8704 01020601 898200B5 C18200B1 4D41494E5B5043492D41332D32303230303932392D36312D67343665666131612D64697274795D5F53444B5B5043492D41322D4E4F2D4C43442D32303230303933302D322D67366236396437665D5F4558545B5043492D41332D32303230303932392D31342D67333730633766305D5F414D414449535B5043492D41322D4E4F2D4C43442D32303230303933302D342D67353935376662365D5F5B323032302D31312D31375D5B31343A34383A30335D00  Text value: MAIN[PCI-A3-20200929-61-g46efa1a-dirty]_SDK[PCI-A2-NO-LCD-20200930-2-g6b69d7f]_EXT[PCI-A3-20200929-14-g370c7f0]_AMADIS[PCI-A2-NO-LCD-20200930-4-g5957fb6]_[2020-11-17][14:48:03] 
 
 ### Property Subgroup 2.1.2.7.nn Bluetooth® LE Information (Bluetooth® LE Only, MAGTEK INTERNAL ONLY FOR NOW)
 
@@ -16329,13 +16329,13 @@ Table 1135 - Get Request Example
 
 | Example (Hex)                                                            |
 |--------------------------------------------------------------------------|
-| AA0081040108D101841AD10181072B06010401F609850102890AE108E206E704E102C100 |
+| AA0081040108D101841AD10181072B06010401F609850102890AE108E206E704E102C100 
 
 Table 1136 - Get Response Example
 
 | Example (Hex)                                                                                                                |
 |------------------------------------------------------------------------------------------------------------------------------|
-| AA0081048208D1018204000000008482002CD10181072B06010401F609850102891CE11AE218E716E114C112313030303030393332372D41302D50434900 |
+| AA0081048208D1018204000000008482002CD10181072B06010401F609850102891CE11AE218E716E114C112313030303030393332372D41302D50434900 
 
 #### Property 2.1.2.7.1.2 Bluetooth® LE Firmware Sequence Number
 
@@ -16357,13 +16357,13 @@ Table 1138 - Get Request Example
 
 | Example (Hex)                                                            |
 |--------------------------------------------------------------------------|
-| AA0081040106D101841AD10181072B06010401F609850102890AE108E206E704E102C200 |
+| AA0081040106D101841AD10181072B06010401F609850102890AE108E206E704E102C200 
 
 Table 1139 - Get Response Example
 
 | Example (Hex)                                                                                    |
 |--------------------------------------------------------------------------------------------------|
-| AA0081048206D1018204000000008482001ED10181072B06010401F609850102890EE10CE20AE708E106C20400000009 |
+| AA0081048206D1018204000000008482001ED10181072B06010401F609850102890EE10CE20AE708E106C20400000009 
 
 #### Property 2.1.2.7.2.1 Bluetooth® LE Device Address
 
@@ -16385,13 +16385,13 @@ Table 1141 - Get Request Example
 
 | Example (Hex)                                                                 |
 |-------------------------------------------------------------------------------|
-| AA00 8104010ED101 841AD101 81072B06010401F609 850102 890AE108E206E704E202C100 |
+| AA00 8104010ED101 841AD101 81072B06010401F609 850102 890AE108E206E704E202C100 
 
 Table 1142 - Get Response Example
 
 | Example (Hex)                                                                                               |
 |-------------------------------------------------------------------------------------------------------------|
-| AA00 8104820ED101 820400000000 84820020D101 81072B06010401F609 850102 8910E10EE20CE70AE208C1 06943469B297A5 |
+| AA00 8104820ED101 820400000000 84820020D101 81072B06010401F609 850102 8910E10EE20CE70AE208C1 06943469B297A5 
 
 #### Property 2.1.2.7.2.2 Bluetooth® LE Connection Status
 
@@ -16413,13 +16413,13 @@ Table 1144 - Get Request Example
 
 | Example (Hex)                                                |
 |--------------------------------------------------------------|
-| AA00 8104 0155D101 840F D101 8501 02 8704 01020702 8902 C200 |
+| AA00 8104 0155D101 840F D101 8501 02 8704 01020702 8902 C200 
 
 Table 1145 - Get Response Example
 
 | Example (Hex)                                                        |
 |----------------------------------------------------------------------|
-| AA0081048255D10182040000000084820010D1018501028704010207028903C20101 |
+| AA0081048255D10182040000000084820010D1018501028704010207028903C20101 
 
 #### Property 2.1.2.7.2.3 Bluetooth® LE Number of Bondings
 
@@ -16441,13 +16441,13 @@ Table 1147 - Get Request Example
 
 | Example (Hex)                                                |
 |--------------------------------------------------------------|
-| AA00 8104 0155D101 840F D101 8501 02 8704 01020702 8902 C300 |
+| AA00 8104 0155D101 840F D101 8501 02 8704 01020702 8902 C300 
 
 Table 1148 - Get Response Example
 
 | Example (Hex)                                                        |
 |----------------------------------------------------------------------|
-| AA0081048255D10182040000000084820010D1018501028704010207028903C30101 |
+| AA0081048255D10182040000000084820010D1018501028704010207028903C30101 
 
 #### Property 2.1.2.7.2.4 Bluetooth® LE MTU Size
 
@@ -16469,13 +16469,13 @@ Table 1150 - Get Request Example
 
 | Example (Hex)                                                |
 |--------------------------------------------------------------|
-| AA00 8104 0155D101 840F D101 8501 02 8704 01020702 8902 C400 |
+| AA00 8104 0155D101 840F D101 8501 02 8704 01020702 8902 C400 
 
 Table 1151 - Get Response Example
 
 | Example (Hex)                                                          |
 |------------------------------------------------------------------------|
-| AA0081048255D10182040000000084820011D1018501028704010207028904C40200F7 |
+| AA0081048255D10182040000000084820011D1018501028704010207028904C40200F7 
 
 ### Property Subgroup 2.1.2.8.nn Custom UI
 
@@ -16499,13 +16499,13 @@ Table 1153 - Get Request Example
 
 | Example (Hex)                                                            |
 |--------------------------------------------------------------------------|
-| AA0081040106D101841AD10181072B06010401F609850102890AE108E206E804E102C100 |
+| AA0081040106D101841AD10181072B06010401F609850102890AE108E206E804E102C100 
 
 Table 1154 - Get Response Example
 
 | Example (Hex)                                                                                                         |
 |-----------------------------------------------------------------------------------------------------------------------|
-| AA0081048206D10182040000000084820028D10181072B06010401F609850102 8918E116E214E812E110C10E434647303030363831322D323030 |
+| AA0081048206D10182040000000084820028D10181072B06010401F609850102 8918E116E214E812E110C10E434647303030363831322D323030 
 
 ## Property Group 2.2.1.nnn Device Hardware Information
 
@@ -16531,13 +16531,13 @@ Table 1156 - Get Request Example
 
 | Example (Hex)                                                                                         |
 |-------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 01 B5 D1 01 84 18 D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 87 04 02 01 01 01 89 02 C1 00 |
+| AA 00 81 04 01 B5 D1 01 84 18 D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 87 04 02 01 01 01 89 02 C1 00 
 
 Table 1157 - Get Response Example
 
 | Example (Hex)                                                                                                                             |
 |-------------------------------------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 82 B5 D1 01 82 04 00 00 00 00 84 82 00 1C D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 87 04 02 01 01 01 89 06 C1 04 B6 13 78 A0 |
+| AA 00 81 04 82 B5 D1 01 82 04 00 00 00 00 84 82 00 1C D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 87 04 02 01 01 01 89 06 C1 04 B6 13 78 A0 
 
 #### Property 2.2.1.1.1.2 Device Capabilities Report (MAGTEK INTERNAL ONLY FOR NOW)
 
@@ -16560,13 +16560,13 @@ Table 1159 - Get Request Example
 
 | Example (Hex)                                                                                               |
 |-------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 01 E0 D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 0A E2 08 E1 06 E1 04 E1 02 C2 00 |
+| AA 00 81 04 01 E0 D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 0A E2 08 E1 06 E1 04 E1 02 C2 00 
 
 Table 1160 - Get Response Example
 
 | Example (Hex)                                                                                                                                                                                                                                                                                                                       |
 |-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 82 E0 D1 01 82 04 00 00 00 00 84 82 00 5A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 4A E2 48 E1 46 E1 44 E1 42 C2 40 56 3D 31 2C 53 43 3D 31 2C 53 52 3D 31 2C 55 44 45 3D 30 2C 43 45 3D 32 2C 43 4C 45 3D 32 2C 42 54 3D 30 2C 57 46 3D 30 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 |
+| AA 00 81 04 82 E0 D1 01 82 04 00 00 00 00 84 82 00 5A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 4A E2 48 E1 46 E1 44 E1 42 C2 40 56 3D 31 2C 53 43 3D 31 2C 53 52 3D 31 2C 55 44 45 3D 30 2C 43 45 3D 32 2C 43 4C 45 3D 32 2C 42 54 3D 30 2C 57 46 3D 30 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
 
 #### Property 2.2.1.1.1.3 PCI Hardware ID
 
@@ -16588,13 +16588,13 @@ Table 1162 - Get Request Example
 
 | Example (Hex)                                                                                                |
 |--------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 01 E3 D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 0A E2 08 E1 06 E1 04 E1 02 C3 00  |
+| AA 00 81 04 01 E3 D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 0A E2 08 E1 06 E1 04 E1 02 C3 00 
 
 Table 1163 - Get Response Example
 
 | Example (Hex)                                                                                                                                                     |
 |-------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 82 E3 D1 01 82 04 00 00 00 00 84 82 00 24 D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 14 E2 12 E1 10 E1 0E E1 0C C3 0A 33 36 50 43 49 34 35 30 41 30 |
+| AA 00 81 04 82 E3 D1 01 82 04 00 00 00 00 84 82 00 24 D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 14 E2 12 E1 10 E1 0E E1 0C C3 0A 33 36 50 43 49 34 35 30 41 30 
 
 #### Property 2.2.1.1.1.4 Device Hardware Configuration (MAGTEK INTERNAL ONLY)
 
@@ -16617,13 +16617,13 @@ Table 1165 - Get Request Example
 
 | Example (Hex)                                                                                               |
 |-------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 01 E3 D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 0A E2 08 E1 06 E1 04 E1 02 C4 00 |
+| AA 00 81 04 01 E3 D1 01 84 1A D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 0A E2 08 E1 06 E1 04 E1 02 C4 00 
 
 Table 1166 - Get Response Example
 
 | Example (Hex)                                                                                                                                                                                                     |
 |-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| AA 00 81 04 82 08 D1 01 82 04 00 00 00 00 84 82 00 34 D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 24 E2 22 E1 20 E1 1E E1 1C C4 1A 01 05 01 02 01 02 00 03 01 01 01 02 01 01 05 01 00 00 00 01 05 01 01 01 01 01 |
+| AA 00 81 04 82 08 D1 01 82 04 00 00 00 00 84 82 00 34 D1 01 81 07 2B 06 01 04 01 F6 09 85 01 02 89 24 E2 22 E1 20 E1 1E E1 1C C4 1A 01 05 01 02 01 02 00 03 01 01 01 02 01 01 05 01 00 00 00 01 05 01 01 01 01 01 
 
 ## Property Group 2.3.1.nnn System Status Information
 
@@ -16649,13 +16649,13 @@ Table 1168 - Get Request Example
 
 | Example (Hex)                                                                 |
 |-------------------------------------------------------------------------------|
-| AA00 8104010ED101 841AD101 81072B06010401F609 850102 890AE308E106E104E102C100 |
+| AA00 8104010ED101 841AD101 81072B06010401F609 850102 890AE308E106E104E102C100 
 
 Table 1169 - Get Response Example
 
 | Example (Hex)                                                                                           |
 |---------------------------------------------------------------------------------------------------------|
-| AA00 8104820ED101 820400000000 8482001E D101 81072B06010401F609 850102 890EE30CE10AE108E106C1040000077E |
+| AA00 8104820ED101 820400000000 8482001E D101 81072B06010401F609 850102 890EE30CE10AE108E106C1040000077E 
 
 #### Property 2.3.1.1.1.2 Transaction Key Status
 
@@ -16677,13 +16677,13 @@ Table 1171 - Get Request Example
 
 | Example (Hex)                                                                 |
 |-------------------------------------------------------------------------------|
-| AA00 8104010FD101 841AD101 81072B06010401F609 850102 890AE308E106E104E102C200 |
+| AA00 8104010FD101 841AD101 81072B06010401F609 850102 890AE308E106E104E102C200 
 
 Table 1172 - Get Response Example
 
 | Example (Hex)                                                                                          |
 |--------------------------------------------------------------------------------------------------------|
-| AA00 8104820FD101 820400000000 8482001ED101 81072B06010401F609 850102 890EE30CE10AE108E106C20400000081 |
+| AA00 8104820FD101 820400000000 8482001ED101 81072B06010401F609 850102 890EE30CE10AE108E106C20400000081 
 
 ### Property Subgroup 2.3.1.1.2.n System Status Security Protection Information
 
@@ -16707,13 +16707,13 @@ Table 1174 - Get Request Example
 
 | Example (Hex)                                                |
 |--------------------------------------------------------------|
-| AA00 8104 0155D101 840F D101 8501 02 8704 03010102 8902 C100 |
+| AA00 8104 0155D101 840F D101 8501 02 8704 03010102 8902 C100 
 
 Table 1175 - Get Response Example
 
 | Example (Hex)                                                                 |
 |-------------------------------------------------------------------------------|
-| AA00 81048255D101 820400000000 84820010 D101 850102 870403010102 8903 C101 01 |
+| AA00 81048255D101 820400000000 84820010 D101 850102 870403010102 8903 C101 01 
 
 #### Property 2.3.1.1.2.2 Tamper Sensors Activated
 
@@ -16735,13 +16735,13 @@ Table 1177 - Get Request Example
 
 | Example (Hex)                                                |
 |--------------------------------------------------------------|
-| AA00 8104 0155D101 840F D101 8501 02 8704 03010102 8902 C100 |
+| AA00 8104 0155D101 840F D101 8501 02 8704 03010102 8902 C100 
 
 Table 1178 - Get Response Example
 
 | Example (Hex)                                                                 |
 |-------------------------------------------------------------------------------|
-| AA00 81048255D101 820400000000 84820010 D101 850102 870403010102 8903 C101 01 |
+| AA00 81048255D101 820400000000 84820010 D101 850102 870403010102 8903 C101 01 
 
 #### Property 2.3.1.1.2.3 Tamper Sensor Tampered
 
@@ -16763,13 +16763,13 @@ Table 1180 - Get Request Example
 
 | Example (Hex)                                                |
 |--------------------------------------------------------------|
-| AA00 8104 0155D101 840F D101 8501 02 8704 03010102 8902 C300 |
+| AA00 8104 0155D101 840F D101 8501 02 8704 03010102 8902 C300 
 
 Table 1181 - Get Response Example
 
 | Example (Hex)                                                                 |
 |-------------------------------------------------------------------------------|
-| AA00 81048255D101 820400000000 84820010 D101 850102 870403010102 8903 C301 00 |
+| AA00 81048255D101 820400000000 84820010 D101 850102 870403010102 8903 C301 00 
 
 #### Property 2.3.1.1.2.4 Tamper Configuration Revision (MAGTEK INTERNAL ONLY)
 
@@ -16792,13 +16792,13 @@ Table 1183 - Get Request Example
 
 | Example (Hex)                                                |
 |--------------------------------------------------------------|
-| AA00 8104 0155D101 840F D101 8501 02 8704 03010102 8902 C400 |
+| AA00 8104 0155D101 840F D101 8501 02 8704 03010102 8902 C400 
 
 Table 1184 - Get Response Example
 
 | Example (Hex)                                                                 |
 |-------------------------------------------------------------------------------|
-| AA00 81048255D101 820400000000 84820010 D101 850102 870403010102 8903 C401 02 |
+| AA00 81048255D101 820400000000 84820010 D101 850102 870403010102 8903 C401 02 
 
 ### Property Subgroup 2.3.1.2.1.n System Status Device State Information
 
@@ -16822,13 +16822,13 @@ Table 1186 - Get Request Example
 
 | Example (Hex)                                                |
 |--------------------------------------------------------------|
-| AA00 8104 0155D101 840F D101 8501 02 8704 03010201 8902 C100 |
+| AA00 8104 0155D101 840F D101 8501 02 8704 03010201 8902 C100 
 
 Table 1187 - Get Response Example
 
 | Example (Hex)                                                                 |
 |-------------------------------------------------------------------------------|
-| AA00 81048255D101 820400000000 84820010 D101 850102 870403010201 8903 C101 02 |
+| AA00 81048255D101 820400000000 84820010 D101 850102 870403010201 8903 C101 02 
 
 #### Property 2.3.1.2.1.2 Offline Status Detail
 
@@ -16850,13 +16850,13 @@ Table 1189 - Get Request Example
 
 | Example (Hex)                                                |
 |--------------------------------------------------------------|
-| AA00 8104 0155D101 840F D101 8501 02 8704 03010201 8902 C200 |
+| AA00 8104 0155D101 840F D101 8501 02 8704 03010201 8902 C200 
 
 Table 1190 - Get Response Example
 
 | Example (Hex)                                                                 |
 |-------------------------------------------------------------------------------|
-| AA00 81048255D101 820400000000 84820010 D101 850102 870403010201 8903 C201 00 |
+| AA00 81048255D101 820400000000 84820010 D101 850102 870403010201 8903 C201 00 
 
 #### Property 2.3.1.2.1.3 External Power Supplied
 
@@ -16878,13 +16878,13 @@ Table 1192 - Get Request Example
 
 | Example (Hex)                                                |
 |--------------------------------------------------------------|
-| AA00 8104 0155D101 840F D101 8501 02 8704 03010201 8902 C300 |
+| AA00 8104 0155D101 840F D101 8501 02 8704 03010201 8902 C300 
 
 Table 8200 - Get Response Example
 
 | Example (Hex)                                                                 |
 |-------------------------------------------------------------------------------|
-| AA00 81048255D101 820400000000 84820010 D101 850102 870403010201 8903 C301 01 |
+| AA00 81048255D101 820400000000 84820010 D101 850102 870403010201 8903 C301 01 
 
 #### Property 2.3.1.2.1.4 Battery State of Charge
 
@@ -16906,13 +16906,13 @@ Table 8202 - Get Request Example
 
 | Example (Hex)                                                |
 |--------------------------------------------------------------|
-| AA00 8104 0155D101 840F D101 8501 02 8704 03010201 8902 C400 |
+| AA00 8104 0155D101 840F D101 8501 02 8704 03010201 8902 C400 
 
 Table 8203 - Get Response Example
 
 | Example (Hex)                                                                 |
 |-------------------------------------------------------------------------------|
-| AA00 81048255D101 820400000000 84820010 D101 850102 870403010201 8903 C401 64 |
+| AA00 81048255D101 820400000000 84820010 D101 850102 870403010201 8903 C401 64 
 
 #### Property 2.3.1.2.1.5 Battery Charger Status
 
@@ -16934,13 +16934,13 @@ Table 8205 - Get Request Example
 
 | Example (Hex)                                                |
 |--------------------------------------------------------------|
-| AA00 8104 0155D101 840F D101 8501 02 8704 03010201 8902 C500 |
+| AA00 8104 0155D101 840F D101 8501 02 8704 03010201 8902 C500 
 
 Table 8206 - Get Response Example
 
 | Example (Hex)                                                                 |
 |-------------------------------------------------------------------------------|
-| AA00 81048255D101 820400000000 84820010 D101 850102 870403010201 8903 C501 04 |
+| AA00 81048255D101 820400000000 84820010 D101 850102 870403010201 8903 C501 04 
 
 #### Property 2.3.1.2.1.6 Device Temperature
 
@@ -16962,13 +16962,13 @@ Table 8208 - Get Request Example
 
 | Example (Hex)                                                |
 |--------------------------------------------------------------|
-| AA00 8104 0155D101 840F D101 8501 02 8704 03010201 8902 C600 |
+| AA00 8104 0155D101 840F D101 8501 02 8704 03010201 8902 C600 
 
 Table 8209 - Get Response Example
 
 | Example (Hex)                                                                 |
 |-------------------------------------------------------------------------------|
-| AA00 81048255D101 820400000000 84820010 D101 850102 870403010201 8903 C601 26 |
+| AA00 81048255D101 820400000000 84820010 D101 850102 870403010201 8903 C601 26 
 
 ###### Object IDs (OIDs) and ITU-T X660
 
@@ -17241,28 +17241,28 @@ key:
 
 | Example (Hex)                                                                                                                                                |
 |--------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| AA00810401CED8128444D812810400000300A22B81040000008D8201048320B9C1F228E41A1F0B6173E00423C5B58A952DE1111E0CC5E33C3044A5D3FD2FCAA30A81083030303030333030870101 |
+| AA00810401CED8128444D812810400000300A22B81040000008D8201048320B9C1F228E41A1F0B6173E00423C5B58A952DE1111E0CC5E33C3044A5D3FD2FCAA30A81083030303030333030870101 
 
 <a name="table-1195---get-response-example"></a>
 [[**Table 1195 - Get Response Example**](#table-1195---get-response-example)](#table-1195---get-response-example)
 
 | Example (Hex)                |
 |------------------------------|
-| AA00810482CED812820400000000 |
+| AA00810482CED812820400000000 
 
 <a name="table-1196---get-request-example"></a>
 [[**Table 1196 - Get Request Example**](#table-1196---get-request-example)](#table-1196---get-request-example)
 
 | Example (Hex)                                                                                                                                                                                                                                                                                                            |
 |--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| AA0081080400D8120000030084818D4D47544B41503130C10400000300CE7D000000000000016000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000583F99A8DF1A414B11A1607402AE67722C4F59B9 |
+| AA0081080400D8120000030084818D4D47544B41503130C10400000300CE7D000000000000016000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000583F99A8DF1A414B11A1607402AE67722C4F59B9 
 
 <a name="table-1197---get-response-example"></a>
 [[**Table 1197 - Get Response Example**](#table-1197---get-response-example)](#table-1197---get-response-example)
 
 | Example (Hex)                |
 |------------------------------|
-| AA0081048200D812820400000000 |
+| AA0081048200D812820400000000 
 
 Empty Amex DRL: Load AMEX DRL file with “EMPTY” content
 
@@ -17271,28 +17271,28 @@ Empty Amex DRL: Load AMEX DRL file with “EMPTY” content
 
 | Example (Hex)                                                                                                                                                |
 |--------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| AA008104018DD8128444D812810400000500A22B81040000001182010483205E39BD3937CF6B80DECC2B6FD0ABED138D5CC69A6CE55C8790BBA58254B66ED5A30A81083030303030353030870101 |
+| AA008104018DD8128444D812810400000500A22B81040000001182010483205E39BD3937CF6B80DECC2B6FD0ABED138D5CC69A6CE55C8790BBA58254B66ED5A30A81083030303030353030870101 
 
 <a name="table-1199---get-response-example"></a>
 [[**Table 1199 - Get Response Example**](#table-1199---get-response-example)](#table-1199---get-response-example)
 
 | Example (Hex)                |
 |------------------------------|
-| AA008104828DD812820400000000 |
+| AA008104828DD812820400000000 
 
 <a name="table-1200---get-request-example"></a>
 [[**Table 1200 - Get Request Example**](#table-1200---get-request-example)](#table-1200---get-request-example)
 
 | Example (Hex)                                                  |
 |----------------------------------------------------------------|
-| AA0081080400D8120000050084114D47544B41503130C10400000500CE01AA |
+| AA0081080400D8120000050084114D47544B41503130C10400000500CE01AA 
 
 <a name="table-1201---get-response-example"></a>
 [[**Table 1201 - Get Response Example**](#table-1201---get-response-example)](#table-1201---get-response-example)
 
 | Example (Hex)                |
 |------------------------------|
-| AA0081048200D812820400000000 |
+| AA0081048200D812820400000000 
 
 Empty Terminal: Load Terminal file with “EMPTY” content
 
@@ -17301,28 +17301,28 @@ Empty Terminal: Load Terminal file with “EMPTY” content
 
 | Example (Hex)                                                                                                                                                |
 |--------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| AA0081040114D8128444D812810400000000A22B8104000000118201048320543666037C01700B9215F365346E7C883290F201E0D844D9F32B0D05A098B519A30A81083030303030303030870101 |
+| AA0081040114D8128444D812810400000000A22B8104000000118201048320543666037C01700B9215F365346E7C883290F201E0D844D9F32B0D05A098B519A30A81083030303030303030870101 
 
 <a name="table-1203---get-response-example"></a>
 [[**Table 1203 - Get Response Example**](#table-1203---get-response-example)](#table-1203---get-response-example)
 
 | Example (Hex)                |
 |------------------------------|
-| AA0081048214D812820400000000 |
+| AA0081048214D812820400000000 
 
 <a name="table-1204---get-request-example"></a>
 [[**Table 1204 - Get Request Example**](#table-1204---get-request-example)](#table-1204---get-request-example)
 
 | Example (Hex)                                                  |
 |----------------------------------------------------------------|
-| AA0081080400D8120000000084114D47544B41503130C10400000000CE01AA |
+| AA0081080400D8120000000084114D47544B41503130C10400000000CE01AA 
 
 <a name="table-1205---get-response-example"></a>
 [[**Table 1205 - Get Response Example**](#table-1205---get-response-example)](#table-1205---get-response-example)
 
 | Example (Hex)                |
 |------------------------------|
-| AA0081048200D812820400000000 |
+| AA0081048200D812820400000000 
 
 Empty Processing: Load Processing file with “EMPTY” content and 1 delimiter
 (FF33)
@@ -17332,28 +17332,28 @@ Empty Processing: Load Processing file with “EMPTY” content and 1 delimiter
 
 | Example (Hex)                                                                                                                                                |
 |--------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| AA008104011BD8128444D812810400000100A22B8104000000288201048320B25A77AD6582338898AA0498D1C15512AC9AE7C1B021884238813A28423B20E9A30A81083030303030313030870101 |
+| AA008104011BD8128444D812810400000100A22B8104000000288201048320B25A77AD6582338898AA0498D1C15512AC9AE7C1B021884238813A28423B20E9A30A81083030303030313030870101 
 
 <a name="table-1207---get-response-example"></a>
 [[**Table 1207 - Get Response Example**](#table-1207---get-response-example)](#table-1207---get-response-example)
 
 | Example (Hex)                |
 |------------------------------|
-| AA008104821BD812820400000000 |
+| AA008104821BD812820400000000 
 
 <a name="table-1208---get-request-example"></a>
 [[**Table 1208 - Get Request Example**](#table-1208---get-request-example)](#table-1208---get-request-example)
 
 | Example (Hex)                                                                                                |
 |--------------------------------------------------------------------------------------------------------------|
-| AA0081080400D8120000010084284D47544B41503130C10400000100CE18AA9A6CCE52123D2315BF3759D466BC0F7C4572A754FF3300 |
+| AA0081080400D8120000010084284D47544B41503130C10400000100CE18AA9A6CCE52123D2315BF3759D466BC0F7C4572A754FF3300 
 
 <a name="table-1209---get-response-example"></a>
 [[**Table 1209 - Get Response Example**](#table-1209---get-response-example)](#table-1209---get-response-example)
 
 | Example (Hex)                |
 |------------------------------|
-| AA0081048200D812820400000000 |
+| AA0081048200D812820400000000 
 
 Empty Entry Point: Load Entry file with “EMPTY” content and 1 delimiter (FF35)
 
@@ -17362,28 +17362,28 @@ Empty Entry Point: Load Entry file with “EMPTY” content and 1 delimiter (FF3
 
 | Example (Hex)                                                                                                                                                |
 |--------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| AA0081040135D8128444D812810400000200A22B8104000000288201048320d747a07102af345bbe0f41669ebd63aac8770aef5fa37ca00a2eaaf4112b8a2cA30A81083030303030323030870101 |
+| AA0081040135D8128444D812810400000200A22B8104000000288201048320d747a07102af345bbe0f41669ebd63aac8770aef5fa37ca00a2eaaf4112b8a2cA30A81083030303030323030870101 
 
 <a name="table-1211---get-response-example"></a>
 [[**Table 1211 - Get Response Example**](#table-1211---get-response-example)](#table-1211---get-response-example)
 
 | Example (Hex)                |
 |------------------------------|
-| AA0081048235D812820400000000 |
+| AA0081048235D812820400000000 
 
 <a name="table-1212---get-request-example"></a>
 [[**Table 1212 - Get Request Example**](#table-1212---get-request-example)](#table-1212---get-request-example)
 
 | Example (Hex)                                                                                                |
 |--------------------------------------------------------------------------------------------------------------|
-| AA0081080400D8120000020084284D47544B41503130C10400000200CE18AA3dcfbc51fcdfd06ada36181f1cd3aee3f8f879bcFF3500 |
+| AA0081080400D8120000020084284D47544B41503130C10400000200CE18AA3dcfbc51fcdfd06ada36181f1cd3aee3f8f879bcFF3500 
 
 <a name="table-1213---get-response-example"></a>
 [[**Table 1213 - Get Response Example**](#table-1213---get-response-example)](#table-1213---get-response-example)
 
 | Example (Hex)                |
 |------------------------------|
-| AA0081048200D812820400000000 |
+| AA0081048200D812820400000000 
 
 ###### Tip & Tax Display Limits (Touch Only)
 
