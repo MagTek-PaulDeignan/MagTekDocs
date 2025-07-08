@@ -17443,3 +17443,48 @@ The DynaFlex II Go has only green LEDs. Instead of lighting the first LED in
 amber, it will slowly flash the first LED. Instead of Red, the first LED will
 flash quickly.
 
+<table>
+  <thead>
+    <tr>
+      <th>Tag</th>
+      <th>Len</th>
+      <th>Value / Description</th>
+      <th>Typ</th>
+      <th>Req</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td></td>
+      <td></td>
+      <td>Beginning of any wrappers, at minimum including <strong>Response Message</strong> found on page <strong>56</strong></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td rowspan="2">EF05</td>
+      <td></td>
+      <td><strong>Command 0xEF05 – Load Encrypted LTPK and Version (MAGTEK INTERNAL ONLY FOR NOW)</strong></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>LTPK Key Version</td>
+      <td>B</td>
+      <td>R</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td>End of any wrappers, at minimum including <strong>Response Message</strong> found on page <strong>56</strong></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
