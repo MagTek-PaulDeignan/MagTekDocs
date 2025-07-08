@@ -7274,12 +7274,13 @@ Table 260 - Request Data for Command 0xEF05 – Load Encrypted LTPK and Version
 Table 261 - Response Data for Command 0xEF05 – Load Encrypted LTPK and Version
 (MAGTEK INTERNAL ONLY FOR NOW)
 
-| Tag                                                                                        | Len | Value / Description | Typ | Req | Default |
-|--------------------------------------------------------------------------------------------|-----|---------------------|-----|-----|---------|
-| Beginning of any wrappers, at minimum including [**Response Message**](#response-message) found on page **56**  |     |                     |     |     |         |
-| EF05 = [**Command 0xEF05 – Load Encrypted LTPK and Version (MAGTEK INTERNAL ONLY FOR NOW)**](#command-0xef05--load-encrypted-ltpk-and-version-magtek-internal-only-for-now) |     |                     |     |     |         |
-| 81                                                                                         | 4   | LTPK Key Version    | B   | R   |         |
-| End of any wrappers, at minimum including [**Response Message**](#response-message) found on page **56**        |     |                     |     |     |         |
+| Tag  | Len | Value / Description                                                                                                     | Typ | Req | Default |
+|------|-----|---------------------------------------------------------------------------------------------------------------------------|-----|-----|---------|
+|      |     | Beginning of any wrappers, at minimum including **Response Message** found on page **56**                                |     |     |         |
+| EF05 |     | **Command 0xEF05 – Load Encrypted LTPK and Version (MAGTEK INTERNAL ONLY FOR NOW)**                                      |     |     |         |
+| 81   |  4  | LTPK Key Version                                                                                                          |  B  |  R  |         |
+|      |     | End of any wrappers, at minimum including **Response Message** found on page **56**                                      |     |     |         |
+
 
 Table 262 - Request Example
 
@@ -17441,3 +17442,4 @@ Table 1214 - Battery Charged Example
 The DynaFlex II Go has only green LEDs. Instead of lighting the first LED in
 amber, it will slowly flash the first LED. Instead of Red, the first LED will
 flash quickly.
+
