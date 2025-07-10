@@ -1,0 +1,21 @@
+title: MMS Dyna Devices Master Programmer's Manual
+theme: just-the-docs
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
+
+nav:
+  - Developer Documentation:
+      - MMS Dyna Devices Master Programmer's Manual:
+          - MMS Dyna Devices Master Programmer's Manual: 01_MMS_Dyna_Devices_Master_Programmer's_Manual.md
+          - Introduction: 02_Introduction.md
+          - Connection Types: 03_Connection_Types.md
+          - Messages (Requests, Responses, Notifications, and Files): 04_Messages_(Requests,_Responses,_Notifications,_and_Files).md
+          - Data Types and Shared TLV Data Objects: 05_Data_Types_and_Shared_TLV_Data_Objects.md
+          - Security: 06_Security.md
+          - Commands: 07_Commands.md
+          - Notifications: 08_Notifications.md
+          - Configuration: 09_Configuration.md
