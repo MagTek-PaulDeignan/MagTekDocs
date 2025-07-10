@@ -1,7 +1,7 @@
 ---
 title: Master Test-Cover
 layout: Home
-parent: MMS Dyna Devices Master Programmer's Manual
+parent: Developer Documentation
 nav_order: 1
 ---
 
