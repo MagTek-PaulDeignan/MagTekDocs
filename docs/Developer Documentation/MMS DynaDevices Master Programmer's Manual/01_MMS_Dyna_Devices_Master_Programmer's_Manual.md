@@ -1,6 +1,6 @@
 ---
-title: MMS Dyna Devices Master Programmer's Manual
-layout: default
+title: Master Test-Cover
+layout: Home
 parent: MMS Dyna Devices Master Programmer's Manual
 nav_order: 1
 ---
