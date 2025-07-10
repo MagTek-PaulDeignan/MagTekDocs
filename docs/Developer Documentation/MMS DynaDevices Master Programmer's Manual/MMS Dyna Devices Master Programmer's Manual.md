@@ -69,6 +69,7 @@ const toggleDarkMode = document.querySelector('.js-toggle-dark-mode');
 #floating-toc a:hover {
   text-decoration: underline;
 }
+
 </style>
 
 <div id="floating-toc">
