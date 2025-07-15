@@ -4,7 +4,7 @@
 table {
   width: 100%;
   border-collapse: collapse;
-  table-layout: auto !important; /* Let column widths adjust based on content */
+  table-layout: auto; /* Fit-to-content globally */
   font-family: system-ui, sans-serif;
   font-size: 0.95rem;
   border: 1px solid #ccc;
@@ -17,12 +17,12 @@ th, td {
   text-align: left;
   vertical-align: top;
   white-space: normal;
-  word-break: normal;
-  overflow-wrap: anywhere;
+  word-break: break-word;
+  overflow-wrap: break-word;
   line-height: 1.5;
 }
 
-/* Table headers */
+/* Header style */
 thead th {
   background-color: #000;
   color: white;
@@ -39,13 +39,14 @@ tbody tr:hover td {
   background-color: #f0f0f0;
 }
 
-/* Show dash for empty cells */
+/* Dash for empty cells */
 td:empty::after {
   content: "—";
   color: #aaa;
 }
 
-/* Optional: Make wide tables scrollable on mobile */
+/* Scroll container for overflow-prone tables */
 .overflow-auto {
   overflow-x: auto;
 }
+
