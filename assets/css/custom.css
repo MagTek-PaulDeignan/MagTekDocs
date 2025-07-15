@@ -3,12 +3,13 @@
 
 table {
   width: 100%;
+  table-layout: auto !important;   /* ← Allow natural column width */
   border-collapse: collapse;
-  table-layout: auto; /* Fit-to-content globally */
   font-family: system-ui, sans-serif;
   font-size: 0.95rem;
-  border: 1px solid #ccc;
   margin-bottom: 1.5rem;
+  border: 1px solid #ccc;
+  overflow-x: hidden;
 }
 
 th, td {
@@ -19,7 +20,6 @@ th, td {
   white-space: normal;
   word-break: break-word;
   overflow-wrap: break-word;
-  line-height: 1.5;
 }
 
 /* Header style */
@@ -45,8 +45,9 @@ td:empty::after {
   color: #aaa;
 }
 
-/* Scroll container for overflow-prone tables */
+/* Overflow wrapper behavior */
 .overflow-auto {
   overflow-x: auto;
+  max-width: 100%;
 }
 
