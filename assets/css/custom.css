@@ -67,3 +67,30 @@ td:empty::after {
   <col style="width:8%">
   <col style="width:8%">
 </colgroup>
+/* FULL WIDTH LAYOUT OVERRIDES FOR JUST THE DOCS */
+
+@media (min-width: 768px) {
+  .main-content,
+  .page-content,
+  .main,
+  .layout,
+  .site-wrap,
+  .site,
+  .site-header,
+  .site-footer {
+    max-width: 100% !important;
+    width: 100% !important;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+/* Override inner container margins */
+.main-content {
+  margin: 0 auto;
+}
+
+/* Optional: remove default limit on site wrapper */
+.site {
+  max-width: none !important;
+}
