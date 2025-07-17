@@ -1,68 +1,3 @@
-body::before {
-  content: "✅ custom.css LOADED";
-  display: block;
-  text-align: center;
-  color: red;
-  font-size: 1.2rem;
-  font-weight: bold;
-  padding: 1rem;
-  background: #ffeaea;
-}
-
-
-
-/* Auto-sizing, responsive, styled tables for Just the Docs */
-
-table {
-  width: 100%;
-  table-layout: auto !important;   /* ← Allow natural column width */
-  border-collapse: collapse;
-  font-family: system-ui, sans-serif;
-  font-size: 0.95rem;
-  margin-bottom: 1.5rem;
-  border: 1px solid #ccc;
-  overflow-x: hidden;
-}
-
-th, td {
-  padding: 12px 16px;
-  border: 1px solid #ddd;
-  text-align: left;
-  vertical-align: top;
-  white-space: normal;
-  word-break: break-word;
-  overflow-wrap: break-word;
-}
-
-/* Header style */
-thead th {
-  background-color: #000;
-  color: white;
-  font-weight: 600;
-}
-
-/* Zebra striping */
-tbody tr:nth-child(even) td {
-  background-color: #f9f9f9;
-}
-
-/* Hover effect */
-tbody tr:hover td {
-  background-color: #f0f0f0;
-}
-
-/* Dash for empty cells */
-td:empty::after {
-  content: "—";
-  color: #aaa;
-}
-
-/* Overflow wrapper behavior */
-.overflow-auto {
-  overflow-x: auto;
-  max-width: 100%;
-}
-
 /* Unlock full-width rendering for main content */
 @media (min-width: 768px) {
   .main-content {
@@ -71,16 +6,8 @@ td:empty::after {
     padding-right: 2rem;
   }
 }
-<colgroup>
-  <col style="width:6%">
-  <col style="width:6%">
-  <col style="width:50%">
-  <col style="width:8%">
-  <col style="width:8%">
-  <col style="width:8%">
-</colgroup>
-/* FULL WIDTH LAYOUT OVERRIDES FOR JUST THE DOCS */
 
+/* FULL WIDTH LAYOUT OVERRIDES FOR JUST THE DOCS */
 @media (min-width: 768px) {
   .main-content,
   .page-content,
