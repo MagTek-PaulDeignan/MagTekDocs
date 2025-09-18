@@ -1,10 +1,9 @@
 ---
-title: Command 0x1001 Start Transaction
+title: 0x1001 — Start Transaction
 layout: home
-parent: Command Group 0x10nn — Transactions
+parent: 0x10nn – Transactions
 nav_order: 1
 ---
-
 # Command 0x1001 Start Transaction
 
 The host uses this command to start a payment transaction.
