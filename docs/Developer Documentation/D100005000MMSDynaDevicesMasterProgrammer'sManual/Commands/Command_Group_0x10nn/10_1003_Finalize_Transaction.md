@@ -1,24 +1,24 @@
 ---
-title: 0x1003 — Finalize Transaction
+title: Command 0x1003 Finalize Transaction
 layout: home
-parent: 0x10nn – Transactions
+parent: Command Group 0x10nn
 nav_order: 3
 ---
 
-# 0x1003 — Finalize Transaction
+# Command 0x1003 Finalize Transaction
 
 Complete a managed transaction when the device expects a final host step.
 
 ---
 
 ## When to Use
-- After an EMV kernel indicates the host must finalize with a result code.
+- After EMV decision requiring a final host action code (8A).
 
 ## Preconditions
-- Transaction is awaiting finalization from host.
+- Transaction awaiting finalization from host.
 
 ## Postconditions
-- Device clears prompts and returns to Idle (or next step per kernel).
+- Device returns to Idle or next step per kernel.
 
 ## Sequence
 ```
@@ -44,5 +44,5 @@ Host SEND 0x1003(+8A)  →  Device completes  →  Response
 - `69 85` no finalizable transaction
 - `6A 80` invalid data
 
-## Notes & Gotchas
-- Include `8A` (Authorization Response Code) as required by the flow.
+## Notes
+- Always include a correct `8A` value per host decision.

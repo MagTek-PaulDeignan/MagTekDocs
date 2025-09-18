@@ -1,24 +1,24 @@
 ---
-title: 0x1004 — Resume Transaction
+title: Command 0x1004 Resume Transaction
 layout: home
-parent: 0x10nn – Transactions
+parent: Command Group 0x10nn
 nav_order: 4
 ---
 
-# 0x1004 — Resume Transaction
+# Command 0x1004 Resume Transaction
 
 Resume a paused transaction and provide issuer/host data (e.g., ARPC).
 
 ---
 
 ## When to Use
-- Device is waiting for host data to proceed (ARPC, updated TLVs).
+- Device is waiting for host/issuer data to proceed.
 
 ## Preconditions
-- Transaction is paused/suspended and specifically awaiting host input.
+- Transaction paused and awaiting host input.
 
 ## Postconditions
-- Device processes provided data and continues the flow.
+- Device processes provided TLVs and continues.
 
 ## Sequence
 ```
@@ -30,7 +30,7 @@ Host SEND 0x1004(+TLVs)  →  Device resumes  →  Response
 ## Request
 | Example (Hex) |
 |---------------|
-| AA 00 81 04 10 04 00 11 81 01 00 91 08 12 34 56 78 90 AB CD EF 8A 02 30 30 |
+| AA 00 81 04 10 04 00 0E 81 01 00 91 08 12 34 56 78 90 AB CD EF 8A 02 30 30 |
 
 ## Response
 | Example (Hex) |
@@ -44,5 +44,5 @@ Host SEND 0x1004(+TLVs)  →  Device resumes  →  Response
 - `69 85` no resumable transaction
 - `6A 80` invalid data
 
-## Notes & Gotchas
-- Use `81` (Resume Code) and include `91` (ARPC data) / `8A` as your flow requires.
+## Notes
+- Include `81` (resume code) and `91` (issuer data) as required by flow.

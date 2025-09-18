@@ -1,24 +1,24 @@
 ---
-title: 0x1002 — Continue Transaction
+title: Command 0x1002 Continue Transaction
 layout: home
-parent: 0x10nn – Transactions
+parent: Command Group 0x10nn
 nav_order: 2
 ---
 
-# 0x1002 — Continue Transaction
+# Command 0x1002 Continue Transaction
 
 Resume a suspended transaction when no additional TLVs are required.
 
 ---
 
 ## When to Use
-- Device indicated a pause that only needs continuation (no ARPC/host data).
+- Device indicated a pause requiring only continuation.
 
 ## Preconditions
-- A transaction is suspended/paused by the device.
+- Transaction is paused by the device.
 
 ## Postconditions
-- Device resumes processing; subsequent outcome delivered by normal flow.
+- Device resumes EMV flow or card processing.
 
 ## Sequence
 ```
@@ -43,5 +43,5 @@ Host SEND 0x1002  →  Device resumes  →  Response
 - `90 00` success
 - `69 85` no resumable state
 
-## Notes & Gotchas
-- If the device requires issuer data, use **0x1004 Resume** instead.
+## Notes
+- If device expects issuer data, use 0x1004 instead.

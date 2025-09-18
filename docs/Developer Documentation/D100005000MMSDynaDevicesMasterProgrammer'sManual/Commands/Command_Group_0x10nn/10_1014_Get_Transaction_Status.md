@@ -1,13 +1,13 @@
 ---
-title: 0x1014 — Get Transaction Status
+title: Command 0x1014 Get Transaction Status
 layout: home
-parent: 0x10nn – Transactions
+parent: Command Group 0x10nn
 nav_order: 7
 ---
 
-# 0x1014 — Get Transaction Status
+# Command 0x1014 Get Transaction Status
 
-Query the current transaction state.
+Query the current transaction state for recovery/verification.
 
 ---
 
@@ -18,11 +18,11 @@ Query the current transaction state.
 - None.
 
 ## Postconditions
-- Returns a status word indicating success; use notifications or properties for rich state.
+- Returns current status; use properties/notifications for detail.
 
 ## Sequence
 ```
-Host SEND 0x1014  →  Device returns current state  →  Response
+Host SEND 0x1014  →  Device returns state  →  Response
 ```
 
 ---
@@ -43,5 +43,5 @@ Host SEND 0x1014  →  Device returns current state  →  Response
 - `90 00` success
 - `69 85` no active/suspended transaction
 
-## Notes & Gotchas
-- Prefer notifications; polling should be limited to recovery scenarios.
+## Notes
+- Prefer notifications; limit polling to recovery scenarios.

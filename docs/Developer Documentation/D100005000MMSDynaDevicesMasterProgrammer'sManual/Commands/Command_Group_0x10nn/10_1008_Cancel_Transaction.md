@@ -1,28 +1,28 @@
 ---
-title: 0x1008 — Cancel Transaction
+title: Command 0x1008 Cancel Transaction
 layout: home
-parent: 0x10nn – Transactions
+parent: Command Group 0x10nn
 nav_order: 5
 ---
 
-# 0x1008 — Cancel Transaction
+# Command 0x1008 Cancel Transaction
 
 Cancel the in‑progress transaction and return to Idle.
 
 ---
 
 ## When to Use
-- User cancel, app timeout, tender switch, or navigation away from payment.
+- User cancel, app timeout, tender switch.
 
 ## Preconditions
 - A transaction is active or paused (idempotent if not).
 
 ## Postconditions
-- Device clears prompts; EMV contact may require **Remove Card** prompt.
+- Prompts cleared; ICC may require Remove Card before Idle.
 
 ## Sequence
 ```
-Host SEND 0x1008  →  Device aborts/clears prompts  →  Response
+Host SEND 0x1008  →  Device aborts  →  Response
 ```
 
 ---
@@ -43,5 +43,5 @@ Host SEND 0x1008  →  Device aborts/clears prompts  →  Response
 - `90 00` success
 - `69 85` no transaction in progress
 
-## Notes & Gotchas
-- Send once and wait for the response before issuing a new **0x1001**.
+## Notes
+- Send once and wait for response before issuing a new 0x1001.
