@@ -7,51 +7,55 @@ nav_order: 7
 
 # 0x1014 — Get Transaction Status
 
-Queries the current transaction state.
+Queries the current transaction state for recovery or verification.
 
 ---
 
-## When to Use
-- Recovery or verification when event-driven updates are unavailable.
-
-## Preconditions
-- None.
-
-## Postconditions
-- Returns a status word indicating success; use notifications or properties for detailed state.
-
-## Sequence
-```
-Host SEND 0x1014 → Device returns current state → Response
-```
+## Sequence of Events
+1. Host issues **0x1014 — Get Transaction Status**.
+2. Device processes the request.
+3. Device returns status.
 
 ---
 
-## TLV Reference — Request
-*(none)*
-
-## TLV Reference — Response
-*(none)*
+## Command Syntax
+| Field   | Length | Value   | Description |
+|---------|--------|---------|-------------|
+| Command | 2      | 0x1014 | Get Transaction Status      |
+| TLVs    | var.   | –       | See examples|
 
 ---
 
-## Examples — Full APDUs
-
+## Examples
 ### Request
-| Example (Hex) |
-|---------------|
-| AA 00 81 04 10 14 00 00 |
+```
+0x1014
+  ; (no TLVs unless specified)
+```
+**Payload**
+```
+1014
+```
 
 ### Response
-| Example (Hex) |
-|---------------|
-| AA 00 82 04 10 14 00 00 90 00 |
+```
+0x1014
+  SW1SW2 9000
+```
+**Payload**
+```
+9000
+```
 
 ---
 
-## Status / Errors
-- `90 00` — success
-- `69 85` — no active or suspended transaction
+## Error Conditions
+| Status Word | Description |
+|-------------|-------------|
+| 9000        | Success     |
+| 6985        | Conditions not satisfied |
 
-## Implementation Notes
-- Prefer notifications for real-time state; use polling only for recovery scenarios.
+---
+
+## Notes
+- Prefer notifications; use polling only for recovery.

@@ -11,47 +11,51 @@ Resumes a suspended transaction when no additional TLVs are required.
 
 ---
 
-## When to Use
-- The device has paused and indicated continuation without additional data.
-
-## Preconditions
-- A transaction is currently paused by the device.
-
-## Postconditions
-- The device resumes processing; the outcome is provided by subsequent responses or notifications.
-
-## Sequence
-```
-Host SEND 0x1002 → Device resumes → Response
-```
+## Sequence of Events
+1. Host issues **0x1002 — Continue Transaction**.
+2. Device processes the request.
+3. Device returns status.
 
 ---
 
-## TLV Reference — Request
-*(none)*
-
-## TLV Reference — Response
-*(none)*
+## Command Syntax
+| Field   | Length | Value   | Description |
+|---------|--------|---------|-------------|
+| Command | 2      | 0x1002 | Continue Transaction      |
+| TLVs    | var.   | –       | See examples|
 
 ---
 
-## Examples — Full APDUs
-
+## Examples
 ### Request
-| Example (Hex) |
-|---------------|
-| AA 00 81 04 10 02 00 00 |
+```
+0x1002
+  ; (no TLVs unless specified)
+```
+**Payload**
+```
+1002
+```
 
 ### Response
-| Example (Hex) |
-|---------------|
-| AA 00 82 04 10 02 00 00 90 00 |
+```
+0x1002
+  SW1SW2 9000
+```
+**Payload**
+```
+9000
+```
 
 ---
 
-## Status / Errors
-- `90 00` — success
-- `69 85` — no resumable state
+## Error Conditions
+| Status Word | Description |
+|-------------|-------------|
+| 9000        | Success     |
+| 6985        | Conditions not satisfied |
 
-## Implementation Notes
-- If the device requires issuer data, use `0x1004 Resume Transaction` instead.
+---
+
+## Notes
+- Use 0x1004 if issuer data is required.

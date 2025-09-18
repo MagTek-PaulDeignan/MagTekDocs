@@ -1,18 +1,18 @@
 ---
-title: 0x1008 — Cancel Transaction
+title: 0x1003 — Finalize Transaction
 layout: home
 parent: 0x10nn – Transactions
-nav_order: 5
+nav_order: 3
 ---
 
-# 0x1008 — Cancel Transaction
+# 0x1003 — Finalize Transaction
 
-Cancels the in-progress transaction and returns the device to Idle.
+Completes a transaction when the device expects a final host action (e.g., Authorization Response Code).
 
 ---
 
 ## Sequence of Events
-1. Host issues **0x1008 — Cancel Transaction**.
+1. Host issues **0x1003 — Finalize Transaction**.
 2. Device processes the request.
 3. Device returns status.
 
@@ -21,7 +21,7 @@ Cancels the in-progress transaction and returns the device to Idle.
 ## Command Syntax
 | Field   | Length | Value   | Description |
 |---------|--------|---------|-------------|
-| Command | 2      | 0x1008 | Cancel Transaction      |
+| Command | 2      | 0x1003 | Finalize Transaction      |
 | TLVs    | var.   | –       | See examples|
 
 ---
@@ -29,17 +29,17 @@ Cancels the in-progress transaction and returns the device to Idle.
 ## Examples
 ### Request
 ```
-0x1008
+0x1003
   ; (no TLVs unless specified)
 ```
 **Payload**
 ```
-1008
+1003
 ```
 
 ### Response
 ```
-0x1008
+0x1003
   SW1SW2 9000
 ```
 **Payload**
@@ -58,4 +58,4 @@ Cancels the in-progress transaction and returns the device to Idle.
 ---
 
 ## Notes
-- For EMV Contact, may require card removal.
+- Provide correct 8A value matching host decision.

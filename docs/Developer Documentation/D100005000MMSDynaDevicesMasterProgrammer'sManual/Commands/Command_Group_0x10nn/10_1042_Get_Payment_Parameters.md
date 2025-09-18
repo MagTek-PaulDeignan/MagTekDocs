@@ -11,50 +11,51 @@ Reads payment parameter block(s) from the device.
 
 ---
 
-## When to Use
-- Verification, export, or diagnostics.
-
-## Preconditions
-- None.
-
-## Postconditions
-- Returned block(s) reflect the currently applied parameters.
-
-## Sequence
-```
-Host SEND 0x1042 → Device returns block(s) → Response
-```
+## Sequence of Events
+1. Host issues **0x1042 — Get Payment Parameters**.
+2. Device processes the request.
+3. Device returns status.
 
 ---
 
-## TLV Reference — Request
-*(none)*
-
-## TLV Reference — Response
-| Tag  | Len | Name / Description |
-|-----:|:---:|---------------------|
-| DF10 | var | Payment parameter container |
+## Command Syntax
+| Field   | Length | Value   | Description |
+|---------|--------|---------|-------------|
+| Command | 2      | 0x1042 | Get Payment Parameters      |
+| TLVs    | var.   | –       | See examples|
 
 ---
 
-## Examples — Full APDUs
-
+## Examples
 ### Request
-| Example (Hex) |
-|---------------|
-| AA 00 81 04 10 42 00 00 |
+```
+0x1042
+  ; (no TLVs unless specified)
+```
+**Payload**
+```
+1042
+```
 
 ### Response
-| Example (Hex) |
-|---------------|
-| AA 00 82 04 10 42 00 06 DF 10 04 01 02 03 04 90 00 |
+```
+0x1042
+  SW1SW2 9000
+```
+**Payload**
+```
+9000
+```
 
 ---
 
-## Status / Errors
-- `90 00` — success
-- `6A 82` — not found
-- `6A 80` — invalid query
+## Error Conditions
+| Status Word | Description |
+|-------------|-------------|
+| 9000        | Success     |
+| 6985        | Conditions not satisfied |
 
-## Implementation Notes
-- Keep queries narrow. Large responses may require segmentation depending on transport.
+---
+
+## Notes
+- Large responses may be segmented by transport.

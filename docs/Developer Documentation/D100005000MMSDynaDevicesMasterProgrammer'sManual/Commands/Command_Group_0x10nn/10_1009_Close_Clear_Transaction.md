@@ -7,53 +7,55 @@ nav_order: 6
 
 # 0x1009 — Close / Clear Transaction
 
-Clears residual transaction state and returns the device to **Idle**.
+Clears residual transaction state and returns the device to Idle.
 
 ---
 
-## When to Use
-- After transport interruptions, application restarts, or any uncertain state.
-- Immediately after reconnecting, before starting a new transaction.
-
-## Preconditions
-- None. This command is safe to issue in any state.
-
-## Postconditions
-- Prompts are dismissed; volatile caches are reset; the device is idle (or awaiting **Remove Card** if an ICC is present).
-
-## Sequence
-```
-Host SEND 0x1009 → Device clears state → Response
-```
+## Sequence of Events
+1. Host issues **0x1009 — Close / Clear Transaction**.
+2. Device processes the request.
+3. Device returns status.
 
 ---
 
-## TLV Reference — Request
-*(none)*
-
-## TLV Reference — Response
-*(none)*
+## Command Syntax
+| Field   | Length | Value   | Description |
+|---------|--------|---------|-------------|
+| Command | 2      | 0x1009 | Close / Clear Transaction      |
+| TLVs    | var.   | –       | See examples|
 
 ---
 
-## Examples — Full APDUs
-
+## Examples
 ### Request
-| Example (Hex) |
-|---------------|
-| AA 00 81 04 10 09 00 00 |
+```
+0x1009
+  ; (no TLVs unless specified)
+```
+**Payload**
+```
+1009
+```
 
 ### Response
-| Example (Hex) |
-|---------------|
-| AA 00 82 04 10 09 00 00 90 00 |
+```
+0x1009
+  SW1SW2 9000
+```
+**Payload**
+```
+9000
+```
 
 ---
 
-## Status / Errors
-- `90 00` — success
-- `69 85` — nothing to clear
+## Error Conditions
+| Status Word | Description |
+|-------------|-------------|
+| 9000        | Success     |
+| 6985        | Conditions not satisfied |
 
-## Implementation Notes
-- This command is idempotent. If an ICC is inserted, the device may prompt for removal before becoming idle.
-- Recommended recovery sequence: `0x1009` → (optional) `0x1014` → `0x1001`.
+---
+
+## Notes
+- Use after recovery before restarting transaction.
