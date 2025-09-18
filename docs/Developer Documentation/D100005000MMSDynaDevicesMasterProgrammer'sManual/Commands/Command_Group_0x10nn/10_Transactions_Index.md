@@ -1,7 +1,7 @@
 ---
 title: 0x10nn – Transactions
 layout: home
-parent: 0x10nn – Transactions
+parent: Commands
 nav_order: 1
 ---
 
