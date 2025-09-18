@@ -1,7 +1,7 @@
 ---
 title: READ ME
 layout: home
-parent: 
+parent: Software
 nav_order: 1
 ---
 
