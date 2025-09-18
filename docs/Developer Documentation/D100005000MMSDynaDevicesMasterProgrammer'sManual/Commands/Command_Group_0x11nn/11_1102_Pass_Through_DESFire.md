@@ -37,21 +37,21 @@ After a DESFire (Light/EV1/EV2/EV3) tag is activated, use this command to issue 
 | TLVs    | var.   | —       | See Request/Response TLVs |
 
 ### Request TLVs
-| Tag | Len | Field / Meaning | Req |
-|----:|:---:|------------------|:---:|
-| 81  | var | **Command to Send** (native DESFire APDU/frames) | R |
-| 82  | 01  | **Encryption Control** — 00: none, 01: encrypted | O |
-| 83  | 01  | **Flow Control** — 00: expect more, FF: last | R |
+| Tag | Len | Field / Meaning                    | Req | Notes |
+|----:|:---:|------------------------------------|:---:|-------|
+| 81  | var | Command to Send (native DESFire)   | R   | APDU/frames |
+| 82  | 01  | Encryption Control                 | O   | 00=none, 01=encrypted |
+| 83  | 01  | Flow Control                       | R   | 00=more, FF=last |
 
 ### Response TLVs
-| Tag | Len | Field / Meaning | Req |
-|----:|:---:|------------------|:---:|
-| 81  | 01  | **Tag Response Code** — 00: success, 01: failed | R |
-| 82  | var | **Encryption Control** (mirrors request) | O |
-| 84  | var | **NFC/MIFARE Data Container** (encrypted or plain) | R |
+| Tag | Len | Field / Meaning                 | Req | Notes |
+|----:|:---:|---------------------------------|:---:|-------|
+| 81  | 01  | Tag Response Code (00=ok,01=fail) | R   |       |
+| 82  | var | Encryption Control                | O   | Mirrors request |
+| 84  | var | NFC/MIFARE Data Container         | R   | Encrypted/Plain |
 
-**Encrypted Data (84 payload)**: `/DFDF59`, `/DFDF50`, `/DFDF51`  
-**Unencrypted Data (84 payload)**: `FC` container with optional `/DF7A`
+**Encrypted Data (inside 84)**: `/DFDF59` (Encrypted Data), `/DFDF50` (KSN), `/DFDF51` (Type)  
+**Unencrypted Data (inside 84)**: `FC` (NFC Data Container) with optional `/DF7A` (NFC Data)
 
 ---
 
@@ -80,4 +80,4 @@ After a DESFire (Light/EV1/EV2/EV3) tag is activated, use this command to issue 
 ---
 
 ## Notes
-- DESFire native `GET_VERSION` appears here as `90 60 00 00 00` within TLV `81`. Honor the 30‑second timeout for multi‑shot exchanges.
+- DESFire native `GET_VERSION` appears as `90 60 00 00 00` inside TLV `81`. Honor the 30‑second timeout for multi‑shot exchanges.

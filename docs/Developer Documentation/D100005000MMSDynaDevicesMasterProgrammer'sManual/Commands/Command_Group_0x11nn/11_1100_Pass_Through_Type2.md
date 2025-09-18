@@ -37,38 +37,32 @@ After a Type 2 tag is activated, the host uses this command to issue native **NT
 | TLVs    | var.   | —       | See Request/Response TLVs |
 
 ### Request TLVs
-| Tag | Len | Field / Meaning | Req |
-|----:|:---:|------------------|:---:|
-| 81  | var | **Command to Send** (native NTAG/Ultralight opcode + params) | R |
-| 82  | 01  | **Encryption Control** — 00: none, 01: encrypted payload | O |
-| 83  | 01  | **Flow Control** — 00: expect more commands, FF: last command | R |
+| Tag | Len | Field / Meaning                         | Req | Notes                          |
+|----:|:---:|-----------------------------------------|:---:|--------------------------------|
+| 81  | var | Command to Send (opcode + parameters)   | R   | Native NTAG/Ultralight command |
+| 82  | 01  | Encryption Control                      | O   | 00 = none, 01 = encrypted      |
+| 83  | 01  | Flow Control                            | R   | 00 = more, FF = last           |
 
 ### Response TLVs
-| Tag | Len | Field / Meaning | Req |
-|----:|:---:|------------------|:---:|
-| 81  | 01  | **Tag Response Code** — 00: success, 01: failed | R |
-| 82  | var | **Encryption Control** (mirrors request; see payload format) | O |
-| 84  | var | **NFC/MIFARE Data Container** (encrypted or plain, see below) | R |
+| Tag | Len | Field / Meaning                 | Req | Notes |
+|----:|:---:|---------------------------------|:---:|-------|
+| 81  | 01  | Tag Response Code (00=ok,01=fail) | R   |       |
+| 82  | var | Encryption Control                | O   | Mirrors request |
+| 84  | var | NFC/MIFARE Data Container         | R   | Encrypted/Plain |
 
-**Encrypted Data (payload inside 84)**  
-- `/DFDF59` – Encrypted Data Primitive  
-- `/DFDF50` – Encrypted Data KSN  
-- `/DFDF51` – Encryption Type
-
-**Unencrypted Data (payload inside 84)**  
-- `FC` – NFC Data Container  
-- `/DF7A` – NFC Data
+**Encrypted Data (inside 84)**: `/DFDF59` (Encrypted Data), `/DFDF50` (KSN), `/DFDF51` (Type)  
+**Unencrypted Data (inside 84)**: `FC` (NFC Data Container) with optional `/DF7A` (NFC Data)
 
 ---
 
 ## Examples — Full APDUs (Hex)
 
-### Request — Get Version
+### Request — GET_VERSION
 | Example (Hex) |
 |---------------|
 | AA 00 81 04 01 39 11 00 84 0B 11 00 81 01 60 82 01 00 83 01 00 |
 
-### Response — Get Version
+### Response — GET_VERSION
 | Example (Hex) |
 |---------------|
 | AA 00 81 04 82 39 11 00 82 04 01 00 00 00 84 14 11 00 81 01 00 82 0D FC 0B DF 7A 08 01 02 03 04 05 06 07 08 |

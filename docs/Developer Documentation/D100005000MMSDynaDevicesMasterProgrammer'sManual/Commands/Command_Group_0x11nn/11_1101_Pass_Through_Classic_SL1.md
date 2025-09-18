@@ -37,21 +37,21 @@ After activation of a Type 2 tag in Classic/MINI/Plus SL1 mode, the host uses th
 | TLVs    | var.   | —       | See Request/Response TLVs |
 
 ### Request TLVs
-| Tag | Len | Field / Meaning | Req |
-|----:|:---:|------------------|:---:|
-| 81  | var | **Command to Send** (native Classic/MINI/Plus SL1 bytes) | R |
-| 82  | 01  | **Encryption Control** — 00: none, 01: encrypted | O |
-| 83  | 01  | **Flow Control** — 00: expect more, FF: last | R |
+| Tag | Len | Field / Meaning                       | Req | Notes |
+|----:|:---:|---------------------------------------|:---:|-------|
+| 81  | var | Command to Send (native Classic bytes)| R   |       |
+| 82  | 01  | Encryption Control                    | O   | 00=none, 01=encrypted |
+| 83  | 01  | Flow Control                          | R   | 00=more, FF=last |
 
 ### Response TLVs
-| Tag | Len | Field / Meaning | Req |
-|----:|:---:|------------------|:---:|
-| 81  | 01  | **Tag Response Code** — 00: success, 01: failed | R |
-| 82  | var | **Encryption Control** (mirrors request) | O |
-| 84  | var | **NFC/MIFARE Data Container** (encrypted or plain) | R |
+| Tag | Len | Field / Meaning                 | Req | Notes |
+|----:|:---:|---------------------------------|:---:|-------|
+| 81  | 01  | Tag Response Code (00=ok,01=fail) | R   |       |
+| 82  | var | Encryption Control                | O   | Mirrors request |
+| 84  | var | NFC/MIFARE Data Container         | R   | Encrypted/Plain |
 
-**Encrypted Data (84 payload)**: `/DFDF59` (data), `/DFDF50` (KSN), `/DFDF51` (type)  
-**Unencrypted Data (84 payload)**: `FC` container with optional `/DF7A` data
+**Encrypted Data (inside 84)**: `/DFDF59` (Encrypted Data), `/DFDF50` (KSN), `/DFDF51` (Type)  
+**Unencrypted Data (inside 84)**: `FC` (NFC Data Container) with optional `/DF7A` (NFC Data)
 
 ---
 
