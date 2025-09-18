@@ -81,4 +81,4 @@ After a Type 2 tag is activated, the host uses this command to issue native **NT
 
 ## Notes
 - Use `GET_VERSION (0x60)` before feature‑sensitive operations to branch logic by tag type.
-- For protected reads, authenticate first to avoid device‑level failures.
+- For protected reads, authenticate first to avoid device‑level failures. 
