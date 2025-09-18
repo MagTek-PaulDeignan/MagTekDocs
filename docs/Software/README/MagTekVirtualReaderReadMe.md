@@ -1,8 +1,8 @@
 ---
 title: READ ME
 layout: home
-parent: Software
-nav_order: 1
+parent: MagTekVirtual Reader
+nav_order: 
 ---
 
 # MagTekVirtualReader iOS SDK Code & Integration Guide
