@@ -1,227 +1,103 @@
 ---
-title: Command 0x1001 Start Transaction
+title: 0x1001 — Start Transaction
 layout: home
-parent: Command Group 0x10nn
+parent: 0x10nn – Transactions
 nav_order: 1
 ---
 
-# Command 0x1001 Start Transaction
+# 0x1001 — Start Transaction
 
-The host uses this command to start a payment transaction.
-
----
-
-## Sequence of Events
-
-1. If user event notifications are enabled, a card may be presented **before** this command. The device will notify the host to initiate a transaction.
-2. **MSR only:** If the card is swiped early, the device temporarily stores swipe data for a configurable timeout.
-3. The host calls **Start Transaction** (`0x1001`).
-4. The device guides the cardholder (MSR, EMV Contact, Contactless, or MCE) and returns transaction data with a status.
+Initiates a card-present transaction. The host sends TLVs with amount, currency, and transaction type, plus entry-mode options. The device conducts MSR/ICC/CTLS interactions and returns TLVs with SW1SW2.
 
 ---
 
-## Applicability Matrix
+## When to Use
+- To begin any payment that requires cardholder interaction.
+- To prepare the reader for specific entry modes (configure `DF01`).
 
-| Transaction Interface | DynaFlex | DynaFlex II PED | DynaProx | DynaFlex II GO |
-|----------------------:|:--------:|:---------------:|:--------:|:--------------:|
-| MSR (Swipe)           | ✅       | ✅              | ❌       | ✅             |
-| EMV Contact           | ✅       | ✅              | ❌       | ✅             |
-| EMV Contactless       | ✅       | ✅              | ✅       | ✅             |
-| MCE (Manual)          | ✅       | ✅              | ❌       | ❌             |
-| Barcode Reader        | ✅       | ✅              | ✅       | ✅             |
+## Preconditions
+- Device in **Idle** state; required payment parameters (AIDs/CAPK) installed; adequate power.
+
+## Postconditions
+- Device remains engaged until completion, cancellation, or error. Returned TLVs reflect the selected path (MSR/EMV).
+
+## Sequence
+```
+Host SEND 0x1001 → Device prompts/reads → Response TLVs (EMV/MSR)
+```
 
 ---
 
-## Command Syntax
+## TLV Reference — Request
 
-| Field   | Length | Value   | Description           |
-|---------|--------|---------|-----------------------|
-| Command | 2      | 0x1001  | Start Transaction     |
-| TLVs    | var.   | –       | See below             |
+| Tag   | Len | Format | Name / Description |
+|------:|:---:|:------:|--------------------|
+| 9F02  | 06  | BCD    | Amount Authorized (minor units) |
+| 9A    | 03  | BCD    | Transaction Date (YYMMDD) |
+| 9C    | 01  | Bin    | Transaction Type (`00` Purchase) |
+| 5F2A  | 02  | Bin    | Currency Code (ISO‑4217 numeric) |
+| 5F36  | 01  | Bin    | Currency Exponent (optional) |
+| DF01  | 01  | Bitmask| Allowed Entry Modes: `01` MSR, `02` ICC, `04` CTLS, `08` MCE |
+| DF02  | 02  | U16    | Transaction Timeout (seconds) |
+| DF03  | var | Bin    | CTLS kernel/TTQ options (optional) |
+| DF04  | 01  | Bin    | Locale/Language hint (optional) |
 
-### Required TLVs
+## TLV Reference — Response
 
-| Tag    | Name                       | Description                                        |
-|--------|----------------------------|----------------------------------------------------|
-| DFDF4D | Transaction Control Flags  | Controls available interfaces and flow             |
-| RAAT   | Reader Action/Access Type *(internal)* | Sets which actions the reader should allow |
-
----
-
-## Examples
-
-### Example 1 — MSR (Swipe)
-
-**Request TLVs**
-<div class="code-box" data-label="Payload">
-
-```text
-9F0206000000001000
-9A03250821
-9C0100
-5F2A020840
-DF010101
-DF0202003C
-```
-
-</div>
-
-**Full APDU — Request**
-| Example (Hex) |
-|---------------|
-| AA 00 81 04 10 01 00 17 9F 02 06 00 00 00 00 10 00 9A 03 25 08 21 9C 01 00 5F 2A 02 08 40 DF 01 01 01 DF 02 02 00 3C |
-
-**Response TLVs**
-<div class="code-box" data-label="Payload">
-
-```text
-9000
-57 13 54 13 33 00 89 01 23 45 D2 51 22 01 12 34 56 78 90 F
-5A 08 54 13 33 00 89 01 23 45
-```
-
-</div>
-
-**Full APDU — Response**
-| Example (Hex) |
-|---------------|
-| AA 00 82 04 10 01 00 1B 57 13 54 13 33 00 89 01 23 45 D2 51 22 01 12 34 56 78 90 F 5A 08 54 13 33 00 89 01 23 45 90 00 |
+| Tag   | Format | Name / Description |
+|------:|:------:|--------------------|
+| 57    | Bin    | Track 2 Equivalent (do not log in clear) |
+| 5A    | Bin    | PAN (do not log in clear) |
+| 9F27  | Bin    | Cryptogram Information Data (CID) |
+| 9F26  | Bin    | Application Cryptogram |
+| 9F10  | Bin    | Issuer Application Data (IAD) |
+| 9F34  | Bin    | CVM Results |
+| 9F36  | Bin    | Application Transaction Counter (ATC) |
+| 9F37  | Bin    | Unpredictable Number |
 
 ---
 
-### Example 2 — EMV Contact (Insert)
+## Examples — Full APDUs
 
-**Request TLVs**
-<div class="code-box" data-label="Payload">
-
-```text
-9F0206000000005000
-9A03250821
-9C0100
-5F2A020840
-DF010102
-DF0202003C
-```
-
-</div>
-
-**Full APDU — Request**
+### MSR — Request
 | Example (Hex) |
 |---------------|
-| AA 00 81 04 10 01 00 17 9F 02 06 00 00 00 00 50 00 9A 03 25 08 21 9C 01 00 5F 2A 02 08 40 DF 01 01 02 DF 02 02 00 3C |
+| AA 00 81 04 10 01 00 23 9F 02 06 00 00 00 00 50 00 9A 03 25 09 18 9C 01 00 5F 2A 02 08 40 5F 36 01 02 DF 01 01 01 DF 02 02 00 3C |
 
-**Response TLVs**
-<div class="code-box" data-label="Payload">
-
-```text
-9000
-5A 08 54 13 33 00 89 01 23 45
-9F36 02 00 32
-9F27 01 80
-9F26 08 4F 9A 83 D1 24 75 A1 C2
-```
-
-</div>
-
-**Full APDU — Response**
+### MSR — Response
 | Example (Hex) |
 |---------------|
-| AA 00 82 04 10 01 00 15 5A 08 54 13 33 00 89 01 23 45 9F 36 02 00 32 9F 27 01 80 9F 26 08 4F 9A 83 D1 24 75 A1 C2 90 00 |
+| AA 00 82 04 10 01 00 21 57 13 99 99 99 99 99 99 99 99 D2 51 22 01 12 34 56 78 9F 5A 08 99 99 99 99 99 99 99 99 90 00 |
+
+### Contactless EMV — Request
+| Example (Hex) |
+|---------------|
+| AA 00 81 04 10 01 00 1F 9F 02 06 00 00 00 00 25 00 9A 03 25 09 18 9C 01 00 5F 2A 02 08 40 5F 36 01 02 DF 01 01 04 DF 02 02 00 1E |
+
+### Contactless EMV — Response
+| Example (Hex) |
+|---------------|
+| AA 00 82 04 10 01 00 1F 9F 27 01 40 9F 26 08 11 22 33 44 55 66 77 88 9F 10 07 06 01 12 03 A0 B0 01 9F 34 03 1E 03 00 90 00 |
+
+### Contact (ICC, fallbacks allowed) — Request
+| Example (Hex) |
+|---------------|
+| AA 00 81 04 10 01 00 1C 9F 02 06 00 00 00 01 00 00 9A 03 25 09 18 9C 01 00 5F 2A 02 08 40 DF 01 01 07 DF 02 02 00 3C |
+
+### Contact (ICC) — Response
+| Example (Hex) |
+|---------------|
+| AA 00 82 04 10 01 00 1B 9F 27 01 40 9F 26 08 AA BB CC DD EE FF 00 11 9F 10 07 06 01 12 03 A0 B0 02 9F 36 02 00 2A 9F 37 04 12 34 56 78 90 00 |
 
 ---
 
-### Example 3 — Contactless (Tap)
+## Status / Errors
+- `90 00` — success
+- `69 85` — conditions not satisfied (incorrect state or interface unavailable)
+- `6A 80` — invalid data (malformed TLV set)
+- `6F 00` — unknown error
 
-**Request TLVs**
-<div class="code-box" data-label="Payload">
-
-```text
-9F0206000000002500
-9A03250821
-9C0100
-5F2A020840
-DF010104
-DF0202001E
-DF03079F6604E0F0C800
-```
-
-</div>
-
-**Full APDU — Request**
-| Example (Hex) |
-|---------------|
-| AA 00 81 04 10 01 00 20 9F 02 06 00 00 00 00 25 00 9A 03 25 08 21 9C 01 00 5F 2A 02 08 40 DF 01 01 04 DF 02 02 00 1E DF 03 07 9F 66 04 E0 F0 C8 00 |
-
-**Response TLVs**
-<div class="code-box" data-label="Payload">
-
-```text
-9000
-57 13 54 13 33 00 89 01 23 45 D2 51 22 01 12 34 56 78 90 F
-5A 08 54 13 33 00 89 01 23 45
-9F27 01 40
-9F26 08 7A B4 5C 11 88 23 01 F4
-```
-
-</div>
-
-**Full APDU — Response**
-| Example (Hex) |
-|---------------|
-| AA 00 82 04 10 01 00 23 57 13 54 13 33 00 89 01 23 45 D2 51 22 01 12 34 56 78 90 F 5A 08 54 13 33 00 89 01 23 45 9F 27 01 40 9F 26 08 7A B4 5C 11 88 23 01 F4 90 00 |
-
----
-
-### Example 4 — Manual Card Entry (MCE)
-
-**Request TLVs**
-<div class="code-box" data-label="Payload">
-
-```text
-9F0206000000001000
-9A03250821
-9C0100
-5F2A020840
-DF010108
-DF0202003C
-DF0406011016010100
-```
-
-</div>
-
-**Full APDU — Request**
-| Example (Hex) |
-|---------------|
-| AA 00 81 04 10 01 00 1F 9F 02 06 00 00 00 00 10 00 9A 03 25 08 21 9C 01 00 5F 2A 02 08 40 DF 01 01 08 DF 02 02 00 3C DF 04 06 01 10 16 01 01 00 |
-
-**Response (Success) TLVs**
-<div class="code-box" data-label="Payload">
-
-```text
-9000
-DF10 08 54 13 33 00 89 01 23 45
-DF11 02 25 12
-DF12 03 31 32 33
-```
-
-</div>
-
-**Full APDU — Response**
-| Example (Hex) |
-|---------------|
-| AA 00 82 04 10 01 00 13 DF 10 08 54 13 33 00 89 01 23 45 DF 11 02 25 12 DF 12 03 31 32 33 90 00 |
-
----
-
-## Error Conditions
-
-| SW1SW2 | Description |
-|--------|-------------|
-| 9000   | Success |
-| 6A80   | Invalid data |
-| 6985   | Conditions not satisfied |
-| 6A82   | File/record not found |
-| 6A83   | Authentication method blocked |
-| 6A84   | Not enough memory space |
-| 6A88   | Referenced data not found |
-| 6F00   | Unknown error |
+## Implementation Notes
+- Select a single entry mode for optimal user experience; enable fallbacks only when required.
+- Mask `5A` and `57` in logs; never persist cryptograms or track data in clear text.
+- Do not issue another `0x1001` until the current flow completes or is canceled with `0x1008`.

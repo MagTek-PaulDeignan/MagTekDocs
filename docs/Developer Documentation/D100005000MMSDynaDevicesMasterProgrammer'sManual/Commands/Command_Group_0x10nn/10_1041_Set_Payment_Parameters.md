@@ -1,38 +1,50 @@
 ---
-title: Command 0x1041 Set Payment Parameters
+title: 0x1041 — Set Payment Parameters
 layout: home
-parent: Command Group 0x10nn
+parent: 0x10nn – Transactions
 nav_order: 8
 ---
 
-# Command 0x1041 Set Payment Parameters
+# 0x1041 — Set Payment Parameters
 
-Write payment parameter block(s) to the device.
+Writes payment parameter block(s) to the device.
 
 ---
 
 ## When to Use
-- Initialization or parameter updates (not mid-transaction).
+- During initialization or parameter updates (not during a transaction).
 
 ## Preconditions
-- Valid container format; device idle.
+- Valid container format for the target device and firmware.
 
 ## Postconditions
-- Parameters validated/applied.
+- Parameters are validated and applied. The device remains idle or busy depending on the operation.
 
 ## Sequence
 ```
-Host SEND 0x1041(+container)  →  Device applies  →  Response
+Host SEND 0x1041 (+container) → Device validates/applies → Response
 ```
 
 ---
 
-## Request
+## TLV Reference — Request
+| Tag  | Len | Name / Description |
+|-----:|:---:|---------------------|
+| DF10 | var | Payment parameter container |
+
+## TLV Reference — Response
+*(none)*
+
+---
+
+## Examples — Full APDUs
+
+### Request
 | Example (Hex) |
 |---------------|
 | AA 00 81 04 10 41 00 06 DF 10 04 01 02 03 04 |
 
-## Response
+### Response
 | Example (Hex) |
 |---------------|
 | AA 00 82 04 10 41 00 00 90 00 |
@@ -40,10 +52,10 @@ Host SEND 0x1041(+container)  →  Device applies  →  Response
 ---
 
 ## Status / Errors
-- `90 00` success
-- `6A 80` invalid data
-- `6A 84` not enough memory
-- `6A 88` dependency missing
+- `90 00` — success
+- `6A 80` — invalid data
+- `6A 84` — insufficient memory
+- `6A 88` — dependency missing
 
-## Notes
-- Keep versioned parameter sets; avoid unnecessary writes.
+## Implementation Notes
+- Maintain a versioned “golden” parameter set; avoid unnecessary writes.
