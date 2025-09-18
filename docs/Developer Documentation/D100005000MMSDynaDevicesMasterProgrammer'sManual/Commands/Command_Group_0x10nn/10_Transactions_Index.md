@@ -2,7 +2,7 @@
 title: Command Group 0x10nn
 layout: home
 parent: Commands
-nav_order: 
+nav_order: 1
 ---
 <style>
 .pill{display:inline-block;padding:.18rem .5rem;border-radius:999px;font-size:.78rem;
