@@ -1,7 +1,7 @@
 ---
 title: Reader Management System
 layout: home
-parent: Services
+parent: Magensa Cloud Services
 nav_order: 1
 ---
 

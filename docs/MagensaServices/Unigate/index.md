@@ -1,7 +1,7 @@
 ---
 title: Unigate
 layout: home
-parent: Services
+parent: Magensa Cloud Services
 nav_order: 2
 ---
 
