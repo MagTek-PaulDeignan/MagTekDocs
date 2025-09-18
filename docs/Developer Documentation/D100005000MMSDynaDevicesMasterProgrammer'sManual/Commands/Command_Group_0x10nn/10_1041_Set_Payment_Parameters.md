@@ -12,50 +12,56 @@ Writes payment parameter block(s) to the device.
 ---
 
 ## Sequence of Events
-1. Host issues **0x1041 — Set Payment Parameters**.
-2. Device processes the request.
-3. Device returns status.
+
+**Preconditions**
+- Device is Idle.
+- Parameter container prepared for target firmware/device.
+
+**Steps**
+1. Host issues **0x1041 — Set Payment Parameters** with parameter container TLVs.
+2. Device validates container version and dependencies.
+3. Device applies parameters.
+4. Device returns status word.
+
+**Error/Recovery**
+- On `6A 80`/`6A 84`/`6A 88`, correct the container (format/memory/dependency) and resend.
+
+---
+
+## Applicability Matrix
+
+| Transaction Interface | DynaFlex | DynaFlex II PED | DynaProx | DynaFlex II GO |
+|----------------------:|:--------:|:---------------:|:--------:|:--------------:|
+| All (out of band)     | ✅       | ✅              | ✅       | ✅             |
 
 ---
 
 ## Command Syntax
-| Field   | Length | Value   | Description |
-|---------|--------|---------|-------------|
-| Command | 2      | 0x1041 | Set Payment Parameters      |
-| TLVs    | var.   | –       | See examples|
+
+| Field   | Length | Value  | Description                |
+|---------|--------|--------|----------------------------|
+| Command | 2      | 0x1041 | Set Payment Parameters     |
+| TLVs    | var.   | —      | Parameter container (DF10) |
 
 ---
 
 ## Examples
-### Request
-```
-0x1041
-  ; (no TLVs unless specified)
-```
-**Payload**
-```
-1041
-```
 
-### Response
-```
-0x1041
-  SW1SW2 9000
-```
-**Payload**
-```
-9000
-```
+> No public request/response APDU examples are provided in D100005000-103. Use the device‑specific container format documented for your firmware.
 
 ---
 
 ## Error Conditions
-| Status Word | Description |
-|-------------|-------------|
-| 9000        | Success     |
-| 6985        | Conditions not satisfied |
+
+| SW1SW2 | Meaning                    |
+|--------|-----------------------------|
+| 9000   | Success                     |
+| 6A80   | Invalid data / bad format   |
+| 6A84   | Insufficient memory         |
+| 6A88   | Referenced data not found   |
+| 6F00   | Unknown error               |
 
 ---
 
 ## Notes
-- Maintain a versioned baseline; avoid unnecessary writes.
+- Maintain a versioned baseline of parameters; limit writes to changes only.

@@ -7,7 +7,7 @@ nav_order: 1
 
 # 0x10nn – Transactions
 
-This section documents the **Transactions** command group in full developer-ready detail.  
+Command group for starting, managing, and completing card-present transactions.
 
 **Commands**
 - [0x1001 — Start Transaction](10_1001_Start_Transaction.md)

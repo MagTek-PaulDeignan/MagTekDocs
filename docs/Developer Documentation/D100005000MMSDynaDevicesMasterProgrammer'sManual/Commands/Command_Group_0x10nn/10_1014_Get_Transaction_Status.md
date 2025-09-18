@@ -7,55 +7,60 @@ nav_order: 7
 
 # 0x1014 — Get Transaction Status
 
-Queries the current transaction state for recovery or verification.
+Queries the current transaction state for recovery and verification.
 
 ---
 
 ## Sequence of Events
+
+**Preconditions**
+- None.
+
+**Steps**
 1. Host issues **0x1014 — Get Transaction Status**.
-2. Device processes the request.
-3. Device returns status.
+2. Device returns the current state/flags and SW1SW2.
+3. Host acts based on state (resume, cancel, or restart).
+
+**Error/Recovery**
+- If `69 85` (no active/suspended transaction), proceed to new **0x1001**.
+
+---
+
+## Applicability Matrix
+
+| Transaction Interface | DynaFlex | DynaFlex II PED | DynaProx | DynaFlex II GO |
+|----------------------:|:--------:|:---------------:|:--------:|:--------------:|
+| MSR (Swipe)           | ✅       | ✅              | ✅       | ✅             |
+| EMV Contact           | ✅       | ✅              | ❌       | ✅             |
+| EMV Contactless       | ✅       | ✅              | ✅       | ✅             |
+| MCE (Manual)          | ✅       | ✅              | ❌       | ❌             |
 
 ---
 
 ## Command Syntax
-| Field   | Length | Value   | Description |
-|---------|--------|---------|-------------|
-| Command | 2      | 0x1014 | Get Transaction Status      |
-| TLVs    | var.   | –       | See examples|
+
+| Field   | Length | Value  | Description            |
+|---------|--------|--------|------------------------|
+| Command | 2      | 0x1014 | Get Transaction Status |
+| TLVs    | var.   | —      | None required          |
 
 ---
 
 ## Examples
-### Request
-```
-0x1014
-  ; (no TLVs unless specified)
-```
-**Payload**
-```
-1014
-```
 
-### Response
-```
-0x1014
-  SW1SW2 9000
-```
-**Payload**
-```
-9000
-```
+> No public request/response APDU examples are provided in D100005000-103 for this command.
 
 ---
 
 ## Error Conditions
-| Status Word | Description |
-|-------------|-------------|
-| 9000        | Success     |
-| 6985        | Conditions not satisfied |
+
+| SW1SW2 | Meaning                          |
+|--------|-----------------------------------|
+| 9000   | Success                           |
+| 6985   | No active/suspended transaction   |
+| 6F00   | Unknown error                     |
 
 ---
 
 ## Notes
-- Prefer notifications; use polling only for recovery.
+- Prefer event-driven notifications; use 0x1014 primarily for recovery.
