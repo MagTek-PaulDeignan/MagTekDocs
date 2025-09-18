@@ -1,7 +1,7 @@
 ---
 title: Command Group 0x10nn
 layout: home
-parent: Developer Documentation
+parent: Commands
 nav_order: 
 ---
 <style>
