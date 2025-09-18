@@ -1,5 +1,5 @@
 ---
-title: READ ME
+title: Read me
 layout: home
 parent: MagTekVirtual Reader
 nav_order: 
