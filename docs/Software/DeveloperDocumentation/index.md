@@ -1,9 +1,11 @@
 ---
 title: Developer Documentation
 layout: home
-nav_order: 8
+parent: Software
+nav_order: 1
 has_children: true
 ---
+
 # Developer Documentation 
 
 Welcome to the MagTek Developer Documentation portal. This site provides structured technical documentation for developers integrating MagTek's secure payment hardware into their applications and systems.
