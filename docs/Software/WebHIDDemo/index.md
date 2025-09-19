@@ -1,7 +1,7 @@
 ---
 title: Web HID Demo
 layout: home
-parent: Magensa Cloud Services
+parent: Software
 nav_order: 3
 ---
 
