@@ -1,12 +1,12 @@
 ---
-title: Developer Documentation
+title:  MMS and V5 programming specifications
 layout: home
 parent: Web Docs
 nav_order: 1
 has_children: true
 ---
 
-# Developer Documentation 
+# MMS and V5 programming specifications
 
 Welcome to the MagTek Developer Documentation portal. This site provides structured technical documentation for developers integrating MagTek's secure payment hardware into their applications and systems.
 
@@ -15,8 +15,6 @@ MagTek devices such as DynaFlex, DynaFlex II, DynaFlex Go, and DynaProx offer ro
 This documentation covers:
 
 * Command Reference Guides for MMS-based device communication
-
-* SDK manuals and sample code for .NET, Java, iOS, Android, macOS, and Windows
 
 * Device configuration properties organized by function group
 
