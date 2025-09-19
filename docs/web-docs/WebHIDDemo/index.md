@@ -2,7 +2,7 @@
 title: Web HID Demo
 layout: home
 parent: Software
-nav_order: 35
+nav_order: 3
 ---
 
 
