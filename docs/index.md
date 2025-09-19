@@ -6,12 +6,12 @@ nav_order: 1
 ---
 # MagTek Docs
 
-Welcome to the **MagTek Docs** developer documentation portal. This site consolidates technical resources for developers and integrators working with MagTek’s secure payment hardware. Whether you are installing a device, integrating with SDKs, or programming against the MagTek Messaging Schema (MMS), you’ll find structured documentation here.
+Welcome to the **MagTek Docs** developer documentation portal. This site consolidates technical resources for developers and integrators working with MagTek’s secure payment hardware. Whether you are installing a device, integrating with SDKs, or programming against the MagTek Messaging (MMS) or V5 Schemas , you’ll find structured documentation here.
 
 ## How to Use This Portal
 
 - **New users** → start with [Setup & Devices](/setup/) for installation and operation manuals.  
-- **Developers and system integrators** → consult the [Web Docs](/web-docs/) for the authoritative MMS and V5 programming specifications. Web Docs include both atomic references (commands, properties, notifications) and links to legacy PDF manuals.  
+- **Developers and system integrators** → consult the [Web Docs](/web-docs/) for the authoritative MMS and V5 programming specifications. Web Docs include both atomic references (commands, properties, notifications) and links to legacy PDF manuals.
 - **Application teams** → refer to the [SDK Guides](/sdks/) for sample code and platform-specific integration.
 ---
 # Documentation Families
