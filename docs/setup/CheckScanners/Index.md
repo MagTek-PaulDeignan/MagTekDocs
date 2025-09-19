@@ -1,7 +1,7 @@
 ---
 title: Check Scanners
 layout: home
-parent: Hardware
+parent: Setup & Devices
 nav_order: 3
 ---
 

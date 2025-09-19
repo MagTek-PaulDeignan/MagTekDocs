@@ -1,7 +1,7 @@
 ---
 title: Card Personalization Devices
 layout: home
-parent: Hardware
+parent: Setup & Devices
 nav_order: 
 ---
 

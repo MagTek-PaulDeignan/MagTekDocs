@@ -1,7 +1,7 @@
 ---
 title: Card Readers & OEM Components
 layout: home
-parent: Hardware
+parent: Setup & Devices
 nav_order: 1
 ---
 
