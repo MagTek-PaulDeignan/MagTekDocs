@@ -1,5 +1,5 @@
 ---
-title: SDK
+title: MagTekVirtualReader iOS App — User Guide
 layout: home
 parent: MagTekVirtual Reader
 nav_order: 
