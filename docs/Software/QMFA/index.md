@@ -1,7 +1,7 @@
 ---
 title: Qwantum Multi-factor Authentication™
 layout: home
-parent: Magensa Cloud Services
+parent: Software
 nav_order: 
 ---
 
