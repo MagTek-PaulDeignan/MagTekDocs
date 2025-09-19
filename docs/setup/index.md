@@ -9,5 +9,5 @@ The **Setup & Devices** section is your starting point for working with MagTek h
 - **Installation and Operation Manuals** to guide setup, configuration, and daily use  
 - **Device Inspection Guides** to verify hardware condition and readiness  
 
-Resources are organized by device family so you can quickly locate the documentation needed for deployment and ongoing operation.
+Resources are organized by device type so you can quickly locate the documentation needed for deployment and ongoing operation.
 
