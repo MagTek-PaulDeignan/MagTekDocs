@@ -1,3 +1,9 @@
+---
+title: SDK
+layout: home
+parent: MagTekVirtual Reader
+nav_order: 
+---
 # MagTekVirtualReader iOS App — User Guide
 
 The **MagTekVirtualReader** app enables Tap to Pay transactions on Apple iPhone devices using the **Magensa Payment Protection Gateway (MPPG)**. Use this guide to install the app and run test transactions.
