@@ -1,5 +1,5 @@
 ---
-title: Hardware
+title: Setup & Devices
 nav_order: 3
 layout: home
 ---
