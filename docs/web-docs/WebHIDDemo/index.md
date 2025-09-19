@@ -1,7 +1,7 @@
 ---
 title: Web HID Demo
 layout: home
-parent: Software
+parent: Web Docs
 nav_order: 3
 ---
 

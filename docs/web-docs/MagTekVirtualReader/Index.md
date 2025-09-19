@@ -1,7 +1,7 @@
 ---
 title: MagTekVirtual Reader
 layout: home
-parent: Software
+parent: Web Docs
 nav_order: 2
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: Reader Management System
 layout: home
-parent: Software
+parent: Web Docs
 nav_order: 4
 ---
 

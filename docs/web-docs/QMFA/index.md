@@ -1,7 +1,7 @@
 ---
 title: Qwantum Multi-factor Authentication™
 layout: home
-parent: Software
+parent: Web Docs
 nav_order: 3
 ---
 
