@@ -15,7 +15,7 @@ Welcome to the **MagTek Docs** developer documentation portal. This site consoli
 - **Application teams** — refer to the [SDK Guides](/sdks/) for sample code and platform-specific integration.
 
 ---
-# Documentation Families
+## Documentation Families
 
 **🔧 Installation & Operation Manuals**  
 Step-by-step setup and usage guides for each device family. Covers hardware installation, environment requirements, and daily operation.
