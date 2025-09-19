@@ -5,6 +5,9 @@ layout: home
 ---
 
 
-MagTek builds reliable, secure card reader authenticators for mobile, countertop, and unattended digital transaction solutions. This section is designed to help you get started quickly, providing access to installation and operation manuals as well as device inspection guides to ensure proper setup and maintenance.
+The **Setup & Devices** section is your starting point for working with MagTek hardware. Here you will find:  
+- **Installation and Operation Manuals** to guide setup, configuration, and daily use  
+- **Device Inspection Guides** to verify hardware condition and readiness  
 
-From payments to ID and access control, MagTek devices are used in curbside, in-house pickup, delivery, and unattended environments. Countertop solutions streamline call-in and on-location transactions, while unattended systems are engineered for minimal development effort with maximum durability. All solutions are protected by the MagneSafe Security Architecture to safeguard transactions wherever they occur.
+Resources are organized by device family so you can quickly locate the documentation needed for deployment and ongoing operation.
+
