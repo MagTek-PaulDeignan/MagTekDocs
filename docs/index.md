@@ -10,9 +10,10 @@ Welcome to the **MagTek Docs** developer documentation portal. This site consoli
 
 ## How to Use This Portal
 
-- **New users**→ start with [Setup & Devices](/setup/) for installation and operation manuals.  
-- **Developers and system integrators**→ consult the [Web Docs](/web-docs/) for the authoritative MMS and V5 programming specifications. Web Docs include both atomic references (commands, properties, notifications) and links to legacy PDF manuals.
-- **Application teams**→ refer to the [SDK Guides](/sdks/) for sample code and platform-specific integration.
+- **New users** — start with [Setup & Devices](/setup/) for installation and operation manuals.
+- **Developers and system integrators** — consult the [Web Docs](/web-docs/) for the authoritative MMS and V5 programming specifications. Web Docs include atomic references (commands, properties, notifications) and links to legacy PDF manuals.
+- **Application teams** — refer to the [SDK Guides](/sdks/) for sample code and platform-specific integration.
+
 ---
 # Documentation Families
 
