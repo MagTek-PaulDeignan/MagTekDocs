@@ -40,3 +40,23 @@ During the transition, some families may offer both; **Web Docs** are the primar
 Integration resources for .NET, Java, iOS, Android, macOS, and Windows. Includes sample projects and platform-specific notes to accelerate development.
 
 updated 12/19/2025
+
+```javascript
+await setMQTTSubTopic();
+  await setMQTTPubTopic();
+  mt_UI.LogData(`Done - Saving MQTT Configuration`);
+  mt_UI.LogData("");
+```
+
+| Column 1 | Column 2 | Column 3 | Column 4 | Column 5 |
+| --- | --- | --- | --- | --- |
+| Cell 1-1 | Cell 1-2 | Cell 1-3 | Cell 1-4 | Cell 1-5 |
+| Cell 2-1 | Cell 2-2 | Cell 2-3 | Cell 2-4 | Cell 2-5 |
+
+```javascript
+ if (cmds.status.ok){
+     await parseCommands('Updating Device', cmds.data);
+   }
+   else
+  {
+```
