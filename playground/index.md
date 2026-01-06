@@ -37,6 +37,6 @@ await setMQTTSubTopic();
   {
 ```
 
-I am a Typo.  fix me. please
+I was a Typo but now I am fixed
 
 ![people](image.png)
