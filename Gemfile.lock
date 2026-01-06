@@ -90,6 +90,7 @@ PLATFORMS
   x86_64-linux-gnu
 
 DEPENDENCIES
+  csv (~> 3.3)
   jekyll (~> 4.4.1)
   just-the-docs (= 0.10.1)
 
