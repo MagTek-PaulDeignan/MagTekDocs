@@ -35,3 +35,7 @@ Ensure the power switch is firmly in the "ON" position and that the USB cable is
 ### Device Not Recognized
 
 Try using the provided cable. Third-party cables may not support the full data/power profile required. If the issue persists, proceed to the advanced driver installation guide.
+### What do I do if the USB connection is not recognized?
+- Try using a different USB port on your computer.
+- Ensure you're using the provided USB cable.
+- Restart both the Secure Reader 5000 and your computer.
