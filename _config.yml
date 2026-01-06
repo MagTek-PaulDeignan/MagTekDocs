@@ -12,4 +12,4 @@ logo: "/assets/images/magtek_logo.png"
 color_scheme: light
 
 just_the_docs:
-  custom_css: assets/css/custom.css
+  custom_css: /assets/css/custom.css
