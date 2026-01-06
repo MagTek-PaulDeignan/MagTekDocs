@@ -33,15 +33,3 @@
 .site {
   max-width: none !important;
 }
-
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const content = document.querySelector('.main-content');
-    if (content) {
-      content.style.maxWidth = "100%";
-      content.style.width = "100%";
-      content.style.paddingLeft = "2rem";
-      content.style.paddingRight = "2rem";
-    }
-  });
-</script>
