@@ -2,6 +2,7 @@
 title: Playground 1
 layout: home
 parent: Playground
+nav_order: 1
 ---
 # MagTek Playground 1
 
@@ -9,4 +10,46 @@ Welcome to the **MagTek Playground** portal. This site consolidates technical re
 
 This is Playground 1
 
+**💻 SDK Guides & Sample Code**  
+Integration resources for .NET, Java, iOS, Android, macOS, and Windows. Includes sample projects and platform-specific notes to accelerate development.
+
+## Sample Code
+
+```javascript
+await setMQTTSubTopic();
+  await setMQTTPubTopic();
+  mt_UI.LogData(`Done - Saving MQTT Configuration`);
+  mt_UI.LogData("");
+```
+
+## Sample Table
+
+| Column 1 | Column 2 | Column 3 | Column 4 | Column 5 |
+| --- | --- | --- | --- | --- |
+| Cell 1-1 | Cell 1-2 | Cell 1-3 | Cell 1-4 | Cell 1-5 |
+| Cell 2-1 | Cell 2-2 | Cell 2-3 | Cell 2-4 | Cell 2-5 |
+
+
+## More Sample Code
+```javascript
+ if (cmds.status.ok){
+     await parseCommands('Updating Device', cmds.data);
+   }
+   else
+  {
+    
+  }
+```
+
+I was a Tpyo but now I am fixed
+
+
+# Our Team
+
+![people](../assets/images/team.png)
+
 {% include warning.md %}
+
+[Click here to jump to Our Team](#our-team)
+
+[MagTek Web Demos](https://rms.magensa.net/test/demo/)
