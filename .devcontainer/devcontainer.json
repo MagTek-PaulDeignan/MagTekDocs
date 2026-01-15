@@ -1,0 +1,10 @@
+{
+  "name": "Jekyll Site",
+  "image": "mcr.microsoft.com/devcontainers/ruby:3-bullseye",
+  
+  // 1. Install dependencies automatically during creation/update
+  "updateContentCommand": "bundle install",
+
+  // 2. Auto-start the server when you connect
+  "postAttachCommand": "bundle exec jekyll s"
+}
