@@ -183,15 +183,15 @@ Some text
 - level 1 item (ul)
 - level 1 item (ul)
 
-### Small image
+### DynaMag
+![DynaMag](../images/Dynamag.png)
 
-![](../../assets/images/small-image.jpg)
+
 
 ### Large image
 
-![](../../assets/images/large-image.jpg)
+![DynaFlex II PED](../images/DynaFlexIIPed.png)
 
-"[Wroclaw University Library digitizing rare archival texts](https://www.flickr.com/photos/97810305@N08/9401451269)" by [j_cadmus](https://www.flickr.com/photos/97810305@N08) is marked with [CC BY 2.0](https://creativecommons.org/licenses/by/2.0/?ref=openverse).
 
 ### Labels
 
@@ -299,19 +299,6 @@ class conditions(object):
 Long, single-line code blocks should not wrap. They should horizontally scroll if they are too long. This line should be long enough to demonstrate this.
 ```
 
-### Mermaid Diagrams
-
-The following code is displayed as a diagram only when a `mermaid` key supplied in `_config.yml`.
-
-```mermaid
-graph TD;
-    accTitle: the diamond pattern
-    accDescr: a graph with four nodes: A points to B and C, while B and C both point to D
-    A-->B;
-    A-->C;
-    B-->D;
-    C-->D;
-```
 
 ### Collapsed Section
 

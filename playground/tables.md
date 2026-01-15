@@ -49,21 +49,21 @@ For specific messages, see sections 6 Commands and 7 Notifications.
     <tr>
         <td>List</td>
         <td><ul>
-            <li>aaa</li>
-            <li>bbb</li>
+            <li>List 1</li>
+            <li>List 2</li>
         </ul></td>
     </tr>
     <tr>
         <td>Code block</td>
         <td>
             <pre><code>
-ccc
+this is code 
             </code></pre>
         </td>
     </tr>
     <tr>
         <td>Image</td>
-        <td><img src="example.png"></td>
+        <td><img src="../assets/images/magtek-logo-200x100.jpg"></td>
     </tr>
 </table>
 
@@ -83,12 +83,11 @@ ccc
 <tbody>
 <tr>
 <td markdown="span">First column **fields**</td>
-<td markdown="span">Some descriptive text. This is a markdown link to [Google](http://google.com). Or see [some link](mydoc_tags).</td>
+<td markdown="span">Some descriptive text. This is a markdown link to [Google](http://google.com).</td>
 </tr>
 <tr>
 <td markdown="span">Second column **fields**</td>
-<td markdown="span">Some more descriptive text.
-</td>
+<td markdown="span"><img src="../assets/images/magtek-logo-200x100.jpg"></td>
 </tr>
 </tbody>
 </table>

@@ -17,6 +17,10 @@ This guide provides the essential steps to unpack, connect, and perform a basic 
 
 ## Initial Setup & Verification
 
+## Specs
+
+{% include sc5000specs.md %}
+
 ### Unbox and Inspect
 
 Carefully remove the Secure Reader 5000 and all accessories from the packaging. Visually inspect the device for any signs of physical damage incurred during shipping.
