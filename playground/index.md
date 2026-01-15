@@ -35,8 +35,10 @@ await setMQTTSubTopic();
    }
    else
   {
+    
+  }
 ```
 
-I was a Typo but now I am fixed
+I was a Tpyo but now I am fixed
 
 ![people](image.png)
