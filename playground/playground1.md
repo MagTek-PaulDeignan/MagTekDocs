@@ -41,7 +41,7 @@ await setMQTTSubTopic();
   }
 ```
 
-I was a Tpyo but now I am fixed
+I was a Tpyo1 but now I am fixed
 
 
 # Our Team
