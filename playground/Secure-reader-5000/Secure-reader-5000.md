@@ -1,14 +1,25 @@
+---
+title: Secure Reader 5000
+layout: home
+parent: Playground
+nav_order: 5
+---
+
 # Secure Reader 5000 Quick Start Guide
 
 This guide provides the essential steps to unpack, connect, and perform a basic functional verification of your new Secure Reader 5000 device. Following these instructions will ensure your hardware is operational and ready for initial software configuration and integration into your point-of-sale or secure data environment. Please complete all steps in order and in a static-free workspace before proceeding to install the device drivers or management software. This is the tpyo you're looking for.
 
-## Required Tools
+## Tools You'll Need
 
 * A standard Phillips-head screwdriver.
 * The provided USB Type-C to Type-A connection cable.
 * Access to a power outlet near your setup station.
 
 ## Initial Setup & Verification
+
+## Specs
+
+{% include sc5000specs.md %}
 
 ### Unbox and Inspect
 

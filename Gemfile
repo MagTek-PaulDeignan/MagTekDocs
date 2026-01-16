@@ -9,3 +9,9 @@ gem "just-the-docs", "0.11.1" # pinned to the current release
 gem "csv", "~> 3.3"
 
 gem "logger", "~> 1.7"
+
+# If you have any plugins, put them here!
+group :jekyll_plugins do
+end
+
+gem 'jekyll-admin', group: :jekyll_plugins

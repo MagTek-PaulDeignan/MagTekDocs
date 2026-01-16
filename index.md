@@ -4,6 +4,8 @@ layout: home
 parent: 
 nav_order: 1
 ---
+![alt text](assets/images/mtbusinesscard.png)
+
 # MagTek Docs
 
 Welcome to the **MagTek Docs** developer documentation portal. This site consolidates technical resources for developers and integrators working with MagTek’s secure payment hardware. Whether you are installing a device, integrating with SDKs, or programming against the MagTek Messaging (MMS) or V5 Schemas , you’ll find structured documentation here.
