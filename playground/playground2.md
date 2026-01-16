@@ -15,3 +15,6 @@ This is Playground 2
 
 
 {% include warning.md %}
+
+
+![alt text](../assets/images/image.png)
