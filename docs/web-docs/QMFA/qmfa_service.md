@@ -31,7 +31,7 @@ This documentation covers the `QMFA` endpoints. These APIs manage Users, Tokens,
 Endpoints for managing user accounts, profiles, and administrative locks.
 
 ### Create User
-**POST** `api/QMFA/Admin/User/Create`
+**`api/QMFA/Admin/User/Create`**
 * **Purpose:** Create a new user account and initialize credentials.
 * **Parameters:** `Username` (Req), `Firstname`, `Lastname`, `Email`, `SMSNumber`, `Password`, `MaxInvalidAttempts` (Default: 5).
 * **Side Effects:** If `Password` is omitted, the system triggers `ResetPassword` to generate and send one.
@@ -47,12 +47,12 @@ Endpoints for managing user accounts, profiles, and administrative locks.
 * **Parameters:** `Username` (Req), `Firstname`, `Lastname`, `Email`, `SMSNumber`, `AccountStatus`, `IsLocked`, `Claims` (via `apiRequest.Claims`).
 
 ### Delete User
-**POST** `api/QMFA/Admin/User/Delete`
+**`api/QMFA/Admin/User/Delete`**
 * **Purpose:** Permanently remove a user from the system.
 * **Parameters:** `Username` (Req).
 
 ### User Status (Lock/Unlock)
-**POST** `api/QMFA/Admin/User/Lock` | `api/QMFA/Admin/User/Unlock`
+**`api/QMFA/Admin/User/Lock` | `api/QMFA/Admin/User/Unlock`**
 * **Purpose:** Administratively enable or disable user access.
 * **Behavior:** Unlocking also resets `InvalidAuthAttempts` to 0.
 
