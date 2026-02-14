@@ -37,12 +37,12 @@ Endpoints for managing user accounts, profiles, and administrative locks.
 * **Side Effects:** If `Password` is omitted, the system triggers `ResetPassword` to generate and send one.
 
 ### Read User
-**POST** `api/QMFA/Admin/User/Read`
+**`api/QMFA/Admin/User/Read`**
 * **Purpose:** Retrieve full profile details for a specific user.
 * **Parameters:** `Username` (Req).
 
 ### Update User
-**POST** `api/QMFA/Admin/User/Update`
+**`api/QMFA/Admin/User/Update`**
 * **Purpose:** Update specific user attributes or claims.
 * **Parameters:** `Username` (Req), `Firstname`, `Lastname`, `Email`, `SMSNumber`, `AccountStatus`, `IsLocked`, `Claims` (via `apiRequest.Claims`).
 
