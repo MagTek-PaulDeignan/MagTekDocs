@@ -12,9 +12,11 @@ This documentation covers the `AccessControlController` and `MFAController` endp
 
 ### Request Headers
 
+
 | Header | Description | Required |
 | :--- | :--- | :--- |
 | `QwantumProfile` | Selects the DB collection context (e.g., `DBAuth`, `DBToken`). | Required |
+
 
 ### Universal Usage Notes
 * **Authentication:** Most endpoints return `200 OK` on success. Errors are returned via `ExternalError.Response`.
