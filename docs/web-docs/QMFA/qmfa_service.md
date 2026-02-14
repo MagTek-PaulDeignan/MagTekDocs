@@ -6,7 +6,7 @@ parent: Web Docs
 
 # Access Control & MFA API Documentation
 
-This documentation covers the `AccessControlController` and `MFAController` endpoints. These APIs manage Users, Tokens, Devices, and Transactions within the Qwantum profile ecosystem.
+This documentation covers the `QMFA` endpoints. These APIs manage Users, Tokens, Devices, and Transactions within the Qwantum profile ecosystem.
 
 ## General Configuration
 
@@ -15,7 +15,8 @@ This documentation covers the `AccessControlController` and `MFAController` endp
 
 | Header | Description | Required |
 | :--- | :--- | :--- |
-| `QwantumProfile` | Selects the DB collection context (e.g., `DBAuth`, `DBToken`). | Required |
+| `QwantumAPIKey`  | Sets the WebAPIKey provided | Required |
+| `QwantumProfile` | Sets the profile context (e.g., `DBAuth`, `DBToken`). | Required |
 
 
 ### Universal Usage Notes
