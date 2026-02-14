@@ -165,7 +165,7 @@ Endpoints
 
 ---
 
-### POST `api/QMFA/Authorize/Token/Redeem
+### POST `api/QMFA/Authorize/Token/Redeem`
 - Purpose: Redeem a token, increment `NumUsesCount`, enforce rules and return token DTO with sensitive fields nulled.
 - InputParameters (KVPs):
   - `Name` (string) or `TokenName` (string) — required. `Q002|` decrypt handled.
