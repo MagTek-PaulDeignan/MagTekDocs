@@ -11,9 +11,10 @@ This documentation covers the `AccessControlController` and `MFAController` endp
 ## General Configuration
 
 ### Request Headers
+
 | Header | Description | Required |
 | :--- | :--- | :--- |
-| `QwantumProfile` | Selects the DB collection context (e.g., `DBAuth`, `DBToken`). | Optional |
+| `QwantumProfile` | Selects the DB collection context (e.g., `DBAuth`, `DBToken`). | Required |
 
 ### Universal Usage Notes
 * **Authentication:** Most endpoints return `200 OK` on success. Errors are returned via `ExternalError.Response`.
@@ -162,7 +163,7 @@ Endpoints
 
 ---
 
-### POST `api/QMFA/Authorize/Token/Redeem` — `AccessTokenRedeemWS`
+### POST `api/QMFA/Authorize/Token/Redeem
 - Purpose: Redeem a token, increment `NumUsesCount`, enforce rules and return token DTO with sensitive fields nulled.
 - InputParameters (KVPs):
   - `Name` (string) or `TokenName` (string) — required. `Q002|` decrypt handled.
@@ -176,7 +177,7 @@ Endpoints
 
 ---
 
-### POST `api/QMFA/Admin/Token/Read` — `AccessTokenReadWS`
+### POST `api/QMFA/Admin/Token/Read`
 - Purpose: Return token details.
 - InputParameters:
   - `Name` or `TokenName` — required. `Q002|` decrypt handled.
@@ -187,7 +188,7 @@ Endpoints
 
 ---
 
-### POST `api/QMFA/Admin/Token/List` — `AccessTokenListWS`
+### POST `api/QMFA/Admin/Token/List`
 - Purpose: Search tokens.
 - InputParameters:
   - `Search` (string) — optional (empty string accepted).
@@ -199,7 +200,7 @@ Endpoints
 
 ---
 
-### POST `api/QMFA/Admin/Token/ListByOwner` — `AccessTokenListByOwnerWS`
+### POST `api/QMFA/Admin/Token/ListByOwner`
 - Purpose: List tokens for a given owner.
 - InputParameters:
   - `Search` (string) — required (owner name).
@@ -211,7 +212,7 @@ Endpoints
 
 ---
 
-### POST `api/QMFA/Admin/Token/Create` — `AccessTokenCreateWS`
+### POST `api/QMFA/Admin/Token/Create`
 - Purpose: Create a new token for a user; optionally set up TOTP.
 - InputParameters:
   - `Name` or `TokenName` — optional; if omitted the server builds `{TokenPrefix}{GUID}`.
@@ -224,14 +225,14 @@ Endpoints
     - `Template` (string) — default `"SetupTokenTOTP"`.
     - `Using` — controls delivery (`"SMS"` or `"email"`), plus `TemplateData`, `IssuerName`, `From`, `Subject`, `DisplayName` used inside `ResetTOTP`.
 - Behavior:
-  - Validates owner exists, creates `AccessTokenType`, inserts (`DBAccessToken.Insert`), optionally calls `ResetTOTP`.
+  - Validates owner exists, creates `AccessTokenType`, inserts, optionally calls `ResetTOTP`.
 - Responses:
   - 200: `AccessTokenDTO`
   - Errors: user not found, create failed.
 
 ---
 
-### POST `api/QMFA/Admin/Token/Update` — `AccessTokenUpdateWS`
+### POST `api/QMFA/Admin/Token/Update`
 - Purpose: Update token attributes.
 - InputParameters:
   - `Name` or `TokenName` — required.
@@ -244,7 +245,7 @@ Endpoints
 
 ---
 
-### POST `api/QMFA/Admin/Token/Delete` — `AccessTokenDeleteWS`
+### POST `api/QMFA/Admin/Token/Delete`
 - Purpose: Delete a token.
 - InputParameters:
   - `Name` or `TokenName` — required. `Q002|` decrypt handled.
@@ -255,7 +256,7 @@ Endpoints
 
 ---
 
-### POST `api/QMFA/Admin/Device/Read` — `AccessDeviceReadWS`
+### POST `api/QMFA/Admin/Device/Read`
 - Purpose: Read an access device (token reader).
 - InputParameters:
   - `Name` or `DeviceName` — required.
@@ -266,7 +267,7 @@ Endpoints
 
 ---
 
-### POST `api/QMFA/Admin/Device/List` — `AccessDeviceListWS`
+### POST `api/QMFA/Admin/Device/List`
 - Purpose: List or search devices.
 - InputParameters:
   - `Search` — optional.
@@ -277,7 +278,7 @@ Endpoints
 
 ---
 
-### POST `api/QMFA/Admin/Device/Create` — `AccessDeviceCreateWS`
+### POST `api/QMFA/Admin/Device/Create`
 - Purpose: Create device record.
 - InputParameters:
   - `Name` or `DeviceName` — required.
@@ -291,7 +292,7 @@ Endpoints
 
 ---
 
-### POST `api/QMFA/Admin/Device/Update` — `AccessDeviceUpdateWS`
+### POST `api/QMFA/Admin/Device/Update`
 - Purpose: Intended to update a device — currently a stub.
 - Behavior: Returns `Ok(true)`. Implementation required to accept KVPs and perform upsert.
 - Responses:
@@ -299,7 +300,7 @@ Endpoints
 
 ---
 
-### POST `api/QMFA/Admin/Device/Delete` — `AccessDeviceDeleteWS`
+### POST `api/QMFA/Admin/Device/Delete`
 - Purpose: Delete a device.
 - InputParameters:
   - `Name` or `DeviceName` — required.
@@ -310,7 +311,7 @@ Endpoints
 
 ---
 
-### POST `api/QMFA/Authorize/Token/OTC/Send` — `TokenOTCSendWS`
+### POST `api/QMFA/Authorize/Token/OTC/Send`
 - Purpose: Generate and send OTC to token owner via SMS or email.
 - InputParameters:
   - `TokenName` — required.
@@ -327,7 +328,7 @@ Endpoints
 
 ---
 
-### POST `api/QMFA/Authorize/Token/OTC/Verify` — `TokenOTCVerifyWS`
+### POST `api/QMFA/Authorize/Token/OTC/Verify`
 - Purpose: Verify an OTC previously sent.
 - InputParameters:
   - `TokenName` — required.
@@ -341,7 +342,7 @@ Endpoints
 
 ---
 
-### POST `api/QMFA/Admin/Token/TOTP/Reset` — `TokenTOTPResetWS`
+### POST `api/QMFA/Admin/Token/TOTP/Reset`
 - Purpose: Reset a token's TOTP secret and deliver setup (QR/manual code).
 - InputParameters:
   - `TokenName` — required.
@@ -355,7 +356,7 @@ Endpoints
 
 ---
 
-### POST `api/QMFA/Authorize/Token/TOTP/Verify` — `TokenTOTPVerifyWS`
+### POST `api/QMFA/Authorize/Token/TOTP/Verify`
 - Purpose: Verify a user-provided TOTP.
 - InputParameters:
   - `TokenName` — required.
@@ -368,7 +369,7 @@ Endpoints
 
 ---
 
-### POST `api/QMFA/Admin/Token/VAS/Create` — `VASTokenCreateWS`
+### POST `api/QMFA/Admin/Token/VAS/Create`
 - Purpose: Create Apple VAS / Wallet-optimized token, optionally generate QR and `.pkpass`, and deliver to user via email/SMS/claims.
 - InputParameters highlights:
   - `TokenName` — optional (GUID default).
@@ -405,12 +406,6 @@ Example request (generic)
 }
 ```
 
-
-
-GitHub Copilot
-
-Took a deep breath — below is concise, well‑structured Markdown documentation for every public action in `MFAController`. Each section lists the route, function name, purpose, InputParameters (KVPs read via `DBToken.GetDictValue` / `Utils.GetDictValue`), defaults, required flags, key behavior/side effects and responses. Use the KVP names in the `APIRequest.InputParameters` dictionary passed to each POST. Header `QwantumProfile` (case-sensitive) selects the DB profile/collections.
-
 Header note
 - Header: `QwantumProfile` — optional; when present it selects DB collections (`DBAuth`, `DBToken`, `DBTransaction`).
 
@@ -425,7 +420,7 @@ Endpoints
 
 ---
 
-### POST `api/QMFA/Authorize/User/Message/Send` — `SendMessageWS`
+### POST `api/QMFA/Authorize/User/Message/Send`
 - Purpose: Send an arbitrary message to a user (email or SMS).
 - InputParameters (KVPs):
   - `Username` (string) — required.
@@ -441,7 +436,7 @@ Endpoints
 
 ---
 
-### POST `api/QMFA/Authorize/User/OTC/Send` — `SendOTCWS`
+### POST `api/QMFA/Authorize/User/OTC/Send`
 - Purpose: Generate and send a one‑time code (OTC) to a user via SMS or email.
 - InputParameters:
   - `Username` — required.
@@ -457,7 +452,7 @@ Endpoints
 
 ---
 
-### POST `api/QMFA/Authorize/User/OTC/Verify` — `VerifyOTCWS`
+### POST `api/QMFA/Authorize/User/OTC/Verify` 
 - Purpose: Verify an OTC provided by the user.
 - InputParameters:
   - `Username` — required.
@@ -470,7 +465,7 @@ Endpoints
 
 ---
 
-### POST `api/QMFA/Authorize/HID/Verify` — `VerifyHIDWS`
+### POST `api/QMFA/Authorize/HID/Verify`
 - Purpose: Verify an HID tag using `HIDVerify`.
 - InputParameters:
   - `tagID` (string) — required.
@@ -483,7 +478,7 @@ Endpoints
 
 ---
 
-### POST `api/QMFA/Authorize/User/Password/Verify` — `VerifyPasswordWS`
+### POST `api/QMFA/Authorize/User/Password/Verify`
 - Purpose: Verify a user password.
 - InputParameters:
   - `Username` — required.
@@ -496,7 +491,7 @@ Endpoints
 
 ---
 
-### POST `api/QMFA/Authorize/User/Password/Update` — `UpdatePasswordWS`
+### POST `api/QMFA/Authorize/User/Password/Update`
 - Purpose: Allow a user to change their password.
 - InputParameters:
   - `Username` — required.
@@ -513,7 +508,7 @@ Endpoints
 
 ---
 
-### POST `api/QMFA/Authorize/User/TOTP/Verify` — `VerifyTOTPWS`
+### POST `api/QMFA/Authorize/User/TOTP/Verify`
 - Purpose: Verify a user TOTP.
 - InputParameters:
   - `Username` — required.
@@ -526,7 +521,7 @@ Endpoints
 
 ---
 
-### POST `api/QMFA/Admin/User/TOTP/Reset` — `ResetTOTPWS`
+### POST `api/QMFA/Admin/User/TOTP/Reset`
 - Purpose: Generate and send a new TOTP secret (QR + manual code) to a user.
 - InputParameters:
   - `Username` — required.
@@ -539,7 +534,7 @@ Endpoints
 
 ---
 
-### POST `api/QMFA/Admin/WebAuth/Reset` — `ResetWebAuthWS`
+### POST `api/QMFA/Admin/WebAuth/Reset`
 - Purpose: Reset WebAuth API key for a user (creates a new `WebAPIKey` and stores SHA256).
 - InputParameters:
   - `Username` — required.
@@ -553,7 +548,7 @@ Endpoints
 
 ---
 
-### POST `api/QMFA/Admin/User/Password/Reset` — `ResetPasswordWS`
+### POST `api/QMFA/Admin/User/Password/Reset`
 - Purpose: Reset a user password (generate random password and notify).
 - InputParameters:
   - `Username` — required.
@@ -568,7 +563,7 @@ Endpoints
 
 ---
 
-### POST `api/QMFA/Admin/User/Create` — `UserCreateWS`
+### POST `api/QMFA/Admin/User/Create`
 - Purpose: Create a new user account.
 - InputParameters:
   - `Username` — required.
@@ -581,7 +576,7 @@ Endpoints
 
 ---
 
-### POST `api/QMFA/Admin/User/Read` — `UserReadWS`
+### POST `api/QMFA/Admin/User/Read`
 - Purpose: Read user details.
 - InputParameters:
   - `Username` — required.
@@ -591,7 +586,7 @@ Endpoints
 
 ---
 
-### POST `api/QMFA/Admin/User/Update` — `UserUpdateWS`
+### POST `api/QMFA/Admin/User/Update`
 - Purpose: Update user properties.
 - InputParameters (KVPs read via `DBToken.GetDictValue`):
   - `Username` — required.
@@ -603,7 +598,7 @@ Endpoints
 
 ---
 
-### POST `api/QMFA/Admin/User/Delete` — `UserDeleteWS`
+### POST `api/QMFA/Admin/User/Delete`
 - Purpose: Delete a user.
 - InputParameters:
   - `Username` — required.
@@ -613,7 +608,7 @@ Endpoints
 
 ---
 
-### POST `api/QMFA/Admin/User/List` — `UserListWS`
+### POST `api/QMFA/Admin/User/List`
 - Purpose: Return a list of user names matching a search.
 - InputParameters:
   - `Search` — optional, default `"%"`.
@@ -623,7 +618,7 @@ Endpoints
 
 ---
 
-### POST `api/QMFA/Admin/User/NameList` — `UserNameListWS`
+### POST `api/QMFA/Admin/User/NameList`
 - Purpose: Return a list of lightweight user info objects.
 - InputParameters:
   - `Search` — optional, default `"%"`.
@@ -633,7 +628,7 @@ Endpoints
 
 ---
 
-### POST `api/QMFA/Admin/User/Lock` — `UserLockWS`
+### POST `api/QMFA/Admin/User/Lock`
 - Purpose: Lock a user account.
 - InputParameters:
   - `Username` — required.
@@ -643,7 +638,7 @@ Endpoints
 
 ---
 
-### POST `api/QMFA/Admin/User/Unlock` — `UserUnlockWS`
+### POST `api/QMFA/Admin/User/Unlock`
 - Purpose: Unlock a user account and reset invalid attempts.
 - InputParameters:
   - `Username` — required.
@@ -653,7 +648,7 @@ Endpoints
 
 ---
 
-### POST `api/QMFA/Admin/QRCode/Create` — `QRCodeCreateWS`
+### POST `api/QMFA/Admin/QRCode/Create`
 - Purpose: Generate a QR code from provided data and deliver (email/SMS/claims).
 - InputParameters:
   - `Username` — required.
@@ -668,7 +663,7 @@ Endpoints
 
 ---
 
-### POST `api/QMFA/Authorize/Transaction/Create` — `TransactionCreateWS`
+### POST `api/QMFA/Authorize/Transaction/Create`
 - Purpose: Create a transient transaction and send transaction ID to recipient(s).
 - InputParameters:
   - `ExpirationSeconds` — optional, default `"600"` (10 minutes).
@@ -681,7 +676,7 @@ Endpoints
 
 ---
 
-### POST `api/QMFA/Authorize/Transaction/Redeem` — `TransactionRedeemWS`
+### POST `api/QMFA/Authorize/Transaction/Redeem`
 - Purpose: Redeem/complete a transaction (mark as redeemed).
 - InputParameters:
   - `TransactionToken` — required.
@@ -695,12 +690,12 @@ Endpoints
 
 ---
 
-### POST `api/QMFA/Authorize/Transaction/Read` — `TransactionReadWS`
+### POST `api/QMFA/Authorize/Transaction/Read`
 - Purpose: Read transaction details by token.
 - InputParameters:
   - `TransactionToken` — required.
 - Behavior:
-  - Loads transaction and returns `MongoTransactionResponse`.
+  - Loads transaction and returns `TransactionResponse`.
 - Success: 200 with `MongoTransactionResponse`.
 - Errors: missing token, token not found.
 
