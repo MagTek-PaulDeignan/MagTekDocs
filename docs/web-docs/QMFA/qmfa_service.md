@@ -33,7 +33,14 @@ Endpoints for managing user accounts, profiles, and administrative locks.
 ### Create User
 **`api/QMFA/Admin/User/Create`**
 * **Purpose:** Create a new user account and initialize credentials.
-* **Parameters:** `Username` (Req), `Firstname`, `Lastname`, `Email`, `SMSNumber`, `Password`, `MaxInvalidAttempts` (Default: 5).
+* **Parameters:** \
+   `Username` (Req) \
+   `Firstname` \
+   `Lastname` \
+   `Email` \
+   `SMSNumber` \
+   `Password`\
+   `MaxInvalidAttempts` (Default: 5).\
 * **Side Effects:** If `Password` is omitted, the system triggers `ResetPassword` to generate and send one.
 
 ### Read User
