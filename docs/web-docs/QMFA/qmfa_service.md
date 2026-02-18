@@ -34,24 +34,32 @@ Endpoints for managing user accounts, profiles, and administrative locks.
 **`api/QMFA/Admin/User/Create`**
 * **Purpose:** Create a new user account and initialize credentials.
 * **Parameters:** \
-   `Username` (Req) \
-   `Firstname` \
-   `Lastname` \
-   `Email` \
-   `SMSNumber` \
-   `Password` \
-   `MaxInvalidAttempts` (Default: 5). \
+`Username` (required) \
+`Firstname` \
+`Lastname` \
+`Email` \
+`SMSNumber` \
+`Password` \
+`MaxInvalidAttempts` (Default: 5).   
 * **Side Effects:** If `Password` is omitted, the system triggers `ResetPassword` to generate and send one.
 
 ### Read User
 **`api/QMFA/Admin/User/Read`**
 * **Purpose:** Retrieve full profile details for a specific user.
-* **Parameters:** `Username` (Req).
+* **Parameters:** `Username` (required).
 
 ### Update User
 **`api/QMFA/Admin/User/Update`**
 * **Purpose:** Update specific user attributes or claims.
-* **Parameters:** `Username` (Req), `Firstname`, `Lastname`, `Email`, `SMSNumber`, `AccountStatus`, `IsLocked`, `Claims` (via `apiRequest.Claims`).
+* **Parameters:**  \
+`Username` (required) \
+`Firstname` \
+`Lastname` \
+`Email` \
+`SMSNumber` \
+`AccountStatus` \
+`IsLocked` \
+`Claims` (via `apiRequest.Claims`)
 
 ### Delete User
 **`api/QMFA/Admin/User/Delete`**
