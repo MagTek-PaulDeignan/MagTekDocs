@@ -39,8 +39,8 @@ Endpoints for managing user accounts, profiles, and administrative locks.
    `Lastname` \
    `Email` \
    `SMSNumber` \
-   `Password`\
-   `MaxInvalidAttempts` (Default: 5).\
+   `Password` \
+   `MaxInvalidAttempts` (Default: 5). \
 * **Side Effects:** If `Password` is omitted, the system triggers `ResetPassword` to generate and send one.
 
 ### Read User
